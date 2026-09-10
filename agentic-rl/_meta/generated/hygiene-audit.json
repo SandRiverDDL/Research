@@ -1,0 +1,2210 @@
+{
+  "generated_at": "2026-06-17T14:27:31+00:00",
+  "summary": {
+    "queue_without_card": 112,
+    "queue_without_brief": 110,
+    "queue_without_pdf": 103,
+    "cards_without_brief": 0,
+    "cards_without_pdf_anchor": 30,
+    "provisional": 0
+  },
+  "queue_without_card": [
+    {
+      "status": "queue / needs original PDF brief",
+      "title": "Turn-Level",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Core RL Method Queue; paper_type=core-rl-method",
+      "raw": "| queue / needs original PDF brief | Turn-Level |  |  | Credit Table 10 | section=Core RL Method Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "RED",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | RED |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "T-REG",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | T-REG |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "From r to Q",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | From r to Q |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "SPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | SPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "SCAR",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | SCAR |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "TEMPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | TEMPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "PURE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | PURE |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "SPRO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | SPRO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "CAPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | CAPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "ACPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | ACPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "PRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | PRL |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "InT",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | InT |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "FinePO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | FinePO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "M-GRPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | M-GRPO |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "LLM-MCA",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | LLM-MCA |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "QLLM",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | QLLM |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "SHARP",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | SHARP |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "DeepRetrieval",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | DeepRetrieval |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "R1-Searcher++",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | R1-Searcher++ |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ReSearch",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | ReSearch |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "StepSearch",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | StepSearch |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebDancer",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebDancer |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebThinker",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebThinker |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebSailor",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebSailor |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebWatcher",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebWatcher |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebShaper",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebShaper |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "MiroMind Open Deep Research",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| background | MiroMind Open Deep Research |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "SimpleDeepResearcher",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | SimpleDeepResearcher |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "AWorld",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4 / Framework Table 11",
+      "note": "section=Search / Deep Research Queue; paper_type=infra-interface",
+      "raw": "| queue | AWorld |  |  | Landscape Table 4 / Framework Table 11 | section=Search / Deep Research Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "SFR-DeepResearch",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | SFR-DeepResearch |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "AceCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | AceCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "DeepCoder-14B",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | DeepCoder-14B |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "RLTF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5 / GFCR",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | RLTF |  |  | Landscape Table 5 / GFCR | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "CURE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CURE |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Absolute Zero",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Absolute Zero |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "StepCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | StepCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "PSGPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | PSGPO |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "CodeBoost",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CodeBoost |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "PRLCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | PRLCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "o1-Coder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | o1-Coder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Posterior-GRPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | Posterior-GRPO |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "cross-link",
+      "title": "Policy Filtration for RLHF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=data-overlap",
+      "raw": "| cross-link | Policy Filtration for RLHF |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=data-overlap |"
+    },
+    {
+      "status": "queue",
+      "title": "CodeFavor",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CodeFavor |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Focused-DPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | Focused-DPO |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "Re:Form",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Re:Form |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "Qwen Team coder RL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| background | Qwen Team coder RL |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "RLEF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | RLEF |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "µCode",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | µCode |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "R1-Code-Interpreter",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | R1-Code-Interpreter |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "IterPref",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | IterPref |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "LeDex",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | LeDex |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "CTRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CTRL |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ReVeal",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | ReVeal |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "DeepSWE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | DeepSWE |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Satori-SWE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Satori-SWE |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "RLCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | RLCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "Qwen3-Coder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| background | Qwen3-Coder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ML-Agent",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | ML-Agent |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "OS-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | OS-R1 |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Golubev et al.",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Golubev et al. |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue / cross-link",
+      "title": "SWE-Gym",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Code / Software Queue; paper_type=benchmark-env",
+      "raw": "| queue / cross-link | SWE-Gym |  |  | GFCR | section=Code / Software Queue; paper_type=benchmark-env |"
+    },
+    {
+      "status": "queue",
+      "title": "GUI-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | GUI-R1 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-R1 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "InFiGUI-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | InFiGUI-R1 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "AgentCPM",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | AgentCPM |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-Venus",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-Venus |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-TARS",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-TARS |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-TARS-2",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-TARS-2 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ZeroGUI",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | ZeroGUI |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "MobileGUI-RL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | MobileGUI-RL |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ComputerRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | ComputerRL |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ARLAS",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | ARLAS |  |  | GFCR | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "BrowserGym",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Web / GUI Queue; paper_type=benchmark-env",
+      "raw": "| background | BrowserGym |  |  | GFCR | section=Web / GUI Queue; paper_type=benchmark-env |"
+    },
+    {
+      "status": "background",
+      "title": "AgentDojo",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Web / GUI Queue; paper_type=benchmark-env",
+      "raw": "| background | AgentDojo |  |  | GFCR | section=Web / GUI Queue; paper_type=benchmark-env |"
+    },
+    {
+      "status": "queue",
+      "title": "Verifiers",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | Verifiers |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "SkyRL-v0",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | SkyRL-v0 |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "AREAL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | AREAL |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "MARTI",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | MARTI |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "EasyR1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | EasyR1 |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    }
+  ],
+  "queue_without_brief": [
+    {
+      "status": "queue / needs original PDF brief",
+      "title": "Turn-Level",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Core RL Method Queue; paper_type=core-rl-method",
+      "raw": "| queue / needs original PDF brief | Turn-Level |  |  | Credit Table 10 | section=Core RL Method Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "RED",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | RED |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "T-REG",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | T-REG |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "From r to Q",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | From r to Q |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "SPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | SPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "SCAR",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | SCAR |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "TEMPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | TEMPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "PURE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | PURE |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "SPRO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | SPRO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "CAPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | CAPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "ACPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | ACPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "PRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | PRL |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "InT",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | InT |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "FinePO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | FinePO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "M-GRPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | M-GRPO |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "LLM-MCA",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | LLM-MCA |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "QLLM",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | QLLM |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "SHARP",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | SHARP |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "DeepRetrieval",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | DeepRetrieval |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ReSearch",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | ReSearch |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "StepSearch",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | StepSearch |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebDancer",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebDancer |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebThinker",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebThinker |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebSailor",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebSailor |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebWatcher",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebWatcher |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebShaper",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebShaper |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "MiroMind Open Deep Research",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| background | MiroMind Open Deep Research |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "SimpleDeepResearcher",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | SimpleDeepResearcher |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "AWorld",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4 / Framework Table 11",
+      "note": "section=Search / Deep Research Queue; paper_type=infra-interface",
+      "raw": "| queue | AWorld |  |  | Landscape Table 4 / Framework Table 11 | section=Search / Deep Research Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "SFR-DeepResearch",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | SFR-DeepResearch |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "AceCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | AceCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "DeepCoder-14B",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | DeepCoder-14B |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "RLTF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5 / GFCR",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | RLTF |  |  | Landscape Table 5 / GFCR | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "CURE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CURE |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Absolute Zero",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Absolute Zero |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "StepCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | StepCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "PSGPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | PSGPO |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "CodeBoost",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CodeBoost |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "PRLCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | PRLCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "o1-Coder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | o1-Coder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Posterior-GRPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | Posterior-GRPO |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "cross-link",
+      "title": "Policy Filtration for RLHF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=data-overlap",
+      "raw": "| cross-link | Policy Filtration for RLHF |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=data-overlap |"
+    },
+    {
+      "status": "queue",
+      "title": "CodeFavor",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CodeFavor |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Focused-DPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | Focused-DPO |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "Re:Form",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Re:Form |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "Qwen Team coder RL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| background | Qwen Team coder RL |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "RLEF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | RLEF |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "µCode",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | µCode |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "R1-Code-Interpreter",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | R1-Code-Interpreter |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "IterPref",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | IterPref |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "LeDex",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | LeDex |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "CTRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CTRL |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ReVeal",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | ReVeal |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "DeepSWE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | DeepSWE |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Satori-SWE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Satori-SWE |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "RLCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | RLCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "Qwen3-Coder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| background | Qwen3-Coder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ML-Agent",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | ML-Agent |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "OS-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | OS-R1 |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Golubev et al.",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Golubev et al. |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue / cross-link",
+      "title": "SWE-Gym",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Code / Software Queue; paper_type=benchmark-env",
+      "raw": "| queue / cross-link | SWE-Gym |  |  | GFCR | section=Code / Software Queue; paper_type=benchmark-env |"
+    },
+    {
+      "status": "queue",
+      "title": "GUI-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | GUI-R1 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-R1 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "InFiGUI-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | InFiGUI-R1 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "AgentCPM",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | AgentCPM |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-Venus",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-Venus |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-TARS",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-TARS |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-TARS-2",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-TARS-2 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ZeroGUI",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | ZeroGUI |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "MobileGUI-RL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | MobileGUI-RL |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ComputerRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | ComputerRL |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ARLAS",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | ARLAS |  |  | GFCR | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "BrowserGym",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Web / GUI Queue; paper_type=benchmark-env",
+      "raw": "| background | BrowserGym |  |  | GFCR | section=Web / GUI Queue; paper_type=benchmark-env |"
+    },
+    {
+      "status": "background",
+      "title": "AgentDojo",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Web / GUI Queue; paper_type=benchmark-env",
+      "raw": "| background | AgentDojo |  |  | GFCR | section=Web / GUI Queue; paper_type=benchmark-env |"
+    },
+    {
+      "status": "queue",
+      "title": "Verifiers",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | Verifiers |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "SkyRL-v0",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | SkyRL-v0 |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "AREAL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | AREAL |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "MARTI",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | MARTI |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "EasyR1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | EasyR1 |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "AgentFly",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | AgentFly |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    }
+  ],
+  "queue_without_pdf": [
+    {
+      "status": "queue / background",
+      "title": "T-REG",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | T-REG |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "From r to Q",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | From r to Q |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "SCAR",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | SCAR |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "TEMPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | TEMPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "PURE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | PURE |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "SPRO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | SPRO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "ACPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | ACPO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "PRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | PRL |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue / background",
+      "title": "FinePO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Reasoning Credit-Assignment Background; paper_type=core-rl-method",
+      "raw": "| queue / background | FinePO |  |  | Credit Table 10 | section=Reasoning Credit-Assignment Background; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "M-GRPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | M-GRPO |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "LLM-MCA",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | LLM-MCA |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "QLLM",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | QLLM |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "SHARP",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Credit Table 10",
+      "note": "section=Multi-Agent Credit Queue; paper_type=core-rl-method",
+      "raw": "| queue | SHARP |  |  | Credit Table 10 | section=Multi-Agent Credit Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "DeepRetrieval",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | DeepRetrieval |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "StepSearch",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | StepSearch |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebDancer",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebDancer |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebThinker",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebThinker |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebSailor",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebSailor |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebWatcher",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebWatcher |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "WebShaper",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | WebShaper |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "MiroMind Open Deep Research",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| background | MiroMind Open Deep Research |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "SimpleDeepResearcher",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | SimpleDeepResearcher |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "AWorld",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4 / Framework Table 11",
+      "note": "section=Search / Deep Research Queue; paper_type=infra-interface",
+      "raw": "| queue | AWorld |  |  | Landscape Table 4 / Framework Table 11 | section=Search / Deep Research Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "SFR-DeepResearch",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 4",
+      "note": "section=Search / Deep Research Queue; paper_type=environment-recipe",
+      "raw": "| queue | SFR-DeepResearch |  |  | Landscape Table 4 | section=Search / Deep Research Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "AceCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | AceCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "DeepCoder-14B",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | DeepCoder-14B |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "RLTF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5 / GFCR",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | RLTF |  |  | Landscape Table 5 / GFCR | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "CURE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CURE |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Absolute Zero",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Absolute Zero |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "StepCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | StepCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "PSGPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | PSGPO |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "CodeBoost",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CodeBoost |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "PRLCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | PRLCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "o1-Coder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | o1-Coder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Posterior-GRPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | Posterior-GRPO |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "cross-link",
+      "title": "Policy Filtration for RLHF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=data-overlap",
+      "raw": "| cross-link | Policy Filtration for RLHF |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=data-overlap |"
+    },
+    {
+      "status": "queue",
+      "title": "CodeFavor",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CodeFavor |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Focused-DPO",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | Focused-DPO |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "Re:Form",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Re:Form |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "Qwen Team coder RL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| background | Qwen Team coder RL |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "RLEF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | RLEF |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "µCode",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | µCode |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "R1-Code-Interpreter",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | R1-Code-Interpreter |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "IterPref",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | IterPref |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "LeDex",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=core-rl-method",
+      "raw": "| queue | LeDex |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=core-rl-method |"
+    },
+    {
+      "status": "queue",
+      "title": "CTRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | CTRL |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ReVeal",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | ReVeal |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "DeepSWE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | DeepSWE |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Satori-SWE",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Satori-SWE |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "RLCoder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | RLCoder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "Qwen3-Coder",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| background | Qwen3-Coder |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ML-Agent",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | ML-Agent |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "OS-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | OS-R1 |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "Golubev et al.",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 5",
+      "note": "section=Code / Software Queue; paper_type=environment-recipe",
+      "raw": "| queue | Golubev et al. |  |  | Landscape Table 5 | section=Code / Software Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue / cross-link",
+      "title": "SWE-Gym",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Code / Software Queue; paper_type=benchmark-env",
+      "raw": "| queue / cross-link | SWE-Gym |  |  | GFCR | section=Code / Software Queue; paper_type=benchmark-env |"
+    },
+    {
+      "status": "queue",
+      "title": "GUI-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | GUI-R1 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-R1 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "InFiGUI-R1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | InFiGUI-R1 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "AgentCPM",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | AgentCPM |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-Venus",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-Venus |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-TARS",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-TARS |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "UI-TARS-2",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | UI-TARS-2 |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ZeroGUI",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | ZeroGUI |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "MobileGUI-RL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | MobileGUI-RL |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ComputerRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 7",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | ComputerRL |  |  | Landscape Table 7 | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "queue",
+      "title": "ARLAS",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Web / GUI Queue; paper_type=environment-recipe",
+      "raw": "| queue | ARLAS |  |  | GFCR | section=Web / GUI Queue; paper_type=environment-recipe |"
+    },
+    {
+      "status": "background",
+      "title": "BrowserGym",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Web / GUI Queue; paper_type=benchmark-env",
+      "raw": "| background | BrowserGym |  |  | GFCR | section=Web / GUI Queue; paper_type=benchmark-env |"
+    },
+    {
+      "status": "background",
+      "title": "AgentDojo",
+      "arxiv_id": "",
+      "year": "",
+      "source": "GFCR",
+      "note": "section=Web / GUI Queue; paper_type=benchmark-env",
+      "raw": "| background | AgentDojo |  |  | GFCR | section=Web / GUI Queue; paper_type=benchmark-env |"
+    },
+    {
+      "status": "queue",
+      "title": "Verifiers",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | Verifiers |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "SkyRL-v0",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | SkyRL-v0 |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "AREAL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | AREAL |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "MARTI",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | MARTI |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "EasyR1",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | EasyR1 |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "AgentFly",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | AgentFly |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "AWorld",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | AWorld |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "RL-Factory",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | RL-Factory |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue",
+      "title": "AgentRL",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| queue | AgentRL |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "background",
+      "title": "OpenRLHF",
+      "arxiv_id": "",
+      "year": "",
+      "source": "Landscape Table 11",
+      "note": "section=Framework / Infra Queue; paper_type=infra-interface",
+      "raw": "| background | OpenRLHF |  |  | Landscape Table 11 | section=Framework / Infra Queue; paper_type=infra-interface |"
+    },
+    {
+      "status": "queue / verify code-impact",
+      "title": "AEPO",
+      "arxiv_id": "2510.14545",
+      "year": "2025",
+      "source": "keyword search / ARPO repo follow-up",
+      "note": "section=Strict Agentic RL Core Recall; paper_type=core-rl-method; recall_reason=entropy-balanced rollout and policy update for web-agent RL; open=verify; age=old; priority=medium",
+      "raw": "| queue / verify code-impact | AEPO | 2510.14545 | 2025 | keyword search / ARPO repo follow-up | section=Strict Agentic RL Core Recall; paper_type=core-rl-method; recall_reason=entropy-balanced rollout and policy update for web-agent RL; open=verify; age=old; priority=medium |"
+    },
+    {
+      "status": "queue / major-lab exception",
+      "title": "rStar2-Agent",
+      "arxiv_id": "2508.20722",
+      "year": "2025",
+      "source": "keyword search",
+      "note": "section=Strict Agentic RL Core Recall; paper_type=core-rl-method; recall_reason=GRPO-RoC resample-on-correct rollout for code-environment noise; open=repo; lab=Microsoft; priority=medium",
+      "raw": "| queue / major-lab exception | rStar2-Agent | 2508.20722 | 2025 | keyword search | section=Strict Agentic RL Core Recall; paper_type=core-rl-method; recall_reason=GRPO-RoC resample-on-correct rollout for code-environment noise; open=repo; lab=Microsoft; priority=medium |"
+    }
+  ],
+  "cards_without_brief": [],
+  "cards_without_pdf_anchor": [
+    "notes/2505_gigpo-agent-training.md",
+    "notes/2507_arpo-agentic-reinforced-policy-optimization.md",
+    "notes/2508_asearcher-beyond-ten-turns.md",
+    "notes/2508_pilotrl-progressive-credit.md",
+    "notes/2509_hicra-hierarchical-credit.md",
+    "notes/2509_simpletir-multiturn-tool-integrated-reasoning.md",
+    "notes/2509_spear-self-imitation-progressive-exploration.md",
+    "notes/2509_tree-grpo-tree-search-agent-rl.md",
+    "notes/2510_igpo-information-gain-policy-optimization.md",
+    "notes/2511_criticsearch-retrospective-critic.md",
+    "notes/2511_sorl-bias-corrected-search.md",
+    "notes/2512_carl-critical-action-rl.md",
+    "notes/2512_inspo-instruction-policy-coevolution.md",
+    "notes/2512_prs-progressive-reward-shaping.md",
+    "notes/2601_dynaweb-model-based-web-agent-rl.md",
+    "notes/2602_agent-omit-adaptive-omission.md",
+    "notes/2602_hgpo-hierarchy-of-groups.md",
+    "notes/2602_skillrl-recursive-skill-augmented-rl.md",
+    "notes/2603_c3-counterfactual-credit.md",
+    "notes/2603_ccpo-causal-credit.md",
+    "notes/2603_d2skill-dual-granularity-skill-bank.md",
+    "notes/2603_hcapo-hindsight-credit.md",
+    "notes/2604_skill0-in-context-skill-internalization.md",
+    "notes/2605_beacon-milestone-guided-policy-learning.md",
+    "notes/2605_eapo-exploration-aware-policy-optimization.md",
+    "notes/2605_sdar-self-distilled-agentic-rl.md",
+    "notes/2606_appo-agentic-procedural-policy-optimization.md",
+    "notes/2606_reskill-policy-skill-coevolution.md",
+    "notes/2606_sapo-skill-generation-policy-optimization.md",
+    "notes/2606_siri-self-internalizing-rl.md"
+  ]
+}

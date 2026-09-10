@@ -1,0 +1,235 @@
+{
+  "description": "Project-local OPD triage overrides. Keys are slugified title prefixes used by scripts/autoresearch.py triage.",
+  "overrides": {
+    "maybe": {
+      "beyond grpo and on policy distillation an empirical sparse to dense reward princ": {
+        "category": "pipeline principle",
+        "reason": "四阶段 sparse-to-dense pipeline 相关，但更像 post-training recipe。"
+      },
+      "breaking the tokenizer barrier on policy distillation across model families": {
+        "category": "cross-tokenizer",
+        "reason": "跨 tokenizer OPD 有谱系价值，但需确认与已有 SimCT/X-OPD 是否重复。"
+      },
+      "constitutional on policy safe distillation": {
+        "category": "safety OPD",
+        "reason": "安全对齐应用分支，先作为召回保险。"
+      },
+      "crosslingual on policy self distillation for multilingual reasoning": {
+        "category": "application/privileged context",
+        "reason": "低资源语言应用相关，先不作为核心方法谱系优先项。"
+      },
+      "decomposed on policy distillation for vision language reasoning steering gradien": {
+        "category": "VLM gradient decomposition",
+        "reason": "多模态分解有价值，但当前 LLM OPD 主线优先级更高。"
+      },
+      "distilling llm feedback for lean theorem proving": {
+        "category": "domain feedback",
+        "reason": "Lean theorem proving 领域应用，可暂缓。"
+      },
+      "draft opd on policy distillation for speculative draft models": {
+        "category": "speculative decoding",
+        "reason": "推理加速 draft model 分支，通常不进入 OPD 方法主谱系。"
+      },
+      "f opd stabilizing long horizon on policy distillation with freshness aware contr": {
+        "category": "async/freshness",
+        "reason": "异步训练 freshness 是工程重要点，但对核心 OPD idea 谱系优先级略低。"
+      },
+      "large language model post training a unified view of off policy and on policy le": {
+        "category": "survey/context",
+        "reason": "综述/统一视角可服务报告，但不是单篇方法核心卡优先项。"
+      },
+      "learning from language feedback via variational policy distillation": {
+        "category": "language feedback",
+        "reason": "语言反馈变分蒸馏相关，但摘要不足以升入第一批。"
+      },
+      "oisd on policy internal self distillation of language models": {
+        "category": "internal layer signal",
+        "reason": "内部层自蒸馏相关，但与 OPD 主问题距离略远。"
+      },
+      "omniopd logit free on policy distillation via speculative verification": {
+        "category": "black-box/logit-free",
+        "reason": "黑盒 OPD 方向相关，但摘要信号较工程化，先暂缓验真。"
+      },
+      "robust reasoning via dynamic token selection for distribution aligned self disti": {
+        "category": "token filtering",
+        "reason": "动态 token selection 相关，但需要确认是否是 rewrite/SFT 场景而非 OPD。"
+      },
+      "rosd reflective on policy self distillation for language model reasoning across": {
+        "category": "reflective correction",
+        "reason": "针对 OPSD OOD 的纠错分支，适合作为第二批。"
+      },
+      "safesteer localized on policy distillation for efficient safety alignment": {
+        "category": "safety localized OPD",
+        "reason": "安全 token 局部蒸馏相关，但不是当前方法主轴。"
+      },
+      "self distilled policy gradient": {
+        "category": "RL auxiliary",
+        "reason": "更像 RLVR + self-distillation auxiliary，暂不抢第一批卡位。"
+      },
+      "sg opd sign gated on policy distillation via sign consistency gating and phased": {
+        "category": "verifier-gated OPD",
+        "reason": "sign gate 和 phased teacher sampling 相关，但需先查是否只是组合式改造。"
+      },
+      "teaching the way not the answer privileged tutoring distillation for multimodal": {
+        "category": "multimodal privileged hints",
+        "reason": "多模态 privileged tutoring 可暂缓，除非报告专门覆盖 VLM。"
+      },
+      "the illusion of certainty decoupling capability and calibration in on policy dis": {
+        "category": "calibration",
+        "reason": "OPD 过度自信是有价值 failure mode，但需要先确认是否影响方法主线。"
+      },
+      "the role of feedback alignment in self distillation": {
+        "category": "feedback design",
+        "reason": "step-aligned critique 有报告价值，但不一定是 OPD 核心方法。"
+      },
+      "thinking without images internalizing visual manipulation with on policy self di": {
+        "category": "visual internalization",
+        "reason": "和 ViCuR/Internalize 相关，但属于应用分支。"
+      },
+      "trust region behavior blending for on policy distillation": {
+        "category": "warmup/trust-region",
+        "reason": "与 Trust Region OPD 近邻，可能作为同族补充而非单独优先。"
+      },
+      "when context returns toward robust internalization in on policy distillation": {
+        "category": "privileged-context robustness",
+        "reason": "context removability 问题重要，但更像 Internalize/privileged-info 分支补充。"
+      },
+      "when should the teacher move temporal coupling and stability in self on policy d": {
+        "category": "teacher refresh schedule",
+        "reason": "teacher update schedule 是自 OPD 稳定性问题，和核心谱系相关但非第一批。"
+      },
+      "world models meet language models on the complementarity of concrete and abstrac": {
+        "category": "future privileged context",
+        "reason": "未来信息 privileged context 有趣，但不在第一批核心 OPD。"
+      }
+    },
+    "select": {
+      "are full rollouts necessary for on policy distillation": {
+        "category": "full-rollout necessity",
+        "reason": "直接挑战 OPD 是否需要完整 rollout，影响计算预算和长程 token 可靠性判断。"
+      },
+      "bridging reasoning trajectories in on policy distillation via near future guidan": {
+        "category": "future guidance",
+        "reason": "用 near-future 区分表面 mismatch 和真实 reasoning fork，影响 token 选择标准。"
+      },
+      "cornerstones or stumbling blocks deciphering the rock tokens in on policy disti": {
+        "category": "low-utility token mechanism",
+        "reason": "Rock Tokens 是 persistent high-loss / low-contribution token 机制分析，直接影响 token weighting 与训练加速判断。"
+      },
+      "dense supervision sparse updates on the sparsity and geometry of on policy distillation": {
+        "category": "mechanism/geometry",
+        "reason": "机制分析型论文，关系到 OPD dense supervision 到参数更新的解释。"
+      },
+      "escaping the kl agreement trap in on policy distillation": {
+        "category": "failure mode",
+        "reason": "提出 KL agreement trap，直接补充 teacher 在错误 prefix 上的失效模式。"
+      },
+      "learning to foresee unveiling the unlocking efficiency of on policy distillation": {
+        "category": "efficiency mechanism",
+        "reason": "解释 OPD parameter-dynamics foresight，并提出 EffOPD 加速，属于效率机制核心卡。"
+      },
+      "less is more early stopping rollout for on policy distillation": {
+        "category": "long-horizon reliability",
+        "reason": "早停 rollout 直接对应 suffix token 失真和 full-rollout 代价问题。"
+      },
+      "on policy distillation with best of n teacher rollout selection": {
+        "category": "teacher-rollout reliability",
+        "reason": "Best-of-N teacher 轨迹选择会改变 teacher-context supervision 的可信路径。"
+      },
+      "on the geometry of on policy distillation": {
+        "category": "mechanism/geometry",
+        "reason": "参数空间几何解释可能改变 OPD vs SFT/RLVR 的谱系位置。"
+      },
+      "post training is about states not tokens a state distribution view of sft rl and": {
+        "category": "state distribution view",
+        "reason": "理论视角从 token supervision 转为 state distribution，适合进入 synthesis。"
+      },
+      "prefix teach suffix fade local teachability collapse in strong to weak on policy": {
+        "category": "failure mode",
+        "reason": "定位 strong-to-weak OPD 的 suffix teachability collapse。"
+      },
+      "prune opd efficient and reliable on policy distillation for long horizon reason": {
+        "category": "dynamic pruning",
+        "reason": "用 top-k overlap 监测 prefix drift 并截断/降权后续监督，直接服务 long-horizon OPD 可靠性和效率。"
+      },
+      "reinforcement learning from rich feedback with distributional dagger": {
+        "category": "DAgger/theory",
+        "reason": "Distributional DAgger 对 OPD/自蒸馏目标的单调改进条件有理论关联。"
+      },
+      "renio reweighting negative trajectory importance for llm on policy distillation": {
+        "category": "negative trajectory weighting",
+        "reason": "强调错误轨迹比正确轨迹更有信息量，直接影响 filtering/reweighting 轴。"
+      },
+      "rethinking the capacity gap in on policy distillation for large language models": {
+        "category": "capacity gap",
+        "reason": "直接检验 teacher-student capacity gap 假设，是 novelty-risk 候选。"
+      },
+      "segment level on policy distillation for long horizon agents": {
+        "category": "granularity/agent",
+        "reason": "segment-level supervision 会影响 SOD/agentic OPD 的粒度谱系。"
+      },
+      "self supervised on policy distillation for reasoning language models": {
+        "category": "non-privileged process signal",
+        "reason": "用 correct-wrong 组内对比构造监督，可能威胁 privileged-info 路线 novelty。"
+      },
+      "stage 1 controls the entropy regime not the outcome": {
+        "category": "entropy regime",
+        "reason": "直接评估 OPD warm-start 的真实收益边界，适合作为反证/降温证据。"
+      },
+      "trajectory refined distillation": {
+        "category": "trajectory-level correction",
+        "reason": "从 token intervention 转向 trajectory correction，直接影响 granularity 轴。"
+      },
+      "trust region on policy distillation": {
+        "category": "trust region",
+        "reason": "以 teacher-student divergence 划定可信区域，和 TGPO/Revisiting failure mode 相连。"
+      },
+      "when are teacher tokens reliable position weighted on policy self distillation f": {
+        "category": "token reliability",
+        "reason": "teacher token reliability 诊断和 position weighting 与 Revisiting/ESR 强相关。"
+      },
+      "your teacher can t help you here combating supervision fidelity decay in on poli": {
+        "category": "failure mode",
+        "reason": "Supervision Fidelity Decay 是长程 OPD teacher 信号衰减的直接威胁。"
+      }
+    },
+    "skip": {
+      "a good learner can teach better teacher student collaborative knowledge distilla": {
+        "category": "generic KD",
+        "reason": "ICLR 2024 KD 协作框架，和 OPD 失败模式/决策轴关系弱。"
+      },
+      "boosting of thoughts trial and error problem solving with large language models": {
+        "category": "prompt/reasoning",
+        "reason": "trial-and-error reasoning 相关但不是 OPD 方法或机制证据。"
+      },
+      "dataenvgym data generation agents in teacher environments with student feedback": {
+        "category": "data generation",
+        "reason": "偏数据生成 agent，不是 OPD 卡片优先对象。"
+      },
+      "learning to clarify multi turn conversations with action based contrastive self": {
+        "category": "dialog self-training",
+        "reason": "多轮澄清 self-training，和 OPD 主线关系弱。"
+      },
+      "learning visual spatial planning from symbolic state via modality gap aware self": {
+        "category": "application",
+        "reason": "视觉规划应用分支，当前不进入核心 OPD 抽卡。"
+      },
+      "regressing the relative future efficient policy optimization for multi turn rlhf": {
+        "category": "multi-turn RLHF",
+        "reason": "更像 RLHF credit assignment，不是蒸馏方法卡优先项。"
+      },
+      "self distillation policy optimization via visual feedback bridging code and visu": {
+        "category": "application",
+        "reason": "视觉反馈代码/UI 领域应用，先不纳入 OPD 主线。"
+      },
+      "self rag learning to retrieve generate and critique through self reflection": {
+        "category": "RAG/self-reflection",
+        "reason": "重要 RAG 论文但不属于 OPD 方法谱系。"
+      },
+      "siked self guided iterative knowledge distillation for mathematical reasoning": {
+        "category": "generic iterative KD",
+        "reason": "数学 KD 应用，摘要缺少 OPD 特有的 teacher-token/rollout 决策信号。"
+      }
+    }
+  }
+}

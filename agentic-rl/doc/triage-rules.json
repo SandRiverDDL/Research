@@ -1,0 +1,91 @@
+{
+  "description": "Agentic RL project-local triage rules. Keep queue broad but make card admission evidence-based and simple. Move data-mechanism papers to /Users/chy/Research/agent-data/.",
+  "hard_gates": [
+    "Queue row is not a card.",
+    "Survey mention is recall evidence, not paper evidence.",
+    "No original paper PDF/HTML brief, no formal L1 card.",
+    "Survey-only formal cards are invalid legacy artifacts; move or mark them outside the formal notes set and do not count them as valid L1 cards.",
+    "Formal L1 cards in notes/ root must pass scripts/autoresearch.py validate before being reported as complete."
+  ],
+  "required_frontmatter": [
+    "title",
+    "year",
+    "venue",
+    "paper_type",
+    "lifecycle_role"
+  ],
+  "required_nested_frontmatter": {},
+  "allowed": {
+    "paper_type": [
+      "core-rl-method",
+      "environment-recipe",
+      "infra-interface",
+      "benchmark-env",
+      "survey",
+      "data-overlap"
+    ],
+    "lifecycle_role": [
+      "survey-seed",
+      "canonical-anchor",
+      "strong-baseline",
+      "frontier-candidate",
+      "background",
+      "low-confidence-novelty-risk"
+    ]
+  },
+  "queue_policy": [
+    "Queue is recall-oriented: if a seed survey discusses a method in the main text and it plausibly touches agentic RL, add it to queue.",
+    "A survey mention is a recall signal, not proof of importance.",
+    "Reference-only mentions do not enter queue unless another source discusses the method in main text.",
+    "Forward recall is required for active fast-moving tracks: when a carded anchor has obvious newer follow-ups or comparisons after the seed-survey cutoff, add those follow-ups to queue even if the seed surveys could not mention them."
+  ],
+  "card_admission_rules": [
+    "Default direct card: seed-survey main-text mention + open-source code/environment + top venue or strong venue.",
+    "Strong venues currently include NeurIPS, ICML, ICLR, ACL, EMNLP, TMLR, COLM, and comparable main-conference publications.",
+    "Workshop papers are not strong venue by themselves.",
+    "ArXiv exception: seed-survey main-text mention + official open-source code/environment + clear RL mechanism.",
+    "ArXiv exception also applies when the paper is discussed by two or more seed surveys, has a later strong-venue version, or is already a de facto baseline/environment used by later methods.",
+    "Post-survey exception: newer arXiv paper + official code + direct comparison against a carded anchor such as GRPO, GiGPO, RAGEN, WebRL, Search-R1, or ArCHer.",
+    "No code/no environment usually stays queue, unless the paper is a top-venue mechanism paper or repeatedly used as a baseline."
+  ],
+  "select_rules": [
+    "Core contribution is reward design, policy optimization, RL objective, online exploration, credit assignment, rollout/replay, or environment interaction learning loop.",
+    "Directly changes tool-use/web/GUI/coding/embodied agent RL method or evaluation protocol.",
+    "Has official code/environment or is a strong-venue paper.",
+    "Could create novelty risk for an Agentic RL idea."
+  ],
+  "paper_type_taxonomy": {
+    "core-rl-method": "Changes RL mechanism directly: optimizer/objective, credit assignment, reward shaping, advantage estimation, exploration, rollout/replay.",
+    "environment-recipe": "Applies RL to a concrete agentic setting such as search, web, GUI, code, tool-use, or deep research; contribution is often environment workflow, reward recipe, or training recipe.",
+    "infra-interface": "Builds agent RL execution/training interface, tool integration, rollout system, or observability/disaggregation infrastructure.",
+    "benchmark-env": "Provides environment, benchmark, verifier, or evaluation protocol; card only if it materially affects RL training/evaluation.",
+    "survey": "Survey, taxonomy, or overview seed.",
+    "data-overlap": "Core object is data/trajectory/environment generation or curation; keep cross-link and consider /Users/chy/Research/agent-data/."
+  },
+  "type_guidance": [
+    "GiGPO, BEACON, CARL, HCAPO, SPA-RL, ArCHer, VinePPO, IGPO, AgentPRM, SWEET-RL are core-rl-method.",
+    "Search-R1, R1-Searcher, DeepResearcher, Atom-Searcher, WebRL, WebAgent-R1, DigiRL, SWE-RL, ToolRL are environment-recipe unless their main novelty is a reusable RL mechanism.",
+    "Agent Lightning, VerlTool, SWE-Gym, ToolGym, BrowserGym are infra-interface or benchmark-env depending on whether they train models or provide environments.",
+    "When unsure, assign paper_type by the reusable contribution, not by the application domain."
+  ],
+  "maybe_rules": [
+    "Survey main-text mention, but venue or open-source status is missing.",
+    "Useful background for SFT warm start, environment scaling, benchmark protocol, or data/replay interface.",
+    "Mixed data/RL paper where RL contribution is plausible but not yet verified.",
+    "ArXiv paper with code but unclear whether the contribution is RL mechanism or mostly system/recipe."
+  ],
+  "ignore_rules": [
+    "Only appears in references.",
+    "Prompt-only agent, benchmark-only paper, or generic agent framework with no RL update/reward/exploration mechanism.",
+    "ArXiv paper with no code/environment and no cross-survey discussion."
+  ],
+  "move_to_agent_data_rules": [
+    "Core contribution is training data generation, filtering, verification, repair, reweighting, curriculum, or failure trajectory mining.",
+    "RL is only the downstream consumer of the proposed data pipeline."
+  ],
+  "overrides": {
+    "select": {},
+    "maybe": {},
+    "skip": {}
+  }
+}

@@ -1,0 +1,1886 @@
+{
+  "generated_at": "2026-06-16T14:27:01+00:00",
+  "summary": {
+    "queue_without_card": 68,
+    "queue_without_brief": 68,
+    "queue_without_pdf": 68,
+    "cards_without_brief": 30,
+    "cards_without_pdf_anchor": 0,
+    "provisional": 0
+  },
+  "queue_without_card": [
+    {
+      "status": "queue",
+      "title": "A Good Learner can Teach Better: Teacher-Student Collaborative Knowledge Distillation",
+      "arxiv_id": "",
+      "year": "2024",
+      "source": "openreview,papers-94-scored",
+      "note": "",
+      "raw": "| queue | A Good Learner can Teach Better: Teacher-Student Collaborative Knowledge Distillation |  | 2024 | openreview,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models",
+      "arxiv_id": "",
+      "year": "2024",
+      "source": "openreview,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models |  | 2024 | openreview,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "SIKeD: Self-guided Iterative Knowledge Distillation for mathematical reasoning",
+      "arxiv_id": "2410.18574",
+      "year": "2024",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | SIKeD: Self-guided Iterative Knowledge Distillation for mathematical reasoning | 2410.18574 | 2024 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "arxiv_id": "",
+      "year": "2024",
+      "source": "openreview,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection |  | 2024 | openreview,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "DataEnvGym: Data Generation Agents in Teacher Environments with Student Feedback",
+      "arxiv_id": "",
+      "year": "2025",
+      "source": "openreview,papers-29-towrite,papers-94-scored",
+      "note": "",
+      "raw": "| queue | DataEnvGym: Data Generation Agents in Teacher Environments with Student Feedback |  | 2025 | openreview,papers-29-towrite,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training",
+      "arxiv_id": "",
+      "year": "2025",
+      "source": "openreview,papers-29-towrite,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training |  | 2025 | openreview,papers-29-towrite,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF",
+      "arxiv_id": "",
+      "year": "2025",
+      "source": "openreview,papers-29-towrite,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF |  | 2025 | openreview,papers-29-towrite,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Asymmetric On-Policy Distillation: Bridging Exploitation and Imitation at the Token Level",
+      "arxiv_id": "2605.06387",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Asymmetric On-Policy Distillation: Bridging Exploitation and Imitation at the Token Level | 2605.06387 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback",
+      "arxiv_id": "2606.14368",
+      "year": "2026",
+      "source": "fast-recall-2026-06-15,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback | 2606.14368 | 2026 | fast-recall-2026-06-15,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle",
+      "arxiv_id": "2605.12483",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar,survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle | 2605.12483 | 2026 | papers-94-scored,semantic-scholar,survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Beyond SFT-to-RL: Pre-alignment via Black-Box On-Policy Distillation for Multimodal RL",
+      "arxiv_id": "2604.28123",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Beyond SFT-to-RL: Pre-alignment via Black-Box On-Policy Distillation for Multimodal RL | 2604.28123 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Breaking the Tokenizer Barrier: On-Policy Distillation across Model Families",
+      "arxiv_id": "2606.09456",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Breaking the Tokenizer Barrier: On-Policy Distillation across Model Families | 2606.09456 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation",
+      "arxiv_id": "2601.16547",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation | 2601.16547 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "CRISP: Compressed Reasoning via Iterative Self-Policy Distillation",
+      "arxiv_id": "2603.05433",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | CRISP: Compressed Reasoning via Iterative Self-Policy Distillation | 2603.05433 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Co-Evolving Policy Distillation",
+      "arxiv_id": "2604.27083",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Co-Evolving Policy Distillation | 2604.27083 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Combining on-policy optimization and distillation for long-context reasoning in large language models",
+      "arxiv_id": "2605.12227",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Combining on-policy optimization and distillation for long-context reasoning in large language models | 2605.12227 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Constitutional On-Policy Safe Distillation",
+      "arxiv_id": "2606.03089",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Constitutional On-Policy Safe Distillation | 2606.03089 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Crosslingual On-Policy Self-Distillation for Multilingual Reasoning",
+      "arxiv_id": "2605.09548",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored,survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Crosslingual On-Policy Self-Distillation for Multilingual Reasoning | 2605.09548 | 2026 | arxiv,papers-94-scored,survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding",
+      "arxiv_id": "2606.00564",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding | 2606.00564 | 2026 | arxiv,papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Demystifying OPD: Length Inflation and Stabilization Strategies for Large Language Models",
+      "arxiv_id": "2604.08527",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Demystifying OPD: Length Inflation and Stabilization Strategies for Large Language Models | 2604.08527 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Distilling LLM Feedback for Lean Theorem Proving",
+      "arxiv_id": "2605.30861",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Distilling LLM Feedback for Lean Theorem Proving | 2605.30861 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Draft-OPD: On-Policy Distillation for Speculative Draft Models",
+      "arxiv_id": "2605.29343",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Draft-OPD: On-Policy Distillation for Speculative Draft Models | 2605.29343 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Fast and Effective On-policy Distillation from Reasoning Prefixes",
+      "arxiv_id": "2602.15260",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Fast and Effective On-policy Distillation from Reasoning Prefixes | 2602.15260 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "From generic correlation to input-specific credit in on-policy self distillation",
+      "arxiv_id": "2605.11613",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | From generic correlation to input-specific credit in on-policy self distillation | 2605.11613 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "KL for a KL: On-Policy Distillation with Control Variate Baseline",
+      "arxiv_id": "2605.07865",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | KL for a KL: On-Policy Distillation with Control Variate Baseline | 2605.07865 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Large Language Model Post-Training: A Unified View of Off-Policy and On-Policy Learning",
+      "arxiv_id": "2604.07941",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Large Language Model Post-Training: A Unified View of Off-Policy and On-Policy Learning | 2604.07941 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learn where to click from yourself: on-policy self-distillation for gui grounding",
+      "arxiv_id": "2605.00642",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Learn where to click from yourself: on-policy self-distillation for gui grounding | 2605.00642 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning Visual Spatial Planning from Symbolic State via Modality-Gap-Aware Self-Distillation",
+      "arxiv_id": "2606.06076",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Learning Visual Spatial Planning from Symbolic State via Modality-Gap-Aware Self-Distillation | 2606.06076 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning from Language Feedback via Variational Policy Distillation",
+      "arxiv_id": "2605.15113",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Learning from Language Feedback via Variational Policy Distillation | 2605.15113 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning with rare success but rich feedback via reflection-enhanced self-distillation",
+      "arxiv_id": "2605.12741",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Learning with rare success but rich feedback via reflection-enhanced self-distillation | 2605.12741 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+      "arxiv_id": "2605.01347",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate | 2605.01347 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Near-Policy: Accelerating On-Policy Distillation via Asynchronous Generation and Selective Packing",
+      "arxiv_id": "2605.05940",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Near-Policy: Accelerating On-Policy Distillation via Asynchronous Generation and Selective Packing | 2605.05940 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation",
+      "arxiv_id": "2603.19220",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation | 2603.19220 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OGLS-sd: on-policy self-distillation with outcome-guided logit steering for llm reasoning",
+      "arxiv_id": "2605.12400",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | OGLS-sd: on-policy self-distillation with outcome-guided logit steering for llm reasoning | 2605.12400 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OISD: On-Policy Internal Self-Distillation of Language Models",
+      "arxiv_id": "2605.29089",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | OISD: On-Policy Internal Self-Distillation of Language Models | 2605.29089 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models",
+      "arxiv_id": "2605.06188",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models | 2605.06188 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OPSDL: On-Policy Self-Distillation for Long-Context Language Models",
+      "arxiv_id": "2604.17535",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | OPSDL: On-Policy Self-Distillation for Long-Context Language Models | 2604.17535 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification",
+      "arxiv_id": "2606.01476",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification | 2606.01476 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "On-Policy Supervised Fine-Tuning for Efficient Reasoning",
+      "arxiv_id": "2602.13407",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | On-Policy Supervised Fine-Tuning for Efficient Reasoning | 2602.13407 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Privileged Information Distillation for Language Models",
+      "arxiv_id": "2602.04942",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Privileged Information Distillation for Language Models | 2602.04942 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "ROSD: Reflective On-Policy Self-Distillation for Language Model Reasoning across Domains",
+      "arxiv_id": "2605.28014",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | ROSD: Reflective On-Policy Self-Distillation for Language Model Reasoning across Domains | 2605.28014 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Reasoning compression with mixed-policy distillation",
+      "arxiv_id": "2605.08776",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Reasoning compression with mixed-policy distillation | 2605.08776 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Respecting self-uncertainty in on-policy self-distillation for efficient LLM reasoning",
+      "arxiv_id": "2605.13255",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Respecting self-uncertainty in on-policy self-distillation for efficient LLM reasoning | 2605.13255 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Revisiting DAgger in the era of LLM-agents",
+      "arxiv_id": "2605.12913",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Revisiting DAgger in the era of LLM-agents | 2605.12913 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Reward-weighted on-policy distillation with an open property-equivalence verifier for NL-to-SVA generation",
+      "arxiv_id": "2605.13501",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Reward-weighted on-policy distillation with an open property-equivalence verifier for NL-to-SVA generation | 2605.13501 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Robust Reasoning via Dynamic Token Selection for Distribution-Aligned Self-Distillation",
+      "arxiv_id": "2606.00628",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Robust Reasoning via Dynamic Token Selection for Distribution-Aligned Self-Distillation | 2606.00628 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "SG-OPD: Sign-Gated On-Policy Distillation via Sign-Consistency Gating and Phased Teacher Sampling",
+      "arxiv_id": "2606.09304",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | SG-OPD: Sign-Gated On-Policy Distillation via Sign-Consistency Gating and Phased Teacher Sampling | 2606.09304 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment",
+      "arxiv_id": "2606.02530",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment | 2606.02530 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-Distillation Policy Optimization via Visual Feedback: Bridging Code and Visual Artifacts",
+      "arxiv_id": "2606.10334",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Self-Distillation Policy Optimization via Visual Feedback: Bridging Code and Visual Artifacts | 2606.10334 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-Distillation Zero: Self-Revision Turns Binary Rewards into Dense Supervision",
+      "arxiv_id": "2604.12002",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Self-Distillation Zero: Self-Revision Turns Binary Rewards into Dense Supervision | 2604.12002 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-Distilled Policy Gradient",
+      "arxiv_id": "2606.04036",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Self-Distilled Policy Gradient | 2606.04036 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-distilled trajectory-aware boltzmann modeling: bridging the training-inference discrepancy in diffusion language models",
+      "arxiv_id": "2605.11854",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Self-distilled trajectory-aware boltzmann modeling: bridging the training-inference discrepancy in diffusion language models | 2605.11854 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents",
+      "arxiv_id": "2604.24005",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents | 2604.24005 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "TRACE: distilling where it matters via token-routed self on-policy alignment",
+      "arxiv_id": "2605.10194",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | TRACE: distilling where it matters via token-routed self on-policy alignment | 2605.10194 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Teaching the Way, Not the Answer: Privileged Tutoring Distillation for Multimodal Policy Optimization",
+      "arxiv_id": "2606.07000",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Teaching the Way, Not the Answer: Privileged Tutoring Distillation for Multimodal Policy Optimization | 2606.07000 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation",
+      "arxiv_id": "2604.16830",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar,survey-reference-audit",
+      "note": "",
+      "raw": "| queue | The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation | 2604.16830 | 2026 | papers-94-scored,semantic-scholar,survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "The Role of Feedback Alignment in Self-Distillation",
+      "arxiv_id": "2606.11173",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | The Role of Feedback Alignment in Self-Distillation | 2606.11173 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Thinking Without Images: Internalizing Visual Manipulation with On-Policy Self-Distillation",
+      "arxiv_id": "2606.08719",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Thinking Without Images: Internalizing Visual Manipulation with On-Policy Self-Distillation | 2606.08719 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Towards On-Policy SFT: Distribution Discriminant Theory and its Applications in LLM Training",
+      "arxiv_id": "2602.12222",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Towards On-Policy SFT: Distribution Discriminant Theory and its Applications in LLM Training | 2602.12222 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Trust-Region Behavior Blending for On-Policy Distillation",
+      "arxiv_id": "2605.31159",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Trust-Region Behavior Blending for On-Policy Distillation | 2605.31159 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Unifying Group-Relative and Self-Distillation Policy Optimization via Sample Routing",
+      "arxiv_id": "2604.02288",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Unifying Group-Relative and Self-Distillation Policy Optimization via Sample Routing | 2604.02288 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Unmasking on-policy distillation: where it helps, where it hurts, and why",
+      "arxiv_id": "2605.10889",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Unmasking on-policy distillation: where it helps, where it hurts, and why | 2605.10889 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation",
+      "arxiv_id": "2603.26666",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation | 2603.26666 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Video-OPD: Efficient Post-Training of Multimodal Large Language Models for Temporal Video Grounding via On-Policy Distillation",
+      "arxiv_id": "2602.02994",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Video-OPD: Efficient Post-Training of Multimodal Large Language Models for Temporal Video Grounding via On-Policy Distillation | 2602.02994 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "When Context Returns: Toward Robust Internalization in On-Policy Distillation",
+      "arxiv_id": "2606.11627",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | When Context Returns: Toward Robust Internalization in On-Policy Distillation | 2606.11627 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "When Should the Teacher Move? Temporal Coupling and Stability in Self On-Policy Distillation",
+      "arxiv_id": "2606.03532",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | When Should the Teacher Move? Temporal Coupling and Stability in Self On-Policy Distillation | 2606.03532 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "World Models Meet Language Models: On the Complementarity of Concrete and Abstract Reasoning",
+      "arxiv_id": "2606.03603",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | World Models Meet Language Models: On the Complementarity of Concrete and Abstract Reasoning | 2606.03603 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control",
+      "arxiv_id": "2605.17862",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control | 2605.17862 | 2026 | papers-94-scored,semantic-scholar |  |"
+    }
+  ],
+  "queue_without_brief": [
+    {
+      "status": "queue",
+      "title": "A Good Learner can Teach Better: Teacher-Student Collaborative Knowledge Distillation",
+      "arxiv_id": "",
+      "year": "2024",
+      "source": "openreview,papers-94-scored",
+      "note": "",
+      "raw": "| queue | A Good Learner can Teach Better: Teacher-Student Collaborative Knowledge Distillation |  | 2024 | openreview,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models",
+      "arxiv_id": "",
+      "year": "2024",
+      "source": "openreview,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models |  | 2024 | openreview,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "SIKeD: Self-guided Iterative Knowledge Distillation for mathematical reasoning",
+      "arxiv_id": "2410.18574",
+      "year": "2024",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | SIKeD: Self-guided Iterative Knowledge Distillation for mathematical reasoning | 2410.18574 | 2024 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "arxiv_id": "",
+      "year": "2024",
+      "source": "openreview,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection |  | 2024 | openreview,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "DataEnvGym: Data Generation Agents in Teacher Environments with Student Feedback",
+      "arxiv_id": "",
+      "year": "2025",
+      "source": "openreview,papers-29-towrite,papers-94-scored",
+      "note": "",
+      "raw": "| queue | DataEnvGym: Data Generation Agents in Teacher Environments with Student Feedback |  | 2025 | openreview,papers-29-towrite,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training",
+      "arxiv_id": "",
+      "year": "2025",
+      "source": "openreview,papers-29-towrite,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training |  | 2025 | openreview,papers-29-towrite,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF",
+      "arxiv_id": "",
+      "year": "2025",
+      "source": "openreview,papers-29-towrite,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF |  | 2025 | openreview,papers-29-towrite,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Asymmetric On-Policy Distillation: Bridging Exploitation and Imitation at the Token Level",
+      "arxiv_id": "2605.06387",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Asymmetric On-Policy Distillation: Bridging Exploitation and Imitation at the Token Level | 2605.06387 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback",
+      "arxiv_id": "2606.14368",
+      "year": "2026",
+      "source": "fast-recall-2026-06-15,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback | 2606.14368 | 2026 | fast-recall-2026-06-15,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle",
+      "arxiv_id": "2605.12483",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar,survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle | 2605.12483 | 2026 | papers-94-scored,semantic-scholar,survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Beyond SFT-to-RL: Pre-alignment via Black-Box On-Policy Distillation for Multimodal RL",
+      "arxiv_id": "2604.28123",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Beyond SFT-to-RL: Pre-alignment via Black-Box On-Policy Distillation for Multimodal RL | 2604.28123 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Breaking the Tokenizer Barrier: On-Policy Distillation across Model Families",
+      "arxiv_id": "2606.09456",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Breaking the Tokenizer Barrier: On-Policy Distillation across Model Families | 2606.09456 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation",
+      "arxiv_id": "2601.16547",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation | 2601.16547 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "CRISP: Compressed Reasoning via Iterative Self-Policy Distillation",
+      "arxiv_id": "2603.05433",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | CRISP: Compressed Reasoning via Iterative Self-Policy Distillation | 2603.05433 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Co-Evolving Policy Distillation",
+      "arxiv_id": "2604.27083",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Co-Evolving Policy Distillation | 2604.27083 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Combining on-policy optimization and distillation for long-context reasoning in large language models",
+      "arxiv_id": "2605.12227",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Combining on-policy optimization and distillation for long-context reasoning in large language models | 2605.12227 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Constitutional On-Policy Safe Distillation",
+      "arxiv_id": "2606.03089",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Constitutional On-Policy Safe Distillation | 2606.03089 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Crosslingual On-Policy Self-Distillation for Multilingual Reasoning",
+      "arxiv_id": "2605.09548",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored,survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Crosslingual On-Policy Self-Distillation for Multilingual Reasoning | 2605.09548 | 2026 | arxiv,papers-94-scored,survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding",
+      "arxiv_id": "2606.00564",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding | 2606.00564 | 2026 | arxiv,papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Demystifying OPD: Length Inflation and Stabilization Strategies for Large Language Models",
+      "arxiv_id": "2604.08527",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Demystifying OPD: Length Inflation and Stabilization Strategies for Large Language Models | 2604.08527 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Distilling LLM Feedback for Lean Theorem Proving",
+      "arxiv_id": "2605.30861",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Distilling LLM Feedback for Lean Theorem Proving | 2605.30861 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Draft-OPD: On-Policy Distillation for Speculative Draft Models",
+      "arxiv_id": "2605.29343",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Draft-OPD: On-Policy Distillation for Speculative Draft Models | 2605.29343 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Fast and Effective On-policy Distillation from Reasoning Prefixes",
+      "arxiv_id": "2602.15260",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Fast and Effective On-policy Distillation from Reasoning Prefixes | 2602.15260 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "From generic correlation to input-specific credit in on-policy self distillation",
+      "arxiv_id": "2605.11613",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | From generic correlation to input-specific credit in on-policy self distillation | 2605.11613 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "KL for a KL: On-Policy Distillation with Control Variate Baseline",
+      "arxiv_id": "2605.07865",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | KL for a KL: On-Policy Distillation with Control Variate Baseline | 2605.07865 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Large Language Model Post-Training: A Unified View of Off-Policy and On-Policy Learning",
+      "arxiv_id": "2604.07941",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Large Language Model Post-Training: A Unified View of Off-Policy and On-Policy Learning | 2604.07941 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learn where to click from yourself: on-policy self-distillation for gui grounding",
+      "arxiv_id": "2605.00642",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Learn where to click from yourself: on-policy self-distillation for gui grounding | 2605.00642 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning Visual Spatial Planning from Symbolic State via Modality-Gap-Aware Self-Distillation",
+      "arxiv_id": "2606.06076",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Learning Visual Spatial Planning from Symbolic State via Modality-Gap-Aware Self-Distillation | 2606.06076 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning from Language Feedback via Variational Policy Distillation",
+      "arxiv_id": "2605.15113",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Learning from Language Feedback via Variational Policy Distillation | 2605.15113 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning with rare success but rich feedback via reflection-enhanced self-distillation",
+      "arxiv_id": "2605.12741",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Learning with rare success but rich feedback via reflection-enhanced self-distillation | 2605.12741 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+      "arxiv_id": "2605.01347",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate | 2605.01347 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Near-Policy: Accelerating On-Policy Distillation via Asynchronous Generation and Selective Packing",
+      "arxiv_id": "2605.05940",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Near-Policy: Accelerating On-Policy Distillation via Asynchronous Generation and Selective Packing | 2605.05940 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation",
+      "arxiv_id": "2603.19220",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation | 2603.19220 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OGLS-sd: on-policy self-distillation with outcome-guided logit steering for llm reasoning",
+      "arxiv_id": "2605.12400",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | OGLS-sd: on-policy self-distillation with outcome-guided logit steering for llm reasoning | 2605.12400 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OISD: On-Policy Internal Self-Distillation of Language Models",
+      "arxiv_id": "2605.29089",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | OISD: On-Policy Internal Self-Distillation of Language Models | 2605.29089 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models",
+      "arxiv_id": "2605.06188",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models | 2605.06188 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OPSDL: On-Policy Self-Distillation for Long-Context Language Models",
+      "arxiv_id": "2604.17535",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | OPSDL: On-Policy Self-Distillation for Long-Context Language Models | 2604.17535 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification",
+      "arxiv_id": "2606.01476",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification | 2606.01476 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "On-Policy Supervised Fine-Tuning for Efficient Reasoning",
+      "arxiv_id": "2602.13407",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | On-Policy Supervised Fine-Tuning for Efficient Reasoning | 2602.13407 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Privileged Information Distillation for Language Models",
+      "arxiv_id": "2602.04942",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Privileged Information Distillation for Language Models | 2602.04942 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "ROSD: Reflective On-Policy Self-Distillation for Language Model Reasoning across Domains",
+      "arxiv_id": "2605.28014",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | ROSD: Reflective On-Policy Self-Distillation for Language Model Reasoning across Domains | 2605.28014 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Reasoning compression with mixed-policy distillation",
+      "arxiv_id": "2605.08776",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Reasoning compression with mixed-policy distillation | 2605.08776 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Respecting self-uncertainty in on-policy self-distillation for efficient LLM reasoning",
+      "arxiv_id": "2605.13255",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Respecting self-uncertainty in on-policy self-distillation for efficient LLM reasoning | 2605.13255 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Revisiting DAgger in the era of LLM-agents",
+      "arxiv_id": "2605.12913",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Revisiting DAgger in the era of LLM-agents | 2605.12913 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Reward-weighted on-policy distillation with an open property-equivalence verifier for NL-to-SVA generation",
+      "arxiv_id": "2605.13501",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Reward-weighted on-policy distillation with an open property-equivalence verifier for NL-to-SVA generation | 2605.13501 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Robust Reasoning via Dynamic Token Selection for Distribution-Aligned Self-Distillation",
+      "arxiv_id": "2606.00628",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Robust Reasoning via Dynamic Token Selection for Distribution-Aligned Self-Distillation | 2606.00628 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "SG-OPD: Sign-Gated On-Policy Distillation via Sign-Consistency Gating and Phased Teacher Sampling",
+      "arxiv_id": "2606.09304",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | SG-OPD: Sign-Gated On-Policy Distillation via Sign-Consistency Gating and Phased Teacher Sampling | 2606.09304 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment",
+      "arxiv_id": "2606.02530",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment | 2606.02530 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-Distillation Policy Optimization via Visual Feedback: Bridging Code and Visual Artifacts",
+      "arxiv_id": "2606.10334",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Self-Distillation Policy Optimization via Visual Feedback: Bridging Code and Visual Artifacts | 2606.10334 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-Distillation Zero: Self-Revision Turns Binary Rewards into Dense Supervision",
+      "arxiv_id": "2604.12002",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Self-Distillation Zero: Self-Revision Turns Binary Rewards into Dense Supervision | 2604.12002 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-Distilled Policy Gradient",
+      "arxiv_id": "2606.04036",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Self-Distilled Policy Gradient | 2606.04036 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-distilled trajectory-aware boltzmann modeling: bridging the training-inference discrepancy in diffusion language models",
+      "arxiv_id": "2605.11854",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Self-distilled trajectory-aware boltzmann modeling: bridging the training-inference discrepancy in diffusion language models | 2605.11854 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents",
+      "arxiv_id": "2604.24005",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents | 2604.24005 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "TRACE: distilling where it matters via token-routed self on-policy alignment",
+      "arxiv_id": "2605.10194",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | TRACE: distilling where it matters via token-routed self on-policy alignment | 2605.10194 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Teaching the Way, Not the Answer: Privileged Tutoring Distillation for Multimodal Policy Optimization",
+      "arxiv_id": "2606.07000",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Teaching the Way, Not the Answer: Privileged Tutoring Distillation for Multimodal Policy Optimization | 2606.07000 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation",
+      "arxiv_id": "2604.16830",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar,survey-reference-audit",
+      "note": "",
+      "raw": "| queue | The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation | 2604.16830 | 2026 | papers-94-scored,semantic-scholar,survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "The Role of Feedback Alignment in Self-Distillation",
+      "arxiv_id": "2606.11173",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | The Role of Feedback Alignment in Self-Distillation | 2606.11173 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Thinking Without Images: Internalizing Visual Manipulation with On-Policy Self-Distillation",
+      "arxiv_id": "2606.08719",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Thinking Without Images: Internalizing Visual Manipulation with On-Policy Self-Distillation | 2606.08719 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Towards On-Policy SFT: Distribution Discriminant Theory and its Applications in LLM Training",
+      "arxiv_id": "2602.12222",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Towards On-Policy SFT: Distribution Discriminant Theory and its Applications in LLM Training | 2602.12222 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Trust-Region Behavior Blending for On-Policy Distillation",
+      "arxiv_id": "2605.31159",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Trust-Region Behavior Blending for On-Policy Distillation | 2605.31159 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Unifying Group-Relative and Self-Distillation Policy Optimization via Sample Routing",
+      "arxiv_id": "2604.02288",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Unifying Group-Relative and Self-Distillation Policy Optimization via Sample Routing | 2604.02288 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Unmasking on-policy distillation: where it helps, where it hurts, and why",
+      "arxiv_id": "2605.10889",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Unmasking on-policy distillation: where it helps, where it hurts, and why | 2605.10889 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation",
+      "arxiv_id": "2603.26666",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation | 2603.26666 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Video-OPD: Efficient Post-Training of Multimodal Large Language Models for Temporal Video Grounding via On-Policy Distillation",
+      "arxiv_id": "2602.02994",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Video-OPD: Efficient Post-Training of Multimodal Large Language Models for Temporal Video Grounding via On-Policy Distillation | 2602.02994 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "When Context Returns: Toward Robust Internalization in On-Policy Distillation",
+      "arxiv_id": "2606.11627",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | When Context Returns: Toward Robust Internalization in On-Policy Distillation | 2606.11627 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "When Should the Teacher Move? Temporal Coupling and Stability in Self On-Policy Distillation",
+      "arxiv_id": "2606.03532",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | When Should the Teacher Move? Temporal Coupling and Stability in Self On-Policy Distillation | 2606.03532 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "World Models Meet Language Models: On the Complementarity of Concrete and Abstract Reasoning",
+      "arxiv_id": "2606.03603",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | World Models Meet Language Models: On the Complementarity of Concrete and Abstract Reasoning | 2606.03603 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control",
+      "arxiv_id": "2605.17862",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control | 2605.17862 | 2026 | papers-94-scored,semantic-scholar |  |"
+    }
+  ],
+  "queue_without_pdf": [
+    {
+      "status": "queue",
+      "title": "A Good Learner can Teach Better: Teacher-Student Collaborative Knowledge Distillation",
+      "arxiv_id": "",
+      "year": "2024",
+      "source": "openreview,papers-94-scored",
+      "note": "",
+      "raw": "| queue | A Good Learner can Teach Better: Teacher-Student Collaborative Knowledge Distillation |  | 2024 | openreview,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models",
+      "arxiv_id": "",
+      "year": "2024",
+      "source": "openreview,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models |  | 2024 | openreview,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "SIKeD: Self-guided Iterative Knowledge Distillation for mathematical reasoning",
+      "arxiv_id": "2410.18574",
+      "year": "2024",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | SIKeD: Self-guided Iterative Knowledge Distillation for mathematical reasoning | 2410.18574 | 2024 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "arxiv_id": "",
+      "year": "2024",
+      "source": "openreview,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection |  | 2024 | openreview,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "DataEnvGym: Data Generation Agents in Teacher Environments with Student Feedback",
+      "arxiv_id": "",
+      "year": "2025",
+      "source": "openreview,papers-29-towrite,papers-94-scored",
+      "note": "",
+      "raw": "| queue | DataEnvGym: Data Generation Agents in Teacher Environments with Student Feedback |  | 2025 | openreview,papers-29-towrite,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training",
+      "arxiv_id": "",
+      "year": "2025",
+      "source": "openreview,papers-29-towrite,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Learning to Clarify: Multi-turn Conversations with Action-Based Contrastive Self-Training |  | 2025 | openreview,papers-29-towrite,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF",
+      "arxiv_id": "",
+      "year": "2025",
+      "source": "openreview,papers-29-towrite,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF |  | 2025 | openreview,papers-29-towrite,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Asymmetric On-Policy Distillation: Bridging Exploitation and Imitation at the Token Level",
+      "arxiv_id": "2605.06387",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Asymmetric On-Policy Distillation: Bridging Exploitation and Imitation at the Token Level | 2605.06387 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback",
+      "arxiv_id": "2606.14368",
+      "year": "2026",
+      "source": "fast-recall-2026-06-15,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Be My Tutor: On-Policy Co-Distillation for Mutual LLM Improvement via Peer Feedback | 2606.14368 | 2026 | fast-recall-2026-06-15,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle",
+      "arxiv_id": "2605.12483",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar,survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle | 2605.12483 | 2026 | papers-94-scored,semantic-scholar,survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Beyond SFT-to-RL: Pre-alignment via Black-Box On-Policy Distillation for Multimodal RL",
+      "arxiv_id": "2604.28123",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Beyond SFT-to-RL: Pre-alignment via Black-Box On-Policy Distillation for Multimodal RL | 2604.28123 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Breaking the Tokenizer Barrier: On-Policy Distillation across Model Families",
+      "arxiv_id": "2606.09456",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Breaking the Tokenizer Barrier: On-Policy Distillation across Model Families | 2606.09456 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation",
+      "arxiv_id": "2601.16547",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation | 2601.16547 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "CRISP: Compressed Reasoning via Iterative Self-Policy Distillation",
+      "arxiv_id": "2603.05433",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | CRISP: Compressed Reasoning via Iterative Self-Policy Distillation | 2603.05433 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Co-Evolving Policy Distillation",
+      "arxiv_id": "2604.27083",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Co-Evolving Policy Distillation | 2604.27083 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Combining on-policy optimization and distillation for long-context reasoning in large language models",
+      "arxiv_id": "2605.12227",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Combining on-policy optimization and distillation for long-context reasoning in large language models | 2605.12227 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Constitutional On-Policy Safe Distillation",
+      "arxiv_id": "2606.03089",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Constitutional On-Policy Safe Distillation | 2606.03089 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Crosslingual On-Policy Self-Distillation for Multilingual Reasoning",
+      "arxiv_id": "2605.09548",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored,survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Crosslingual On-Policy Self-Distillation for Multilingual Reasoning | 2605.09548 | 2026 | arxiv,papers-94-scored,survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding",
+      "arxiv_id": "2606.00564",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding | 2606.00564 | 2026 | arxiv,papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Demystifying OPD: Length Inflation and Stabilization Strategies for Large Language Models",
+      "arxiv_id": "2604.08527",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Demystifying OPD: Length Inflation and Stabilization Strategies for Large Language Models | 2604.08527 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Distilling LLM Feedback for Lean Theorem Proving",
+      "arxiv_id": "2605.30861",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Distilling LLM Feedback for Lean Theorem Proving | 2605.30861 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Draft-OPD: On-Policy Distillation for Speculative Draft Models",
+      "arxiv_id": "2605.29343",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Draft-OPD: On-Policy Distillation for Speculative Draft Models | 2605.29343 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Fast and Effective On-policy Distillation from Reasoning Prefixes",
+      "arxiv_id": "2602.15260",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Fast and Effective On-policy Distillation from Reasoning Prefixes | 2602.15260 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "From generic correlation to input-specific credit in on-policy self distillation",
+      "arxiv_id": "2605.11613",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | From generic correlation to input-specific credit in on-policy self distillation | 2605.11613 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "KL for a KL: On-Policy Distillation with Control Variate Baseline",
+      "arxiv_id": "2605.07865",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | KL for a KL: On-Policy Distillation with Control Variate Baseline | 2605.07865 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Large Language Model Post-Training: A Unified View of Off-Policy and On-Policy Learning",
+      "arxiv_id": "2604.07941",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Large Language Model Post-Training: A Unified View of Off-Policy and On-Policy Learning | 2604.07941 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learn where to click from yourself: on-policy self-distillation for gui grounding",
+      "arxiv_id": "2605.00642",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Learn where to click from yourself: on-policy self-distillation for gui grounding | 2605.00642 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning Visual Spatial Planning from Symbolic State via Modality-Gap-Aware Self-Distillation",
+      "arxiv_id": "2606.06076",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Learning Visual Spatial Planning from Symbolic State via Modality-Gap-Aware Self-Distillation | 2606.06076 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning from Language Feedback via Variational Policy Distillation",
+      "arxiv_id": "2605.15113",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | Learning from Language Feedback via Variational Policy Distillation | 2605.15113 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Learning with rare success but rich feedback via reflection-enhanced self-distillation",
+      "arxiv_id": "2605.12741",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Learning with rare success but rich feedback via reflection-enhanced self-distillation | 2605.12741 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+      "arxiv_id": "2605.01347",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate | 2605.01347 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Near-Policy: Accelerating On-Policy Distillation via Asynchronous Generation and Selective Packing",
+      "arxiv_id": "2605.05940",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Near-Policy: Accelerating On-Policy Distillation via Asynchronous Generation and Selective Packing | 2605.05940 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation",
+      "arxiv_id": "2603.19220",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation | 2603.19220 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OGLS-sd: on-policy self-distillation with outcome-guided logit steering for llm reasoning",
+      "arxiv_id": "2605.12400",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | OGLS-sd: on-policy self-distillation with outcome-guided logit steering for llm reasoning | 2605.12400 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OISD: On-Policy Internal Self-Distillation of Language Models",
+      "arxiv_id": "2605.29089",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | OISD: On-Policy Internal Self-Distillation of Language Models | 2605.29089 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models",
+      "arxiv_id": "2605.06188",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models | 2605.06188 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OPSDL: On-Policy Self-Distillation for Long-Context Language Models",
+      "arxiv_id": "2604.17535",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | OPSDL: On-Policy Self-Distillation for Long-Context Language Models | 2604.17535 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification",
+      "arxiv_id": "2606.01476",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification | 2606.01476 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "On-Policy Supervised Fine-Tuning for Efficient Reasoning",
+      "arxiv_id": "2602.13407",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | On-Policy Supervised Fine-Tuning for Efficient Reasoning | 2602.13407 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Privileged Information Distillation for Language Models",
+      "arxiv_id": "2602.04942",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Privileged Information Distillation for Language Models | 2602.04942 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "ROSD: Reflective On-Policy Self-Distillation for Language Model Reasoning across Domains",
+      "arxiv_id": "2605.28014",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | ROSD: Reflective On-Policy Self-Distillation for Language Model Reasoning across Domains | 2605.28014 | 2026 | papers-94-scored,semantic-scholar |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Reasoning compression with mixed-policy distillation",
+      "arxiv_id": "2605.08776",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Reasoning compression with mixed-policy distillation | 2605.08776 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Respecting self-uncertainty in on-policy self-distillation for efficient LLM reasoning",
+      "arxiv_id": "2605.13255",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Respecting self-uncertainty in on-policy self-distillation for efficient LLM reasoning | 2605.13255 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Revisiting DAgger in the era of LLM-agents",
+      "arxiv_id": "2605.12913",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Revisiting DAgger in the era of LLM-agents | 2605.12913 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Reward-weighted on-policy distillation with an open property-equivalence verifier for NL-to-SVA generation",
+      "arxiv_id": "2605.13501",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Reward-weighted on-policy distillation with an open property-equivalence verifier for NL-to-SVA generation | 2605.13501 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Robust Reasoning via Dynamic Token Selection for Distribution-Aligned Self-Distillation",
+      "arxiv_id": "2606.00628",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Robust Reasoning via Dynamic Token Selection for Distribution-Aligned Self-Distillation | 2606.00628 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "SG-OPD: Sign-Gated On-Policy Distillation via Sign-Consistency Gating and Phased Teacher Sampling",
+      "arxiv_id": "2606.09304",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | SG-OPD: Sign-Gated On-Policy Distillation via Sign-Consistency Gating and Phased Teacher Sampling | 2606.09304 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment",
+      "arxiv_id": "2606.02530",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment | 2606.02530 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-Distillation Policy Optimization via Visual Feedback: Bridging Code and Visual Artifacts",
+      "arxiv_id": "2606.10334",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Self-Distillation Policy Optimization via Visual Feedback: Bridging Code and Visual Artifacts | 2606.10334 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-Distillation Zero: Self-Revision Turns Binary Rewards into Dense Supervision",
+      "arxiv_id": "2604.12002",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Self-Distillation Zero: Self-Revision Turns Binary Rewards into Dense Supervision | 2604.12002 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-Distilled Policy Gradient",
+      "arxiv_id": "2606.04036",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Self-Distilled Policy Gradient | 2606.04036 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Self-distilled trajectory-aware boltzmann modeling: bridging the training-inference discrepancy in diffusion language models",
+      "arxiv_id": "2605.11854",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Self-distilled trajectory-aware boltzmann modeling: bridging the training-inference discrepancy in diffusion language models | 2605.11854 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents",
+      "arxiv_id": "2604.24005",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents | 2604.24005 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "TRACE: distilling where it matters via token-routed self on-policy alignment",
+      "arxiv_id": "2605.10194",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | TRACE: distilling where it matters via token-routed self on-policy alignment | 2605.10194 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Teaching the Way, Not the Answer: Privileged Tutoring Distillation for Multimodal Policy Optimization",
+      "arxiv_id": "2606.07000",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Teaching the Way, Not the Answer: Privileged Tutoring Distillation for Multimodal Policy Optimization | 2606.07000 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation",
+      "arxiv_id": "2604.16830",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar,survey-reference-audit",
+      "note": "",
+      "raw": "| queue | The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation | 2604.16830 | 2026 | papers-94-scored,semantic-scholar,survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "The Role of Feedback Alignment in Self-Distillation",
+      "arxiv_id": "2606.11173",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | The Role of Feedback Alignment in Self-Distillation | 2606.11173 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Thinking Without Images: Internalizing Visual Manipulation with On-Policy Self-Distillation",
+      "arxiv_id": "2606.08719",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Thinking Without Images: Internalizing Visual Manipulation with On-Policy Self-Distillation | 2606.08719 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Towards On-Policy SFT: Distribution Discriminant Theory and its Applications in LLM Training",
+      "arxiv_id": "2602.12222",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Towards On-Policy SFT: Distribution Discriminant Theory and its Applications in LLM Training | 2602.12222 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Trust-Region Behavior Blending for On-Policy Distillation",
+      "arxiv_id": "2605.31159",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | Trust-Region Behavior Blending for On-Policy Distillation | 2605.31159 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Unifying Group-Relative and Self-Distillation Policy Optimization via Sample Routing",
+      "arxiv_id": "2604.02288",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Unifying Group-Relative and Self-Distillation Policy Optimization via Sample Routing | 2604.02288 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Unmasking on-policy distillation: where it helps, where it hurts, and why",
+      "arxiv_id": "2605.10889",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Unmasking on-policy distillation: where it helps, where it hurts, and why | 2605.10889 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation",
+      "arxiv_id": "2603.26666",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | VLA-OPD: Bridging Offline SFT and Online RL for Vision-Language-Action Models via On-Policy Distillation | 2603.26666 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "Video-OPD: Efficient Post-Training of Multimodal Large Language Models for Temporal Video Grounding via On-Policy Distillation",
+      "arxiv_id": "2602.02994",
+      "year": "2026",
+      "source": "survey-reference-audit",
+      "note": "",
+      "raw": "| queue | Video-OPD: Efficient Post-Training of Multimodal Large Language Models for Temporal Video Grounding via On-Policy Distillation | 2602.02994 | 2026 | survey-reference-audit |  |"
+    },
+    {
+      "status": "queue",
+      "title": "When Context Returns: Toward Robust Internalization in On-Policy Distillation",
+      "arxiv_id": "2606.11627",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | When Context Returns: Toward Robust Internalization in On-Policy Distillation | 2606.11627 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "When Should the Teacher Move? Temporal Coupling and Stability in Self On-Policy Distillation",
+      "arxiv_id": "2606.03532",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | When Should the Teacher Move? Temporal Coupling and Stability in Self On-Policy Distillation | 2606.03532 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "World Models Meet Language Models: On the Complementarity of Concrete and Abstract Reasoning",
+      "arxiv_id": "2606.03603",
+      "year": "2026",
+      "source": "arxiv,papers-94-scored",
+      "note": "",
+      "raw": "| queue | World Models Meet Language Models: On the Complementarity of Concrete and Abstract Reasoning | 2606.03603 | 2026 | arxiv,papers-94-scored |  |"
+    },
+    {
+      "status": "queue",
+      "title": "f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control",
+      "arxiv_id": "2605.17862",
+      "year": "2026",
+      "source": "papers-94-scored,semantic-scholar",
+      "note": "",
+      "raw": "| queue | f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control | 2605.17862 | 2026 | papers-94-scored,semantic-scholar |  |"
+    }
+  ],
+  "cards_without_brief": [
+    "notes/24_akl.md",
+    "notes/25_bopd.md",
+    "notes/25_kdrl.md",
+    "notes/25_luffy.md",
+    "notes/25_pangu-embedded.md",
+    "notes/25_vold.md",
+    "notes/26_ar-opd.md",
+    "notes/26_cast.md",
+    "notes/26_dp-opd.md",
+    "notes/26_global-token-filter.md",
+    "notes/26_gndpo.md",
+    "notes/26_lightning-opd.md",
+    "notes/26_many-faces-opd.md",
+    "notes/26_on-policy-context-distill.md",
+    "notes/26_opd-plus.md",
+    "notes/26_oprd.md",
+    "notes/26_paced.md",
+    "notes/26_pbsd.md",
+    "notes/26_rethinking-opd-llm.md",
+    "notes/26_revisiting-opd.md",
+    "notes/26_rlcsd.md",
+    "notes/26_ropd.md",
+    "notes/26_scope.md",
+    "notes/26_sgsd.md",
+    "notes/26_simct.md",
+    "notes/26_sod.md",
+    "notes/26_surgical-distill.md",
+    "notes/26_uni-opd.md",
+    "notes/26_vicur.md",
+    "notes/26_x-opd.md"
+  ],
+  "cards_without_pdf_anchor": []
+}

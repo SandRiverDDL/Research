@@ -1,0 +1,422 @@
+[
+  {
+    "paper_id": "arxiv:2503.07067",
+    "title": "DistiLLM-2: A Contrastive Approach to On-Policy Distillation",
+    "abstract": "> **一句话**：DistiLLM 后续的 objective 分流代表作。 针对 teacher-generated 与 student-generated 样本信号不同的问题，把 DistiLLM 的 stabilized divergence 拆成两支：teacher response 上用 SKL 拉近 teacher distribution，student response 上用 SRKL 压低 student 低质区域。 实操含义是 divergence 不再全局固定，而是按数据来源分配；再用 α curriculum 从较强 smoothing 逐步衰减，提高后期对比信号。 - 上游：GKD (2024) — 给出 mixture-policy OPD 框架，DistiLLM-2 继续沿 token-level white-box objective 走 - 上游：DistiLLM (2024) — 继承 SKL/SRKL 稳定化，但从单一 loss 改成按数据来源分流 - 同期：AlignDistil (2025) — 同样追求 token 级监督，但 AlignDistil 从 preference/DPO reward 推 teacher distribution - 下游：ToDi / AKL / EOPD (2026) — survey 称后续 adaptive methods 进一步从 sequence source 粒度推进到 per-token geometry - ✅ [作者 ack §3.1.2]：teacher response 用 mode-covering、student response 用 mode-seeking，显式利用数据来源与 divergence 的协同 - ✅ [song-2026 §4.1]：survey 将其列为 fixed-divergence 家族中 asymmetric loss per data source 的代表 - ⚠️ [song-2026 §4.1]：source-level 分流仍是粗粒度，同一 sequence 内不同 token 的分布几何仍可能需要不同 divergence - Evol-Instruct win rate 79.83% → 84.67% on Mistral student（§3.2 Table 1）",
+    "year": 2025,
+    "year_month": "2025-03",
+    "venue": "arxiv",
+    "authors": [
+      "Jongwoo Ko",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2503.07067",
+    "arxiv_id": "2503.07067",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2503.07067",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/25_distillm-2.md"
+  },
+  {
+    "paper_id": "arxiv:2605.07711",
+    "title": "SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation",
+    "abstract": "> **一句话**：cross-tokenizer OPD 的 continuation-unit 对齐路线。 SimCT 指出 cross-tokenizer OPD 的 exact shared-token matching 会在 tokenizer 分歧最大的位置静默丢掉 teacher signal；它把 supervision space 从共享单 token 扩展到 teacher/student 都能实现的短 multi-token continuation units，在不改变 OPD loss 形式的前提下恢复被丢弃的监督。 实操含义：不强行 transport 概率或投影 representation，而是选择最细的 jointly tokenizable interface，让异构 tokenizer 的 teacher/student 仍可比较局部 continuation。 - 上游：DSKD / ULD — 这些方法处理 cross-tokenizer supervision loss；SimCT 从 OPD loss 内部扩大匹配单元。 - 同期：Revisiting OPD (2026) — special-token/tokenizer mismatch 是 sampled-token OPD 的 failure mode；SimCT 给出 cross-tokenizer 场景的具体修复。 - 下游：architecture-agnostic OPD — 支持 Qwen/Phi/Gemma 等异构 teacher-student pair。 - ✅ [song-2026 §4.3]: 多 token continuation units 恢复 exact shared-token matching 丢掉的 teacher signal。 - ✅ [作者 ack Abstract]: 三组 heterogeneous teacher-student pair 上优于 shared-vocabulary OPD 和 cross-tokenizer baselines。 - ⚠️ [song-2026 §4.3]: 仍在离散 continuation interface 内工作，对更彻底的 latent/cross-modal mismatch 不能直接解决。 无 Table/Fig anchor 的摘要数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-05",
+    "venue": "arxiv",
+    "authors": [
+      "Jie Sun",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2605.07711",
+    "arxiv_id": "2605.07711",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.07711",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_simct.md"
+  },
+  {
+    "paper_id": "arxiv:2306.13649",
+    "title": "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+    "abstract": "> **一句话**：和 MiniLLM 同期（2023 年中）把 OPD 带入 LLM 时代的开山参考之一。 针对 train-inference distribution mismatch（exposure bias），将蒸馏框架化为 imitation learning：student 自己 rollout，teacher 在 student 生成序列上给 token-level logits；divergence 𝒟 与 mixture rate λ 正交，可独立选择，不 backprop through sampling。 λ→1 = 纯 on-policy；λ=0 退回 supervised KD；ImitKD / f-distill 均为 GKD 特例。 - 上游：Seq-KD (Kim & Rush 2016) — 放松到 sequence-level 但仍静态数据（off-policy assumption 未破） - 上游：ImitKD (Lin 2020) — 首识 KD-IL 连接但固定 λ=0.5、只用 forward-KL，未探索纯 on-policy - 同期：MiniLLM (Gu 2024) — 同样 on-policy 但选 reverse-KL + REINFORCE，需多种稳定 tricks - 下游：DistiLLM (Ko 2024) — 以 skew-KL mixture target 修复 KLD 梯度不稳，加 replay buffer - ✅ [作者 ack §3.1]：不 backprop through sampling，训练稳定且计算高效 - ✅ [song-2026 §2.3]：divergence-agnostic 设计成为后续 OPD 方法的通用脚手架 - ⚠️ [song-2026 §2.3]：divergence 选择缺乏理论指导，最优 𝒟 随任务而异，需经验调参 - ⚠️ [DistiLLM 2024]：标准 KL 在 q_θ≈0 处存在 zero-division 梯度不稳（kld-gradient-explosion），DistiLLM 以 skew-KL mixture target 改进",
+    "year": 2024,
+    "year_month": "2023-06",
+    "venue": "iclr-2024",
+    "authors": [
+      "Rishabh Agarwal",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2306.13649",
+    "arxiv_id": "2306.13649",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2306.13649",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/24_gkd.md"
+  },
+  {
+    "paper_id": "arxiv:2306.08543",
+    "title": "MiniLLM: On-Policy Distillation of Large Language Models",
+    "abstract": "> **一句话**：和 GKD 同期把 OPD 带入 LLM 时代的开山参考之一。 Forward-KL 迫使 student 覆盖 teacher 全部 mode，把概率分到 void region；reverse-KL 让 student mode-seeking 专注主 mode，但梯度需经 policy gradient 推导： 三个稳定 trick：single-step decomp 把 $\\mathbb{E}_{y_t\\sim q_\\theta}[r_t]$ 直接对 vocab 求和降方差；teacher-mixed sampling $\\widetilde{p}=\\alpha p+(1-\\alpha)q_\\theta$（α=0.2）抑制 reward hacking；length normalization 防短输出偏置。 - 上游：Seq-KD (Kim & Rush 2016) — forward-KL offline；MiniLLM 针对其 void-region 问题反转 KL 方向 - 同期：GKD (Agarwal 2024) — 同样 on-policy 但 divergence-agnostic，不用 REINFORCE，更稳定 - 下游：KETCHUP (Fan 2025) 用 K-step Bellman return 解决 MiniLLM 的 REINFORCE 高方差；DistiLLM (Ko 2024) 改用 skew-KL 绕开 void-region 不稳定 - ✅ [song-2026 §4.1]：sequence-level policy gradient 梯度无偏，reasoning 任务序列连贯性优于 token-level 方法 - ⚠️ [song-2026 §2.3]：commits to reverse-KL + REINFORCE，方差高，需 reward baseline + length penalty + α 调参；training compute 显著高于 GKD - ⚠️ [song-2026 §4.1 token-vs-sequence tradeoff]：instruction-following 上不如 token-level 方法（GKD/DistiLLM），token-level teacher quality 充足时 sequence-level 优势消失 - GPT-4 score 54.7 vs SeqKD 52.0（GPT-2 760M student，DollyEval，§Table 1） - Rouge-L 32.5* 超越 teacher 30.4（OPT-6.7B student，S-NI，§Table 1）",
+    "year": 2024,
+    "year_month": "2023-06",
+    "venue": "iclr-2024",
+    "authors": [
+      "Yuxian Gu",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2306.08543",
+    "arxiv_id": "2306.08543",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2306.08543",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/24_minillm.md"
+  },
+  {
+    "paper_id": "arxiv:2402.03898",
+    "title": "DistiLLM: Towards Streamlined Distillation for Large Language Models",
+    "abstract": "> **一句话**：OPD fixed-divergence 路线三篇开山之一（KAIST + MSR, ICML 2024），与 GKD / MiniLLM 并列。 标准 KLD 在 q_θ→0 时梯度系数 r_{p,q_θ} 无界（梯度爆炸）；连续 on-policy SGO 生成占训练时间高达 80%（§2.2）。SKL 以混合分布替换分母使梯度有界，adaptive replay buffer 缓存旧 SGO 降低实时生成频率。 α=0 退回标准 KLD；α=0.1（§3.1 理论与实验推荐）使分母下界 ≥ 0.1·p，梯度系数压为 (1−α)·r_{p,q̃}，无需 RL policy gradient。 - 上游：GKD (Agarwal 2024) — 共享 SGO 框架；DistiLLM 将 divergence 从 JSD 换为 skew-KL，将连续 on-policy 换为 adaptive off-policy - 同期：MiniLLM (Gu 2024) — 同样 on-policy 但选 reverse-KL + REINFORCE policy gradient - 下游：DistiLLM-2 (Ko 2025) — 对 teacher-generated / student-generated 数据分别用 forward/reverse SRKL（asymmetric loss per source） - ✅ [song-2026 §4.1]: skew 操作把梯度系数从无界 r_{p,q_θ} 压为 (1−α)·r_{p,q̃}，避免 q_θ≈0 时梯度爆炸，无需 RL policy gradient - ✅ [song-2026 §2.3]: 相比 GKD 无需手选 divergence；相比 MiniLLM 无 REINFORCE 高方差 - ⚠️ [作者 ack §Limitation]: SFT-only 设计，未扩展至 preference optimization（DPO/RLHF），作者标注为 future work - ⚠️ [song-2026 §2.3]: replay buffer + adaptive scheduler 引入额外超参复杂度 - SRKL ROUGE-L 25.21 vs JSD 24.34 on Dolly Eval, GPT-2 XL→GPT-2（§Table 1） - 2.5–4.3× training speedup vs MiniLLM / GKD（§Fig 2 / Abstract）",
+    "year": 2024,
+    "year_month": "2024-02",
+    "venue": "icml-2024",
+    "authors": [
+      "Jongwoo Ko",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2402.03898",
+    "arxiv_id": "2402.03898",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2402.03898",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/24_distillm.md"
+  },
+  {
+    "paper_id": "arxiv:2603.07079",
+    "title": "Entropy-Aware On-Policy Distillation of Language Models",
+    "abstract": "> **一句话**：entropy-gated adaptive divergence 代表作。 标准 OPD 的 reverse KL 在低熵 token 上精确，但在高熵 teacher distribution 上会丢多样性；EOPD 以 teacher entropy 为 gate，在高熵 token 额外加入 forward KL。 实操含义是默认保留 OPD 的 mode-seeking 效率，只在 teacher 明显不确定的位置补 mode-covering 信号。 - 上游：MiniLLM / OPD (2024) — 继承 student rollout + reverse-KL / clipped-RKL 主线 - 上游：DistiLLM-2 (2025) — DistiLLM-2 按数据源分流，EOPD 推进到按 token entropy 分流 - 同期：ToDi (2025) — ToDi 用 teacher-student log-ratio 做细粒度 routing，EOPD 只看 teacher uncertainty - 下游：AKL / AOPD (2026) — survey 将其放在“which divergence where”的 adaptive objective 转向中 - ✅ [作者 ack §4]：在 high-entropy token 激活 forward KL，保留多种合理 continuation 的概率质量 - ✅ [song-2026 §4.2]：teacher entropy 是稳定 routing 信号，尤其适合 student distribution 尚不可靠的早期训练 - ⚠️ [song-2026 §4.2]：仍然优化到 teacher distribution；若 teacher 自身缺 reasoning path，adaptive divergence 只能匹配 teacher，难以超越 teacher - Pass@8 +1.37 / +2.39 / +5.05 on Qwen3-0.6B/1.7B/4B across six math benchmarks（§5 Table 2）",
+    "year": 2026,
+    "year_month": "2026-03",
+    "venue": "icml-2026",
+    "authors": [
+      "Woogyeol Jin",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2603.07079",
+    "arxiv_id": "2603.07079",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2603.07079",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_eopd.md"
+  },
+  {
+    "paper_id": "arxiv:2604.14084",
+    "title": "TIP: Token Importance in On-Policy Distillation",
+    "abstract": "> **一句话**：token weighting 分支代表作。 TIP 把 OPD token 重要性拆成 student entropy 与 teacher-student divergence 两轴：高熵 token 提供不确定性信号，低熵高 divergence token 是 overconfident error，低熵低 divergence token 基本已学会。 Soft-OR 分数无额外权重超参，top-k 选择后只在重要 token 上算 forward KL，从而同时保留 Q1/Q2 的 uncertain signal 与 Q3 的 overconfident-wrong signal。 - 上游：GKD / MiniLLM (2024) — 它们均匀使用所有 token 的 OPD signal - 同期：EOPD (2026) — EOPD 用 teacher entropy 单轴 routing，TIP 指出 entropy-only 会漏掉 Q3 overconfident errors - 同期：SCOPE / SelecTKD / AdaSwitch (2026) — survey 将 TIP 放在 fine-grained token weighting 端 - 下游：EGRSD (2026) — 将 entropy-guided gating 推到 self-distillation setting，并补充动态 entropy 演化视角 - ✅ [song-2026 §6.1]：Q3 token 对 entropy-only weighting 结构性不可见，TIP 用 divergence 轴恢复覆盖 - ✅ [作者 ack §6]：Soft-OR 是 parameter-free 的 token selection rule，降低 selection hyperparameter 负担 - ⚠️ [song-2026 §6.1]：fine-grained token methods 依赖可靠 token-level teacher signals，在 flawed prefix 严重时信号本身会退化 - 50% token selection matches full-token baseline with 47% lower peak memory（§1 / §7.4 Table 5） - Q3-only <20% tokens outperforms full-token OPD on DeepPlanning Avg@16 12.6 vs 11.7（§7.5 Table 7）",
+    "year": 2026,
+    "year_month": "2026-04",
+    "venue": "arxiv",
+    "authors": [
+      "Yuanda Xu",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2604.14084",
+    "arxiv_id": "2604.14084",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.14084",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_tip.md"
+  },
+  {
+    "paper_id": "arxiv:2604.10688",
+    "title": "SCOPE: Signal-Calibrated On-Policy Distillation Enhancement with Dual-Path Adaptive Weighting",
+    "abstract": "> **一句话**：按 rollout correctness 分流的双路径 OPD。 SCOPE 先按 on-policy rollout 是否正确分成两条 supervision path：错误轨迹用 teacher-perplexity-weighted KL，优先让 teacher 确实有 corrective capability 的样本提供监督；正确轨迹用 student-perplexity-weighted MLE，把强化集中在学生低置信但已到能力边界的样本上。 实操含义：不把所有 rollout 放进同一种 token-level KL，而是用 trajectory correctness 先做 coarse routing，再在每条 path 内做 group-level normalization。 - 上游：OPD / GRPO — OPD 给 dense KL，GRPO 给 sparse outcome；SCOPE 把二者按 correctness 分流。 - 同期：TIP (2026) — TIP 细粒度 token selection，SCOPE 选择更粗的 trajectory-level path routing。 - 同期：SOD (2026) — SOD 认为 tool-call cascade 需要 step-level；SCOPE 更适合整条 trajectory 信号质量分化明显的场景。 - ✅ [作者 ack Abstract]: incorrect path 用 teacher perplexity 抑制 unreliable guidance，correct path 用 student perplexity 避免过度强化已掌握样本。 - ✅ [song-2026 §6.1]: coarse routing 对 flawed-prefix trap 更稳，因为单个坏 token 不会污染整条梯度。 - ⚠️ [song-2026 §6.1]: trajectory-level routing 会牺牲局部 token/step 的信号保真度。 无 Table/Fig anchor 的 abstract 数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-04",
+    "venue": "arxiv",
+    "authors": [
+      "Binbin Zheng",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2604.10688",
+    "arxiv_id": "2604.10688",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.10688",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_scope.md"
+  },
+  {
+    "paper_id": "arxiv:2605.07725",
+    "title": "SOD: Step-wise On-policy Distillation for Small Language Model Agents",
+    "abstract": "> **一句话**：tool-integrated reasoning 的 step-level OPD 路线。 TIR agent 的错误 tool call 会把 corrupted observation 注入后续上下文，使 teacher-student divergence 在 step 边界后阶跃式放大；SOD 不再对所有 token 均匀蒸馏，而是按 accumulated step-level divergence 自适应调弱高 divergence step 的 distillation strength。 实操含义：把 granularity 从 token/trajectory 中间插入 step，既能保留 well-aligned step 的 dense guidance，又能避免错误 tool observation 后的 teacher signal 继续污染训练。 - 上游：TIP (2026) — token-level weighting 太细，无法识别 tool-call 后的状态突变。 - 同期：SCOPE (2026) — trajectory-level routing 更稳但太粗，可能丢掉部分 trajectory 中仍可靠的 step。 - 下游：GEAR / multi-turn OPD — 进一步把固定 step 粒度推广到 adaptive segment granularity。 - ✅ [song-2026 §6.1]: step-level granularity 填补 TIP 的 token 级与 SCOPE 的 trajectory 级之间的缺口。 - ✅ [作者 ack Abstract]: 在 math/science/code benchmarks 上最高超过第二强 baseline 20.86%，0.6B student 在 AIME 2025 avg@32 达 26.13%。 - ⚠️ [song-2026 §6.1]: 适用动机强依赖 TIR step 边界；纯文本 reasoning 是否需要 step granularity 仍取决于能否定义稳定边界。 无 Table/Fig anchor 的 abstract / survey 数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-05",
+    "venue": "arxiv",
+    "authors": [
+      "Qiyong Zhong",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2605.07725",
+    "arxiv_id": "2605.07725",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.07725",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_sod.md"
+  },
+  {
+    "paper_id": "arxiv:2605.22731",
+    "title": "Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation",
+    "abstract": "> **一句话**：state distribution 视角的统一框架。 论文把 post-training 统一为 state-conditioned supervision：state 是 prompt 加已生成 prefix，SFT、RL、OPD 的关键差异之一是 state source 和 signal source。它把 OPD 定义成 teacher-guided on-policy learning，而不是单纯 token matching。 实操含义：OPD 的关键不只是 teacher token，而是 student 在训练中实际访问哪些 prefixes。 - [作者 ack paper brief §2.1-2.2]: autoregressive state 被定义为 prompt + prefix，state source 与 signal source 是两条正交轴。 - [作者 ack paper brief §2.3-2.5]: SFT 是 off-policy state fitting，RL 是 on-policy local improvement，OPD 是 teacher-guided on-policy learning。 - [作者 ack paper brief §3]: 统一框架把 post-training 写成 state-conditioned supervision，而不是只比较 loss 名称。 - 上游：GKD (2024) — 从 imitation learning 引入 student-generated trajectories。 - 同期：On the Geometry of OPD (2026) — 本篇看 state distribution，Geometry 看 parameter update subspace。 - 下游：synthesis report — 适合作为 OPD 方法谱系的理论背景，而非单一方法 baseline。 - ✅ [作者 ack paper brief §2-3]: 把“on-policy 为什么有用”从 token matching 改写为 state coverage / state provenance 问题。 - ⚠️ [作者 ack paper brief §3]: 框架偏解释性，不直接给出 teacher reliability 或 filtering 的可执行算法。 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-05",
+    "venue": "arxiv",
+    "authors": [
+      "Dong Nie"
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2605.22731",
+    "arxiv_id": "2605.22731",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.22731",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_states-not-tokens.md"
+  },
+  {
+    "paper_id": "arxiv:2606.07082",
+    "title": "On the Geometry of On-Policy Distillation",
+    "abstract": "> **一句话**：OPD 参数空间几何解释。 论文比较 OPD 在参数空间中的位置，使用 update sparsity、principal-angle rotation、spectral drift 和 update-mask overlap 等 diagnostics。它把 OPD 描述成 relaxed off-principal regime，并提出 subspace locking：早期更新进入低维 update band 后具有功能充分性。 实操含义：OPD 的优势可能来自状态分布和更新子空间共同作用，而不是单纯因为 teacher 分布更密集。 - [作者 ack paper brief §3.1-3.2]: 论文用 update sparsity、principal-angle rotation、spectral drift 和 update-mask overlap 定位 OPD。 - [作者 ack paper brief §3.3]: relaxed three-gate account 把 signal granularity、model geometry、precision realization 作为 OPD 几何解释。 - [作者 ack paper brief §4-5]: subspace locking 是低维 update band 的早期形成和功能充分性现象，runtime perturbations 仍能保留 lock。 - 上游：GKD / DistiLLM (2024) — 定义 OPD 目标但不解释参数几何。 - 同期：Dense Supervision, Sparse Updates (2026) — 都解释 OPD 更新为何不是普通 dense rewrite。 - 同期：Post-Training is About States (2026) — 一个从 parameter geometry 看，一个从 state distribution 看。 - ✅ [作者 ack paper brief §3-5]: 提供跨 SFT/RLVR/OPD 的几何解释，可服务总结报告里的“为什么 OPD 不只是 dense KD”。 - ⚠️ [作者 ack paper brief Appendix C-G]: 结论依赖具体 training setup、diagnostic implementation 和 rank-constrained controls。 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-06",
+    "venue": "arxiv",
+    "authors": [
+      "Zhennan Shen",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2606.07082",
+    "arxiv_id": "2606.07082",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.07082",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_geometry-opd.md"
+  },
+  {
+    "paper_id": "arxiv:2606.13657",
+    "title": "Dense Supervision, Sparse Updates: On the Sparsity and Geometry of On-Policy Distillation",
+    "abstract": "> **一句话**：dense supervision 的参数几何诊断。 论文分析 OPD 训练后的参数变化，发现 dense teacher supervision 并不等于 dense parameter rewriting：OPD updates 小而 coordinate-sparse，跨层分布但 FFN 相对移动最大；同时数值上 full-rank、谱上集中。 实操含义：如果 OPD 的有效更新很稀疏，那么方法改进应关注哪些 states/parameters 被激活，而不是只增加 token 监督密度。 - [作者 ack paper brief Abstract / §4]: OPD updates are small and coordinate-sparse，训练发现的 subnetwork 几乎能恢复 full-training performance。 - [作者 ack paper brief Abstract / §4.5]: OPD 中 SGD 不如 AdamW，说明 dense teacher supervision 仍保留有用 momentum / second-moment structure。 - [作者 ack paper brief Abstract / §5]: updates full-rank but spectrally concentrated，并偏离 source weights 的 principal singular subspaces。 - 上游：GKD / DistiLLM (2024) — 关注分布目标和训练稳定性。 - 同期：On the Geometry of OPD (2026) — 都把 OPD 放到参数空间解释，本篇更强调 dense signal 与 sparse update 的张力。 - 同期：Learning to Foresee (2026) — 都试图解释 OPD 的效率来源。 - ✅ [作者 ack paper brief §3-5]: 给出 update sparsity、module structure、subnetwork sufficiency 和 spectral concentration 四类诊断。 - ⚠️ [作者 ack paper brief §6]: 几何发现仍主要是 post-hoc analysis，不能直接推出哪种 OPD objective 最优。 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-06",
+    "venue": "arxiv",
+    "authors": [
+      "Guo Yu",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2606.13657",
+    "arxiv_id": "2606.13657",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.13657",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_dense-supervision-sparse-updates.md"
+  },
+  {
+    "paper_id": "arxiv:2505.22375",
+    "title": "Pangu Embedded: An Efficient Dual-system LLM Reasoner with Metacognition",
+    "abstract": "> **一句话**：工业级 reasoning 蒸馏与 RL recipe 参考。 把\"teacher 数据全量 SFT\"换成 **student-capability-aware 的迭代 distillation**：每轮都按 student 当前的复杂度评分（Eq. 1）筛 teacher 生成的 long-CoT，倾向中等偏易，避免太难数据被 student 内化为噪声；轮间用 model merging 缓解 catastrophic forgetting；之后再 GRPO + MARS（rule reward + LLM judge）+ curriculum mixing 做 RL；最后叠加 fast/slow dual-system 控制（manual + adaptive）。 vs. DeepSeek-R1 蒸馏（直接 800k teacher 输出 SFT 小模型，无难度筛选、无迭代 merging）：Pangu Embedded 把 student 当前能力反馈进 data selection 闭环，并在 SFT 阶段做多轮 + parameter merging；vs. 一般 GRPO RLHF：MARS 把 deterministic verifier 与 LLM judge 异质 reward 在数学/代码/通用任务间动态调配，并配 latency-tolerant scheduler 适配 Ascend NPU stale-sync RL。 1. Stage 1 — SFT：从 teacher 蒸出 long-CoT pool，用 model-aware complexity score 筛\"balanced→稍难\"子集（Table 1：balanced 50.42 > mostly-hard 48.75 > mostly-easy 45.42 > all 43.33），跑 3 轮 iterative SFT，轮间 model merging（Table 5/6 显示每轮 AIME 单调上升，merging 在 AIME/LCB/GPQA 一致正向）。 2. Stage 1 — RL：GRPO + MARS（correctness verifier + preference RM + 其他 task reward）+ curriculum data mixing + cold start，code RL 仅 300 steps 在 LiveCodeBench 上 +6% 绝对值（§4.7）；clip-higher ε_high=0.28。 3. Stage 2 — Dual-system：manual `<thinking>`/`<no-thinking>` 切换 + adaptive 复杂度感知 router；7B 总参，benchmark 见 §4.2 Table 2。 - ✅ [作者 ack §2.3.1]: 按 student 当前能力筛选中等难度 teacher CoT，直接针对 capacity gap。 - ⚠️ [作者 ack §2-4]: 主线仍偏 offline teacher SFT + RL recipe，不是严格 student-rollout OPD。 - Pangu 7B thinking system reaches AIME24 81.9 / GPQA 68.0 / LiveCodeBench 67.1（§4.2 Table 2） - TL;DR 7B 数字 81.9 / 68.0 / 67.1 来自 §4.2 Main Comparison Settings（\"Thinking system2\"段落） - \"balanced 50.42 vs mostly-hard 48.75 vs mostly-easy 45.42\" 来自 §2.3.1 Table 1 - Iterative SFT 单调改进 + merging 一致正向 来自 §4.5 Table 5/6 - LiveCodeBench RL +6% / 300 steps 来自 §4.7 Initial RL Validation on Code",
+    "year": 2025,
+    "year_month": "2025-05",
+    "venue": "arxiv",
+    "authors": [
+      "Pangu Team"
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2505.22375",
+    "arxiv_id": "2505.22375",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2505.22375",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/25_pangu-embedded.md"
+  },
+  {
+    "paper_id": "arxiv:2602.12125",
+    "title": "Learning beyond Teacher: Generalized On-Policy Distillation with Reward Extrapolation",
+    "abstract": "> **一句话**：OPD 奖励外推的统一框架。 论文把标准 OPD 推成 dense KL-constrained RL 的一个特例：reward 项和 KL regularization 默认等权，reference model 也可以更灵活。G-OPD 在这个框架里加入 reward scaling factor，λ>1 的 ExOPD 允许 student 沿 teacher reward 方向外推，从而尝试超出 teacher 当前边界。 实操含义：OPD 不只能“贴近 teacher”；当 teacher 是同一 base 经 domain RL 得到的专家时，适度 reward extrapolation 可以把多个专家能力合并回统一 student。 - [作者 ack §3.2]: 标准 OPD 对应 λ=1；λ∈(0,1) 是 reward interpolation，λ>1 是 reward extrapolation。 - [作者 ack Abstract / §4]: 在 multi-teacher setting 中，ExOPD 可让统一 student 超过单个 domain teacher 的边界。 - [作者 ack §4.2.3 / §5]: strong-to-weak setting 下，把 reference 设为 teacher pre-RL base 可做 reward correction，但需要访问额外大模型并计算其 log-prob。 - 上游：GKD / MiniLLM (2024) — 继承 student-generated trajectories 上的 teacher logit supervision。 - 同期：Extrapolation Cliff (2026) — 本文强调 λ>1 的收益；Extrapolation Cliff 给出 structured-output 场景中过大 λ 的安全阈值。 - 同期：OPD+ (2026) — 两者都把 OPD 写成 RL-style objective；OPD+ 关注 advantage / stop-gradient 的目标偏差。 - ✅ [作者 ack §3.2]: 把 OPD、reference model choice 和 reward/KL relative weight 放进同一个可调框架。 - ✅ [作者 ack Abstract / §4]: 给出“超过 teacher 边界”的具体机制，而不是只把 OPD 当压缩方法。 - ⚠️ [作者 ack §4.2.3 / §5]: reward correction 依赖 teacher pre-RL variant，强模型不可得或 API-only teacher 场景难用。 无 Table/Fig anchor 的摘要级提升不放入 headline number；multi-teacher surpass claim 保留在机制发现中。",
+    "year": 2026,
+    "year_month": "2026-02",
+    "venue": "arxiv",
+    "authors": [
+      "Wenkai Yang",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2602.12125",
+    "arxiv_id": "2602.12125",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2602.12125",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_g-opd-reward-extrapolation.md"
+  },
+  {
+    "paper_id": "arxiv:2504.14945",
+    "title": "Learning to Reason under Off-Policy Guidance",
+    "abstract": "> **一句话**：reasoning RL 与示范轨迹混合训练路线。 LUFFY 针对 zero-RL 只能从模型自身输出中学习、难以越过初始能力边界的问题，把 stronger policy 的 off-policy reasoning traces 引入 GRPO/RLVR 训练；同时用 regularized importance sampling 做 policy shaping，避免 student 只表面模仿高概率 token 而忽视低概率但关键的 reasoning action。 实操含义：LUFFY 不是严格 white-box OPD，但它定义了 OPD/RL 之间的重要边界：off-policy guidance 可以扩展探索空间，但必须校正 superficial imitation。 - 上游：GRPO / RLVR — zero-RL 只靠 on-policy rollouts，LUFFY 引入 off-policy reasoning traces。 - 同期：KDRL — KDRL 结合 teacher distribution 与 reward；LUFFY 结合 off-policy demonstrations 与 on-policy exploration。 - 下游：TGPO / RLAD — 都试图把 teacher/off-policy guidance 更选择性地接入 policy update。 - ✅ [song-2026 §5.2]: regularized importance sampling 强调 unfamiliar yet effective actions，缓解 superficial imitation。 - ✅ [作者 ack Abstract]: off-policy guidance 能让 student 学到自身初始策略之外的 reasoning behavior。 - ⚠️ [song-2026 §5.2]: 训练信号不全来自 on-policy teacher scoring，作为 OPD 证据时应标注为 adjacent RL/KD bridge。 无 Table/Fig anchor 的摘要数字不放入 headline number。",
+    "year": 2025,
+    "year_month": "2025-04",
+    "venue": "arxiv",
+    "authors": [
+      "Yifan Yan",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2504.14945",
+    "arxiv_id": "2504.14945",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2504.14945",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/25_luffy.md"
+  },
+  {
+    "paper_id": "arxiv:2603.01683",
+    "title": "Surgical Post-Training: Cutting Errors, Keeping Knowledge",
+    "abstract": "> **一句话**：最小编辑偏好数据的 surgical post-training 路线。 灾难性遗忘的决定性因素不是数据分布偏移（SFT+ 在近分布数据上仍然遗忘），而是优化目标中是否存在 KL 约束的隐式奖励——其梯度系数 λ = 1−σ(r_θ) 在模型饱和时自动归零，充当逐样本的 early stopping。SPoT 把这一机制拆解出来，设计了两个组件：(1) Oracle 最小编辑数据流水线，产出与学生分布高度重叠的 (y⁻, y⁺) 对；(2) 解耦 BCO loss，对正负样本独立分类，消除 DPO 相对排序导致的\"只压 y⁻ 不拉 y⁺\"问题和 SFT 的\"pull-up 效应\"。 相比 DPO：指出其\"相对排名\"优化路径允许通过 collapse y⁻ 而非提升 y⁺ 来最小化 loss，对 reasoning（正确/错误二元）不合适；改用解耦 BCE，正负各自对 sigmoid(r) 分类。 相比 SFT/蒸馏（含 SPIN）：SPIN 用模型自采样作负例；本文用教师最小编辑版作正例，并通过 LCS ratio 硬过滤保证 token 级近邻性，使梯度集中于分歧 token。 1. **Error Elicitation**：从当前策略采样，保留答案错误的 (x, y⁻)。 2. **Oracle 最小编辑**：Gemini 2.5 Pro 仅修改错误推理步骤，保留原始风格，得到 y⁺。 3. **LCS 过滤**：R_LCS = 1 − |LCS(y⁻,y⁺)|/|y⁺| > 0.6 的对被丢弃；确保 y⁺/y⁻ 共享大多数 token 轨迹。 4. **SPoT-BCE loss**：−E[log σ(r(x,y⁺)) + log σ(−r(x,y⁻))]；隐式奖励 r = β log(π_θ/π_ref)。 5. **SPoT-BCO（推荐）**：加 EMA 动态 reward shift δ，防止正例 sigmoid 饱和过早停止；β=0.1，4k 对样本，28 分钟。 - ✅ [作者 ack §3.2]: sigmoid 梯度衰减提供逐样本 early stopping，解释 DPO 知识保持来源。 - ⚠️ [作者 ack §4.5]: 最小编辑正例依赖强 oracle，当前验证规模偏小且集中在数学域。 - Qwen3-8B average +6.2% and IFEval +1.8% with 4k samples / 28 minutes（§4.5 Table 1） - TL;DR 数字 +6.2% 来自 §4.5 Table 1（Qwen3-8B+SPoT avg=53.3 vs baseline 47.1） - TL;DR IFEval +1.8% 来自 §4.5 Table 1（84.8 vs 83.0） - \"λ ≈ 4.5×10⁻⁵\" 来自 §3.2 Eq. 示例（r_θ=10 时） - \"SFT+ 仍遗忘\" 来自 §3.1 Figure 2（IFEval 单调下降）",
+    "year": 2026,
+    "year_month": "2026-03",
+    "venue": "arxiv",
+    "authors": [
+      "Wenye Lin",
+      "Kai Han"
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2603.01683",
+    "arxiv_id": "2603.01683",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2603.01683",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_surgical-distill.md"
+  },
+  {
+    "paper_id": "arxiv:2606.00305",
+    "title": "Bridging Reasoning Trajectories in On-Policy Distillation via Near-Future Guidance",
+    "abstract": "> **一句话**：reasoning fork 判别的近未来路线。 论文指出 OPD 是 trajectory-sampled 但 token-learned：它用 student trajectory 取样，却仍用局部 high-loss token 触发修正。TOPD 用 near-future trajectory 信息识别真正 divergent states，并把 teacher guidance 注入多个未来 token。 实操含义：OPD token 选择不应只看局部 loss，还要看该 token 是否真的改变后续解题轨迹。 - [作者 ack paper brief Abstract / §2.1]: 约一部分 high-loss tokens 落在 low-divergence regime，说明它们更像 surface-form mismatch 而非 reasoning fork。 - [作者 ack paper brief §2.2]: 即使是真 divergent tokens，孤立 token-level correction 也不保证短程 drift 被纠正。 - [作者 ack paper brief §3]: TOPD 包含 divergence detection 与 trajectory-level teacher signal injection 两个组件。 - 上游：TIP (2026) — TIP 从 token importance 选择监督；本篇用近未来轨迹判断 importance。 - 同期：Revisiting OPD (2026) — 都关心 sampled/local token 信号不可靠，本篇更强调后续 trajectory consequence。 - 同期：Trajectory-Refined Distillation (2026) — 都从单点 token supervision 转向 trajectory-aware correction。 - ✅ [作者 ack paper brief Abstract / §3]: 把 high-loss token filtering 从局部 loss 判断升级为 near-future trajectory consequence 判断。 - ⚠️ [作者 ack paper brief §8]: near-future detection 会引入额外结构和计算开销，窗口/阈值选择会影响可用性。 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-06",
+    "venue": "arxiv",
+    "authors": [
+      "Yuxuan Jiang",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2606.00305",
+    "arxiv_id": "2606.00305",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.00305",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_near-future-guidance.md"
+  },
+  {
+    "paper_id": "openreview:kv6QSpUJbc",
+    "title": "ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation",
+    "abstract": "> **一句话**：negative trajectory weighting 路线。 ReNIO 反转了“正确 rollout 更值得学”的默认直觉：incorrect student-generated outputs 可能暴露更大的 student-teacher deviations。方法由 prefix-computable student-teacher log-ratio、fixed-threshold key-token selection、geometric-mean sample weight 和 weighted distillation objective 组成。 实操含义：过滤不应只保留正确轨迹；错误轨迹如果能定位差距，反而可能是高价值监督。 - [作者 ack paper brief §3]: ReNIO 明确包含 log-ratio signal、key-token selection、geometric-mean aggregation 和 weighted objective 四个组件。 - [作者 ack paper brief §3.1-3.2]: student-generated output 在 student-visited prefixes 上接受 teacher token-level supervision，log-ratio 可前缀计算。 - [作者 ack paper brief §3.3-3.5]: fixed-threshold key tokens 被聚合成 sample-level normalized weight。 - 上游：MOPD (2026) — 利用同 prompt 多 rollout 的成功/失败对比。 - 同期：BRTS (2026) — BRTS 在 teacher rollouts 中选可靠正例，ReNIO 在 student 错误轨迹中挖纠错信号。 - 同期：Trajectory-Refined Distillation (2026) — 都减少“只看正确最终答案”的粗粒度监督。 - ✅ [作者 ack paper brief §3]: 把 negative trajectory 从“过滤掉的失败样本”改写成可加权的监督资源。 - ⚠️ [作者 ack paper brief §4]: 负轨迹重权的噪声控制依赖 threshold 和 aggregation 设计，需要看 ablation。 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-01",
+    "venue": "acl-arr-2026-may",
+    "authors": [
+      "Anonymous"
+    ],
+    "citations": 0,
+    "source": "openreview",
+    "source_id": "kv6QSpUJbc",
+    "arxiv_id": "",
+    "openreview_id": "kv6QSpUJbc",
+    "doi": "",
+    "paper_url": "https://openreview.net/forum?id=kv6QSpUJbc",
+    "retrieved_via": "openreview",
+    "local_card": "/Users/chy/Research/opd/notes/26_renio.md"
+  },
+  {
+    "paper_id": "arxiv:2605.28791",
+    "title": "Skill-Conditioned Gated Self-Distillation for LLM Reasoning",
+    "abstract": "> **一句话**：skill bank privilege 的多 teacher 校验路线。 把 skill-based SD 重新表述为 **teacher hypothesis validation**：retrieve 一组 skill-mistake pair 构造多 teacher pool，teacher 看 skill+plain prompt，student 只看 plain prompt，所有 teacher 对同一条 student rollout 打 logit。verifier 给最终答案对/错 → 推断每个 teacher 当前 stance 是否有用：rollout 成功且 teacher support 给正信号，rollout 失败且 teacher support 给反向信号，misleading teacher 会被反转，uncertain teacher (ρ_k=0) 被丢掉。 vs OPSD（Zhao 2026）：OPSD 用 reference answer 当 PI、单一 teacher、unconditional imitation；SGSD 用更弱的 PI（可能误导的 skill bank）+ 多 teacher polarity 校验 + gated 而非直接 KL。skill bank 路线 vs 直接答案蒸馏路线的首次正面对照。 (1) cold-start 用历史 mistake 抽 skill 入 bank，online 持续维护；(2) Qwen3-Embedding-0.6B 检索 top-8 skill pair；(3) student（disable thinking）从 plain prompt rollout 一次，K 个 skill-conditioned teacher（enable thinking）逐 token 打 full-vocab logit；(4) verifier outcome × teacher support 决定 ρ_k ∈ {+1, -1, 0}；(5) gated loss = bounded 函数 of teacher-student log-prob gap，理论上 local 等价于 sampled-token reverse-KL（§3）。Base：Qwen3-1.7B/4B/8B；训练集 DAPO-Math-17K English；评测 AIME24/AIME25/HMMT25 avg@12。 - ✅ [作者 ack §2.3]: verifier outcome 给每个 skill-conditioned teacher 判定 polarity，避免盲目模仿误导 skill。 - ⚠️ [作者 ack §4.2]: 8B 上仍弱于 OPSD，收益主要集中在小模型，scale-up 稳定性有限。 - Qwen3-1.7B AIME24/25+HMMT25 average 37.4 → 43.7, +6.2 vs GRPO and +1.7 vs OPSD（§4.2 Table 3） - TL;DR 数字（37.4→43.7、+6.2、+1.7）来自 §4.2 + Table 3，正文第 1297 行 - \"verifier validates polarity, opposite stance reversed\" 来自 Abstract + §2.3 Table 2 - \"gated loss locally approximates reverse-KL，extreme gaps 被 exponentially damp\" 来自 §3 / §2.5 - 8B 上 SGSD 仍 underperform OPSD，仅小模型反超：§4.2 Table 3 - code: https://github.com/walawalagoose/SGSD（abstract 末尾）",
+    "year": 2026,
+    "year_month": "2026-05",
+    "venue": "arxiv",
+    "authors": [
+      "Jiazhen Huang",
+      "Xiao Chen",
+      "Xiao Luo",
+      "Yong Dai",
+      "Senkang Hu",
+      "Yuzhi Zhao"
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2605.28791",
+    "arxiv_id": "2605.28791",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.28791",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_sgsd.md"
+  },
+  {
+    "paper_id": "arxiv:2606.10385",
+    "title": "Beyond Absolute Imitation: Anchored Residual Guidance for Privileged On-Policy Distillation",
+    "abstract": "> **一句话**：privileged OPD 的 anchor/residual 解耦路线。 Privileged OPD 的痛点：full-view teacher 见到 oracle answer 后，会把概率质量推到学生当前 prefix 不可达的 hindsight token 上 → 学生模仿这些 \"答案条件化\" token 形成 shortcut。AR-OPD 的处方是不直接模仿 full teacher，而是用 partial-oracle teacher（去掉答案）作为 **causally reachable anchor**，再把 full-view 的 log-prob 增量作为 **λ-scaled residual** 加上去，把\"foresight\"转成可控更新而非绝对模仿目标。 vs. SDFT / OPSD：这两者都把 privileged teacher 当作 monolithic imitation target（SDFT 用 EMA 稳定，OPSD 用 JSD + clipping），AR-OPD 第一次明确把 privileged 信号 **解耦**为 reachable anchor 与 future-directed residual 两个可独立调控的组件，并定量诊断 hindsight leakage / 长程 reliability 退化。 Loss = forward-KL( q_anchor + λ·(log q_full − log q_partial) ‖ π_θ )，其中 anchor 把 reference trace 截断到前 ρ=0.5 比例（去掉答案）。每个 student state 需要两次 teacher forward。Base = Qwen2.5-7B-Instruct，单一模型族；4 个领域：NuminaMath→MATH500/AMC23、Magicoder-Evol→HumanEval/MBPP、SciKnowEval Chem L-3、MedMCQA→MedQA/MedCQA；max_completion=1024 tok，λ ∈ {0.4, 0.6, 0.8, 1.0, 1.2} 扫描。 - ✅ [作者 ack §4.2]: 把 full-view privilege 拆成 reachable anchor 与 future-directed residual，可诊断并缓解 shortcut leakage。 - ⚠️ [作者 ack Appendix B]: 每个 student state 需要 partial/full 两次 teacher forward，训练成本高于普通 privileged OPD。 - Full OPD 68.0 → AR-OPD 70.3 average; shortcut leakage -21.7%; long rollout segment +7.2（§6.2 Table 1） - TL;DR 数字 +2.3 / 21.7% / 7.2 来自 Abstract & §1 contributions ❸ & §6.2 Table 1 - \"full-view pass@4 从 90.18% → 9.09%（128→768-1024 tok）\" 来自 §4.2 - MATH500 +3.6 / AMC23 +2.5 vs Full OPD 来自 §6.2 Table 1 - 项目页 https://vanhowe.github.io/AR-OPD/ 含训练/评测 code（Appendix B）",
+    "year": 2026,
+    "year_month": "2026-06",
+    "venue": "arxiv",
+    "authors": [
+      "Wenhao Zhang"
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2606.10385",
+    "arxiv_id": "2606.10385",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.10385",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_ar-opd.md"
+  }
+]

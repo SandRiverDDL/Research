@@ -1,0 +1,12 @@
+{
+  "role": "fresh independent claim-level novelty checker",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "xhigh",
+  "direct_inputs": [
+    "/Users/chy/Research/opd/idea-stage/IDEA_CANDIDATES_20260821-164206.md",
+    "/Users/chy/Research/opd/notes",
+    "/Users/chy/Research/opd/synthesis",
+    "/Users/chy/Research/opd/.agents/skills/novelty-check/SKILL.md"
+  ],
+  "objective": "Decompose all 25 candidates into core claims; search primary sources using multiple formulations per claim; report closest work, novelty delta, fatal overlap, score, and decision."
+}

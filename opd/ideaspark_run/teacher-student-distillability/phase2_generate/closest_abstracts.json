@@ -1,0 +1,85 @@
+[
+  {
+    "paper_id": "arxiv:2604.13016",
+    "title": "Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe",
+    "abstract": "> **一句话**：OPD 成败条件与 token-overlap 机制分析。 论文不是提出一个新 loss，而是把 OPD 是否成功拆成两个条件：teacher/student 要有 compatible thinking patterns；即使 pattern 一致，teacher 也必须提供 student 训练中没有见过的新能力。若条件不满足，推荐用 off-policy teacher rollout cold start 和 teacher-aligned prompt selection 先把 student 拉到可蒸馏区域。 实操含义：OPD 不是“teacher 分数更高就能蒸”，必须先检查 teacher 在 student-visited states 上是否给出可利用的局部方向。 - [作者 ack Abstract / §3]: 两个成败条件是 thinking-pattern consistency 与 teacher new capability；same-family 1.5B/7B teachers 从 student 视角可能分布不可区分。 - [作者 ack §4]: 成功 OPD 表现为 student-visited states 上 high-probability shared tokens 的 progressive alignment，少量 shared token set 承载 97%-99% probability mass。 - [作者 ack §6.1]: reward quality 随 trajectory depth 退化，instability 主要来自 later tokens，长程蒸馏的 dense reward 并非免费午餐。 - 上游：GKD / MiniLLM (2024) — 继承 student rollout + token-level teacher feedback 的基本 OPD 设置。 - 同期：Revisiting OPD (2026) — Revisiting 从 sampled-token estimator 与 special-token mismatch 解释不稳；本文从 teacher-student pattern/capability compatibility 解释成败。 - 同期：Trust Region OPD / TGPO (2026) — 都关注 teacher signal 在 student state 上是否可靠，本文给出更宏观的 teacher/prompt 选择准则。 - 下游：OPD recipe / verl 实现 — off-policy cold start 与 teacher-aligned prompt selection 可作为跑 OPD 前的 hygiene。 - ✅ [作者 ack §3-5]: 把“teacher 更强但 OPD 仍失败”转化为可诊断条件，而不是继续调 loss。 - ✅ [作者 ack §4]: token-overlap mass 解释为什么 shared high-probability tokens 足以驱动有效 OPD。 - ⚠️ [作者 ack §6]: 长 trajectory 后段 teacher continuation 质量下降，OPD 的 dense reward 在 long-horizon 上仍有结构性成本。 无 Table/Fig anchor 的机制性数字不放入 headline number；97%-99% overlap mass 仅作为机制证据保留。",
+    "year": 2026,
+    "year_month": "2026-04",
+    "venue": "arxiv",
+    "authors": [
+      "Yaxuan Li",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2604.13016",
+    "arxiv_id": "2604.13016",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.13016",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_rethinking-opd-llm.md"
+  },
+  {
+    "paper_id": "arxiv:2605.13643",
+    "title": "Prefix Teach, Suffix Fade: Local Teachability Collapse in Strong-to-Weak On-Policy Distillation",
+    "abstract": "> **一句话**：strong-to-weak teachability collapse 诊断。 论文研究 strong-to-weak OPD 的 local teachability：teacher supervision 可能在 prefix 有用，但随着 student trajectory 偏离，suffix positions 上 teacher token 逐渐不再可教。它把这一现象诊断为 local teachability collapse，并引入 trajectory-specific release rule。 实操含义：strong teacher 并不自动意味着全序列都可教，后缀位置可能是最不可靠的监督源。 - [作者 ack paper brief §3]: local teachability analysis 把 strong-to-weak gap 落到 token position / trajectory state 层面。 - [作者 ack paper brief §3]: trajectory-specific release rule 表明不是所有 suffix token 都应继续被 teacher 约束。 - [作者 ack paper brief Abstract / §3]: prefix teach、suffix fade 是 full-rollout OPD 的直接风险。 - 上游：TGPO / TAID (2025-2026) — 都处理 teacher-student 差距。 - 同期：Less is More (2026) — ESR 是应对后缀失真的训练策略，本篇偏机制诊断。 - 同期：When Are Teacher Tokens Reliable (2026) — 都把 position 作为 reliability 关键变量。 - ✅ [作者 ack paper brief §3]: 把 capacity gap / teacher-student gap 细化为局部、位置相关的 teachability。 - ⚠️ [作者 ack paper brief §4-5]: release rule 是否泛化到不同任务和 teacher/student size，需要依赖实验部分判断。 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-05",
+    "venue": "arxiv",
+    "authors": [
+      "Kaiyuan Liu",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2605.13643",
+    "arxiv_id": "2605.13643",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.13643",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_prefix-teach-suffix-fade.md"
+  },
+  {
+    "paper_id": "arxiv:2605.30833",
+    "title": "Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation",
+    "abstract": "> **一句话**：supervision fidelity decay 诊断。 论文提出 Supervision Fidelity Decay：随着 student-generated prefixes 变长，teacher next-token distribution 变得 less confident / less discriminative，reverse-KL corrective signal 弱化，student drift 在长推理链上复合。LGR 用 one-step lookahead teacher confidence 作为 supervision signal。 实操含义：teacher 的强能力不保证它能修复任意 student prefix；越长的错误上下文越可能让 teacher signal 变成噪声。 - [作者 ack paper brief Abstract / §2.2]: SFD 被形式化为 supervision capability functional 随 student trajectory 下降。 - [作者 ack paper brief §2.3-2.4]: 论文从 signal collapse、compounding drift 和 supervision boundary contraction 解释恶性循环。 - [作者 ack paper brief §3.1-3.3]: Lookahead Group Reward 评估 student top-K candidate tokens 在下一步诱导的 teacher confidence，并给出 group-normalized reward。 - 上游：Revisiting OPD (2026) — flawed-prefix trap 的更一般长程版本。 - 同期：Prefix Teach Suffix Fade (2026) — 都描述 teacher signal 在 suffix / long-prefix 上衰减。 - 同期：Trust Region OPD / KL Agreement Trap (2026) — 都要求显式判断 teacher signal 的可信区间。 - ✅ [作者 ack paper brief §2-3]: 同时给出 SFD 机制诊断和 LGR 干预，信息量高于只做 rollout truncation。 - ⚠️ [作者 ack paper brief Appendix E]: tree attention / segmentation 等高效计算设计说明 LGR 有额外系统复杂度。 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-05",
+    "venue": "arxiv",
+    "authors": [
+      "Yanjiang Liu",
+      "et al."
+    ],
+    "citations": 0,
+    "source": "arxiv",
+    "source_id": "2605.30833",
+    "arxiv_id": "2605.30833",
+    "openreview_id": "",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.30833",
+    "retrieved_via": "arxiv",
+    "local_card": "/Users/chy/Research/opd/notes/26_supervision-fidelity-decay.md"
+  },
+  {
+    "paper_id": "openreview:TteFp6TLUA",
+    "title": "Rethinking the Capacity Gap in On-Policy Distillation for Large Language Models",
+    "abstract": "> **一句话**：capacity gap 假设的直接重审。 论文聚焦 OPD 中仍未充分研究的 capacity-gap issue：已有 gap work 多在 off-policy KD 中讨论 teacher assistant / router，本篇把问题放回 student-generated prefixes 上，问 frozen teacher 的分布是否对当前 student 可模仿。 实操含义：如果 teacher signal 超出 student 当前可表达/可搜索范围，OPD 可能只提供密集但不可用的目标。 - [作者 ack paper brief §2]: 相关 work 多处理 off-policy KD 的 teacher-student gap，OPD 中的 capacity gap 仍 underexplored。 - [作者 ack paper brief §3.1]: 论文以 student policy、frozen teacher 和 prefix-conditioned next-token distribution 建立 OPD 记号。 - [作者 ack paper brief §3-4]: capacity gap 被转化为 student-visited states 上 teacher signal 是否可学的问题。 - 上游：TAID (2025) — 通过 temporally adaptive interpolation 处理 student competence frontier。 - 同期：Rethinking OPD of LLMs (2026) — 都强调 teacher capability 必须能转化为 student 可利用方向。 - 同期：TGPO / Trust Region OPD (2026) — 都在处理 large policy divergence 下 teacher signal 失效。 - ✅ [作者 ack paper brief §2-4]: 直接挑战 OPD 中“teacher 越强越好”的默认假设。 - ⚠️ [作者 ack paper brief §5]: OpenReview 候选仍需核验接收状态、代码和实验可复现性。 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。",
+    "year": 2026,
+    "year_month": "2026-01",
+    "venue": "acl-arr-2026-may",
+    "authors": [
+      "Anonymous"
+    ],
+    "citations": 0,
+    "source": "openreview",
+    "source_id": "TteFp6TLUA",
+    "arxiv_id": "",
+    "openreview_id": "TteFp6TLUA",
+    "doi": "",
+    "paper_url": "https://openreview.net/forum?id=TteFp6TLUA",
+    "retrieved_via": "openreview",
+    "local_card": "/Users/chy/Research/opd/notes/26_capacity-gap-rethinking.md"
+  }
+]

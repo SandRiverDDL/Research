@@ -1,0 +1,12 @@
+{
+  "falsification_structure_check": {
+    "minimal_experiment_named": "yes",
+    "outcome_metric_named": "yes",
+    "load_bearing_variable": "R(c), the matched TEACH-minus-SELF fraction of verifier-measured teacher headroom",
+    "negative_control_target": "outcome_metric",
+    "verdict": "sound",
+    "reasoning": "The paragraph specifies a 12-triad probe/full-OPD comparison and names exact-answer final OPD gain, with positive held-out Spearman rho and lower top-three regret as the working directions. It explicitly identifies R(c) and predicts that prefix-permuting cached teacher targets makes placebo-R selection return to random-selection downstream full-OPD gain."
+  },
+  "verdict": "advance",
+  "verdict_rationale": "The rewritten falsification names a concrete experiment, outcome-level success criteria, one load-bearing variable, and a non-identity placebo whose predicted effect is on downstream gain."
+}

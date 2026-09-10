@@ -1,0 +1,10 @@
+{
+  "role": "read-only generator",
+  "lens": "scaling, training order, and lifecycle effects in OPD",
+  "inputs": [
+    "/Users/chy/Research/opd/notes",
+    "/Users/chy/Research/opd/synthesis",
+    "/Users/chy/Research/opd/doc/memory/STATE.md"
+  ],
+  "constraints": "Return structured candidates only; do not rank, reject, or write. Seek fixed-multiset causal designs that fit 8xA100 iteration."
+}

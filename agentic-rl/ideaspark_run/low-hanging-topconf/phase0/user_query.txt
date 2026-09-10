@@ -1,0 +1,1 @@
+在截至 2026-08-20 的 Agentic RL 方法中，寻找低工程成本、清晰 failure mode、可在公开环境上严格归因、最有希望形成 ICLR/ICML/NeurIPS 顶会论文的一个研究方向；重点比较 credit assignment、structured exploration、replay/self-imitation、skill-memory-policy co-evolution 和 model-based rollout，避免纯 benchmark 或纯系统工程。

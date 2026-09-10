@@ -1,0 +1,144 @@
+{
+  "description": "Agent Post-Training Data project-local triage rules. Keep data-mechanism papers here; move RL-algorithm papers to /Users/chy/Research/agentic-rl/.",
+  "hard_gates": [
+    "Queue row is not a card.",
+    "Survey mention is recall evidence, not paper evidence.",
+    "No original paper PDF/HTML brief, no formal L1 card.",
+    "Formal L1 cards in notes/ root must pass scripts/autoresearch.py validate before being reported as complete."
+  ],
+  "required_frontmatter": [
+    "title",
+    "year",
+    "venue",
+    "paper_type",
+    "lifecycle_role",
+    "agent_domain",
+    "data_object",
+    "data_source",
+    "selection_signal",
+    "adaptivity",
+    "failure_use",
+    "training_consumer"
+  ],
+  "required_nested_frontmatter": {},
+  "allowed": {
+    "paper_type": [
+      "trajectory-curation",
+      "synthetic-verifiable-data",
+      "real-world-trajectory-mining",
+      "search-to-sft-distillation",
+      "verifier-filtering",
+      "metacognitive-scaffolding",
+      "data-centric-posttraining",
+      "data-flywheel-method",
+      "alignment-data",
+      "survey",
+      "benchmark-eval",
+      "background",
+      "rl-overlap"
+    ],
+    "lifecycle_role": [
+      "survey-seed",
+      "canonical-anchor",
+      "strong-baseline",
+      "frontier-candidate",
+      "background",
+      "low-confidence-novelty-risk"
+    ],
+    "boundary_risk": [
+      "none",
+      "rl",
+      "eval",
+      "recipe",
+      "infra",
+      "alignment"
+    ],
+    "agent_domain": [
+      "code",
+      "gui",
+      "web",
+      "browser",
+      "tool",
+      "search",
+      "game",
+      "mixed",
+      "general"
+    ],
+    "data_object": [
+      "prompt",
+      "task",
+      "demo",
+      "trajectory",
+      "tool-call",
+      "observation",
+      "benchmark-task",
+      "replay-buffer",
+      "environment"
+    ],
+    "data_source": [
+      "human",
+      "teacher",
+      "self-generated",
+      "environment-generated",
+      "replay",
+      "synthetic",
+      "web",
+      "real-world-log",
+      "mixed"
+    ],
+    "selection_signal": [
+      "success",
+      "verifier",
+      "difficulty",
+      "novelty",
+      "uncertainty",
+      "cost",
+      "format-validity",
+      "coverage",
+      "reward",
+      "mixed"
+    ],
+    "adaptivity": [
+      "static",
+      "iterative",
+      "curriculum",
+      "student-feedback",
+      "environment-feedback",
+      "online"
+    ],
+    "failure_use": [
+      "discard",
+      "mask",
+      "repair",
+      "contrast",
+      "mine",
+      "replay",
+      "ignore"
+    ],
+    "training_consumer": [
+      "sft",
+      "pre-rl",
+      "rl",
+      "eval-only",
+      "background"
+    ]
+  },
+  "select_rules": [
+    "Core contribution is agent post-training data generation, filtering, verification, repair, reweighting, curriculum, failure trajectory mining, or search-to-SFT distillation.",
+    "Directly changes tool-call, trajectory, observation-action, replay, synthetic task, executable environment, real-world log, or verifier-based data pipeline.",
+    "Could create novelty risk for an Agent Post-Training Data idea."
+  ],
+  "maybe_rules": [
+    "Useful background for data-centric alignment, tool-use taxonomy, benchmark/eval protocol, or SFT/RL interface.",
+    "Mixed data/RL paper where data contribution is plausible but not yet verified."
+  ],
+  "move_to_agentic_rl_rules": [
+    "Core contribution is reward design, policy optimization, RL update mechanics, online exploration, or long-horizon credit assignment.",
+    "SFT/data is only a standard warm start or implementation detail."
+  ],
+  "overrides": {
+    "select": {},
+    "maybe": {},
+    "skip": {}
+  }
+}

@@ -1,0 +1,1204 @@
+{
+  "title": "Causal Micro-Probes Predict Which Teacher–Student–Data Triads Distill",
+  "title_zh": "因果微型探针预测哪些教师—学生—数据三元组能够蒸馏",
+  "method_name": "Teacher-Causal Response Probe (TCR-Probe)",
+  "hook": "A fixed-small-budget causal response probe may rank full-run OPD gains across unseen teacher–student–data triads even when overlap, margin, and teacher-confidence rankings reverse across model families. The predicted empirical reveal is that subtracting a matched student-as-teacher control turns early training response from a pair-specific learning-curve artifact into a transferable triad-selection signal.",
+  "abstract_draft": "Selecting a teacher for on-policy distillation (OPD) is not reducible to choosing the strongest model: the same teacher can provide useful local supervision to one student–data pair and unusable supervision to another. Recent work measures student-reachable teacher knowledge, local teachability, and supervision fidelity (arxiv:2604.13016; arxiv:2605.13643; arxiv:2605.30833), but these quantities are evaluated within a pair and can reverse their rankings across model families. We propose TCR-Probe, a fixed-budget pre-run diagnostic that forks an identical student-state buffer into a candidate-teacher micro-training arm and a frozen-self-teacher control arm, then normalizes their verifier-measured outcome difference by the candidate teacher's available handoff headroom. The resulting Teacher-Causal Response R(c) is intended to estimate how much teacher-specific headroom the student can actually internalize, rather than generic early optimization progress. The proposal is falsified if, over the fixed 12-triad study, leave-one-teacher-family-out rank correlation with full-OPD gain does not exceed overlap, margin, confidence, teacher-accuracy, and naive-early-gain baselines, or if prefix-permuted teacher targets retain downstream triad-selection value. A positive result would turn expensive teacher–student–data matching into a measurable pre-run selection problem while sharply delimiting the conditions under which the score transfers.",
+  "motivation": {
+    "problem_framing": "Across on-policy distillation (OPD), teacher usefulness is a property of a teacher–student–data triad, not of teacher strength alone. A student must visit prefixes on which the teacher has outcome-relevant knowledge, receive a target that remains learnable at its current capacity, and convert that local signal into final task gain. The Phase 0 literature isolates pieces of this chain: openreview:TteFp6TLUA questions whether a frozen teacher is learnable at student states, arxiv:2604.13016 studies thinking-pattern overlap and recoverable teacher knowledge, and arxiv:2605.13643 plus arxiv:2605.30833 diagnose position-dependent teachability and supervision-fidelity decay.\n\nThe unresolved bottleneck is prospective transport: none of these within-pair diagnostics establishes a score that can be computed before a full OPD run and used without recalibration across unseen teacher families, student capacities, and data distributions. Raw early gain is also insufficient because it mixes teacher-specific transfer with generic adaptation to the probe buffer. TCR-Probe reframes distillability as a matched functional response: compare identical micro-training arms that differ only in whether targets come from the candidate teacher or the frozen student, then divide the excess response by verifier-measured teacher headroom. This makes the load-bearing question explicit—whether the fraction of available teacher advantage that becomes student improvement is stable enough to rank triads.",
+    "why_now": "The gap is timely because several 2026 studies now expose the ingredients needed for a controlled prospective measurement: arxiv:2604.13016 operationalizes student-reachable teacher knowledge, arxiv:2605.13643 identifies local teachability collapse, arxiv:2605.30833 supplies verifier-based handoff and fidelity measurements, and arxiv:2606.09471 warns that low KL agreement can be misleading on degraded prefixes. At the same time, open-weight Qwen3 and DeepSeek-R1-Distill models, public DAPO-Math-17K and MATH data, and exact-answer verifiers make matched micro-training arms reproducible without paid APIs. What is newly possible is not another post hoc correlational proxy, but a controlled TEACH-versus-SELF intervention whose score can be tested unchanged under held-out teacher-family and data shifts.",
+    "why_prior_stopped": [
+      {
+        "paper_id": "openreview:TteFp6TLUA",
+        "venue_year": "acl-arr-2026-may 2026",
+        "what_they_did": "openreview:TteFp6TLUA examined whether a frozen stronger teacher remains learnable on student-visited states when teacher and student capacities differ.",
+        "what_they_did_not_do": "It did not construct a matched TEACH-versus-SELF micro-training response or test whether that response ranks full-run gains across unseen triads.",
+        "structural_reason_they_stopped": "Its analysis lacked a counterfactual control that separates teacher-specific transfer from generic short-run student adaptation."
+      },
+      {
+        "paper_id": "arxiv:2604.13016",
+        "venue_year": "arXiv 2026-04",
+        "what_they_did": "arxiv:2604.13016 measured thinking-pattern overlap, teacher new knowledge, and gap recovery in controlled within-family OPD comparisons.",
+        "what_they_did_not_do": "It did not turn those observations into an unrefit prospective score validated under teacher-family, capacity-ratio, and data-distribution holdouts.",
+        "structural_reason_they_stopped": "It lacked an intervention-based estimand that normalizes realized student response by the teacher headroom available on the same student-state buffer."
+      },
+      {
+        "paper_id": "arxiv:2605.13643",
+        "venue_year": "arXiv 2026-05",
+        "what_they_did": "arxiv:2605.13643 used student-reachable teacher margin to identify where supervision should fade along a reasoning trajectory.",
+        "what_they_did_not_do": "It did not measure whole-triad distillability before training or compare candidate teachers through matched micro-training arms.",
+        "structural_reason_they_stopped": "Its measurement was designed for position-wise control inside one run rather than transportable triad-level selection."
+      },
+      {
+        "paper_id": "arxiv:2605.30833",
+        "venue_year": "arXiv 2026-05",
+        "what_they_did": "arxiv:2605.30833 diagnosed supervision-fidelity decay using teacher confidence and prefix-handoff completion and used lookahead reward to steer training.",
+        "what_they_did_not_do": "It did not isolate excess learning caused by a candidate teacher over a frozen-self control or validate that quantity against cross-triad final gain.",
+        "structural_reason_they_stopped": "Its signals measure target quality and local corrective opportunity, but not the student's causal functional response to consuming that opportunity."
+      }
+    ],
+    "what_changes_when_gap_closes": "A validated response score would let researchers reject unpromising teacher–student–data triads before committing to full OPD and would make teacher choice an auditable selection decision rather than a strength heuristic. It would also connect the local-teachability findings of arxiv:2604.13016, arxiv:2605.13643, and arxiv:2605.30833 to a stronger empirical statement: under stated transport conditions, normalized teacher-specific micro-response predicts which triads convert local headroom into final exact-answer gain. Conversely, failure would show that distillability is too path-dependent for a fixed small-budget surrogate, redirecting effort toward adaptive within-run diagnostics."
+  },
+  "core_claim": "Across unseen teacher–student–data triads, the matched TEACH-minus-SELF fraction of verifier-measured teacher headroom is a more transferable predictor of full-run OPD gain than static overlap, margin, confidence, teacher accuracy, or uncorrected early gain.",
+  "sub_claims": [
+    {
+      "id": "c1",
+      "statement": "Matched SELF control removes the component of short-run improvement attributable to generic adaptation to the probe buffer and optimizer.",
+      "supports_which_aspect": "Isolation of teacher-specific functional response rather than pair-specific learning-curve speed."
+    },
+    {
+      "id": "c2",
+      "statement": "Headroom normalization separates a student's conversion efficiency from the absolute amount of outcome-relevant advantage exposed by a teacher.",
+      "supports_which_aspect": "Comparability across teachers, student capacities, and data distributions with different available gains."
+    },
+    {
+      "id": "c3",
+      "statement": "If the normalized response is transportable, its unrefit ordering remains predictive under leave-one-teacher-family-out evaluation and yields lower top-three selection regret.",
+      "supports_which_aspect": "Prospective triad selection beyond within-pair post hoc explanation."
+    }
+  ],
+  "key_equations": [
+    {
+      "id": "e1",
+      "linked_step_id": "S2",
+      "latex": "H_c = \\frac{1}{|B_c|}\\sum_{(x,p)\\in B_c}\\left[V\\!\\left(y^{T_c}_{x,p}\\right)-V\\!\\left(y^{S_0}_{x,p}\\right)\\right]",
+      "description": "Verifier-measured teacher handoff headroom on the frozen initial-student prefix buffer Bc.",
+      "description_zh": "在冻结的初始学生前缀缓冲区 Bc 上，用 verifier 衡量教师相对初始学生的可用 handoff headroom。"
+    },
+    {
+      "id": "e2",
+      "linked_step_id": "S4",
+      "latex": "\\Delta^{a}_c = M\\!\\left(\\theta^{a}_c;E_c\\right)-M\\!\\left(\\theta_0;E_c\\right),\\quad a\\in\\{\\mathrm{TEACH},\\mathrm{SELF}\\}",
+      "description": "Fixed-budget outcome change of each matched micro-training arm on the same evaluation slice.",
+      "description_zh": "两个匹配微训练分支在同一评估切片上的固定预算结果变化。"
+    },
+    {
+      "id": "e3",
+      "linked_step_id": "S4",
+      "latex": "R(c)=\\frac{\\Delta^{\\mathrm{TEACH}}_c-\\Delta^{\\mathrm{SELF}}_c}{H_c}",
+      "description": "Teacher-Causal Response: excess micro-training gain per unit of verified teacher headroom.",
+      "description_zh": "Teacher-Causal Response：每单位已验证教师 headroom 所产生的教师特异性微训练增益。"
+    },
+    {
+      "id": "e4",
+      "linked_step_id": "S5",
+      "latex": "\\rho_{\\mathrm{LOTF}}=\\operatorname{Spearman}\\!\\left(\\{R(c)\\}_{c\\in C_{-f}},\\{G_{\\mathrm{OPD}}(c)\\}_{c\\in C_{-f}}\\right)",
+      "description": "Leave-one-teacher-family-out rank agreement between the unrefit probe score and full-OPD gain.",
+      "description_zh": "在留出一个教师家族时，未经重新拟合的 probe 分数与完整 OPD 增益之间的排序一致性。"
+    }
+  ],
+  "method_flow": {
+    "high_level_pipeline": "For each candidate teacher–student–data triad c, freeze the initial student and collect a shared buffer Bc of student-generated prefixes plus a held-out evaluation slice. Measure how much verifier-scored outcome headroom the candidate teacher exposes on those same prefixes. Fork the identical student checkpoint and buffer into matched TEACH and SELF micro-training arms, differing only in whether cached targets come from the candidate teacher or the frozen initial student. Convert the arms' excess outcome response into the normalized score R(c), then use that score without refitting to rank triads under teacher-family and data holdouts. The score survives only if it predicts full-OPD gain better than the named static and naive-early-gain baselines and loses that value when teacher targets are prefix-permuted.",
+    "steps": [
+      {
+        "step_id": "S1",
+        "title": "Freeze the triad and build matched states",
+        "what_changes": "For triad c, freeze the initial student checkpoint θ0, sample student rollouts from the named data source, and materialize one prefix buffer Bc plus a disjoint fixed evaluation slice Ec that every probe arm reuses.",
+        "why_this_step": "Holding states, examples, and initialization fixed prevents teacher comparisons from inheriting different rollout distributions before the causal contrast is formed.",
+        "linked_component": "engineering",
+        "linked_falsification": "metric_specification",
+        "input": "Candidate teacher Tc, initial student θ0, and public task data Dc.",
+        "output": "Shared student-state buffer Bc and evaluation slice Ec."
+      },
+      {
+        "step_id": "S2",
+        "title": "Measure available teacher headroom",
+        "what_changes": "On each prefix in Bc, obtain candidate-teacher and frozen-student handoff completions, score both with the task verifier V, and average their outcome difference to compute Hc.",
+        "why_this_step": "The same raw response should mean different things when a teacher exposes little versus substantial outcome-relevant advantage; Hc supplies that denominator.",
+        "linked_component": "both",
+        "linked_falsification": "metric_specification",
+        "input": "Bc, Tc, θ0, and the exact-answer verifier V.",
+        "output": "Verified teacher handoff headroom Hc and cached target distributions."
+      },
+      {
+        "step_id": "S3",
+        "title": "Run the matched TEACH and SELF probes",
+        "what_changes": "Fork θ0 into two arms with identical Bc, token count, optimizer, sampling marginals, and probe compute; train TEACH on Tc's cached target distributions and SELF on targets cached from the frozen θ0.",
+        "why_this_step": "The SELF arm estimates generic short-run adaptation, leaving target source as the operative difference between arms.",
+        "linked_component": "engineering",
+        "linked_falsification": "mechanism_distinguisher",
+        "input": "θ0, Bc, and matched teacher/self target caches.",
+        "output": "Micro-trained checkpoints θcTEACH and θcSELF."
+      },
+      {
+        "step_id": "S4",
+        "title": "Compute normalized excess response",
+        "what_changes": "Evaluate both probe checkpoints on Ec, subtract each outcome from the frozen-student outcome, take ΔcTEACH minus ΔcSELF, and divide by Hc to form R(c), recording Hc separately rather than silently clipping low-headroom triads.",
+        "why_this_step": "The numerator removes generic early gain while the denominator asks what fraction of available teacher advantage was internalized; surfacing low Hc preserves the estimand's boundary instead of hiding it.",
+        "linked_component": "theory",
+        "linked_falsification": "metric_specification",
+        "input": "θcTEACH, θcSELF, θ0, Ec, and Hc.",
+        "output": "Teacher-Causal Response R(c) with its headroom diagnostic."
+      },
+      {
+        "step_id": "S5",
+        "title": "Rank triads without recalibration",
+        "what_changes": "Apply the same R(c) definition to every triad and evaluate its ordering against fixed-5M-token full-OPD exact-answer gains under leave-one-teacher-family-out and data-distribution holdouts.",
+        "why_this_step": "Cross-holdout ranking, rather than within-family fit, is the required evidence that the response functions as a prospective triad-selection signal.",
+        "linked_component": "both",
+        "linked_falsification": "metric_specification",
+        "input": "Per-triad R(c) values and locked full-OPD gains.",
+        "output": "Spearman rank correlation and top-three selection regret for the unchanged score."
+      },
+      {
+        "step_id": "S6",
+        "title": "Break the teacher–prefix alignment",
+        "what_changes": "Construct the locked placebo TEACH arm by permuting cached candidate-teacher target distributions across different prefixes within Bc while holding target marginals and all probe resources fixed, then recompute the response-based triad ordering.",
+        "why_this_step": "If selection value survives after teacher targets no longer correspond to their prefixes, R is tracking a generic learning-curve or target-marginal artifact rather than teacher-causal headroom conversion.",
+        "linked_component": "engineering",
+        "linked_falsification": "mechanism_distinguisher",
+        "input": "Bc and the unchanged candidate-teacher target cache.",
+        "output": "Placebo response score and its downstream full-OPD selection value."
+      }
+    ],
+    "design_reasoning_echo": "The estimand is the fixed-budget outcome gain caused by replacing a frozen-self target source with candidate-teacher targets on the same initial student states, normalized by verifier-measured teacher handoff headroom. Its load-bearing premises are that Bc represents the student's early OPD state distribution, the exact-answer verifier preserves the relevant outcome ordering, matched arms isolate target-source effects, and the resulting conversion fraction is transportable across the held-out triads; that last premise is untested and is the falsification target. The naive alternative—use TEACH-arm early gain directly—confounds teacher-specific transfer with generic adaptation and favors triads with larger raw headroom, so SELF subtraction and Hc normalization are both necessary. Although matched-control estimation is a standard causal-design tool, the domain-specific object is unusual: treatment is a cached teacher target distribution applied on student-generated prefixes, exposure varies with reachable teacher headroom, and validity requires prefix-aligned supervision plus transfer of an unrefit ranking across teacher families. The method therefore claims an empirical diagnostic, not an identification theorem or a guarantee of downstream gain."
+  },
+  "plain_motivation_en": "In on-policy distillation (OPD), a useful teacher is not simply the strongest model. Whether a teacher helps depends on the particular teacher, student, and data combination. The student needs to visit prefixes where the teacher has knowledge relevant to the outcome, receive a target it can learn at its current capability, and turn that local signal into a final task improvement. Existing work separately studies whether a frozen teacher is learnable at student states, overlap in reasoning patterns and recoverable teacher knowledge, position-dependent teachability, and decay in supervision fidelity.\n\nThe missing question is whether a score can be computed before a full OPD run and then used, without recalibration, across unseen teacher families, student capacities, and data distributions. Raw early improvement does not answer this because it combines transfer specific to the teacher with the student's general adaptation to the probe buffer. TCR-Probe compares two otherwise identical short training arms: one uses targets from a candidate teacher and the other uses targets from the frozen student itself. It divides the extra response of the teacher arm by the teacher headroom measured by a verifier. The key question is whether the resulting fraction of available teacher advantage that becomes student improvement is stable enough to rank triads.\n\nThis measurement is timely because recent 2026 studies provide the needed pieces: student-reachable teacher knowledge, local teachability collapse, verifier-based handoff and fidelity measurements, and the warning that low Kullback–Leibler (KL) agreement can be misleading on degraded prefixes. Open-weight Qwen3 and DeepSeek-R1-Distill models, public DAPO-Math-17K and MATH data, and exact-answer verifiers also allow reproducible matched micro-training arms without paid application programming interfaces (APIs). The new possibility is a controlled TEACH-versus-SELF intervention whose unchanged score can be tested under held-out teacher-family and data shifts, rather than another after-the-fact correlation.\n\nEarlier work did not make this step. openreview:TteFp6TLUA examined whether a stronger frozen teacher remains learnable on student-visited states when capacities differ, but did not build a matched TEACH-versus-SELF response or test whether it ranks full-run gains across unseen triads; it lacked a control that separates teacher-specific transfer from general short-run adaptation. arxiv:2604.13016 measured reasoning-pattern overlap, teacher new knowledge, and gap recovery within controlled model families, but did not create an unrefit prospective score for teacher-family, capacity-ratio, and data-distribution holdouts; it lacked an intervention-based quantity that normalizes realized student response by teacher headroom on the same student-state buffer. arxiv:2605.13643 used student-reachable teacher margin to decide where supervision should fade along a reasoning trajectory, but did not measure whole-triad distillability before training or compare teachers with matched micro-training arms; its measurement was for position-wise control inside one run rather than triad-level selection that transfers. arxiv:2605.30833 diagnosed supervision-fidelity decay from teacher confidence and prefix-handoff completion and used lookahead reward to steer training, but did not isolate a candidate teacher's extra learning over a frozen-self control or validate it against final gain across triads; its signals describe target quality and local opportunity, not the student's causal response to using that opportunity.\n\nIf the response score is validated, researchers could reject unpromising teacher–student–data triads before full OPD and make teacher selection an auditable decision rather than a strength heuristic. It would connect local teachability findings to the stronger claim that, under stated transport conditions, normalized teacher-specific micro-response predicts which triads turn local headroom into final exact-answer improvement. If it fails, that would show distillability is too dependent on the training path for a fixed, small-budget substitute and would redirect work toward adaptive diagnostics during training.",
+  "plain_motivation_zh": "在 on-policy distillation (OPD) 中，有用的教师并不只是最强的模型。教师是否有帮助，取决于具体的教师、学生和数据三元组。学生必须访问到教师掌握且与结果相关的前缀，收到以当前能力仍可学习的 target，并把这个局部信号转化为最终任务提升。已有工作分别研究了冻结教师在学生状态上是否可学习、推理模式重叠与可恢复的教师知识、位置相关的可教性，以及监督 fidelity 的衰减。\n\n尚未解决的问题是：能否在完整 OPD run 之前计算一个分数，并且不经重新校准就用于未见过的教师家族、学生能力和数据分布。原始早期提升无法回答这个问题，因为它把教师特异的迁移与学生对 probe buffer 的一般适应混在了一起。TCR-Probe 比较两个其余条件相同的短训练分支：一个使用候选教师的 target，另一个使用冻结学生自身的 target。它用 verifier 测得的教师 headroom 去归一化教师分支的额外响应。核心问题是：可用教师优势中真正转化为学生提升的比例，是否足够稳定，能够为三元组排序。\n\n现在进行这种测量是及时的，因为 2026 年的研究已经提供了所需部件：学生可达的教师知识、局部可教性的崩塌、基于 verifier 的 handoff 和 fidelity 测量，以及低 Kullback–Leibler (KL) agreement 在退化前缀上可能误导的警告。同时，开放权重的 Qwen3 和 DeepSeek-R1-Distill 模型、公开的 DAPO-Math-17K 和 MATH 数据，以及 exact-answer verifier，使得无需付费 API 也可复现匹配的微训练分支。新近可行的不是又一个事后相关 proxy，而是受控的 TEACH-versus-SELF intervention：其分数保持不变，并在留出的教师家族和数据变化下接受测试。\n\n先前工作没有完成这一步。openreview:TteFp6TLUA 考察了当能力不同时，较强的冻结教师在学生访问的状态上是否仍可学习，但没有构造匹配的 TEACH-versus-SELF 响应，也没有检验它是否能在未见三元组间为完整 run 的增益排序；它缺少一个能将教师特异迁移与一般短期适应分离的对照。arxiv:2604.13016 在受控模型家族内测量了推理模式重叠、教师新增知识和 gap recovery，但没有形成未经重新拟合、可在教师家族、能力比例和数据分布留出条件下验证的前瞻分数；它缺少一个基于 intervention 的量，能用同一学生状态 buffer 上的教师 headroom 归一化实际学生响应。arxiv:2605.13643 用学生可达的教师 margin 判断推理轨迹中监督应在何处减弱，但没有在训练前测量整个三元组的可蒸馏性，也没有通过匹配的微训练分支比较候选教师；它的测量用于单次 run 内的位置控制，而非可迁移的三元组级选择。arxiv:2605.30833 用教师 confidence 和 prefix-handoff completion 诊断监督 fidelity 衰减，并用 lookahead reward 引导训练，但没有分离候选教师相对冻结自身对照带来的额外学习，也没有针对跨三元组最终增益验证该量；其信号描述 target 质量与局部纠正机会，而非学生使用该机会后的因果响应。\n\n如果该响应分数得到验证，研究者可在投入完整 OPD 前排除没有前景的教师—学生—数据三元组，并将教师选择变成可审计的决策，而不再依赖强度启发式。它会把局部可教性的发现连接到更强的经验结论：在已说明的 transport 条件下，经过归一化的教师特异微响应能够预测哪些三元组会把局部 headroom 转化为最终 exact-answer 提升。如果失败，则说明可蒸馏性过度依赖训练路径，固定的小预算替代指标无效，后续工作应转向训练过程中的自适应诊断。",
+  "plain_method_steps_en": [
+    {
+      "step_id": "S1",
+      "what_to_do": "For triad c, freeze the initial student checkpoint θ0. Sample student rollouts from the named data source, then create one prefix buffer Bc and a separate fixed evaluation slice Ec that every probe arm reuses.",
+      "why_this_makes_sense": "Keeping the states, examples, and initialization fixed means teacher comparisons do not start from different rollout distributions before the causal comparison."
+    },
+    {
+      "step_id": "S2",
+      "what_to_do": "For every prefix in Bc, get handoff completions from the candidate teacher and frozen student. Score both with the task verifier V and average the outcome difference to compute Hc.",
+      "why_this_makes_sense": "The same raw response has different meaning when a teacher offers little versus substantial outcome-relevant advantage. Hc provides the denominator for that difference."
+    },
+    {
+      "step_id": "S3",
+      "what_to_do": "Copy θ0 into two arms with the same Bc, token count, optimizer, sampling marginals, and probe compute. Train TEACH on cached target distributions from Tc and SELF on targets cached from frozen θ0.",
+      "why_this_makes_sense": "The SELF arm measures general short-run adaptation, so the source of the targets is the active difference between the two arms."
+    },
+    {
+      "step_id": "S4",
+      "what_to_do": "Evaluate both probe checkpoints on Ec. Subtract the frozen-student outcome from each, subtract ΔcSELF from ΔcTEACH, and divide by Hc to form R(c). Record Hc separately instead of silently clipping triads with low headroom.",
+      "why_this_makes_sense": "The numerator removes general early gain. The denominator asks what fraction of available teacher advantage became student improvement. Reporting low Hc keeps the boundary of the quantity visible."
+    },
+    {
+      "step_id": "S5",
+      "what_to_do": "Use the same R(c) definition for every triad and compare its ordering with fixed-5M-token full-OPD exact-answer gains under leave-one-teacher-family-out and data-distribution holdouts.",
+      "why_this_makes_sense": "Ranking across holdouts, rather than fitting within one family, is the needed evidence that the response can select triads before training."
+    },
+    {
+      "step_id": "S6",
+      "what_to_do": "Make the locked placebo TEACH arm by permuting cached candidate-teacher target distributions across different prefixes within Bc. Keep target marginals and all probe resources fixed, then recompute the response-based triad ordering.",
+      "why_this_makes_sense": "If selection value remains when teacher targets no longer match their prefixes, R is following a general learning-curve or target-marginal artifact instead of teacher-caused conversion of headroom."
+    }
+  ],
+  "plain_method_steps_zh": [
+    {
+      "step_id": "S1",
+      "what_to_do": "对三元组 c，冻结初始学生 checkpoint θ0。从指定数据源采样学生 rollouts，然后建立一个前缀 buffer Bc 和一个独立、固定的评估切片 Ec，所有 probe 分支都复用它们。",
+      "why_this_makes_sense": "固定状态、样本和初始化后，教师比较在形成因果对比前不会继承不同的 rollout 分布。"
+    },
+    {
+      "step_id": "S2",
+      "what_to_do": "对 Bc 中每个前缀，取得候选教师和冻结学生的 handoff completions。用任务 verifier V 为两者打分，并对结果差异取平均以计算 Hc。",
+      "why_this_makes_sense": "当教师提供的与结果相关优势很少或很多时，相同的原始响应含义不同。Hc 为这种差异提供分母。"
+    },
+    {
+      "step_id": "S3",
+      "what_to_do": "将 θ0 复制为两个分支，并让它们使用相同的 Bc、token 数、optimizer、sampling marginals 和 probe compute。TEACH 在来自 Tc 的缓存 target distributions 上训练，SELF 在来自冻结 θ0 的缓存 targets 上训练。",
+      "why_this_makes_sense": "SELF 分支估计一般的短期适应，因此两个分支之间真正起作用的差异是 target 的来源。"
+    },
+    {
+      "step_id": "S4",
+      "what_to_do": "在 Ec 上评估两个 probe checkpoint。分别减去冻结学生的结果，再用 ΔcTEACH 减去 ΔcSELF，并除以 Hc 得到 R(c)。单独记录 Hc，不要静默截断 headroom 较低的三元组。",
+      "why_this_makes_sense": "分子去除了通用早期增益；分母考察可用教师优势中有多少转化为学生提升。报告低 Hc 能保留该量的适用边界。"
+    },
+    {
+      "step_id": "S5",
+      "what_to_do": "对每个三元组应用相同的 R(c) 定义，并在 leave-one-teacher-family-out 和数据分布留出条件下，将其排序与固定 5M-token 完整 OPD 的 exact-answer 增益比较。",
+      "why_this_makes_sense": "跨留出条件的排序，而不是在单一家族内拟合，是该响应可在训练前用于选择三元组所需的证据。"
+    },
+    {
+      "step_id": "S6",
+      "what_to_do": "构造锁定的 placebo TEACH 分支：在 Bc 内将缓存的候选教师 target distributions 置换到不同前缀上。固定 target marginals 和全部 probe resources，然后重新计算基于响应的三元组排序。",
+      "why_this_makes_sense": "如果教师 target 不再对应其前缀后选择价值仍保留，R 追踪的就是一般 learning-curve 或 target-marginal artifact，而不是教师导致的 headroom 转化。"
+    }
+  ],
+  "plain_method_modules_en": [
+    {
+      "module_id": "background",
+      "purpose_oneline": "Background: freeze shared student states and establish the available verifier-measured teacher headroom.",
+      "step_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "module_id": "matched_causal_response",
+      "purpose_oneline": "Measure teacher-specific short-training response with matched TEACH and SELF arms, then normalize it by available headroom.",
+      "step_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "module_id": "transport_and_placebo_test",
+      "purpose_oneline": "Test whether the unchanged score ranks held-out triads and whether that value depends on teacher–prefix alignment.",
+      "step_ids": [
+        "S5",
+        "S6"
+      ]
+    }
+  ],
+  "plain_method_modules_zh": [
+    {
+      "module_id": "background",
+      "purpose_oneline": "背景：冻结共享的学生状态，并建立 verifier 测得的可用教师 headroom。",
+      "step_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "module_id": "matched_causal_response",
+      "purpose_oneline": "用匹配的 TEACH 和 SELF 分支测量教师特异的短训练响应，再按可用 headroom 归一化。",
+      "step_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "module_id": "transport_and_placebo_test",
+      "purpose_oneline": "检验不变分数是否能为留出的三元组排序，以及该价值是否依赖教师—前缀对齐。",
+      "step_ids": [
+        "S5",
+        "S6"
+      ]
+    }
+  ],
+  "falsification_prediction": "Build 12 triads from Qwen3-1.7B and Qwen3-4B students; Qwen3-8B, Qwen3-14B, and DeepSeek-R1-Distill-Qwen-7B teachers; and DAPO-Math-17K versus the MATH training split, then measure the probe and the 5-million-token full-OPD exact-answer gain on MATH-500 and AIME 2024. If the idea works, leave-one-teacher-family-out Spearman rho between Teacher-Causal Response R(c) and final OPD gain stays positive and exceeds the corresponding rho for top-k overlap, local teacher margin, peak confidence, teacher accuracy, and naive early gain; selecting the top three triads by R also lowers final-gain regret relative to those baselines. The ONE load-bearing variable is R(c), the matched TEACH-minus-SELF fraction of verifier-measured teacher headroom. As a non-identity negative-control intervention on that response, keep the candidate teacher, target marginals, Bc, token count, optimizer, and probe compute fixed but randomly permute its cached target distributions across different prefixes within Bc before training the placebo TEACH arm; triads selected by the resulting placebo R should return to random-selection downstream full-OPD gain, otherwise the claimed teacher-causal interpretation is falsified.",
+  "compute_budget": "72 80GB-GPU-days for 12 two-arm probes, 12 fixed-5M-token full OPD runs, decoding, two seeds, and one rerun margin; 0 USD API cost because all named models and verifiers are open-weight/local. With 8–16 concurrent GPUs this is tight but feasible and the first 12 probe/full-run pairs provide an early kill decision before expanding seeds.",
+  "almost_prior_paper_id": "arxiv:2604.13016",
+  "almost_prior_venue_year": "arXiv 2026-04",
+  "what_step_was_missed": "It would have needed to fork each initial student-state buffer into candidate-teacher and frozen-self-teacher micro-training arms, normalize their outcome difference by verified teacher handoff headroom, and test that resulting score without recalibration on held-out teacher families and data distributions.",
+  "feasibility_validation": {
+    "compute": {
+      "verdict": "infeasible",
+      "rationale": "GPU line ≈ 72 vs 8 GPU-day (900%) → infeasible. Overall (worse line) → infeasible."
+    },
+    "data": {
+      "verdict": "feasible",
+      "rationale": "All required artifacts—Qwen3 and DeepSeek-R1-Distill-Qwen checkpoints, DAPO-Math-17K, MATH, MATH-500, AIME 2024, and exact-answer verifiers—are public and can be run locally."
+    },
+    "theoretical": {
+      "verdict": "n/a",
+      "rationale": "The contribution is an empirical matched diagnostic and transport test rather than a theorem, so no separate theoretical deliverable is required."
+    },
+    "engineering": {
+      "verdict": "tight",
+      "rationale": "The implementation uses standard OPD components, but reproducibly caching prefix-aligned teacher and self targets and orchestrating 24 probe arms plus 12 full runs is a substantial systems burden."
+    },
+    "falsification": {
+      "verdict": "feasible",
+      "rationale": "The rank metrics, exact-answer outcomes, held-out teacher-family split, and prefix-permutation intervention are fully specified and implementable with the named open-weight tooling, although executing the full test exceeds the stated compute envelope."
+    },
+    "overall": "infeasible"
+  },
+  "differentiation_from_lit": [
+    {
+      "paper_id": "openreview:TteFp6TLUA",
+      "venue_year": "acl-arr-2026-may 2026",
+      "delta": "That work asks whether a frozen teacher is learnable on student-visited states within a capacity-gap setting, whereas this candidate constructs a matched functional-response measurement and tests whether its triad ordering predicts held-out-family full-OPD gain; the prior-method comparison is an abstract-only inference because its full text was unavailable."
+    },
+    {
+      "paper_id": "arxiv:2604.13016",
+      "venue_year": "arXiv 2026-04",
+      "delta": "It measures thinking-pattern overlap and teacher new knowledge in controlled within-family comparisons and reports gap recovery after full training; this candidate instead estimates pre-run excess outcome response over a frozen-self control and requires the same unrefit score to rank gains under teacher-family, capacity-ratio, and data holdouts."
+    },
+    {
+      "paper_id": "arxiv:2605.13643",
+      "venue_year": "arXiv 2026-05",
+      "delta": "It uses student-reachable teacher margin to find a trajectory-specific suffix release point, while this candidate leaves every token and the OPD objective untouched and measures whether a whole-triad causal micro-response transfers to unseen combinations."
+    },
+    {
+      "paper_id": "arxiv:2605.30833",
+      "venue_year": "arXiv 2026-05",
+      "delta": "It defines supervision fidelity from teacher peak confidence and prefix-handoff completion within a fixed pair and uses lookahead reward to steer tokens; this candidate uses verified handoff outcomes only as a normalization oracle and validates an independent matched training-response score against cross-triad full-run gain."
+    }
+  ],
+  "reviewer_concerns_and_responses": [
+    {
+      "attack": "Paper-pointed threat: arxiv:2605.12051v1 (collision_hits). Learning plug-in surrogate endpoints for randomized experiments directly formalizes the high-level claim that a short-term post-treatment surrogate is valuable when it predicts the result that would be obtained on an expensive real outcome, and it learns surrogates by effect predictiveness. That result prevents this candidate from claiming the general short-probe-to-long-outcome principle as novel, but it does not supply the OPD-specific matched TEACH-versus-SELF micro-training intervention, student-state construction, handoff normalization, or triad-held-out validation on which this candidate's mechanism depends.",
+      "severity": "non_blocking",
+      "response": "The defense is deliberately narrow: the core_claim does not claim novelty for the general surrogate-endpoint principle, and method_flow.steps S1–S4 specify the OPD-specific matched TEACH-versus-SELF intervention, student-state buffer, and handoff-headroom normalization. Consistent with the Phase 3.2 non-blocking verdict, differentiation therefore rests on the operational estimand and held-out triad validation, not on the broad idea that a short outcome can predict a long one.",
+      "fields_changed_to_address": [
+        "falsification_prediction"
+      ]
+    },
+    {
+      "attack": "Un-retrieved mechanism family flagged by the audit (parametric knowledge, not in the retrieved pool): Learning-curve extrapolation / early-training performance prediction; scoop-check the phrases \"learning curve extrapolation\" and \"early training performance prediction\" before treating early micro-training response as a new predictor family. — novelty vs this family is UNVERIFIED; run a targeted scoop-check on that vocabulary before investing.",
+      "severity": "non_blocking",
+      "response": "A targeted scoop-check must establish that learning-curve extrapolation and early-training prediction methods do not already combine prefix-matched TEACH-versus-SELF intervention, verifier-headroom normalization, and unchanged cross-teacher-family triad ranking. If that combination or an equivalent estimand already exists, the claimed predictor-family delta does not survive and the proposal must be reframed rather than defended lexically.",
+      "fields_changed_to_address": [
+        "falsification_prediction"
+      ]
+    }
+  ],
+  "domain_landscape": {
+    "n_papers": 36,
+    "pattern_distribution": [
+      {
+        "pattern_id": "heterogeneous_decomposition",
+        "count": 18,
+        "share": 0.5,
+        "saturation_band": "saturated"
+      },
+      {
+        "pattern_id": "controlled_diagnostic_design",
+        "count": 7,
+        "share": 0.19,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "generative_process_redesign",
+        "count": 7,
+        "share": 0.19,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "self_supervised_signal_engineering",
+        "count": 3,
+        "share": 0.08,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "assumption_audit_and_pivot",
+        "count": 2,
+        "share": 0.06,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "unify_into_shared_representation",
+        "count": 2,
+        "share": 0.06,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "architectural_operator_substitution",
+        "count": 1,
+        "share": 0.03,
+        "saturation_band": "untested"
+      },
+      {
+        "pattern_id": "reframe_as_solvable_object",
+        "count": 1,
+        "share": 0.03,
+        "saturation_band": "untested"
+      }
+    ],
+    "candidate_uses": [
+      {
+        "pattern_id": "controlled_diagnostic_design",
+        "role": "closes Gap 1",
+        "sub_pattern_id": "C02 (Design a Confound-Isolating Diagnostic)",
+        "saturation_in_domain": "mid_frequency"
+      }
+    ],
+    "position_note": "The OPD corpus is dominated by heterogeneous decomposition (18/36 on-topic papers), whereas this candidate uses the mid-frequency controlled-diagnostic pattern (7/36) as a stand-alone triad-selection measurement rather than another token-, position-, or trajectory-specific treatment rule."
+  },
+  "literature_breakdown": {
+    "summary": {
+      "n_phase0_total": 40,
+      "n_phase0_on_topic": 36,
+      "n_phase0_outside_taxonomy": 4,
+      "n_phase3_collision": 96
+    },
+    "phase0_by_pattern": [
+      {
+        "pattern_id": "architectural_operator_substitution",
+        "pattern_name": "Substitute the Operator or Representation",
+        "papers": [
+          {
+            "paper_id": "arxiv:2605.07711",
+            "title": "SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "Exact shared-token matching silently discards supervision when teacher and student tokenizers differ."
+          }
+        ]
+      },
+      {
+        "pattern_id": "assumption_audit_and_pivot",
+        "pattern_name": "Audit and Pivot an Assumption",
+        "papers": [
+          {
+            "paper_id": "openreview:TteFp6TLUA",
+            "title": "Rethinking the Capacity Gap in On-Policy Distillation for Large Language Models",
+            "venue_year": "acl-arr-2026-may 2026",
+            "bottleneck_targeted": "It targets the implicit assumption that a frozen strong teacher is automatically learnable at student states."
+          }
+        ]
+      },
+      {
+        "pattern_id": "assumption_audit_and_pivot, controlled_diagnostic_design",
+        "pattern_name": "assumption_audit_and_pivot, controlled_diagnostic_design",
+        "papers": [
+          {
+            "paper_id": "arxiv:2605.11182",
+            "title": "The Many Faces of On-Policy Distillation: Pitfalls, Mechanisms, and Fixes",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets unqualified assumptions about teacher strength and privileged information being internalizable."
+          }
+        ]
+      },
+      {
+        "pattern_id": "controlled_diagnostic_design",
+        "pattern_name": "Design a Confound-Isolating Diagnostic",
+        "papers": [
+          {
+            "paper_id": "arxiv:2604.13016",
+            "title": "Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe",
+            "venue_year": "arXiv 2026-04",
+            "bottleneck_targeted": "It targets uncertainty about when teacher feedback is locally usable on student-visited states."
+          },
+          {
+            "paper_id": "arxiv:2603.25562",
+            "title": "Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes",
+            "venue_year": "arXiv 2026-03",
+            "bottleneck_targeted": "It targets biased and unstable sampled-token reverse-KL supervision on long student rollouts."
+          },
+          {
+            "paper_id": "arxiv:2605.13643",
+            "title": "Prefix Teach, Suffix Fade: Local Teachability Collapse in Strong-to-Weak On-Policy Distillation",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets position-dependent collapse of teacher teachability under strong-to-weak rollout drift."
+          },
+          {
+            "paper_id": "arxiv:2605.30833",
+            "title": "Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets declining teacher confidence and corrective discrimination along student-generated prefixes."
+          }
+        ]
+      },
+      {
+        "pattern_id": "controlled_diagnostic_design, heterogeneous_decomposition",
+        "pattern_name": "controlled_diagnostic_design, heterogeneous_decomposition",
+        "papers": [
+          {
+            "paper_id": "arxiv:2605.21606",
+            "title": "When Are Teacher Tokens Reliable? Position-Weighted On-Policy Self-Distillation for Reasoning",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets unequal teacher-token reliability across rollout positions and branch viability states."
+          },
+          {
+            "paper_id": "arxiv:2606.09471",
+            "title": "Escaping the KL Agreement Trap in On-Policy Distillation",
+            "venue_year": "arXiv 2026-06",
+            "bottleneck_targeted": "It targets falsely reassuring low-KL agreement in degraded student-prefix states."
+          }
+        ]
+      },
+      {
+        "pattern_id": "generative_process_redesign",
+        "pattern_name": "Liberate a Fixed Generative Component",
+        "papers": [
+          {
+            "paper_id": "arxiv:2501.16937",
+            "title": "TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models",
+            "venue_year": "iclr-2025 2025",
+            "bottleneck_targeted": "It targets capacity-gap and mode-collapse failures from exposing the full teacher target too early."
+          },
+          {
+            "paper_id": "arxiv:2605.13230",
+            "title": "Teacher-Guided Policy Optimization for On-Policy Reasoning Distillation under Large Policy Divergence",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets nondirectional reverse-KL feedback when teacher and student policies diverge strongly."
+          },
+          {
+            "paper_id": "arxiv:2605.31490",
+            "title": "Are Full Rollouts Necessary for On-Policy Distillation?",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets the default use of costly full rollouts despite degraded late-prefix supervision."
+          },
+          {
+            "paper_id": "arxiv:2605.27028",
+            "title": "Less is More: Early Stopping Rollout for On-Policy Distillation",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets off-policy teacher decay and compute waste in late rollout suffixes."
+          },
+          {
+            "paper_id": "arxiv:2306.13649",
+            "title": "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+            "venue_year": "iclr-2024 2024",
+            "bottleneck_targeted": "Offline distillation trains on teacher states rather than the student prefixes encountered at inference."
+          },
+          {
+            "paper_id": "arxiv:2306.08543",
+            "title": "MiniLLM: On-Policy Distillation of Large Language Models",
+            "venue_year": "iclr-2024 2024",
+            "bottleneck_targeted": "Forward-KL on static teacher data spreads probability into low-value modes and misses student-visited states."
+          },
+          {
+            "paper_id": "arxiv:2602.12125",
+            "title": "Learning beyond Teacher: Generalized On-Policy Distillation with Reward Extrapolation",
+            "venue_year": "arXiv 2026-02",
+            "bottleneck_targeted": "Standard OPD fixes the reward-to-KL balance and therefore only imitates the teacher boundary."
+          }
+        ]
+      },
+      {
+        "pattern_id": "heterogeneous_decomposition",
+        "pattern_name": "Decompose for Differentiated Treatment",
+        "papers": [
+          {
+            "paper_id": "arxiv:2605.03677",
+            "title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets distinct student exploration and teacher outcome-ordering failures with separate interventions."
+          },
+          {
+            "paper_id": "arxiv:2605.09725",
+            "title": "On-Policy Distillation with Best-of-N Teacher Rollout Selection",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets unreliable teacher trajectories by separating candidates by correctness and student alignment."
+          },
+          {
+            "paper_id": "arxiv:2606.01249",
+            "title": "Trust Region On-Policy Distillation",
+            "venue_year": "arXiv 2026-06",
+            "bottleneck_targeted": "It targets unreliable gradients by treating trusted and outlier teacher-supervision regions differently."
+          },
+          {
+            "paper_id": "arxiv:2605.07804",
+            "title": "Prune-OPD: Efficient and Reliable On-Policy Distillation for Long-Horizon Reasoning",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets wasted and harmful suffix supervision after local student-teacher prefix drift."
+          },
+          {
+            "paper_id": "arxiv:2503.07067",
+            "title": "DistiLLM-2: A Contrastive Approach to On-Policy Distillation",
+            "venue_year": "arXiv 2025-03",
+            "bottleneck_targeted": "A single divergence objective gives mismatched supervision for teacher and student generated responses."
+          },
+          {
+            "paper_id": "arxiv:2603.07079",
+            "title": "Entropy-Aware On-Policy Distillation of Language Models",
+            "venue_year": "icml-2026 2026",
+            "bottleneck_targeted": "A uniform reverse-KL objective loses diverse valid continuations at high-entropy teacher tokens."
+          },
+          {
+            "paper_id": "arxiv:2604.14084",
+            "title": "TIP: Token Importance in On-Policy Distillation",
+            "venue_year": "arXiv 2026-04",
+            "bottleneck_targeted": "Uniform token supervision wastes compute and entropy-only selection misses overconfident student errors."
+          },
+          {
+            "paper_id": "arxiv:2604.10688",
+            "title": "SCOPE: Signal-Calibrated On-Policy Distillation Enhancement with Dual-Path Adaptive Weighting",
+            "venue_year": "arXiv 2026-04",
+            "bottleneck_targeted": "Correct and incorrect student rollouts have different supervision reliability but receive one uniform loss."
+          },
+          {
+            "paper_id": "arxiv:2605.07725",
+            "title": "SOD: Step-wise On-policy Distillation for Small Language Model Agents",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "A wrong tool call corrupts later observations, so uniform token distillation propagates unreliable guidance."
+          },
+          {
+            "paper_id": "arxiv:2505.22375",
+            "title": "Pangu Embedded: An Efficient Dual-system LLM Reasoner with Metacognition",
+            "venue_year": "arXiv 2025-05",
+            "bottleneck_targeted": "Uniform teacher-CoT training ignores the student's changing capacity and makes overly difficult data noisy."
+          },
+          {
+            "paper_id": "arxiv:2606.00305",
+            "title": "Bridging Reasoning Trajectories in On-Policy Distillation via Near-Future Guidance",
+            "venue_year": "arXiv 2026-06",
+            "bottleneck_targeted": "Local high-loss tokens cannot distinguish surface mismatches from states that divert the future reasoning trajectory."
+          },
+          {
+            "paper_id": "openreview:kv6QSpUJbc",
+            "title": "ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation",
+            "venue_year": "acl-arr-2026-may 2026",
+            "bottleneck_targeted": "Incorrect student trajectories are commonly discarded despite exposing high-value teacher-student deviations."
+          },
+          {
+            "paper_id": "arxiv:2605.28791",
+            "title": "Skill-Conditioned Gated Self-Distillation for LLM Reasoning",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "Privileged skill-conditioned teachers can be helpful, misleading, or uncertain for the same student rollout."
+          },
+          {
+            "paper_id": "arxiv:2606.10385",
+            "title": "Beyond Absolute Imitation: Anchored Residual Guidance for Privileged On-Policy Distillation",
+            "venue_year": "arXiv 2026-06",
+            "bottleneck_targeted": "Full-view privileged teachers leak hindsight tokens that are unreachable from the student's current prefix."
+          }
+        ]
+      },
+      {
+        "pattern_id": "reframe_as_solvable_object, heterogeneous_decomposition",
+        "pattern_name": "reframe_as_solvable_object, heterogeneous_decomposition",
+        "papers": [
+          {
+            "paper_id": "arxiv:2603.11137",
+            "title": "Scaling Reasoning Efficiently via Relaxed On-Policy Distillation",
+            "venue_year": "icml-2026 2026",
+            "bottleneck_targeted": "It targets unstable and inefficient OPD updates caused by extreme token-level teacher rewards."
+          }
+        ]
+      },
+      {
+        "pattern_id": "self_supervised_signal_engineering",
+        "pattern_name": "Manufacture the Supervisory Signal",
+        "papers": [
+          {
+            "paper_id": "arxiv:2603.11178",
+            "title": "PACED: Distillation and On-Policy Self-Distillation at the Frontier of Student Competence",
+            "venue_year": "arXiv 2026-03",
+            "bottleneck_targeted": "It targets low-signal training from prompts that are either mastered or far beyond student competence."
+          },
+          {
+            "paper_id": "arxiv:2504.14945",
+            "title": "Learning to Reason under Off-Policy Guidance",
+            "venue_year": "arXiv 2025-04",
+            "bottleneck_targeted": "Zero-RL cannot explore effective reasoning actions outside the student's initial policy support."
+          }
+        ]
+      },
+      {
+        "pattern_id": "self_supervised_signal_engineering, heterogeneous_decomposition",
+        "pattern_name": "self_supervised_signal_engineering, heterogeneous_decomposition",
+        "papers": [
+          {
+            "paper_id": "arxiv:2603.01683",
+            "title": "Surgical Post-Training: Cutting Errors, Keeping Knowledge",
+            "venue_year": "arXiv 2026-03",
+            "bottleneck_targeted": "Broad preference or SFT updates cause forgetting instead of concentrating correction on the student's actual errors."
+          }
+        ]
+      },
+      {
+        "pattern_id": "unify_into_shared_representation",
+        "pattern_name": "Unify Heterogeneous Inputs into One Space",
+        "papers": [
+          {
+            "paper_id": "arxiv:2510.23497",
+            "title": "VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation",
+            "venue_year": "arXiv 2025-10",
+            "bottleneck_targeted": "It targets transfer of text reasoning supervision to visual-language student trajectories."
+          },
+          {
+            "paper_id": "arxiv:2603.24596",
+            "title": "X-OPD: Cross-Modal On-Policy Distillation for Capability Alignment in Speech LLMs",
+            "venue_year": "interspeech-2026 2026",
+            "bottleneck_targeted": "It targets alignment of speech-model rollouts with text-teacher reasoning supervision."
+          }
+        ]
+      }
+    ],
+    "phase0_outside_taxonomy": [
+      {
+        "paper_id": "arxiv:2402.03898",
+        "title": "DistiLLM: Towards Streamlined Distillation for Large Language Models",
+        "venue_year": "icml-2024 2024",
+        "bottleneck_targeted": "Standard KL becomes unstable near low student probability and frequent on-policy generation is costly."
+      },
+      {
+        "paper_id": "arxiv:2605.22731",
+        "title": "Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation",
+        "venue_year": "arXiv 2026-05",
+        "bottleneck_targeted": "Token-level accounts obscure how state provenance and state coverage distinguish post-training methods."
+      },
+      {
+        "paper_id": "arxiv:2606.07082",
+        "title": "On the Geometry of On-Policy Distillation",
+        "venue_year": "arXiv 2026-06",
+        "bottleneck_targeted": "Existing accounts do not explain OPD through its parameter-update geometry."
+      },
+      {
+        "paper_id": "arxiv:2606.13657",
+        "title": "Dense Supervision, Sparse Updates: On the Sparsity and Geometry of On-Policy Distillation",
+        "venue_year": "arXiv 2026-06",
+        "bottleneck_targeted": "Dense teacher supervision is poorly understood because its effective parameter updates may be sparse."
+      }
+    ],
+    "phase3_collision": [
+      {
+        "paper_id": "arxiv:2607.08268v1",
+        "title": "Different Teachers, Different Capabilities: Sub-1B On-Device Distillation for Structured Text Enrichment",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2511.22044v1",
+        "title": "Distillability of LLM Security Logic: Predicting Attack Success Rate of Outline Filling Attack via Ranking Regression",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2606.10241v1",
+        "title": "Regimes: An Auditable, Held-Out-Gated Improvement Loop Demonstrated on LongMemEval with ActiveGraph",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2605.25172v1",
+        "title": "Rejoinder: The ICML 2023 Ranking Experiment: Examining Author Self-Assessment in ML/AI Peer Review",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2605.25981v2",
+        "title": "When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2606.28374v1",
+        "title": "Recursive Self-Evolving Agents via Held-Out Selection",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2607.17100v1",
+        "title": "Auto Research for Materials: Auditable AI-Scientist Workflows with Held-Out Transfer",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2601.08954v1",
+        "title": "Leveraging learning analytics to enhance immersive teacher simulations: Challenges and opportunities",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2511.04361v2",
+        "title": "Causal Regime Detection in Energy Markets With Augmented Time Series Structural Causal Models",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2606.26257v1",
+        "title": "Dataset Usage Inference without Shadow Models or Held-out Data",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2510.23384v1",
+        "title": "Opinion Mining Based Entity Ranking using Fuzzy Logic Algorithmic Approach",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2604.21989v1",
+        "title": "Model Predictive Control of Hybrid Dynamical Systems",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2510.14787v2",
+        "title": "A Human-Vector Susceptible-Infected-Susceptible Model for Analyzing and Controlling the Spread of Vector-Borne Diseases",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2601.23160v1",
+        "title": "Robust Control of Constrained Linear Systems using Online Convex Optimization and a Reference Governor",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2510.09728v1",
+        "title": "A Triad of Networks and a Triad of Fusions for the Other Climate Crisis",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2602.16943v1",
+        "title": "Mind the GAP: Text Safety Does Not Transfer to Tool-Call Safety in LLM Agents",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2512.21009v3",
+        "title": "ESCHER: Efficient and Scalable Hypergraph Evolution Representation with Application to Triad Counting",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "semanticscholar:821d79ef61a6ccccb7970bb083a0803f31c26290",
+        "title": "Large trials of psychosocial interventions: examples from individual placement and support",
+        "venue_year": "International Journal of Public Health 2026"
+      },
+      {
+        "paper_id": "arxiv:2605.12051v1",
+        "title": "Learning plug-in surrogate endpoints for randomized experiments",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2311.15410v1",
+        "title": "A Comprehensive Analysis of HIV Treatment Efficacy in the ACTG 175 Trial Through Multiple-Endpoint Approaches",
+        "venue_year": "arXiv 2023"
+      },
+      {
+        "paper_id": "arxiv:2605.03819v1",
+        "title": "Meta-Analysis of High-Dimensional Surrogate Markers",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2603.11333v2",
+        "title": "LLM-Augmented Digital Twin for Policy Evaluation in Short-Video Platforms",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "semanticscholar:ab26164bfc2e83a5fcda768a1944743bf87dea03",
+        "title": "The Causal Effects of Pilot Policies on Low-Altitude Economy Growth—Multi-Period DID and Event-Study Evidence from China",
+        "venue_year": "International Journal of Global Economics and Management 2025"
+      },
+      {
+        "paper_id": "semanticscholar:6f75bd2737761565a9753f0d48cb7bc032229530",
+        "title": "Theory-based process evaluation of a non-randomised single-arm pilot study investigating time-restricted eating in the treatment of type 2 diabetes—the RESET2 pilot study",
+        "venue_year": "Pilot and Feasibility Studies 2025"
+      },
+      {
+        "paper_id": "semanticscholar:a01bb5c32185de016928fbcba0b38fcf8eb84c2a",
+        "title": "A nurse-led climate resilience program for older adults: A one-group pre/post pilot study and implications for nursing management.",
+        "venue_year": "Nursing Outlook 2026"
+      },
+      {
+        "paper_id": "semanticscholar:67b61668713063f96230027b00b0c9e001633af3",
+        "title": "The Impact of the Low-Carbon City Pilot Policy on Energy Intensity: Evidence from a Staggered Difference-in-Differences Design",
+        "venue_year": "Land 2026"
+      },
+      {
+        "paper_id": "semanticscholar:c0007f8feee99b575282cdb7d20dded2d45f3cf7",
+        "title": "Impact of the Momentum pilot project on male involvement in maternal health and newborn care in Kinshasa, Democratic Republic of the Congo: a quasi-experimental study",
+        "venue_year": "BMC Women's Health 2022"
+      },
+      {
+        "paper_id": "semanticscholar:89e8a49bce7d3ccaaf88f394b8ec253f0a508f52",
+        "title": "Artificial intelligence, green innovation efficiency, and public health benefits: evidence from China’s pilot zones with a DID approach",
+        "venue_year": "Frontiers in Public Health 2025"
+      },
+      {
+        "paper_id": "semanticscholar:47fd18d11f7b04fed6551788529cbd0ef4a144ba",
+        "title": "No sales after midnight: evaluating the impact of a business curfew on drug-related crime in San Francisco’s tenderloin",
+        "venue_year": "Security Journal 2025"
+      },
+      {
+        "paper_id": "semanticscholar:ff719a464bf3758d221c7ca1bd6e35d9b9fe8d8b",
+        "title": "Organizational Learning and Job Satisfaction of Employees in Financial Sectors",
+        "venue_year": "NPRC Journal of Multidisciplinary Research 2025"
+      },
+      {
+        "paper_id": "semanticscholar:e67e6bcfe56534bdebf28455b1d39db5724c3fd4",
+        "title": "Strengthening Work Safety Mindset and Competence as a Policy Strategy for Maritime Human Resource Development in Indonesia",
+        "venue_year": "Jurnal Kebijakan Sosial Ekonomi Kelautan dan Perikanan 2026"
+      },
+      {
+        "paper_id": "arxiv:2502.08443v1",
+        "title": "Tutorial for Surrogate Endpoint Validation Using Joint modeling and Mediation Analysis",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2407.06350v1",
+        "title": "A Surrogate Endpoint Based Provisional Approval Causal Roadmap",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2603.19403v1",
+        "title": "Evaluation of Individual and Trial Level Association Metrics in the Validation of a Binary Surrogate Endpoint for a True Time-to-Event Endpoint",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2407.03674v2",
+        "title": "Short-Long Policy Evaluation with Novel Actions",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2407.19118v1",
+        "title": "Large Language Models as Co-Pilots for Causal Inference in Medical Studies",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "semanticscholar:329bb71255df87d8ff4a46d76379917fe142bb41",
+        "title": "A Single-Button Mobility Platform for Cause–Effect Learning in Children with Cerebral Palsy: A Pilot Study",
+        "venue_year": "Children 2025"
+      },
+      {
+        "paper_id": "semanticscholar:781f67f178768034863a4c1b942e83a0870cde9d",
+        "title": "Addressing psychosocial needs in patients with Long-COVID (PsyLoCo-Study): study protocol of a pilot-study of a specialized modular intervention",
+        "venue_year": "Frontiers in Psychiatry 2024"
+      },
+      {
+        "paper_id": "semanticscholar:339e860c0e03436c3d6662bda60266f1ede67650",
+        "title": "Lesion Network Guided Delta Frequency Neuromodulation Improves Cognition in Patients with Psychosis Spectrum Disorders: A Pilot Study",
+        "venue_year": "Asian Journal of Psychiatry 2023"
+      },
+      {
+        "paper_id": "semanticscholar:8a230704a5b9d9da34795c9b0b99b231902c9702",
+        "title": "An experimental laboratory-based minority stress paradigm for alcohol research among sexual minority women: A pilot study",
+        "venue_year": "Alcohol, clinical & experimental research 2023"
+      },
+      {
+        "paper_id": "semanticscholar:76409604e750541cbbd998b60dae92d9ba584069",
+        "title": "Adjunctive ab-interno goniotomy in chronic angle-closure glaucoma: a retrospective proof-of-concept pilot study using doubly robust learning",
+        "venue_year": "Frontiers in Ophthalmology 2026"
+      },
+      {
+        "paper_id": "semanticscholar:6aca43b69b77b355f61eb3367c6f74cee3ae724a",
+        "title": "Multidimensional Fitness Responses to an 8-Week Mountain-Based Hiking and Trail Running Program in University Students: A Pilot Study",
+        "venue_year": "Revista Romaneasca pentru Educatie Multidimensionala 2026"
+      },
+      {
+        "paper_id": "semanticscholar:30bb7e775a222bb623a2bb17bf4dbc1655b3a517",
+        "title": "A pilot study evidencing the effectiveness of a new maths intervention",
+        "venue_year": "Educational & Child Psychology 2023"
+      },
+      {
+        "paper_id": "semanticscholar:48b23225d036b8aa306dfcfa9c35cfc4195e4bd1",
+        "title": "Mitigating Object Hallucination via Concentric Causal Attention",
+        "venue_year": "Neural Information Processing Systems 2024"
+      },
+      {
+        "paper_id": "semanticscholar:8d463079f2e33f911aa61975a30a5b58eb763fa8",
+        "title": "THE POWER OF POLICY SYNERGY IN URBAN DECARBONIZATION: ASSESSING THE CARBON MITIGATION EFFECTS OF PREFABRICATED BUILDING PILOT POLICY IN CHINA",
+        "venue_year": "Journal of Green Building, College Publishing, USA 2025"
+      },
+      {
+        "paper_id": "semanticscholar:2a636ec13963a35ad11535d4d6ab1e6eca960607",
+        "title": "A causal relationship model of decent work for myanmar migrant workers in Pathum Thani province",
+        "venue_year": "Multidisciplinary Science Journal 2026"
+      },
+      {
+        "paper_id": "semanticscholar:e88488ad125b3cc1c8779f284c393315ebfe63c3",
+        "title": "Impact evaluation of the turnaround arts pilot program: an interrupted time series analysis",
+        "venue_year": "Arts education policy review 2023"
+      },
+      {
+        "paper_id": "semanticscholar:8dc7ddc9f5742c4413320de97f63ffb758623285",
+        "title": "Environmental sustainability and firm performance: Unpacking the productivity effects of green data center pilots.",
+        "venue_year": "Journal of Environmental Management 2025"
+      },
+      {
+        "paper_id": "semanticscholar:2a7be3e1ed08f6ea5298cf7bcb25f10345152b67",
+        "title": "Supply chain digitization and corporate digital innovation: evidence from China",
+        "venue_year": "Industrial Management &amp; Data Systems 2025"
+      },
+      {
+        "paper_id": "semanticscholar:2f78f8d828126c2be20a6abfccd6697daedeb165",
+        "title": "Financial Restructuring and Performance of Deposit Taking Saccos in Kiambu County, Kenya",
+        "venue_year": "IOSR Journal of Economics and Finance 2026"
+      },
+      {
+        "paper_id": "semanticscholar:66e2f8a2432645634d450f2b43fd605b33dbe1d9",
+        "title": "Unequal gains: evaluating Alabama’s infant mortality reduction initiative by race and marital status",
+        "venue_year": "BMC Public Health 2025"
+      },
+      {
+        "paper_id": "semanticscholar:15aa1ca20f9dc4b23fd4edd86bae655be4cc5ac6",
+        "title": "Estimator-Aligned Prospective Sample Size Determination for Designs Using Inverse Probability of Treatment Weighting",
+        "venue_year": "2026"
+      },
+      {
+        "paper_id": "semanticscholar:67cb1dd6137f788ac34bc2cc4a0e4aaa7163200d",
+        "title": "Surviving the Turbulence: A Dynamic Capabilities Perspective on Market Orientation and Business Performance of MSMEs",
+        "venue_year": "Intangible Capital 2026"
+      },
+      {
+        "paper_id": "semanticscholar:0ccbff5fc4e4760b59ae09b5f9e35344d37b567c",
+        "title": "Can digital village construction improve agricultural total factor productivity? Evidence from a quasi-natural experiment in China",
+        "venue_year": "Frontiers in Sustainable Food Systems 2026"
+      },
+      {
+        "paper_id": "semanticscholar:6319873e0d92a52b89437a2a5a5dd767aae62984",
+        "title": "The implementation of Pendidikan Khas Kejogjaan in strengthening secondary school students' character",
+        "venue_year": "Jurnal Cakrawala Pendidikan 2026"
+      },
+      {
+        "paper_id": "arxiv:2512.18071v1",
+        "title": "Deep Learning Surrogate for Fast CIR Prediction in Reactive Molecular Diffusion Advection Channels",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2209.08315v1",
+        "title": "Using a Surrogate with Heterogeneous Utility to Test for a Treatment Effect",
+        "venue_year": "arXiv 2022"
+      },
+      {
+        "paper_id": "arxiv:2605.02154v2",
+        "title": "Efficient Transported Distributional and Quantile Treatment Effects with Surrogate-Assisted Missing Primary Outcomes",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2410.04438v1",
+        "title": "A Reflection on the Impact of Misspecifying Unidentifiable Causal Inference Models in Surrogate Endpoint Evaluation",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2604.03863v1",
+        "title": "Estimation of treatment effect in clinical trials of continuous endpoints with retrieved dropouts",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2402.00168v2",
+        "title": "Continuous Treatment Effects with Surrogate Outcomes",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "semanticscholar:428f6d7653ed58bfa66ff6c0040f962ca68e3285",
+        "title": "Rationale and design of the Self-TI Study protocol: a cross-sectional human papillomavirus self-testing pilot study among transgender adults in England",
+        "venue_year": "BMJ Open 2024"
+      },
+      {
+        "paper_id": "semanticscholar:f3dce50e5b9f741e5d0deb1ee7e3cb7ba37c8e23",
+        "title": "Associations of forest vs. urban environmental exposure with well-being and nasal microbiome composition: An exploratory pilot study",
+        "venue_year": "Environmental Research 2025"
+      },
+      {
+        "paper_id": "semanticscholar:69785e981a7622e982cdbd3bcaf3b9b8144df027",
+        "title": "Collecting real-time infant feeding and support experience: co-participatory pilot study of mobile health methodology",
+        "venue_year": "International Breastfeeding Journal 2025"
+      },
+      {
+        "paper_id": "semanticscholar:883aff4be31a1d0d271c524d855bfa21aea5e12f",
+        "title": "Use of virtual reality medical hypnosis for anxiolytic purposes during frozen embryo transfer: A prospective pilot study",
+        "venue_year": "PLoS ONE 2026"
+      },
+      {
+        "paper_id": "semanticscholar:25ee993ffa611f03794f5aba8efd5ec7d0ca0608",
+        "title": "Integrating causal pathway diagrams into practice facilitation to address colorectal cancer screening disparities in primary care",
+        "venue_year": "BMC Health Services Research 2024"
+      },
+      {
+        "paper_id": "semanticscholar:05678e5a21de48450973ae73ee01aac54cb94b2f",
+        "title": "Using FRAM for Causal Analysis of Marine Risks in the Motor Vessel Milano Bridge Accident: Identifying Potential Solutions",
+        "venue_year": "Applied Sciences 2023"
+      },
+      {
+        "paper_id": "semanticscholar:863abb59831ad2cc71e1dd0beb177bd6dfb0882d",
+        "title": "REVOLUTIONIZING LANGUAGE LEARNING: A STUDY ON AI INTEGRATION IN UNIVERSITY-LEVEL ENGLISH CLASSROOMS",
+        "venue_year": "Journal for Current Sign 2025"
+      },
+      {
+        "paper_id": "semanticscholar:9a7311bbbcab18b6e7005b292174754823024318",
+        "title": "Analysis of Voice Changes in Early-Stage Parkinson's Disease with AVQI and ABI: A Follow-up Study.",
+        "venue_year": "Journal of Voice 2024"
+      },
+      {
+        "paper_id": "semanticscholar:0e41a2721d2207a893d41aeacb8b0315e93cf6da",
+        "title": "Dual CO2 mitigations with diminishing margins: Evidence from China’s intensity-based national emissions trading scheme",
+        "venue_year": "iScience 2026"
+      },
+      {
+        "paper_id": "semanticscholar:77491fa6ecd80f403841d0eeafa166a6f1f817aa",
+        "title": "The contribution of successful intelligence in predicting students' orientation toward academic quality of life",
+        "venue_year": "International journal of innovative research and scientific studies 2025"
+      },
+      {
+        "paper_id": "semanticscholar:41f4895bb9f81cc44a820f1f7c0f6027cc696b1b",
+        "title": "Job Satisfaction and Performance of Micro Finance Institutions",
+        "venue_year": "Madhyabindu Journal 2025"
+      },
+      {
+        "paper_id": "semanticscholar:dbda4f9803170d438e6e4de48ea99c12a8598e00",
+        "title": "Impact of Green Purchasing Practices on Performance of Sugar Manufacturing Firms in Western Region Kenya",
+        "venue_year": "Journal of Business and Social Review in Emerging Economies 2025"
+      },
+      {
+        "paper_id": "semanticscholar:59f6c00908768a3eb93bd803eb2c8ac9105a530e",
+        "title": "Impact of Green Warehouse Practices on Performance of Sugar Manufacturing Firms in Western Region Kenya",
+        "venue_year": "Journal of Accounting and Finance in Emerging Economies 2026"
+      },
+      {
+        "paper_id": "semanticscholar:83349bccf7cd0ad821534cc417759b68b7a2e8fd",
+        "title": "Pengaruh Kemampuan Inisiatif, Kemampuan Berwirausaha, Dan Manajemen Diri Terhadap Kesiapan Kerja Siswa TKR SMK",
+        "venue_year": "Educatio 2026"
+      },
+      {
+        "paper_id": "semanticscholar:006083c0f7de5a8ecb0d5625fc8f402a299eadb4",
+        "title": "Effectiveness of virtual and actual laboratory activities on science learning of Grade 10 learners",
+        "venue_year": "International journal of humanities and social sciences 2026"
+      },
+      {
+        "paper_id": "semanticscholar:4d3476d43b5ed0db1ce54e4930e50ffd94ce45e1",
+        "title": "Effect of Micro-Credit Services on Growth of Microenterprises in Bomet, County, Kenya",
+        "venue_year": "International journal of research in social sciences and humanities 2026"
+      },
+      {
+        "paper_id": "semanticscholar:cb48edcdf69d8acffd80410a06c794997e0969f1",
+        "title": "PENGARUH KEPEMIMPINAN VISIONER, BUDAYA ORGANISASI, DAN MOTIVASI KERJA TERHADAP KINERJA GURU DI SMP SE-KECAMATAN CISAUK KABUPATEN TANGERANG",
+        "venue_year": "Didaktik 2026"
+      },
+      {
+        "paper_id": "semanticscholar:26668c9ea641b10257c5454f1fa997ef25582b8a",
+        "title": "EFFECT OF SELF REGULATED LEARNING STRATEGIES ON LOCUS OF CONTROL OF UNIVERSITY STUDENTS",
+        "venue_year": "Contemporary Journal of Social Science Review 2026"
+      },
+      {
+        "paper_id": "semanticscholar:5db0d6bc6ff88552ef820fc581e6e2170d938a8b",
+        "title": "Strengthening Self-Efficacy in the Graduate Application Process: Evidence From a Randomized Controlled Trial",
+        "venue_year": "Journal of Career Assessment 2026"
+      },
+      {
+        "paper_id": "arxiv:2512.00405v2",
+        "title": "Evaluating Surrogates in Individualized Treatment Rules",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2509.01737v2",
+        "title": "Evaluation of Surrogate Endpoints Based on Meta-Analysis with Surrogate Indices",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2508.04633v1",
+        "title": "Bias in Meta-Analytic Modeling of Surrogate Endpoints in Cancer Screening Trials",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2504.06807v1",
+        "title": "Evaluating amyloid-beta as a surrogate endpoint in trials of anti-amyloid drugs in Alzheimer's disease: a Bayesian meta-analysis",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2409.09440v1",
+        "title": "Group Sequential Testing of a Treatment Effect Using a Surrogate Marker",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2401.12420v3",
+        "title": "Rank-based estimators of global treatment effects for cluster randomized trials with multiple endpoints",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2601.17712v1",
+        "title": "The Proximal Surrogate Index: Long-Term Treatment Effects under Unobserved Confounding",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2508.11117v1",
+        "title": "Robot Policy Evaluation for Sim-to-Real Transfer: A Benchmarking Perspective",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2605.14712v2",
+        "title": "IntentVLA: Short-Horizon Intent Modeling for Aliased Robot Manipulation",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2306.08946v2",
+        "title": "Bootstrap aggregation and confidence measures to improve time series causal discovery",
+        "venue_year": "arXiv 2023"
+      },
+      {
+        "paper_id": "arxiv:2508.00176v1",
+        "title": "New Pilot-Study Design in Functional Data Analysis",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2309.13103v1",
+        "title": "OpportunityFinder: A Framework for Automated Causal Inference",
+        "venue_year": "arXiv 2023"
+      },
+      {
+        "paper_id": "arxiv:2605.24541v1",
+        "title": "SemanticZip: A Pilot Framework for Lossy Text Compression with LLMs as Semantic Decompressors",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2304.10546v1",
+        "title": "Introducing Vibration for use in Interaction Designs to support Human Performance: A Pilot Study",
+        "venue_year": "arXiv 2023"
+      },
+      {
+        "paper_id": "arxiv:2211.02771v1",
+        "title": "Statistical Analysis Plan for Primary and Selected Secondary Health Endpoints of the SEARCH-Youth Study",
+        "venue_year": "arXiv 2022"
+      },
+      {
+        "paper_id": "semanticscholar:0774597b1267c2f06727cceacd73d064d9e47217",
+        "title": "Study Design, Methods, and Modeling in Networks to Inform HIV Interventions and Policy in Marginalized Populations.",
+        "venue_year": "R.I. medical journal 2026"
+      }
+    ]
+  }
+}

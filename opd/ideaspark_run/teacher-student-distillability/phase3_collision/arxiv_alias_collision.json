@@ -1,0 +1,1436 @@
+[
+ {
+  "title": "Tutorial for Surrogate Endpoint Validation Using Joint modeling and Mediation Analysis",
+  "title_norm": "tutorial for surrogate endpoint validation using joint modeling and mediation an",
+  "abstract": "The use of valid surrogate endpoints is an important stake in clinical research to help reduce both the duration and cost of a clinical trial and speed up the evaluation of interesting treatments. Several methods have been proposed in the statistical literature to validate putative surrogate endpoints. Two main approaches have been proposed: the meta-analytic approach and the mediation analysis approach. The former uses data from meta-analyses to derive associations measures between the surrogate and the final endpoint at the individual and trial levels. The latter rather uses the proportion of the treatment effect on the final endpoint through the surrogate as a measure of surrogacy in a causal inference framework. Both approaches have remained separated as the meta-analytic approach does not estimate the treatment effect on the final endpoint through the surrogate while the mediation analysis approach have been limited to single-trial setting. However, these two approaches are complementary. In this work we propose an approach that combines the meta-analytic and mediation analysis approaches using joint modeling for surrogate validation. We focus on the cases where the final endpoint is a time-to-event endpoint (such as time-to-death) and the surrogate is either a time-to-event or a longitudinal biomarker. Two new joint models were proposed depending on the nature of the surrogate. These model are implemented in the R package frailtypack. We illustrate the developed approaches in three applications on real datasets in oncology.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Quentin Le Coent",
+   "Virginie Rondeau",
+   "Catherine Legrand"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2502.08443v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2502.08443v1",
+  "published_iso": "2025-02-12T14:34:04Z"
+ },
+ {
+  "title": "A Surrogate Endpoint Based Provisional Approval Causal Roadmap",
+  "title_norm": "a surrogate endpoint based provisional approval causal roadmap",
+  "abstract": "For many rare diseases with no approved preventive interventions, promising interventions exist, yet it has been difficult to conduct a pivotal phase 3 trial that could provide direct evidence demonstrating a beneficial effect on the target disease outcome. When a promising putative surrogate endpoint(s) for the target outcome is available, surrogate-based provisional approval of an intervention may be pursued. We apply the Causal Roadmap rubric to define a surrogate endpoint based provisional approval causal roadmap, which combines observational study data that estimates the relationship between the putative surrogate and the target outcome, with a phase 3 surrogate endpoint study that collects the same data but is very under-powered to assess the treatment effect (TE) on the target outcome. The objective is conservative estimation/inference for the TE with an estimated lower uncertainty bound that allows (through two bias functions) for an imperfect surrogate and imperfect transport of the conditional target outcome risk in the untreated between the observational and phase 3 studies. Two estimators of TE (plug-in, nonparametric efficient one-step) with corresponding inference procedures are developed. Finite-sample performance of the plug-in estimator is evaluated in two simulation studies, with R code provided. The roadmap is illustrated with contemporary Group B Streptococcus vaccine development.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Peter B. Gilbert",
+   "James Peng",
+   "Larry Han",
+   "Theis Lange",
+   "Yun Lu",
+   "Lei Nie",
+   "Mei-Chiung Shih",
+   "Salina P. Waddy",
+   "Ken Wiley",
+   "Margot Yann",
+   "Zafar Zafari",
+   "Debashis Ghosh",
+   "Dean Follmann",
+   "Michal Juraska",
+   "Iván Díaz"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2407.06350v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2407.06350v1",
+  "published_iso": "2024-07-08T19:41:14Z"
+ },
+ {
+  "title": "Evaluating Surrogates in Individualized Treatment Rules",
+  "title_norm": "evaluating surrogates in individualized treatment rules",
+  "abstract": "In many decision-making problems, the primary outcome is expensive, time-consuming, or difficult to observe, so individualized treatment rules (ITRs) may be instead learned from surrogate endpoints. However, a surrogate that is highly associated with the primary outcome, or even satisfies existing surrogate criteria, may not necessarily induce a treatment rule that performs well on the primary outcome, especially under treatment resource budget constraints. In this paper, we develop a principled framework for evaluating the decision-making value of surrogate endpoints. We introduce three ITR-oriented performance measures: surrogate regret, which assesses the expected loss from using the surrogate-optimal ITR instead of outcome-optimal ITR; surrogate gain, which quantifies the benefit of surrogate-optimal ITRs relative to the no-treatment baseline; and surrogate efficiency, which evaluates improvement over random treatment assignment. We also extend them to budget-constrained settings. We propose augmented inverse probability weighted (AIPW) estimators for these measures and establish their large-sample properties. We demonstrate the proposed approach on both simulations and an application to the Criteo dataset.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Zeyu Xu",
+   "Xiaojie Mao",
+   "Hao Mei",
+   "Yue Liu"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2512.00405v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2512.00405v2",
+  "published_iso": "2025-11-29T09:32:42Z"
+ },
+ {
+  "title": "Multi-Fidelity Residual Neural Processes for Scalable Surrogate Modeling",
+  "title_norm": "multi fidelity residual neural processes for scalable surrogate modeling",
+  "abstract": "Multi-fidelity surrogate modeling aims to learn an accurate surrogate at the highest fidelity level by combining data from multiple sources. Traditional methods relying on Gaussian processes can hardly scale to high-dimensional data. Deep learning approaches utilize neural network based encoders and decoders to improve scalability. These approaches share encoded representations across fidelities without including corresponding decoder parameters. This hinders inference performance, especially in out-of-distribution scenarios when the highest fidelity data has limited domain coverage. To address these limitations, we propose Multi-fidelity Residual Neural Processes (MFRNP), a novel multi-fidelity surrogate modeling framework. MFRNP explicitly models the residual between the aggregated output from lower fidelities and ground truth at the highest fidelity. The aggregation introduces decoders into the information sharing step and optimizes lower fidelity decoders to accurately capture both in-fidelity and cross-fidelity information. We show that MFRNP significantly outperforms state-of-the-art in learning partial differential equations and a real-world climate modeling task. Our code is published at: https://github.com/Rose-STL-Lab/MFRNP",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Ruijia Niu",
+   "Dongxia Wu",
+   "Kai Kim",
+   "Yi-An Ma",
+   "Duncan Watson-Parris",
+   "Rose Yu"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2402.18846v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2402.18846v2",
+  "published_iso": "2024-02-29T04:40:25Z"
+ },
+ {
+  "title": "Endpoint sparse domination for classes of multiplier transformations",
+  "title_norm": "endpoint sparse domination for classes of multiplier transformations",
+  "abstract": "We prove endpoint results for sparse domination of translation invariant multiscale operators. The results are formulated in terms of dilation invariant classes of Fourier multipliers based on natural localized $M^{p\\to q}$ norms which express appropriate endpoint regularity hypotheses. The applications include new and optimal sparse bounds for classical oscillatory multipliers and multi-scale versions of radial bump multipliers.",
+  "year": 2022,
+  "venue": "arXiv",
+  "authors": [
+   "David Beltran",
+   "Joris Roos",
+   "Andreas Seeger"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2212.12437v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2212.12437v2",
+  "published_iso": "2022-12-23T16:13:33Z"
+ },
+ {
+  "title": "AI-Powered Surrogate Modelling for Multiscale Combustion: A Critical Review and Opportunities",
+  "title_norm": "ai powered surrogate modelling for multiscale combustion a critical review and o",
+  "abstract": "Recent advances in combustion science have led to the generation of large volumes of data from high-fidelity simulations, detailed chemical-kinetic calculations and engine-relevant measurements and create new opportunities for data-driven modelling across interacting physical and chemical scales. Among these approaches, artificial intelligence has emerged as a promising framework for constructing surrogate models that reduce computational costs, deliver substantial speed-up and support prediction in complex reacting systems. This review provides a state-of-the-art assessment of AI-powered surrogate modelling for multiscale combustion, spanning chemical kinetics, mechanism reduction, turbulent flames, combustors, engines, and emissions prediction. Supervised, unsupervised, and hybrid or physics-guided learning approaches are examined and compared in terms of predictive accuracy, physical consistency, computational efficiency, and generalizability across conditions and scales. The review further discusses key challenges, including limited transferability across fuels and operating regimes, extrapolation errors, inconsistency in datasets and benchmarks, and the difficulty of building robust and trustworthy models for practical combustion workflows. Future opportunities are identified in the development of more reliable, scalable, and physically grounded surrogate frameworks for next-generation combustion research.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Amirali Shateri",
+   "Zhiyin Yang",
+   "Yuying Yan",
+   "Manosh C. Paul",
+   "Jianfei Xie"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2604.25617v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2604.25617v1",
+  "published_iso": "2026-04-28T13:24:25Z"
+ },
+ {
+  "title": "Learning plug-in surrogate endpoints for randomized experiments",
+  "title_norm": "learning plug in surrogate endpoints for randomized experiments",
+  "abstract": "Surrogate endpoints are used in place of long-term outcomes in randomized experiments when observing the real outcome for a large enough cohort is prohibitively expensive or impractical. A short-term surrogate is good if the result of an experiment using the surrogate is predictive of the result of a hypothetical study using the real outcome. Much attention has been paid to formalizing this property in causal terms, but most criteria are unidentifiable and cannot be turned into practical algorithms for learning surrogate endpoints from data. To address this, we study plug-in composite surrogates, functions of post-treatment variables that may be substituted directly for the primary outcome in a randomized experiment. We propose two methods for learning plug-in surrogates that maximize effect predictiveness, and characterize the possibility of finding endpoints that yield unbiased effect estimates in representative scenarios. Finally, in both synthetic experiments with known effects and in data from a real-world experiment, we find that our method, based on directly modeling the surrogate effect, returns plug-in endpoints more predictive of the primary effect than established methods.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Alessandro-Umberto Margueritte",
+   "Ahmet Zahid Balcıoğlu",
+   "Jesse Krijthe",
+   "Dave Zachariah",
+   "Fredrik D. Johansson"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2605.12051v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2605.12051v1",
+  "published_iso": "2026-05-12T12:31:04Z"
+ },
+ {
+  "title": "Evaluation of Surrogate Endpoints Based on Meta-Analysis with Surrogate Indices",
+  "title_norm": "evaluation of surrogate endpoints based on meta analysis with surrogate indices",
+  "abstract": "The meta-analytic (MA) framework is the gold standard for evaluating putative surrogate endpoints but it is not well-suited for complex surrogates. We address this limitation by considering real-valued summaries of complex surrogates as alternative, univariate putative surrogates. We focus on the surrogate index as a specific summary measure with desirable properties.\n  We first formalize the data-generating mechanism underlying the MA framework, making explicit the assumptions required for valid inferences in any evaluation of trial-level surrogacy. These assumptions are often left implicit in the MA framework. Building on this formalization, we show that, under certain conditions, the surrogate index maximizes the trial-level surrogacy among all real-valued summaries. When the surrogate index is estimated, we show that valid inference about the trial-level surrogacy of this estimated surrogate index is possible.\n  The proposed approach can be implemented using standard software and is illustrated using COVID-19 vaccine efficacy trials, where antibody markers are evaluated as candidate surrogate endpoints.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Florian Stijven",
+   "Peter B. Gilbert"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2509.01737v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2509.01737v2",
+  "published_iso": "2025-09-01T19:43:30Z"
+ },
+ {
+  "title": "Bias in Meta-Analytic Modeling of Surrogate Endpoints in Cancer Screening Trials",
+  "title_norm": "bias in meta analytic modeling of surrogate endpoints in cancer screening trials",
+  "abstract": "In meta-analytic modeling, the functional relationship between a primary and surrogate endpoint is estimated using summary data from a set of completed clinical trials. Parameters in the meta-analytic model are used to assess the quality of the proposed surrogate. Recently, meta-analytic models have been employed to evaluate whether late-stage cancer incidence can serve as a surrogate for cancer mortality in cancer screening trials. A major challenge in meta-analytic models is that uncertainty of trial-level estimates affects the evaluation of surrogacy, since each trial provides only estimates of the primary and surrogate endpoints rather than their true parameter values. In this work, we show via simulation and theory that trial-level estimate uncertainty may bias the results of meta-analytic models towards positive findings of the quality of the surrogate. We focus on cancer screening trials and the late stage incidence surrogate. We reassess correlations between primary and surrogate endpoints in Ovarian cancer screening trials. Our findings indicate that completed trials provide limited information regarding quality of the late-stage incidence surrogate. These results support restricting meta-analytic regression usage to settings where trial-level estimate uncertainty is incorporated into the model.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "James P. Long",
+   "Abhishikta Roy",
+   "Ehsan Irajizad",
+   "Kim-Anh Do",
+   "Yu Shen"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2508.04633v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2508.04633v1",
+  "published_iso": "2025-08-06T17:01:15Z"
+ },
+ {
+  "title": "Evaluating amyloid-beta as a surrogate endpoint in trials of anti-amyloid drugs in Alzheimer's disease: a Bayesian meta-analysis",
+  "title_norm": "evaluating amyloid beta as a surrogate endpoint in trials of anti amyloid drugs ",
+  "abstract": "The use of amyloid-beta (A$β$) clearance to support regulatory approvals of drugs in Alzheimer's disease (AD) remains controversial. We evaluate A$β$ as a potential trial-level surrogate endpoint for clinical function in AD using a meta-analysis. Randomised controlled trials (RCTs) reporting data on the effectiveness of anti- A$β$ monoclonal antibodies (MABs) on A$β$ and clinical outcomes were identified through a literature review. A Bayesian bivariate meta-analysis was used to evaluate surrogate relationships between the treatment effects on A$β$ and clinical function, with the intercept, slope and variance quantifying the trial level association. The analysis was performed using RCT data both collectively across all MABs and separately for each MAB through subgroup analysis. The latter analysis was extended by applying Bayesian hierarchical models to borrow information across treatments. We identified 23 RCTs with 39 treatment contrasts for seven MABs. The association between treatment effects on A$β$ and Clinical Dementia Rating - Sum of Boxes (CDR-SOB) across all MABs was strong: with intercept of -0.03 (95% credible intervals: -0.16, 0.11), slope of 1.41 (0.60, 2.21) and variance of 0.02 (0.00, 0.05). For individual treatments, the surrogate relationships were suboptimal, displaying large uncertainty. The use of hierarchical models considerably reduced the uncertainty around key parameters, narrowing the intervals for the slopes by an average of 71% (range: 51%-95%) and for the variances by 28% (7%-65%). Our results suggest that A$β$ is a potential surrogate endpoint for CDR-SOB when assuming a common surrogate relationship across all MABs. When allowing for information-sharing, the surrogate relationships improved, but only for lecanemab and aducanumab was the improvement sufficient to support a surrogate relationship.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Sa Ren",
+   "Janharpreet Singh",
+   "Sandro Gsteiger",
+   "Christopher Cogley",
+   "Ben Reed",
+   "Keith R Abrams",
+   "Dalia Dawoud",
+   "Rhiannon K Owen",
+   "Paul Tappenden",
+   "Terrence J Quinn",
+   "Sylwia Bujkiewicz"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2504.06807v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2504.06807v1",
+  "published_iso": "2025-04-09T11:55:05Z"
+ },
+ {
+  "title": "Evaluation of Individual and Trial Level Association Metrics in the Validation of a Binary Surrogate Endpoint for a True Time-to-Event Endpoint",
+  "title_norm": "evaluation of individual and trial level association metrics in the validation o",
+  "abstract": "Candidate binary endpoints are often considered as surrogates for time-to-event (TTE) clinical endpoints, primarily because they can be assessed at earlier time points. To be submitted for regulatory approval candidate binary endpoints need to validated. The most well-known method for performing such validation employs a meta-analytic framework to estimate individual-level and trial-level association. However, the performance of these association estimates in the context of a binary surrogate has not yet been examined through a comprehensive simulation study. This research aims to systematically investigate the performance of association estimates at the trial-level and at the individual-level under various trial design choices, using both simulation studies and clinical trial data, where available.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Renee Y. Ge",
+   "Azadeh Shohoudi",
+   "Malini Iyengar",
+   "Quefeng Li",
+   "Judy Li"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2603.19403v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2603.19403v1",
+  "published_iso": "2026-03-19T18:51:44Z"
+ },
+ {
+  "title": "Surrogate Benchmarks for Model Merging Optimization",
+  "title_norm": "surrogate benchmarks for model merging optimization",
+  "abstract": "Model merging techniques aim to integrate the abilities of multiple models into a single model. Most model merging techniques have hyperparameters, and their setting affects the performance of the merged model. Because several existing works show that tuning hyperparameters in model merging can enhance the merging outcome, developing hyperparameter optimization algorithms for model merging is a promising direction. However, its optimization process is computationally expensive, particularly in merging LLMs. In this work, we develop surrogate benchmarks for optimization of the merging hyperparameters to realize algorithm development and performance comparison at low cost. We define two search spaces and collect data samples to construct surrogate models to predict the performance of a merged model from a hyperparameter. We demonstrate that our benchmarks can predict the performance of merged models well and simulate optimization algorithm behaviors.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Rio Akizuki",
+   "Yuya Kudo",
+   "Nozomu Yoshinari",
+   "Yoichi Hirose",
+   "Toshiyuki Nishimoto",
+   "Kento Uchida",
+   "Shinichi Shirakawa"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2509.02555v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2509.02555v2",
+  "published_iso": "2025-09-02T17:51:03Z"
+ },
+ {
+  "title": "Deep Learning Surrogate for Fast CIR Prediction in Reactive Molecular Diffusion Advection Channels",
+  "title_norm": "deep learning surrogate for fast cir prediction in reactive molecular diffusion ",
+  "abstract": "Accurate channel impulse response (CIR) modeling in molecular communication (MC) often requires solving coupled reactive diffusion-advection equations, which is computationally expensive for large parameter sweeps or design loops. We develop a deep-learning surrogate for a three-dimensional duct MC channel with reactive diffusion-advection transport and reversible ligand-receptor binding on a finite ring receiver. Using a physics-based partial differential equation (PDE)-ordinary differential equation (ODE) model, we generate a large CIR dataset across broad transport, reaction, and geometric ranges and train a neural network that maps these parameters directly to the CIR. On an independent test set, the surrogate closely matches reference CIRs both qualitatively and quantitatively: the empirical cumulative distribution function (CDF) of the normalized root mean square error (NRMSE) shows that 90% of test channels are predicted with error below 0.15, with only weak dependence on individual parameters. The surrogate therefore offers an accurate and computationally efficient replacement for repeated PDE-based CIR evaluations in MC system analysis and design.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Meysam Ghanbari",
+   "Mohammad Taghi Dabiri",
+   "Mazen Hasna",
+   "Tanvir Alam",
+   "Khalid Qaraqe"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2512.18071v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2512.18071v1",
+  "published_iso": "2025-12-19T21:20:04Z"
+ },
+ {
+  "title": "Use of surrogate endpoints in health technology assessment: a review of selected NICE technology appraisals in oncology",
+  "title_norm": "use of surrogate endpoints in health technology assessment a review of selected ",
+  "abstract": "Objectives: Surrogate endpoints, used to substitute for and predict final clinical outcomes, are increasingly being used to support submissions to health technology assessment agencies. The increase in use of surrogate endpoints has been accompanied by literature describing frameworks and statistical methods to ensure their robust validation. The aim of this review was to assess how surrogate endpoints have recently been used in oncology technology appraisals by the National Institute for Health and Care Excellence (NICE) in England and Wales.\n  Methods: This paper identified technology appraisals in oncology published by NICE between February 2022 and May 2023. Data are extracted on methods for the use and validation of surrogate endpoints.\n  Results: Of the 47 technology appraisals in oncology available for review, 18 (38 percent) utilised surrogate endpoints, with 37 separate surrogate endpoints being discussed. However, the evidence supporting the validity of the surrogate relationship varied significantly across putative surrogate relationships with 11 providing RCT evidence, 7 providing evidence from observational studies, 12 based on clinical opinion and 7 providing no evidence for the use of surrogate endpoints.\n  Conclusions: This review supports the assertion that surrogate endpoints are frequently used in oncology technology appraisals in England and Wales. Despite increasing availability of statistical methods and guidance on appropriate validation of surrogate endpoints, this review highlights that use and validation of surrogate endpoints can vary between technology appraisals which can lead to uncertainty in decision-making.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Lorna Wheaton",
+   "Sylwia Bujkiewicz"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2412.02380v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2412.02380v2",
+  "published_iso": "2024-12-03T11:05:13Z"
+ },
+ {
+  "title": "Using a Surrogate with Heterogeneous Utility to Test for a Treatment Effect",
+  "title_norm": "using a surrogate with heterogeneous utility to test for a treatment effect",
+  "abstract": "The primary benefit of identifying a valid surrogate marker is the ability to use it in a future trial to test for a treatment effect with shorter follow-up time or less cost. However, previous work has demonstrated potential heterogeneity in the utility of a surrogate marker. When such heterogeneity exists, existing methods that use the surrogate to test for a treatment effect while ignoring this heterogeneity may lead to inaccurate conclusions about the treatment effect, particularly when the patient population in the new study has a different mix of characteristics than the study used to evaluate the utility of the surrogate marker. In this paper, we develop a novel test for a treatment effect using surrogate marker information that accounts for heterogeneity in the utility of the surrogate. We compare our testing procedure to a test that uses primary outcome information (gold standard) and a test that uses surrogate marker information, but ignores heterogeneity. We demonstrate the validity of our approach and derive the asymptotic properties of our estimator and variance estimates. Simulation studies examine the finite sample properties of our testing procedure and demonstrate when our proposed approach can outperform the testing approach that ignores heterogeneity. We illustrate our methods using data from an AIDS clinical trial to test for a treatment effect using CD4 count as a surrogate marker for RNA.",
+  "year": 2022,
+  "venue": "arXiv",
+  "authors": [
+   "Layla Parast",
+   "Tianxi Cai",
+   "Lu Tian"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2209.08315v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2209.08315v1",
+  "published_iso": "2022-09-17T11:37:14Z"
+ },
+ {
+  "title": "Group Sequential Testing of a Treatment Effect Using a Surrogate Marker",
+  "title_norm": "group sequential testing of a treatment effect using a surrogate marker",
+  "abstract": "The identification of surrogate markers is motivated by their potential to make decisions sooner about a treatment effect. However, few methods have been developed to actually use a surrogate marker to test for a treatment effect in a future study. Most existing methods consider combining surrogate marker and primary outcome information to test for a treatment effect, rely on fully parametric methods where strict parametric assumptions are made about the relationship between the surrogate and the outcome, and/or assume the surrogate marker is measured at only a single time point. Recent work has proposed a nonparametric test for a treatment effect using only surrogate marker information measured at a single time point by borrowing information learned from a prior study where both the surrogate and primary outcome were measured. In this paper, we utilize this nonparametric test and propose group sequential procedures that allow for early stopping of treatment effect testing in a setting where the surrogate marker is measured repeatedly over time. We derive the properties of the correlated surrogate-based nonparametric test statistics at multiple time points and compute stopping boundaries that allow for early stopping for a significant treatment effect, or for futility. We examine the performance of our testing procedure using a simulation study and illustrate the method using data from two distinct AIDS clinical trials.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Layla Parast",
+   "Jay Bartroff"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2409.09440v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2409.09440v1",
+  "published_iso": "2024-09-14T13:48:28Z"
+ },
+ {
+  "title": "Efficient Transported Distributional and Quantile Treatment Effects with Surrogate-Assisted Missing Primary Outcomes",
+  "title_norm": "efficient transported distributional and quantile treatment effects with surroga",
+  "abstract": "We study target-population distributional and quantile treatment effects when a source study observes treatment and post-treatment surrogates for all source units but observes a long-run primary outcome only for a validation subset, while the target population contributes only baseline covariates. The target estimands are transported counterfactual distribution functions $ψ_a(y)=P(Y^a\\le y\\mid R=0)$, their quantiles $q_a(τ)$, and the quantile treatment effect $Δ(τ)=q_1(τ)-q_0(τ)$. The surrogate is not treated as a replacement endpoint and no Prentice-type surrogacy condition is imposed. Instead, the surrogate is used only to improve efficiency under missing-at-random primary-outcome sampling. We derive the nonparametric efficient influence function, which has three orthogonal components corresponding to target covariate sampling, the source surrogate process, and missing primary outcomes. This yields a closed-form cross-fitted one-step estimator after nuisance estimation. We establish identification, the canonical gradient, exact drift identities, ratio-level robustness, pointwise and uniform asymptotic linearity for transported CDFs, Bahadur representations for quantiles under explicit local inverse-map conditions, high-level multiplier-bootstrap simultaneous bands under explicit estimated-process and density conditions, and quantile-specific efficiency gains from observing surrogates. We also give lower-level nuisance-rate verification for a deliberately restricted class of analyzable bounded finite-dimensional or finite-rank implementations based on sieve ridge regression, ridge logistic regression, calibrated density-ratio estimation, finite-rank kernel ridge regression, and isotonic projection under explicit grid, eigenvalue, source, and entropy conditions.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Pengyun Wang"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2605.02154v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2605.02154v2",
+  "published_iso": "2026-05-04T02:35:56Z"
+ },
+ {
+  "title": "Jointly modeling multiple endpoints for efficient treatment effect estimation in randomized controlled trials",
+  "title_norm": "jointly modeling multiple endpoints for efficient treatment effect estimation in",
+  "abstract": "Randomized controlled trials are the gold standard for evaluating the efficacy of an intervention. However, there is often a trade-off between selecting the most scientifically relevant primary endpoint versus a less relevant, but more powerful, endpoint. For example, in the context of tobacco regulatory science many trials evaluate cigarettes per day as the primary endpoint instead of abstinence from smoking due to limited power. Additionally, it is often of interest to consider subgroup analyses to answer additional questions; such analyses are rarely adequately powered. In practice, trials often collect multiple endpoints. Heuristically, if multiple endpoints demonstrate a similar treatment effect we would be more confident in the results of this trial. However, there is limited research on leveraging information from secondary endpoints besides using composite endpoints which can be difficult to interpret. In this paper, we develop an estimator for the treatment effect on the primary endpoint based on a joint model for primary and secondary efficacy endpoints. This estimator gains efficiency over the standard treatment effect estimator when the model is correctly specified but is robust to model misspecification via model averaging. We illustrate our approach by estimating the effect of very low nicotine content cigarettes on the proportion of Black people who smoke who achieve abstinence and find our approach reduces the standard error by 27%.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Jack M. Wolf",
+   "Joseph S. Koopmeiners",
+   "David M. Vock"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2506.03393v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2506.03393v1",
+  "published_iso": "2025-06-03T21:06:13Z"
+ },
+ {
+  "title": "A Reflection on the Impact of Misspecifying Unidentifiable Causal Inference Models in Surrogate Endpoint Evaluation",
+  "title_norm": "a reflection on the impact of misspecifying unidentifiable causal inference mode",
+  "abstract": "Surrogate endpoints are often used in place of expensive, delayed, or rare true endpoints in clinical trials. However, regulatory authorities require thorough evaluation to accept these surrogate endpoints as reliable substitutes. One evaluation approach is the information-theoretic causal inference framework, which quantifies surrogacy using the individual causal association (ICA). Like most causal inference methods, this approach relies on models that are only partially identifiable. For continuous outcomes, a normal model is often used. Based on theoretical elements and a Monte Carlo procedure we studied the impact of model misspecification across two scenarios: 1) the true model is based on a multivariate t-distribution, and 2) the true model is based on a multivariate log-normal distribution. In the first scenario, the misspecification has a negligible impact on the results, while in the second, it has a significant impact when the misspecification is detectable using the observed data. Finally, we analyzed two data sets using the normal model and several D-vine copula models that were indistinguishable from the normal model based on the data at hand. We observed that the results may vary when different models are used.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Gokce Deliorman",
+   "Florian Stijven",
+   "Wim Van der Elst",
+   "Maria del Carmen Pardo",
+   "Ariel Alonso"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2410.04438v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2410.04438v1",
+  "published_iso": "2024-10-06T10:22:17Z"
+ },
+ {
+  "title": "Estimation of treatment effect in clinical trials of continuous endpoints with retrieved dropouts",
+  "title_norm": "estimation of treatment effect in clinical trials of continuous endpoints with r",
+  "abstract": "The estimand framework provides guidance on handling intercurrent events, such as treatment discontinuation, in the analysis of clinical trial responses. Under ICH E9(R1), the treatment policy (TP) strategy incorporates post-discontinuation data to reflect treatment effects in real-world practice. However, many existing approaches focus primarily on imputing missing endpoint values for lost-to-follow-up subjects and do not explicitly model completers, retrieved dropouts (RDs), and lost-to-follow-up subjects within a unified framework. This may obscure the relationship between modeling assumptions and the estimand of interest when RD data are present. We propose a likelihood-based model for continuous endpoints that integrates data from all subject categories, including RDs. The approach combines an analysis of covariance formulation with a probit model for treatment discontinuation, enabling explicit formulation of treatment effects for estimands defined using the hypothetical and TP strategies. Estimation is carried out via a computationally efficient maximum likelihood procedure. Numerical studies demonstrate that the proposed method achieves improved bias and variability properties compared with commonly used imputation-based approaches.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Myeongjong Kang",
+   "Sangyoon Yi"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2604.03863v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2604.03863v1",
+  "published_iso": "2026-04-04T21:03:52Z"
+ },
+ {
+  "title": "On Fisher Consistency of Surrogate Losses for Optimal Dynamic Treatment Regimes with Multiple Categorical Treatments per Stage",
+  "title_norm": "on fisher consistency of surrogate losses for optimal dynamic treatment regimes ",
+  "abstract": "Patients with chronic diseases often receive treatments at multiple time points, or stages. Our goal is to learn the optimal dynamic treatment regime (DTR) from longitudinal patient data. When both the number of stages and the number of treatment levels per stage are arbitrary, estimating the optimal DTR reduces to a sequential, weighted, multiclass classification problem (Kosorok and Laber, 2019). In this paper, we aim to solve this classification problem simultaneously across all stages using Fisher consistent surrogate losses. Although computationally feasible Fisher consistent surrogates exist in special cases, e.g., the binary treatment setting, a unified theory of Fisher consistency remains largely unexplored. We establish necessary and sufficient conditions for DTR Fisher consistency within the class of non-negative, stagewise separable surrogate losses. To our knowledge, this is the first result in the DTR literature to provide necessary conditions for Fisher consistency within a non-trivial surrogate class. Furthermore, we show that many convex surrogate losses fail to be Fisher consistent for the DTR classification problem, and we formally establish this inconsistency for smooth, permutation equivariant, and relative-margin-based convex losses. Building on this, we propose SDSS (Simultaneous Direct Search with Surrogates), which uses smooth, non-concave surrogate losses to learn the optimal DTR. We develop a computationally efficient, gradient-based algorithm for SDSS. When the optimization error is small, we establish a sharp upper bound on SDSS's regret decay rate. We evaluate the numerical performance of SDSS through simulations and demonstrate its real-world applicability by estimating optimal fluid resuscitation strategies for severe septic patients using electronic health record data.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Nilanjana Laha",
+   "Nilson Chapagain",
+   "Victoria Cicherski",
+   "Aaron Sonabend-W"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2505.17285v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2505.17285v1",
+  "published_iso": "2025-05-22T21:02:16Z"
+ },
+ {
+  "title": "Continuous Treatment Effects with Surrogate Outcomes",
+  "title_norm": "continuous treatment effects with surrogate outcomes",
+  "abstract": "In many real-world causal inference applications, the primary outcomes (labels) are often partially missing, especially if they are expensive or difficult to collect. If the missingness depends on covariates (i.e., missingness is not completely at random), analyses based on fully observed samples alone may be biased. Incorporating surrogates, which are fully observed post-treatment variables related to the primary outcome, can improve estimation in this case. In this paper, we study the role of surrogates in estimating continuous treatment effects and propose a doubly robust method to efficiently incorporate surrogates in the analysis, which uses both labeled and unlabeled data and does not suffer from the above selection bias problem. Importantly, we establish the asymptotic normality of the proposed estimator and show possible improvements on the variance compared with methods that solely use labeled data. Extensive simulations show our methods enjoy appealing empirical performance.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Zhenghao Zeng",
+   "David Arbour",
+   "Avi Feller",
+   "Raghavendra Addanki",
+   "Ryan Rossi",
+   "Ritwik Sinha",
+   "Edward H. Kennedy"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2402.00168v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2402.00168v2",
+  "published_iso": "2024-01-31T20:50:18Z"
+ },
+ {
+  "title": "A Comprehensive Analysis of HIV Treatment Efficacy in the ACTG 175 Trial Through Multiple-Endpoint Approaches",
+  "title_norm": "a comprehensive analysis of hiv treatment efficacy in the actg 175 trial through",
+  "abstract": "In the realm of medical research, the intricate interplay of epidemiological risk, genomic activity, adverse events, and clinical response necessitates a nuanced consideration of multiple variables. Clinical trials, designed to meticulously assess the efficacy and safety of interventions, routinely incorporate a diverse array of endpoints. While a primary endpoint is customary, supplemented by key secondary endpoints, the statistical significance is typically evaluated independently for each. To address the inherent challenges in studying multiple endpoints, diverse strategies, including composite endpoints and global testing, have been proposed. This work stands apart by focusing on the evaluation of a clinical trial, deviating from the conventional approach to underscore the efficacy of a multiple-endpoint procedure. A double-blind study was conducted to gauge the treatment efficacy in adults infected with human immunodeficiency virus type 1 (HIV-1), featuring CD4 cell counts ranging from 200 to 500 per cubic millimeter. A total of 2467 HIV-1-infected patients (43 percent without prior antiretroviral treatment) were randomly assigned to one of four daily regimens: 600 mg of zidovudine; 600 mg of zidovudine plus 400 mg of didanosine; 600 mg of zidovudine plus 2.25 mg of zalcitabine; or 400 mg of didanosine. The primary endpoint comprised a >50 percent decline in CD4 cell count, development of acquired immunodeficiency syndrome (AIDS), or death. This study sought to determine the efficacy and safety of zidovudine (AZT) versus didanosine (ddI), AZT plus ddI, and AZT plus zalcitabine (ddC) in preventing disease progression in HIV-infected patients with CD4 counts of 200-500 cells/mm3. By jointly considering all endpoints, the multiple-endpoints approach yields results of greater significance than a single-endpoint approach.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "María Paula Cantarini",
+   "Florencia Ayelén Hernández"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2311.15410v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2311.15410v1",
+  "published_iso": "2023-11-26T20:22:08Z"
+ },
+ {
+  "title": "Meta-Analysis of High-Dimensional Surrogate Markers",
+  "title_norm": "meta analysis of high dimensional surrogate markers",
+  "abstract": "When direct measurement of a clinically relevant primary endpoint in a clinical trial is infeasible, a surrogate endpoint may be used instead to infer treatment effects. Trial-level surrogates predict the average treatment effect on the primary endpoint and may be evaluated within the meta-analytic framework. However, traditional methods are ill-suited to the complex high-dimensional data now increasingly collected in modern trials, such as omics data. Although methods for high-dimensional surrogate evaluation exist, they have largely been developed for single-trial settings and therefore cannot assess surrogate generalisability. Here, we propose RISE-Meta, an approach for evaluating trial-level surrogate markers in the multi-trial, high-dimensional setting. In the first stage, an existing nonparametric method is applied to individual participant data to derive study-level surrogacy metrics for each candidate marker. Next, random-effects meta-analysis combines these metrics across studies, and equivalence testing provides operational criteria for surrogate validity. Finally, a subset of candidates is combined into a composite signature through a weighting scheme to improve surrogacy relative to any individual candidate. We evaluate RISE-Meta in both simulation studies and real data applications. In an application to high-dimensional data, we analyse gene expression as trial-level surrogate markers for the antibody response to seasonal influenza vaccination, while in a low-dimensional application we compare RISE-Meta to a reference meta-analytic approach and observe strong agreement between the two.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Arthur Hughes",
+   "Rodolphe Thiébaut",
+   "Layla Parast",
+   "Boris P. Hejblum"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2605.03819v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2605.03819v1",
+  "published_iso": "2026-05-05T14:48:14Z"
+ },
+ {
+  "title": "Rank-based estimators of global treatment effects for cluster randomized trials with multiple endpoints",
+  "title_norm": "rank based estimators of global treatment effects for cluster randomized trials ",
+  "abstract": "Cluster randomization trials commonly employ multiple endpoints. When a single summary of treatment effects across endpoints is of primary interest, global hypothesis testing/effect estimation methods represent a common analysis strategy. However, specification of the joint distribution required by these methods is non-trivial, particularly when endpoint properties differ. We develop rank-based interval estimators for a global treatment effect referred to as the \"global win probability,\" or the probability that a treatment individual responds better than a control individual on average. Using endpoint-specific ranks among the combined sample and within each arm, each individual-level observation is converted to a \"win fraction\" which quantifies the proportion of wins experienced over every observation in the comparison arm. An individual's multiple observations are then replaced by a single \"global win fraction,\" constructed by averaging win fractions across endpoints. A linear mixed model is applied directly to the global win fractions to recover point, variance, and interval estimates of the global win probability adjusted for clustering. Simulation demonstrates our approach performs well concerning coverage and type I error, and methods are easily implemented using standard software. A case study using publicly available data is provided with corresponding R and SAS code.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "E. Davies Smith",
+   "V. Jairath",
+   "G. Zou"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2401.12420v3",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2401.12420v3",
+  "published_iso": "2024-01-23T01:08:26Z"
+ },
+ {
+  "title": "The Proximal Surrogate Index: Long-Term Treatment Effects under Unobserved Confounding",
+  "title_norm": "the proximal surrogate index long term treatment effects under unobserved confou",
+  "abstract": "We study the identification and estimation of long-term treatment effects under unobserved confounding by combining an experimental sample, where the long-term outcome is missing, with an observational sample, where the treatment assignment is unobserved. While standard surrogate index methods fail when unobserved confounders exist, we establish novel identification results by leveraging proxy variables for the unobserved confounders. We further develop multiply robust estimation and inference procedures based on these results. Applying our method to the Job Corps program, we demonstrate its ability to recover experimental benchmarks even when unobserved confounders bias standard surrogate index estimates.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Ting-Chih Hung",
+   "Yu-Chang Chen"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2601.17712v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2601.17712v1",
+  "published_iso": "2026-01-25T05:58:06Z"
+ },
+ {
+  "title": "When is Off-Policy Evaluation (Reward Modeling) Useful in Contextual Bandits? A Data-Centric Perspective",
+  "title_norm": "when is off policy evaluation reward modeling useful in contextual bandits a dat",
+  "abstract": "Evaluating the value of a hypothetical target policy with only a logged dataset is important but challenging. On the one hand, it brings opportunities for safe policy improvement under high-stakes scenarios like clinical guidelines. On the other hand, such opportunities raise a need for precise off-policy evaluation (OPE). While previous work on OPE focused on improving the algorithm in value estimation, in this work, we emphasize the importance of the offline dataset, hence putting forward a data-centric framework for evaluating OPE problems. We propose DataCOPE, a data-centric framework for evaluating OPE, that answers the questions of whether and to what extent we can evaluate a target policy given a dataset. DataCOPE (1) forecasts the overall performance of OPE algorithms without access to the environment, which is especially useful before real-world deployment where evaluating OPE is impossible; (2) identifies the sub-group in the dataset where OPE can be inaccurate; (3) permits evaluations of datasets or data-collection strategies for OPE problems. Our empirical analysis of DataCOPE in the logged contextual bandit settings using healthcare datasets confirms its ability to evaluate both machine-learning and human expert policies like clinical guidelines. Finally, we apply DataCOPE to the task of reward modeling in Large Language Model alignment to demonstrate its scalability in real-world applications.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Hao Sun",
+   "Alex J. Chan",
+   "Nabeel Seedat",
+   "Alihan Hüyük",
+   "Mihaela van der Schaar"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2311.14110v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2311.14110v2",
+  "published_iso": "2023-11-23T17:13:37Z"
+ },
+ {
+  "title": "Robot Policy Evaluation for Sim-to-Real Transfer: A Benchmarking Perspective",
+  "title_norm": "robot policy evaluation for sim to real transfer a benchmarking perspective",
+  "abstract": "Current vision-based robotics simulation benchmarks have significantly advanced robotic manipulation research. However, robotics is fundamentally a real-world problem, and evaluation for real-world applications has lagged behind in evaluating generalist policies. In this paper, we discuss challenges and desiderata in designing benchmarks for generalist robotic manipulation policies for the goal of sim-to-real policy transfer. We propose 1) utilizing high visual-fidelity simulation for improved sim-to-real transfer, 2) evaluating policies by systematically increasing task complexity and scenario perturbation to assess robustness, and 3) quantifying performance alignment between real-world performance and its simulation counterparts.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Xuning Yang",
+   "Clemens Eppner",
+   "Jonathan Tremblay",
+   "Dieter Fox",
+   "Stan Birchfield",
+   "Fabio Ramos"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2508.11117v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2508.11117v1",
+  "published_iso": "2025-08-14T23:50:41Z"
+ },
+ {
+  "title": "Conformal Policy Learning for Sensorimotor Control Under Distribution Shifts",
+  "title_norm": "conformal policy learning for sensorimotor control under distribution shifts",
+  "abstract": "This paper focuses on the problem of detecting and reacting to changes in the distribution of a sensorimotor controller's observables. The key idea is the design of switching policies that can take conformal quantiles as input, which we define as conformal policy learning, that allows robots to detect distribution shifts with formal statistical guarantees. We show how to design such policies by using conformal quantiles to switch between base policies with different characteristics, e.g. safety or speed, or directly augmenting a policy observation with a quantile and training it with reinforcement learning. Theoretically, we show that such policies achieve the formal convergence guarantees in finite time. In addition, we thoroughly evaluate their advantages and limitations on two compelling use cases: simulated autonomous driving and active perception with a physical quadruped. Empirical results demonstrate that our approach outperforms five baselines. It is also the simplest of the baseline strategies besides one ablation. Being easy to use, flexible, and with formal guarantees, our work demonstrates how conformal prediction can be an effective tool for sensorimotor learning under uncertainty.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Huang Huang",
+   "Satvik Sharma",
+   "Antonio Loquercio",
+   "Anastasios Angelopoulos",
+   "Ken Goldberg",
+   "Jitendra Malik"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2311.01457v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2311.01457v1",
+  "published_iso": "2023-11-02T17:59:30Z"
+ },
+ {
+  "title": "Policy as Code, Policy as Type",
+  "title_norm": "policy as code policy as type",
+  "abstract": "Policies are designed to distinguish between correct and incorrect actions; they are types. But badly typed actions may cause not compile errors, but financial and reputational harm We demonstrate how even the most complex ABAC policies can be expressed as types in dependently typed languages such as Agda and Lean, providing a single framework to express, analyze, and implement policies. We then go head-to-head with Rego, the popular and powerful open-source ABAC policy language. We show the superior safety that comes with a powerful type system and built-in proof assistant. In passing, we discuss various access control models, sketch how to integrate in a future when attributes are distributed and signed (as discussed at the W3C), and show how policies can be communicated using just the syntax of the language. Our examples are in Agda.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Matthew D. Fuchs"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2506.01446v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2506.01446v1",
+  "published_iso": "2025-06-02T09:04:48Z"
+ },
+ {
+  "title": "FFT: Towards Harmlessness Evaluation and Analysis for LLMs with Factuality, Fairness, Toxicity",
+  "title_norm": "fft towards harmlessness evaluation and analysis for llms with factuality fairne",
+  "abstract": "The widespread of generative artificial intelligence has heightened concerns about the potential harms posed by AI-generated texts, primarily stemming from factoid, unfair, and toxic content. Previous researchers have invested much effort in assessing the harmlessness of generative language models. However, existing benchmarks are struggling in the era of large language models (LLMs), due to the stronger language generation and instruction following capabilities, as well as wider applications. In this paper, we propose FFT, a new benchmark with 2116 elaborated-designed instances, for LLM harmlessness evaluation with factuality, fairness, and toxicity. To investigate the potential harms of LLMs, we evaluate 9 representative LLMs covering various parameter scales, training stages, and creators. Experiments show that the harmlessness of LLMs is still under-satisfactory, and extensive analysis derives some insightful findings that could inspire future research for harmless LLM research.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Shiyao Cui",
+   "Zhenyu Zhang",
+   "Yilong Chen",
+   "Wenyuan Zhang",
+   "Tianyun Liu",
+   "Siqi Wang",
+   "Tingwen Liu"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2311.18580v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2311.18580v2",
+  "published_iso": "2023-11-30T14:18:47Z"
+ },
+ {
+  "title": "Short-Long Policy Evaluation with Novel Actions",
+  "title_norm": "short long policy evaluation with novel actions",
+  "abstract": "From incorporating LLMs in education, to identifying new drugs and improving ways to charge batteries, innovators constantly try new strategies in search of better long-term outcomes for students, patients and consumers. One major bottleneck in this innovation cycle is the amount of time it takes to observe the downstream effects of a decision policy that incorporates new interventions. The key question is whether we can quickly evaluate long-term outcomes of a new decision policy without making long-term observations. Organizations often have access to prior data about past decision policies and their outcomes, evaluated over the full horizon of interest. Motivated by this, we introduce a new setting for short-long policy evaluation for sequential decision making tasks. Our proposed methods significantly outperform prior results on simulators of HIV treatment, kidney dialysis and battery charging. We also demonstrate that our methods can be useful for applications in AI safety by quickly identifying when a new decision policy is likely to have substantially lower performance than past policies.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Hyunji Alex Nam",
+   "Yash Chandak",
+   "Emma Brunskill"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2407.03674v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2407.03674v2",
+  "published_iso": "2024-07-04T06:42:21Z"
+ },
+ {
+  "title": "Comparative evaluation of future collider options",
+  "title_norm": "comparative evaluation of future collider options",
+  "abstract": "In anticipation of the completion of the High-Luminosity Large Hadron Collider (HL-LHC) programme by the end of 2041, CERN is preparing to launch a new major facility in the mid-2040s. According to the 2020 update of the European Strategy for Particle Physics (ESPP), the highest-priority next collider is an electron-positron Higgs factory, followed in the longer term by a hadron-hadron collider at the highest achievable energy. The CERN directorate established a Future Colliders Comparative Evaluation working group in June 2023. This group brings together project leaders and domain experts to conduct a consistent evaluation of the Future Circular Collider (FCC) and alternative scenarios based on shared assumptions and standardized criteria. This report presents a comparative evaluation of proposed future collider projects submitted as input for the Update of the European Strategy for Particle Physics. These proposals are compared considering main performance parameters, environmental impact and sustainability, technical maturity, cost of construction and operation, required human resources, and realistic implementation timelines. An overview of the international collider projects within a similar timeframe, notably the CEPC in China and the ILC in Japan is also presented, as well as a short review of the status and prospects of new accelerator techniques.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "G. Arduini",
+   "M. Benedikt",
+   "F. Gianotti",
+   "K. Jakobs",
+   "M. Lamont",
+   "R. Losito",
+   "M. Meddahi",
+   "J. Mnich",
+   "N. Mounet",
+   "D. Schulte",
+   "F. Sonnemann",
+   "S. Stapnes",
+   "F. Zimmermann"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2511.20417v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2511.20417v2",
+  "published_iso": "2025-11-25T15:41:09Z"
+ },
+ {
+  "title": "Bayesian Adaptive Trials for Social Policy",
+  "title_norm": "bayesian adaptive trials for social policy",
+  "abstract": "This paper proposes Bayesian Adaptive Trials (BAT) as both an efficient method to conduct trials and a unifying framework for evaluation social policy interventions, addressing limitations inherent in traditional methods such as Randomized Controlled Trials (RCT). Recognizing the crucial need for evidence-based approaches in public policy, the proposal aims to lower barriers to the adoption of evidence-based methods and align evaluation processes more closely with the dynamic nature of policy cycles. BATs, grounded in decision theory, offer a dynamic, ``learning as we go'' approach, enabling the integration of diverse information types and facilitating a continuous, iterative process of policy evaluation. BATs' adaptive nature is particularly advantageous in policy settings, allowing for more timely and context-sensitive decisions. Moreover, BATs' ability to value potential future information sources positions it as an optimal strategy for sequential data acquisition during policy implementation. While acknowledging the assumptions and models intrinsic to BATs, such as prior distributions and likelihood functions, the paper argues that these are advantageous for decision-makers in social policy, effectively merging the best features of various methodologies.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Sally Cripps",
+   "Anna Lopatnikova",
+   "Hadi Mohasel Afshar",
+   "Ben Gales",
+   "Roman Marchant",
+   "Gilad Francis",
+   "Catarina Moreira",
+   "Alex Fischer"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2406.02868v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2406.02868v1",
+  "published_iso": "2024-06-05T02:30:45Z"
+ },
+ {
+  "title": "LLM-Augmented Digital Twin for Policy Evaluation in Short-Video Platforms",
+  "title_norm": "llm augmented digital twin for policy evaluation in short video platforms",
+  "abstract": "Short-video platforms are closed-loop, human-in-the-loop ecosystems where platform policy, creator incentives, and user behavior co-evolve. This feedback structure makes counterfactual policy evaluation difficult in production, especially for long-horizon and distributional outcomes. The challenge is amplified as platforms deploy AI tools that change what content enters the system, how agents adapt, and how the platform operates. We propose a large language model (LLM)-augmented digital twin for short-video platforms, with a modular four-twin architecture (User, Content, Interaction, Platform) and an event-driven execution layer that supports reproducible experimentation. Platform policies are implemented as pluggable components within the Platform Twin, and LLMs are integrated as optional, schema-constrained decision services (e.g., persona generation, content captioning, campaign planning, trend prediction) that are routed through a unified optimizer. This design enables scalable simulations that preserve closed-loop dynamics while allowing selective LLM adoption, enabling the study of platform policies, including AI-enabled policies, under realistic feedback and constraints.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Haoting Zhang",
+   "Yunduan Lin",
+   "Jinghai He",
+   "Denglin Jiang",
+   "Zuo-Jun Shen",
+   "Zeyu Zheng"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2603.11333v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2603.11333v2",
+  "published_iso": "2026-03-11T21:50:21Z"
+ },
+ {
+  "title": "Towards Prototyping Driverless Vehicle Behaviors, City Design, and Policies Simultaneously",
+  "title_norm": "towards prototyping driverless vehicle behaviors city design and policies simult",
+  "abstract": "Autonomous Vehicles (AVs) can potentially improve urban living by reducing accidents, increasing transportation accessibility and equity, and decreasing emissions. Realizing these promises requires the innovations of AV driving behaviors, city plans and infrastructure, and traffic and transportation policies to join forces. However, the complex interdependencies among AV, city, and policy design issues can hinder their innovation. We argue the path towards better AV cities is not a process of matching city designs and policies with AVs' technological innovations, but a process of iterative prototyping of all three simultaneously: Innovations can happen step-wise as the knot of AV, city, and policy design loosens and tightens, unwinds and reties. In this paper, we ask: How can innovators innovate AVs, city environments, and policies simultaneously and productively toward better AV cities? The paper has two parts. First, we map out the interconnections among the many AV, city, and policy design decisions, based on a literature review spanning HCI/HRI, transportation science, urban studies, law and policy, operations research, economy, and philosophy. This map can help innovators identify design constraints and opportunities across the traditional AV/city/policy design disciplinary bounds. Second, we review the respective methods for AV, city, and policy design, and identify key barriers in combining them: (1) Organizational barriers to AV-city-policy design collaboration, (2) computational barriers to multi-granularity AV-city-policy simulation, and (3) different assumptions and goals in joint AV-city-policy optimization. We discuss two broad approaches that can potentially address these challenges, namely, \"low-fidelity integrative City-AV-Policy Simulation (iCAPS)\" and \"participatory design optimization\".",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Hauke Sandhaus",
+   "Wendy Ju",
+   "Qian Yang"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2304.06639v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2304.06639v1",
+  "published_iso": "2023-04-13T16:06:54Z"
+ },
+ {
+  "title": "Factorizing Diffusion Policies for Observation Modality Prioritization",
+  "title_norm": "factorizing diffusion policies for observation modality prioritization",
+  "abstract": "Diffusion models have been extensively leveraged for learning robot skills from demonstrations. These policies are conditioned on several observational modalities such as proprioception, vision and tactile. However, observational modalities have varying levels of influence for different tasks that diffusion polices fail to capture. In this work, we propose 'Factorized Diffusion Policies' abbreviated as FDP, a novel policy formulation that enables observational modalities to have differing influence on the action diffusion process by design. This results in learning policies where certain observations modalities can be prioritized over the others such as $\\texttt{vision>tactile}$ or $\\texttt{proprioception>vision}$. FDP achieves modality prioritization by factorizing the observational conditioning for diffusion process, resulting in more performant and robust policies. Our factored approach shows strong performance improvements in low-data regimes with $15\\%$ absolute improvement in success rate on several simulated benchmarks when compared to a standard diffusion policy that jointly conditions on all input modalities. Moreover, our benchmark and real-world experiments show that factored policies are naturally more robust with $40\\%$ higher absolute success rate across several visuomotor tasks under distribution shifts such as visual distractors or camera occlusions, where existing diffusion policies fail catastrophically. FDP thus offers a safer and more robust alternative to standard diffusion policies for real-world deployment. Videos are available at https://fdp-policy.github.io/fdp-policy/ .",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Omkar Patil",
+   "Prabin Rath",
+   "Kartikay Pangaonkar",
+   "Eric Rosen",
+   "Nakul Gopalan"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2509.16830v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2509.16830v1",
+  "published_iso": "2025-09-20T23:02:51Z"
+ },
+ {
+  "title": "Agricultural Policy in Ukraine",
+  "title_norm": "agricultural policy in ukraine",
+  "abstract": "Building upon the theory and methodology of agricultural policy developed in the previous chapter, in Chapter 2 we analyse and assess agricultural policy making in Ukraine since the breakup of Soviet Union till today. Going from top down to the bottom, we begin by describing the evolution of state policy in the agri-food sector. In the beginning, we describe the major milestones of agricultural policy making since independence, paving the way to the political economy of the modern agricultural policy in Ukraine. Then we describe the role of agri-food sector in the national economy as well as globally in ensuring food security in the world. After, we dig deeper and focus on a detailed performance of agricultural sector by looking at farm structures, their land use, overall and sector-wise untapped productivity potential. Modern agricultural policy and institutional set-up is contained and analyzed in details in the section 2.4. A review of the agricultural up- and downstream sectors wraps up this chapter",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Oleg Nivievskyi",
+   "Pavlo Martyshev",
+   "Sergiy Kvasha"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2305.01478v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2305.01478v1",
+  "published_iso": "2023-04-29T14:15:33Z"
+ },
+ {
+  "title": "SafeAdapt: Provably Safe Policy Updates in Deep Reinforcement Learning",
+  "title_norm": "safeadapt provably safe policy updates in deep reinforcement learning",
+  "abstract": "Safety guarantees are a prerequisite to the deployment of reinforcement learning (RL) agents in safety-critical tasks. Often, deployment environments exhibit non-stationary dynamics or are subject to changing performance goals, requiring updates to the learned policy. This leads to a fundamental challenge: how to update an RL policy while preserving its safety properties on previously encountered tasks? The majority of current approaches either do not provide formal guarantees or verify policy safety only a posteriori. We propose a novel a priori approach to safe policy updates in continual RL by introducing the Rashomon set: a region in policy parameter space certified to meet safety constraints within the demonstration data distribution. We then show that one can provide formal, provable guarantees for arbitrary RL algorithms used to update a policy by projecting their updates onto the Rashomon set. Empirically, we validate this approach across grid-world navigation environments (Frozen Lake and Poisoned Apple) where we guarantee an a priori provably deterministic safety on the source task during downstream adaptation. In contrast, we observe that regularisation-based baselines experience catastrophic forgetting of safety constraints while our approach enables strong adaptation with provable guarantees that safety is preserved.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Maksim Anisimov",
+   "Francesco Belardinelli",
+   "Matthew Wicker"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2604.09452v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2604.09452v1",
+  "published_iso": "2026-04-10T16:09:39Z"
+ },
+ {
+  "title": "Nuclear Energy Acceptance in Poland: From Societal Attitudes to Effective Policy Strategies -- Network Modeling Approach",
+  "title_norm": "nuclear energy acceptance in poland from societal attitudes to effective policy ",
+  "abstract": "Poland is currently undergoing substantial transformation in its energy sector, and gaining public support is pivotal for the success of its energy policies. We conducted a study with 338 Polish participants to investigate societal attitudes towards various energy sources, including nuclear energy and renewables. Applying a novel network approach, we identified a multitude of factors influencing energy acceptance. Political ideology is the central factor in shaping public acceptance, however we also found that environmental attitudes, risk perception, safety concerns, and economic variables play substantial roles. Considering the long-term commitment associated with nuclear energy and its role in Poland's energy transformation, our findings provide a foundation for improving energy policy in Poland. Our research underscores the importance of policies that resonate with the diverse values, beliefs, and preferences of the population. While the risk-risk trade-off and technology-focused strategies are effective to a degree, we advocate for a more comprehensive approach. The framing strategy, which tailors messages to distinct societal values, shows particular promise.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Pawel Robert Smolinski",
+   "Joseph Januszewicz",
+   "Barbara Pawlowska",
+   "Jacek Winiarski"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2309.14869v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2309.14869v1",
+  "published_iso": "2023-09-26T11:58:51Z"
+ },
+ {
+  "title": "IntentVLA: Short-Horizon Intent Modeling for Aliased Robot Manipulation",
+  "title_norm": "intentvla short horizon intent modeling for aliased robot manipulation",
+  "abstract": "Robot imitation data are often multimodal: similar visual-language observations may be followed by different action chunks because human demonstrators act with different short-horizon intents, task phases, or recent context. Existing frame-conditioned VLA policies infer each chunk from the current observation and instruction alone, so under partial observability they may resample different intents across adjacent replanning steps, leading to inter-chunk conflict and unstable execution. We introduce IntentVLA, a history-conditioned VLA framework that encodes recent visual observations into a compact short-horizon intent representation and uses it to condition chunk generation. We further introduce AliasBench, a 12-task ambiguity-aware benchmark on RoboTwin2 with matched training data and evaluation environments that isolate short-horizon observation aliasing. Across AliasBench, SimplerEnv, LIBERO, and RoboCasa, IntentVLA improves rollout stability and outperforms strong VLA baselines",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Shijie Lian",
+   "Bin Yu",
+   "Xiaopeng Lin",
+   "Zhaolong Shen",
+   "Laurence Tianruo Yang",
+   "Yurun Jin",
+   "Haishan Liu",
+   "Changti Wu",
+   "Hang Yuan",
+   "Cong Huang",
+   "Kai Chen"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2605.14712v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2605.14712v2",
+  "published_iso": "2026-05-14T11:31:02Z"
+ },
+ {
+  "title": "Epistemic Injustice in Technology and Policy Design: Lessons from New York City's Heat Complaints System",
+  "title_norm": "epistemic injustice in technology and policy design lessons from new york city s",
+  "abstract": "This paper brings attention to epistemic injustice, an issue that has not received much attention in the design of technology and policy. Epistemic injustices occur when individuals are treated unfairly or harmed specifically in relation to their role as knowers or possessors of knowledge. Drawing on the case of making heat complaints in New York City, this paper illustrates how both technological and policy interventions that address epistemic injustice can fail or even exacerbate the situations for certain social groups, and individuals within them. In bringing this case to the workshop, this paper hopes to provide another generative and critical dimension that can be utilised to create better technologies and policies, especially when they deal with diverse and broad range of social groups",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Mohsin Yousufi",
+   "Charlotte Alexander",
+   "Nassim Parvin"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2303.15468v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2303.15468v1",
+  "published_iso": "2023-03-25T04:14:00Z"
+ },
+ {
+  "title": "h1: Bootstrapping LLMs to Reason over Longer Horizons via Reinforcement Learning",
+  "title_norm": "h1 bootstrapping llms to reason over longer horizons via reinforcement learning",
+  "abstract": "Large language models excel at short-horizon reasoning tasks, but performance drops as reasoning horizon lengths increase. Existing approaches to combat this rely on inference-time scaffolding or costly step-level supervision, neither of which scales easily. In this work, we introduce a scalable method to bootstrap long-horizon reasoning capabilities using only existing, abundant short-horizon data. Our approach synthetically composes simple problems into complex, multi-step dependency chains of arbitrary length. We train models on this data using outcome-only rewards under a curriculum that automatically increases in complexity, allowing RL training to be scaled much further without saturating. Empirically, our method generalizes remarkably well: curriculum training on composed 6th-grade level math problems (GSM8K) boosts accuracy on longer, competition-level benchmarks (GSM-Symbolic, MATH-500, AIME) by up to 2.06x. It also transfers significantly to diverse out-of-distribution ReasoningGym domains and long-context benchmarks, indicating broader generalization. Importantly, our long-horizon improvements are significantly higher than baselines even at high pass@k, showing that models can learn new reasoning paths under RL. Theoretically, we show that curriculum RL with outcome rewards achieves an exponential improvement in sample complexity over full-horizon training, providing training signal comparable to dense supervision. h1 therefore introduces an efficient path towards scaling RL for long-horizon problems using only existing data.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Sumeet Ramesh Motwani",
+   "Alesia Ivanova",
+   "Ziyang Cai",
+   "Philip Torr",
+   "Riashat Islam",
+   "Shital Shah",
+   "Christian Schroeder de Witt",
+   "Charles London"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2510.07312v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2510.07312v2",
+  "published_iso": "2025-10-08T17:58:41Z"
+ },
+ {
+  "title": "The California Report on Frontier AI Policy",
+  "title_norm": "the california report on frontier ai policy",
+  "abstract": "The innovations emerging at the frontier of artificial intelligence (AI) are poised to create historic opportunities for humanity but also raise complex policy challenges. Continued progress in frontier AI carries the potential for profound advances in scientific discovery, economic productivity, and broader social well-being. As the epicenter of global AI innovation, California has a unique opportunity to continue supporting developments in frontier AI while addressing substantial risks that could have far reaching consequences for the state and beyond. This report leverages broad evidence, including empirical research, historical analysis, and modeling and simulations, to provide a framework for policymaking on the frontier of AI development. Building on this multidisciplinary approach, this report derives policy principles that can inform how California approaches the use, assessment, and governance of frontier AI: principles rooted in an ethos of trust but verify. This approach takes into account the importance of innovation while establishing appropriate strategies to reduce material risks.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Rishi Bommasani",
+   "Scott R. Singer",
+   "Ruth E. Appel",
+   "Sarah Cen",
+   "A. Feder Cooper",
+   "Elena Cryst",
+   "Lindsey A. Gailmard",
+   "Ian Klaus",
+   "Meredith M. Lee",
+   "Inioluwa Deborah Raji",
+   "Anka Reuel",
+   "Drew Spence",
+   "Alexander Wan",
+   "Angelina Wang",
+   "Daniel Zhang",
+   "Daniel E. Ho",
+   "Percy Liang",
+   "Dawn Song",
+   "Joseph E. Gonzalez",
+   "Jonathan Zittrain",
+   "Jennifer Tour Chayes",
+   "Mariano-Florentino Cuellar",
+   "Li Fei-Fei"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2506.17303v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2506.17303v1",
+  "published_iso": "2025-06-17T23:33:21Z"
+ },
+ {
+  "title": "Time-Varying Identification of Monetary Policy Shocks",
+  "title_norm": "time varying identification of monetary policy shocks",
+  "abstract": "We propose a new Bayesian heteroskedastic Markov-switching structural vector autoregression with data-driven time-varying identification. The model selects alternative exclusion restrictions over time and, as a condition for the search, allows to verify identification through heteroskedasticity within each regime. Based on four alternative monetary policy rules, we show that a monthly six-variable system supports time variation in US monetary policy shock identification. In the sample-dominating first regime, systematic monetary policy follows a Taylor rule extended by the term spread, effectively curbing inflation. In the second regime, occurring after 2000 and gaining more persistence after the global financial and COVID crises, it is characterized by a money-augmented Taylor rule. This regime's unconventional monetary policy provides economic stimulus, features the liquidity effect, and is complemented by a pure term spread shock. Absent the specific monetary policy of the second regime, inflation would be over one percentage point higher on average after 2008.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Annika Camehl",
+   "Tomasz Woźniak"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2311.05883v4",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2311.05883v4",
+  "published_iso": "2023-11-10T05:53:01Z"
+ },
+ {
+  "title": "Case Studies of AI Policy Development in Africa",
+  "title_norm": "case studies of ai policy development in africa",
+  "abstract": "Artificial Intelligence (AI) requires new ways of evaluating national technology use and strategy for African nations. We conduct a survey of existing 'readiness' assessments both for general digital adoption and for AI policy in particular. We conclude that existing global readiness assessments do not fully capture African states' progress in AI readiness and lay the groundwork for how assessments can be better used for the African context. We consider the extent to which these indicators map to the African context and what these indicators miss in capturing African states' on-the-ground work in meeting AI capability. Through case studies of four African nations of diverse geographic and economic dimensions, we identify nuances missed by global assessments and offer high-level policy considerations for how states can best improve their AI readiness standards and prepare their societies to capture the benefits of AI.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Kadijatou Diallo",
+   "Jonathan Smith",
+   "Chinasa T. Okolo",
+   "Dorcas Nyamwaya",
+   "Jonas Kgomo",
+   "Richard Ngamita"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2403.14662v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2403.14662v1",
+  "published_iso": "2024-02-29T19:17:11Z"
+ },
+ {
+  "title": "Quantitative probing: Validating causal models using quantitative domain knowledge",
+  "title_norm": "quantitative probing validating causal models using quantitative domain knowledg",
+  "abstract": "We present quantitative probing as a model-agnostic framework for validating causal models in the presence of quantitative domain knowledge. The method is constructed as an analogue of the train/test split in correlation-based machine learning and as an enhancement of current causal validation strategies that are consistent with the logic of scientific discovery. The effectiveness of the method is illustrated using Pearl's sprinkler example, before a thorough simulation-based investigation is conducted. Limits of the technique are identified by studying exemplary failing scenarios, which are furthermore used to propose a list of topics for future research and improvements of the presented version of quantitative probing. The code for integrating quantitative probing into causal analysis, as well as the code for the presented simulation-based studies of the effectiveness of quantitative probing is provided in two separate open-source Python packages.",
+  "year": 2022,
+  "venue": "arXiv",
+  "authors": [
+   "Daniel Grünbaum",
+   "Maike L. Stern",
+   "Elmar W. Lang"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2209.03013v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2209.03013v1",
+  "published_iso": "2022-09-07T09:19:11Z"
+ },
+ {
+  "title": "Bootstrap aggregation and confidence measures to improve time series causal discovery",
+  "title_norm": "bootstrap aggregation and confidence measures to improve time series causal disc",
+  "abstract": "Learning causal graphs from multivariate time series is a ubiquitous challenge in all application domains dealing with time-dependent systems, such as in Earth sciences, biology, or engineering, to name a few. Recent developments for this causal discovery learning task have shown considerable skill, notably the specific time-series adaptations of the popular conditional independence-based learning framework. However, uncertainty estimation is challenging for conditional independence-based methods. Here, we introduce a novel bootstrap approach designed for time series causal discovery that preserves the temporal dependencies and lag structure. It can be combined with a range of time series causal discovery methods and provides a measure of confidence for the links of the time series graphs. Furthermore, next to confidence estimation, an aggregation, also called bagging, of the bootstrapped graphs by majority voting results in bagged causal discovery methods. In this work, we combine this approach with the state-of-the-art conditional-independence-based algorithm PCMCI+. With extensive numerical experiments we empirically demonstrate that, in addition to providing confidence measures for links, Bagged-PCMCI+ improves in precision and recall as compared to its base algorithm PCMCI+, at the cost of higher computational demands. These statistical performance improvements are especially pronounced in the more challenging settings (short time sample size, large number of variables, high autocorrelation). Our bootstrap approach can also be combined with other time series causal discovery algorithms and can be of considerable use in many real-world applications.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Kevin Debeire",
+   "Jakob Runge",
+   "Andreas Gerhardus",
+   "Veronika Eyring"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2306.08946v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2306.08946v2",
+  "published_iso": "2023-06-15T08:37:16Z"
+ },
+ {
+  "title": "The trouble with pilot-wave theory: a critical evaluation",
+  "title_norm": "the trouble with pilot wave theory a critical evaluation",
+  "abstract": "Objections to pilot-wave theory frequently come in three mutually-contradictory categories: that the theory is too bizarrely different from ordinary physics, that the theory is not radically different enough, and that the physics of pilot-wave theory is after all just the same as quantum physics. After a brief review of pilot-wave theory, we critically evaluate these objections. We show how the radical nature of pilot-wave theory is often misunderstood or overlooked. We highlight the novelty of its dynamics, and clarify its implications for our understanding of measurement, as well as discussing the status of Lorentz invariance, conservation laws, and the Born rule. We examine Einstein's early work on pilot-wave theory and argue that he turned away from it for reasons which are no longer compelling. We urge that the theory be understood on its own terms, as a generalised nonequilibrium theory empirically distinct from quantum mechanics, with all its potentially revolutionary implications.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Antony Valentini"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2408.05403v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2408.05403v1",
+  "published_iso": "2024-08-10T01:45:59Z"
+ },
+ {
+  "title": "Integrated Sensing and Communication: Joint Pilot and Transmission Design",
+  "title_norm": "integrated sensing and communication joint pilot and transmission design",
+  "abstract": "This paper studies a communication-centric integrated sensing and communication (ISAC) system, where a multi-antenna base station (BS) simultaneously performs downlink communication and target detection. A novel target detection and information transmission protocol is proposed, where the BS executes the channel estimation and beamforming successively and meanwhile jointly exploits the pilot sequences in the channel estimation stage and user information in the transmission stage to assist target detection. We investigate the joint design of pilot matrix, training duration, and transmit beamforming to maximize the probability of target detection, subject to the minimum achievable rate required by the user. However, designing the optimal pilot matrix is rather challenging since there is no closed-form expression of the detection probability with respect to the pilot matrix. To tackle this difficulty, we resort to designing the pilot matrix based on the information-theoretic criterion to maximize the mutual information (MI) between the received observations and BS-target channel coefficients for target detection. We first derive the optimal pilot matrix for both channel estimation and target detection, and then propose an unified pilot matrix structure to balance minimizing the channel estimation error (MSE) and maximizing MI. Based on the proposed structure, a low-complexity successive refinement algorithm is proposed. Simulation results demonstrate that the proposed pilot matrix structure can well balance the MSE-MI and the Rate-MI tradeoffs, and show the significant region improvement of our proposed design as compared to other benchmark schemes. Furthermore, it is unveiled that as the communication channel is more correlated, the Rate-MI region can be further enlarged.",
+  "year": 2022,
+  "venue": "arXiv",
+  "authors": [
+   "Meng Hua",
+   "Qingqing Wu",
+   "Wen Chen",
+   "Abbas Jamalipour",
+   "Celimuge Wu",
+   "Octavia A. Dobre"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2211.12891v3",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2211.12891v3",
+  "published_iso": "2022-11-23T11:52:16Z"
+ },
+ {
+  "title": "Evaluating Temporal Observation-Based Causal Discovery Techniques Applied to Road Driver Behaviour",
+  "title_norm": "evaluating temporal observation based causal discovery techniques applied to roa",
+  "abstract": "Autonomous robots are required to reason about the behaviour of dynamic agents in their environment. The creation of models to describe these relationships is typically accomplished through the application of causal discovery techniques. However, as it stands observational causal discovery techniques struggle to adequately cope with conditions such as causal sparsity and non-stationarity typically seen during online usage in autonomous agent domains. Meanwhile, interventional techniques are not always feasible due to domain restrictions. In order to better explore the issues facing observational techniques and promote further discussion of these topics we carry out a benchmark across 10 contemporary observational temporal causal discovery methods in the domain of autonomous driving. By evaluating these methods upon causal scenes drawn from real world datasets in addition to those generated synthetically we highlight where improvements need to be made in order to facilitate the application of causal discovery techniques to the aforementioned use-cases. Finally, we discuss potential directions for future work that could help better tackle the difficulties currently experienced by state of the art techniques.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Rhys Howard",
+   "Lars Kunze"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2302.00064v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2302.00064v2",
+  "published_iso": "2023-01-31T19:55:24Z"
+ },
+ {
+  "title": "PILL-CoDe: Inverse Design of Polypills via Automatic Differentiation for Prescribed Drug-Release Kinetics",
+  "title_norm": "pill code inverse design of polypills via automatic differentiation for prescrib",
+  "abstract": "Polypills are single oral dosage forms that combine multiple active pharmaceutical ingredients and excipients, enabling fixed-dose combination therapies, coordinated multi-phase release, and precise customization of patient-specific treatment protocols. Recent advances in additive manufacturing facilitate the physical realization of multi-material excipients, offering superior customization of target release profiles. However, polypill formulations remain tuned by ad hoc parameter sweeps. The current design workflows are ill-suited for the systematic exploration of the high-dimensional space of shapes, compositions, and release behaviors. We present PILL-CoDe, a polypill co-design framework that simultaneously optimizes tablet geometry and excipient distribution to match prescribed drug-release kinetics. The framework couples a supershape parametrization of the pill geometry with a coordinate-based neural network representation of the excipient distribution, and governs dissolution through a coupled system of modified Allen-Cahn and Fickian diffusion equations. Implemented in JAX, the entire pipeline is end-to-end differentiable, with automatic differentiation providing exact sensitivities for gradient-based co-optimization of shape and composition under manufacturability constraints. We demonstrate the method through single-phase and multi-excipient case studies, showing accurate matching of both monotonic and non-monotonic target release profiles.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Rahul Kumar Padhy",
+   "Aaditya Chandrasekhar",
+   "Amir M. Mirzendehdel"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2512.09154v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2512.09154v2",
+  "published_iso": "2025-12-09T22:08:50Z"
+ },
+ {
+  "title": "Multi-Domain Causal Discovery in Bijective Causal Models",
+  "title_norm": "multi domain causal discovery in bijective causal models",
+  "abstract": "We consider the problem of causal discovery (a.k.a., causal structure learning) in a multi-domain setting. We assume that the causal functions are invariant across the domains, while the distribution of the exogenous noise may vary. Under causal sufficiency (i.e., no confounders exist), we show that the causal diagram can be discovered under less restrictive functional assumptions compared to previous work. What enables causal discovery in this setting is bijective generation mechanisms (BGM), which ensures that the functional relation between the exogenous noise $E$ and the endogenous variable $Y$ is bijective and differentiable in both directions at every level of the cause variable $X = x$. BGM generalizes a variety of models including additive noise model, LiNGAM, post-nonlinear model, and location-scale noise model. Further, we derive a statistical test to find the parents set of the target variable. Experiments on various synthetic and real-world datasets validate our theoretical findings.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Kasra Jalaldoust",
+   "Saber Salehkaleybar",
+   "Negar Kiyavash"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2504.21261v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2504.21261v1",
+  "published_iso": "2025-04-30T02:30:10Z"
+ },
+ {
+  "title": "Large Language Models as Co-Pilots for Causal Inference in Medical Studies",
+  "title_norm": "large language models as co pilots for causal inference in medical studies",
+  "abstract": "The validity of medical studies based on real-world clinical data, such as observational studies, depends on critical assumptions necessary for drawing causal conclusions about medical interventions. Many published studies are flawed because they violate these assumptions and entail biases such as residual confounding, selection bias, and misalignment between treatment and measurement times. Although researchers are aware of these pitfalls, they continue to occur because anticipating and addressing them in the context of a specific study can be challenging without a large, often unwieldy, interdisciplinary team with extensive expertise. To address this expertise gap, we explore the use of large language models (LLMs) as co-pilot tools to assist researchers in identifying study design flaws that undermine the validity of causal inferences. We propose a conceptual framework for LLMs as causal co-pilots that encode domain knowledge across various fields, engaging with researchers in natural language interactions to provide contextualized assistance in study design. We provide illustrative examples of how LLMs can function as causal co-pilots, propose a structured framework for their grounding in existing causal inference frameworks, and highlight the unique challenges and opportunities in adapting LLMs for reliable use in epidemiological research.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Ahmed Alaa",
+   "Rachael V. Phillips",
+   "Emre Kıcıman",
+   "Laura B. Balzer",
+   "Mark van der Laan",
+   "Maya Petersen"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2407.19118v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2407.19118v1",
+  "published_iso": "2024-07-26T22:43:15Z"
+ },
+ {
+  "title": "PILOT: A Pre-Trained Model-Based Continual Learning Toolbox",
+  "title_norm": "pilot a pre trained model based continual learning toolbox",
+  "abstract": "While traditional machine learning can effectively tackle a wide range of problems, it primarily operates within a closed-world setting, which presents limitations when dealing with streaming data. As a solution, incremental learning emerges to address real-world scenarios involving new data's arrival. Recently, pre-training has made significant advancements and garnered the attention of numerous researchers. The strong performance of these pre-trained models (PTMs) presents a promising avenue for developing continual learning algorithms that can effectively adapt to real-world scenarios. Consequently, exploring the utilization of PTMs in incremental learning has become essential. This paper introduces a pre-trained model-based continual learning toolbox known as PILOT. On the one hand, PILOT implements some state-of-the-art class-incremental learning algorithms based on pre-trained models, such as L2P, DualPrompt, and CODA-Prompt. On the other hand, PILOT also fits typical class-incremental learning algorithms (e.g., DER, FOSTER, and MEMO) within the context of pre-trained models to evaluate their effectiveness.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Hai-Long Sun",
+   "Da-Wei Zhou",
+   "De-Chuan Zhan",
+   "Han-Jia Ye"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2309.07117v3",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2309.07117v3",
+  "published_iso": "2023-09-13T17:55:11Z"
+ },
+ {
+  "title": "New Pilot-Study Design in Functional Data Analysis",
+  "title_norm": "new pilot study design in functional data analysis",
+  "abstract": "Efficient data collection is essential in applied studies where frequent measurements are costly, time-consuming, or burdensome. This challenge is especially pronounced in functional data settings, where each subject is observed at only a few time points due to practical constraints. Most existing design approaches focus on selecting optimal time points for individual subjects, typically relying on model parameters estimated from a pilot study. However, the design of the pilot study itself has received limited attention. We propose a framework for constructing pilot-study designs that support both accurate trajectory recovery and effective planning of future designs. A search algorithm is developed to generate such high-quality pilot-study designs. Simulation studies and a real data application demonstrate that our approach outperforms commonly used alternatives, highlighting its value in resource-limited settings.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Ping-Han Huang",
+   "Ming-Hung Kao"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2508.00176v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2508.00176v1",
+  "published_iso": "2025-07-31T21:44:22Z"
+ },
+ {
+  "title": "Fundamental Properties of Causal Entropy and Information Gain",
+  "title_norm": "fundamental properties of causal entropy and information gain",
+  "abstract": "Recent developments enable the quantification of causal control given a structural causal model (SCM). This has been accomplished by introducing quantities which encode changes in the entropy of one variable when intervening on another. These measures, named causal entropy and causal information gain, aim to address limitations in existing information theoretical approaches for machine learning tasks where causality plays a crucial role. They have not yet been properly mathematically studied. Our research contributes to the formal understanding of the notions of causal entropy and causal information gain by establishing and analyzing fundamental properties of these concepts, including bounds and chain rules. Furthermore, we elucidate the relationship between causal entropy and stochastic interventions. We also propose definitions for causal conditional entropy and causal conditional information gain. Overall, this exploration paves the way for enhancing causal machine learning tasks through the study of recently-proposed information theoretic quantities grounded in considerations about causality.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Francisco N. F. Q. Simoes",
+   "Mehdi Dastani",
+   "Thijs van Ommen"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2402.01341v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2402.01341v2",
+  "published_iso": "2024-02-02T11:55:57Z"
+ },
+ {
+  "title": "Causal discovery for time series with latent confounders",
+  "title_norm": "causal discovery for time series with latent confounders",
+  "abstract": "Reconstructing the causal relationships behind the phenomena we observe is a fundamental challenge in all areas of science. Discovering causal relationships through experiments is often infeasible, unethical, or expensive in complex systems. However, increases in computational power allow us to process the ever-growing amount of data that modern science generates, leading to an emerging interest in the causal discovery problem from observational data. This work evaluates the LPCMCI algorithm, which aims to find generators compatible with a multi-dimensional, highly autocorrelated time series while some variables are unobserved. We find that LPCMCI performs much better than a random algorithm mimicking not knowing anything but is still far from optimal detection. Furthermore, LPCMCI performs best on auto-dependencies, then contemporaneous dependencies, and struggles most with lagged dependencies. The source code of this project is available online.",
+  "year": 2022,
+  "venue": "arXiv",
+  "authors": [
+   "Christian Reiser"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2209.03427v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2209.03427v1",
+  "published_iso": "2022-09-07T18:57:19Z"
+ },
+ {
+  "title": "OpportunityFinder: A Framework for Automated Causal Inference",
+  "title_norm": "opportunityfinder a framework for automated causal inference",
+  "abstract": "We introduce OpportunityFinder, a code-less framework for performing a variety of causal inference studies with panel data for non-expert users. In its current state, OpportunityFinder only requires users to provide raw observational data and a configuration file. A pipeline is then triggered that inspects/processes data, chooses the suitable algorithm(s) to execute the causal study. It returns the causal impact of the treatment on the configured outcome, together with sensitivity and robustness results. Causal inference is widely studied and used to estimate the downstream impact of individual's interactions with products and features. It is common that these causal studies are performed by scientists and/or economists periodically. Business stakeholders are often bottle-necked on scientist or economist bandwidth to conduct causal studies. We offer OpportunityFinder as a solution for commonly performed causal studies with four key features: (1) easy to use for both Business Analysts and Scientists, (2) abstraction of multiple algorithms under a single I/O interface, (3) support for causal impact analysis under binary treatment with panel data and (4) dynamic selection of algorithm based on scale of data.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Huy Nguyen",
+   "Prince Grover",
+   "Devashish Khatwani"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2309.13103v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2309.13103v1",
+  "published_iso": "2023-09-22T17:35:03Z"
+ },
+ {
+  "title": "Causal Triplet: An Open Challenge for Intervention-centric Causal Representation Learning",
+  "title_norm": "causal triplet an open challenge for intervention centric causal representation ",
+  "abstract": "Recent years have seen a surge of interest in learning high-level causal representations from low-level image pairs under interventions. Yet, existing efforts are largely limited to simple synthetic settings that are far away from real-world problems. In this paper, we present Causal Triplet, a causal representation learning benchmark featuring not only visually more complex scenes, but also two crucial desiderata commonly overlooked in previous works: (i) an actionable counterfactual setting, where only certain object-level variables allow for counterfactual observations whereas others do not; (ii) an interventional downstream task with an emphasis on out-of-distribution robustness from the independent causal mechanisms principle. Through extensive experiments, we find that models built with the knowledge of disentangled or object-centric representations significantly outperform their distributed counterparts. However, recent causal representation learning methods still struggle to identify such latent structures, indicating substantial challenges and opportunities for future work. Our code and datasets will be available at https://sites.google.com/view/causaltriplet.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Yuejiang Liu",
+   "Alexandre Alahi",
+   "Chris Russell",
+   "Max Horn",
+   "Dominik Zietlow",
+   "Bernhard Schölkopf",
+   "Francesco Locatello"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2301.05169v2",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2301.05169v2",
+  "published_iso": "2023-01-12T17:43:38Z"
+ },
+ {
+  "title": "SemanticZip: A Pilot Framework for Lossy Text Compression with LLMs as Semantic Decompressors",
+  "title_norm": "semanticzip a pilot framework for lossy text compression with llms as semantic d",
+  "abstract": "Text compression for large language model (LLM) systems is usually framed as token deletion, retrieval, summarization, or exact reconstruction. We study a more aggressive but explicitly lossy setting: compress text into compact codes that an LLM can expand into task-relevant meaning. We call this setting SemanticZip. Unlike lossless compression, SemanticZip does not require byte-identical reconstruction; unlike ordinary summarization, it treats model-based decompression as part of the codec and evaluates whether task-relevant semantic commitments are recovered.\n  This paper is a pilot framework, not a benchmark claim. We formalize LLM-mediated decompression, define a protected/lossy packet architecture, and evaluate six representation regimes over five author-constructed diagnostic cases: structured prose, JSON, CCL-Core, CCL-Min, SemanticZip ASCII, and SemanticZip emoji. An independent decoder LLM reconstructs typed semantic atoms from each compressed representation, and we score Critical Atom Recall, Weighted Atom Recall, precision, and tokenizer gain. In this pilot, structured prose has the highest recoverability, with WAR = 0.956 and 19.1% o200k_base token gain. CCL-Min is the strongest balanced point, with 39.4% token gain and WAR = 0.874. SemanticZip ASCII provides the largest useful compression, with 46.5% token gain and WAR = 0.802, while emoji-heavy SemanticZip performs worse on both compression and recovery.\n  The main contribution is not the claim that these numbers establish a universal frontier. Rather, we introduce a reproducible experimental interface for studying lossy, LLM-decompressible text codes and a design principle: safety-critical and exact commitments should remain protected, while predictable low-risk context may be semantically zipped.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Natalia Trukhina",
+   "Vadim Vashkelis"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2605.24541v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2605.24541v1",
+  "published_iso": "2026-05-23T12:14:04Z"
+ },
+ {
+  "title": "Incorporating structural uncertainty in causal decision making",
+  "title_norm": "incorporating structural uncertainty in causal decision making",
+  "abstract": "Practitioners making decisions based on causal effects typically ignore structural uncertainty. We analyze when this uncertainty is consequential enough to warrant methodological solutions (Bayesian model averaging over competing causal structures). Focusing on bivariate relationships ($X \\rightarrow Y$ vs. $X \\leftarrow Y$), we establish that model averaging is beneficial when: (1) structural uncertainty is moderate to high, (2) causal effects differ substantially between structures, and (3) loss functions are sufficiently sensitive to the size of the causal effect. We prove optimality results of our suggested methodological solution under regularity conditions and demonstrate through simulations that modern causal discovery methods can provide, within limits, the necessary quantification. Our framework complements existing robust causal inference approaches by addressing a distinct source of uncertainty typically overlooked in practice.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Maurits Kaptein"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2507.23495v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2507.23495v1",
+  "published_iso": "2025-07-31T12:29:49Z"
+ },
+ {
+  "title": "ROS-Causal: A ROS-based Causal Analysis Framework for Human-Robot Interaction Applications",
+  "title_norm": "ros causal a ros based causal analysis framework for human robot interaction app",
+  "abstract": "Deploying robots in human-shared spaces requires understanding interactions among nearby agents and objects. Modelling cause-and-effect relations through causal inference aids in predicting human behaviours and anticipating robot interventions. However, a critical challenge arises as existing causal discovery methods currently lack an implementation inside the ROS ecosystem, the standard de facto in robotics, hindering effective utilisation in robotics. To address this gap, this paper introduces ROS-Causal, a ROS-based framework for onboard data collection and causal discovery in human-robot spatial interactions. An ad-hoc simulator, integrated with ROS, illustrates the approach's effectiveness, showcasing the robot onboard generation of causal models during data collection. ROS-Causal is available on GitHub: https://github.com/lcastri/roscausal.git.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Luca Castri",
+   "Gloria Beraldo",
+   "Sariah Mghames",
+   "Marc Hanheide",
+   "Nicola Bellotto"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2402.16068v3",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2402.16068v3",
+  "published_iso": "2024-02-25T11:37:23Z"
+ },
+ {
+  "title": "On Hardware-Aware Design and Optimization of Edge Intelligence",
+  "title_norm": "on hardware aware design and optimization of edge intelligence",
+  "abstract": "Edge intelligence systems, the intersection of edge computing and artificial intelligence (AI), are pushing the frontier of AI applications. However, the complexity of deep learning models and heterogeneity of edge devices make the design of edge intelligence systems a challenging task. Hardware-agnostic methods face some limitations when implementing edge systems. Thus, hardware-aware methods are attracting more attention recently. In this paper, we present our recent endeavors in hardware-aware design and optimization for edge intelligence. We delve into techniques such as model compression and neural architecture search to achieve efficient and effective system designs. We also discuss some challenges in hardware-aware paradigm.",
+  "year": 2026,
+  "venue": "arXiv",
+  "authors": [
+   "Shuo Huai",
+   "Hao Kong",
+   "Xiangzhong Luo",
+   "Di Liu",
+   "Ravi Subramaniam",
+   "Christian Makaya",
+   "Qian Lin",
+   "Weichen Liu"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2607.16297v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2607.16297v1",
+  "published_iso": "2026-07-13T11:26:59Z"
+ },
+ {
+  "title": "Case Studies of Causal Discovery from IT Monitoring Time Series",
+  "title_norm": "case studies of causal discovery from it monitoring time series",
+  "abstract": "Information technology (IT) systems are vital for modern businesses, handling data storage, communication, and process automation. Monitoring these systems is crucial for their proper functioning and efficiency, as it allows collecting extensive observational time series data for analysis. The interest in causal discovery is growing in IT monitoring systems as knowing causal relations between different components of the IT system helps in reducing downtime, enhancing system performance and identifying root causes of anomalies and incidents. It also allows proactive prediction of future issues through historical data analysis. Despite its potential benefits, applying causal discovery algorithms on IT monitoring data poses challenges, due to the complexity of the data. For instance, IT monitoring data often contains misaligned time series, sleeping time series, timestamp errors and missing values. This paper presents case studies on applying causal discovery algorithms to different IT monitoring datasets, highlighting benefits and ongoing challenges.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Ali Aït-Bachir",
+   "Charles K. Assaad",
+   "Christophe de Bignicourt",
+   "Emilie Devijver",
+   "Simon Ferreira",
+   "Eric Gaussier",
+   "Hosein Mohanna",
+   "Lei Zan"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2307.15678v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2307.15678v1",
+  "published_iso": "2023-07-28T17:13:00Z"
+ },
+ {
+  "title": "Dual Likelihood for Causal Inference under Structure Uncertainty",
+  "title_norm": "dual likelihood for causal inference under structure uncertainty",
+  "abstract": "Knowledge of the underlying causal relations is essential for inferring the effect of interventions in complex systems. In a widely studied approach, structural causal models postulate noisy functional relations among interacting variables, where the underlying causal structure is then naturally represented by a directed graph whose edges indicate direct causal dependencies. In the typical application, this underlying causal structure must be learned from data, and thus, the remaining structure uncertainty needs to be incorporated into causal inference in order to draw reliable conclusions. In recent work, test inversions provide an ansatz to account for this data-driven model choice and, therefore, combine structure learning with causal inference. In this article, we propose the use of dual likelihood to greatly simplify the treatment of the involved testing problem. Indeed, dual likelihood leads to a closed-form solution for constructing confidence regions for total causal effects that rigorously capture both sources of uncertainty: causal structure and numerical size of nonzero effects. The proposed confidence regions can be computed with a bottom-up procedure starting from sink nodes. To render the causal structure identifiable, we develop our ideas in the context of linear causal relations with equal error variances.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "David Strieder",
+   "Mathias Drton"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2402.08328v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2402.08328v1",
+  "published_iso": "2024-02-13T09:47:49Z"
+ },
+ {
+  "title": "Introducing Vibration for use in Interaction Designs to support Human Performance: A Pilot Study",
+  "title_norm": "introducing vibration for use in interaction designs to support human performanc",
+  "abstract": "While vibration is a well-used output signal in HCI as part of haptic interaction, vibration outside HCI is used in many other modes to support human performance, from rehabilitation to cognition. In this late breaking work, we present preliminary positive results of a novel protocol that informs how vibration might be used to enrich HCI interventions for aspects of both health and intellectual performance. We also present a novel apparatus specifically designed to help HCI researchers explore different vibration amplitudes and frequencies for such applications.",
+  "year": 2023,
+  "venue": "arXiv",
+  "authors": [
+   "Alexander Dawid Bincalar",
+   "M. C. Schraefel",
+   "Christopher Freeman"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2304.10546v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2304.10546v1",
+  "published_iso": "2023-04-14T13:48:08Z"
+ },
+ {
+  "title": "Statistical Analysis Plan for Primary and Selected Secondary Health Endpoints of the SEARCH-Youth Study",
+  "title_norm": "statistical analysis plan for primary and selected secondary health endpoints of",
+  "abstract": "This document provides the statistical analytic plan (SAP) for evaluating health outcomes in the SEARCH-Youth study, a cluster randomized trial designed to evaluate the effect of a combination intervention on HIV viral suppression among adolescents and young adults with HIV in rural Uganda and Kenya (Clinicaltrials.gov: NCT03848728). The SAP was locked prior to unblinding and effect estimation. This SAP was embargoed until November 04, 2022 when it was submitted to arXiv.",
+  "year": 2022,
+  "venue": "arXiv",
+  "authors": [
+   "Laura B. Balzer",
+   "Theodore Ruel",
+   "Diane V. Havlir",
+   "the SEARCH-Youth Study Team"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2211.02771v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2211.02771v1",
+  "published_iso": "2022-11-04T22:20:58Z"
+ },
+ {
+  "title": "A Human-Centered Approach for Bootstrapping Causal Graph Creation",
+  "title_norm": "a human centered approach for bootstrapping causal graph creation",
+  "abstract": "Causal inference, a cornerstone in disciplines such as economics, genomics, and medicine, is increasingly being recognized as fundamental to advancing the field of robotics. In particular, the ability to reason about cause and effect from observational data is crucial for robust generalization in robotic systems. However, the construction of a causal graphical model, a mechanism for representing causal relations, presents an immense challenge. Currently, a nuanced grasp of causal inference, coupled with an understanding of causal relationships, must be manually programmed into a causal graphical model. To address this difficulty, we present initial results towards a human-centered augmented reality framework for creating causal graphical models. Concretely, our system bootstraps the causal discovery process by involving humans in selecting variables, establishing relationships, performing interventions, generating counterfactual explanations, and evaluating the resulting causal graph at every step. We highlight the potential of our framework via a physical robot manipulator on a pick-and-place task.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Minh Q. Tram",
+   "Nolan B. Gutierrez",
+   "William J. Beksi"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2403.01622v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2403.01622v1",
+  "published_iso": "2024-03-03T22:01:27Z"
+ },
+ {
+  "title": "Lifted Causal Inference in Relational Domains",
+  "title_norm": "lifted causal inference in relational domains",
+  "abstract": "Lifted inference exploits symmetries in probabilistic graphical models by using a representative for indistinguishable objects, thereby speeding up query answering while maintaining exact answers. Even though lifting is a well-established technique for the task of probabilistic inference in relational domains, it has not yet been applied to the task of causal inference. In this paper, we show how lifting can be applied to efficiently compute causal effects in relational domains. More specifically, we introduce parametric causal factor graphs as an extension of parametric factor graphs incorporating causal knowledge and give a formal semantics of interventions therein. We further present the lifted causal inference algorithm to compute causal effects on a lifted level, thereby drastically speeding up causal inference compared to propositional inference, e.g., in causal Bayesian networks. In our empirical evaluation, we demonstrate the effectiveness of our approach.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Malte Luttermann",
+   "Mattis Hartwig",
+   "Tanya Braun",
+   "Ralf Möller",
+   "Marcel Gehrke"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2403.10184v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2403.10184v1",
+  "published_iso": "2024-03-15T10:44:27Z"
+ },
+ {
+  "title": "Causal Order Discovery based on Monotonic SCMs",
+  "title_norm": "causal order discovery based on monotonic scms",
+  "abstract": "In this paper, we consider the problem of causal order discovery within the framework of monotonic Structural Causal Models (SCMs), which have gained attention for their potential to enable causal inference and causal discovery from observational data. While existing approaches either assume prior knowledge about the causal order or use complex optimization techniques to impose sparsity in the Jacobian of Triangular Monotonic Increasing maps, our work introduces a novel sequential procedure that directly identifies the causal order by iteratively detecting the root variable. This method eliminates the need for sparsity assumptions and the associated optimization challenges, enabling the identification of a unique SCM without the need for multiple independence tests to break the Markov equivalence class. We demonstrate the effectiveness of our approach in sequentially finding the root variable, comparing it to methods that maximize Jacobian sparsity.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Ali Izadi",
+   "Martin Ester"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2410.19870v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2410.19870v1",
+  "published_iso": "2024-10-24T03:15:11Z"
+ },
+ {
+  "title": "The Causal Round Trip: Generating Authentic Counterfactuals by Eliminating Information Loss",
+  "title_norm": "the causal round trip generating authentic counterfactuals by eliminating inform",
+  "abstract": "Judea Pearl's vision of Structural Causal Models (SCMs) as engines for counterfactual reasoning hinges on faithful abduction: the precise inference of latent exogenous noise. For decades, operationalizing this step for complex, non-linear mechanisms has remained a significant computational challenge. The advent of diffusion models, powerful universal function approximators, offers a promising solution. However, we argue that their standard design, optimized for perceptual generation over logical inference, introduces a fundamental flaw for this classical problem: an inherent information loss we term the Structural Reconstruction Error (SRE). To address this challenge, we formalize the principle of Causal Information Conservation (CIC) as the necessary condition for faithful abduction. We then introduce BELM-MDCM, the first diffusion-based framework engineered to be causally sound by eliminating SRE by construction through an analytically invertible mechanism. To operationalize this framework, a Targeted Modeling strategy provides structural regularization, while a Hybrid Training Objective instills a strong causal inductive bias. Rigorous experiments demonstrate that our Zero-SRE framework not only achieves state-of-the-art accuracy but, more importantly, enables the high-fidelity, individual-level counterfactuals required for deep causal inquiries. Our work provides a foundational blueprint that reconciles the power of modern generative models with the rigor of classical causal theory, establishing a new and more rigorous standard for this emerging field.",
+  "year": 2025,
+  "venue": "arXiv",
+  "authors": [
+   "Rui Wu",
+   "Lizheng Wang",
+   "Yongjun Li"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2511.05236v1",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2511.05236v1",
+  "published_iso": "2025-11-07T13:37:23Z"
+ },
+ {
+  "title": "Retrieving Classes of Causal Orders with Inconsistent Knowledge Bases",
+  "title_norm": "retrieving classes of causal orders with inconsistent knowledge bases",
+  "abstract": "Traditional causal discovery methods often depend on strong, untestable assumptions, making them unreliable in real-world applications. In this context, Large Language Models (LLMs) have emerged as a promising alternative for extracting causal knowledge from text-based metadata, effectively consolidating domain expertise. However, LLMs are prone to hallucinations, necessitating strategies that account for these limitations. One effective approach is to use a consistency measure as a proxy of reliability. Moreover, LLMs do not clearly distinguish direct from indirect causal relationships, complicating the discovery of causal Directed Acyclic Graphs (DAGs), which are often sparse. This ambiguity is evident in the way informal sentences are formulated in various domains. For this reason, focusing on causal orders provides a more practical and direct task for LLMs. We propose a new method for deriving abstractions of causal orders that maximizes a consistency score obtained from an LLM. Our approach begins by computing pairwise consistency scores between variables, from which we construct a semi-complete partially directed graph that consolidates these scores into an abstraction. Using this structure, we identify both a maximally oriented partially directed acyclic graph and an optimal set of acyclic tournaments that maximize consistency across all configurations. We further demonstrate how both the abstraction and the class of causal orders can be used to estimate causal effects. We evaluate our method on a wide set of causal DAGs extracted from scientific literature in epidemiology and public health. Our results show that the proposed approach can effectively recover the correct causal order, providing a reliable and practical LLM-assisted causal framework.",
+  "year": 2024,
+  "venue": "arXiv",
+  "authors": [
+   "Federico Baldo",
+   "Simon Ferreira",
+   "Charles K. Assaad"
+  ],
+  "citations": null,
+  "source": "arxiv",
+  "source_id": "2412.14019v4",
+  "doi": "",
+  "paper_url": "https://arxiv.org/abs/2412.14019v4",
+  "published_iso": "2024-12-18T16:37:51Z"
+ }
+]

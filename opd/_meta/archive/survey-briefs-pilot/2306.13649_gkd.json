@@ -1,0 +1,44 @@
+{
+  "paper": "GKD",
+  "paper_arxiv_id": "2306.13649",
+  "survey_arxiv_id": "2604.00626",
+  "window_count": 6,
+  "windows": [
+    {
+      "q": "GKD",
+      "offset": 8240,
+      "section": "§1 Introduction",
+      "context": "th mixture-of-experts and dense systems and spanning proprietary and open-weight release strategies, because all of these systems face the same structural problem once reasoning chains grow long enough for compounding error to dominate. DeepSeek-V4 went the furthest, replacing its mixed RL stage with pure multi-teacher OPD for model consolidation.\nGKD\n(Agarwal\net al.\n,\n2024\n)\n, alongside the concurrent MiniLLM\n(Gu\net al.\n,\n2024\n)\n, brought on-policy distillation into the LLM era in mid-2023, and in less than two years the literature has expanded to over one hundred papers spanning divergence design, reward-guided optimization, self-play, multi-teacher debate, agentic trajectory distillation, and cross-modal transfer. The research focus has shifted accordingly. Where early work asked whether on-policy training helps at all, the current frontier asks how to make it efficient enough for tri"
+    },
+    {
+      "q": "GKD",
+      "offset": 21354,
+      "section": "§2.1 Classical Knowledge Distillation",
+      "context": "ical progression from Hinton\\u2019s classical KD to modern OPD amounts to a series of relaxations of four classical assumptions: (1) shared vocabulary, (2) i.i.d. data, (3) static teacher, and (4) off-policy training data. Seq-KD\n(Kim and Rush,\n2016\n)\nrelaxes assumption (2) by operating at the sequence level but retains the static data assumption. GKD\n(Agarwal\net al.\n,\n2024\n)\nrelaxes assumption (4) by training on student-generated sequences. DSKD\n(Zhang\net al.\n,\n2025b\n)\nrelaxes assumption (1) through dual-space alignment. G-OPD\n(Yang\net al.\n,\n2026d\n)\nrelaxes assumptions (2)\\u2013(4) simultaneously while adding RL-augmented reward extrapolation that pushes the student beyond the teacher\\u2019s frontier. Each relaxation targets a specific failure mode that intensifies with model scale: vocabulary mismatch is often irrelevant for same-family distillation but severe for cross-family transfer"
+    },
+    {
+      "q": "GKD",
+      "offset": 29775,
+      "section": "§2.3 The Unified",
+      "context": "nce weights or off-policy corrections that would add additional variance.\nThis framework subsumes many modern OPD objectives. The choice of\nf\nf\ndetermines the geometric behavior, while the choice of\n\\u03c0\nmix\n\\\\pi_{\\\\mathrm{mix}}\ncontrols the degree of on-policy exploration. We illustrate by mapping the three foundational methods into this space.\nGKD\n(Agarwal\net al.\n,\n2024\n)\ndefines\n\\u03c0\nmix\n=\n\\u03bb\n\\u200b\np\n\\u03b8\n+\n(\n1\n\\u2212\n\\u03bb\n)\n\\u200b\np\ndata\n\\\\pi_{\\\\mathrm{mix}}=\\\\lambda p_{\\ heta}+(1-\\\\lambda)p_{\\\\mathrm{data}}\nas an explicit interpolation, and is agnostic to\n\\ud835\\udc9f\nf\n\\\\mathcal{D}_{f}\n, empirically testing Forward KL, Reverse KL, and JSD. Setting\n\\u03bb\n\\u2192\n1\n\\\\lambda\\ o 1\nmakes GKD purely on-policy, while\n\\u03bb\n=\n0\n\\\\lambda=0\nreduces to standard off-policy KD. The\n\\u03bb\n\\\\lambda\nparameter offers a smooth dial between the extremes, and moderate values (\n\\u03bb\n\\u"
+    },
+    {
+      "q": "GKD",
+      "offset": 30136,
+      "section": "§2.3 The Unified",
+      "context": "l\net al.\n,\n2024\n)\ndefines\n\\u03c0\nmix\n=\n\\u03bb\n\\u200b\np\n\\u03b8\n+\n(\n1\n\\u2212\n\\u03bb\n)\n\\u200b\np\ndata\n\\\\pi_{\\\\mathrm{mix}}=\\\\lambda p_{\\ heta}+(1-\\\\lambda)p_{\\\\mathrm{data}}\nas an explicit interpolation, and is agnostic to\n\\ud835\\udc9f\nf\n\\\\mathcal{D}_{f}\n, empirically testing Forward KL, Reverse KL, and JSD. Setting\n\\u03bb\n\\u2192\n1\n\\\\lambda\\ o 1\nmakes GKD purely on-policy, while\n\\u03bb\n=\n0\n\\\\lambda=0\nreduces to standard off-policy KD. The\n\\u03bb\n\\\\lambda\nparameter offers a smooth dial between the extremes, and moderate values (\n\\u03bb\n\\u2248\n0.5\n\\\\lambda\\\\approx 0.5\n) tend to combine the benefits of on-policy exposure with the stability of grounded, dataset-derived prefixes. GKD\\u2019s experiments report that on-policy sampling (\n\\u03bb\n=\n1\n\\\\lambda=1\n) outperforms off-policy across the divergence choices they tested. JSD performs best on translation tasks (e.g., WMT), where the output space"
+    },
+    {
+      "q": "GKD",
+      "offset": 32788,
+      "section": "§2.3 The Unified",
+      "context": "-division instability when\np\n\\u03b8\n\\u200b\n(\ny\n)\n\\u2248\n0\np_{\\ heta}(y)\\\\approx 0\nor\np\nT\n\\u200b\n(\ny\n)\n\\u2248\n0\np_{T}(y)\\\\approx 0\n, because\np\n~\n\\u200b\n(\ny\n)\n\\ ilde{p}(y)\nis bounded away from zero, improving tractability and stability without policy gradients.\nComparative synthesis.\nThese three methods expose a core tradeoff triangle in OPD design. GKD prioritizes\ngenerality\n(divergence-agnostic) and\nsimplicity\n(no REINFORCE variance) at the cost of limited theoretical guidance on divergence selection. MiniLLM commits to Reverse KL for its mode-seeking precision but inherits REINFORCE\\u2019s high variance, requiring reward baselines, length penalties, and careful\n\\u03b1\n\\\\alpha\ntuning. DistiLLM avoids both the divergence selection problem and the variance problem by engineering a mixture target that is numerically stable by construction, but at the cost of adding a replay buffer (mixing o"
+    },
+    {
+      "q": "GKD",
+      "offset": 33452,
+      "section": "§2.3 The Unified",
+      "context": "areful\n\\u03b1\n\\\\alpha\ntuning. DistiLLM avoids both the divergence selection problem and the variance problem by engineering a mixture target that is numerically stable by construction, but at the cost of adding a replay buffer (mixing on-policy and off-policy data) and an adaptive scheduler that adds hyperparameter complexity. The progression from GKD through MiniLLM to DistiLLM thus traces a shift from algorithmic simplicity toward computational and engineering sophistication, with later methods often addressing specific limitations of earlier approaches.\nModern OPD, viewed through this decomposition, is not a series of disparate heuristics but a systematic exploration of a design space governed by three interacting choices, namely trajectory sampling (\n\\u03c0\nmix\n\\\\pi_{\\\\mathrm{mix}}\n), divergence generator (\nf\nf\n), and argument ordering within the chosen divergence.\n2.4\nDistillation S"
+    }
+  ]
+}

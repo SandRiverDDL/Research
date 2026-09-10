@@ -1,0 +1,15 @@
+{
+  "run_id": "20260821-164206",
+  "skill": "idea-creator",
+  "started_at": "2026-08-21T16:42:06+08:00",
+  "workspace": "/Users/chy/Research/opd",
+  "same_family_review": true,
+  "raw_candidates": 30,
+  "merged_candidates": 25,
+  "wiki_upserts": 25,
+  "shortlist": ["C14", "C02", "C16", "C12"],
+  "second_wave": ["C22", "C23"],
+  "pilot_status": "SKIPPED — needs manual pilot",
+  "completed_at": "2026-08-21T16:51:05+08:00",
+  "status": "complete"
+}

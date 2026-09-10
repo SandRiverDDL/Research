@@ -1,0 +1,25 @@
+{
+  "call_number": 1,
+  "purpose": "mismatch-taxonomy-novelty",
+  "timestamp": "2026-08-26T17:30:00+08:00",
+  "tool": "spawn_agent",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "xhigh",
+  "files_referenced": [],
+  "searched_claims": [
+    "Whether student-excess/student-deficit terminology is new",
+    "Whether reverse-KL directional asymmetry is new",
+    "Whether sampled-token deficit inaccessibility was previously identified",
+    "Whether TIDE's separate excess suppression and deficit recovery is a novel combination"
+  ],
+  "closest_papers": [
+    "MiniLLM, ICLR 2024",
+    "Entropy-Aware On-Policy Distillation, arXiv:2603.07079",
+    "Revisiting On-Policy Distillation, arXiv:2603.25562",
+    "Asymmetric On-Policy Distillation, arXiv:2605.06387",
+    "Not All Disagreement Is Learnable, arXiv:2605.26844",
+    "PowerOPD, arXiv:2606.17199",
+    "Mismatch Matters, arXiv:2608.09836"
+  ],
+  "prompt": "You are an independent novelty reviewer. Assess whether the contribution 'categorize OPD mismatch tokens into student-excess (student overweights teacher-rejected sampled tokens) and student-deficit (teacher-preferred tokens underweighted/rarely sampled by student)' in Mismatch Matters: On-Policy Distillation Beyond Token Agreement (arXiv:2608.09836, Aug 2026) is genuinely novel. Compare at least: MiniLLM ICLR 2024 (reverse KL mode-seeking), EOPD arXiv:2603.07079 (selective FKL for high-entropy teacher states), Revisiting OPD arXiv:2603.25562 (sampled-token imbalance/top-K support matching), AOPD arXiv:2605.06387 (positive vs non-positive advantage; top-K FKL in non-positive regions), Not All Disagreement Is Learnable arXiv:2605.26844 (learnable/support-aligned vs incompatible/off-support disagreement), PowerOPD arXiv:2606.17199 (bounded log-ratio reward), and TIDE itself. Distinguish: (1) novelty of terminology/taxonomy, (2) novelty of mathematical observation, (3) novelty of empirical diagnosis/measurement, (4) novelty of combined method. Be brutally honest and return concise evidence-backed verdict with closest prior work and exact delta."
+}

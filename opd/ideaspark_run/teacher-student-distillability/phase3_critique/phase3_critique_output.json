@@ -1,0 +1,98 @@
+{
+  "gap_closure_reject_check": {
+    "entries": [
+      {
+        "gap": "在 openreview:TteFp6TLUA、arxiv:2604.13016、arxiv:2605.13643 与 arxiv:2605.30833 这些 frontier leaves 的 residue 上，仍没有结果表明：对一个 teacher–student–data 组合得到的 distillability 诊断，其阈值或候选排序换到不同 model family、capacity ratio 或 data distribution 后仍能预测完整 OPD 的 downstream gain；缺失的是跨组合可比较的预测性质，而不是又一个固定 token 权重或 KL 形式 — stakes: 研究者会把昂贵训练预算花在不可迁移的 teacher/data 选择上，且 field-wide 的“某 proxy 代表可教性”结论可能只是单组合 calibration artifact。",
+        "main_pattern": "controlled_diagnostic_design",
+        "sub_pattern": "C02 (Design a Confound-Isolating Diagnostic)",
+        "tactical_failure_mode_quoted": "Papers attempting this tactic fail most often when the constructed instrument isolates the confound only inside an artificial regime and never demonstrates that the isolated signal transfers to real deployment conditions — the synthetic-to-real gap is asserted rather than shown. A second recurring shape is circularity: the diagnostic is validated against the same definition, assumption, or system population it was built to interrogate (using the evaluated models as their own oracle, or hardcoding a contested definition of the target property), so it cannot independently confirm what it claims.",
+        "reject_lessons_evaluated": [
+          {
+            "lesson_quoted": "A diagnostic that only re-confirms a shortcut already known in advance, surfacing no previously unmeasurable failure, is read as confirmatory rather than as a contribution.",
+            "candidate_match": "no",
+            "reasoning": "The candidate tests the previously unresolved cross-triad transfer of a pre-run distillability ordering rather than re-demonstrating a known overlap, margin, or confidence failure."
+          },
+          {
+            "lesson_quoted": "Validating a synthetic-ground-truth instrument only on synthetic data, without demonstrating that the controlled finding transfers to real-world instances, leaves ecological validity unestablished and undermines the central claim.",
+            "candidate_match": "no",
+            "reasoning": "The controlled pilots use real open-weight models and real MATH/DAPO prompts, and the isolated score is validated against held-out real triads and their full 5-million-token OPD outcomes."
+          },
+          {
+            "lesson_quoted": "Building the instrument around one contested definition of the target property means it cannot independently confirm that the definition is correct, and reviewers flag the resulting circularity.",
+            "candidate_match": "no",
+            "reasoning": "R is judged by independent exact-answer ground truth and its ability to predict full-run OPD gain, not by a hardcoded semantic definition of distillability."
+          },
+          {
+            "lesson_quoted": "Resting an unsupervised evaluation on the unverified premise that the systems under test can reliably judge one another stakes the entire method on an assumption that collapses under scrutiny.",
+            "candidate_match": "no",
+            "reasoning": "Neither teacher nor student judges correctness; the existing exact-answer verifier supplies the outcome oracle."
+          },
+          {
+            "lesson_quoted": "Pairing a single-task or small-sample instrument with broad capability claims triggers a scope-mismatch rejection, and assembling retrieval or engineering blocks without an isolating scientific insight reads as application rather than research.",
+            "candidate_match": "no",
+            "reasoning": "Although the experiment is deliberately small and math-only, its stated estimand and transfer claims are bounded to the named ED, model families, capacity bands, and datasets, while the matched supervision-source intervention is a scientific isolation rather than pipeline assembly."
+          }
+        ],
+        "verdict": "clear"
+      }
+    ],
+    "verdict": "clear",
+    "reasoning": "The sole gap_closure entry, the cross-triad prediction gap under controlled_diagnostic_design, avoids all five C02 Reject lessons. Most importantly, it supplies an independent exact-answer oracle and held-out real full-run transfer, so neither the synthetic-only-transfer lesson nor the contested-definition circularity lesson applies."
+  },
+  "recipe_application_check": {
+    "entries": [
+      {
+        "gap": "在 openreview:TteFp6TLUA、arxiv:2604.13016、arxiv:2605.13643 与 arxiv:2605.30833 这些 frontier leaves 的 residue 上，仍没有结果表明：对一个 teacher–student–data 组合得到的 distillability 诊断，其阈值或候选排序换到不同 model family、capacity ratio 或 data distribution 后仍能预测完整 OPD 的 downstream gain；缺失的是跨组合可比较的预测性质，而不是又一个固定 token 权重或 KL 形式 — stakes: 研究者会把昂贵训练预算花在不可迁移的 teacher/data 选择上，且 field-wide 的“某 proxy 代表可教性”结论可能只是单组合 calibration artifact。",
+        "sub_pattern": "C02 (Design a Confound-Isolating Diagnostic)",
+        "tactical_pattern_quoted": "The shared move is to construct a controlled set of evaluation instances in which exactly one named confound is either structurally blocked or independently varied, then report the divergence between apparent and de-confounded performance as the primary result rather than an aggregate leaderboard score. The headline finding is the measured gap itself (a transition that vanishes under a linear metric, a score that collapses when an irrelevant clause is inserted, an 87%-versus-37% split between pedagogical and production partitions), used to overturn a face-value reading of an existing measurement.",
+        "instantiation_in_core_mechanism": "Steps 2–6 freeze the same student-prefix buffer, optimizer state, token budget, evaluation prompts, and verifier while varying only supervision source between candidate T and frozen S0; the independent exact-answer verifier yields Ateach-Aself, and Step 9 makes the held-out-triad divergence between R and static-proxy/full-run rankings the headline result.",
+        "verdict": "applied"
+      }
+    ],
+    "verdict": "applied",
+    "reasoning": "The only entry applies C02's distinctive matched-confound operation: it independently varies supervision source on an otherwise fixed student-state buffer, scores with a teacher-independent oracle, and tests the isolated gap outside the controlled pilot on held-out real triads."
+  },
+  "anti_pattern_check": {
+    "composition_set": [
+      "controlled_diagnostic_design"
+    ],
+    "matched_pattern_id": null,
+    "required_mitigation_quoted": null,
+    "mitigation_substantively_delivered": "n/a",
+    "reasoning": "The single controlled_diagnostic_design composition contains none of the three heterogeneous_decomposition reject-favored pairs."
+  },
+  "paper_pointed_threat": {
+    "threat_paper_id": "arxiv:2605.12051v1",
+    "threat_source": "collision_hits",
+    "threat_channel": "alias",
+    "subsumption_argument": "Learning plug-in surrogate endpoints for randomized experiments directly formalizes the high-level claim that a short-term post-treatment surrogate is valuable when it predicts the result that would be obtained on an expensive real outcome, and it learns surrogates by effect predictiveness. That result prevents this candidate from claiming the general short-probe-to-long-outcome principle as novel, but it does not supply the OPD-specific matched TEACH-versus-SELF micro-training intervention, student-state construction, handoff normalization, or triad-held-out validation on which this candidate's mechanism depends.",
+    "addressable_via": "not_needed",
+    "parametric_family_concern": "Learning-curve extrapolation / early-training performance prediction; scoop-check the phrases \"learning curve extrapolation\" and \"early training performance prediction\" before treating early micro-training response as a new predictor family."
+  },
+  "falsification_structure_check": {
+    "minimal_experiment_named": "yes",
+    "outcome_metric_named": "yes",
+    "load_bearing_variable": "R(c), the matched TEACH-minus-SELF fraction of verifier-measured teacher headroom",
+    "negative_control_target": "tautological",
+    "verdict": "deficient",
+    "reasoning": "The control replaces T with frozen S0 in both arms, forcing every control score to tie; averaging uniformly over every admissible tied top-three subset then makes selected downstream gain equal random-selection gain by construction. The target is phrased as downstream gain, but its return to baseline is analytically implied by the tie-handling rule rather than evidence about teacher-causal response."
+  },
+  "blocking_findings_disposition": [],
+  "verdict": "revise",
+  "verdict_layer": "soft_judgment",
+  "verdict_rationale": "gap_closure_reject_check is clear and recipe_application_check.entries[0].verdict is applied because the fixed-prefix TEACH-versus-SELF intervention performs C02's distinctive confound-isolation move with an independent oracle and real held-out transfer. The revision is required by falsification_structure_check.negative_control_target = tautological: forcing identical control arms and uniformly averaging tied subsets guarantees random-selection downstream gain, so the control cannot falsify the mechanism. paper_pointed_threat.subsumption_argument limits novelty to the OPD-specific instrument rather than the generic surrogate-endpoint principle, but does not subsume the mechanism.",
+  "revision_targets": [
+    {
+      "scope": "tactical",
+      "field": "core_mechanism_steps",
+      "issue": "falsification_structure_check found that Step 10's identical-arm intervention plus uniform tie averaging makes the downstream null result true by construction.",
+      "fix_direction": "Replace Step 10's forced-identical TEACH/SELF rerun with a matched state-alignment placebo: keep the candidate teacher, target marginals, token count, optimizer, and compute fixed, but randomly permute its cached target distributions across different prefixes within Bc before training a placebo TEACH arm; compute the resulting placebo R and test its selected triads against the same downstream full-OPD gain, without uniform tie averaging that analytically enforces the random baseline."
+    },
+    {
+      "scope": "falsification",
+      "field": "falsification_prediction",
+      "issue": "falsification_structure_check.verdict is deficient because the existing negative control's downstream return to baseline is tautological under forced score ties and uniform subset averaging.",
+      "fix_direction": "Keep the same 12-triad probe/full-run experiment, exact-answer outcome metrics, cross-triad prediction claim, and load-bearing R(c), but replace only the negative-control clause with the matched state-alignment placebo: permute the candidate teacher's cached targets across prefixes while preserving their marginal distribution and probe compute, then require triads selected by the resulting placebo R to return to random-selection downstream full-OPD gain; unlike identical arms, this null is not guaranteed by score construction."
+    }
+  ]
+}

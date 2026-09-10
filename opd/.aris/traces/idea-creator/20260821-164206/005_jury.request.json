@@ -1,0 +1,12 @@
+{
+  "role": "same original generator acting as final devil's-advocate jury",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "xhigh",
+  "review_route": "same-family-provisional",
+  "direct_inputs": [
+    "/Users/chy/Research/opd/idea-stage/IDEA_CANDIDATES_20260821-164206.md",
+    "/Users/chy/Research/opd/idea-stage/IDEA_REPORT_20260820-234115.md",
+    "/Users/chy/Research/opd/research-wiki/ideas"
+  ],
+  "objective": "Devil's-advocate all C01-C25, hard-downgrade self-duplicates, select at most four 8xA100-worthy kill tests, and provide go/stop thresholds plus 32-GPU expansion gates."
+}

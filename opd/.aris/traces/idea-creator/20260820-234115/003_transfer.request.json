@@ -1,0 +1,7 @@
+{
+  "role": "read-only generator",
+  "lens": "transfer, continual learning, and interference",
+  "inputs": ["/Users/chy/Research/opd/notes", "/Users/chy/Research/opd/doc/memory/STATE.md"],
+  "constraints": "Return structured candidates only; obey the user-specified exclusion list; do not rank."
+}
+

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Method Idea Generator"
+  short_description: "Generate non-incremental method research ideas"
+  default_prompt: "Use $generate-method-ideas to generate non-incremental method-paper ideas for this research direction."

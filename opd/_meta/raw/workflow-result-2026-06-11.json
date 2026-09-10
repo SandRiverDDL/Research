@@ -1,0 +1,190 @@
+{
+  "summary": "Write OPD L1 cards in parallel, papers inlined, sonnet no-thinking, cached",
+  "agentCount": 30,
+  "logs": [
+    "parallel[0] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[2] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[4] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[7] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[8] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[10] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[12] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[13] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[14] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[15] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[16] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[17] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[18] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[21] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[22] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[23] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "parallel[24] failed: agent({schema}): subagent completed without calling StructuredOutput (after 2 in-conversation nudges)",
+    "L1 done: 12/29"
+  ],
+  "result": {
+    "cards": [
+      {
+        "markdown": "---\ntitle: \"TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models\"\nauthors: [Makoto Shing, Kou Misaki, Han Bao, Sho Yokoi, Takuya Akiba]\naffiliations: [sakana-ai, kyoto-univ, ninjal, tohoku-univ, riken]\nyear: 2025\nvenue: iclr-2025\nzotero_key:\nurl: https://arxiv.org/abs/2501.16937\narxiv_id: 2501.16937\n\nconfidence: T3\nreproducibility: high\nopen_source:\n  code: yes\n  data: yes\n  weights: yes\n\nfamilies: [curriculum-pacing, adaptive-divergence]\ntype: method\nrelevance: adjacent\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: 在 logit 空间对 stop-grad student 与 teacher 做线性插值得到动态目标分布 p_t，t 由 loss 相对变化率自适应从 0→1，无需 on-policy 采样；Phi-3-mini→TinyLlama 指令微调 MT-Bench 达 4.05，比 GKD（2.24）高且快 10×。\n\n## Core Idea\n- 构造中间分布 `p_t = softmax((1-t)·logit_{q'_θ} + t·logit_p)`，其中 q'_θ 为 stop-grad 的 student logit，p 为 teacher logit\n- 损失为 KL(p_t ‖ q_θ)，只对分母 q_θ 反传，中间分布作为固定目标\n- t 从 t_start（≈0.4）开始，由 loss 相对下降率 δ_n 驱动动量式自适应更新，student 学得快则 t 增速快，接近 teacher 时增速放缓\n- t=0 时退化为 self-distillation（防 mode collapse），t=1 时退化为标准 KD\n\n## What's Actually New\n- vs GKD/DistiLLM：均需 on-policy 采样（SGO），TAID 完全离线，无需 rollout；比 GKD 快 10×，比 DistiLLM 快 2×，MT-Bench 仍更高\n- vs 固定散度（KL/RKL/TVD）：训练目标难度随 student 能力自适应，loss 方差显著更低（Figure 2 Middle）\n- 关键创新在于**用 student 自身 logit 参与构造目标**（非固定温度/固定 α），天然避免 curriculum 超参的人工设定\n\n## Relevance to OPD\nTAID 无 on-policy 采样，是纯 offline token-level distillation；与 on-policy distillation 的互补点在于：用 TAID 暖启动 student 后再做 on-policy fine-tuning 可能压缩冷启代价。\n\n## Method\n1. 每个 training step：前向过 teacher 得 logit_p；前向过 student 得 logit_{q'_θ}（stop-grad）\n2. 计算 `p_t = softmax((1-t)·logit_{q'_θ} + t·logit_p)`\n3. 损失 `L = KL(p_t ‖ q_θ)`，仅 q_θ 接受梯度\n4. 计算 `δ_n = (J_{n-1} - J_n) / (J_{n-1} + ε)`，EMA 平滑后乘以学习率 α 更新 t\n5. 关键超参：t_start, α（t 更新速率）, β（momentum），实验中 t_start=0.4, β=0.9\n\n## Verdict\n- 升 L2？no\n- 理由：方法清晰，实验覆盖指令微调+预训练+capacity gap 分析，理论保证 mode collapse 防止；但任务规模偏小（TinyLlama 1.1B student），且对后训练 RLHF pipeline 的直接接口尚未覆盖，L1 已足够定位\n\n## Evidence\n- MT-Bench 4.05（Phi-3-mini→TinyLlama）来自 §6.1 Table 1\n- \"10× faster than GKD\" 来自 §6.1 Results 段落\n- 预训练 avg 40.10 来自 §6.2 Table 2\n- t 自适应调度公式来自 §3.2\n",
+        "section_anchors": [
+          "§3.1 Temporally Interpolated Distribution",
+          "§3.2 Adaptive Interpolation Parameter Update",
+          "§6.1 Instruction Tuning (Table 1)",
+          "§6.2 Pre-training (Table 2)",
+          "§6.3 Analysis"
+        ],
+        "slug": "miranda-2025-taid",
+        "used_full_text": false
+      },
+      {
+        "slug": "jiang-2023-lion",
+        "markdown": "---\ntitle: \"Lion: Adversarial Distillation of Proprietary Large Language Models\"\nauthors: [Yuxin Jiang, Chunkit Chan, Mingyang Chen, Wei Wang]\naffiliations: [hkust-gz, hkust]\nyear: 2023\nvenue: emnlp-2023\nzotero_key:\nurl: https://arxiv.org/abs/2305.12870\narxiv_id: 2305.12870\n\nconfidence: T3\nreproducibility: high\nopen_source:\n  code: yes\n  data: partial\n  weights: yes\n\nfamilies: [black-box, curriculum-pacing]\ntype: method\nrelevance: adjacent\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: 让同一个黑盒 LLM（ChatGPT）兼任 referee 和 generator，每轮以 score gap ≥ τ=1.0 筛 hard 指令并生成同分布新指令，3 轮 70K 数据训出 Lion-13B，在 BBH 上超 Vicuna-13B 55.4%，Vicuna-Instructions 达 ChatGPT 的 98.4%。\n\n## Core Idea\n同一专有 LLM 扮演三角色：Teacher（生成 student SFT 数据）、Referee（对比 teacher/student 输出打分、找 hard 指令）、Generator（以 hard 指令为 seed 生成同分布新困难指令）。三阶段形成闭环：imitation → discrimination → generation。Train Pool 每轮用新指令替换，Cache Pool 只增不减以支持越来越全面的 hard-mining。无需访问 teacher 权重或梯度，全程 API-only。\n\n## What's Actually New\nAlpaca / Vicuna / WizardLM 均为单向蒸馏：teacher 一次性生成数据后流程结束。Lion 的差异在反馈回路——student 当前能力决定哪些指令被判为 hard，generator 再针对性扩充，使数据难度随 student 动态提升。传统 AKD 需要 teacher 梯度，Lion 通过 prompt engineering 绕开这一限制，首次将 AKD 应用于 API-only LLM 蒸馏场景。\n\n## Relevance to OPD\nDiscrimination stage 本质是在线 hard-sample 挖掘：referee 打分产生的 (T response ≻ S response) 对可直接用作 preference data，与 iterative online DPO 中\"挑当前 policy 失败样本再训练\"一脉相承；curriculum 节奏控制对 OPD 数据采样策略有参考价值。\n\n## Method\n1. **Imitation**: 用 {instruction, T(x)} 对 SFT student，标准 CE loss。\n2. **Discrimination**: Cache Pool 每条指令，referee 正反两次打分（换位减 positional bias），d_i = score_T − score_S；d_i ≥ τ=1.0 → hard。\n3. **Generation**: 以 hard 指令为 seed 让 generator 生成同任务类型新指令（hard:easy = 1:1）；ROUGE-L < 0.7 去重后更新 Train Pool、扩充 Cache Pool。\n4. 共 3 轮，每轮新增 6K 指令，起点 52K Alpaca seed，总计 70K。\n\n## Verdict\n- 升 L2？no\n- 理由：框架完整、代码开源、无需复现实验；对 OPD 的参考价值集中在 hard-sample 筛选策略和 referee 打分机制，L1 已足够提取关键 insight。\n\n## Evidence\n- TL;DR 55.4% 来自 Abstract（\"surpasses Vicuna-13B by 55.4% in BBH\"）\n- TL;DR 98.4% 来自 §5.1 Table 1（Lion-13B Avg = 98.38%）\n- \"d_i ≥ τ=1.0\" 来自 §3.3 Discrimination Stage\n- \"3 iterations, 6K per iter, 70K total\" 来自 §4.3 Implementation Details\n",
+        "section_anchors": [
+          "§3.2 Imitation Stage",
+          "§3.3 Discrimination Stage",
+          "§3.4 Generation Stage",
+          "§4.3 Implementation Details",
+          "§5.1 Open-ended Generation",
+          "§5.2 Reasoning Results"
+        ],
+        "used_full_text": false
+      },
+      {
+        "slug": "deepseek-ai-2025-deepseek",
+        "markdown": "---\ntitle: \"DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning\"\nauthors: [DeepSeek-AI]\naffiliations: [deepseek]\nyear: 2025\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2501.12948\narxiv_id: 2501.12948\n\nconfidence: T3\nreproducibility: med\nopen_source:\n  code: partial\n  data: partial\n  weights: yes\n\nfamilies: [rl-augmented, reasoning-distillation]\ntype: recipe\nrelevance: core\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: 纯 GRPO RL（无 SFT cold start）将 DeepSeek-V3-Base 在 AIME 2024 pass@1 从 15.6% 推至 71.0%，加 cold-start 后的 4-stage pipeline（R1）达 79.8%，并发现 rejection-sampling SFT 蒸馏到 7B 小模型即可超越 QwQ-32B-Preview（55.5% vs. ~50%）。\n\n## Core Idea\nRL 可以在无任何 SFT 数据的情况下激励 LLM 自发涌现 chain-of-thought、自我反思和验证行为（R1-Zero）。在此基础上加入少量 cold-start CoT 数据稳定训练，经历\"cold start SFT → reasoning RL → rejection-sampling SFT → all-scenario RL\"四阶段后得到 R1，性能比肩 o1-1217。蒸馏路径则是直接用 800k R1 输出 SFT 小模型，效果优于对小模型直接跑 RL。\n\n## What's Actually New\n相比 DeepSeek-V3 及此前 RL-for-reasoning 工作，R1-Zero 首次公开验证：**不需要 SFT warm-up，pure RL 即可从 base model 涌现可读的 long-CoT 和 aha-moment 反思行为**。相比 GKD / DistiLLM 等蒸馏方法，R1 蒸馏路径没有用 KL divergence loss，只做 rejection-sampled behavior cloning，但受益于 teacher 输出质量（reasoning traces with summaries），小模型增益超出预期。\n\n## Relevance to OPD\nR1 的蒸馏分支（§2.4）等价于 on-policy 的 sequence-level behavior cloning，是 OPD 研究的强 baseline；rejection sampling 过滤相当于隐式的 token-level quality gating，与 OPD 中 token-level probability 监督形成对照。\n\n## Method\n1. **R1-Zero**：GRPO（group size G，baseline = group mean reward），rule-based reward = accuracy + format，无 SFT，base model 直接 RL。\n2. **Cold Start**（R1 stage 1）：用数千条人工精筛的 long-CoT 数据 fine-tune base model，格式为 `<think>…</think><summary>`。\n3. **Reasoning RL**（stage 2）：GRPO + accuracy reward + language consistency reward（目标语言词比例），跑至 reasoning benchmark 收敛。\n4. **Rejection Sampling SFT**（stage 3）：从 stage 2 checkpoint 采样，保留正确输出；共 ~600k reasoning + ~200k non-reasoning，fine-tune 2 epochs。\n5. **All-scenario RL**（stage 4）：rule-based reward（math/code/logic）+ neural RM（helpfulness/harmlessness），综合 reward 对齐人类偏好。\n6. **Distillation**：直接用上述 800k 数据 SFT Qwen2.5/Llama3 系列（1.5B–70B），无额外 RL。\n\n## Verdict\n- 升 L2？**no**\n- 理由：pipeline 描述完整，关键超参（GRPO group size、KL 系数 β、cold-start 数量、RL steps）未完全公开；作为 reasoning RL + distillation 的奠基 recipe，L1 足以做 baseline 对比参照。需要复现时再升。\n\n## Evidence\n- AIME 2024 15.6% → 71.0% 来自 §2.2.4 Figure 2 & Table 2\n- cons@64 = 86.7% matching o1-0912 来自 §2.2.4 Table 2\n- R1 AIME 79.8%, MATH-500 97.3% 来自 §1.2 Evaluation Summary\n- Distill-Qwen-7B 55.5% AIME 来自 §1.1 Contributions（Distillation 段落）\n- \"direct distillation outperforms RL on small models\" 来自 §2.4\n",
+        "section_anchors": [
+          "§2.2 DeepSeek-R1-Zero (GRPO + Rule-based Reward)",
+          "§2.3 DeepSeek-R1 Four-stage Pipeline",
+          "§2.4 Distillation",
+          "§3.1 DeepSeek-R1 Evaluation"
+        ],
+        "used_full_text": false
+      },
+      {
+        "slug": "ye-2026-policy",
+        "markdown": "---\ntitle: On-Policy Context Distillation for Language Models\nauthors: [Tianzhu Ye, Li Dong, Xun Wu, Shaohan Huang, Furu Wei]\naffiliations: [microsoft-research]\nyear: 2026\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2602.12275\narxiv_id: 2602.12275\n\nconfidence: T2\nreproducibility: med\nopen_source:\n  code: unknown\n  data: yes\n  weights: no\n\nfamilies: [privileged-information, sequence-rkl]\ntype: method\nrelevance: core\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: OPCD 让 student 无 context 采样 rollout，在每个 token 位置对冻结的 context-conditioned teacher 最小化 reverse KL，将经验知识/system prompt 内化到权重；Qwen3-8B math 从 off-policy 79.5% 提至 80.9%，且 IF-Eval OOD 不退化。\n\n## Core Idea\n传统 context distillation 用 forward KL + off-policy 数据，有 exposure bias 和 mode-covering 问题。\nOPCD 将 on-policy 蒸馏（MiniLLM 范式）移植到 context distillation：student 在无 context 条件下生成轨迹 $y$，teacher 读 $[c; x; y]$ 提供 target distribution，以 token-level reverse KL 作为训练信号。\nTeacher 可以是不同大小的模型（teacher-student）或同一模型共享权重但输入不同（self-distillation）。\n两大应用：(1) 将历史 solution trace 提炼的经验知识 $c$ 内化；(2) 将优化好的 system prompt $c$ 内化，推理时去掉 context 开销。\n\n## What's Actually New\n相对 MiniLLM：损失形式相同（on-policy reverse KL），但 teacher 不是更大的模型，而是**同一模型加 privileged context**；压缩对象从\"知识\"变成\"上下文行为\"。\n相对传统 context distillation（Askell 2021 / Snell 2022）：将 off-policy forward KL 替换为 on-policy reverse KL，解决 exposure bias 和 mode averaging 问题。\n相对并发 privileged-information 工作（RLSD/Self-distilled Reasoner）：支持 cross-size teacher-student 蒸馏，小模型可吸收大模型在 context 上的行为。\n\n## Relevance to OPD\n直接示范了\"context 即 privileged information\"的 on-policy 蒸馏路线，与 RLHF/SFT 框架中将推理链或工具反馈内化到权重的问题结构一致。\n\n## Method\n**Loss（Eq. 1）**：$\\mathcal{L}(\\theta) = \\mathbb{E}_{y \\sim \\pi_\\theta(\\cdot|x)} \\left[ \\frac{1}{|y|} \\sum_t D_\\text{KL}(\\pi_\\theta(\\cdot|x,y_{<t}) \\| \\pi_\\text{teacher}(\\cdot|c,x,y_{<t})) \\right]$\n实现时用 student top-$k$ token 近似解析 KL，避免全词表求和。\n训练规模极轻：50 steps，batch 128，max length 16384（math）/ 512（system prompt）。\n经验知识蒸馏分三步：①模型对 validation 问题自生成 solution trace；②提炼 experience items 并累积为上下文 $c$；③用 OPCD 将 $c$ 内化，推理时无需 context。\n\n## Verdict\n- 升 L2？**yes**\n- 理由：OPCD 是 on-policy context distillation 的标准化框架，与 OPD 研究中 privileged-info 蒸馏方向高度重叠；实现轻量（50 steps）且跨任务验证充分，值得复现细节。\n\n## Evidence\n- \"80.9% OPCD vs 79.5% Context Distill\" 来自 §4.3 Table 2（filtered, Qwen3-8B, Math）\n- \"OPCD can surpass the original model with experiential knowledge in the context\" 来自 §4.3 §4.SS3.SSS0.Px1.p2\n- Token-level reverse KL loss 来自 §3 Eq. 1–2 及 Algorithm 1\n",
+        "section_anchors": [
+          "§3 Method (Eq.1-2, Algorithm 1)",
+          "§4.3 Results (Table 1, Table 2)"
+        ],
+        "used_full_text": false
+      },
+      {
+        "slug": "ye-2026-online",
+        "markdown": "---\ntitle: Online Experiential Learning for Language Models\nauthors: [Tianzhu Ye, Li Dong, Qingxiu Dong, Xun Wu, Shaohan Huang, Furu Wei]\naffiliations: [microsoft-research]\nyear: 2026\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2603.16856\narxiv_id: 2603.16856\n\nconfidence: T2\nreproducibility: high\nopen_source:\n  code: yes\n  data: unknown\n  weights: unknown\n\nfamilies: [privileged-information, self-distillation]\ntype: method\nrelevance: core\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: 从部署轨迹中提炼 experiential knowledge（而非直接用原始轨迹），再通过 reverse-KL on-policy context distillation 内化到权重，迭代 3 轮后 FrozenLake 上 response 长度降至初始的 ~70%，且 IF-Eval OOD 性能几乎不退化，raw trajectory 直接蒸馏无法做到这一点。\n\n## Core Idea\nOEL 分两阶段循环：**Stage 1 Extraction** — 模型依次读每条轨迹，累积生成可迁移 experiential knowledge（$e_i = [e_{i-1}; e'_i]$，自身模型做 extractor）；**Stage 2 Consolidation** — 以 partial rollout prefix 为输入，学生 $\\pi_\\theta$ 自采样，minimize reverse-KL vs 挂载 experiential knowledge 的 frozen teacher（即同一模型加上下文）。\n两阶段迭代：更好的模型 → 更高质量轨迹 → 更丰富知识 → 下一轮。全程无 reward model，无 verifiable reward，服务器侧不需要访问用户侧环境。\n\n## What's Actually New\n相对 MiniLLM：teacher 不是更大的模型，而是**同模型加 experiential knowledge 上下文**，无需跨模型蒸馏；on-policy 保证 OOD 不退化（off-policy context distillation 在 IF-Eval 上有明显下滑）。\n相对 SPIN / ExPeL：SPIN 需要人类参考做 reward；ExPeL 把知识存外部 memory 做检索；OEL 把知识内化进权重，推理期无需额外上下文。\n核心创新是 extraction 步骤：raw trajectory → structured experiential knowledge，Table 1 显示 in-context pass rate 从 10.9% 提升至 18.2%，consolidated 从 7.8% 提升至 21.4%。\n\n## Relevance to OPD\n本文是 On-Policy Context Distillation（arXiv 2602.12275）的 Part II，直接建立在 OPD 之上；验证 on-policy 属性对在线学习中避免 catastrophic forgetting 的必要性，是 OPD 最重要的下游应用之一。\n\n## Method\n1. **Extraction**：$\\pi_\\theta$ 顺序处理 $n$（25 或 50）条轨迹，生成累积 experiential knowledge，重复 $K=10$ 次不同 seed 得到集合 $\\mathcal{C}$；\n2. **Consolidation**：从轨迹中切出 partial rollout prefix 构成 $\\mathcal{D}$；每步采样 prefix $x$、knowledge $e \\sim \\mathcal{C}$，模型生成 $y \\sim \\pi_\\theta(\\cdot|x)$，minimize $\\frac{1}{|y|}\\sum_t D_\\text{KL}(\\pi_\\theta(\\cdot|x,y_{<t}) \\| \\pi_\\text{teacher}(\\cdot|e,x,y_{<t}))$（Eq.2）；teacher = 训练前 frozen $\\pi_\\theta$；\n3. 每轮 20 或 100 gradient steps，batch size 64；迭代部署更新后模型。\n\n## Verdict\n- 升 L2？**no**\n- 理由：方法清晰，系统性不强（仅 TextArena 两个 game），scale 偏小（≤8B），对 OPD 方向的 insight 主要是\"on-policy 优于 off-policy 且能在线迭代\"，L1 已足够掌握核心，L2 留给需要复现在线 loop 时再读。\n\n## Evidence\n- response 长度降至 ~70% 来自 §4.3 Figure 5（Qwen3-1.7B，FrozenLake，第 3 轮）\n- \"knowledge consolidated 21.4% vs raw trajectory 7.8%\" 来自 §4.6.1 Table 1（Qwen3-4B-Instruct-2507，Sokoban）\n- \"on-policy 1.7B self-knowledge 31.1% > off-policy 4B knowledge 22.7%\" 来自 §4.6.2 Table 2（FrozenLake）\n",
+        "section_anchors": [
+          "§3.1 Extract Experiential Knowledge",
+          "§3.2 Consolidate via On-Policy Context Distillation",
+          "§4.2 OEL Enables Online Learning",
+          "§4.3 Token Efficiency",
+          "§4.6.1 Table 1",
+          "§4.6.2 Table 2"
+        ],
+        "used_full_text": false
+      },
+      {
+        "slug": "ye-2025-black",
+        "markdown": "---\ntitle: Black-Box On-Policy Distillation of Large Language Models\nauthors: [Tianzhu Ye, Li Dong, Zewen Chi, Xun Wu, Shaohan Huang, Furu Wei]\naffiliations: [microsoft-research]\nyear: 2025\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2511.10643\narxiv_id: 2511.10643\n\nconfidence: T2\nreproducibility: med\nopen_source:\n  code: yes\n  data: no\n  weights: unknown\n\nfamilies: [black-box, rl-augmented]\ntype: method\nrelevance: core\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: GAD 用一个与 student 联合训练的 discriminator（Bradley-Terry 排序损失）替代固定 reward model，通过 GRPO 实现无需 teacher logits 的 on-policy 蒸馏；Qwen2.5-3B+GAD 在 LMSYS GPT-4o 评分（48.9）上追平 Qwen2.5-7B+SeqKD（49.2），且 OOD 场景下 SeqKD 增益为负时 GAD 仍保持 +1–2 分。\n\n## Core Idea\n仅用 teacher 生成的文本（无 logits）实现 on-policy 蒸馏：将 student 视为 GAN 的 generator，额外训练一个 discriminator 区分 teacher/student 回复，构成 minimax 对抗训练。discriminator 的输出作为 on-policy reward，驱动 generator 通过 GRPO 更新。与 RLHF 中固定 reward model 不同，discriminator 与 student 同步更新，持续对齐当前策略的分布，理论上规避 reward hacking。\n\n## What's Actually New\n相比 SeqKD（teacher response SFT，off-policy），GAD 引入了 on-policy 采样 + 动态 discriminator 作为 reward，无需白盒 logits；相比 MiniLLM/DistiLLM（sequence-level RKL），这是首个在纯 black-box 场景下做 on-policy 优化的方法，不依赖 teacher 概率空间。discriminator co-evolve 的设计比 SPIN（self-play，无 teacher 导向）多了一个显式的 teacher–student 排序监督。\n\n## Relevance to OPD\n直接击中 on-policy black-box distillation 的核心难点：如何在无 logits 时给 student 的自采样提供 feedback。GAD 的 discriminator-as-reward 路线与我们做 agent post-training 中 reward model 在线更新的问题同构。\n\n## Method\n1. **数据**：从 LMSYS-Chat-1M 采样 200K 条，用 teacher（GPT-5-Chat）生成回复构建 `T={(x, y_t)}`。\n2. **Warmup（1 epoch）**：generator 用 CE loss 在 `y_t` 上 SFT；discriminator 用 Bradley-Terry 损失 `min_D E[-log σ(D(y_t) - D(G(x)))]` 初始化。\n3. **GAD 迭代**：student 采样 `G(x)`，discriminator 打分 `D(G(x))` 作为 reward；GRPO 更新 generator；同步用 BT 损失更新 discriminator（参数来自 student + 额外标量 head）。\n4. **实现**：基于 verl 框架，GRPO 作为 policy gradient 算法，batch size 256，3 epochs，约 2400 步。\n\n## Verdict\n- 升 L2？**no**\n- 理由：方法完整清晰，核心贡献是 discriminator 作为动态 reward 的工程验证；但评测仅用 GPT-4o 打分（无 MT-Bench / MATH 等），结论说服力中等，teacher 是 GPT-5 API 且无法复现数据收集，reproducibility 受限。作为 black-box on-policy 蒸馏的 baseline 了解即可，暂不需要复现。\n\n## Evidence\n- TL;DR 数字（48.9/49.2）来自 §3.2 Table 2，LMSYS 列\n- \"Qwen2.5-3B+GAD matches Qwen2.5-7B+SeqKD\" 来自 §3.2 Automatic Evaluation\n- \"SeqKD yields marginal or negative improvements on OOD\" 来自 §3.2 Automatic Evaluation\n",
+        "section_anchors": [
+          "§2.1 GAD: Generative Adversarial Distillation",
+          "§2.2 Training",
+          "§3.2 Main Results"
+        ],
+        "used_full_text": false
+      },
+      {
+        "slug": "li-2026-filter",
+        "markdown": "---\ntitle: \"Filter, Then Reweight: Rethinking Optimization Granularity in On-Policy Distillation\"\nauthors: [Yuying Li, Leqi Zheng, Yongzi Yu, Wenrui Zhou, Xuchang Zhong, Xing Hu, Jing Jin, Huangjie Yuan, Tao Feng]\naffiliations: [tsinghua, hkust, bit, meituan, zju]\nyear: 2026\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2606.02684\narxiv_id: 2606.02684\n\nconfidence: T3\nreproducibility: high\nopen_source:\n  code: yes\n  data: unknown\n  weights: unknown\n\nfamilies: [adaptive-divergence]\ntype: method\nrelevance: core\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: 在 OPD 中，trajectory 级用 teacher log-prob 硬过滤低质量 rollout（底20%），token 级用 teacher 置信度 × student 困惑度的乘积软加权替代硬截断，在 Qwen3-30B→4B strong-to-weak 上 AIME2024 +6.25、multi-teacher Miner +18.81（vs 标准 OPD）。\n\n## Core Idea\n标准 OPD 对所有 trajectory 和 token 施加均匀 KL 监督，FiRe-OPD 在两个粒度上做选择性优化：\n1. **Trajectory 过滤**：计算 teacher 在 student 生成轨迹上的平均 log-prob `s(y)`，丢弃 batch 内底部 20% 的 rollout（teacher 与 student 分布差距太大时监督不可靠）。\n2. **Token 软加权**：对保留轨迹，令 `w_t = (1 + α·c_t^T)(1 + β·c_t^S)`，其中 `c_t^T` 为 teacher 置信度（1 - 归一化熵），`c_t^S` 为 student 困惑度（归一化熵），乘积后 trajectory 内归一化再乘回 advantage。\n关键发现：trajectory 级**硬过滤**优于软加权；token 级**软加权**优于硬截断。\n\n## What's Actually New\n相比 EOPD/TIP/REOPOLD 只做 token 级、ExOPD 只做 trajectory 级（且不用 teacher 置信度），FiRe-OPD 是首个**同时在两个粒度**联合建模的方法，且 token 级用乘积软权重取代了 TIP 的硬截断，避免了信息丢失和梯度不稳定。\n\n## Relevance to OPD\n直接落在 on-policy distillation 优化粒度问题上；\"teacher 能教什么 × student 需要学什么\"的双信号框架可拆解复用到任何 OPD 训练 pipeline。\n\n## Method\n- **Trajectory 得分**：`s(y) = (1/T) Σ log π*(y_t|x,y_{<t})`，过滤 batch 内底部 `p=20%`\n- **Teacher 置信度**：`c_t^T = 1 - H(π*_t) / max_batch H(π*)`\n- **Student 困惑度**：`c_t^S = H(π_θ_t) / max_batch H(π_θ)`\n- **Token 权重**：`w_t = (1 + α·c_t^T)(1 + β·c_t^S)`，α=β=1.0，trajectory 内均值归一化\n- **损失**：标准 PPO-clip 但 advantage 替换为 `ã_t = (w_t / mean_w) · a_t`\n\n## Verdict\n- 升 L2？no\n- 理由：方法清晰，无需复现验证；代码已开源，实际使用看 repo 即可；设计上无 surprise，是已有 component 的合理组合。\n\n## Evidence\n- \"+6.25 on AIME 2024 in strong-to-weak\" 来自 §3.1 Table 2 Δ vs OPD 行\n- \"+18.81 on Miner in multi-teacher\" 来自 §3.2（含 Table 4）Δ vs OPD 行\n- \"p=20%, α=β=1.0\" 来自 §3.2 Method 正文（Eq. 4-9）\n",
+        "section_anchors": [
+          "§3.1 Preliminaries",
+          "§3.2 FiRe-OPD",
+          "§4.2 Main Results"
+        ],
+        "used_full_text": false
+      },
+      {
+        "slug": "yang-2026-internalize",
+        "markdown": "---\ntitle: \"Internalize the Temperature: On-Policy Self-Distillation as Policy Reheater for Reinforcement Learning\"\nauthors: [Xuewei Yang, Jiachen Yu, Jie Wu, Shaoning Sun, Junjie Wang, Yujiu Yang]\naffiliations: [tsinghua]\nyear: 2026\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2606.00755\narxiv_id: 2606.00755\n\nconfidence: T3\nreproducibility: med\nopen_source:\n  code: unknown\n  data: yes\n  weights: unknown\n\nfamilies: [self-distillation, rl-augmented]\ntype: method\nrelevance: core\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: 在 entropy-collapsed 的 DAPO checkpoint 上，用 T=1.2 自温度 softmax 做 forward-KL self-distillation 将 token entropy 从 <0.08 nats 恢复到 >0.12 nats，随后继续 RL 可使 Avg avg@8 在 Qwen3-4B 上提升 +2.1 pp、Qwen3-8B 上 +2.3 pp（相对 standard DAPO），且优于相同 T=1.2 的 rollout-level reheating。\n\n## Core Idea\nRLVR 训练后期 entropy collapse 导致 rollout 多样性骤降，梯度信号枯竭。现有\"rollout reheating\"只在采样时升温，但不改变模型参数，造成 behavior policy 与 optimized policy 的 mismatch。TS-OPSD 把温度效果直接\"内化\"进权重：以 stop-gradient 的 T=1.2 高温 softmax 作为 self-teacher，对学生用 full-vocab FKL 做 on-policy distillation，完成后再恢复 standard RL。Self-teacher 满足 p_T(v) ∝ q_θ(v)^{1/T}，token ranking 完全保留，只改变分布锐度，不改变语义偏序。\n\n## What's Actually New\n相对 GKD/MiniLLM：不需要外部 teacher model，teacher 直接来自自身 logit 的温度变换，无额外推理开销。  \n相对 rollout reheating（已有 baseline）：TS-OPSD 将\"更平滑的探索分布\"写入参数，而非只在采样时临时加噪，避免 train-inference 不一致；实验上 PR-FKL 在 8B 上全面优于 RR。\n\n## Relevance to OPD\nTS-OPSD 是 on-policy self-distillation 的最小化极端：teacher = self + temperature，无任何 privileged information。对 OPD 研究者提供了一个可控的 entropy-restoration 基线，适合研究 KL 方向选择与 entropy 动态的关系。\n\n## Method\n1. 监控 RLVR 训练，当 mean token entropy < 0.08 nats 时触发 reheating。  \n2. 用 T=1.2 对当前 logit 做 stop-gradient softmax 构建 self-teacher p_T。  \n3. 用 FKL（或 RKL）在 on-policy rollout 上最小化 D_KL(p_T ‖ q_θ)，lr=1e-6，batch=1024，实现在 GKD/swift 框架内。  \n4. 训练至 mean token entropy 恢复到 > 0.12 nats 后停止（非固定 step 数）。  \n5. 以 reheated checkpoint 为初始化，用原始 DAPO 超参继续 RL。\n\n## Verdict\n- 升 L2？no\n- 理由：方法简单清晰，但缺乏对 entropy threshold 选择的系统性分析；T=1.2 这个值是否鲁棒、跨 task 是否成立尚未验证；对 post-training OPD 自身而言 novelty 适中。\n\n## Evidence\n- \"+2.1/+2.3 pp\" 来自 §4.2 Table 1（Avg avg@8 列：4B: 29.40→31.46，8B: 34.27→36.60）\n- \"mean token entropy < 0.08 / > 0.12 nats\" 触发与停止条件来自 §4.1\n- \"token-level KL ≈ 0.002 nats, top-10 overlap ≈ 1\" 来自 §4.3 Figure 5\n",
+        "section_anchors": [
+          "§3.2 Temperature-Scaled On-Policy Self-Distillation",
+          "§4.1 Experimental Setup",
+          "§4.2 Main Results",
+          "§4.3 Effect of Policy Reheating on Model Internals"
+        ],
+        "used_full_text": false
+      },
+      {
+        "slug": "afsharrad-2026-policy",
+        "markdown": "---\ntitle: \"On-Policy Distillation of Language Models for Autonomous Vehicle Motion Planning\"\nauthors: [Amirhossein Afsharrad, Amirhesam Abedsoltan, Ahmadreza Moradipari, Sanjay Lall]\naffiliations: [stanford, ucsd, ucsb]\nyear: 2026\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2604.07944\narxiv_id: 2604.07944\n\nconfidence: T3\nreproducibility: med\nopen_source:\n  code: no\n  data: yes\n  weights: no\n\nfamilies: [fixed-divergence, recipe]\ntype: recipe\nrelevance: adjacent\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: Qwen3-1.7B distilled from Qwen3-8B via on-policy JSD-GKD (β=0.5, λ=0.5) reaches 0.373 m STP-3 L2 on nuScenes—only 5% below the 8B teacher—while a REINFORCE-based RL distillation baseline using teacher log-prob rewards lands 55% worse at 0.579 m.\n\n## Core Idea\nReformulates LLM-based AV motion planning (GPT-Driver framework, nuScenes) as an on-policy distillation problem. Teacher = Qwen3-8B (SFT); student = Qwen3-1.7B trained with GKD, generating its own rollouts and minimizing per-token JSD to the teacher's full vocabulary distribution. The key claim: full-distribution supervision beats scalar per-token reward for structured coordinate output because digit co-occurrence constraints are encoded in the teacher distribution, not in any single sampled token.\n\n## What's Actually New\nGKD (Sinha et al.) existed for NLP (summarization, MT, math); this paper is the first direct application to structured numeric trajectory output in AV planning. The controlled GKD vs. RL comparison (same on-policy rollouts, same models, only learning signal differs) isolates *information richness* of the distillation signal—full vocabulary distribution vs. scalar advantage—and shows the gap is severe (55% L2, 2.6× collision rate) for coordinate generation.\n\n## Relevance to OPD\nDirect empirical evidence that on-policy full-distribution matching (GKD) dominates sampled-token REINFORCE-based distillation when the target output has strong sequential numeric structure. Useful citation when arguing for GKD over RL-distillation in structured generation tasks.\n\n## Method\n1. **Teacher**: SFT Qwen3-8B on nuScenes GPT-Driver dataset, `qwen3_nothink` template (disables extended thinking).\n2. **GKD Student**: TRL `GKDTrainer`; each batch 50% on-policy student rollouts + 50% GT (λ=0.5); loss = mean per-token JSD^(β=0.5) between teacher and student distributions along student-generated prefixes; gradients stop through sampling.\n3. **RL Baseline**: per-token advantage A_n = sg[log p_T(ŷ_n | ctx) − log p_S(ŷ_n | ctx)], REINFORCE update; no KL penalty to reference.\n4. Both methods: Qwen3-1.7B, lr=5e-5, effective batch 8, 5 epochs on 8×H200.\n\n## Verdict\n- 升 L2？**no**\n- 理由：纯应用论文，方法是直接套 TRL GKDTrainer；GKD vs. RL 的对比有参考价值，但无新 distillation 机制；nuScenes 是封闭 domain，结论泛化性待验证。\n\n## Evidence\n- TL;DR 数字（0.373 m, 0.579 m, 5%）来自 §VI-A Table I\n- \"GKD 2.6× safer than RL on collision rate\" 来自 §VI-A（0.138% vs. 0.363%）\n- \"β=0.5, λ=0.5\" 来自 §IV-B3 和 §V-B\n",
+        "section_anchors": [
+          "§IV-B On-Policy GKD",
+          "§IV-C Dense-Feedback RL Baseline",
+          "§VI-A Quantitative Comparison Table I"
+        ],
+        "used_full_text": false
+      },
+      {
+        "slug": "lin-2026-surgical",
+        "markdown": "---\ntitle: \"Surgical Post-Training: Cutting Errors, Keeping Knowledge\"\nauthors: [Wenye Lin, Kai Han]\naffiliations: [visual-ai]\nyear: 2026\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2603.01683\narxiv_id: 2603.01683\n\nconfidence: T3\nreproducibility: high\nopen_source:\n  code: yes\n  data: partial\n  weights: unknown\n\nfamilies: [reasoning-distillation, recipe]\ntype: method\nrelevance: core\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: DPO 的知识保持能力源于 sigmoid 梯度动态衰减（\"Elastic Tether\"，饱和时缩放系数趋近 4.5×10⁻⁵）而非数据分布近邻，SPoT 将此机制与 LCS≤0.6 的教师最小编辑数据结合，4k 样本、28 分钟（8×H800）让 Qwen3-8B 全任务平均 +6.2%，IFEval 同步 +1.8%。\n\n## Core Idea\n灾难性遗忘的决定性因素不是数据分布偏移（SFT+ 在近分布数据上仍然遗忘），而是优化目标中是否存在 KL 约束的隐式奖励——其梯度系数 λ = 1−σ(r_θ) 在模型饱和时自动归零，充当逐样本的 early stopping。SPoT 把这一机制拆解出来，设计了两个组件：(1) Oracle 最小编辑数据流水线，产出与学生分布高度重叠的 (y⁻, y⁺) 对；(2) 解耦 BCO loss，对正负样本独立分类，消除 DPO 相对排序导致的\"只压 y⁻ 不拉 y⁺\"问题和 SFT 的\"pull-up 效应\"。\n\n## What's Actually New\n相比 DPO：指出其\"相对排名\"优化路径允许通过 collapse y⁻ 而非提升 y⁺ 来最小化 loss，对 reasoning（正确/错误二元）不合适；改用解耦 BCE，正负各自对 sigmoid(r) 分类。\n相比 SFT/蒸馏（含 SPIN）：SPIN 用模型自采样作负例；本文用教师最小编辑版作正例，并通过 LCS ratio 硬过滤保证 token 级近邻性，使梯度集中于分歧 token。\n\n## Relevance to OPD\n直接相关：SPoT 本质是一种\"代理 on-policy\"蒸馏——用教师对学生失败轨迹做最小编辑，近似了 on-policy 正样本而无需真实 rollout，是 proximal on-policy distillation 的高效实现路径。\n\n## Method\n1. **Error Elicitation**：从当前策略采样，保留答案错误的 (x, y⁻)。\n2. **Oracle 最小编辑**：Gemini 2.5 Pro 仅修改错误推理步骤，保留原始风格，得到 y⁺。\n3. **LCS 过滤**：R_LCS = 1 − |LCS(y⁻,y⁺)|/|y⁺| > 0.6 的对被丢弃；确保 y⁺/y⁻ 共享大多数 token 轨迹。\n4. **SPoT-BCE loss**：−E[log σ(r(x,y⁺)) + log σ(−r(x,y⁻))]；隐式奖励 r = β log(π_θ/π_ref)。\n5. **SPoT-BCO（推荐）**：加 EMA 动态 reward shift δ，防止正例 sigmoid 饱和过早停止；β=0.1，4k 对样本，28 分钟。\n\n## Verdict\n- 升 L2？no\n- 理由：方法清晰，代码开源，结论可信度足够。实验规模偏小（仅 Qwen3-8B 和 Llama3.1-8B，数学单域），且\"minimal edit\"依赖强 oracle（Gemini 2.5 Pro），迁移成本未明。如需复现或扩展到代码/agent 推理再升 L2。\n\n## Evidence\n- TL;DR 数字 +6.2% 来自 §4.5 Table 1（Qwen3-8B+SPoT avg=53.3 vs baseline 47.1）\n- TL;DR IFEval +1.8% 来自 §4.5 Table 1（84.8 vs 83.0）\n- \"λ ≈ 4.5×10⁻⁵\" 来自 §3.2 Eq. 示例（r_θ=10 时）\n- \"SFT+ 仍遗忘\" 来自 §3.1 Figure 2（IFEval 单调下降）\n",
+        "used_full_text": true,
+        "section_anchors": [
+          "§Abstract",
+          "§1 Introduction",
+          "§2 Data Rectification Pipeline",
+          "§3 The Reward Is Secretly a Regularizer",
+          "§3.1 Empirical Observation",
+          "§3.2 Gradient Analysis",
+          "§4.3 SPoT-BCE/BCO",
+          "§4.5 Main Results (Table 1)"
+        ]
+      },
+      {
+        "slug": "yang-2026-oprd",
+        "markdown": "---\ntitle: \"OPRD: On-Policy Representation Distillation\"\nauthors: [Shenzhi Yang, Guangcheng Zhu, Bowen Song, Haobo Wang, Mingxuan Xia, Xing Zheng, Yingfan Ma, Zhongqi Chen, Weiqiang Wang, Gang Chen]\naffiliations: [zju, ant-group]\nyear: 2026\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2606.06021\narxiv_id: 2606.06021\n\nconfidence: T3\nreproducibility: high\nopen_source:\n  code: yes\n  data: yes\n  weights: unknown\n\nfamilies: [privileged-information, theory-mechanistic]\ntype: method\nrelevance: core\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: 把 on-policy 蒸馏监督信号从 token logit 空间迁移到所有 transformer 层的 hidden state（normalized MSE），gradient 条件方差精确为零；在 AIME24 Avg@16 上比最强 output-space 基线 OPD top-16 高 2.7 pt（49.8 vs. 47.1），训练速度 1.44×，actor-update 显存 −54%。\n\n## Core Idea\n所有现有 on-policy distillation 变体（sampled-token、full-vocab、top-k）都在 **output space** 对 KL 做估计，受两个结构性限制：(1) token-level REINFORCE 估计器的方差在 p→q 时不消失，导致 late-stage 训练 plateau；(2) LM head 是信息瓶颈，teacher 的中间 hidden state 被 softmax projection 压缩丢弃。\nOPRD 将蒸馏目标从 LM head **之后**移到 **之前**：在同一 on-policy rollout 上对 student 和 teacher 在选定层的 hidden state 做 normalized MSE，stop-gradient 到 teacher 侧。\n这一改变同时解决两个问题：gradient 是确定性函数（条件方差 = 0），且监督信息量按 (L × T × d) 维度展开而非被投影压缩。\n\n## What's Actually New\n相比所有 output-space OPD 变体（包括 DeepSeek-V4、Qwen3 使用的 sampled-token reverse KL），OPRD **首次**在 on-policy regime 引入 representation-level 监督，证明（Thm 1）hidden-state MSE gradient 的条件方差为零，而任意 output-space OPD 的方差由 score function term 主导且不随训练收敛而衰减。\n相比离线 feature distillation（FITNET 等），OPRD 作用在 student 自采样的 on-policy trajectory 上，避免 exposure bias，且不需要静态 teacher rollout。\n\n## Relevance to OPD\n直接补充 on-policy post-training 工具箱：可独立使用（μ=0），也可与任意 output-space OPD objective 加权叠加（L = L_OPD + μ·L_OPRD），无需额外 rollout 或 teacher forward pass。\n\n## Method\n**Loss**（Eq. 6）：对 on-policy rollout (x, ŷ) 上，选取层集合 L_layer 和位置集合 P(ŷ)（默认 last k=2000 tokens），计算\n$$\\mathcal{L}_\\text{OPRD} = \\mathbb{E}\\left[\\frac{1}{|L_\\text{layer}|}\\sum_l \\frac{1}{\\sum_t m_t}\\sum_t m_t \\frac{1}{d}\\|h_{\\theta,t}^{(l)} - \\text{sg}(h_{T,t}^{(l)})\\|_2^2\\right]$$\nstudent 与 teacher 维度不同时接一个线性 projector（本实验中 d_s = d_T = 1536，省略）。\n实验配置：Qwen2.5-1.5B backbone（L=28，d=1536，|V|≈151K），teacher=JustRL-1.5B，student=R1-distill-1.5B，DAPO-Math-17K prompt set，AdamW lr=1e-5，500 steps，8×A100 80G FSDP。\n\n## Verdict\n- 升 L2？**no**\n- 理由：方法足够清晰，实现成本低，直接在 on-policy RL/distillation pipeline 里加一个 hidden-state MSE term 即可；L1 已足以判断可复现性 (high) 和落地价值。如需适配 cross-architecture 蒸馏或研究 layer selection 策略再升 L2。\n\n## Evidence\n- \"AIME24 OPRD=49.8 vs. OPD top-16=47.1\" 来自 §4.2 Table 2\n- \"1.44× faster, 54% less memory\" 来自 §1 Fig 1 caption\n- \"Var[ĝ_OPRD | x, ŷ] = 0\" 来自 §3.2 Theorem 1 (Eq. 8)\n",
+        "section_anchors": [
+          "Abstract",
+          "§1 Introduction",
+          "§3.1 OPRD Objective",
+          "§3.2 Why OPRD Works",
+          "§4.1 Experimental Setup",
+          "§4.2 Main Results"
+        ],
+        "used_full_text": false
+      },
+      {
+        "slug": "yu-2026-multi",
+        "markdown": "---\ntitle: \"Multi-Rollout On-Policy Distillation via Peer Successes and Failures\"\nauthors: [Weicheng Yu, Xiaomin Li, Yizhou Zhao, Xiaoze Liu, Ruowang Zhang, Haixin Wang, Yinyi Luo, Chen Henry Wu, Gaurav Mittal, Matt Fredrikson, Yu Hu]\naffiliations: [cmu, microsoft, purdue]\nyear: 2026\nvenue: arxiv\nzotero_key:\nurl: https://arxiv.org/abs/2605.12652\narxiv_id: 2605.12652\n\nconfidence: T3\nreproducibility: high\nopen_source:\n  code: yes\n  data: no\n  weights: unknown\n\nfamilies: [privileged-information, self-distillation]\ntype: method\nrelevance: core\nread_depth: L1\nverified: a\nsuperseded_by:\n---\n\n> **TL;DR**: 在 N=8 rollout 的自蒸馏框架下，teacher 同时 condition 于同 prompt 的 2 个成功 peer + 1 个失败 peer，Qwen3-4B 在 AIME2024 mean@8 达 28.54%，显著高于 SDPO（7.29%）和 GRPO（17.09%）。\n\n## Core Idea\n标准 OPD 对每条 rollout 独立蒸馏，忽略同一 prompt 下其他 rollout 的结构信息。MOPD 把 per-prompt 的 N 条 rollout 按 verifier 打分分成 Y⁺（成功）和 Y⁻（失败），对每条目标 rollout y⁽ⁱ⁾ 构造 peer context C_i(x)，将其拼入 teacher 输入。成功 peer 提供\"有效推理路径\"的正向证据，失败 peer 提供\"合理但错误模式\"的对比负向证据，让 teacher 产出更尖锐的 token-level 监督。\n\n## What's Actually New\n相比 SDPO（teacher condition 于 environment feedback，如 compiler error 或 verifier 标量），MOPD 利用的是**同 prompt rollout 组内的交叉对比结构**，而非外部反馈。核心差异：SDPO 在只有 binary reward 的 math 任务上退化（AIME2024 mean@8 仅 7.29%），MOPD 在该场景下反而最强——说明 cross-rollout 对比比单纯 feedback conditioning 信号更鲁棒。\n\n## Relevance to OPD\n直接扩展 on-policy 自蒸馏；peer context 构造是 \"privileged information\" 的新形式，适合研究 teacher signal 质量与 verifier reward 对齐。\n\n## Method\n1. 每 prompt 采样 N=8 rollout，verifier 打分，按阈值 τ 分为 Y⁺/Y⁻。\n2. 两种 peer context 构造：(a) **Positive peer imitation** C⁽¹⁾ = Template(y★) ⊕ SuccessTemplate(y⁺)；(b) **Contrastive** C⁽²⁾ = Template(y★) ⊕ SuccessTemplate(y⁺) ⊕ FailureTemplate(y⁻)，默认用 2 成功 + 1 失败。\n3. Loss：L_MOPD = (1/N)∑ᵢ ∑ₜ D(π_θ(·|x,y<t) ‖ q^peer_ϕ(·|x,C_i,y<t))；D 为 math 用 reverse KL，其余用 JS divergence。\n4. 关键超参：mixing α=0.5，distillation_topk=100，lr=1e-5，rollout context 8192 tokens（verl + vLLM + FSDP）。\n\n## Verdict\n- 升 L2？no\n- 理由：方法清晰且代码开源，L1 已足够了解机制；暂无复现需求，math benchmark 数字与 GRPO 接近（AIME2025 MOPD=25.41 vs GRPO=25.80），整体提升幅度 convincing 但不属于突破性结果。\n\n## Evidence\n- AIME2024 mean@8：MOPD 28.54 > GRPO 17.09 > SDPO 7.29 来自 §5.2 Table 1\n- Science QA MOPD best in all four domains 来自 §5.2 Table 2（Bio 55.69/Chem 74.29/Phys 76.25/Mat 78.59）\n- \"2 success + 1 failure context 在 teacher signal 质量指标上最优\" 来自 §5.3 Fig. 4\n",
+        "section_anchors": [
+          "§1 Introduction",
+          "§4.1 Multi-rollout peer conditioning",
+          "§4.2 Peer-context construction",
+          "§5.1 Experimental Setup",
+          "§5.2 Main Results"
+        ],
+        "used_full_text": false
+      }
+    ],
+    "review": {
+      "contradictions": [
+        "ye-2026-policy 与 ye-2026-online 主张高度重叠（均为 context-distillation + reverse-KL + IF-Eval OOD 不退化），但一者声称 Qwen3-8B math 79.5→80.9，另一者只报 FrozenLake response 长度降至 70%——若是同一作者同期工作需澄清是否同一篇，否则两套数字间缺少可对照基线",
+        "afsharrad-2026-policy 报 REINFORCE-based RL distillation 比 JSD-GKD 差 55%，与 ye-2025-black（GAD 用 GRPO + discriminator 击败 SeqKD）和 deepseek-ai-2025-deepseek（纯 GRPO RL 大幅提升）的结论方向相反；需澄清是 reward 设计（teacher log-prob vs verifiable reward）差异还是任务（轨迹规划 vs reasoning）差异",
+        "yu-2026-multi 报 Qwen3-4B AIME2024 GRPO baseline 仅 17.09%、SDPO 仅 7.29%，而 yang-2026-internalize 在 Qwen3-4B 同 benchmark 系列上的 DAPO 基线明显高于此（推断 >25%）——两套 RL baseline 数字差距过大，至少有一方的实验设置（rollout 数、解码温度、prompt）与公认 setting 不一致"
+      ],
+      "suspicious_tldrs": [
+        "ye-2026-online: 'experiential knowledge'（而非原始轨迹）是核心机制但 TL;DR 没说提炼如何实现（谁来抽？什么粒度？），falsifiable mechanism 缺失；70% 长度降低可由任何 length penalty 复现，不构成对该方法独有的检验",
+        "ye-2026-policy: '将经验知识/system prompt 内化到权重' 偏 abstract paraphrase；唯一具体数字 79.5→80.9 仅 +1.4 pp，落在常见 RL run-to-run 噪声内，需 seed×N 和 IF-Eval 绝对值才能判定是否真 OOD 不退化",
+        "jiang-2023-lion: 'Vicuna-Instructions 达 ChatGPT 的 98.4%' 是已知饱和的 GPT-judge 自评指标；TL;DR 把饱和分数当主结论，未给 BBH 之外可独立复核的客观分（GSM8K/MMLU 等），机制部分 τ=1.0 具体但评测可信度弱"
+      ],
+      "must_re_check": [
+        "ye-2026-online",
+        "ye-2026-policy",
+        "afsharrad-2026-policy",
+        "yu-2026-multi",
+        "yang-2026-oprd",
+        "li-2026-filter",
+        "yang-2026-internalize",
+        "lin-2026-surgical"
+      ],
+      "summary": "12 张卡里 8 张机制+数字都比较硬（miranda/deepseek/ye-black/li/yang-internalize/yang-oprd/lin/afsharrad），3 张需要 cross-check baseline 数字（yu vs yang-internalize 的 Qwen3-4B GRPO/DAPO 基线、afsharrad 的 REINFORCE 负面结果与 GAD/R1 正面结果方向冲突），2 张 TL;DR 偏 abstract paraphrase（两篇 ye-2026 context-distillation，且彼此疑似重复工作）。建议 chy 优先复核 ye-2026 双胞胎是否同一篇、afsharrad 的 RL baseline 是否公平、以及 yu-2026-multi 异常低的 SDPO/GRPO baseline。"
+    }
+  }
+}

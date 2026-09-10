@@ -1,0 +1,143 @@
+{
+  "method_name": "Teacher-Causal Response Probe (TCR-Probe)",
+  "abstract_draft": "Selecting a teacher for on-policy distillation (OPD) is not reducible to choosing the strongest model: the same teacher can provide useful local supervision to one student–data pair and unusable supervision to another. Recent work measures student-reachable teacher knowledge, local teachability, and supervision fidelity (arxiv:2604.13016; arxiv:2605.13643; arxiv:2605.30833), but these quantities are evaluated within a pair and can reverse their rankings across model families. We propose TCR-Probe, a fixed-budget pre-run diagnostic that forks an identical student-state buffer into a candidate-teacher micro-training arm and a frozen-self-teacher control arm, then normalizes their verifier-measured outcome difference by the candidate teacher's available handoff headroom. The resulting Teacher-Causal Response R(c) is intended to estimate how much teacher-specific headroom the student can actually internalize, rather than generic early optimization progress. The proposal is falsified if, over the fixed 12-triad study, leave-one-teacher-family-out rank correlation with full-OPD gain does not exceed overlap, margin, confidence, teacher-accuracy, and naive-early-gain baselines, or if prefix-permuted teacher targets retain downstream triad-selection value. A positive result would turn expensive teacher–student–data matching into a measurable pre-run selection problem while sharply delimiting the conditions under which the score transfers.",
+  "motivation.problem_framing": "Across on-policy distillation (OPD), teacher usefulness is a property of a teacher–student–data triad, not of teacher strength alone. A student must visit prefixes on which the teacher has outcome-relevant knowledge, receive a target that remains learnable at its current capacity, and convert that local signal into final task gain. The Phase 0 literature isolates pieces of this chain: openreview:TteFp6TLUA questions whether a frozen teacher is learnable at student states, arxiv:2604.13016 studies thinking-pattern overlap and recoverable teacher knowledge, and arxiv:2605.13643 plus arxiv:2605.30833 diagnose position-dependent teachability and supervision-fidelity decay.\n\nThe unresolved bottleneck is prospective transport: none of these within-pair diagnostics establishes a score that can be computed before a full OPD run and used without recalibration across unseen teacher families, student capacities, and data distributions. Raw early gain is also insufficient because it mixes teacher-specific transfer with generic adaptation to the probe buffer. TCR-Probe reframes distillability as a matched functional response: compare identical micro-training arms that differ only in whether targets come from the candidate teacher or the frozen student, then divide the excess response by verifier-measured teacher headroom. This makes the load-bearing question explicit—whether the fraction of available teacher advantage that becomes student improvement is stable enough to rank triads.",
+  "motivation.why_now": "The gap is timely because several 2026 studies now expose the ingredients needed for a controlled prospective measurement: arxiv:2604.13016 operationalizes student-reachable teacher knowledge, arxiv:2605.13643 identifies local teachability collapse, arxiv:2605.30833 supplies verifier-based handoff and fidelity measurements, and arxiv:2606.09471 warns that low KL agreement can be misleading on degraded prefixes. At the same time, open-weight Qwen3 and DeepSeek-R1-Distill models, public DAPO-Math-17K and MATH data, and exact-answer verifiers make matched micro-training arms reproducible without paid APIs. What is newly possible is not another post hoc correlational proxy, but a controlled TEACH-versus-SELF intervention whose score can be tested unchanged under held-out teacher-family and data shifts.",
+  "motivation.why_prior_stopped[0].what_they_did": "openreview:TteFp6TLUA examined whether a frozen stronger teacher remains learnable on student-visited states when teacher and student capacities differ.",
+  "motivation.why_prior_stopped[0].what_they_did_not_do": "It did not construct a matched TEACH-versus-SELF micro-training response or test whether that response ranks full-run gains across unseen triads.",
+  "motivation.why_prior_stopped[0].structural_reason_they_stopped": "Its analysis lacked a counterfactual control that separates teacher-specific transfer from generic short-run student adaptation.",
+  "motivation.why_prior_stopped[1].what_they_did": "arxiv:2604.13016 measured thinking-pattern overlap, teacher new knowledge, and gap recovery in controlled within-family OPD comparisons.",
+  "motivation.why_prior_stopped[1].what_they_did_not_do": "It did not turn those observations into an unrefit prospective score validated under teacher-family, capacity-ratio, and data-distribution holdouts.",
+  "motivation.why_prior_stopped[1].structural_reason_they_stopped": "It lacked an intervention-based estimand that normalizes realized student response by the teacher headroom available on the same student-state buffer.",
+  "motivation.why_prior_stopped[2].what_they_did": "arxiv:2605.13643 used student-reachable teacher margin to identify where supervision should fade along a reasoning trajectory.",
+  "motivation.why_prior_stopped[2].what_they_did_not_do": "It did not measure whole-triad distillability before training or compare candidate teachers through matched micro-training arms.",
+  "motivation.why_prior_stopped[2].structural_reason_they_stopped": "Its measurement was designed for position-wise control inside one run rather than transportable triad-level selection.",
+  "motivation.why_prior_stopped[3].what_they_did": "arxiv:2605.30833 diagnosed supervision-fidelity decay using teacher confidence and prefix-handoff completion and used lookahead reward to steer training.",
+  "motivation.why_prior_stopped[3].what_they_did_not_do": "It did not isolate excess learning caused by a candidate teacher over a frozen-self control or validate that quantity against cross-triad final gain.",
+  "motivation.why_prior_stopped[3].structural_reason_they_stopped": "Its signals measure target quality and local corrective opportunity, but not the student's causal functional response to consuming that opportunity.",
+  "motivation.what_changes_when_gap_closes": "A validated response score would let researchers reject unpromising teacher–student–data triads before committing to full OPD and would make teacher choice an auditable selection decision rather than a strength heuristic. It would also connect the local-teachability findings of arxiv:2604.13016, arxiv:2605.13643, and arxiv:2605.30833 to a stronger empirical statement: under stated transport conditions, normalized teacher-specific micro-response predicts which triads convert local headroom into final exact-answer gain. Conversely, failure would show that distillability is too path-dependent for a fixed small-budget surrogate, redirecting effort toward adaptive within-run diagnostics.",
+  "core_claim": "Across unseen teacher–student–data triads, the matched TEACH-minus-SELF fraction of verifier-measured teacher headroom is a more transferable predictor of full-run OPD gain than static overlap, margin, confidence, teacher accuracy, or uncorrected early gain.",
+  "sub_claims": [
+    {
+      "id": "c1",
+      "statement": "Matched SELF control removes the component of short-run improvement attributable to generic adaptation to the probe buffer and optimizer.",
+      "supports_which_aspect": "Isolation of teacher-specific functional response rather than pair-specific learning-curve speed."
+    },
+    {
+      "id": "c2",
+      "statement": "Headroom normalization separates a student's conversion efficiency from the absolute amount of outcome-relevant advantage exposed by a teacher.",
+      "supports_which_aspect": "Comparability across teachers, student capacities, and data distributions with different available gains."
+    },
+    {
+      "id": "c3",
+      "statement": "If the normalized response is transportable, its unrefit ordering remains predictive under leave-one-teacher-family-out evaluation and yields lower top-three selection regret.",
+      "supports_which_aspect": "Prospective triad selection beyond within-pair post hoc explanation."
+    }
+  ],
+  "key_equations": [
+    {
+      "id": "e1",
+      "linked_step_id": "S2",
+      "latex": "H_c = \\frac{1}{|B_c|}\\sum_{(x,p)\\in B_c}\\left[V\\!\\left(y^{T_c}_{x,p}\\right)-V\\!\\left(y^{S_0}_{x,p}\\right)\\right]",
+      "description": "Verifier-measured teacher handoff headroom on the frozen initial-student prefix buffer Bc.",
+      "description_zh": "在冻结的初始学生前缀缓冲区 Bc 上，用 verifier 衡量教师相对初始学生的可用 handoff headroom。"
+    },
+    {
+      "id": "e2",
+      "linked_step_id": "S4",
+      "latex": "\\Delta^{a}_c = M\\!\\left(\\theta^{a}_c;E_c\\right)-M\\!\\left(\\theta_0;E_c\\right),\\quad a\\in\\{\\mathrm{TEACH},\\mathrm{SELF}\\}",
+      "description": "Fixed-budget outcome change of each matched micro-training arm on the same evaluation slice.",
+      "description_zh": "两个匹配微训练分支在同一评估切片上的固定预算结果变化。"
+    },
+    {
+      "id": "e3",
+      "linked_step_id": "S4",
+      "latex": "R(c)=\\frac{\\Delta^{\\mathrm{TEACH}}_c-\\Delta^{\\mathrm{SELF}}_c}{H_c}",
+      "description": "Teacher-Causal Response: excess micro-training gain per unit of verified teacher headroom.",
+      "description_zh": "Teacher-Causal Response：每单位已验证教师 headroom 所产生的教师特异性微训练增益。"
+    },
+    {
+      "id": "e4",
+      "linked_step_id": "S5",
+      "latex": "\\rho_{\\mathrm{LOTF}}=\\operatorname{Spearman}\\!\\left(\\{R(c)\\}_{c\\in C_{-f}},\\{G_{\\mathrm{OPD}}(c)\\}_{c\\in C_{-f}}\\right)",
+      "description": "Leave-one-teacher-family-out rank agreement between the unrefit probe score and full-OPD gain.",
+      "description_zh": "在留出一个教师家族时，未经重新拟合的 probe 分数与完整 OPD 增益之间的排序一致性。"
+    }
+  ],
+  "method_flow.high_level_pipeline": "For each candidate teacher–student–data triad c, freeze the initial student and collect a shared buffer Bc of student-generated prefixes plus a held-out evaluation slice. Measure how much verifier-scored outcome headroom the candidate teacher exposes on those same prefixes. Fork the identical student checkpoint and buffer into matched TEACH and SELF micro-training arms, differing only in whether cached targets come from the candidate teacher or the frozen initial student. Convert the arms' excess outcome response into the normalized score R(c), then use that score without refitting to rank triads under teacher-family and data holdouts. The score survives only if it predicts full-OPD gain better than the named static and naive-early-gain baselines and loses that value when teacher targets are prefix-permuted.",
+  "method_flow.steps": [
+    {
+      "step_id": "S1",
+      "title": "Freeze the triad and build matched states",
+      "what_changes": "For triad c, freeze the initial student checkpoint θ0, sample student rollouts from the named data source, and materialize one prefix buffer Bc plus a disjoint fixed evaluation slice Ec that every probe arm reuses.",
+      "why_this_step": "Holding states, examples, and initialization fixed prevents teacher comparisons from inheriting different rollout distributions before the causal contrast is formed.",
+      "linked_component": "engineering",
+      "linked_falsification": "metric_specification",
+      "input": "Candidate teacher Tc, initial student θ0, and public task data Dc.",
+      "output": "Shared student-state buffer Bc and evaluation slice Ec."
+    },
+    {
+      "step_id": "S2",
+      "title": "Measure available teacher headroom",
+      "what_changes": "On each prefix in Bc, obtain candidate-teacher and frozen-student handoff completions, score both with the task verifier V, and average their outcome difference to compute Hc.",
+      "why_this_step": "The same raw response should mean different things when a teacher exposes little versus substantial outcome-relevant advantage; Hc supplies that denominator.",
+      "linked_component": "both",
+      "linked_falsification": "metric_specification",
+      "input": "Bc, Tc, θ0, and the exact-answer verifier V.",
+      "output": "Verified teacher handoff headroom Hc and cached target distributions."
+    },
+    {
+      "step_id": "S3",
+      "title": "Run the matched TEACH and SELF probes",
+      "what_changes": "Fork θ0 into two arms with identical Bc, token count, optimizer, sampling marginals, and probe compute; train TEACH on Tc's cached target distributions and SELF on targets cached from the frozen θ0.",
+      "why_this_step": "The SELF arm estimates generic short-run adaptation, leaving target source as the operative difference between arms.",
+      "linked_component": "engineering",
+      "linked_falsification": "mechanism_distinguisher",
+      "input": "θ0, Bc, and matched teacher/self target caches.",
+      "output": "Micro-trained checkpoints θcTEACH and θcSELF."
+    },
+    {
+      "step_id": "S4",
+      "title": "Compute normalized excess response",
+      "what_changes": "Evaluate both probe checkpoints on Ec, subtract each outcome from the frozen-student outcome, take ΔcTEACH minus ΔcSELF, and divide by Hc to form R(c), recording Hc separately rather than silently clipping low-headroom triads.",
+      "why_this_step": "The numerator removes generic early gain while the denominator asks what fraction of available teacher advantage was internalized; surfacing low Hc preserves the estimand's boundary instead of hiding it.",
+      "linked_component": "theory",
+      "linked_falsification": "metric_specification",
+      "input": "θcTEACH, θcSELF, θ0, Ec, and Hc.",
+      "output": "Teacher-Causal Response R(c) with its headroom diagnostic."
+    },
+    {
+      "step_id": "S5",
+      "title": "Rank triads without recalibration",
+      "what_changes": "Apply the same R(c) definition to every triad and evaluate its ordering against fixed-5M-token full-OPD exact-answer gains under leave-one-teacher-family-out and data-distribution holdouts.",
+      "why_this_step": "Cross-holdout ranking, rather than within-family fit, is the required evidence that the response functions as a prospective triad-selection signal.",
+      "linked_component": "both",
+      "linked_falsification": "metric_specification",
+      "input": "Per-triad R(c) values and locked full-OPD gains.",
+      "output": "Spearman rank correlation and top-three selection regret for the unchanged score."
+    },
+    {
+      "step_id": "S6",
+      "title": "Break the teacher–prefix alignment",
+      "what_changes": "Construct the locked placebo TEACH arm by permuting cached candidate-teacher target distributions across different prefixes within Bc while holding target marginals and all probe resources fixed, then recompute the response-based triad ordering.",
+      "why_this_step": "If selection value survives after teacher targets no longer correspond to their prefixes, R is tracking a generic learning-curve or target-marginal artifact rather than teacher-causal headroom conversion.",
+      "linked_component": "engineering",
+      "linked_falsification": "mechanism_distinguisher",
+      "input": "Bc and the unchanged candidate-teacher target cache.",
+      "output": "Placebo response score and its downstream full-OPD selection value."
+    }
+  ],
+  "method_flow.design_reasoning_echo": "The estimand is the fixed-budget outcome gain caused by replacing a frozen-self target source with candidate-teacher targets on the same initial student states, normalized by verifier-measured teacher handoff headroom. Its load-bearing premises are that Bc represents the student's early OPD state distribution, the exact-answer verifier preserves the relevant outcome ordering, matched arms isolate target-source effects, and the resulting conversion fraction is transportable across the held-out triads; that last premise is untested and is the falsification target. The naive alternative—use TEACH-arm early gain directly—confounds teacher-specific transfer with generic adaptation and favors triads with larger raw headroom, so SELF subtraction and Hc normalization are both necessary. Although matched-control estimation is a standard causal-design tool, the domain-specific object is unusual: treatment is a cached teacher target distribution applied on student-generated prefixes, exposure varies with reachable teacher headroom, and validity requires prefix-aligned supervision plus transfer of an unrefit ranking across teacher families. The method therefore claims an empirical diagnostic, not an identification theorem or a guarantee of downstream gain.",
+  "feasibility_validation.data.verdict": "feasible",
+  "feasibility_validation.data.rationale": "All required artifacts—Qwen3 and DeepSeek-R1-Distill-Qwen checkpoints, DAPO-Math-17K, MATH, MATH-500, AIME 2024, and exact-answer verifiers—are public and can be run locally.",
+  "feasibility_validation.theoretical.verdict": "n/a",
+  "feasibility_validation.theoretical.rationale": "The contribution is an empirical matched diagnostic and transport test rather than a theorem, so no separate theoretical deliverable is required.",
+  "feasibility_validation.engineering.verdict": "tight",
+  "feasibility_validation.engineering.rationale": "The implementation uses standard OPD components, but reproducibly caching prefix-aligned teacher and self targets and orchestrating 24 probe arms plus 12 full runs is a substantial systems burden.",
+  "feasibility_validation.falsification.verdict": "feasible",
+  "feasibility_validation.falsification.rationale": "The rank metrics, exact-answer outcomes, held-out teacher-family split, and prefix-permutation intervention are fully specified and implementable with the named open-weight tooling, although executing the full test exceeds the stated compute envelope.",
+  "feasibility_validation.overall": "infeasible",
+  "reviewer_concerns_and_responses[0].response": "The defense is deliberately narrow: the core_claim does not claim novelty for the general surrogate-endpoint principle, and method_flow.steps S1–S4 specify the OPD-specific matched TEACH-versus-SELF intervention, student-state buffer, and handoff-headroom normalization. Consistent with the Phase 3.2 non-blocking verdict, differentiation therefore rests on the operational estimand and held-out triad validation, not on the broad idea that a short outcome can predict a long one.",
+  "reviewer_concerns_and_responses[1].response": "A targeted scoop-check must establish that learning-curve extrapolation and early-training prediction methods do not already combine prefix-matched TEACH-versus-SELF intervention, verifier-headroom normalization, and unchanged cross-teacher-family triad ranking. If that combination or an equivalent estimand already exists, the claimed predictor-family delta does not survive and the proposal must be reframed rather than defended lexically.",
+  "domain_landscape.position_note": "The OPD corpus is dominated by heterogeneous decomposition (18/36 on-topic papers), whereas this candidate uses the mid-frequency controlled-diagnostic pattern (7/36) as a stand-alone triad-selection measurement rather than another token-, position-, or trajectory-specific treatment rule."
+}

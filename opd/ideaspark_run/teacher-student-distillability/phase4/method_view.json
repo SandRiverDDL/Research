@@ -1,0 +1,183 @@
+{
+  "title": "Causal Micro-Probes Predict Which Teacher–Student–Data Triads Distill",
+  "method_name": "Teacher-Causal Response Probe (TCR-Probe)",
+  "abstract_draft": "Selecting a teacher for on-policy distillation (OPD) is not reducible to choosing the strongest model: the same teacher can provide useful local supervision to one student–data pair and unusable supervision to another. Recent work measures student-reachable teacher knowledge, local teachability, and supervision fidelity (arxiv:2604.13016; arxiv:2605.13643; arxiv:2605.30833), but these quantities are evaluated within a pair and can reverse their rankings across model families. We propose TCR-Probe, a fixed-budget pre-run diagnostic that forks an identical student-state buffer into a candidate-teacher micro-training arm and a frozen-self-teacher control arm, then normalizes their verifier-measured outcome difference by the candidate teacher's available handoff headroom. The resulting Teacher-Causal Response R(c) is intended to estimate how much teacher-specific headroom the student can actually internalize, rather than generic early optimization progress. The proposal is falsified if, over the fixed 12-triad study, leave-one-teacher-family-out rank correlation with full-OPD gain does not exceed overlap, margin, confidence, teacher-accuracy, and naive-early-gain baselines, or if prefix-permuted teacher targets retain downstream triad-selection value. A positive result would turn expensive teacher–student–data matching into a measurable pre-run selection problem while sharply delimiting the conditions under which the score transfers.",
+  "core_claim": "Across unseen teacher–student–data triads, the matched TEACH-minus-SELF fraction of verifier-measured teacher headroom is a more transferable predictor of full-run OPD gain than static overlap, margin, confidence, teacher accuracy, or uncorrected early gain.",
+  "sub_claims": [
+    {
+      "id": "c1",
+      "statement": "Matched SELF control removes the component of short-run improvement attributable to generic adaptation to the probe buffer and optimizer.",
+      "supports_which_aspect": "Isolation of teacher-specific functional response rather than pair-specific learning-curve speed."
+    },
+    {
+      "id": "c2",
+      "statement": "Headroom normalization separates a student's conversion efficiency from the absolute amount of outcome-relevant advantage exposed by a teacher.",
+      "supports_which_aspect": "Comparability across teachers, student capacities, and data distributions with different available gains."
+    },
+    {
+      "id": "c3",
+      "statement": "If the normalized response is transportable, its unrefit ordering remains predictive under leave-one-teacher-family-out evaluation and yields lower top-three selection regret.",
+      "supports_which_aspect": "Prospective triad selection beyond within-pair post hoc explanation."
+    }
+  ],
+  "key_equations": [
+    {
+      "id": "e1",
+      "linked_step_id": "S2",
+      "latex": "H_c = \\frac{1}{|B_c|}\\sum_{(x,p)\\in B_c}\\left[V\\!\\left(y^{T_c}_{x,p}\\right)-V\\!\\left(y^{S_0}_{x,p}\\right)\\right]",
+      "description": "Verifier-measured teacher handoff headroom on the frozen initial-student prefix buffer Bc.",
+      "description_zh": "在冻结的初始学生前缀缓冲区 Bc 上，用 verifier 衡量教师相对初始学生的可用 handoff headroom。"
+    },
+    {
+      "id": "e2",
+      "linked_step_id": "S4",
+      "latex": "\\Delta^{a}_c = M\\!\\left(\\theta^{a}_c;E_c\\right)-M\\!\\left(\\theta_0;E_c\\right),\\quad a\\in\\{\\mathrm{TEACH},\\mathrm{SELF}\\}",
+      "description": "Fixed-budget outcome change of each matched micro-training arm on the same evaluation slice.",
+      "description_zh": "两个匹配微训练分支在同一评估切片上的固定预算结果变化。"
+    },
+    {
+      "id": "e3",
+      "linked_step_id": "S4",
+      "latex": "R(c)=\\frac{\\Delta^{\\mathrm{TEACH}}_c-\\Delta^{\\mathrm{SELF}}_c}{H_c}",
+      "description": "Teacher-Causal Response: excess micro-training gain per unit of verified teacher headroom.",
+      "description_zh": "Teacher-Causal Response：每单位已验证教师 headroom 所产生的教师特异性微训练增益。"
+    },
+    {
+      "id": "e4",
+      "linked_step_id": "S5",
+      "latex": "\\rho_{\\mathrm{LOTF}}=\\operatorname{Spearman}\\!\\left(\\{R(c)\\}_{c\\in C_{-f}},\\{G_{\\mathrm{OPD}}(c)\\}_{c\\in C_{-f}}\\right)",
+      "description": "Leave-one-teacher-family-out rank agreement between the unrefit probe score and full-OPD gain.",
+      "description_zh": "在留出一个教师家族时，未经重新拟合的 probe 分数与完整 OPD 增益之间的排序一致性。"
+    }
+  ],
+  "method_flow": {
+    "high_level_pipeline": "For each candidate teacher–student–data triad c, freeze the initial student and collect a shared buffer Bc of student-generated prefixes plus a held-out evaluation slice. Measure how much verifier-scored outcome headroom the candidate teacher exposes on those same prefixes. Fork the identical student checkpoint and buffer into matched TEACH and SELF micro-training arms, differing only in whether cached targets come from the candidate teacher or the frozen initial student. Convert the arms' excess outcome response into the normalized score R(c), then use that score without refitting to rank triads under teacher-family and data holdouts. The score survives only if it predicts full-OPD gain better than the named static and naive-early-gain baselines and loses that value when teacher targets are prefix-permuted.",
+    "steps": [
+      {
+        "step_id": "S1",
+        "title": "Freeze the triad and build matched states",
+        "what_changes": "For triad c, freeze the initial student checkpoint θ0, sample student rollouts from the named data source, and materialize one prefix buffer Bc plus a disjoint fixed evaluation slice Ec that every probe arm reuses.",
+        "why_this_step": "Holding states, examples, and initialization fixed prevents teacher comparisons from inheriting different rollout distributions before the causal contrast is formed.",
+        "linked_component": "engineering",
+        "linked_falsification": "metric_specification",
+        "input": "Candidate teacher Tc, initial student θ0, and public task data Dc.",
+        "output": "Shared student-state buffer Bc and evaluation slice Ec."
+      },
+      {
+        "step_id": "S2",
+        "title": "Measure available teacher headroom",
+        "what_changes": "On each prefix in Bc, obtain candidate-teacher and frozen-student handoff completions, score both with the task verifier V, and average their outcome difference to compute Hc.",
+        "why_this_step": "The same raw response should mean different things when a teacher exposes little versus substantial outcome-relevant advantage; Hc supplies that denominator.",
+        "linked_component": "both",
+        "linked_falsification": "metric_specification",
+        "input": "Bc, Tc, θ0, and the exact-answer verifier V.",
+        "output": "Verified teacher handoff headroom Hc and cached target distributions."
+      },
+      {
+        "step_id": "S3",
+        "title": "Run the matched TEACH and SELF probes",
+        "what_changes": "Fork θ0 into two arms with identical Bc, token count, optimizer, sampling marginals, and probe compute; train TEACH on Tc's cached target distributions and SELF on targets cached from the frozen θ0.",
+        "why_this_step": "The SELF arm estimates generic short-run adaptation, leaving target source as the operative difference between arms.",
+        "linked_component": "engineering",
+        "linked_falsification": "mechanism_distinguisher",
+        "input": "θ0, Bc, and matched teacher/self target caches.",
+        "output": "Micro-trained checkpoints θcTEACH and θcSELF."
+      },
+      {
+        "step_id": "S4",
+        "title": "Compute normalized excess response",
+        "what_changes": "Evaluate both probe checkpoints on Ec, subtract each outcome from the frozen-student outcome, take ΔcTEACH minus ΔcSELF, and divide by Hc to form R(c), recording Hc separately rather than silently clipping low-headroom triads.",
+        "why_this_step": "The numerator removes generic early gain while the denominator asks what fraction of available teacher advantage was internalized; surfacing low Hc preserves the estimand's boundary instead of hiding it.",
+        "linked_component": "theory",
+        "linked_falsification": "metric_specification",
+        "input": "θcTEACH, θcSELF, θ0, Ec, and Hc.",
+        "output": "Teacher-Causal Response R(c) with its headroom diagnostic."
+      },
+      {
+        "step_id": "S5",
+        "title": "Rank triads without recalibration",
+        "what_changes": "Apply the same R(c) definition to every triad and evaluate its ordering against fixed-5M-token full-OPD exact-answer gains under leave-one-teacher-family-out and data-distribution holdouts.",
+        "why_this_step": "Cross-holdout ranking, rather than within-family fit, is the required evidence that the response functions as a prospective triad-selection signal.",
+        "linked_component": "both",
+        "linked_falsification": "metric_specification",
+        "input": "Per-triad R(c) values and locked full-OPD gains.",
+        "output": "Spearman rank correlation and top-three selection regret for the unchanged score."
+      },
+      {
+        "step_id": "S6",
+        "title": "Break the teacher–prefix alignment",
+        "what_changes": "Construct the locked placebo TEACH arm by permuting cached candidate-teacher target distributions across different prefixes within Bc while holding target marginals and all probe resources fixed, then recompute the response-based triad ordering.",
+        "why_this_step": "If selection value survives after teacher targets no longer correspond to their prefixes, R is tracking a generic learning-curve or target-marginal artifact rather than teacher-causal headroom conversion.",
+        "linked_component": "engineering",
+        "linked_falsification": "mechanism_distinguisher",
+        "input": "Bc and the unchanged candidate-teacher target cache.",
+        "output": "Placebo response score and its downstream full-OPD selection value."
+      }
+    ],
+    "design_reasoning_echo": "The estimand is the fixed-budget outcome gain caused by replacing a frozen-self target source with candidate-teacher targets on the same initial student states, normalized by verifier-measured teacher handoff headroom. Its load-bearing premises are that Bc represents the student's early OPD state distribution, the exact-answer verifier preserves the relevant outcome ordering, matched arms isolate target-source effects, and the resulting conversion fraction is transportable across the held-out triads; that last premise is untested and is the falsification target. The naive alternative—use TEACH-arm early gain directly—confounds teacher-specific transfer with generic adaptation and favors triads with larger raw headroom, so SELF subtraction and Hc normalization are both necessary. Although matched-control estimation is a standard causal-design tool, the domain-specific object is unusual: treatment is a cached teacher target distribution applied on student-generated prefixes, exposure varies with reachable teacher headroom, and validity requires prefix-aligned supervision plus transfer of an unrefit ranking across teacher families. The method therefore claims an empirical diagnostic, not an identification theorem or a guarantee of downstream gain."
+  },
+  "plain_method_steps_en": [
+    {
+      "step_id": "S1",
+      "what_to_do": "For triad c, freeze the initial student checkpoint θ0. Sample student rollouts from the named data source, then create one prefix buffer Bc and a separate fixed evaluation slice Ec that every probe arm reuses.",
+      "why_this_makes_sense": "Keeping the states, examples, and initialization fixed means teacher comparisons do not start from different rollout distributions before the causal comparison."
+    },
+    {
+      "step_id": "S2",
+      "what_to_do": "For every prefix in Bc, get handoff completions from the candidate teacher and frozen student. Score both with the task verifier V and average the outcome difference to compute Hc.",
+      "why_this_makes_sense": "The same raw response has different meaning when a teacher offers little versus substantial outcome-relevant advantage. Hc provides the denominator for that difference."
+    },
+    {
+      "step_id": "S3",
+      "what_to_do": "Copy θ0 into two arms with the same Bc, token count, optimizer, sampling marginals, and probe compute. Train TEACH on cached target distributions from Tc and SELF on targets cached from frozen θ0.",
+      "why_this_makes_sense": "The SELF arm measures general short-run adaptation, so the source of the targets is the active difference between the two arms."
+    },
+    {
+      "step_id": "S4",
+      "what_to_do": "Evaluate both probe checkpoints on Ec. Subtract the frozen-student outcome from each, subtract ΔcSELF from ΔcTEACH, and divide by Hc to form R(c). Record Hc separately instead of silently clipping triads with low headroom.",
+      "why_this_makes_sense": "The numerator removes general early gain. The denominator asks what fraction of available teacher advantage became student improvement. Reporting low Hc keeps the boundary of the quantity visible."
+    },
+    {
+      "step_id": "S5",
+      "what_to_do": "Use the same R(c) definition for every triad and compare its ordering with fixed-5M-token full-OPD exact-answer gains under leave-one-teacher-family-out and data-distribution holdouts.",
+      "why_this_makes_sense": "Ranking across holdouts, rather than fitting within one family, is the needed evidence that the response can select triads before training."
+    },
+    {
+      "step_id": "S6",
+      "what_to_do": "Make the locked placebo TEACH arm by permuting cached candidate-teacher target distributions across different prefixes within Bc. Keep target marginals and all probe resources fixed, then recompute the response-based triad ordering.",
+      "why_this_makes_sense": "If selection value remains when teacher targets no longer match their prefixes, R is following a general learning-curve or target-marginal artifact instead of teacher-caused conversion of headroom."
+    }
+  ],
+  "plain_method_steps_zh": [
+    {
+      "step_id": "S1",
+      "what_to_do": "对三元组 c，冻结初始学生 checkpoint θ0。从指定数据源采样学生 rollouts，然后建立一个前缀 buffer Bc 和一个独立、固定的评估切片 Ec，所有 probe 分支都复用它们。",
+      "why_this_makes_sense": "固定状态、样本和初始化后，教师比较在形成因果对比前不会继承不同的 rollout 分布。"
+    },
+    {
+      "step_id": "S2",
+      "what_to_do": "对 Bc 中每个前缀，取得候选教师和冻结学生的 handoff completions。用任务 verifier V 为两者打分，并对结果差异取平均以计算 Hc。",
+      "why_this_makes_sense": "当教师提供的与结果相关优势很少或很多时，相同的原始响应含义不同。Hc 为这种差异提供分母。"
+    },
+    {
+      "step_id": "S3",
+      "what_to_do": "将 θ0 复制为两个分支，并让它们使用相同的 Bc、token 数、optimizer、sampling marginals 和 probe compute。TEACH 在来自 Tc 的缓存 target distributions 上训练，SELF 在来自冻结 θ0 的缓存 targets 上训练。",
+      "why_this_makes_sense": "SELF 分支估计一般的短期适应，因此两个分支之间真正起作用的差异是 target 的来源。"
+    },
+    {
+      "step_id": "S4",
+      "what_to_do": "在 Ec 上评估两个 probe checkpoint。分别减去冻结学生的结果，再用 ΔcTEACH 减去 ΔcSELF，并除以 Hc 得到 R(c)。单独记录 Hc，不要静默截断 headroom 较低的三元组。",
+      "why_this_makes_sense": "分子去除了通用早期增益；分母考察可用教师优势中有多少转化为学生提升。报告低 Hc 能保留该量的适用边界。"
+    },
+    {
+      "step_id": "S5",
+      "what_to_do": "对每个三元组应用相同的 R(c) 定义，并在 leave-one-teacher-family-out 和数据分布留出条件下，将其排序与固定 5M-token 完整 OPD 的 exact-answer 增益比较。",
+      "why_this_makes_sense": "跨留出条件的排序，而不是在单一家族内拟合，是该响应可在训练前用于选择三元组所需的证据。"
+    },
+    {
+      "step_id": "S6",
+      "what_to_do": "构造锁定的 placebo TEACH 分支：在 Bc 内将缓存的候选教师 target distributions 置换到不同前缀上。固定 target marginals 和全部 probe resources，然后重新计算基于响应的三元组排序。",
+      "why_this_makes_sense": "如果教师 target 不再对应其前缀后选择价值仍保留，R 追踪的就是一般 learning-curve 或 target-marginal artifact，而不是教师导致的 headroom 转化。"
+    }
+  ]
+}

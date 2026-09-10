@@ -1,0 +1,32 @@
+{
+  "selected_gaps": [
+    {
+      "gap": "在 openreview:TteFp6TLUA、arxiv:2604.13016、arxiv:2605.13643 与 arxiv:2605.30833 这些 frontier leaves 的 residue 上，仍没有结果表明：对一个 teacher–student–data 组合得到的 distillability 诊断，其阈值或候选排序换到不同 model family、capacity ratio 或 data distribution 后仍能预测完整 OPD 的 downstream gain；缺失的是跨组合可比较的预测性质，而不是又一个固定 token 权重或 KL 形式 — stakes: 研究者会把昂贵训练预算花在不可迁移的 teacher/data 选择上，且 field-wide 的“某 proxy 代表可教性”结论可能只是单组合 calibration artifact。",
+      "chosen_pattern_id": "controlled_diagnostic_design",
+      "anchor_alternates": [],
+      "companion_pattern": null,
+      "companion_rationale": "",
+      "selection_rationale": "这是 bottleneck 中最直接匹配 empirical_reveal 的 load-bearing gap：它要求在完整 OPD 前证明某个诊断能否跨组合预测 downstream gain，而非再提出训练 loss。controlled_diagnostic_design 的 move 能通过只交换 teacher、student 或 data/prefix source 的 matched controls 隔离组合身份与真实 distillability signal，并产出可在 held-out 组合上检验的预测测量。"
+    }
+  ],
+  "coherence_thread_type": "n_a",
+  "deliverable_coverage": "empirical_reveal — anchor gap → controlled_diagnostic_design yields the controlled, held-out-combination prediction test and its measured transfer gap.",
+  "composition_note": "Single-pattern selection is deliberate: C02's controlled-instance move already owns the complete empirical reveal—matched factor swaps, an independent downstream oracle, and a held-out-real-combination transfer test. A second pattern would either regress to curriculum/teacher-assistant machinery or force a compression-specific decomposition recipe; neither is needed to make the cross-combination prediction claim runnable or falsifiable.",
+  "pattern_saturation": {
+    "controlled_diagnostic_design": {
+      "share": 0.19,
+      "saturation_band": "mid_frequency",
+      "selection_note": ""
+    }
+  },
+  "deferred_gaps": [
+    {
+      "gap": "当 thinking-pattern mismatch、teacher new-knowledge deficit、student reachable-support mismatch 与 prefix-induced teacher OOD 同时改变时，现有 frontier leaves 没有识别哪一种结构性失败对最终无增益是 load-bearing 的；同一个低 overlap、低 margin 或低 confidence 观测可由不同原因产生，因此诊断不能回答改变 teacher、student 或 data 中哪一项才会改变结果 — stakes: practitioner 会选择错误的干预并重复长跑训练，intellectual cost 是不同论文命名的 failure modes 可能是同一混杂现象的不同投影，阻碍可累积理论。",
+      "reason": "fails removal test — the anchor’s cross-combination prediction claim and falsification remain complete without a full causal attribution taxonomy; isolating all four failure sources would require extra interventions and machinery that form a second paper."
+    },
+    {
+      "gap": "所有检索到的 frontier leaves 都在固定 teacher–student–data 配对内定义并校准各自的 compatibility、competence 或 fidelity proxy；尚未检验“distillability 可以在单一配对内被充分刻画，而无需把组合身份与训练中变化的 state distribution 视为结论的一部分”这一共同继承假设 — stakes: 若该假设不成立，现有诊断的阈值、跨论文比较和由单一 pair 推出的普遍结论都不成立，导致结果不转移并使后续方法设计缺少可靠对象。",
+      "reason": "fails removal test — the anchor’s held-out-combination prediction and matched-source attribution remain runnable without separately elevating the universal sufficiency assumption into a third contribution; treat it as an implication tested by the same split, not a separate gap closure."
+    }
+  ]
+}

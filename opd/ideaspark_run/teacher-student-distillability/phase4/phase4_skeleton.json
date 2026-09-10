@@ -1,0 +1,986 @@
+{
+  "title": "Causal Micro-Probes Predict Which Teacher–Student–Data Triads Distill",
+  "title_zh": "<TODO[title_zh]: Chinese translation; keep proper nouns and method acronyms in English>",
+  "method_name": "<TODO[method_name]: short handle for the proposed method, e.g. 'Persistent Baseline GRPO (PB-GRPO)'>",
+  "hook": "A fixed-small-budget causal response probe may rank full-run OPD gains across unseen teacher–student–data triads even when overlap, margin, and teacher-confidence rankings reverse across model families. The predicted empirical reveal is that subtracting a matched student-as-teacher control turns early training response from a pair-specific learning-curve artifact into a transferable triad-selection signal.",
+  "abstract_draft": "<TODO[abstract_draft]: 150-250 words. Order: problem → bottleneck (cite ≥ 1 Phase 0 paper) → contribution (one sentence) → falsification prediction → expected outcome.>",
+  "motivation": {
+    "problem_framing": "<TODO[motivation.problem_framing]: 2-3 paragraphs framing the user's problem. Reference the bottleneck_statement from Phase 1 and the closest_adjacent papers. NOT a category label.>",
+    "why_now": "<TODO[motivation.why_now]: one paragraph on what makes this gap timely. Cite the most recent Phase 0 papers (within last 4-12 months) that get close but stop short.>",
+    "why_prior_stopped": [
+      {
+        "paper_id": "openreview:TteFp6TLUA",
+        "venue_year": "acl-arr-2026-may 2026",
+        "what_they_did": "<TODO[motivation.why_prior_stopped[0].what_they_did]: one sentence>",
+        "what_they_did_not_do": "<TODO[motivation.why_prior_stopped[0].what_they_did_not_do]: one sentence — the specific limit being lifted by the candidate>",
+        "structural_reason_they_stopped": "<TODO[motivation.why_prior_stopped[0].structural_reason_they_stopped]: one sentence — missing tool / missing assumption-relaxation / missing mechanism / missing measurement>"
+      },
+      {
+        "paper_id": "arxiv:2604.13016",
+        "venue_year": "arXiv 2026-04",
+        "what_they_did": "<TODO[motivation.why_prior_stopped[1].what_they_did]: one sentence>",
+        "what_they_did_not_do": "<TODO[motivation.why_prior_stopped[1].what_they_did_not_do]: one sentence — the specific limit being lifted by the candidate>",
+        "structural_reason_they_stopped": "<TODO[motivation.why_prior_stopped[1].structural_reason_they_stopped]: one sentence — missing tool / missing assumption-relaxation / missing mechanism / missing measurement>"
+      },
+      {
+        "paper_id": "arxiv:2605.13643",
+        "venue_year": "arXiv 2026-05",
+        "what_they_did": "<TODO[motivation.why_prior_stopped[2].what_they_did]: one sentence>",
+        "what_they_did_not_do": "<TODO[motivation.why_prior_stopped[2].what_they_did_not_do]: one sentence — the specific limit being lifted by the candidate>",
+        "structural_reason_they_stopped": "<TODO[motivation.why_prior_stopped[2].structural_reason_they_stopped]: one sentence — missing tool / missing assumption-relaxation / missing mechanism / missing measurement>"
+      },
+      {
+        "paper_id": "arxiv:2605.30833",
+        "venue_year": "arXiv 2026-05",
+        "what_they_did": "<TODO[motivation.why_prior_stopped[3].what_they_did]: one sentence>",
+        "what_they_did_not_do": "<TODO[motivation.why_prior_stopped[3].what_they_did_not_do]: one sentence — the specific limit being lifted by the candidate>",
+        "structural_reason_they_stopped": "<TODO[motivation.why_prior_stopped[3].structural_reason_they_stopped]: one sentence — missing tool / missing assumption-relaxation / missing mechanism / missing measurement>"
+      }
+    ],
+    "what_changes_when_gap_closes": "<TODO[motivation.what_changes_when_gap_closes]: 2-3 sentences naming downstream consequences. NOT \"better numbers\" — name the specific capability or theoretical statement that becomes available>"
+  },
+  "core_claim": "<TODO[core_claim]: one sentence; should mirror the candidate's hook stripped to its load-bearing assertion>",
+  "sub_claims": "<TODO[sub_claims]: list of {id, statement, supports_which_aspect}; 2-4 entries>",
+  "key_equations": "<TODO[key_equations]: optional 3-6 equations; each {id, linked_step_id, latex, description, description_zh}. Emit [] (literal empty list) for a pure-prose candidate.>",
+  "method_flow": {
+    "high_level_pipeline": "<TODO[method_flow.high_level_pipeline]: 3-5 sentences narrating the method end-to-end as a story: input → key transformation → output>",
+    "steps": "<TODO[method_flow.steps]: derive from candidate.core_mechanism_steps; emit a list where each entry is {step_id, title, what_changes, why_this_step, linked_component, linked_falsification, input, output}. Each step_id MUST be S1, S2, ... in reading order. linked_component ∈ {theory, engineering, both}; linked_falsification ∈ {metric_specification, mechanism_distinguisher, both}.>",
+    "design_reasoning_echo": "<TODO[method_flow.design_reasoning_echo]: one paragraph echoing or condensing candidate.core_mechanism_reasoning>"
+  },
+  "plain_motivation_en": "<TODO[plain_motivation_en]: plain-language English rendering of motivation for a reader outside this subfield. Simplify LANGUAGE only — never drop the load-bearing mechanism. Spell out every abbreviation on first use.>",
+  "plain_motivation_zh": "<TODO[plain_motivation_zh]: Chinese 普通版 counterpart. Same content; keep identifiers/symbols/acronyms in English.>",
+  "plain_method_steps_en": "<TODO[plain_method_steps_en]: list of {step_id, what_to_do, why_this_makes_sense}; SAME step_ids and SAME order as method_flow.steps.>",
+  "plain_method_steps_zh": "<TODO[plain_method_steps_zh]: Chinese 普通版 counterpart; English for identifiers/symbols/acronyms.>",
+  "plain_method_modules_en": "<TODO[plain_method_modules_en]: group the CONTRIBUTION steps into named modules; list of {module_id, purpose_oneline, step_ids}.>",
+  "plain_method_modules_zh": "<TODO[plain_method_modules_zh]: Chinese 普通版 counterpart.>",
+  "falsification_prediction": "Build 12 triads from Qwen3-1.7B and Qwen3-4B students; Qwen3-8B, Qwen3-14B, and DeepSeek-R1-Distill-Qwen-7B teachers; and DAPO-Math-17K versus the MATH training split, then measure the probe and the 5-million-token full-OPD exact-answer gain on MATH-500 and AIME 2024. If the idea works, leave-one-teacher-family-out Spearman rho between Teacher-Causal Response R(c) and final OPD gain stays positive and exceeds the corresponding rho for top-k overlap, local teacher margin, peak confidence, teacher accuracy, and naive early gain; selecting the top three triads by R also lowers final-gain regret relative to those baselines. The ONE load-bearing variable is R(c), the matched TEACH-minus-SELF fraction of verifier-measured teacher headroom. As a non-identity negative-control intervention on that response, keep the candidate teacher, target marginals, Bc, token count, optimizer, and probe compute fixed but randomly permute its cached target distributions across different prefixes within Bc before training the placebo TEACH arm; triads selected by the resulting placebo R should return to random-selection downstream full-OPD gain, otherwise the claimed teacher-causal interpretation is falsified.",
+  "compute_budget": "72 80GB-GPU-days for 12 two-arm probes, 12 fixed-5M-token full OPD runs, decoding, two seeds, and one rerun margin; 0 USD API cost because all named models and verifiers are open-weight/local. With 8–16 concurrent GPUs this is tight but feasible and the first 12 probe/full-run pairs provide an early kill decision before expanding seeds.",
+  "almost_prior_paper_id": "arxiv:2604.13016",
+  "almost_prior_venue_year": "arXiv 2026-04",
+  "what_step_was_missed": "It would have needed to fork each initial student-state buffer into candidate-teacher and frozen-self-teacher micro-training arms, normalize their outcome difference by verified teacher handoff headroom, and test that resulting score without recalibration on held-out teacher families and data distributions.",
+  "feasibility_validation": {
+    "compute": {
+      "verdict": "infeasible",
+      "rationale": "GPU line ≈ 72 vs 8 GPU-day (900%) → infeasible. Overall (worse line) → infeasible."
+    },
+    "data": {
+      "verdict": "<TODO[feasibility_validation.data.verdict]: feasible | tight | infeasible>",
+      "rationale": "<TODO[feasibility_validation.data.rationale]: one sentence: required data sources accessible; if any closed/private, name a public substitute>"
+    },
+    "theoretical": {
+      "verdict": "<TODO[feasibility_validation.theoretical.verdict]: feasible | tight | infeasible | n/a (only when the candidate has no theoretical contribution)>",
+      "rationale": "<TODO[feasibility_validation.theoretical.rationale]: one sentence; if tight, name the missing prerequisite>"
+    },
+    "engineering": {
+      "verdict": "<TODO[feasibility_validation.engineering.verdict]: feasible | tight | infeasible | n/a (only when the candidate has no engineering contribution)>",
+      "rationale": "<TODO[feasibility_validation.engineering.rationale]: one sentence; if tight, name the binding implementation cost>"
+    },
+    "falsification": {
+      "verdict": "<TODO[feasibility_validation.falsification.verdict]: feasible | tight | infeasible>",
+      "rationale": "<TODO[feasibility_validation.falsification.rationale]: one sentence: the falsification_prediction experiment is concrete enough to run with available tooling>"
+    },
+    "overall": "<TODO[feasibility_validation.overall]: feasible | tight | infeasible>"
+  },
+  "differentiation_from_lit": [
+    {
+      "paper_id": "openreview:TteFp6TLUA",
+      "venue_year": "acl-arr-2026-may 2026",
+      "delta": "That work asks whether a frozen teacher is learnable on student-visited states within a capacity-gap setting, whereas this candidate constructs a matched functional-response measurement and tests whether its triad ordering predicts held-out-family full-OPD gain; the prior-method comparison is an abstract-only inference because its full text was unavailable."
+    },
+    {
+      "paper_id": "arxiv:2604.13016",
+      "venue_year": "arXiv 2026-04",
+      "delta": "It measures thinking-pattern overlap and teacher new knowledge in controlled within-family comparisons and reports gap recovery after full training; this candidate instead estimates pre-run excess outcome response over a frozen-self control and requires the same unrefit score to rank gains under teacher-family, capacity-ratio, and data holdouts."
+    },
+    {
+      "paper_id": "arxiv:2605.13643",
+      "venue_year": "arXiv 2026-05",
+      "delta": "It uses student-reachable teacher margin to find a trajectory-specific suffix release point, while this candidate leaves every token and the OPD objective untouched and measures whether a whole-triad causal micro-response transfers to unseen combinations."
+    },
+    {
+      "paper_id": "arxiv:2605.30833",
+      "venue_year": "arXiv 2026-05",
+      "delta": "It defines supervision fidelity from teacher peak confidence and prefix-handoff completion within a fixed pair and uses lookahead reward to steer tokens; this candidate uses verified handoff outcomes only as a normalization oracle and validates an independent matched training-response score against cross-triad full-run gain."
+    }
+  ],
+  "reviewer_concerns_and_responses": [
+    {
+      "attack": "Paper-pointed threat: arxiv:2605.12051v1 (collision_hits). Learning plug-in surrogate endpoints for randomized experiments directly formalizes the high-level claim that a short-term post-treatment surrogate is valuable when it predicts the result that would be obtained on an expensive real outcome, and it learns surrogates by effect predictiveness. That result prevents this candidate from claiming the general short-probe-to-long-outcome principle as novel, but it does not supply the OPD-specific matched TEACH-versus-SELF micro-training intervention, student-state construction, handoff normalization, or triad-held-out validation on which this candidate's mechanism depends.",
+      "severity": "non_blocking",
+      "response": "<TODO[reviewer_concerns_and_responses[0].response]: 2-3 sentences: explain where in the candidate (which field) the defense is anchored; reference the Phase 3.2 verdict_rationale when relevant>",
+      "fields_changed_to_address": [
+        "falsification_prediction"
+      ]
+    },
+    {
+      "attack": "Un-retrieved mechanism family flagged by the audit (parametric knowledge, not in the retrieved pool): Learning-curve extrapolation / early-training performance prediction; scoop-check the phrases \"learning curve extrapolation\" and \"early training performance prediction\" before treating early micro-training response as a new predictor family. — novelty vs this family is UNVERIFIED; run a targeted scoop-check on that vocabulary before investing.",
+      "severity": "non_blocking",
+      "response": "<TODO[reviewer_concerns_and_responses[1].response]: 1-2 sentences: state what a scoop-check on the named family must establish for the candidate's delta to survive (do NOT claim the check already passed)>",
+      "fields_changed_to_address": [
+        "falsification_prediction"
+      ]
+    }
+  ],
+  "domain_landscape": {
+    "n_papers": 36,
+    "pattern_distribution": [
+      {
+        "pattern_id": "heterogeneous_decomposition",
+        "count": 18,
+        "share": 0.5,
+        "saturation_band": "saturated"
+      },
+      {
+        "pattern_id": "controlled_diagnostic_design",
+        "count": 7,
+        "share": 0.19,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "generative_process_redesign",
+        "count": 7,
+        "share": 0.19,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "self_supervised_signal_engineering",
+        "count": 3,
+        "share": 0.08,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "assumption_audit_and_pivot",
+        "count": 2,
+        "share": 0.06,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "unify_into_shared_representation",
+        "count": 2,
+        "share": 0.06,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "architectural_operator_substitution",
+        "count": 1,
+        "share": 0.03,
+        "saturation_band": "untested"
+      },
+      {
+        "pattern_id": "reframe_as_solvable_object",
+        "count": 1,
+        "share": 0.03,
+        "saturation_band": "untested"
+      }
+    ],
+    "candidate_uses": [
+      {
+        "pattern_id": "controlled_diagnostic_design",
+        "role": "closes Gap 1",
+        "sub_pattern_id": "C02 (Design a Confound-Isolating Diagnostic)",
+        "saturation_in_domain": "mid_frequency"
+      }
+    ],
+    "position_note": "<TODO[domain_landscape.position_note]: one sentence describing how the candidate's chosen patterns sit relative to the area's pattern usage; descriptive, not prescriptive>"
+  },
+  "literature_breakdown": {
+    "summary": {
+      "n_phase0_total": 40,
+      "n_phase0_on_topic": 36,
+      "n_phase0_outside_taxonomy": 4,
+      "n_phase3_collision": 96
+    },
+    "phase0_by_pattern": [
+      {
+        "pattern_id": "architectural_operator_substitution",
+        "pattern_name": "Substitute the Operator or Representation",
+        "papers": [
+          {
+            "paper_id": "arxiv:2605.07711",
+            "title": "SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "Exact shared-token matching silently discards supervision when teacher and student tokenizers differ."
+          }
+        ]
+      },
+      {
+        "pattern_id": "assumption_audit_and_pivot",
+        "pattern_name": "Audit and Pivot an Assumption",
+        "papers": [
+          {
+            "paper_id": "openreview:TteFp6TLUA",
+            "title": "Rethinking the Capacity Gap in On-Policy Distillation for Large Language Models",
+            "venue_year": "acl-arr-2026-may 2026",
+            "bottleneck_targeted": "It targets the implicit assumption that a frozen strong teacher is automatically learnable at student states."
+          }
+        ]
+      },
+      {
+        "pattern_id": "assumption_audit_and_pivot, controlled_diagnostic_design",
+        "pattern_name": "assumption_audit_and_pivot, controlled_diagnostic_design",
+        "papers": [
+          {
+            "paper_id": "arxiv:2605.11182",
+            "title": "The Many Faces of On-Policy Distillation: Pitfalls, Mechanisms, and Fixes",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets unqualified assumptions about teacher strength and privileged information being internalizable."
+          }
+        ]
+      },
+      {
+        "pattern_id": "controlled_diagnostic_design",
+        "pattern_name": "Design a Confound-Isolating Diagnostic",
+        "papers": [
+          {
+            "paper_id": "arxiv:2604.13016",
+            "title": "Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe",
+            "venue_year": "arXiv 2026-04",
+            "bottleneck_targeted": "It targets uncertainty about when teacher feedback is locally usable on student-visited states."
+          },
+          {
+            "paper_id": "arxiv:2603.25562",
+            "title": "Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes",
+            "venue_year": "arXiv 2026-03",
+            "bottleneck_targeted": "It targets biased and unstable sampled-token reverse-KL supervision on long student rollouts."
+          },
+          {
+            "paper_id": "arxiv:2605.13643",
+            "title": "Prefix Teach, Suffix Fade: Local Teachability Collapse in Strong-to-Weak On-Policy Distillation",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets position-dependent collapse of teacher teachability under strong-to-weak rollout drift."
+          },
+          {
+            "paper_id": "arxiv:2605.30833",
+            "title": "Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets declining teacher confidence and corrective discrimination along student-generated prefixes."
+          }
+        ]
+      },
+      {
+        "pattern_id": "controlled_diagnostic_design, heterogeneous_decomposition",
+        "pattern_name": "controlled_diagnostic_design, heterogeneous_decomposition",
+        "papers": [
+          {
+            "paper_id": "arxiv:2605.21606",
+            "title": "When Are Teacher Tokens Reliable? Position-Weighted On-Policy Self-Distillation for Reasoning",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets unequal teacher-token reliability across rollout positions and branch viability states."
+          },
+          {
+            "paper_id": "arxiv:2606.09471",
+            "title": "Escaping the KL Agreement Trap in On-Policy Distillation",
+            "venue_year": "arXiv 2026-06",
+            "bottleneck_targeted": "It targets falsely reassuring low-KL agreement in degraded student-prefix states."
+          }
+        ]
+      },
+      {
+        "pattern_id": "generative_process_redesign",
+        "pattern_name": "Liberate a Fixed Generative Component",
+        "papers": [
+          {
+            "paper_id": "arxiv:2501.16937",
+            "title": "TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models",
+            "venue_year": "iclr-2025 2025",
+            "bottleneck_targeted": "It targets capacity-gap and mode-collapse failures from exposing the full teacher target too early."
+          },
+          {
+            "paper_id": "arxiv:2605.13230",
+            "title": "Teacher-Guided Policy Optimization for On-Policy Reasoning Distillation under Large Policy Divergence",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets nondirectional reverse-KL feedback when teacher and student policies diverge strongly."
+          },
+          {
+            "paper_id": "arxiv:2605.31490",
+            "title": "Are Full Rollouts Necessary for On-Policy Distillation?",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets the default use of costly full rollouts despite degraded late-prefix supervision."
+          },
+          {
+            "paper_id": "arxiv:2605.27028",
+            "title": "Less is More: Early Stopping Rollout for On-Policy Distillation",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets off-policy teacher decay and compute waste in late rollout suffixes."
+          },
+          {
+            "paper_id": "arxiv:2306.13649",
+            "title": "On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes",
+            "venue_year": "iclr-2024 2024",
+            "bottleneck_targeted": "Offline distillation trains on teacher states rather than the student prefixes encountered at inference."
+          },
+          {
+            "paper_id": "arxiv:2306.08543",
+            "title": "MiniLLM: On-Policy Distillation of Large Language Models",
+            "venue_year": "iclr-2024 2024",
+            "bottleneck_targeted": "Forward-KL on static teacher data spreads probability into low-value modes and misses student-visited states."
+          },
+          {
+            "paper_id": "arxiv:2602.12125",
+            "title": "Learning beyond Teacher: Generalized On-Policy Distillation with Reward Extrapolation",
+            "venue_year": "arXiv 2026-02",
+            "bottleneck_targeted": "Standard OPD fixes the reward-to-KL balance and therefore only imitates the teacher boundary."
+          }
+        ]
+      },
+      {
+        "pattern_id": "heterogeneous_decomposition",
+        "pattern_name": "Decompose for Differentiated Treatment",
+        "papers": [
+          {
+            "paper_id": "arxiv:2605.03677",
+            "title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets distinct student exploration and teacher outcome-ordering failures with separate interventions."
+          },
+          {
+            "paper_id": "arxiv:2605.09725",
+            "title": "On-Policy Distillation with Best-of-N Teacher Rollout Selection",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets unreliable teacher trajectories by separating candidates by correctness and student alignment."
+          },
+          {
+            "paper_id": "arxiv:2606.01249",
+            "title": "Trust Region On-Policy Distillation",
+            "venue_year": "arXiv 2026-06",
+            "bottleneck_targeted": "It targets unreliable gradients by treating trusted and outlier teacher-supervision regions differently."
+          },
+          {
+            "paper_id": "arxiv:2605.07804",
+            "title": "Prune-OPD: Efficient and Reliable On-Policy Distillation for Long-Horizon Reasoning",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "It targets wasted and harmful suffix supervision after local student-teacher prefix drift."
+          },
+          {
+            "paper_id": "arxiv:2503.07067",
+            "title": "DistiLLM-2: A Contrastive Approach to On-Policy Distillation",
+            "venue_year": "arXiv 2025-03",
+            "bottleneck_targeted": "A single divergence objective gives mismatched supervision for teacher and student generated responses."
+          },
+          {
+            "paper_id": "arxiv:2603.07079",
+            "title": "Entropy-Aware On-Policy Distillation of Language Models",
+            "venue_year": "icml-2026 2026",
+            "bottleneck_targeted": "A uniform reverse-KL objective loses diverse valid continuations at high-entropy teacher tokens."
+          },
+          {
+            "paper_id": "arxiv:2604.14084",
+            "title": "TIP: Token Importance in On-Policy Distillation",
+            "venue_year": "arXiv 2026-04",
+            "bottleneck_targeted": "Uniform token supervision wastes compute and entropy-only selection misses overconfident student errors."
+          },
+          {
+            "paper_id": "arxiv:2604.10688",
+            "title": "SCOPE: Signal-Calibrated On-Policy Distillation Enhancement with Dual-Path Adaptive Weighting",
+            "venue_year": "arXiv 2026-04",
+            "bottleneck_targeted": "Correct and incorrect student rollouts have different supervision reliability but receive one uniform loss."
+          },
+          {
+            "paper_id": "arxiv:2605.07725",
+            "title": "SOD: Step-wise On-policy Distillation for Small Language Model Agents",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "A wrong tool call corrupts later observations, so uniform token distillation propagates unreliable guidance."
+          },
+          {
+            "paper_id": "arxiv:2505.22375",
+            "title": "Pangu Embedded: An Efficient Dual-system LLM Reasoner with Metacognition",
+            "venue_year": "arXiv 2025-05",
+            "bottleneck_targeted": "Uniform teacher-CoT training ignores the student's changing capacity and makes overly difficult data noisy."
+          },
+          {
+            "paper_id": "arxiv:2606.00305",
+            "title": "Bridging Reasoning Trajectories in On-Policy Distillation via Near-Future Guidance",
+            "venue_year": "arXiv 2026-06",
+            "bottleneck_targeted": "Local high-loss tokens cannot distinguish surface mismatches from states that divert the future reasoning trajectory."
+          },
+          {
+            "paper_id": "openreview:kv6QSpUJbc",
+            "title": "ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation",
+            "venue_year": "acl-arr-2026-may 2026",
+            "bottleneck_targeted": "Incorrect student trajectories are commonly discarded despite exposing high-value teacher-student deviations."
+          },
+          {
+            "paper_id": "arxiv:2605.28791",
+            "title": "Skill-Conditioned Gated Self-Distillation for LLM Reasoning",
+            "venue_year": "arXiv 2026-05",
+            "bottleneck_targeted": "Privileged skill-conditioned teachers can be helpful, misleading, or uncertain for the same student rollout."
+          },
+          {
+            "paper_id": "arxiv:2606.10385",
+            "title": "Beyond Absolute Imitation: Anchored Residual Guidance for Privileged On-Policy Distillation",
+            "venue_year": "arXiv 2026-06",
+            "bottleneck_targeted": "Full-view privileged teachers leak hindsight tokens that are unreachable from the student's current prefix."
+          }
+        ]
+      },
+      {
+        "pattern_id": "reframe_as_solvable_object, heterogeneous_decomposition",
+        "pattern_name": "reframe_as_solvable_object, heterogeneous_decomposition",
+        "papers": [
+          {
+            "paper_id": "arxiv:2603.11137",
+            "title": "Scaling Reasoning Efficiently via Relaxed On-Policy Distillation",
+            "venue_year": "icml-2026 2026",
+            "bottleneck_targeted": "It targets unstable and inefficient OPD updates caused by extreme token-level teacher rewards."
+          }
+        ]
+      },
+      {
+        "pattern_id": "self_supervised_signal_engineering",
+        "pattern_name": "Manufacture the Supervisory Signal",
+        "papers": [
+          {
+            "paper_id": "arxiv:2603.11178",
+            "title": "PACED: Distillation and On-Policy Self-Distillation at the Frontier of Student Competence",
+            "venue_year": "arXiv 2026-03",
+            "bottleneck_targeted": "It targets low-signal training from prompts that are either mastered or far beyond student competence."
+          },
+          {
+            "paper_id": "arxiv:2504.14945",
+            "title": "Learning to Reason under Off-Policy Guidance",
+            "venue_year": "arXiv 2025-04",
+            "bottleneck_targeted": "Zero-RL cannot explore effective reasoning actions outside the student's initial policy support."
+          }
+        ]
+      },
+      {
+        "pattern_id": "self_supervised_signal_engineering, heterogeneous_decomposition",
+        "pattern_name": "self_supervised_signal_engineering, heterogeneous_decomposition",
+        "papers": [
+          {
+            "paper_id": "arxiv:2603.01683",
+            "title": "Surgical Post-Training: Cutting Errors, Keeping Knowledge",
+            "venue_year": "arXiv 2026-03",
+            "bottleneck_targeted": "Broad preference or SFT updates cause forgetting instead of concentrating correction on the student's actual errors."
+          }
+        ]
+      },
+      {
+        "pattern_id": "unify_into_shared_representation",
+        "pattern_name": "Unify Heterogeneous Inputs into One Space",
+        "papers": [
+          {
+            "paper_id": "arxiv:2510.23497",
+            "title": "VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation",
+            "venue_year": "arXiv 2025-10",
+            "bottleneck_targeted": "It targets transfer of text reasoning supervision to visual-language student trajectories."
+          },
+          {
+            "paper_id": "arxiv:2603.24596",
+            "title": "X-OPD: Cross-Modal On-Policy Distillation for Capability Alignment in Speech LLMs",
+            "venue_year": "interspeech-2026 2026",
+            "bottleneck_targeted": "It targets alignment of speech-model rollouts with text-teacher reasoning supervision."
+          }
+        ]
+      }
+    ],
+    "phase0_outside_taxonomy": [
+      {
+        "paper_id": "arxiv:2402.03898",
+        "title": "DistiLLM: Towards Streamlined Distillation for Large Language Models",
+        "venue_year": "icml-2024 2024",
+        "bottleneck_targeted": "Standard KL becomes unstable near low student probability and frequent on-policy generation is costly."
+      },
+      {
+        "paper_id": "arxiv:2605.22731",
+        "title": "Post-Training is About States, Not Tokens: A State Distribution View of SFT, RL, and On-Policy Distillation",
+        "venue_year": "arXiv 2026-05",
+        "bottleneck_targeted": "Token-level accounts obscure how state provenance and state coverage distinguish post-training methods."
+      },
+      {
+        "paper_id": "arxiv:2606.07082",
+        "title": "On the Geometry of On-Policy Distillation",
+        "venue_year": "arXiv 2026-06",
+        "bottleneck_targeted": "Existing accounts do not explain OPD through its parameter-update geometry."
+      },
+      {
+        "paper_id": "arxiv:2606.13657",
+        "title": "Dense Supervision, Sparse Updates: On the Sparsity and Geometry of On-Policy Distillation",
+        "venue_year": "arXiv 2026-06",
+        "bottleneck_targeted": "Dense teacher supervision is poorly understood because its effective parameter updates may be sparse."
+      }
+    ],
+    "phase3_collision": [
+      {
+        "paper_id": "arxiv:2607.08268v1",
+        "title": "Different Teachers, Different Capabilities: Sub-1B On-Device Distillation for Structured Text Enrichment",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2511.22044v1",
+        "title": "Distillability of LLM Security Logic: Predicting Attack Success Rate of Outline Filling Attack via Ranking Regression",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2606.10241v1",
+        "title": "Regimes: An Auditable, Held-Out-Gated Improvement Loop Demonstrated on LongMemEval with ActiveGraph",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2605.25172v1",
+        "title": "Rejoinder: The ICML 2023 Ranking Experiment: Examining Author Self-Assessment in ML/AI Peer Review",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2605.25981v2",
+        "title": "When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2606.28374v1",
+        "title": "Recursive Self-Evolving Agents via Held-Out Selection",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2607.17100v1",
+        "title": "Auto Research for Materials: Auditable AI-Scientist Workflows with Held-Out Transfer",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2601.08954v1",
+        "title": "Leveraging learning analytics to enhance immersive teacher simulations: Challenges and opportunities",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2511.04361v2",
+        "title": "Causal Regime Detection in Energy Markets With Augmented Time Series Structural Causal Models",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2606.26257v1",
+        "title": "Dataset Usage Inference without Shadow Models or Held-out Data",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2510.23384v1",
+        "title": "Opinion Mining Based Entity Ranking using Fuzzy Logic Algorithmic Approach",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2604.21989v1",
+        "title": "Model Predictive Control of Hybrid Dynamical Systems",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2510.14787v2",
+        "title": "A Human-Vector Susceptible-Infected-Susceptible Model for Analyzing and Controlling the Spread of Vector-Borne Diseases",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2601.23160v1",
+        "title": "Robust Control of Constrained Linear Systems using Online Convex Optimization and a Reference Governor",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2510.09728v1",
+        "title": "A Triad of Networks and a Triad of Fusions for the Other Climate Crisis",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2602.16943v1",
+        "title": "Mind the GAP: Text Safety Does Not Transfer to Tool-Call Safety in LLM Agents",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2512.21009v3",
+        "title": "ESCHER: Efficient and Scalable Hypergraph Evolution Representation with Application to Triad Counting",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "semanticscholar:821d79ef61a6ccccb7970bb083a0803f31c26290",
+        "title": "Large trials of psychosocial interventions: examples from individual placement and support",
+        "venue_year": "International Journal of Public Health 2026"
+      },
+      {
+        "paper_id": "arxiv:2605.12051v1",
+        "title": "Learning plug-in surrogate endpoints for randomized experiments",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2311.15410v1",
+        "title": "A Comprehensive Analysis of HIV Treatment Efficacy in the ACTG 175 Trial Through Multiple-Endpoint Approaches",
+        "venue_year": "arXiv 2023"
+      },
+      {
+        "paper_id": "arxiv:2605.03819v1",
+        "title": "Meta-Analysis of High-Dimensional Surrogate Markers",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2603.11333v2",
+        "title": "LLM-Augmented Digital Twin for Policy Evaluation in Short-Video Platforms",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "semanticscholar:ab26164bfc2e83a5fcda768a1944743bf87dea03",
+        "title": "The Causal Effects of Pilot Policies on Low-Altitude Economy Growth—Multi-Period DID and Event-Study Evidence from China",
+        "venue_year": "International Journal of Global Economics and Management 2025"
+      },
+      {
+        "paper_id": "semanticscholar:6f75bd2737761565a9753f0d48cb7bc032229530",
+        "title": "Theory-based process evaluation of a non-randomised single-arm pilot study investigating time-restricted eating in the treatment of type 2 diabetes—the RESET2 pilot study",
+        "venue_year": "Pilot and Feasibility Studies 2025"
+      },
+      {
+        "paper_id": "semanticscholar:a01bb5c32185de016928fbcba0b38fcf8eb84c2a",
+        "title": "A nurse-led climate resilience program for older adults: A one-group pre/post pilot study and implications for nursing management.",
+        "venue_year": "Nursing Outlook 2026"
+      },
+      {
+        "paper_id": "semanticscholar:67b61668713063f96230027b00b0c9e001633af3",
+        "title": "The Impact of the Low-Carbon City Pilot Policy on Energy Intensity: Evidence from a Staggered Difference-in-Differences Design",
+        "venue_year": "Land 2026"
+      },
+      {
+        "paper_id": "semanticscholar:c0007f8feee99b575282cdb7d20dded2d45f3cf7",
+        "title": "Impact of the Momentum pilot project on male involvement in maternal health and newborn care in Kinshasa, Democratic Republic of the Congo: a quasi-experimental study",
+        "venue_year": "BMC Women's Health 2022"
+      },
+      {
+        "paper_id": "semanticscholar:89e8a49bce7d3ccaaf88f394b8ec253f0a508f52",
+        "title": "Artificial intelligence, green innovation efficiency, and public health benefits: evidence from China’s pilot zones with a DID approach",
+        "venue_year": "Frontiers in Public Health 2025"
+      },
+      {
+        "paper_id": "semanticscholar:47fd18d11f7b04fed6551788529cbd0ef4a144ba",
+        "title": "No sales after midnight: evaluating the impact of a business curfew on drug-related crime in San Francisco’s tenderloin",
+        "venue_year": "Security Journal 2025"
+      },
+      {
+        "paper_id": "semanticscholar:ff719a464bf3758d221c7ca1bd6e35d9b9fe8d8b",
+        "title": "Organizational Learning and Job Satisfaction of Employees in Financial Sectors",
+        "venue_year": "NPRC Journal of Multidisciplinary Research 2025"
+      },
+      {
+        "paper_id": "semanticscholar:e67e6bcfe56534bdebf28455b1d39db5724c3fd4",
+        "title": "Strengthening Work Safety Mindset and Competence as a Policy Strategy for Maritime Human Resource Development in Indonesia",
+        "venue_year": "Jurnal Kebijakan Sosial Ekonomi Kelautan dan Perikanan 2026"
+      },
+      {
+        "paper_id": "arxiv:2502.08443v1",
+        "title": "Tutorial for Surrogate Endpoint Validation Using Joint modeling and Mediation Analysis",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2407.06350v1",
+        "title": "A Surrogate Endpoint Based Provisional Approval Causal Roadmap",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2603.19403v1",
+        "title": "Evaluation of Individual and Trial Level Association Metrics in the Validation of a Binary Surrogate Endpoint for a True Time-to-Event Endpoint",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2407.03674v2",
+        "title": "Short-Long Policy Evaluation with Novel Actions",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2407.19118v1",
+        "title": "Large Language Models as Co-Pilots for Causal Inference in Medical Studies",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "semanticscholar:329bb71255df87d8ff4a46d76379917fe142bb41",
+        "title": "A Single-Button Mobility Platform for Cause–Effect Learning in Children with Cerebral Palsy: A Pilot Study",
+        "venue_year": "Children 2025"
+      },
+      {
+        "paper_id": "semanticscholar:781f67f178768034863a4c1b942e83a0870cde9d",
+        "title": "Addressing psychosocial needs in patients with Long-COVID (PsyLoCo-Study): study protocol of a pilot-study of a specialized modular intervention",
+        "venue_year": "Frontiers in Psychiatry 2024"
+      },
+      {
+        "paper_id": "semanticscholar:339e860c0e03436c3d6662bda60266f1ede67650",
+        "title": "Lesion Network Guided Delta Frequency Neuromodulation Improves Cognition in Patients with Psychosis Spectrum Disorders: A Pilot Study",
+        "venue_year": "Asian Journal of Psychiatry 2023"
+      },
+      {
+        "paper_id": "semanticscholar:8a230704a5b9d9da34795c9b0b99b231902c9702",
+        "title": "An experimental laboratory-based minority stress paradigm for alcohol research among sexual minority women: A pilot study",
+        "venue_year": "Alcohol, clinical & experimental research 2023"
+      },
+      {
+        "paper_id": "semanticscholar:76409604e750541cbbd998b60dae92d9ba584069",
+        "title": "Adjunctive ab-interno goniotomy in chronic angle-closure glaucoma: a retrospective proof-of-concept pilot study using doubly robust learning",
+        "venue_year": "Frontiers in Ophthalmology 2026"
+      },
+      {
+        "paper_id": "semanticscholar:6aca43b69b77b355f61eb3367c6f74cee3ae724a",
+        "title": "Multidimensional Fitness Responses to an 8-Week Mountain-Based Hiking and Trail Running Program in University Students: A Pilot Study",
+        "venue_year": "Revista Romaneasca pentru Educatie Multidimensionala 2026"
+      },
+      {
+        "paper_id": "semanticscholar:30bb7e775a222bb623a2bb17bf4dbc1655b3a517",
+        "title": "A pilot study evidencing the effectiveness of a new maths intervention",
+        "venue_year": "Educational & Child Psychology 2023"
+      },
+      {
+        "paper_id": "semanticscholar:48b23225d036b8aa306dfcfa9c35cfc4195e4bd1",
+        "title": "Mitigating Object Hallucination via Concentric Causal Attention",
+        "venue_year": "Neural Information Processing Systems 2024"
+      },
+      {
+        "paper_id": "semanticscholar:8d463079f2e33f911aa61975a30a5b58eb763fa8",
+        "title": "THE POWER OF POLICY SYNERGY IN URBAN DECARBONIZATION: ASSESSING THE CARBON MITIGATION EFFECTS OF PREFABRICATED BUILDING PILOT POLICY IN CHINA",
+        "venue_year": "Journal of Green Building, College Publishing, USA 2025"
+      },
+      {
+        "paper_id": "semanticscholar:2a636ec13963a35ad11535d4d6ab1e6eca960607",
+        "title": "A causal relationship model of decent work for myanmar migrant workers in Pathum Thani province",
+        "venue_year": "Multidisciplinary Science Journal 2026"
+      },
+      {
+        "paper_id": "semanticscholar:e88488ad125b3cc1c8779f284c393315ebfe63c3",
+        "title": "Impact evaluation of the turnaround arts pilot program: an interrupted time series analysis",
+        "venue_year": "Arts education policy review 2023"
+      },
+      {
+        "paper_id": "semanticscholar:8dc7ddc9f5742c4413320de97f63ffb758623285",
+        "title": "Environmental sustainability and firm performance: Unpacking the productivity effects of green data center pilots.",
+        "venue_year": "Journal of Environmental Management 2025"
+      },
+      {
+        "paper_id": "semanticscholar:2a7be3e1ed08f6ea5298cf7bcb25f10345152b67",
+        "title": "Supply chain digitization and corporate digital innovation: evidence from China",
+        "venue_year": "Industrial Management &amp; Data Systems 2025"
+      },
+      {
+        "paper_id": "semanticscholar:2f78f8d828126c2be20a6abfccd6697daedeb165",
+        "title": "Financial Restructuring and Performance of Deposit Taking Saccos in Kiambu County, Kenya",
+        "venue_year": "IOSR Journal of Economics and Finance 2026"
+      },
+      {
+        "paper_id": "semanticscholar:66e2f8a2432645634d450f2b43fd605b33dbe1d9",
+        "title": "Unequal gains: evaluating Alabama’s infant mortality reduction initiative by race and marital status",
+        "venue_year": "BMC Public Health 2025"
+      },
+      {
+        "paper_id": "semanticscholar:15aa1ca20f9dc4b23fd4edd86bae655be4cc5ac6",
+        "title": "Estimator-Aligned Prospective Sample Size Determination for Designs Using Inverse Probability of Treatment Weighting",
+        "venue_year": "2026"
+      },
+      {
+        "paper_id": "semanticscholar:67cb1dd6137f788ac34bc2cc4a0e4aaa7163200d",
+        "title": "Surviving the Turbulence: A Dynamic Capabilities Perspective on Market Orientation and Business Performance of MSMEs",
+        "venue_year": "Intangible Capital 2026"
+      },
+      {
+        "paper_id": "semanticscholar:0ccbff5fc4e4760b59ae09b5f9e35344d37b567c",
+        "title": "Can digital village construction improve agricultural total factor productivity? Evidence from a quasi-natural experiment in China",
+        "venue_year": "Frontiers in Sustainable Food Systems 2026"
+      },
+      {
+        "paper_id": "semanticscholar:6319873e0d92a52b89437a2a5a5dd767aae62984",
+        "title": "The implementation of Pendidikan Khas Kejogjaan in strengthening secondary school students' character",
+        "venue_year": "Jurnal Cakrawala Pendidikan 2026"
+      },
+      {
+        "paper_id": "arxiv:2512.18071v1",
+        "title": "Deep Learning Surrogate for Fast CIR Prediction in Reactive Molecular Diffusion Advection Channels",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2209.08315v1",
+        "title": "Using a Surrogate with Heterogeneous Utility to Test for a Treatment Effect",
+        "venue_year": "arXiv 2022"
+      },
+      {
+        "paper_id": "arxiv:2605.02154v2",
+        "title": "Efficient Transported Distributional and Quantile Treatment Effects with Surrogate-Assisted Missing Primary Outcomes",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2410.04438v1",
+        "title": "A Reflection on the Impact of Misspecifying Unidentifiable Causal Inference Models in Surrogate Endpoint Evaluation",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2604.03863v1",
+        "title": "Estimation of treatment effect in clinical trials of continuous endpoints with retrieved dropouts",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2402.00168v2",
+        "title": "Continuous Treatment Effects with Surrogate Outcomes",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "semanticscholar:428f6d7653ed58bfa66ff6c0040f962ca68e3285",
+        "title": "Rationale and design of the Self-TI Study protocol: a cross-sectional human papillomavirus self-testing pilot study among transgender adults in England",
+        "venue_year": "BMJ Open 2024"
+      },
+      {
+        "paper_id": "semanticscholar:f3dce50e5b9f741e5d0deb1ee7e3cb7ba37c8e23",
+        "title": "Associations of forest vs. urban environmental exposure with well-being and nasal microbiome composition: An exploratory pilot study",
+        "venue_year": "Environmental Research 2025"
+      },
+      {
+        "paper_id": "semanticscholar:69785e981a7622e982cdbd3bcaf3b9b8144df027",
+        "title": "Collecting real-time infant feeding and support experience: co-participatory pilot study of mobile health methodology",
+        "venue_year": "International Breastfeeding Journal 2025"
+      },
+      {
+        "paper_id": "semanticscholar:883aff4be31a1d0d271c524d855bfa21aea5e12f",
+        "title": "Use of virtual reality medical hypnosis for anxiolytic purposes during frozen embryo transfer: A prospective pilot study",
+        "venue_year": "PLoS ONE 2026"
+      },
+      {
+        "paper_id": "semanticscholar:25ee993ffa611f03794f5aba8efd5ec7d0ca0608",
+        "title": "Integrating causal pathway diagrams into practice facilitation to address colorectal cancer screening disparities in primary care",
+        "venue_year": "BMC Health Services Research 2024"
+      },
+      {
+        "paper_id": "semanticscholar:05678e5a21de48450973ae73ee01aac54cb94b2f",
+        "title": "Using FRAM for Causal Analysis of Marine Risks in the Motor Vessel Milano Bridge Accident: Identifying Potential Solutions",
+        "venue_year": "Applied Sciences 2023"
+      },
+      {
+        "paper_id": "semanticscholar:863abb59831ad2cc71e1dd0beb177bd6dfb0882d",
+        "title": "REVOLUTIONIZING LANGUAGE LEARNING: A STUDY ON AI INTEGRATION IN UNIVERSITY-LEVEL ENGLISH CLASSROOMS",
+        "venue_year": "Journal for Current Sign 2025"
+      },
+      {
+        "paper_id": "semanticscholar:9a7311bbbcab18b6e7005b292174754823024318",
+        "title": "Analysis of Voice Changes in Early-Stage Parkinson's Disease with AVQI and ABI: A Follow-up Study.",
+        "venue_year": "Journal of Voice 2024"
+      },
+      {
+        "paper_id": "semanticscholar:0e41a2721d2207a893d41aeacb8b0315e93cf6da",
+        "title": "Dual CO2 mitigations with diminishing margins: Evidence from China’s intensity-based national emissions trading scheme",
+        "venue_year": "iScience 2026"
+      },
+      {
+        "paper_id": "semanticscholar:77491fa6ecd80f403841d0eeafa166a6f1f817aa",
+        "title": "The contribution of successful intelligence in predicting students' orientation toward academic quality of life",
+        "venue_year": "International journal of innovative research and scientific studies 2025"
+      },
+      {
+        "paper_id": "semanticscholar:41f4895bb9f81cc44a820f1f7c0f6027cc696b1b",
+        "title": "Job Satisfaction and Performance of Micro Finance Institutions",
+        "venue_year": "Madhyabindu Journal 2025"
+      },
+      {
+        "paper_id": "semanticscholar:dbda4f9803170d438e6e4de48ea99c12a8598e00",
+        "title": "Impact of Green Purchasing Practices on Performance of Sugar Manufacturing Firms in Western Region Kenya",
+        "venue_year": "Journal of Business and Social Review in Emerging Economies 2025"
+      },
+      {
+        "paper_id": "semanticscholar:59f6c00908768a3eb93bd803eb2c8ac9105a530e",
+        "title": "Impact of Green Warehouse Practices on Performance of Sugar Manufacturing Firms in Western Region Kenya",
+        "venue_year": "Journal of Accounting and Finance in Emerging Economies 2026"
+      },
+      {
+        "paper_id": "semanticscholar:83349bccf7cd0ad821534cc417759b68b7a2e8fd",
+        "title": "Pengaruh Kemampuan Inisiatif, Kemampuan Berwirausaha, Dan Manajemen Diri Terhadap Kesiapan Kerja Siswa TKR SMK",
+        "venue_year": "Educatio 2026"
+      },
+      {
+        "paper_id": "semanticscholar:006083c0f7de5a8ecb0d5625fc8f402a299eadb4",
+        "title": "Effectiveness of virtual and actual laboratory activities on science learning of Grade 10 learners",
+        "venue_year": "International journal of humanities and social sciences 2026"
+      },
+      {
+        "paper_id": "semanticscholar:4d3476d43b5ed0db1ce54e4930e50ffd94ce45e1",
+        "title": "Effect of Micro-Credit Services on Growth of Microenterprises in Bomet, County, Kenya",
+        "venue_year": "International journal of research in social sciences and humanities 2026"
+      },
+      {
+        "paper_id": "semanticscholar:cb48edcdf69d8acffd80410a06c794997e0969f1",
+        "title": "PENGARUH KEPEMIMPINAN VISIONER, BUDAYA ORGANISASI, DAN MOTIVASI KERJA TERHADAP KINERJA GURU DI SMP SE-KECAMATAN CISAUK KABUPATEN TANGERANG",
+        "venue_year": "Didaktik 2026"
+      },
+      {
+        "paper_id": "semanticscholar:26668c9ea641b10257c5454f1fa997ef25582b8a",
+        "title": "EFFECT OF SELF REGULATED LEARNING STRATEGIES ON LOCUS OF CONTROL OF UNIVERSITY STUDENTS",
+        "venue_year": "Contemporary Journal of Social Science Review 2026"
+      },
+      {
+        "paper_id": "semanticscholar:5db0d6bc6ff88552ef820fc581e6e2170d938a8b",
+        "title": "Strengthening Self-Efficacy in the Graduate Application Process: Evidence From a Randomized Controlled Trial",
+        "venue_year": "Journal of Career Assessment 2026"
+      },
+      {
+        "paper_id": "arxiv:2512.00405v2",
+        "title": "Evaluating Surrogates in Individualized Treatment Rules",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2509.01737v2",
+        "title": "Evaluation of Surrogate Endpoints Based on Meta-Analysis with Surrogate Indices",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2508.04633v1",
+        "title": "Bias in Meta-Analytic Modeling of Surrogate Endpoints in Cancer Screening Trials",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2504.06807v1",
+        "title": "Evaluating amyloid-beta as a surrogate endpoint in trials of anti-amyloid drugs in Alzheimer's disease: a Bayesian meta-analysis",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2409.09440v1",
+        "title": "Group Sequential Testing of a Treatment Effect Using a Surrogate Marker",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2401.12420v3",
+        "title": "Rank-based estimators of global treatment effects for cluster randomized trials with multiple endpoints",
+        "venue_year": "arXiv 2024"
+      },
+      {
+        "paper_id": "arxiv:2601.17712v1",
+        "title": "The Proximal Surrogate Index: Long-Term Treatment Effects under Unobserved Confounding",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2508.11117v1",
+        "title": "Robot Policy Evaluation for Sim-to-Real Transfer: A Benchmarking Perspective",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2605.14712v2",
+        "title": "IntentVLA: Short-Horizon Intent Modeling for Aliased Robot Manipulation",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2306.08946v2",
+        "title": "Bootstrap aggregation and confidence measures to improve time series causal discovery",
+        "venue_year": "arXiv 2023"
+      },
+      {
+        "paper_id": "arxiv:2508.00176v1",
+        "title": "New Pilot-Study Design in Functional Data Analysis",
+        "venue_year": "arXiv 2025"
+      },
+      {
+        "paper_id": "arxiv:2309.13103v1",
+        "title": "OpportunityFinder: A Framework for Automated Causal Inference",
+        "venue_year": "arXiv 2023"
+      },
+      {
+        "paper_id": "arxiv:2605.24541v1",
+        "title": "SemanticZip: A Pilot Framework for Lossy Text Compression with LLMs as Semantic Decompressors",
+        "venue_year": "arXiv 2026"
+      },
+      {
+        "paper_id": "arxiv:2304.10546v1",
+        "title": "Introducing Vibration for use in Interaction Designs to support Human Performance: A Pilot Study",
+        "venue_year": "arXiv 2023"
+      },
+      {
+        "paper_id": "arxiv:2211.02771v1",
+        "title": "Statistical Analysis Plan for Primary and Selected Secondary Health Endpoints of the SEARCH-Youth Study",
+        "venue_year": "arXiv 2022"
+      },
+      {
+        "paper_id": "semanticscholar:0774597b1267c2f06727cceacd73d064d9e47217",
+        "title": "Study Design, Methods, and Modeling in Networks to Inform HIV Interventions and Policy in Marginalized Populations.",
+        "venue_year": "R.I. medical journal 2026"
+      }
+    ]
+  }
+}

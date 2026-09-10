@@ -1,0 +1,11 @@
+# 大体积 / 易再生
+/papers/
+_meta/workflow-result-*.json
+_meta/discover-hits-raw.json
+
+# 备份 / 系统
+*.bak.*
+.DS_Store
+*.pyc
+__pycache__/
+_meta/pycache/

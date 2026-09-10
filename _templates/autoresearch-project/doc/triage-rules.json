@@ -1,0 +1,38 @@
+{
+  "description": "Project-local autoresearch rules. Edit allowed values before writing cards.",
+  "hard_gates": [
+    "Queue row is not a card.",
+    "Survey mention is recall evidence, not paper evidence.",
+    "No original paper PDF/HTML brief, no formal L1 card.",
+    "Survey-only formal cards are invalid legacy artifacts; move or mark them outside the formal notes set and do not count them as valid cards."
+  ],
+  "required_frontmatter": [
+    "title",
+    "authors",
+    "year",
+    "venue",
+    "url",
+    "lane",
+    "paper_type",
+    "lifecycle_role",
+    "decision_axes"
+  ],
+  "allowed": {
+    "paper_type": [
+      "method",
+      "benchmark",
+      "system",
+      "survey",
+      "theory",
+      "background"
+    ],
+    "lifecycle_role": [
+      "survey-seed",
+      "canonical-anchor",
+      "strong-baseline",
+      "frontier-candidate",
+      "background",
+      "low-confidence-novelty-risk"
+    ]
+  }
+}

@@ -1,0 +1,369 @@
+{
+  "trace_report": {
+    "formalized_procedure": [
+      {
+        "step": "S1",
+        "consumes": [
+          "open-weight model identifiers",
+          "DAPO-Math-17K",
+          "MATH training split"
+        ],
+        "produces": [
+          "triad manifest: list[(teacher, student checkpoint S0, training dataset D)]"
+        ],
+        "note": "Verbatim: \"Download the existing open-weight Qwen3-1.7B/4B students and Qwen3-8B/14B plus DeepSeek-R1-Distill-Qwen-7B teachers, and form same-tokenizer triads over DAPO-Math-17K and the existing MATH training split; output an explicit triad manifest.\" Type-consistent."
+      },
+      {
+        "step": "S2",
+        "consumes": [
+          "S0",
+          "D"
+        ],
+        "produces": [
+          "Bc: 512 prompt/rollout records",
+          "all token prefixes per rollout",
+          "one middle-two-quartile cut point per rollout"
+        ],
+        "note": "Verbatim: \"For each triad, uniformly sample 512 prompts from D, generate one S0 rollout per prompt, and store every prefix and sampled cut point in Bc; input is S0 and D, output is one immutable initial-visitation buffer.\" The defensible readings of \"stored prefixes\" are (a) all token prefixes for training targets and (b) only the sampled cut point; the next two steps use different readings. This ambiguity is repaired by naming all-prefix training records separately from one cut-point evaluation record."
+      },
+      {
+        "step": "S3",
+        "consumes": [
+          "Bc all-prefix records",
+          "T",
+          "frozen S0"
+        ],
+        "produces": [
+          "teacher target distribution at each training prefix",
+          "self target distribution at each training prefix"
+        ],
+        "note": "Verbatim: \"Run T from every stored prefix and run the frozen S0 copy from the same prefixes to cache the two supervision sources; inputs are Bc, T, and S0, outputs are teacher and self target distributions consumed by the unchanged baseline OPD code.\" Under reading (a) this produces the stated training targets; reading (b) would supply only 512 target positions and is inconsistent with the stated 2^18-token pilot. The repair makes reading (a) explicit. Finding tag: reading_dependent: only-cut-point reading."
+      },
+      {
+        "step": "S4",
+        "consumes": [
+          "S0",
+          "Bc",
+          "teacher targets",
+          "self targets",
+          "K=2^18 response-token budget",
+          "fixed optimizer seed"
+        ],
+        "produces": [
+          "TEACH checkpoint",
+          "SELF checkpoint"
+        ],
+        "note": "Verbatim: \"Fork two byte-identical rank-16 LoRA students and train TEACH and SELF for exactly 2^18 student response tokens with the same optimizer seed and MiniLLM/GKD loss; inputs are the cached targets and Bc, outputs are two probe checkpoints whose only designed difference is supervision source.\" The two arms are dimensionally aligned; a normal repeat/truncate dataloader can consume exactly K tokens."
+      },
+      {
+        "step": "S5",
+        "consumes": [
+          "S0",
+          "TEACH checkpoint",
+          "SELF checkpoint",
+          "ED: 256 evaluation prompts"
+        ],
+        "produces": [
+          "A0, Ateach, Aself in [0,1]"
+        ],
+        "note": "Verbatim: \"Greedily evaluate S0 and both probe checkpoints on the fixed 256-example ED with the existing exact-answer verifier; inputs are the three checkpoints and ED, outputs are A0, Ateach, and Aself.\" \"fixed ED\" admits global-shared and dataset-specific readings. Cross-dataset comparability requires the global-shared reading; the repair makes ED one predeclared split shared by every triad. Finding tag: reading_dependent: dataset-specific ED."
+      },
+      {
+        "step": "S6",
+        "consumes": [
+          "T",
+          "Bc sampled cut points"
+        ],
+        "produces": [
+          "Ahandoff in [0,1]",
+          "positive-headroom flag: Ahandoff-A0 >= 0.05"
+        ],
+        "note": "Verbatim: \"Ask T to complete from the stored middle-quartile cut points and score those completions with the same verifier; input is T and Bc, output is Ahandoff and the positive-headroom eligibility flag.\" As written, Ahandoff averages prompts from training population D while A0 averages ED, so their difference is not a headroom contrast on one population. This is reading_robust and repaired by producing a separate S0 cut-point buffer on the same shared ED used for A0."
+      },
+      {
+        "step": "S7",
+        "consumes": [
+          "A0",
+          "Ateach",
+          "Aself",
+          "Ahandoff",
+          "threshold 0.05"
+        ],
+        "produces": [
+          "R=(Ateach-Aself)/max(0.05,Ahandoff-A0)",
+          "eligibility label",
+          "triad ordering"
+        ],
+        "note": "Verbatim: \"Compute R(c), apply the fixed no-headroom rule, and rank all triads without fitting a per-family threshold; input is the four accuracies, output is one score and one decision per triad.\" Ordering within the no-headroom group and score ties is undefined. The repair assigns all no-headroom triads to one bottom tier, uses midranks for Spearman, and averages top-3 regret uniformly across tied-boundary subsets."
+      },
+      {
+        "step": "S8",
+        "consumes": [
+          "triad manifest",
+          "original S0",
+          "unchanged full OPD recipe",
+          "5,000,000-token budget"
+        ],
+        "produces": [
+          "final exact-answer gain per triad"
+        ],
+        "note": "Verbatim: \"From the original S0 checkpoint, run the unchanged full OPD baseline for 5 million student response tokens for every triad and evaluate exact-answer pass@1; input is the triad manifest, output is the independent final-gain oracle.\" Type-consistent and acyclic."
+      },
+      {
+        "step": "S9",
+        "consumes": [
+          "probe scores",
+          "baseline proxy scores",
+          "final gains",
+          "teacher-family/capacity-band/dataset group labels"
+        ],
+        "produces": [
+          "held-out-group Spearman correlations",
+          "top-3 selection regret"
+        ],
+        "note": "Verbatim: \"Report leave-one-teacher-family-, capacity-band-, and dataset-out Spearman correlation plus top-k selection regret for R and for overlap, local margin, peak confidence, teacher accuracy, and naive early gain; inputs are probe scores and full-run gains, output is the controlled transfer-gap result.\" The symbol k has no value or selection rule here, although the locked falsification field later names three. The repair binds k=3 and defines tie handling."
+      },
+      {
+        "step": "S10",
+        "consumes": [
+          "triad manifest",
+          "frozen S0 substituted for T"
+        ],
+        "produces": [
+          "control scores",
+          "control top-3 selection result"
+        ],
+        "note": "Verbatim: \"Replace T with the frozen S0 in both probe arms and rerun triad selection; this intervention propagates through the probe checkpoints to their generated answers, and the selected triads' mean final OPD gain should fall to random-selection baseline if teacher-causal response is the load-bearing signal.\" Identical arms yield all-zero numerators under the written common-seed procedure, so selection is undefined without the S7/S9 tie rule. The repair makes the reported control regret the uniform tied-subset expectation."
+      }
+    ],
+    "dry_run": {
+      "instance": "Three triads, each with eight binary exact-answer outcomes. A_easy_drift has A0=2/8, Ateach=6/8, Aself=5/8, Ahandoff_Bc=7/8 and Ahandoff_ED=6/8; B_teacher_signal has 2/8, 5/8, 2/8, 6/8 and 6/8; C_no_headroom has 5/8, 6/8, 6/8, 5/8 and 5/8. Final gains are 0.10, 0.40, and 0.00.",
+      "execution": {
+        "mode": "executed",
+        "script": "import random, statistics\nT={\n'A':dict(A0=2,At=6,As=5,Hbc=7,Hed=6,g=.10),\n'B':dict(A0=2,At=5,As=2,Hbc=6,Hed=6,g=.40),\n'C':dict(A0=5,At=6,As=6,Hbc=5,Hed=5,g=.00)}\ndef score(x,h):\n a0,at,ass,ah=(x[k]/8 for k in ('A0','At','As',h)); d=ah-a0\n return at-a0,ass-a0,at-ass,d,d>=.05,(at-ass)/max(.05,d)\nfor n,x in T.items(): print(n,'as_written=',score(x,'Hbc'),'same_ED=',score(x,'Hed'))\nmech=sorted(T,key=lambda n:(score(T[n],'Hbc')[4],score(T[n],'Hbc')[5]),reverse=True)\nnaive=sorted(T,key=lambda n:score(T[n],'Hbc')[0],reverse=True)\nprint('mechanism_rank',mech,'naive_rank',naive,'top1_gain',T[mech[0]]['g'],T[naive[0]]['g'])\nr=random.Random(2305); rs=[]\nfor _ in range(10000):\n q=[sum(r.random()<p for _ in range(256))/256 for p in (.25,.65,.35,.75)]\n rs.append((q[1]-q[2])/(q[3]-q[0]))\nprint('MC mean_R',statistics.mean(rs),'true_R',.6,'bias',statistics.mean(rs)-.6)\nprint('control_unique_scores',len(set([0.0,0.0,0.0])))",
+        "output": "A as_written= (0.5, 0.375, 0.125, 0.625, True, 0.2) same_ED= (0.5, 0.375, 0.125, 0.5, True, 0.25)\nB as_written= (0.375, 0.0, 0.375, 0.5, True, 0.75) same_ED= (0.375, 0.0, 0.375, 0.5, True, 0.75)\nC as_written= (0.125, 0.125, 0.0, 0.0, False, 0.0) same_ED= (0.125, 0.125, 0.0, 0.0, False, 0.0)\nmechanism_rank ['B', 'A', 'C'] naive_rank ['A', 'B', 'C'] top1_gain 0.4 0.1\nMC mean_R 0.6038542218644467 true_R 0.6 bias 0.0038542218644467274\ncontrol_unique_scores 1"
+      },
+      "computed_quantities": [
+        {
+          "quantity": "A_easy_drift R as written",
+          "value": "0.200",
+          "arithmetic": "(6/8-5/8)/(7/8-2/8)=0.125/0.625=0.200"
+        },
+        {
+          "quantity": "A_easy_drift R on the same ED population",
+          "value": "0.250",
+          "arithmetic": "(6/8-5/8)/(6/8-2/8)=0.125/0.500=0.250"
+        },
+        {
+          "quantity": "B_teacher_signal R",
+          "value": "0.750",
+          "arithmetic": "(5/8-2/8)/(6/8-2/8)=0.375/0.500=0.750"
+        },
+        {
+          "quantity": "C_no_headroom eligibility",
+          "value": "false",
+          "arithmetic": "5/8-5/8=0.000<0.05"
+        },
+        {
+          "quantity": "finite-sample plug-in ratio bias",
+          "value": "+0.003854 over 10,000 executed replications at n=256",
+          "arithmetic": "mean(sample R)=0.6038542218644467 versus ratio of population contrasts 0.600000"
+        }
+      ],
+      "anomalies": [
+        "The original denominator subtracts an ED accuracy from a Bc accuracy. On the executed A instance, merely aligning the handoff prompt population changes R from 0.200 to 0.250 while the trained checkpoints and their ED outcomes stay fixed; the original value therefore cannot be the declared same-population headroom fraction.",
+        "The executed Monte Carlo gives mean plug-in R=0.603854 for a population contrast ratio of 0.600000, so R is not exactly a finite-sample unbiased fraction; it must be described as a plug-in normalized response.",
+        "Replacing T with S0 in both arms produces one unique score across all three triads. The original text supplies no decision for this all-tie case."
+      ]
+    },
+    "degenerate_probes": [
+      {
+        "probe": "empty D or fewer than 512 prompts",
+        "behavior": "Uniform sampling of 512 prompts without replacement cannot execute.",
+        "finding": "Outside the named datasets' declared domain; the revised S1 explicitly validates at least 512 prompts and fails fast."
+      },
+      {
+        "probe": "k=0",
+        "behavior": "The original top-k regret has no bound k and admits k=0, yielding a meaningless empty selection.",
+        "finding": "Repaired by binding the already-declared evaluation to top-3."
+      },
+      {
+        "probe": "all-identical elements or ties at every score",
+        "behavior": "All control scores are 0.0, so the original ranking and selected triads are undefined.",
+        "finding": "Repaired with bottom-tier/midrank semantics and uniform averaging over tied top-3 subsets."
+      },
+      {
+        "probe": "single triad",
+        "behavior": "R is computable, but Spearman correlation is undefined.",
+        "finding": "Outside the declared 12-triad evaluation; revised reporting requires at least two triads per reported group."
+      },
+      {
+        "probe": "headroom exactly 0.05",
+        "behavior": "The strict original condition Ahandoff-A0<0.05 makes the triad eligible and divides by 0.05.",
+        "finding": null
+      },
+      {
+        "probe": "all triads have no headroom",
+        "behavior": "Every triad belongs below the empty positive tier; the original within-tier order is undefined.",
+        "finding": "Repaired by treating the no-headroom set as one tied bottom tier."
+      },
+      {
+        "probe": "maximum accuracy contrasts",
+        "behavior": "With accuracies in [0,1] and denominator at least 0.05 for eligible triads, computed R remains finite in [-20,20].",
+        "finding": null
+      }
+    ],
+    "claim_step_map": [
+      {
+        "claim": "The two pilot arms vary only the supervision source.",
+        "established_by": "S2-S4",
+        "strength_grade": "established",
+        "assumptions_missing": [],
+        "arbitration": "argument",
+        "measured": null
+      },
+      {
+        "claim": "Ateach-Aself is excess functional improvement caused by candidate-teacher supervision above matched drift.",
+        "established_by": "S4-S5",
+        "strength_grade": "conditional",
+        "assumptions_missing": [
+          "the common seed and byte-identical initialization make all non-supervision randomness common",
+          "evaluation uses the same ED and deterministic verifier for both arms"
+        ],
+        "arbitration": "argument",
+        "measured": null
+      },
+      {
+        "claim": "Ahandoff-A0 is attainable outcome headroom on states S visits.",
+        "established_by": "UNESTABLISHED",
+        "strength_grade": "overclaim",
+        "assumptions_missing": [],
+        "arbitration": "argument",
+        "measured": "Original A instance compares Ahandoff_Bc=0.875 with A0_ED=0.250; same-ED handoff is 0.750. The cross-population subtraction changes R from 0.200 to 0.250."
+      },
+      {
+        "claim": "R is the expected fraction of verifier-measured teacher headroom absorbed by S.",
+        "established_by": "S5-S7 after population alignment",
+        "strength_grade": "overclaim",
+        "assumptions_missing": [],
+        "arbitration": "executed-mc",
+        "measured": "10,000 replications at n=256: population contrast ratio=0.600000, mean plug-in R=0.6038542218644467, bias=+0.0038542218644467. R is also not constrained to [0,1]."
+      },
+      {
+        "claim": "Subtracting the SELF arm removes pair-specific early drift sufficiently to transfer triad ordering.",
+        "established_by": "S4-S9",
+        "strength_grade": "empirical",
+        "assumptions_missing": [],
+        "arbitration": "argument",
+        "measured": null
+      },
+      {
+        "claim": "The score is evaluated across held-out teacher-family, capacity-ratio, and dataset groups without refitting.",
+        "established_by": "S7-S9",
+        "strength_grade": "established",
+        "assumptions_missing": [],
+        "arbitration": "argument",
+        "measured": null
+      },
+      {
+        "claim": "The probe is a pre-training measurement and does not alter the subsequent full OPD recipe.",
+        "established_by": "S8",
+        "strength_grade": "established",
+        "assumptions_missing": [],
+        "arbitration": "argument",
+        "measured": null
+      }
+    ],
+    "naive_comparison": {
+      "declared_branch": "(i) false-premise",
+      "naive_version": "Independently from the available before/after pilot inputs, use the minimal response estimator Ateach-A0 and select the largest value, with no SELF control or headroom normalization.",
+      "instance_behavior": {
+        "naive": "Ranks A_easy_drift first because 0.750-0.250=0.500, ahead of B_teacher_signal at 0.625-0.250=0.375; selected top-1 final gain is 0.10.",
+        "mechanism": "Ranks B_teacher_signal first because R=0.750, ahead of A_easy_drift at R=0.200 as written (0.250 after the same-ED repair); selected top-1 final gain is 0.40.",
+        "divergence": "A has 0.375 SELF drift while B has 0.000; subtracting SELF reverses the A/B choice and raises selected final gain by 0.30 in the instance."
+      },
+      "verdict": "confronts_obstacle",
+      "reasoning": "The independently constructed naive pilot confounds early gain with the 0.375 self-training drift and chooses A. The matched SELF subtraction is the extra machinery that reverses the decision to B, exactly confronting the candidate's declared false premise."
+    }
+  },
+  "verdict": "patched",
+  "unrepaired": [],
+  "applied_revisions": [
+    {
+      "scope": "coherence",
+      "op": "replace",
+      "field": "core_mechanism",
+      "value": "For each triad c=(T,S,D), sample 512 prompts uniformly without replacement from the named training set D and generate one rollout per prompt from the initial student checkpoint S0; this fixed training buffer Bc is the controlled instance set, and the only manipulated artifact is the source of supervision on the same student-visited prefixes. Separately fix one shared 256-example held-out evaluation split ED for every triad, disjoint from both training sets; for each S0, greedily generate its ED rollouts and store one cut point sampled uniformly from the middle two quartiles in an evaluation buffer Ec. Fork S0 into two LoRA-rank-16 replicas with identical optimizer state and train each for K=2^18 student response tokens using the unchanged standard MiniLLM/GKD implementation: the TEACH arm queries T on every training prefix in Bc, whereas the SELF arm queries a frozen copy of S0 on the identical prefixes. Let Ateach(c), Aself(c), and A0(c) be exact-answer pass@1 on the shared ED after TEACH, after SELF, and before either update, respectively; all decoding uses greedy generation and the dataset's existing exact-answer verifier. Compute Ahandoff(c) on the same ED prompts by asking T to complete from Ec's stored S0 cut points and scoring the completed answers with that verifier; this is an outcome-scale proxy for teacher handoff headroom on states S actually visits, not teacher confidence or a model-judged label. Define Teacher-Causal Response R(c)=[Ateach(c)-Aself(c)]/max[0.05, Ahandoff(c)-A0(c)]; if Ahandoff(c)-A0(c)<0.05, label the triad no-headroom and place it in a tied bottom tier rather than interpreting the floored ratio. Thus R is an observed plug-in normalized excess response: its numerator contrasts candidate-teacher supervision against matched optimizer, data, rollout, and self-distillation drift, while its denominator puts that contrast in the same ED exact-answer units as measured handoff headroom; R is not claimed to be finite-sample unbiased or bounded to [0,1]. Apply the identical probe and decision rule to every triad without refitting. Use midranks for Spearman ties, and compute top-3 selection regret by averaging uniformly over all admissible top-three subsets when a tie crosses the selection boundary. Evaluate against final OPD gain after 5 million student response tokens, holding out in turn an entire teacher family, a capacity-ratio band, and one of DAPO-Math-17K versus MATH training prompts. This is a pre-training measurement only: it never reweights tokens, changes the KL objective, truncates supervision adaptively, inserts a teacher assistant, or alters the subsequent full OPD recipe.",
+      "outcome": "applied",
+      "delta_summary": "Repairs the T1/T2 estimand mismatch by measuring A0 and Ahandoff on one shared ED, downgrades the T4 ratio wording to its executed finite-sample grade, and defines the T3 tie/top-3 decisions."
+    },
+    {
+      "scope": "coherence",
+      "op": "replace",
+      "field": "core_mechanism_reasoning",
+      "value": "BLOCK 1 — PREMISES ledger:\nP1. Exact-answer pass@1 from the existing MATH/AIME verifier is a task-outcome measure independent of the teacher and student distributions; reason: answers are checked against dataset ground truth rather than by either model.\nP2. Excess response during the first 2^18 student tokens preserves enough ordering information to predict gain after 5 million tokens across triads; untested — falsification target; reason: OPD's earliest updates are where teacher–student mismatch first acts before training changes the visitation distribution.\nP3. The frozen-S0 SELF arm captures optimizer, replay-buffer, and student/data learning drift shared with the TEACH arm without containing candidate-teacher information; reason: both arms start from byte-identical weights, see the same training prefixes, and differ only in supervision source.\nP4. Teacher handoff completion on the shared ED is an outcome-scale proxy for available handoff headroom on student-visited states; reason: Ahandoff and A0 are now scored on the same prompts in exact-answer units by the same independent verifier. Treating this proxy as attainable training headroom remains an empirical premise, not a guarantee.\nOBSERVATION-MODEL premise. Bc is sampled by uniform prompts from D followed by one rollout from S0 and is therefore representative only of S0's initial training visitation distribution, not guaranteed unbiased for later OPD states; whether this initial-state sample suffices for final-gain ranking is untested — falsification target. ED is one predeclared held-out prompt set shared by every triad, and Ec is generated from each S0 on those prompts solely to align the handoff denominator with A0.\nESTIMAND. For eligible triads, the population target is theta(c)=[pteach(ED;c)-pself(ED;c)]/[phandoff(ED;c)-p0(ED;c)], conditional on the two pilots trained from Bc, where each p is exact-answer probability under uniform prompts from the shared ED and the fixed greedy policy. R(c) is the finite-ED plug-in estimate of theta(c); it is not asserted to be finite-sample unbiased or a [0,1]-bounded fraction.\nBLOCK 2 — NAIVE-BASELINE AUDIT: The runnable naive version is to train one short TEACH pilot and rank triads by Ateach-A0. Branch (i): it silently assumes every early gain is caused by useful teacher information, but optimizer transients, replaying an easy D, and self-sharpening also move Ateach, so aligned-only gain is not teacher-specific; the matched SELF arm and same-ED outcome-headroom denominator confront that false premise directly. This resembles a controlled pilot or surrogate-endpoint design, but the domain-specific unsolved structure is that observations are adaptively selected autoregressive states from each different S, while the available intervention T and its handoff headroom are both prefix-dependent; the paired initial-state training buffer and shared-ED handoff buffer make the contrasts comparable without assuming common parameters or logits across students.\nBLOCK 3 — Design rationale: The selection is anchor-only because cross-triad prediction can be tested with one controlled object, R(c); a full four-way causal taxonomy would require additional interventions and become a second paper. Static overlap/confidence aggregation was rejected because its units and calibration change with T and D, while gradient-alignment probes were rejected because gradients are not comparable across student architectures and would drift toward a representation-hint mechanism. The design also avoids regression to Curriculum Learning, teacher-assistant distillation, and target pacing: it decides whether a triad merits a full run but never changes sample order, inserts an intermediate teacher, or schedules the target.",
+      "outcome": "applied",
+      "delta_summary": "Repairs the T1 estimand-population mismatch and the T4 overclaim by stating the same-ED target and the plug-in estimator's actual statistical strength."
+    },
+    {
+      "scope": "coherence",
+      "op": "replace",
+      "field": "core_mechanism_steps",
+      "value": "1. Download the existing open-weight Qwen3-1.7B/4B students and Qwen3-8B/14B plus DeepSeek-R1-Distill-Qwen-7B teachers, form same-tokenizer triads over DAPO-Math-17K and the existing MATH training split, validate that every D contains at least 512 prompts, and predeclare one shared 256-example ED disjoint from both training sets; output the triad manifest and ED.\n2. For each triad, uniformly sample 512 prompts from D, generate one S0 rollout per prompt, and store every token prefix in an immutable training buffer Bc. Separately generate one greedy S0 rollout for every ED prompt and store one cut point sampled uniformly from its middle two quartiles in Ec; outputs are the all-prefix training buffer and the cut-point evaluation buffer.\n3. Run T and the frozen S0 copy at every training prefix in Bc to cache teacher and self target distributions consumed by the unchanged baseline OPD code; inputs are Bc, T, and S0, outputs are the two aligned supervision sources.\n4. Fork two byte-identical rank-16 LoRA students and train TEACH and SELF for exactly 2^18 student response tokens with the same optimizer seed and MiniLLM/GKD loss; inputs are the cached targets and Bc, outputs are two probe checkpoints whose only designed difference is supervision source.\n5. Greedily evaluate S0 and both probe checkpoints on the shared ED with the existing exact-answer verifier; inputs are the three checkpoints and ED, outputs are A0, Ateach, and Aself.\n6. Ask T to complete from Ec's stored S0 cut points and score those completed ED answers with the same verifier; inputs are T and Ec, outputs are Ahandoff and the positive-headroom flag Ahandoff-A0>=0.05.\n7. Compute R(c), place every no-headroom triad in one tied bottom tier, and rank positive-headroom triads without fitting a per-family threshold; use midranks for score ties. Inputs are the four same-ED accuracies; outputs are one score, eligibility decision, and rank per triad.\n8. From the original S0 checkpoint, run the unchanged full OPD baseline for 5 million student response tokens for every triad and evaluate exact-answer pass@1; input is the triad manifest, output is the independent final-gain oracle.\n9. Report leave-one-teacher-family-, capacity-band-, and dataset-out Spearman correlation plus top-3 selection regret for R and for overlap, local margin, peak confidence, teacher accuracy, and naive early gain. Require at least two triads in each reported correlation group; when a tie crosses the top-three boundary, report regret averaged uniformly over every admissible tied subset. Inputs are probe scores and full-run gains; output is the controlled transfer-gap result.\n10. Replace T with the frozen S0 in both probe arms and rerun triad selection. Identical control scores receive midranks, and control top-3 regret is the uniform average over admissible tied subsets; this intervention propagates through the probe checkpoints to their generated answers, and that averaged selected-triad final gain should equal random-selection baseline if teacher-causal response is the load-bearing signal.",
+      "outcome": "applied",
+      "delta_summary": "Repairs T1's ambiguous prefix and undefined-k producers plus T3's all-tie/no-headroom behavior without changing the probe's mechanism."
+    }
+  ],
+  "final_candidate": {
+    "title": "Causal Micro-Probes Predict Which Teacher–Student–Data Triads Distill",
+    "hook": "A fixed-small-budget causal response probe may rank full-run OPD gains across unseen teacher–student–data triads even when overlap, margin, and teacher-confidence rankings reverse across model families. The predicted empirical reveal is that subtracting a matched student-as-teacher control turns early training response from a pair-specific learning-curve artifact into a transferable triad-selection signal.",
+    "hook_shape_rationale": "Shape (a), surprising empirical reveal: the named metric is leave-one-teacher-family-out Spearman correlation between the Teacher-Causal Response score and final exact-answer OPD gain, predicted to remain positive and exceed static-proxy correlations. Shape (c) was viable because the probe uses less compute than a full run, but rejected because the paper-level claim is the non-obvious cross-triad ordering, not compute minimalism itself.",
+    "gap_closure": [
+      {
+        "gap": "在 openreview:TteFp6TLUA、arxiv:2604.13016、arxiv:2605.13643 与 arxiv:2605.30833 这些 frontier leaves 的 residue 上，仍没有结果表明：对一个 teacher–student–data 组合得到的 distillability 诊断，其阈值或候选排序换到不同 model family、capacity ratio 或 data distribution 后仍能预测完整 OPD 的 downstream gain；缺失的是跨组合可比较的预测性质，而不是又一个固定 token 权重或 KL 形式 — stakes: 研究者会把昂贵训练预算花在不可迁移的 teacher/data 选择上，且 field-wide 的“某 proxy 代表可教性”结论可能只是单组合 calibration artifact。",
+        "main_pattern": "controlled_diagnostic_design",
+        "sub_pattern": "C02 (Design a Confound-Isolating Diagnostic)",
+        "companion_pattern": null,
+        "how_closed": "Closed by a matched two-arm micro-training instrument that varies only whether the initial student-state buffer is supervised by the candidate teacher or by the frozen starting student, then tests the resulting outcome-level response score on teacher-family-, capacity-ratio-, and data-held-out real OPD runs."
+      }
+    ],
+    "core_mechanism": "For each triad c=(T,S,D), sample 512 prompts uniformly without replacement from the named training set D and generate one rollout per prompt from the initial student checkpoint S0; this fixed training buffer Bc is the controlled instance set, and the only manipulated artifact is the source of supervision on the same student-visited prefixes. Separately fix one shared 256-example held-out evaluation split ED for every triad, disjoint from both training sets; for each S0, greedily generate its ED rollouts and store one cut point sampled uniformly from the middle two quartiles in an evaluation buffer Ec. Fork S0 into two LoRA-rank-16 replicas with identical optimizer state and train each for K=2^18 student response tokens using the unchanged standard MiniLLM/GKD implementation: the TEACH arm queries T on every training prefix in Bc, whereas the SELF arm queries a frozen copy of S0 on the identical prefixes. Let Ateach(c), Aself(c), and A0(c) be exact-answer pass@1 on the shared ED after TEACH, after SELF, and before either update, respectively; all decoding uses greedy generation and the dataset's existing exact-answer verifier. Compute Ahandoff(c) on the same ED prompts by asking T to complete from Ec's stored S0 cut points and scoring the completed answers with that verifier; this is an outcome-scale proxy for teacher handoff headroom on states S actually visits, not teacher confidence or a model-judged label. Define Teacher-Causal Response R(c)=[Ateach(c)-Aself(c)]/max[0.05, Ahandoff(c)-A0(c)]; if Ahandoff(c)-A0(c)<0.05, label the triad no-headroom and place it in a tied bottom tier rather than interpreting the floored ratio. Thus R is an observed plug-in normalized excess response: its numerator contrasts candidate-teacher supervision against matched optimizer, data, rollout, and self-distillation drift, while its denominator puts that contrast in the same ED exact-answer units as measured handoff headroom; R is not claimed to be finite-sample unbiased or bounded to [0,1]. Apply the identical probe and decision rule to every triad without refitting. Use midranks for Spearman ties, and compute top-3 selection regret by averaging uniformly over all admissible top-three subsets when a tie crosses the selection boundary. Evaluate against final OPD gain after 5 million student response tokens, holding out in turn an entire teacher family, a capacity-ratio band, and one of DAPO-Math-17K versus MATH training prompts. This is a pre-training measurement only: it never reweights tokens, changes the KL objective, truncates supervision adaptively, inserts a teacher assistant, or alters the subsequent full OPD recipe.",
+    "core_mechanism_reasoning": "BLOCK 1 — PREMISES ledger:\nP1. Exact-answer pass@1 from the existing MATH/AIME verifier is a task-outcome measure independent of the teacher and student distributions; reason: answers are checked against dataset ground truth rather than by either model.\nP2. Excess response during the first 2^18 student tokens preserves enough ordering information to predict gain after 5 million tokens across triads; untested — falsification target; reason: OPD's earliest updates are where teacher–student mismatch first acts before training changes the visitation distribution.\nP3. The frozen-S0 SELF arm captures optimizer, replay-buffer, and student/data learning drift shared with the TEACH arm without containing candidate-teacher information; reason: both arms start from byte-identical weights, see the same training prefixes, and differ only in supervision source.\nP4. Teacher handoff completion on the shared ED is an outcome-scale proxy for available handoff headroom on student-visited states; reason: Ahandoff and A0 are now scored on the same prompts in exact-answer units by the same independent verifier. Treating this proxy as attainable training headroom remains an empirical premise, not a guarantee.\nOBSERVATION-MODEL premise. Bc is sampled by uniform prompts from D followed by one rollout from S0 and is therefore representative only of S0's initial training visitation distribution, not guaranteed unbiased for later OPD states; whether this initial-state sample suffices for final-gain ranking is untested — falsification target. ED is one predeclared held-out prompt set shared by every triad, and Ec is generated from each S0 on those prompts solely to align the handoff denominator with A0.\nESTIMAND. For eligible triads, the population target is theta(c)=[pteach(ED;c)-pself(ED;c)]/[phandoff(ED;c)-p0(ED;c)], conditional on the two pilots trained from Bc, where each p is exact-answer probability under uniform prompts from the shared ED and the fixed greedy policy. R(c) is the finite-ED plug-in estimate of theta(c); it is not asserted to be finite-sample unbiased or a [0,1]-bounded fraction.\nBLOCK 2 — NAIVE-BASELINE AUDIT: The runnable naive version is to train one short TEACH pilot and rank triads by Ateach-A0. Branch (i): it silently assumes every early gain is caused by useful teacher information, but optimizer transients, replaying an easy D, and self-sharpening also move Ateach, so aligned-only gain is not teacher-specific; the matched SELF arm and same-ED outcome-headroom denominator confront that false premise directly. This resembles a controlled pilot or surrogate-endpoint design, but the domain-specific unsolved structure is that observations are adaptively selected autoregressive states from each different S, while the available intervention T and its handoff headroom are both prefix-dependent; the paired initial-state training buffer and shared-ED handoff buffer make the contrasts comparable without assuming common parameters or logits across students.\nBLOCK 3 — Design rationale: The selection is anchor-only because cross-triad prediction can be tested with one controlled object, R(c); a full four-way causal taxonomy would require additional interventions and become a second paper. Static overlap/confidence aggregation was rejected because its units and calibration change with T and D, while gradient-alignment probes were rejected because gradients are not comparable across student architectures and would drift toward a representation-hint mechanism. The design also avoids regression to Curriculum Learning, teacher-assistant distillation, and target pacing: it decides whether a triad merits a full run but never changes sample order, inserts an intermediate teacher, or schedules the target.",
+    "core_mechanism_steps": "1. Download the existing open-weight Qwen3-1.7B/4B students and Qwen3-8B/14B plus DeepSeek-R1-Distill-Qwen-7B teachers, form same-tokenizer triads over DAPO-Math-17K and the existing MATH training split, validate that every D contains at least 512 prompts, and predeclare one shared 256-example ED disjoint from both training sets; output the triad manifest and ED.\n2. For each triad, uniformly sample 512 prompts from D, generate one S0 rollout per prompt, and store every token prefix in an immutable training buffer Bc. Separately generate one greedy S0 rollout for every ED prompt and store one cut point sampled uniformly from its middle two quartiles in Ec; outputs are the all-prefix training buffer and the cut-point evaluation buffer.\n3. Run T and the frozen S0 copy at every training prefix in Bc to cache teacher and self target distributions consumed by the unchanged baseline OPD code; inputs are Bc, T, and S0, outputs are the two aligned supervision sources.\n4. Fork two byte-identical rank-16 LoRA students and train TEACH and SELF for exactly 2^18 student response tokens with the same optimizer seed and MiniLLM/GKD loss; inputs are the cached targets and Bc, outputs are two probe checkpoints whose only designed difference is supervision source.\n5. Greedily evaluate S0 and both probe checkpoints on the shared ED with the existing exact-answer verifier; inputs are the three checkpoints and ED, outputs are A0, Ateach, and Aself.\n6. Ask T to complete from Ec's stored S0 cut points and score those completed ED answers with the same verifier; inputs are T and Ec, outputs are Ahandoff and the positive-headroom flag Ahandoff-A0>=0.05.\n7. Compute R(c), place every no-headroom triad in one tied bottom tier, and rank positive-headroom triads without fitting a per-family threshold; use midranks for score ties. Inputs are the four same-ED accuracies; outputs are one score, eligibility decision, and rank per triad.\n8. From the original S0 checkpoint, run the unchanged full OPD baseline for 5 million student response tokens for every triad and evaluate exact-answer pass@1; input is the triad manifest, output is the independent final-gain oracle.\n9. Report leave-one-teacher-family-, capacity-band-, and dataset-out Spearman correlation plus top-3 selection regret for R and for overlap, local margin, peak confidence, teacher accuracy, and naive early gain. Require at least two triads in each reported correlation group; when a tie crosses the top-three boundary, report regret averaged uniformly over every admissible tied subset. Inputs are probe scores and full-run gains; output is the controlled transfer-gap result.\n10. Replace T with the frozen S0 in both probe arms and rerun triad selection. Identical control scores receive midranks, and control top-3 regret is the uniform average over admissible tied subsets; this intervention propagates through the probe checkpoints to their generated answers, and that averaged selected-triad final gain should equal random-selection baseline if teacher-causal response is the load-bearing signal.",
+    "falsification_prediction": "Build 12 triads from Qwen3-1.7B and Qwen3-4B students; Qwen3-8B, Qwen3-14B, and DeepSeek-R1-Distill-Qwen-7B teachers; and DAPO-Math-17K versus the MATH training split, then measure the probe and the 5-million-token full-OPD exact-answer gain on MATH-500 and AIME 2024. If the idea works, leave-one-teacher-family-out Spearman rho between Teacher-Causal Response R(c) and final OPD gain stays positive and exceeds the corresponding rho for top-k overlap, local teacher margin, peak confidence, teacher accuracy, and naive early gain; selecting the top three triads by R also lowers final-gain regret relative to those baselines. The ONE load-bearing variable is R(c), the matched TEACH-minus-SELF fraction of verifier-measured teacher headroom. As a negative-control intervention, replace the candidate teacher with frozen S0 in both probe arms; triads selected by the resulting control score should have mean downstream full-OPD gain indistinguishable from random selection, otherwise the claimed teacher-causal interpretation is falsified.",
+    "compute_budget": "72 80GB-GPU-days for 12 two-arm probes, 12 fixed-5M-token full OPD runs, decoding, two seeds, and one rerun margin; 0 USD API cost because all named models and verifiers are open-weight/local. With 8–16 concurrent GPUs this is tight but feasible and the first 12 probe/full-run pairs provide an early kill decision before expanding seeds.",
+    "differentiation_from_lit": [
+      {
+        "paper_id": "openreview:TteFp6TLUA",
+        "delta": "That work asks whether a frozen teacher is learnable on student-visited states within a capacity-gap setting, whereas this candidate constructs a matched functional-response measurement and tests whether its triad ordering predicts held-out-family full-OPD gain; the prior-method comparison is an abstract-only inference because its full text was unavailable."
+      },
+      {
+        "paper_id": "arxiv:2604.13016",
+        "delta": "It measures thinking-pattern overlap and teacher new knowledge in controlled within-family comparisons and reports gap recovery after full training; this candidate instead estimates pre-run excess outcome response over a frozen-self control and requires the same unrefit score to rank gains under teacher-family, capacity-ratio, and data holdouts."
+      },
+      {
+        "paper_id": "arxiv:2605.13643",
+        "delta": "It uses student-reachable teacher margin to find a trajectory-specific suffix release point, while this candidate leaves every token and the OPD objective untouched and measures whether a whole-triad causal micro-response transfers to unseen combinations."
+      },
+      {
+        "paper_id": "arxiv:2605.30833",
+        "delta": "It defines supervision fidelity from teacher peak confidence and prefix-handoff completion within a fixed pair and uses lookahead reward to steer tokens; this candidate uses verified handoff outcomes only as a normalization oracle and validates an independent matched training-response score against cross-triad full-run gain."
+      }
+    ],
+    "almost_prior_paper_id": "arxiv:2604.13016",
+    "what_step_was_missed": "It would have needed to fork each initial student-state buffer into candidate-teacher and frozen-self-teacher micro-training arms, normalize their outcome difference by verified teacher handoff headroom, and test that resulting score without recalibration on held-out teacher families and data distributions.",
+    "signature_terms": [
+      "teacher causal response probe",
+      "held-out distillability ranking",
+      "matched self-teacher control",
+      "triad transfer gap"
+    ],
+    "alias_terms": [
+      "treatment response surrogate endpoint",
+      "short-horizon policy evaluation",
+      "causal pilot study design"
+    ],
+    "composition_note": "Single-pattern selection is deliberate: C02's controlled-instance move already owns the complete empirical reveal—matched factor swaps, an independent downstream oracle, and a held-out-real-combination transfer test. A second pattern would either regress to curriculum/teacher-assistant machinery or force a compression-specific decomposition recipe; neither is needed to make the cross-combination prediction claim runnable or falsifiable."
+  },
+  "falsification_rewritten": false
+}

@@ -1,0 +1,15 @@
+{
+  "paper": "26_online-experiential",
+  "paper_arxiv_id": "2603.16856",
+  "survey": "song-2026",
+  "generated_at": "2026-06-12T08:03:49+00:00",
+  "window_count": 1,
+  "windows": [
+    {
+      "match": "online experiential",
+      "offset": 136631,
+      "section": "2026\nSelf (PI)",
+      "context": "n and Hong,\n2026\n)\n2026\nSelf (EF)\nPartial-solution masking\nSelf (re-score)\nToken\nOverlap-adaptive self-distillation\nRESD\n(Zhang\net al.\n,\n2026j\n)\n2026\nSelf (EF)\nReflection-enhanced self-distill\nSelf + Env. Feedback\nToken\nFailure reflection + persistent playbook\nMSD\n(Qin\net al.\n,\n2026\n)\n2026\nSelf (PI)\nCross-lingual safety distill\nSelf (English PI)\nToken\nMultilingual safety alignment\nGUI-SD\n(Zhang\net al.\n,\n2026g\n)\n2026\nSelf (PI)\nVisual spatial PI for GUI\nSelf (Gaussian mask)\nToken\nMultimodal GUI grounding\nPBSD\n(Yu\net al.\n,\n2026b\n)\n2026\nSelf (PI)\nPref.-based reward-reg. KL\nSelf (ctx-augmented)\nSequence\nDPO-style loss, preference margin\nTT-OPD\n(Jeong,\n2026\n)\n2026\nSelf (PI)\nTurn-level truncated KL\nSelf (EMA + outcome hints)\nTurn\nMulti-turn agentic OPD\nVISD\n(Lin\net al.\n,\n2026\n)\n2026\nSelf (PI)\nDirection-magnitude decouple\nSelf (structured judge)\nToken\nStructured PI for video reasoning\n\\u03c0\n\\\\pi\n-Distill\n(Penaloza\net al.\n,\n2026\n)\n2026\nSelf (PI)\nUnified PI framework\nSelf\nToken\nTheoretical foundations for PI self-distill\nOPCD\n(Ye\net al.\n,\n2026b\n)\n2026\nSelf (PI)\nContext-conditioned R-KL\nSelf (experience PI)\nToken\nExperiential knowledge internalization\nOEL\n(Ye\net al.\n,\n2026a\n)\n2026\nSelf (PI)\nOnline experiential learning\nSelf (trajectory PI)\nToken\nContinuous post-deployment distillation loop\nHDPO\n(Ding,\n2026\n)\n2026\nSelf (PI)\nGRPO + JSD self-distill\nSelf (GT-conditioned)\nSequence\nCliff-prompt non-zero gradient patch\nMTP-SD\n(Kirchenbauer\net al.\n,\n2026\n)\n2026\nSelf (SD)\nMulti-token span scoring\nSelf (frozen copy)\nSpan\nArchitectural self-distillation for\n>\n3\n\\u00d7\n>3\\ imes\ndecoding\nSDFT\n(Shenfeld\net al.\n,\n2026\n)\n2026\nSelf (SD)\nIn-context demo teacher R-KL\nSelf (ICL-conditioned)\nToken\nForgetting resistance via trust-region implicit KL\nOPSFT\n(Zhao\net al.\n,\n2026a\n)\n2026\nSelf (SD)\nGenerate-filter-SFT\nSelf + Verifier\nSequence\nCorrectness+conciseness filtering, no RL gradient\nRLSD\n(Yang\net al.\n,\n2026a\n)\n2026\nSelf (EF)\nRLVR + self-distill decomp.\nSelf + Verifier\nToken\nMagnitude (self-distill) + direction (RLVR),\n2\n\\u00d7\n2\\ imes\nefficiency\nSDAR\n(Lu\net al.\n,\n2026\n)\n2026\nSelf (EF)\nGated OPSD + RL\nSelf (PI) + RL\nToken\nSigmoid-gated auxiliary self-distill for agents\nOPHSD\n(Zhao\net al.\n,\n2026c\n)\n2026\nSelf (PI)\nHarness-augmented self-KL\nSelf (harness PI)\nToken\nInternalizes inference scaffolds as PI\nCOPSD\n(Liu\net al.\n,\n2026c\n)\n2026\nSelf (PI)\nCross-lingual token KL\nSelf (English PI)\nToken"
+    }
+  ]
+}

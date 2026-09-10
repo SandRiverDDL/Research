@@ -1,0 +1,12 @@
+{
+  "candidate": "Cross-Checkpoint Prefix Exchange for OPD Capability Loss",
+  "generic_name": "Prefix Transplantation",
+  "core_claims": [
+    "Successful reasoning prefixes can separate route accessibility from continuation competence.",
+    "A symmetric 2x2 prefix exchange between base and OPD checkpoints can characterize apparent capability loss.",
+    "The relevant population is retained, learned, and forgotten problems defined under large-budget sampling.",
+    "Early semantic-prefix curves and leakage controls are needed to distinguish preserved competence from answer scaffolding."
+  ],
+  "literature_window": "2024-2026, emphasizing work available through 2026-08-21",
+  "required_output": "closest prior work, forbidden novelty claims, minimum remaining delta, confounds, top-venue potential, recommendation, and novelty scores"
+}

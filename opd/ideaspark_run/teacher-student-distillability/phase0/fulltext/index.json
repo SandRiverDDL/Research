@@ -1,0 +1,146 @@
+{
+  "user_ref:title:TteFp6TLUA": {
+    "file": "fulltext/user_ref_title_TteFp6TLUA.md",
+    "title": "",
+    "tier": "U",
+    "source_used": "failed",
+    "intro_chars": 0,
+    "method_chars": 0,
+    "warning": "fetch failed across all paths; intro filled with abstract; method empty"
+  },
+  "arxiv:2603.24596": {
+    "file": "fulltext/arxiv_2603.24596.md",
+    "title": "X-OPD: Cross-Modal On-Policy Distillation for Capability Alignment in Speech LLMs",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 4171,
+    "method_chars": 5385,
+    "warning": null
+  },
+  "arxiv:2606.01249": {
+    "file": "fulltext/arxiv_2606.01249.md",
+    "title": "Trust Region On-Policy Distillation",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 4232,
+    "method_chars": 5373,
+    "warning": null
+  },
+  "arxiv:2510.23497": {
+    "file": "fulltext/arxiv_2510.23497.md",
+    "title": "VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 5955,
+    "method_chars": 12562,
+    "warning": null
+  },
+  "arxiv:2605.09725": {
+    "file": "fulltext/arxiv_2605.09725.md",
+    "title": "On-Policy Distillation with Best-of-N Teacher Rollout Selection",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 4709,
+    "method_chars": 10126,
+    "warning": null
+  },
+  "arxiv:2603.11178": {
+    "file": "fulltext/arxiv_2603.11178.md",
+    "title": "PACED: Distillation and On-Policy Self-Distillation at the Frontier of Student Competence",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 4234,
+    "method_chars": 13185,
+    "warning": null
+  },
+  "arxiv:2604.13016": {
+    "file": "fulltext/arxiv_2604.13016.md",
+    "title": "Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 5980,
+    "method_chars": 9415,
+    "warning": null
+  },
+  "arxiv:2603.25562": {
+    "file": "fulltext/arxiv_2603.25562.md",
+    "title": "Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 4727,
+    "method_chars": 4710,
+    "warning": null
+  },
+  "arxiv:2603.11137": {
+    "file": "fulltext/arxiv_2603.11137.md",
+    "title": "Scaling Reasoning Efficiently via Relaxed On-Policy Distillation",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 5234,
+    "method_chars": 6184,
+    "warning": null
+  },
+  "arxiv:2605.13230": {
+    "file": "fulltext/arxiv_2605.13230.md",
+    "title": "Teacher-Guided Policy Optimization for On-Policy Reasoning Distillation under Large Policy Divergence",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 4671,
+    "method_chars": 8247,
+    "warning": null
+  },
+  "arxiv:2501.16937": {
+    "file": "fulltext/arxiv_2501.16937.md",
+    "title": "TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 5416,
+    "method_chars": 2308,
+    "warning": null
+  },
+  "openreview:TteFp6TLUA": {
+    "file": "fulltext/openreview_TteFp6TLUA.md",
+    "title": "Rethinking the Capacity Gap in On-Policy Distillation for Large Language Models",
+    "tier": "A",
+    "source_used": "failed",
+    "intro_chars": 1039,
+    "method_chars": 0,
+    "warning": "fetch failed across all paths; intro filled with abstract; method empty"
+  },
+  "arxiv:2605.03677": {
+    "file": "fulltext/arxiv_2605.03677.md",
+    "title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 4573,
+    "method_chars": 18091,
+    "warning": null
+  },
+  "arxiv:2605.13643": {
+    "file": "fulltext/arxiv_2605.13643.md",
+    "title": "Prefix Teach, Suffix Fade: Local Teachability Collapse in Strong-to-Weak On-Policy Distillation",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 5604,
+    "method_chars": 15991,
+    "warning": null
+  },
+  "arxiv:2605.30833": {
+    "file": "fulltext/arxiv_2605.30833.md",
+    "title": "Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation",
+    "tier": "U",
+    "source_used": "html_arxiv",
+    "intro_chars": 4520,
+    "method_chars": 9778,
+    "warning": null
+  },
+  "arxiv:2605.11182": {
+    "file": "fulltext/arxiv_2605.11182.md",
+    "title": "The Many Faces of On-Policy Distillation: Pitfalls, Mechanisms, and Fixes",
+    "tier": "U",
+    "source_used": "pdf_arxiv_pymupdf",
+    "intro_chars": 4179,
+    "method_chars": 406,
+    "warning": null
+  }
+}

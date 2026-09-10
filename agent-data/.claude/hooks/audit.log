@@ -1,0 +1,13 @@
+2026-06-29T11:33:59Z [ALLOW] ls /Users/chy/Research/agent-data/notes/ 2>/dev/null | head -50 && echo \
+2026-06-29T11:34:04Z [ALLOW] ls /Users/chy/Research/agent-data/doc/memory/ 2>/dev/null && echo \
+2026-06-29T11:44:35Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/ 2>/dev/null && echo \
+2026-06-29T11:44:40Z [ALLOW] cd /Users/chy/Research/foundation-model-systems/sources && for d in */; do echo \
+2026-06-29T11:44:47Z [ALLOW] cd /Users/chy/Research/foundation-model-systems/sources && grep -l -i -E \
+2026-06-29T11:44:53Z [ALLOW] wc -l /Users/chy/Research/foundation-model-systems/sources/{deepseek-v4/notes/tool-agent-training.md,minimax-m2-series/notes/agentic-data-forge.md,qwen3/notes/post-training.md,kimi-k2.5/notes/claims-and-gaps.md,glm-5.2/notes/rl-training.md,longcat-flash-thinking-2601/notes/environment-scaling.md,step-3.5-flash/notes/post-training-rl.md,qwen3-coder-next/notes/expert-distillation.md,mimo-v2-flash/notes/mopd.md} 2>/dev/null
+2026-06-29T11:57:44Z [ALLOW] grep -n -A 30 -i \
+2026-06-29T11:57:50Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/sources/qwen3/ /Users/chy/Research/foundation-model-systems/sources/minimax-m2-series/ /Users/chy/Research/foundation-model-systems/sources/longcat-flash-thinking-2601/ /Users/chy/Research/foundation-model-systems/sources/glm-5.2/ /Users/chy/Research/foundation-model-systems/sources/step-3.5-flash/ 2>/dev/null
+2026-06-29T11:57:55Z [ALLOW] wc -l /Users/chy/Research/foundation-model-systems/sources/{qwen3,minimax-m2-series,longcat-flash-thinking-2601,step-3.5-flash}/source-bundle.md
+2026-06-29T12:19:55Z [ALLOW] ls /Users/chy/Research/agent-data/comparison/ && head -20 /Users/chy/Research/agent-data/comparison/data-mechanisms.md
+2026-06-29T12:20:02Z [ALLOW] grep -l -i -E \
+2026-06-29T12:20:09Z [ALLOW] for f in /Users/chy/Research/foundation-model-systems/sources/nemotron-3/notes/post-training.md /Users/chy/Research/foundation-model-systems/sources/nemotron-cascade-2/notes/cascade-rl.md /Users/chy/Research/foundation-model-systems/sources/kimi-k2.5/notes/rl-training.md /Users/chy/Research/foundation-model-systems/sources/deepseek-v4/notes/reward-verifier.md; do echo \
+2026-06-29T12:37:33Z [ALLOW] say \

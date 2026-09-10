@@ -1,0 +1,27 @@
+[
+  {
+    "type": "title",
+    "value": "TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents",
+    "raw_match": "TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents (named in the user query)"
+  },
+  {
+    "type": "title",
+    "value": "Milestone-Guided Policy Learning for Long-Horizon Language Agents",
+    "raw_match": "Milestone-Guided Policy Learning for Long-Horizon Language Agents (named in the user query)"
+  },
+  {
+    "type": "arxiv_id",
+    "value": "2602.23008",
+    "raw_match": "Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization (resolved: Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy O)"
+  },
+  {
+    "type": "title",
+    "value": "SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training",
+    "raw_match": "SIRI: Self-Internalizing Reinforcement Learning with Intrinsic Skills for LLM Agent Training (named in the user query)"
+  },
+  {
+    "type": "arxiv_id",
+    "value": "2601.22149",
+    "raw_match": "DynaWeb: Model-Based Reinforcement Learning of Web Agents (resolved: DynaWeb: Model-Based Reinforcement Learning of Web Agents)"
+  }
+]

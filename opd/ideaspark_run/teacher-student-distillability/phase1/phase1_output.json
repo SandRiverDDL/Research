@@ -1,0 +1,284 @@
+{
+  "intake": {
+    "domain": "LLM on-policy distillation under teacher-student capacity and behavior mismatch",
+    "venue": "top-tier ML/NLP conference",
+    "time": "short feedback cycle; prioritize the fastest defensible top-conference submission",
+    "data": [
+      "existing public reasoning datasets with verifiable outcomes (for example, MATH/AIME-style tasks)",
+      "student-generated on-policy trajectories",
+      "teacher and student token distributions for open-weight model pairs"
+    ],
+    "compute": "8–16 concurrent 80GB-class GPUs",
+    "expertise": "beginner; implementation and diagnosis must be auditable without a large custom infrastructure stack",
+    "preference": "empirical",
+    "baseline": "standard MiniLLM/GKD-style on-policy distillation on student rollouts, with sampled-token or top-k reverse-KL supervision",
+    "limitation": "teacher-student mismatch or capacity gap; avoid another token-weighting rule, KL variant, or simple rollout truncation, and favor a quickly falsifiable decision or measurement that transfers across teacher-student-data combinations",
+    "contribution_type": "empirical_reveal",
+    "_inferred_fields": [
+      "data",
+      "preference",
+      "baseline",
+      "contribution_type"
+    ]
+  },
+  "bottleneck_statement": "在这类“监督质量由被监督者所访问状态共同决定”的迁移问题中，distillability 不是 teacher 强度、student 能力或某个 token/prefix 的独立属性，而是 teacher–student–data 三元组及其随训练变化的 state-visitation distribution 的关系属性；现有 OPD 机械分别观测 thinking-pattern overlap 与 new knowledge（arxiv:2604.13016）、student competence/pass rate（arxiv:2603.11178）、局部 teacher contrast（arxiv:2605.13643）或 prefix-conditioned teacher confidence（arxiv:2605.30833），但这些 pair-specific proxy 在相同的“训练无增益”表象下无法区分能力不可表达、可达 action support 不匹配、teacher 没有新知识与 student-prefix 导致的 teacher OOD，也没有证据表明其阈值或排序跨 teacher–student–data 组合保持不变。因此，在付出完整 OPD 训练成本之前，当前 machinery 不能产生一个可比较、可归因的结论来回答“这个组合是否可蒸馏，以及失败主要由哪一侧造成”；openreview:TteFp6TLUA 正面提出 capacity gap，但仍停留在单一组合内 teacher signal 是否可学的诊断层面。",
+  "closest_adjacent": [
+    {
+      "paper_id": "openreview:TteFp6TLUA",
+      "is_anchor": true,
+      "summary_and_residue": "该文把 OPD capacity gap 从传统 off-policy teacher-assistant 问题移到 student-visited states，直接质疑 frozen strong teacher 的分布是否对当前 student 可模仿。它没有建立能跨 teacher–student–data 组合比较、并把失败归因到 teacher novelty、student capacity 或 state/data mismatch 的可迁移判据。 [residue is abstract-level: anchor fulltext unfetchable]"
+    },
+    {
+      "paper_id": "arxiv:2604.13016",
+      "is_anchor": false,
+      "summary_and_residue": "该文通过受控正反向蒸馏提出 thinking-pattern consistency 与 teacher new capability 两个 OPD 成功条件，并用 top-k overlap、entropy gap 和 gap-recovery dynamics 解释成功与失败。其条件由特定 model family、training history 和 prompt distribution 上的对比得到，尚不能把不同 proxy 归一到可跨组合比较的 distillability 顺序，也不能在两条件同时变化时识别主要失败源。"
+    },
+    {
+      "paper_id": "arxiv:2605.13643",
+      "is_anchor": false,
+      "summary_and_residue": "该文发现 strong-to-weak rollout 中 teacher-student disagreement 仍存在时，student-reachable candidates 上的 teacher local contrast 仍会随 suffix 衰减，并以 trajectory-specific change point 验证 local teachability 的操作价值。它只判断固定组合内某条 trajectory 的监督何时失去局部区分度，未验证 local-margin 的数值、阈值或失败解释能否跨 task、teacher family 与 capacity ratio 迁移。"
+    },
+    {
+      "paper_id": "arxiv:2605.30833",
+      "is_anchor": false,
+      "summary_and_residue": "该文把 teacher supervision capability 写成 student state-visitation distribution 的 functional，并用 prefix handoff completion accuracy 与 next-step peak confidence刻画 Supervision Fidelity Decay。peak confidence 同时受 teacher calibration、prefix OOD 与 task entropy 影响，论文尚未证明它能在不同 teacher–student–data 组合间保持对下游 OPD 增益的可比较关系或提供唯一的 failure attribution。"
+    }
+  ],
+  "what_phase_0_did_not_address": [
+    "在 openreview:TteFp6TLUA、arxiv:2604.13016、arxiv:2605.13643 与 arxiv:2605.30833 这些 frontier leaves 的 residue 上，仍没有结果表明：对一个 teacher–student–data 组合得到的 distillability 诊断，其阈值或候选排序换到不同 model family、capacity ratio 或 data distribution 后仍能预测完整 OPD 的 downstream gain；缺失的是跨组合可比较的预测性质，而不是又一个固定 token 权重或 KL 形式 — stakes: 研究者会把昂贵训练预算花在不可迁移的 teacher/data 选择上，且 field-wide 的“某 proxy 代表可教性”结论可能只是单组合 calibration artifact。",
+    "当 thinking-pattern mismatch、teacher new-knowledge deficit、student reachable-support mismatch 与 prefix-induced teacher OOD 同时改变时，现有 frontier leaves 没有识别哪一种结构性失败对最终无增益是 load-bearing 的；同一个低 overlap、低 margin 或低 confidence 观测可由不同原因产生，因此诊断不能回答改变 teacher、student 或 data 中哪一项才会改变结果 — stakes: practitioner 会选择错误的干预并重复长跑训练，intellectual cost 是不同论文命名的 failure modes 可能是同一混杂现象的不同投影，阻碍可累积理论。",
+    "所有检索到的 frontier leaves 都在固定 teacher–student–data 配对内定义并校准各自的 compatibility、competence 或 fidelity proxy；尚未检验“distillability 可以在单一配对内被充分刻画，而无需把组合身份与训练中变化的 state distribution 视为结论的一部分”这一共同继承假设 — stakes: 若该假设不成立，现有诊断的阈值、跨论文比较和由单一 pair 推出的普遍结论都不成立，导致结果不转移并使后续方法设计缺少可靠对象。"
+  ],
+  "method_lineage": {
+    "line": "从静态 teacher-target knowledge distillation 到 student-state-conditioned on-policy distillability diagnosis",
+    "nodes": [
+      {
+        "node_id": "n0",
+        "method": "Hinton-style logit knowledge distillation",
+        "move": "把 hard labels 扩展为 temperature-softened teacher distributions，使 student 在静态数据上匹配 teacher 的暗知识。",
+        "parent": null,
+        "provenance": "parametric",
+        "age_band": "8-16y",
+        "confidence": "high",
+        "residual_problem": "teacher target 默认在给定输入上可被较小 student 吸收，未处理 capacity gap 与 inference-state mismatch。",
+        "is_frontier_leaf": false,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n1",
+        "method": "Sequence-Level Knowledge Distillation",
+        "move": "把 token-level soft targets 提升为 teacher-generated sequences，以缓解 autoregressive sequence learning 的输出空间复杂度。",
+        "parent": "n0",
+        "provenance": "parametric",
+        "age_band": "8-16y",
+        "confidence": "high",
+        "residual_problem": "训练仍主要覆盖 teacher-produced states，student inference prefixes 上的 exposure mismatch 未闭合。",
+        "is_frontier_leaf": false,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n2",
+        "method": "GKD / learning from self-generated mistakes",
+        "move": "在 student-generated sequences 上查询 teacher，使监督覆盖 student 实际访问的 prefixes。",
+        "parent": "n1",
+        "provenance": "retrieved:arxiv:2306.13649",
+        "age_band": "2-4y",
+        "confidence": "high",
+        "residual_problem": "teacher 在 student states 上可查询不等于其局部 target 对 student 可用，也未消除 teacher-student capacity mismatch。",
+        "is_frontier_leaf": false,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n3",
+        "method": "MiniLLM reverse-KL on student rollouts",
+        "move": "以 reverse-KL/policy-gradient 形式在 student rollouts 上训练，减少 forward-KL 的 mode averaging 并直接优化 student-state targets。",
+        "parent": "n2",
+        "provenance": "retrieved:arxiv:2306.08543",
+        "age_band": "2-4y",
+        "confidence": "high",
+        "residual_problem": "dense teacher signal 的 variance、support mismatch 与 pair-specific usability 仍被交给 stabilization choices。",
+        "is_frontier_leaf": false,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n4",
+        "method": "TAID",
+        "move": "让 target distribution 从 detached student 向完整 teacher 随训练自适应移动，以降低一次性暴露全部 teacher target 的 capacity-gap 压力。",
+        "parent": "n3",
+        "provenance": "retrieved:arxiv:2501.16937",
+        "age_band": "0-2y",
+        "confidence": "high",
+        "residual_problem": "target pacing 与 prompt、state、teacher choice 的 mismatch 相互独立，且 pacing dynamics 未给出跨组合的失败归因。",
+        "is_frontier_leaf": true,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n5",
+        "method": "PACED",
+        "move": "用 student pass rate 定位 competence frontier，把训练集中到跨问题 gradient SNR 较高的中间难度 prompts。",
+        "parent": "n3",
+        "provenance": "retrieved:arxiv:2603.11178",
+        "age_band": "0-2y",
+        "confidence": "high",
+        "residual_problem": "pass rate 主要刻画 student–problem competence，无法单独判断某一 teacher 对同一 frontier 是否提供可转移的新知识，且估计可能随训练过时。",
+        "is_frontier_leaf": true,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n6",
+        "method": "Rethinking OPD: thinking-pattern consistency and new capability",
+        "move": "把 teacher 更强的粗假设拆成 pattern compatibility 与 genuinely new knowledge 两个经验条件，并追踪 overlap/entropy dynamics。",
+        "parent": "n3",
+        "provenance": "retrieved:arxiv:2604.13016",
+        "age_band": "0-2y",
+        "confidence": "high",
+        "residual_problem": "条件与 overlap proxy 在固定 families/datasets 上校准，尚不产生跨组合可比的预测或多因素 attribution。",
+        "is_frontier_leaf": true,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n7",
+        "method": "Rethinking the Capacity Gap in OPD",
+        "move": "把 frozen teacher 是否强转化为 teacher distribution 在 student-visited states 上是否可模仿的问题。",
+        "parent": "n3",
+        "provenance": "retrieved:openreview:TteFp6TLUA",
+        "age_band": "0-2y",
+        "confidence": "high",
+        "residual_problem": "capacity-gap 诊断仍缺少跨 teacher–student–data 组合的可比较量与 failure-source decomposition。",
+        "is_frontier_leaf": true,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n8",
+        "method": "Prefix Teach, Suffix Fade",
+        "move": "在 student-reachable top-k actions 上度量 teacher nearest-competitor margin，并按 trajectory-specific change point 定位 local teachability collapse。",
+        "parent": "n3",
+        "provenance": "retrieved:arxiv:2605.13643",
+        "age_band": "0-2y",
+        "confidence": "high",
+        "residual_problem": "local contrast 阈值是否跨 tasks、model families 与 capacity ratios 保持相同含义仍未知。",
+        "is_frontier_leaf": true,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n9",
+        "method": "Supervision Fidelity Decay / LGR",
+        "move": "把 teacher capability 表为 student visitation distribution 上的 functional，并用 next-step confidence 暴露与延缓 prefix-induced fidelity decay。",
+        "parent": "n3",
+        "provenance": "retrieved:arxiv:2605.30833",
+        "age_band": "0-2y",
+        "confidence": "high",
+        "residual_problem": "confidence 混合了 calibration、task entropy 与 OOD effects，尚不能跨组合比较或唯一归因 capacity failure。",
+        "is_frontier_leaf": true,
+        "is_collateral": false
+      },
+      {
+        "node_id": "n10",
+        "method": "The Many Faces of OPD",
+        "move": "以 empirical boundary study 区分 teacher choice、loss instability、shared latent rule 与 instance-specific privileged information 的成败条件。",
+        "parent": "n3",
+        "provenance": "retrieved:arxiv:2605.11182",
+        "age_band": "0-2y",
+        "confidence": "high",
+        "residual_problem": "多种条件仍需在每个 task/teacher/loss 设置单独复核，缺少可迁移的联合预测对象。",
+        "is_frontier_leaf": true,
+        "is_collateral": false
+      },
+      {
+        "node_id": "c1",
+        "method": "Teacher Assistant Knowledge Distillation (TAKD)",
+        "move": "用一个或多个中等容量 teacher assistants 分段跨越 teacher-student capacity gap。",
+        "parent": null,
+        "provenance": "parametric",
+        "age_band": "4-8y",
+        "confidence": "high",
+        "residual_problem": "缓解固定数据上的 capacity gap，但没有判断 student-state-conditioned teacher signal 是否可用。",
+        "is_frontier_leaf": false,
+        "is_collateral": true
+      },
+      {
+        "node_id": "c2",
+        "method": "FitNets hint-based distillation",
+        "move": "用中间表示 hints 辅助较小 student，而非只匹配最终 logits。",
+        "parent": null,
+        "provenance": "parametric",
+        "age_band": "8-16y",
+        "confidence": "high",
+        "residual_problem": "representation bridge 依赖可对齐的 architectures/features，未提供 on-policy state 上的 transferability diagnosis。",
+        "is_frontier_leaf": false,
+        "is_collateral": true
+      },
+      {
+        "node_id": "c3",
+        "method": "Curriculum Learning",
+        "move": "按 learner competence 重排训练样本难度，避免过难样本过早主导优化。",
+        "parent": null,
+        "provenance": "parametric",
+        "age_band": ">16y",
+        "confidence": "high",
+        "residual_problem": "difficulty ordering 不区分 teacher-specific novelty、local action support 与 teacher OOD。",
+        "is_frontier_leaf": false,
+        "is_collateral": true
+      }
+    ],
+    "notes": "PROVENANCE DISCIPLINE: `retrieved:<paper_id>` nodes are grounded and citable as prior art; `parametric` nodes are awareness-only reconstructions used to prevent regression and carry no hard novelty claim. ANTI-FABRICATION: only concrete ancestors remembered with confidence are included; no node was added merely to fill an age band. ANTI-OVER-CONSERVATISM: regression should be asserted only when a concrete named prior method and move match. COLLATERAL NODES: TAKD, FitNets, and Curriculum Learning are sidelines attached by the shared capacity/learnability residue, never frontier gap sites or shared-ancestor evidence. Family-recognition check considered teacher assistants, target softening/pacing, curriculum or data selection, representation hints, and state-distribution/on-policy correction; no additional pre-window representative was added for a genuinely cross-combination distillability measurement because none was recalled confidently."
+  },
+  "domain_pattern_distribution": {
+    "n_total": 40,
+    "n_on_topic": 36,
+    "patterns": [
+      {
+        "pattern_id": "heterogeneous_decomposition",
+        "count": 18,
+        "share": 0.5,
+        "saturation_band": "saturated"
+      },
+      {
+        "pattern_id": "controlled_diagnostic_design",
+        "count": 7,
+        "share": 0.19,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "generative_process_redesign",
+        "count": 7,
+        "share": 0.19,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "self_supervised_signal_engineering",
+        "count": 3,
+        "share": 0.08,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "assumption_audit_and_pivot",
+        "count": 2,
+        "share": 0.06,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "unify_into_shared_representation",
+        "count": 2,
+        "share": 0.06,
+        "saturation_band": "mid_frequency"
+      },
+      {
+        "pattern_id": "architectural_operator_substitution",
+        "count": 1,
+        "share": 0.03,
+        "saturation_band": "untested"
+      },
+      {
+        "pattern_id": "reframe_as_solvable_object",
+        "count": 1,
+        "share": 0.03,
+        "saturation_band": "untested"
+      }
+    ],
+    "saturation_threshold_saturated": 0.5,
+    "saturation_threshold_untested_count": 1,
+    "notes": "heterogeneous_decomposition is the most-used pattern (18/36); closest-adjacent papers using diagnostic/decomposition moves still share pair-specific calibration and cannot separate the causal source of non-distillability across teacher–student–data combinations."
+  },
+  "state": "proceed"
+}

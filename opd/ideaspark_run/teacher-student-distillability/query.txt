@@ -1,0 +1,1 @@
+For LLM on-policy distillation, develop one top-conference-worthy and quickly falsifiable research idea about teacher-student mismatch or capacity gap under 8-16 GPUs. Avoid another token-weighting rule, KL variant, or simple rollout truncation; prefer a decision or measurement that generalizes across teacher-student-data combinations.

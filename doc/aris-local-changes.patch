@@ -1,0 +1,24 @@
+diff --git a/skills/research-refine/SKILL.md b/skills/research-refine/SKILL.md
+index 1afdbb9..6ffb57e 100644
+--- a/skills/research-refine/SKILL.md
++++ b/skills/research-refine/SKILL.md
+@@ -1,6 +1,6 @@
+ ---
+ name: research-refine
+-description: 'Turn a vague research direction into a problem-anchored, elegant, frontier-aware, implementation-oriented method plan via iterative GPT-5.6-Sol review. Use when the user says "refine my approach", "帮我细化方案", "decompose this problem", "打磨idea", "refine research plan", "细化研究方案", or wants a concrete research method that stays simple, focused, and top-venue ready instead of a vague or overbuilt idea.'
++description: 'Turn a user-owned research idea or proposal into a problem-anchored, focused, implementation-ready method plan via iterative GPT-5.6-Sol review. Use only when the user explicitly requests transformation of their own under-specified research direction into a concrete method plan, or explicitly invokes research-refine. The request must identify proposal refinement as the task; a request for technical detail or an expression of uncertainty is not sufficient. Do not use when the primary object is an existing external artifact, including requests to explain, summarize, look up, compare, reproduce, or inspect a paper, published method, formula, implementation, or codebase.'
+ allowed-tools: Bash(*), Read, Write, Edit, Grep, Glob, WebSearch, WebFetch, mcp__codex__codex, mcp__codex__codex-reply
+ ---
+ 
+diff --git a/skills/skills-codex/research-refine/SKILL.md b/skills/skills-codex/research-refine/SKILL.md
+index adea5b0..407339f 100644
+--- a/skills/skills-codex/research-refine/SKILL.md
++++ b/skills/skills-codex/research-refine/SKILL.md
+@@ -1,6 +1,6 @@
+ ---
+ name: "research-refine"
+-description: "Turn a vague research direction into a problem-anchored, elegant, frontier-aware, implementation-oriented method plan via iterative GPT-5.6-Sol review. Use when the user says \"refine my approach\", \"\u5e2e\u6211\u7ec6\u5316\u65b9\u6848\", \"decompose this problem\", \"\u6253\u78e8idea\", \"refine research plan\", \"\u7ec6\u5316\u7814\u7a76\u65b9\u6848\", or wants a concrete research method that stays simple, focused, and top-venue ready instead of a vague or overbuilt idea."
++description: "Turn a user-owned research idea or proposal into a problem-anchored, focused, implementation-ready method plan via iterative GPT-5.6-Sol review. Use only when the user explicitly requests transformation of their own under-specified research direction into a concrete method plan, or explicitly invokes research-refine. The request must identify proposal refinement as the task; a request for technical detail or an expression of uncertainty is not sufficient. Do not use when the primary object is an existing external artifact, including requests to explain, summarize, look up, compare, reproduce, or inspect a paper, published method, formula, implementation, or codebase."
+ ---
+ 
+ # Research Refine: Problem-Anchored, Elegant, Frontier-Aware Plan Refinement

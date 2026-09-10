@@ -1,0 +1,28 @@
+[project]
+name = "research-workspace"
+version = "0.1.0"
+description = "Shared Python environment for local research workflows."
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12",
+  "httpx>=0.28",
+  "lxml>=5.0",
+  "matplotlib>=3.9",
+  "numpy>=2.0",
+  "pandas>=2.2",
+  "pdfplumber>=0.11",
+  "pymupdf>=1.24",
+  "pypdf>=5.0",
+  "pyarrow>=17.0",
+  "python-frontmatter>=1.1",
+  "pyyaml>=6.0",
+  "requests>=2.32",
+  "rich>=13.8",
+  "tabulate>=0.9",
+  "tqdm>=4.66",
+  "feedparser>=6.0.12",
+  "openreview-py>=2.4.0",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,1147 @@
+[
+  {
+    "title": "Calibration Is Not Control: Why LLM-Agent Oversight Needs Intervention",
+    "title_norm": "calibration is not control why llm agent oversight needs intervention",
+    "abstract": "Runtime oversight for LLM agents is commonly framed as scalar risk prediction: estimate failure likelihood, confidence, or uncertainty, then intervene once the score crosses a threshold. We argue that this framing targets the wrong object for control. The relevant question is not how likely the agent is to fail if it continues, but whether an available intervention would improve the outcome. Two trajectory prefixes can have the same risk estimate while requiring different actions, because one remains recoverable and the other does not. We formalize this mismatch as target error and identify intervention advantage, the expected utility gain from intervening rather than continuing, as the decision object for oversight. To measure this mismatch, we introduce prefix branching, a same-prefix counterfactual protocol that executes candidate actions from identical trajectory states. Across four benchmarks, action-conditioned control yields regime-dependent gains over scalar routing. In a calibration decomposition, recalibrating the same scalar score improves prediction metrics but leaves control regret unchanged, showing that calibration alone does not repair target error. A simple prefix-only action-conditioned controller substantially reduces regret in the strongest interactive regime, from 0.506 to 0.110 on ALFWorld. Gains shrink when interventions are weak or when scalar routing already preserves intervention-relevant information. These results suggest that LLM-agent oversight should move from calibrated risk scoring toward action-conditioned value estimation.",
+    "tldr": null,
+    "year": 2026,
+    "venue": "arXiv.org",
+    "publication_types": [
+      "JournalArticle"
+    ],
+    "authors": [
+      "Chubin Zhang",
+      "Zhenglin Wan",
+      "Xingrui Yu",
+      "Jingxuan Wu",
+      "Qihao Wen",
+      "P. Zhou"
+    ],
+    "citations": 0,
+    "source": "semanticscholar",
+    "source_id": "de9ba2ef22d68008a3d6b2d3d500d52bfeb67716",
+    "paper_id": "semanticscholar:de9ba2ef22d68008a3d6b2d3d500d52bfeb67716",
+    "doi": "10.48550/arXiv.2606.21399",
+    "arxiv_id": "2606.21399",
+    "dblp_key": "journals/corr/abs-2606-21399",
+    "paper_url": "https://www.semanticscholar.org/paper/de9ba2ef22d68008a3d6b2d3d500d52bfeb67716",
+    "published_iso": "2026-06-19",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "year_month": "2026-06",
+    "retrieved_via": "semanticscholar"
+  },
+  {
+    "title": "The Open Ant: A Robot Platform for Reinforcement Learning Research",
+    "title_norm": "the open ant a robot platform for reinforcement learning research",
+    "abstract": "Reinforcement learning (RL) research has demonstrated success in both physical and simulated domains; however, the predominant methodology remains rooted in simulations. The predominance of simulations makes translating research to physical reality uncertain for both algorithms and researchers. We propose a physical platform that is designed to simplify the transition. In this paper, we present the Open Ant: a physical variant of the commonly used Gymnasium Ant environment, along with a simulation. We demonstrate that competent walking policies can be learned from scratch in approximately one hour directly from the physical robot's experience for two substantially different RL algorithms: SARSA($λ$) and Soft Actor-Critic (SAC). Separately, we show policies that were learned in simulation transfer to reality. We also examine how well the platform supports a nimble experimental ecosystem. Specifically, we observe the speed with which new users from diverse backgrounds achieve their first success with the platform, and how easily the platform can be repaired and updated when hardware issues arise. Both the hardware design and software are available as open-source on GitHub for ease of customization. In summary, we advocate for the use of the Open Ant for RL researchers who frequently use simulated environments, so they can more easily include robot experiments in their evaluations.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Elena Sorina Lupu",
+      "Patrick Spieler",
+      "Khurram Javed",
+      "Kris De Asis",
+      "John D. Martin",
+      "Martha Steenstrup",
+      "Joseph Modayil"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2607.18488v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2607.18488v1",
+    "published_iso": "2026-07-20T20:18:29Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2607.18488v1",
+    "year_month": "2026-07",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+    "title_norm": "causal agent replay counterfactual attribution for llm agent failures",
+    "abstract": "When an LLM agent fails -- issues a refund it should not have, calls the wrong tool, leaks data -- existing tooling answers what happened (observability) or whether it passed (evaluation), but not which step caused the failure. The obvious heuristics are wrong: the step that executes the harmful action is usually not the step that decided on it, and LLM-judge attribution is correlational and unreliable (state-of-the-art step-level accuracy on the Who&When benchmark is about 14%). We present Causal Agent Replay (CAR), which answers the question by intervention: it models an agent run as a structural causal model, applies a do-operation to a step, and re-executes the trajectory forward under the same stochastic policy, measuring the shift in the outcome distribution. We define an intervention algebra over agent steps, a single-step contrastive estimator whose point-of-commitment rule resolves a confound specific to stochastic run-forward, and a budget-bounded Monte-Carlo Shapley estimator that splits credit across interacting steps. Every effect is reported with confidence intervals. We validate against synthetic structural causal models with planted ground truth: the contrastive estimator recovers the pivotal step, and Shapley recovers a two-step interaction (0.44, 0.45, ~0; efficiency sum 0.909 versus the analytic 0.91). CAR is open source and runs on hosted or free local models.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Jaineet Shah"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2606.08275v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.08275v1",
+    "published_iso": "2026-06-06T17:44:23Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2606.08275v1",
+    "year_month": "2026-06",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "LongCoT: Benchmarking Long-Horizon Chain-of-Thought Reasoning",
+    "title_norm": "longcot benchmarking long horizon chain of thought reasoning",
+    "abstract": "As language models are increasingly deployed for complex autonomous tasks, their ability to reason accurately over longer horizons becomes critical. An essential component of this ability is planning and managing a long, complex chain-of-thought (CoT). We introduce LongCoT, a scalable benchmark of 2,500 expert-designed problems spanning chemistry, mathematics, computer science, chess, and logic to isolate and directly measure the long-horizon CoT reasoning capabilities of frontier models. Problems consist of a short input with a verifiable answer; solving them requires navigating a graph of interdependent steps that span tens to hundreds of thousands of reasoning tokens. Each local step is individually tractable for frontier models, so failures reflect long-horizon reasoning limitations. At release, the best models achieve <10% accuracy (GPT 5.2: 9.8%; Gemini 3 Pro: 6.1%) on LongCoT, revealing a substantial gap in current capabilities. Overall, LongCoT provides a rigorous measure of long-horizon reasoning, tracking the ability of frontier models to reason reliably over extended periods.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Sumeet Ramesh Motwani",
+      "Daniel Nichols",
+      "Charles London",
+      "Peggy Li",
+      "Fabio Pizzati",
+      "Acer Blake",
+      "Hasan Hammoud",
+      "Tavish McDonald",
+      "Akshat Naik",
+      "Alesia Ivanova",
+      "Vignesh Baskaran",
+      "Ivan Laptev",
+      "Ruben Glatt",
+      "Tal Ben-Nun",
+      "Philip Torr",
+      "Natasha Jaques",
+      "Ameya Prabhu",
+      "Brian Bartoldson",
+      "Bhavya Kailkhura",
+      "Christian Schroeder de Witt"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.14140v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.14140v1",
+    "published_iso": "2026-04-15T17:58:05Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2604.14140v1",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Reliable Chain-of-Thought via Prefix Consistency",
+    "title_norm": "reliable chain of thought via prefix consistency",
+    "abstract": "Large Language Models often improve accuracy on reasoning tasks by sampling multiple Chain-of-Thought (CoT) traces and aggregating them with majority voting (MV), a test-time technique called self-consistency. When we truncate a CoT partway through and regenerate the remainder, we observe that traces with correct answers reproduce their original answer more often than traces with wrong answers. We use this difference as a reliability signal, prefix consistency, that weights each candidate answer by how often it reappears under regeneration. It requires no access to token log-probabilities or self-rating prompts. Across five reasoning models and four math and science benchmarks, prefix consistency is the best correctness predictor in most settings, and reweighting votes by it reaches Standard MV plateau accuracy at up to 21x fewer tokens (median 4.6x). Our code is available at https://github.com/naoto-iwase/prefix-consistency.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Naoto Iwase",
+      "Yuki Ichihara",
+      "Mohammad Atif Quamar",
+      "Junpei Komiyama"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2605.07654v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.07654v1",
+    "published_iso": "2026-05-08T12:28:05Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2605.07654v1",
+    "year_month": "2026-05",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "TrajGPT-R: Generating Urban Mobility Trajectory with Reinforcement Learning-Enhanced Generative Pre-trained Transformer",
+    "title_norm": "trajgpt r generating urban mobility trajectory with reinforcement learning enhan",
+    "abstract": "Mobility trajectories are essential for understanding urban dynamics and enhancing urban planning, yet access to such data is frequently hindered by privacy concerns. This research introduces a transformative framework for generating large-scale urban mobility trajectories, employing a novel application of a transformer-based model pre-trained and fine-tuned through a two-phase process. Initially, trajectory generation is conceptualized as an offline reinforcement learning (RL) problem, with a significant reduction in vocabulary space achieved during tokenization. The integration of Inverse Reinforcement Learning (IRL) allows for the capture of trajectory-wise reward signals, leveraging historical data to infer individual mobility preferences. Subsequently, the pre-trained model is fine-tuned using the constructed reward model, effectively addressing the challenges inherent in traditional RL-based autoregressive methods, such as long-term credit assignment and handling of sparse reward environments. Comprehensive evaluations on multiple datasets illustrate that our framework markedly surpasses existing models in terms of reliability and diversity. Our findings not only advance the field of urban mobility modeling but also provide a robust methodology for simulating urban data, with significant implications for traffic management and urban development planning. The implementation is publicly available at https://github.com/Wangjw6/TrajGPT_R.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Jiawei Wang",
+      "Chuang Yang",
+      "Jiawei Yong",
+      "Xiaohang Xu",
+      "Hongjun Wang",
+      "Noboru Koshizuka",
+      "Shintaro Fukushima",
+      "Ryosuke Shibasaki",
+      "Renhe Jiang"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2602.20643v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2602.20643v1",
+    "published_iso": "2026-02-24T07:44:19Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2602.20643v1",
+    "year_month": "2026-02",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "ClawTrace: Cost-Aware Tracing for LLM Agent Skill Distillation",
+    "title_norm": "clawtrace cost aware tracing for llm agent skill distillation",
+    "abstract": "Skill-distillation pipelines learn reusable rules from LLM agent trajectories, but they lack a key signal: how much each step costs. Without per-step cost, a pipeline cannot distinguish adding a missing step to fix a bug from removing an expensive step that never affected the outcome. We use the cost-attribution gap to ask whether the rule types inside a distilled skill transfer the same way to new tasks. ClawTrace records cost-attributed agent traces and compiles each session into a TraceCard; CostCraft reads TraceCards and writes three kinds of skill patches: preserve, prune, and repair. We find a pattern aggregate metrics hide. On 30 held-out SpreadsheetBench tasks across two seeds, removing prune patches roughly tripled the quality-regression count without lowering median cost. Across the full 84-task SkillsBench transfer, CostCraft saves no aggregate cost. All three quality regressions trace to the preserve lane, and both quality wins trace to the prune lane: prune patches act as quality guardrails while preserve patches drive regressions. We argue that reusable agent skills should be evaluated at the rule-type level, not as monolithic instruction packages. To support this, we release ClawTrace, the TraceCard schema, and the full set of typed skills.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Boqin Yuan",
+      "Yue Su",
+      "Renchu Song",
+      "Sen Yang",
+      "Jing Qin"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.23853v2",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.23853v2",
+    "published_iso": "2026-04-26T19:44:10Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2604.23853v2",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Four-Axis Decision Alignment for Long-Horizon Enterprise AI Agents",
+    "title_norm": "four axis decision alignment for long horizon enterprise ai agents",
+    "abstract": "Long-horizon enterprise agents make high-stakes decisions (loan underwriting, claims adjudication, clinical review, prior authorization) under lossy memory, multi-step reasoning, and binding regulatory constraints. Current evaluation reports a single task-success scalar that conflates distinct failure modes and hides whether an agent is aligned with the standards its deployment environment requires. We propose that long-horizon decision behavior decomposes into four orthogonal alignment axes, each independently measurable and failable: factual precision (FRP), reasoning coherence (RCS), compliance reconstruction (CRR), and calibrated abstention (CAR). CRR is a novel regulatory-grounded axis; CAR is a measurement axis separating coverage from accuracy. We exercise the decomposition on a controlled benchmark (LongHorizon-Bench) covering loan qualification and insurance claims adjudication with deterministic ground-truth construction. Running six memory architectures, we find structure aggregate accuracy cannot see: retrieval collapses on factual precision; schema-anchored architectures pay a scaffolding tax; plain summarization under a fact-preservation prompt is a strong baseline on FRP, RCS, EDA, and CRR; and all six architectures commit on every case, exposing a decisional-alignment axis the field has not targeted. The decomposition also surfaced a pre-registered prediction of our own, that summarization would fail factual recall, which the data reversed at large magnitude, an axis-level reversal aggregate accuracy would have hidden. Institutional alignment (regulatory reconstruction) and decisional alignment (calibrated abstention) are under-represented in the alignment literature and become load-bearing once decisions leave the laboratory. The framework transfers to any regulated decisioning domain via two steps: build a fact schema, and calibrate the CRR auditor prompt.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Vasundra Srininvasan"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.19457v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.19457v1",
+    "published_iso": "2026-04-21T13:37:19Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2604.19457v1",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Collective Counterfactual Planning: Coordination, Consent, and Verification under Representational Constraints",
+    "title_norm": "collective counterfactual planning coordination consent and verification under r",
+    "abstract": "Groups routinely complete projects that no single member can plan, execute, or verify alone. We propose a formal model of this phenomenon, Collective Counterfactual Planning (CCP), in which the binding limitation on each agent is neither capability, knowledge, nor observability, but representational geometry: each agent perceives the state, conceives moves, consents to actions, and certifies goal requirements only through a projection onto an agent-specific subspace of a common task space. Four gates jointly determine whether a team can reach a conjunctive goal and legitimately recognize that it has done so: the exogenous implementation coalitions required to perform each action, together with three representational gates -- conception, consent, and task-relative verification qualification. We define the Collective Counterfactual Solvability (CCS) problem, separating geometric feasibility, executable attainment, and validated completion. The results expose a positive-negative duality. Iterated cross-agent relay can unlock a solution that no one-shot pooling of individual plans contains, but any goal requirement depending essentially on the subspace dark to the entire team is unverifiable and therefore not validly completable, even when the trajectory accidentally attains it. Memoryless and audited consent further constrain different objects -- action directions versus cumulative trajectory states -- and neither dominates the other. A four-step exhaustive horizon-bounded solvability scheme is sound and complete under exact representation of the relay closure; restricted implementations remain sound on returned plans but need not be complete. The model gives one geometry for sequential mutual enabling, competent execution of steps whose purpose is invisible to the executor, forced sub-teaming at expertise boundaries, and completion that cannot be validly declared.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Chainarong Amornbunchornvej"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2608.17932v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2608.17932v1",
+    "published_iso": "2026-08-18T15:52:12Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2608.17932v1",
+    "year_month": "2026-08",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Interference-Aware K-Step Reachable Communication in Multi-Agent Reinforcement Learning",
+    "title_norm": "interference aware k step reachable communication in multi agent reinforcement l",
+    "abstract": "Effective communication is pivotal for addressing complex collaborative tasks in multi-agent reinforcement learning (MARL). Yet, limited communication bandwidth and dynamic, intricate environmental topologies present significant challenges in identifying high-value communication partners. Agents must consequently select collaborators under uncertainty, lacking a priori knowledge of which partners can deliver task-critical information. To this end, we propose Interference-Aware K-Step Reachable Communication (IA-KRC), a novel framework that enhances cooperation via two core components: (1) a K-Step reachability protocol that confines message passing to physically accessible neighbors, and (2) an interference-prediction module that optimizes partner choice by minimizing interference while maximizing utility. Compared to existing methods, IA-KRC enables substantially more persistent and efficient cooperation despite environmental interference. Comprehensive evaluations confirm that IA-KRC achieves superior performance compared to state-of-the-art baselines, while demonstrating enhanced robustness and scalability in complex topological and highly dynamic multi-agent scenarios.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Ziyu Cheng",
+      "Jinsheng Ren",
+      "Zhouxian Jiang",
+      "Chenzhihang Li",
+      "Rongye Shi",
+      "Bin Liang",
+      "Jun Yang"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2603.15054v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2603.15054v1",
+    "published_iso": "2026-03-16T10:07:33Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2603.15054v1",
+    "year_month": "2026-03",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Memento-Skills: Let Agents Design Agents",
+    "title_norm": "memento skills let agents design agents",
+    "abstract": "We introduce \\emph{Memento-Skills}, a generalist, continually-learnable LLM agent system that functions as an \\emph{agent-designing agent}: it autonomously constructs, adapts, and improves task-specific agents through experience. The system is built on a memory-based reinforcement learning framework with \\emph{stateful prompts}, where reusable skills (stored as structured markdown files) serve as persistent, evolving memory. These skills encode both behaviour and context, enabling the agent to carry forward knowledge across interactions.\n  Starting from simple elementary skills (like Web search and terminal operations), the agent continually improves via the \\emph{Read--Write Reflective Learning} mechanism introduced in \\emph{Memento~2}~\\cite{wang2025memento2}. In the \\emph{read} phase, a behaviour-trainable skill router selects the most relevant skill conditioned on the current stateful prompt; in the \\emph{write} phase, the agent updates and expands its skill library based on new experience. This closed-loop design enables \\emph{continual learning without updating LLM parameters}, as all adaptation is realised through the evolution of externalised skills and prompts.\n  Unlike prior approaches that rely on human-designed agents, Memento-Skills enables a generalist agent to \\emph{design agents end-to-end} for new tasks. Through iterative skill generation and refinement, the system progressively improves its own capabilities. Experiments on the \\emph{General AI Assistants} benchmark and \\emph{Humanity's Last Exam} demonstrate sustained gains, achieving 26.2\\% and 116.2\\% relative improvements in overall accuracy, respectively. Code is available at https://github.com/Memento-Teams/Memento-Skills.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Huichi Zhou",
+      "Siyuan Guo",
+      "Anjie Liu",
+      "Zhongwei Yu",
+      "Ziqin Gong",
+      "Bowen Zhao",
+      "Zhixun Chen",
+      "Menglong Zhang",
+      "Yihang Chen",
+      "Jinsong Li",
+      "Runyu Yang",
+      "Qiangbin Liu",
+      "Xinlei Yu",
+      "Jianmin Zhou",
+      "Na Wang",
+      "Chunyang Sun",
+      "Jun Wang"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2603.18743v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2603.18743v1",
+    "published_iso": "2026-03-19T10:45:22Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2603.18743v1",
+    "year_month": "2026-03",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "SearchAuditor: Auditing and Attributing Failures in Long-Horizon Search Agents",
+    "title_norm": "searchauditor auditing and attributing failures in long horizon search agents",
+    "abstract": "Deep search agents tackle challenging questions through long-horizon web interactions, a process that is both complex and fragile: small reasoning errors may propagate through long, noisy trajectories into fluent but incorrect answers. Diagnosing such failures is difficult, requiring the manual inspection of extremely long execution traces, which could be beyond human capacity. We therefore introduce SearchAuditBench, a benchmark that evaluates whether LLM auditors can localize, attribute, and repair these failures, thereby reducing the human burden. SearchAuditBench comprises 1,243 failed trajectories, averaging 73.1 messages and 65.1K tokens, collected from eight open-weight models on five deep-search benchmarks, each expert-annotated with the critical error step, a search-specific root cause, and a reference repair with grading rubrics. We further propose SearchAuditor, a multi-perspective auditing framework that effectively localizes, attributes, and repairs search-agent failures through evidence-grounded adjudication. Experimental results show that even the strongest baseline, when powered by a frontier model like GPT-5.5, attains only a 26.6% end-to-end pass rate. In contrast, our SearchAuditor consistently outperforms all baselines across different frontier models, achieving an end-to-end pass rate of 32.3%, and resuming failed runs with its repairs enables agents to better recover from errors.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Zhixiang Liang",
+      "Yifei Liu",
+      "Yidan Huang",
+      "Haozhe Zhao",
+      "Beichen Huang",
+      "Jiaqi Wang",
+      "Nan Duan",
+      "Qiong Cao"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2608.05212v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2608.05212v1",
+    "published_iso": "2026-08-05T09:09:00Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2608.05212v1",
+    "year_month": "2026-08",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Evidence of Quantum Machine Learning Advantage with Tens of Noisy Qubits",
+    "title_norm": "evidence of quantum machine learning advantage with tens of noisy qubits",
+    "abstract": "Learning problems involving quantum data are natural candidates for demonstrating an advantage in quantum machine learning. Recent results indicate that, for certain tasks and under noiseless conditions, coherent processing of quantum data outperforms fixed-measurement schemes followed by classical processing. It remained uncertain whether this performance gap persists at a finite scale, and in the presence of noise that is unavoidable with current quantum devices. In this work, we present simulations and analysis of the performance of existing hardware on a learning problem known to exhibit asymptotic advantage, now subjected to noisy quantum data. Comparing coherent quantum processing directly against fixed-measurement schemes, our results demonstrate a clear performance separation at a scale of just 30 to 40 noisy qubits. Already at this scale, the fundamental bottleneck is no longer classical computation but data acquisition; matching the noisy coherent protocol with measure-first strategies would still require months or even years of measurements. By systematically evaluating hardware constraints such as state preparation, gate errors, readout errors, connectivity, and coherence times, we provide evidence that a demonstration of such a strong learning advantage is accessible on near-term devices.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Onur Danaci",
+      "Yash J. Patel",
+      "Riccardo Molteni",
+      "Evert van Nieuwenburg",
+      "Vedran Dunjko",
+      "Jan A. Krzywda"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2605.21346v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.21346v1",
+    "published_iso": "2026-05-20T16:12:33Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2605.21346v1",
+    "year_month": "2026-05",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Constrained Reinforcement Learning Using Successor Representations",
+    "title_norm": "constrained reinforcement learning using successor representations",
+    "abstract": "Real-world Reinforcement Learning depends on the ability to formulate safety constraints into a policy. A common way to model such constraints is to introduce an additional cost signal in the Markov Decision Process, which notifies the agent of unwanted behavior independently of the reward signal. Unfortunately, current methods are hard to adapt to changes in the cost function introduced by, e.g., domain shift or obstacles moving over time. The lack of adaptability means that policies are too unflexible to deal with complex real-world conditions. We propose the Safe Deep Successor Representation (SafeDSR), a novel method that allows quick retraining of policies towards new cost structures. SafeDSR extends the Deep Successor Representation (Kulkarni et al., 2016) to Constrained Reinforcement Learning by introducing a single learnable weight matrix to decouple the learned value function across dynamics, rewards, and costs. This matrix can be updated in a supervised manner instead of having to adapt the whole network if the cost structure of the environment changes. We demonstrate this ability in a freely configurable two-dimensional navigation environment and show that our method is competitive on a simple navigation task while being considerably more flexible",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Michael Girstl",
+      "Alexander Mattick",
+      "Christopher Mutschler"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2607.24057v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2607.24057v1",
+    "published_iso": "2026-07-27T06:57:01Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2607.24057v1",
+    "year_month": "2026-07",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "GitSkills: A Dataset of Agent Skills on GitHub",
+    "title_norm": "gitskills a dataset of agent skills on github",
+    "abstract": "An agent skill is a folder containing a SKILL.md file with instructions for a language-model agent, optionally accompanied by scripts and reference files. The agent loads the skill when it judges that a task matches the skill description. Anthropic introduced the format in October 2025 as an open specification. Nine months later, we find that skill files in the millions sit in public GitHub repositories. Skills are unlike the artifacts the SE research community usually mines: they are written mainly in natural language, a model selects them probabilistically at run time, and no compiler or type checker verifies the selection. They also have no central registry or package manager, so they spread by copying folders between repositories. How developers write, reuse, and maintain skills is therefore an empirical question, and no existing dataset records this population. We present GitSkills, a dataset of 3,797,117 SKILL.md files collected from 282,200 public repositories in July 2026. The dataset retains every file occurrence with its repository, path, and content hash. It groups identical files into 1,877,981 distinct contents and enriches one representative per group with the full text, parsed front matter, folder contents, repository metadata, and, for a subset, the commit history of the file. A single self- contained SQLite file supports research on the adoption, reuse, structure, authorship, maintenance, and security of agent skills.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Giuseppe Destefanis",
+      "Daniel Graziotin",
+      "Matteo Vaccargiu",
+      "Marco Ortu"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2608.10906v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2608.10906v1",
+    "published_iso": "2026-08-11T13:28:27Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2608.10906v1",
+    "year_month": "2026-08",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Foresight: Failure Detection for Long-Horizon Robotic Manipulation with Action-Conditioned World Model Latents",
+    "title_norm": "foresight failure detection for long horizon robotic manipulation with action co",
+    "abstract": "Long-horizon tasks are common in real-world robotic deployments, yet failure detection for such tasks remains underexplored. Detecting failures in long-horizon robotic tasks is particularly challenging because failure onset is often ambiguous and dense temporal annotations are typically unavailable. We present Foresight, a failure detection framework that monitors manipulation trajectories using latent representations from an action-conditioned world model. Foresight is trained using only final task-level success or failure labels. By leveraging predictive world-model embeddings, our method provides a unified framework for failure detection across different policies. We further use functional conformal prediction (FCP) to calibrate detection thresholds adaptively. We evaluate Foresight with state-of-the-art vision-language-action policies in simulation on LIBERO-Long, ManiSkill-Long, and BEHAVIOR-1K, compare it against state-of-the-artfailure detection methods, and validate it on real robots with three long-horizon tasks on a ReactorX-200 arm and one task on a Franka arm. Our results suggest that action-conditioned world-model embeddings provide a scalable representation for reliable failure monitoring in long-horizon manipulation.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Haoran Zhang",
+      "Yifu Lu",
+      "Boyang Wang",
+      "Xuhui Kang",
+      "Yen-Ling Kuo",
+      "Zezhou Cheng",
+      "Mengdi Wang",
+      "Odest Chadwicke Jenkins"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2606.23085v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.23085v1",
+    "published_iso": "2026-06-22T09:32:28Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2606.23085v1",
+    "year_month": "2026-06",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Malliavin Calculus for Counterfactual Gradient Estimation in Adaptive Inverse Reinforcement Learning",
+    "title_norm": "malliavin calculus for counterfactual gradient estimation in adaptive inverse re",
+    "abstract": "Inverse reinforcement learning (IRL) recovers the loss function of a forward learner from its observed responses. Adaptive IRL aims to reconstruct the loss function of a forward learner by passively observing its gradients as it performs reinforcement learning (RL). This paper proposes a novel passive Langevin-based algorithm that achieves adaptive IRL. The key difficulty in adaptive IRL is that the required gradients in the passive algorithm are counterfactual, that is, they are conditioned on events of probability zero under the forward learner's trajectory. Therefore, naive Monte Carlo estimators are prohibitively inefficient, and kernel smoothing, though common, suffers from slow convergence. We overcome this by employing Malliavin calculus to efficiently estimate the required counterfactual gradients. We reformulate the counterfactual conditioning as a ratio of unconditioned expectations involving Malliavin quantities, thus recovering standard estimation rates. We derive the necessary Malliavin derivatives and their adjoint Skorohod integral formulations for a general Langevin structure, and provide a concrete algorithmic approach which exploits these for counterfactual gradient estimation.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Vikram Krishnamurthy",
+      "Luke Snow"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.01345v2",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.01345v2",
+    "published_iso": "2026-04-01T19:56:02Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2604.01345v2",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Vision-Language-Action Jump-Starting for Reinforcement Learning Robotic Agents",
+    "title_norm": "vision language action jump starting for reinforcement learning robotic agents",
+    "abstract": "Reinforcement learning (RL) enables high-frequency, closed-loop control for robotic manipulation, but scaling to long-horizon tasks with sparse or imperfect rewards remains difficult due to inefficient exploration and poor credit assignment. Vision-Language-Action (VLA) models leverage large-scale multimodal pretraining to provide generalist, task-level reasoning, but current limitations hinder their direct use in fast and precise manipulation. In this paper, we propose Vision-Language-Action Jump-Starting (VLAJS), a method that bridges sparse VLA guidance with on-policy RL to improve exploration and learning efficiency. VLAJS treats VLAs as transient sources of high-level action suggestions that bias early exploration and improve credit assignment, while preserving the high-frequency, state-based control of RL. Our approach augments Proximal Policy Optimization (PPO) with a directional action-consistency regularization that softly aligns the RL agent's actions with VLA guidance during early training, without enforcing strict imitation, requiring demonstrations, or relying on continuous teacher queries. VLA guidance is applied sparsely and annealed over time, allowing the agent to adapt online and ultimately surpass the guiding policy. We evaluate VLAJS on six challenging manipulation tasks: lifting, pick-and-place, peg reorientation, peg insertion, poking, and pushing in simulation, and validate a subset on a real Franka Panda robot. VLAJS consistently outperforms PPO and distillation-style baselines in sample efficiency, reducing required environment interactions by over 50% in several tasks. Real-world experiments demonstrate zero-shot sim-to-real transfer and robust execution under clutter, object variation, and external perturbations.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Angelo Moroncelli",
+      "Roberto Zanetti",
+      "Marco Maccarini",
+      "Loris Roveda"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.13733v2",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.13733v2",
+    "published_iso": "2026-04-15T11:17:54Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2604.13733v2",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "SkCC: Portable and Secure Skill Compilation for Cross-Framework LLM Agents",
+    "title_norm": "skcc portable and secure skill compilation for cross framework llm agents",
+    "abstract": "LLM agents increasingly rely on reusable skills (e.g., SKILL markdown files) to execute complex tasks, yet these artifacts lack portability: agent frameworks are highly sensitive to prompt formatting, leading to a large performance variation for the same skill. Nevertheless, most skills are authored once as format-agnostic Markdown, necessitating costly per-framework rewrites and also leaving security largely unaddressed, with widespread vulnerabilities in practice. To address this, we present SkCC, a compiler for LLM agents that introduces classical compilation design into agent skill development. SkCC centers on SkIR, a strongly-typed intermediate representation that decouples skill semantics from framework-specific formatting, thus enabling portable deployment across agent frameworks. Atop of this IR, a static Optimizer enforces security constraints, blocking vulnerabilities before deployment. Implemented as a four-phase pipeline, SkCC effectively reduces adaptation complexity from $O(m \\times n)$ to $O(m + n)$ across $m$ skills and $n$ frameworks. Experiments on SkillsBench demonstrate that SkCC delivers consistent and substantial gains over original counterparts, with pass rate increases from 21.1% to 33.3% on Claude Code and from 35.1% to 48.7% on Kimi CLI. Further, the design achieves sub-10ms compilation latency, 94.8% proactive security trigger rate, and 10-46% runtime token savings across frameworks.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Yipeng Ouyang",
+      "Yi Xiao",
+      "Yuhao Gu",
+      "Xianwei Zhang"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2605.03353v4",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.03353v4",
+    "published_iso": "2026-05-05T04:15:48Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2605.03353v4",
+    "year_month": "2026-05",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "ToolMATH: A Diagnostic Benchmark for Long-Horizon Tool Use under Systematic Tool-Catalog Constraints",
+    "title_norm": "toolmath a diagnostic benchmark for long horizon tool use under systematic tool ",
+    "abstract": "We introduce \\ToolMATH, a math-grounded diagnostic benchmark for evaluating long-horizon tool use under controllable tool-catalog conditions. \\ToolMATH converts stepwise MATH solutions into reusable Python tools with natural-language descriptions and typed schemas, and pairs each problem with a tool environment requiring sequential tool use, intermediate-output reuse, and logically connected tool-call chains. \\ToolMATH controls tool availability and catalog difficulty by constructing gold tools and graded distractors with varying similarity to gold tools. \\ToolMATH also incorporates behavior-conditioned metrics, enabling diagnostic evaluation beyond final accuracy. Building on these measurements, \\ToolMATH emphasizes three evaluation axes: (1) \\emph{Adaptability} measures how much Gold-only success is retained when gold tools are replaced entirely by distractors; (2) \\emph{Robustness} measures stability under adding distractors as a noise; and (3) \\emph{Tool Connectivity} measures whether models preserve accuracy over long executed tool-call chains. Furthermore, trace-level failure analyses characterize how models fail under each tool-catalog condition. Together, these diagnostics reveal distinct model profiles: reliable tool use, tool avoidance, adaptive substitution, and impacts of unreliable tool catalogs. Overall, \\ToolMATH provides a controlled testbed for evaluating how language models adapt to changing tool availability, remain robust to distractors, and maintain correctness across long-horizon tool-use trajectories.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Hyeonje Choi",
+      "Jeongsoo Lee",
+      "Hyojun Lee",
+      "Jay-Yoon Lee"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2602.21265v2",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2602.21265v2",
+    "published_iso": "2026-02-24T09:23:12Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2602.21265v2",
+    "year_month": "2026-02",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "CAETC: Causal Autoencoding and Treatment Conditioning for Counterfactual Estimation over Time",
+    "title_norm": "caetc causal autoencoding and treatment conditioning for counterfactual estimati",
+    "abstract": "Counterfactual estimation over time is important in various applications, such as personalized medicine. However, time-dependent confounding bias in observational data still poses a significant challenge in achieving accurate and efficient estimation. We introduce causal autoencoding and treatment conditioning (CAETC), a novel method for this problem. Built on adversarial representation learning, our method leverages an autoencoding architecture to learn a partially invertible and treatment-invariant representation, where the outcome prediction task is cast as applying a treatment-specific conditioning on the representation. Our design is independent of the underlying sequence model and can be applied to existing architectures such as long short-term memories (LSTMs) or temporal convolution networks (TCNs). We conduct extensive experiments on synthetic, semi-synthetic, and real-world data to demonstrate that CAETC yields significant improvement in counterfactual estimation over existing methods.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Nghia D. Nguyen",
+      "Pablo Robles-Granda",
+      "Lav R. Varshney"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2603.11565v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2603.11565v1",
+    "published_iso": "2026-03-12T05:37:56Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2603.11565v1",
+    "year_month": "2026-03",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Learning in Low-Dimensional Subspaces: Orthogonal Bottlenecks for Reinforcement Learning",
+    "title_norm": "learning in low dimensional subspaces orthogonal bottlenecks for reinforcement l",
+    "abstract": "Deep reinforcement learning (RL) agents commonly rely on high-dimensional neural representations, despite growing evidence that task-relevant value and policy structure may be intrinsically low-dimensional. In this work, we present a simple yet effective representation-level prior that inserts a fixed orthonormal projection to constrain encoder features to a low-dimensional subspace, requiring no auxiliary objectives, pretraining, or changes to the underlying RL algorithm. Under a linear realizability assumption, we prove that when the bottleneck dimension exceeds the intrinsic rank of the optimal value function in feature space, the bottleneck preserves expressivity and leaves the induced gradient dynamics unchanged up to an equivalent low-dimensional parameterization. Empirically, we find that across both single and multi-task benchmarks, baseline performance is either matched or improved once the bottleneck dimension exceeds a small task-dependent threshold; in many cases, value representations can be compressed to extremely low dimensions without loss, and the minimal sufficient dimension depends far more on environment complexity than encoder width. In addition, we analyze representation geometry and find that orthogonal bottlenecks stabilize feature norms and are associated with higher effective rank. Together, these results support a representation-space interpretation of the manifold hypothesis in reinforcement learning and position orthogonal bottlenecks as a lightweight, architecture-agnostic mechanism for shaping RL representations.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Aleksandar Todorov",
+      "Matthia Sabatelli"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2605.26012v2",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.26012v2",
+    "published_iso": "2026-05-25T16:31:33Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2605.26012v2",
+    "year_month": "2026-05",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "The Replay Gap: Static Evaluation of Model Switching in LLM Agents Scores the Wrong World",
+    "title_norm": "the replay gap static evaluation of model switching in llm agents scores the wro",
+    "abstract": "LLM routers promise efficiency by matching each request to the cheapest adequate model, and are increasingly applied per step inside multi-step agents. Yet agentic routers are evaluated like single-turn routers: by replaying logged trajectories and substituting another model's recorded outputs, assuming the rest of the trajectory is unaffected. We test this assumption with branching rollouts: we fork live SWE-bench agent trajectories at controlled points, rebuild the environment, continue each fork with a different model, and compare against same-model control forks that isolate sampling and replay noise. Across six paired runs (~900 rollouts), swaps exceed their matched control floors by +0.25 to +0.66 normalized edit distance (multiplicity-corrected CIs exclude zero), rewriting 61-94% of post-fork actions; 74-77% of early swaps diverge at the first post-fork action, versus 6-35% of controls, leaving only 3% of replayed states valid. Divergence decreases with fork depth in both directions. All five outcome flips we observe occur in swap arms, upgrades rescuing unsolved instances and a downgrade losing the sole solve, and zero occur across 359 control forks. Scoring these same swaps with a log-stitching replay evaluator, replay mispredicts every success-relevant outcome call and predicts patches with 0.00-0.11 similarity to reality. Auditing the noise floor, temperature-0 \"determinism\" is configuration-dependent: FP8-served controls diverge on over 90% of forks while AWQ-served ones remain near-identical; and under tight budgets the stronger model more often exhausts its steps without submitting. Replay-based benchmarks score the wrong world for agentic routing; we release our harness and all trajectories.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Ashritha Gonuguntla"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2608.08239v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2608.08239v1",
+    "published_iso": "2026-08-08T17:07:11Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2608.08239v1",
+    "year_month": "2026-08",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon Strategy Game Planning",
+    "title_norm": "saga scene aware goal evolving agents for long horizon strategy game planning",
+    "abstract": "Grand-strategy games such as Civilization pose a distinctive long-horizon planning problem: an agent must divide one shared resource pool among six competing domains -- technology, government, diplomacy, city development, expansion, and military -- under partial observability, with no feedback except a delayed final score. Current LLM agents fall short in three ways: 1) they cannot infer spatial relations from raw coordinates; 2) they allocate resources poorly, because feeding the entire growing state into one prompt and planning all domains in a single output diffuses attention and biases decisions toward urgent events; and 3) they cannot improve, as the delayed score gives no signal within or across games. We present SAGA, an LLM multi-agent framework pairing one mechanism with each weakness: (i) a Map-Semantic Scene Graph turning coordinates into per-entity statements of distance, direction, and threat; (ii) a Tool-Augmented Planner that retrieves only the state a decision needs, cutting the order of magnitude of its input, and issues a separate plan per domain to six specialist controllers, so urgent events do not derail long-term plans; and (iii) a Dual-Horizon Feedback Loop setting short-term goals during play and distilling each game into lessons for the next. On CivRealm, a Civilization-style benchmark, SAGA leads five LLM baselines on mean final score and is the only method significantly ahead of all of them on city development, the first investment baselines sacrifice, with 27% fewer output tokens; with cross-game learning it scores highest after five games, and its fifth game consistently surpasses its first across four maps. Our code is available at https://github.com/Kazecloudk/SAGA-Scene-Aware-Goal-Evolving-Agents-for-Long-Horizon-Strategy-Game-Planning.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Tianyu Jin",
+      "Shuo Chen",
+      "Yida Wang",
+      "Liuyu Xiang",
+      "Yingzhuo Liu",
+      "Yexin Li",
+      "Peipei Li",
+      "Zhaofeng He"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2606.29932v4",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.29932v4",
+    "published_iso": "2026-06-29T08:07:35Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2606.29932v4",
+    "year_month": "2026-06",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Re-feeding Is Not Replaying: Measuring Replay Noise in Counterfactual Token-Credit Estimation",
+    "title_norm": "re feeding is not replaying measuring replay noise in counterfactual token credi",
+    "abstract": "Per-token counterfactual credit estimation asks which token in a language-model rollout caused the final answer to be right or wrong: cut the transcript at a pivot, substitute an alternative token, replay continuations, and compare outcomes. Published methods re-feed the transcript prefix as a fresh prompt, assuming this reproduces the state the model passed through during generation. We measure what that assumption costs on a stock inference engine, with a three-pass design: continuations resumed from the verified decode-time KV state, an identical second exact pass (a replica noise floor), and a re-feed pass. Across six configurations and three models (including a GRPO-trained checkpoint), at low-margin decision tokens, re-feeding changes the credit estimate at rates 14-28 percentage points above the replica floor (7-21pp under a treatment-independent conditioning; problem-clustered t = 2.9-6.4). Most changes are zero-boundary crossings of the quantized estimator rather than polarity reversals, and the perturbation is consistent with mean-zero, so averaged quantities are largely safe; but selection is not: a critical-token set chosen by thresholding $|\\hat{A}_t|$ under re-feed overlaps the exact-resume selection at Jaccard 0.34-0.90, versus a 0.63-0.96 replica ceiling. A causal confirmation closes the loop: under vLLM's batch-invariant kernels all three passes are identical on every measured channel, with both disagreement rates exactly zero. Replica passes themselves disagree on 9-23% of eligible estimates: single-sample credit measurements at decision tokens are unreliable under any replay. Settings were fixed in advance; exact-pass cache hits in the second campaign are instrumented (100% hit rate, 3,434 pivots); total compute was under 10 USD. We recommend that counterfactual credit studies resume decoder state or use batch-invariant kernels, and report a replica floor.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Nils Matteson"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2606.15621v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.15621v1",
+    "published_iso": "2026-06-14T06:09:16Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2606.15621v1",
+    "year_month": "2026-06",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Endpoint Replay: Compressing the Recency Buffer in Deep Reinforcement Learning",
+    "title_norm": "endpoint replay compressing the recency buffer in deep reinforcement learning",
+    "abstract": "Experience replay remains one of the most practical and useful algorithmic tools in the deep reinforcement learning (DRL) toolbox. Aside from the limited success of prioritized replay and specialized approaches for large asynchronous systems, most DRL algorithms make use of a large, uniformly sampled recency buffer---even the size, one million, remains unchanged. Could we store less data, reduce redundancy, or more effectively chain experience together to speed up value propagation and still retain the performance of large buffers? In this paper, we investigate a simple compression approach that stores representative transitions derived from the end-points of a chain of connected $n$-step sequences. By curating these end-points in a smaller recency buffer, our method maintains an effective memory horizon comparable to a standard large buffer while requiring an order of magnitude less storage. Through empirical evaluation, we demonstrate that this approach prevents the systematic bias inherent in naive compression strategies and matches the performance of traditional large buffers in the Pinball environment and the Atari 2600 benchmark.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Parham Mohammad Panahi",
+      "Armin Ashrafi",
+      "Haoyu Du",
+      "Andrew Patterson",
+      "Martha White",
+      "Adam White"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2607.25123v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2607.25123v1",
+    "published_iso": "2026-07-27T22:33:09Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2607.25123v1",
+    "year_month": "2026-07",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "A Synthetic Eye Movement Dataset for Script Reading Detection: Real Trajectory Replay on a 3D Simulator",
+    "title_norm": "a synthetic eye movement dataset for script reading detection real trajectory re",
+    "abstract": "Large vision-language models have achieved remarkable capabilities by training on massive internet-scale data, yet a fundamental asymmetry persists: while LLMs can leverage self-supervised pretraining on abundant text and image data, the same is not true for many behavioral modalities. Video-based behavioral data -- gestures, eye movements, social signals -- remains scarce, expensive to annotate, and privacy-sensitive. A promising alternative is simulation: replace real data collection with controlled synthetic generation to produce automatically labeled data at scale.\n  We introduce infrastructure for this paradigm applied to eye movement, a behavioral signal with applications across vision-language modeling, virtual reality, robotics, accessibility systems, and cognitive science. We present a pipeline for generating synthetic labeled eye movement video by extracting real human iris trajectories from reference videos and replaying them on a 3D eye movement simulator via headless browser automation. Applying this to the task of script-reading detection during video interviews, we release final_dataset_v1: 144 sessions (72 reading, 72 conversation) totaling 12 hours of synthetic eye movement video at 25fps.\n  Evaluation shows that generated trajectories preserve the temporal dynamics of the source data (KS D < 0.14 across all metrics). A matched frame-by-frame comparison reveals that the 3D simulator exhibits bounded sensitivity at reading-scale movements, attributable to the absence of coupled head movement -- a finding that informs future simulator design. The pipeline, dataset, and evaluation tools are released to support downstream behavioral classifier development at the intersection of behavioral modeling and vision-language systems.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Kidus Zewde",
+      "Yuchen Zhou",
+      "Dennis Ng",
+      "Neo Tiangratanakul",
+      "Tommy Duong",
+      "Ankit Raj",
+      "Yuxin Zhang",
+      "Xingyu Shen",
+      "Simiao Ren"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.05475v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.05475v1",
+    "published_iso": "2026-04-07T06:15:48Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2604.05475v1",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "From Uncertainty to Failure Attribution: Self-Diagnosing Models for Failure Attribution under Distribution Shift",
+    "title_norm": "from uncertainty to failure attribution self diagnosing models for failure attri",
+    "abstract": "Distribution shift poses a significant challenge to the robustness of machine learning models, but the current solutions only aim to detect out-of-distribution (OOD) samples and predict uncertainty levels. We introduce a problem setting for failure attribution under distribution shift, which enables the models not only to detect OOD samples, but also to find out the reason for their failure. The solution we propose is called self-diagnosing models, which are capable of jointly learning predictive output, predictive uncertainty, and a failure attribution signal. In particular, we use the failure attribution vector, produced by a neural network, which provides a structured representation of predictive unreliability by distinguishing four different types of failures: covariance shift, semantic shift, noise corruption, and adversarial perturbation. In other words, we move from scalar uncertainty towards failure identification. For training the model, we introduce a consistency regularizer that encourages consistency between uncertainty and failure attribution predictions. Moreover, to be able to evaluate the model on its ability to find the reasons for failure, we construct several distribution shift benchmarks with predefined mechanisms for generating distribution shifts.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Yiyao Yang"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2608.07953v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2608.07953v1",
+    "published_iso": "2026-08-08T06:32:20Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2608.07953v1",
+    "year_month": "2026-08",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "From Trajectories to Prefixes: Reusing Teacher Trajectories via Replayed Prefixes and Online Continuation",
+    "title_norm": "from trajectories to prefixes reusing teacher trajectories via replayed prefixes",
+    "abstract": "Small language models are attractive backbones for interactive agents, but direct distillation from strong teacher trajectories often turns rich multi-turn behavior into one-shot imitation targets. This is inefficient in long-horizon environments, where early decisions shape later states and rewards. We propose Prefix-GRPO, a reinforcement learning framework that decomposes teacher trajectories into replay-aligned prefix queries and online continuations. Each prefix is replayed in the environment to recover a valid intermediate state, after which the student continues online interaction and receives task reward. Unlike response-only GRPO, Prefix-GRPO also applies clipped policy updates to historical assistant tokens inside the replayed prefix, using a policy-distilled SFT checkpoint to estimate their old log-probabilities. This unifies prefix learning and continuation learning within the same policy-optimization form. Experiments on TextCraft, BabyAI, and ALFWorld show that Prefix-GRPO improves small-model agents over distillation and standard RL baselines, while ablations show that replay alone is insufficient without explicit prefix-token optimization. The implementation and reproduction scripts are available at https://github.com/HappynessI/Prefix_GRPO.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Yihan Wang",
+      "Zhong Guan",
+      "Haoran Sun",
+      "Jiale Huang",
+      "Likang Wu",
+      "Hongke Zhao"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2607.19395v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2607.19395v1",
+    "published_iso": "2026-07-03T05:07:22Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2607.19395v1",
+    "year_month": "2026-07",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "YouZhi: Towards High-Concurrency Financial LLMs via Adaptive GQA-to-MLA Transition",
+    "title_norm": "youzhi towards high concurrency financial llms via adaptive gqa to mla transitio",
+    "abstract": "Large language models (LLMs) drive significant financial innovations, yet their high-concurrency deployment is severely bottlenecked by KV cache memory overhead, which inflates infrastructure costs and throttles scalability. To address this, we propose YouZhi-LLM, a highly efficient financial LLM empowered by a comprehensive structural transition and training pipeline natively built on the Huawei Ascend ecosystem. At its algorithmic core, YouZhi-LLM features a layer-adaptive GQA-to-MLA transition framework that dynamically assigns per-layer FreqFold sizes, maximizing KV-cache compression while minimizing perplexity degradation. To recover representation capacity and inject domain expertise, the Ascend-based training pipeline seamlessly integrates generalized knowledge distillation with financial-specific supervised fine-tuning. Evaluations demonstrate the superiority of this systematic approach, with the adaptive transition reducing perplexity degradation by up to 35% over uniform baselines. Crucially, when evaluated on Ascend NPUs via vLLM-Ascend, the massive KV-cache reduction translates directly into deployment efficiency. Compared to their respective base models, YouZhi-7B yields a 12.3% improvement in average financial benchmark score alongside a 2.69$\\times$ increase in maximum concurrency; similarly, YouZhi-14B achieves a 7.0% accuracy gain and a 2.43$\\times$ concurrency boost, establishing a new paradigm for cost-effective, high-throughput financial inference.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      " PSBC LLM Team",
+      " Huawei LLM Team",
+      "Ruihan Long",
+      "Junjie Wu",
+      "Tianan Zhang",
+      "Duo Zhang",
+      "Yaozong Wu",
+      "Jinbin Fu",
+      "Chang Liu",
+      "Zhentao Tang",
+      "Wenshuang Yang",
+      "Xin Wang",
+      "Zhihao Song",
+      "Ning Huang",
+      "Wenjing Xu",
+      "Shuai Zong",
+      "Shupei Sun",
+      "Sen Wang",
+      "Jing Hu",
+      "Bin Wang",
+      "Xinyu Wang",
+      "Junkui Ju",
+      "Zequn Ding",
+      "Jie Ran",
+      "Man Luo",
+      "Shixiong Kai",
+      "Linkai Hou",
+      "Kaichao Liang",
+      "Hu Zhao",
+      "Yang Zhao",
+      "Shucheng Lin",
+      "Wei Yu",
+      "Chenghan Jiang",
+      "Jingjing Ding",
+      "Jiahui Zhang",
+      "Tian Jin",
+      "Yuhang Zhang",
+      "Dong Guo",
+      "Wei Sun",
+      "Jun Xie",
+      "Jianwei Li",
+      "Lei Cao",
+      "Pei Li",
+      "Jiabin Li",
+      "Jia Yuan",
+      "Rui Yuan",
+      "Jing Zhu",
+      "Mingxuan Yuan",
+      "Zhangcheng Lv",
+      "Xin Jiang",
+      "Xiuhong Fei",
+      "Xiaozhe Ren",
+      "Yulong Li",
+      "Zhipeng Zhang",
+      "Hang Wang",
+      "Zhaohui Xu",
+      "Rui Zhao",
+      "Yibo He",
+      "Xinzhuang Niu"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2606.05868v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.05868v1",
+    "published_iso": "2026-06-04T08:44:37Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2606.05868v1",
+    "year_month": "2026-06",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Graph-of-Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills",
+    "title_norm": "graph of skills dependency aware structural retrieval for massive agent skills",
+    "abstract": "Modern LLM agents increasingly rely on reusable skills, and as they interact with personal applications, web browsers, and other interfaces, skill libraries can scale to thousands of skills. Scaling to larger skill sets introduces two key challenges. First, loading the full skill set saturates the context window, driving up token costs, hallucination, and latency. Second, semantic retrieval surfaces topically relevant skills but misses their prerequisite chain of upstream and downstream skills, creating a prerequisite gap that leaves the retrieved bundle execution-incomplete. In this paper, we present Graph-of-Skills (GoS), an inference-time structural retrieval layer for large skill libraries. GoS constructs an executable skill graph offline from skill packages, then at inference time retrieves a bounded, dependency-aware skill bundle through hybrid semantic-lexical seeding, reverse-aware Personalized PageRank, and context-budgeted hydration. On SkillsBench and ALFWorld, GoS consistently delivers substantial reward improvements and token savings across three model families (Claude Sonnet 4.5, MiniMax M2.7, and GPT-5.2 Codex). On SkillsBench, GoS achieves a peak reward increase of 25.55% while reducing total tokens by 56.72% over the vanilla full skill-loading baseline using GPT-5.2 Codex. Ablations confirm this pattern across skill libraries from 200 to 2,000 skills.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Dawei Liu",
+      "Zongxia Li",
+      "Hongyang Du",
+      "Xiyang Wu",
+      "Shihang Gui",
+      "Yongbei Kuang",
+      "Lichao Sun"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.05333v3",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.05333v3",
+    "published_iso": "2026-04-07T02:09:11Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2604.05333v3",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "FinTrace: Holistic Trajectory-Level Evaluation of LLM Tool Calling for Long-Horizon Financial Tasks",
+    "title_norm": "fintrace holistic trajectory level evaluation of llm tool calling for long horiz",
+    "abstract": "Recent studies demonstrate that tool-calling capability enables large language models (LLMs) to interact with external environments for long-horizon financial tasks. While existing benchmarks have begun evaluating financial tool calling, they focus on limited scenarios and rely on call-level metrics that fail to capture trajectory-level reasoning quality. To address this gap, we introduce FinTrace, a benchmark comprising 800 expert-annotated trajectories spanning 34 real-world financial task categories across multiple difficulty levels. FinTrace employs a rubric-based evaluation protocol with nine metrics organized along four axes -- action correctness, execution efficiency, process quality, and output quality -- enabling fine-grained assessment of LLM tool-calling behavior. Our evaluation of 13 LLMs reveals that while frontier models achieve strong tool selection, all models struggle with information utilization and final answer quality, exposing a critical gap between invoking the right tools and reasoning effectively over their outputs. To move beyond diagnosis, we construct FinTrace-Training, the first trajectory-level preference dataset for financial tool-calling, containing 8,196 curated trajectories with tool-augmented contexts and preference pairs. We fine-tune Qwen-3-8B/32B using supervised fine-tuning followed by direct preference optimization (DPO) and show that training on FinTrace-Training consistently improves intermediate reasoning metrics, with DPO more effectively suppressing failure modes. However, end-to-end answer quality remains a bottleneck, indicating that trajectory-level improvements do not yet fully propagate to final output quality.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Yupeng Cao",
+      "Haohang Li",
+      "Weijin Liu",
+      "Wenbo Cao",
+      "Anke Xu",
+      "Lingfei Qian",
+      "Xueqing Peng",
+      "Minxue Tang",
+      "Zhiyuan Yao",
+      "Jimin Huang",
+      "K. P. Subbalakshmi",
+      "Zining Zhu",
+      "Jordan W. Suchow",
+      "Yangyang Yu"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.10015v3",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.10015v3",
+    "published_iso": "2026-04-11T03:58:39Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2604.10015v3",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Prefix Parsing is Just Parsing",
+    "title_norm": "prefix parsing is just parsing",
+    "abstract": "Prefix parsing asks whether an input prefix can be extended to a complete string generated by a given grammar. In the weighted setting, it also provides prefix probabilities, which are central to context-free language modeling, psycholinguistic analysis, and syntactically constrained generation from large language models. We introduce the prefix grammar transformation, an efficient reduction of prefix parsing to ordinary parsing. Given a grammar, our method constructs another grammar that generates exactly the prefixes of its original strings. Prefix parsing is then solved by applying any ordinary parsing algorithm on the transformed grammar without modification. The reduction is both elegant and practical: the transformed grammar is only a small factor larger than the input, and any optimized implementation can be used directly, eliminating the need for bespoke prefix-parsing algorithms. We also present a strategy-based on algorithmic differentiation-for computing the next-token weight vector, i.e., the prefix weights of all one-token extensions, enabling efficient prediction of the next token. Together, these contributions yield a simple, general, and efficient framework for prefix parsing.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Clemente Pasti",
+      "Andreas Opedal",
+      "Timothy J. O'Donnell",
+      "Ryan Cotterell",
+      "Tim Vieira"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.21191v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.21191v1",
+    "published_iso": "2026-04-23T01:20:40Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2604.21191v1",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Geometry-Aware Reinforcement Learning for 2D Irregular Nesting",
+    "title_norm": "geometry aware reinforcement learning for 2d irregular nesting",
+    "abstract": "Traditional heuristic solvers for the 2D irregular nesting problem share a fundamental limitation: they are blind to polygon geometry, relying on guided brute-force to navigate the continuous placement space with minimal geometrical guidance. In this paper, we argue that Reinforcement Learning is uniquely positioned to overcome this bottleneck. By pairing an optimization policy with a geometry-aware neural encoder, an agent can automatically discover rich geometric priors directly from data, utilizing these learned intuitions to strategically guide exploration. To realize this, we introduce the Polygons Transformer (PoT), a novel architecture that encodes 2D continuous vector geometries while allowing cross-polygons attention. We couple this novel architecture with a Combinatorial Optimization Reinforcement Learning (CORL) training framework to find optimal solutions. To support this paradigm, we release an open-source training dataset derived from complex geographic contours alongside a dedicated evaluation benchmark. Our empirical validation demonstrates that our trained agent achieves area utilization performance highly competitive with Sparrow, the state-of-the-art heuristic solver, proving that reinforcement learning can successfully discover and exploit geometric awareness for precise spatial tasks.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Auguste Lehuger",
+      "Guillaume Henon-Just"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2606.10611v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.10611v1",
+    "published_iso": "2026-06-09T09:11:36Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2606.10611v1",
+    "year_month": "2026-06",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Toward User Comprehension Supports for LLM Agent Skill Specifications",
+    "title_norm": "toward user comprehension supports for llm agent skill specifications",
+    "abstract": "Users often interpret and select agent skills through their SKILL markdown specifications. To protect users, existing audits mainly focus on malicious or unsafe skills. We study the complementary question of whether specifications help users form bounded expectations about what a skill consumes, produces, and covers. Across 878 cybersecurity skills, we used rule-based coding to measure textual cues for four comprehension anchors, namely operational basis, output contract, boundary disclosure, and example capability demonstration. Cues for operational basis were common, but only 19.0% of specifications exhibited cues for an example task, sample, or expected outcome, and only 2.3% exhibited cues for all four anchors. We further examined a small DNS/C2 telemetry subset (n$=$6) to illustrate why missing examples may matter. Examples appeared to make first local checks easier to construct, while no-example skills typically required helper code inspection to recover command arguments or output fields. We argue that agent-skill evaluation should treat specifications as user-facing capability disclosures, not merely as containers for executable instructions.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Zikai Alex Wen"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2605.19362v2",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.19362v2",
+    "published_iso": "2026-05-19T04:50:42Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2605.19362v2",
+    "year_month": "2026-05",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "ToolFailBench: Diagnosing Tool-Use Failures in LLM Agents",
+    "title_norm": "toolfailbench diagnosing tool use failures in llm agents",
+    "abstract": "Tool calling is central to modern language model agents, but aggregate benchmark scores often hide where tool use fails. A model that never calls a needed tool and a model that calls the tool but ignores the result can look similar under final task accuracy. We introduce ToolFailBench, a diagnostic benchmark for measuring tool-use failures across 1,000 tasks in finance, medicine, law, cybersecurity, and real estate. Tool-required tasks return values the model wouldn't guess, forcing it to trust the tool while control tasks attach the same tools but should be answered directly. We label each trace with Tool-Skip, Result-Ignore, Output-Fabrication, and Unnecessary-Tool-Use, using a rule classifier and two LLM judges aggregated by majority vote. Across 19 headline models, the best reaches 86.33% Clean Tool-Use Rate, showing that faithful tool use is not saturated. More importantly, models with similar aggregate scores fail in different ways: most stay disciplined on no-tool controls, while Llama-3.1 models show an Always-Call pattern, and at the same parameter scale Llama-3.1-70B and Qwen2.5-72B differ by 89 percentage points on control-task accuracy. Tool-use evaluation should measure not only whether agents call tools, but whether they use tool outputs correctly and avoid tools when none is needed.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Harsh Soni"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2607.04686v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2607.04686v1",
+    "published_iso": "2026-07-06T05:25:21Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2607.04686v1",
+    "year_month": "2026-07",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Unleashing Implicit Rewards: Prefix-Value Learning for Distribution-Level Optimization",
+    "title_norm": "unleashing implicit rewards prefix value learning for distribution level optimiz",
+    "abstract": "Process reward models (PRMs) provide fine-grained supervision for reasoning, but reliable PRMs often require step annotations or heavy verification pipelines, making them costly to scale and refresh during online RL. Implicit PRMs reduce this cost by training log-likelihood-ratio rewards from trajectory-level outcome labels. However, the log-ratio is constrained only as a sequence-level aggregate during training, while inference decomposes it into token- or step-level scores for partial prefixes. This train-inference mismatch leaves local credits weakly identified, so distribution-wide scoring can amplify misleading advantages. We propose Implicit Prefix-Value Reward Model (IPVRM), which directly learns the probability of eventual correctness for each prefix from outcome labels. Step signals are then obtained as temporal-difference (TD) differences between consecutive prefix values, aligning the training target with inference-time use. IPVRM markedly improves step-verification F1 on ProcessBench. To exploit these prefix values during policy optimization, we further introduce Distribution-Level RL (DistRL), which applies TD advantages to both sampled tokens and high-probability candidate tokens, providing dense counterfactual updates without additional rollouts. Experiments show that DistRL brings limited gains with unreliable implicit rewards, but consistently improves downstream reasoning when paired with IPVRM. The implementation of our method is available at https://github.com/gaoshiping/IPVRM .",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Shiping Gao",
+      "Hongzhan Chen",
+      "Xiaojun Quan",
+      "Qifan Wang",
+      "Lifu Huang"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2604.13197v3",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2604.13197v3",
+    "published_iso": "2026-04-14T18:19:54Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2604.13197v3",
+    "year_month": "2026-04",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Coordination Graphs for Constrained Multi-Agent Reinforcement Learning",
+    "title_norm": "coordination graphs for constrained multi agent reinforcement learning",
+    "abstract": "Constrained Multi-agent reinforcement learning (CMARL) faces two intertwined challenges: the joint action space grows exponentially with the number of agents, and additional requirements couple agents in ways that reward structure alone does not capture. We introduce Coordination Graphs for Constrained Multi-Agent Reinforcement Learning (CG-CMARL), a framework that addresses both challenges by combining coordination graphs with Lagrangian duality. The system decomposes the joint problem into pairwise regions, each served by a set of shared Q-functions, one for the primary objective and one for each of the constraints, so that the number of learned models is independent of the number of agents. At execution time, Max-Sum message passing coordinates actions across the factor graph, while a Lagrangian multiplier controls the objective--constraint tradeoff, allowing a single trained model to trace a Pareto front without retraining. We provide convergence guarantees under mild conditions, together with a compositional error bound that decomposes into separate interpretable sources, each traceable to a specific design choice and independently controllable. Experiments on cooperative navigation tasks (where teams of up to 10 agents must coordinate to reach target positions while satisfying pairwise constraints) show that our method produces Pareto fronts dominating established baselines trained at fixed reward-shaping ratios, while scaling to team sizes where centralized approaches become intractable.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Santiago Amaya-Corredor",
+      "Miguel Calvo-Fullana",
+      "Anders Jonsson"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2606.02337v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.02337v1",
+    "published_iso": "2026-06-01T14:46:16Z",
+    "from_query": [
+      "LLM agent trajectory reinforcement learning"
+    ],
+    "paper_id": "arxiv:2606.02337v1",
+    "year_month": "2026-06",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "Agent Skills Matter: Inferring Proprietary Skills from Execution Trajectories",
+    "title_norm": "agent skills matter inferring proprietary skills from execution trajectories",
+    "abstract": "Agent skills package reusable procedures that improve downstream performance. Their lightweight, portable form enables marketplace monetization and private deployment behind cloud-hosted agent interfaces, giving providers incentives to keep high-value skills proprietary. Yet hiding the artifacts does not conceal their behavioral effects, which remain observable in execution trajectories and form a behavioral side channel. We define this exposure as Skill Leakage: reconstructing proprietary skills from trajectories elicited by benign queries, without reference answers or success labels. We introduce SigLeak, a black-box framework that exploits recurring skill signatures in agent behavior. It constructs diverse, decision-rich diagnostic tasks, contrasts matched skill-enabled and skill-disabled trajectories, and iteratively refines a reconstructed skill from the isolated patterns. Across five scenarios, three model families, and three agent frameworks, SigLeak outperforms or matches three baselines in nearly every setting. It raises the success rate by 6.88 percentage points over the skill-disabled reference on average and achieves the highest overall SkillSim, our metric for coarse- and fine-grained semantic similarity. These results show that benign execution trajectories can expose proprietary procedural knowledge. The code is available at https://anonymous.4open.science/r/SigLeak-D1DB.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Jianing Geng",
+      "Ruiqi He",
+      "Zekun Fei",
+      "Biao Yi",
+      "Xuansheng Wu",
+      "Ruijie Wang",
+      "Zheli Liu",
+      "Xia Hu",
+      "Qingkai Zeng"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2607.25560v2",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2607.25560v2",
+    "published_iso": "2026-07-28T10:40:59Z",
+    "from_query": [
+      "agent trajectory credit branching replay skills"
+    ],
+    "paper_id": "arxiv:2607.25560v2",
+    "year_month": "2026-07",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "LongDS-Bench: On the Failure of Long-Horizon Agentic Data Analysis",
+    "title_norm": "longds bench on the failure of long horizon agentic data analysis",
+    "abstract": "Real-world data analysis is inherently iterative, yet existing benchmarks mostly evaluate isolated or short interactive tasks, leaving agents' ability to track evolving analytical context over long horizons untested. We introduce LongDS, a benchmark for long-horizon, multi-turn data analysis where agents must maintain, update, restore, and compose evolving analytical states. LongDS comprises 68 tasks constructed from real-world Kaggle notebooks, spanning 2,225 turns across six domains including Geoscience, Business, and Education. Tasks are designed around state-evolution patterns (e.g., counterfactual perturbation, rollback, multi-state composition), with an average dependency span of 11.3 turns. Evaluating five state-of-the-art models, we find that the best model reaches only 48.45% average accuracy, performance drops nearly 47 points from early to late turns, and long-horizon errors account for 52%--69% of failures. Further analysis shows that additional agent steps do not necessarily improve performance, suggesting that the key bottleneck is maintaining a correct analytical state rather than increasing interaction budget. We release LongDS to support research on reliable long-horizon agentic data analysis. Code and data will be released at https://github.com/zjunlp/DataMind.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Kewei Xu",
+      "Xiaoben Lu",
+      "Shuofei Qiao",
+      "Zihan Ding",
+      "Haoming Xu",
+      "Lei Liang",
+      "Ningyu Zhang"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2605.30434v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2605.30434v1",
+    "published_iso": "2026-05-28T18:00:20Z",
+    "from_query": [
+      "long-horizon tool-call failure attribution"
+    ],
+    "paper_id": "arxiv:2605.30434v1",
+    "year_month": "2026-05",
+    "retrieved_via": "arxiv"
+  },
+  {
+    "title": "BiPACE: Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation for LLM Agents",
+    "title_norm": "bipace bisimulation guided policy optimization with action counterfactual estima",
+    "abstract": "Stepwise group-based RL is an attractive way to train long-horizon LLM agents without a learned critic: it reuses multiple sampled rollouts to estimate local advantages. Its weakness is less visible but more fundamental: every group-relative estimator assumes that the steps it compares are equivalent for credit assignment. We show that current agentic variants violate this assumption through a state-action credit mismatch. The observation-hash partition is overly fine on the state side, creating singleton groups with zero step-level signal, while a single within-group mean is too coarse on the action side, mixing state-value estimation with action-specific credit. We introduce BiPACE (Bisimulation-Guided Policy Optimization with Action Counterfactual Estimation), a drop-in advantage estimator that fixes both sides without adding a critic, auxiliary loss, or extra rollouts. BiGPO clusters steps by cosine distance in the actor's own hidden-state geometry, an empirical policy-induced proxy for bisimulation that substantially lowers the singleton rate left by observation hashing. PACE then recenters returns within each behavioral cluster using action-conditioned peer baselines; its Q-style instance estimates a local Q(s,a)-V(s) nonparametrically. On ALFWorld/Qwen2.5-7B, BiPACE_Q raises overall validation success from GiGPO's 90.8 to $97.1\\pm0.9$ over three seeds, and crosses the 95% threshold on every seed, which GiGPO never does within the same budget. On Qwen2.5-1.5B it reaches $93.5\\pm1.2$ versus GiGPO's 86.7, and on WebShop and TextCraft it improves over GRPO and GiGPO at both model scales. The measured BiPACE-specific overhead is 11.3% of a single training-step wall time. Yet it changes the estimator's comparison unit from surface identity to approximate behavioral equivalence plus action-side counterfactuals. The code is available at https://github.com/TianxiangZhao/BiPACE.",
+    "year": 2026,
+    "venue": "arXiv",
+    "authors": [
+      "Hanyang Wang",
+      "Weijieying Ren",
+      "Yuxiang Zhang",
+      "Ding Cao",
+      "Zhizhao Zeng",
+      "Ke Zeng",
+      "Tianxiang Zhao"
+    ],
+    "citations": null,
+    "source": "arxiv",
+    "source_id": "2606.25556v1",
+    "doi": "",
+    "paper_url": "https://arxiv.org/abs/2606.25556v1",
+    "published_iso": "2026-06-24T08:32:42Z",
+    "from_query": [
+      "counterfactual prefix rerollout advantage estimation"
+    ],
+    "paper_id": "arxiv:2606.25556v1",
+    "year_month": "2026-06",
+    "retrieved_via": "arxiv"
+  }
+]

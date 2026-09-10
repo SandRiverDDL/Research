@@ -1,0 +1,1306 @@
+[
+ {
+  "title": "Rationale and design of the Self-TI Study protocol: a cross-sectional human papillomavirus self-testing pilot study among transgender adults in England",
+  "title_norm": "rationale and design of the self ti study protocol a cross sectional human papil",
+  "abstract": "Introduction Persistent infection with high-risk human papillomavirus (HPV) is the causal agent of several cancers including cervical, anal and oropharyngeal cancer. Transgender men and transmasculine non-binary (TMNB) people with a cervix are much less likely to undergo cervical cancer screening than cisgender women. Transgender women and transfeminine non-binary (TWNB) people assigned male at birth may be at increased risk of HPV. Both TMNB and TWNB people face many barriers to HPV testing including medical mistrust due to stigma and discrimination. Methods and analysis The Self-TI Study (Self-TI) is a pilot study designed to measure acceptability and feasibility of HPV self-testing among transgender and non-binary people in England. TMNB people aged 25–65 years, with at least 1 year of testosterone, and TWNB people, aged 18 years and over, are eligible to participate. Participants self-collect up to four samples: an oral rinse, a first void urine sample, a vaginal swab (if applicable) and an anal swab. TMNB participants are asked to have an additional clinician-collected cervical swab taken following their routine Cervical Screening Programme sample. TWNB people are asked to take a self-collection kit to perform additional self-collection at home and mail the samples back to the clinic. Acceptability is assessed by a self-administered online survey and feasibility is measured as the proportion of samples returned in the clinic and from home. Ethics and dissemination Self-TI received ethical approval from the Research Ethics Committee of Wales 4 and ethical review panel within the Division of Cancer Epidemiology and Genetics at the US National Cancer Institute. Self-TI was coproduced by members of the transgender and non-binary community, who served as authors, collaborators and members of the patient and public involvement (PPI) group. Results of this study will be shared with the community prior to being published in peer-reviewed journals and the PPI group will help to design the results dissemination strategy. The evidence generated from this pilot study could be used to inform a larger, international study of HPV self-testing in the transgender and non-binary community. Trial registration number NCT05883111.",
+  "tldr": "The evidence generated from this pilot study could be used to inform a larger, international study of HPV self-testing in the transgender and non-binary community.",
+  "year": 2024,
+  "venue": "BMJ Open",
+  "publication_types": [
+   "JournalArticle",
+   "Review"
+  ],
+  "authors": [
+   "Sarah S. Jackson",
+   "S. O’Callaghan",
+   "E. Ward",
+   "C. Orkin",
+   "Megan A Clarke",
+   "A. M. Berner"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "428f6d7653ed58bfa66ff6c0040f962ca68e3285",
+  "paper_id": "doi:10.1136/bmjopen-2024-086099",
+  "doi": "10.1136/bmjopen-2024-086099",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://bmjopen.bmj.com/content/bmjopen/14/7/e086099.full.pdf",
+  "published_iso": "2024-07-01"
+ },
+ {
+  "title": "The Causal Effects of Pilot Policies on Low-Altitude Economy Growth—Multi-Period DID and Event-Study Evidence from China",
+  "title_norm": "the causal effects of pilot policies on low altitude economy growth multi period",
+  "abstract": "As a strategic emerging industry, the low-altitude economy is pivotal to restructuring China’s industrial system and advancing regionally balanced, high-quality growth. Using a provincial panel for 30 regions over 2012–2023, we construct composite indices of the low-altitude economy and the digital economy via an entropy-weighting approach (with PCA as an alternative measure), and identify the causal impact of provincial low-altitude pilot programs through a multi-period difference-in-differences framework combined with an event-study design, controlling for province and year fixed effects. We find that the pilot policy significantly promotes low-altitude development: the index rises by about 47.73 points on average, with effects materializing in the adoption year and persisting for at least three subsequent years. The policy impact is insensitive to baseline digitalization, no statistically significant threshold is detected, and effect sizes strengthen with policy duration, consistent with institutional learning and adaptation. We also document “compensatory selection”: provinces with relatively lagging digital economies but stronger low-altitude industrial foundations are more likely to be designated as pilots. Conditional on pilot status, the digital-economy index is negatively associated with the low-altitude index, suggesting short-run resource substitution. Results remain robust to PSM-DID, placebo tests, instrumental-variable strategies, alternative time windows, and index remeasurement. The study provides credible evidence on the effectiveness of emerging-industry policies and actionable implications for optimizing regional development strategies.",
+  "tldr": "",
+  "year": 2025,
+  "venue": "International Journal of Global Economics and Management",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Xueyan Liu",
+   "Y. Ge",
+   "Jiachen Wu"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "ab26164bfc2e83a5fcda768a1944743bf87dea03",
+  "paper_id": "doi:10.62051/ijgem.v8n2.20",
+  "doi": "10.62051/ijgem.v8n2.20",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://doi.org/10.62051/ijgem.v8n2.20",
+  "published_iso": "2025-09-27"
+ },
+ {
+  "title": "Associations of forest vs. urban environmental exposure with well-being and nasal microbiome composition: An exploratory pilot study",
+  "title_norm": "associations of forest vs urban environmental exposure with well being and nasal",
+  "abstract": "The benefits of nature exposure for human well-being are well-recognized, yet much remains to be understood about the underlying causal mechanisms. This exploratory, hypothesis-generating pilot study used a natural experimental design with University of Washington students (Seattle, WA, USA; 2024) to investigate links between the nasal microbiome and well-being over an 8-week forest vs. urban environment exposure. After an academic year (September–May) during which all participants (N = 13) were full-time students in Seattle, one group relocated to remote forest sites in western Washington (n = 5; forest condition), while another group remained in urban Seattle (n = 8; urban condition). Self-reported affect, rumination, and mental well-being were assessed pre- and post-exposure using validated surveys, and nasal swabs were collected pre- and post-exposure for nasal microbiome profiling via 16S rRNA gene sequencing. Compared to the urban group, the forest group exhibited significantly greater increases in positive affect and decreases in negative affect and rumination. While no between-group differences in overall nasal bacterial community composition were detected pre-exposure, significant differences emerged post-exposure. Moreover, the forest group exhibited greater post-exposure taxonomic richness at a marginally statistically significant level and significant enrichment of taxa previously associated with well-being (e.g., Bifidobacterium, Akkermansia). These changes were not observed in the urban group. Increases in taxonomic richness and the relative abundance of these key taxa were significantly associated with affective improvements. These preliminary results suggest that nasal microbiome-mediated pathways linking nature exposure with well-being merit further investigation.",
+  "tldr": "",
+  "year": 2025,
+  "venue": "Environmental Research",
+  "publication_types": [
+   "JournalArticle",
+   "Review"
+  ],
+  "authors": [
+   "D.Connor Lashus",
+   "A. Gomez",
+   "T. Hummel",
+   "Lucia F. Jacobs",
+   "Asifa Majid",
+   "Ravikiran M. Raju"
+  ],
+  "citations": 1,
+  "source": "semanticscholar",
+  "source_id": "f3dce50e5b9f741e5d0deb1ee7e3cb7ba37c8e23",
+  "paper_id": "doi:10.1016/j.envres.2025.123582",
+  "doi": "10.1016/j.envres.2025.123582",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/f3dce50e5b9f741e5d0deb1ee7e3cb7ba37c8e23",
+  "published_iso": "2025-12-01"
+ },
+ {
+  "title": "Theory-based process evaluation of a non-randomised single-arm pilot study investigating time-restricted eating in the treatment of type 2 diabetes—the RESET2 pilot study",
+  "title_norm": "theory based process evaluation of a non randomised single arm pilot study inves",
+  "abstract": "This study describes a 12-week non-randomised single-arm pilot study, which was conducted to inform the design of a 1-year randomised controlled trial (RCT) on time-restricted eating (TRE) in individuals with type 2 diabetes. Core intervention components were developed to operationalize findings of a needs assessment study and the resulting initial program theory suggesting causal associations influencing TRE adherence. This study assessed the implementation and acceptance of core intervention components and activities, and participant experiences with TRE, and based on the findings, the initial program theory was refined. In this non-randomised single-arm study, nineteen individuals with type 2 diabetes completed 8 weeks of TRE with a 10-h eating window, followed by 4 weeks of individualised TRE (core component 1). Participants had two 1-h conversations with healthcare professionals (HCPs) at baseline and after 8 weeks to support TRE initiation (core component 2) and maintenance (core component 3). The process evaluation was conducted using a concurrent mixed methods design with emphasis on qualitative insights. Delivery and implementation of intervention activities, including visits, measurements, conversations, and phone calls, as well as the two-phase design, were evaluated. The conversations were audio-recorded to investigate the extent to which they were conducted as intended. Interviews (by a researcher) at baseline, 8, and 12 weeks explored participants’ experiences, support received, and TRE implementation in daily life. The interviews were audio-recorded. A deductive qualitative content analysis approach was applied. Intervention activities were delivered with high degree of consistency, and the two-phase design (strict respectively individualised TRE) was effectively implemented. Participants found the TRE intervention highly acceptable, appreciating the relevant information, well-organised trial visits, supportive HCPs, and encouraging conversations. Analysis of participants’ experiences of implementation of TRE generated themes related to routines and habits, support from relatives, social life, and mental and physical challenges. Intervention components such as conversations and individual support and adjustment options were found to facilitate TRE initiation and maintenance. The initial program theory was refined in terms of how the intervention activities supported participants differently and how various contextual factors influenced their experiences and adherence to TRE. Insights from participants’ experiences with intervention activities and TRE performance in everyday life provided a nuanced understanding of what works, for whom, how, why, and under which circumstances in terms of TRE adherence. These findings will help tailor the following RCT intervention to the target population. Clinicaltrials.gov, NCT05375695. Registered 27 March, 2022: https://clinicaltrials.gov/study/NCT05375695?term=NCT05375695&rank=1",
+  "tldr": "Insights from participants’ experiences with intervention activities and TRE performance in everyday life provided a nuanced understanding of what works, for whom, how, why, and under which circumstances in terms of TRE adherence.",
+  "year": 2025,
+  "venue": "Pilot and Feasibility Studies",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "A. Termannsen",
+   "Natasja Bjerre",
+   "Gitte S. Hansen",
+   "Lea Jalking",
+   "Kristine Færch",
+   "N. F. Hempler"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "6f75bd2737761565a9753f0d48cb7bc032229530",
+  "paper_id": "doi:10.1186/s40814-025-01715-4",
+  "doi": "10.1186/s40814-025-01715-4",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://pilotfeasibilitystudies.biomedcentral.com/counter/pdf/10.1186/s40814-025-01715-4",
+  "published_iso": "2025-11-06"
+ },
+ {
+  "title": "A Single-Button Mobility Platform for Cause–Effect Learning in Children with Cerebral Palsy: A Pilot Study",
+  "title_norm": "a single button mobility platform for cause effect learning in children with cer",
+  "abstract": "Highlights What are the main findings? A wheelchair-mounted, semi-autonomous mobility platform operated via a simple switch is feasible and usable for children with severe motor disabilities (GMFCS IV–V). Preliminary data indicate a positive trend in reaction times and keystroke accuracy with the use of the platform; however, the small sample size limits the statistical robustness of these findings. What is the implication of the main finding? The platform could help enhance engagement in cause–effect learning tasks for children with severe motor impairments. The study provides essential baseline data to design larger, statistically powered trials assessing the platform’s impact on causal. Abstract Background: Mobility plays a fundamental role in causal reasoning (causal inference or cause–effect learning), which is essential for brain development at early ages. Children naturally develop causal reasoning through interaction with their environment. Therefore, children with severe motor disabilities (GMFCS levels IV–V), who face limited opportunities for interaction, often show delays in causal reasoning. Objective: This study investigates how a wheelchair-mounted, semi-autonomous mobility platform operated via a simple switch may enhance causal learning in children with severe disabilities, compared with traditional therapies. However, due to the scarcity of participants who meet the inclusion criteria and the need for long-term evaluation, recruitment poses a significant challenge. This study aims to provide an initial assessment of the platform and collect preliminary data to estimate the required sample size and number of sessions for future studies. Methods: We conducted a pilot randomized controlled trial (RCT) to assess platform usability and its effect on reaction time and keystroke accuracy. Four children, aged 8.5 ± 2.38, participated in seven 30 min sessions. They were randomly assigned in equal numbers, with two participants in the intervention group (using the platform) and two in the control group (receiving standard therapy). Usability was evaluated through a questionnaire completed by two therapists. Key outcome measures included the System Usability Scale (SUS), reaction time (RT), and keystroke accuracy (NIS). Results: Despite the small sample size and recruitment challenges, the data allowed for preliminary estimates of the sample size and number of sessions required for future studies. Therapists reported positive usability scores. Children using the platform showed promising trends in RT and NIS, suggesting improved engagement with cause–effect tasks. Conclusions: The findings support the feasibility and usability of the mobility platform by therapists, although some improvements should be implemented in the future. No conclusive evidence was found regarding the platform’s effectiveness on causal learning, despite a positive trend over time. This pilot study also provides valuable insights for designing larger, statistically powered trials, particularly focused on NIS.",
+  "tldr": "The findings support the feasibility and usability of the mobility platform by therapists, although some improvements should be implemented in the future, and provide valuable insights for designing larger, statistically powered trials, particularly focused on NIS.",
+  "year": 2025,
+  "venue": "Children",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "A. J. Molina-Cantero",
+   "Félix Biscarri-Triviño",
+   "Alejandro Gallardo-Soto",
+   "Juan M. Jaramillo-Pareja",
+   "Silvia Molina-Criado",
+   "Azahara Díaz-Rodríguez"
+  ],
+  "citations": 1,
+  "source": "semanticscholar",
+  "source_id": "329bb71255df87d8ff4a46d76379917fe142bb41",
+  "paper_id": "doi:10.3390/children12081077",
+  "doi": "10.3390/children12081077",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/329bb71255df87d8ff4a46d76379917fe142bb41",
+  "published_iso": "2025-08-01"
+ },
+ {
+  "title": "Collecting real-time infant feeding and support experience: co-participatory pilot study of mobile health methodology",
+  "title_norm": "collecting real time infant feeding and support experience co participatory pilo",
+  "abstract": "Breastfeeding rates in the UK have remained stubbornly low despite long-term intervention efforts. Social support is a key, theoretically grounded intervention method, yet social support has been inconsistently related to improved breastfeeding. Understanding of the dynamics between infant feeding and social support is currently limited by retrospective collection of quantitative data, which prohibits causal inferences, and by unrepresentative sampling of mothers. In this paper, we present a case-study presenting the development of a data collection methodology designed to address these challenges. In April–May 2022 we co-produced and piloted a mobile health (mHealth) data collection methodology linked to a pre-existing pregnancy and parenting app in the UK (Baby Buddy), prioritising real-time daily data collection about women's postnatal experiences. To explore the potential of mHealth in-app surveys, here we report the iterative design process and the results from a mixed-method (explorative data analysis of usage data and content analysis of interview data) four-week pilot. Participants (n = 14) appreciated the feature’s simplicity and its easy integration into their daily routines, particularly valuing the reflective aspect akin to journaling. As a result, participants used the feature regularly and looked forward to doing so. We find no evidence that key sociodemographic metrics were associated with women’s enjoyment or engagement. Based on participant feedback, important next steps are to design in-feature feedback and tracking systems to help maintain motivation. Reflecting on future opportunities, this case-study underscores that mHealth in-app surveys may be an effective way to collect prospective real-time data on complex infant feeding behaviours and experiences during the postnatal period, with important implications for public health and social science research.",
+  "tldr": "It is underscores that mHealth in-app surveys may be an effective way to collect prospective real-time data on complex infant feeding behaviours and experiences during the postnatal period, with important implications for public health and social science research.",
+  "year": 2025,
+  "venue": "International Breastfeeding Journal",
+  "publication_types": [
+   "JournalArticle",
+   "Review"
+  ],
+  "authors": [
+   "Abigail E Page",
+   "Emily H. Emmott",
+   "R. Sear",
+   "Nilushka Perera",
+   "M. Black",
+   "Jake Elgood-Field"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "69785e981a7622e982cdbd3bcaf3b9b8144df027",
+  "paper_id": "doi:10.1186/s13006-025-00707-7",
+  "doi": "10.1186/s13006-025-00707-7",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/69785e981a7622e982cdbd3bcaf3b9b8144df027",
+  "published_iso": "2025-04-03"
+ },
+ {
+  "title": "Addressing psychosocial needs in patients with Long-COVID (PsyLoCo-Study): study protocol of a pilot-study of a specialized modular intervention",
+  "title_norm": "addressing psychosocial needs in patients with long covid psyloco study study pr",
+  "abstract": "Introduction After an acute infection with the corona virus 10-20% of those affected suffer from ongoing or new symptoms. A causal therapy for the phenomenon known as Long/Post-COVID is still lacking and specific therapies addressing psychosocial needs of these patients are imperatively needed. The aim of the PsyLoCo-study is developing and piloting a psychotherapeutic manual, which addresses Long/Post-COVID-related psychosocial needs and supports in coping with persistent bodily symptoms as well as depressive or anxiety symptoms. Methods and analysis This pilot trial implements a multi-centre, 2-arm (N=120; allocation ratio: 1:1), parallel group, randomised controlled design. The pilot trial is designed to test the feasibility and estimate the effect of 1) a 12-session psychotherapeutic intervention compared to 2) a wait-list control condition on psychosocial needs as well as bodily and affective symptoms in patients suffering from Long/Post-COVID. The intervention uses an integrative, manualized, psychotherapeutic approach. The primary study outcome is health-related quality of life. Outcome variables will be assessed at three timepoints, pre-intervention (t1), post-intervention (t2) and three months after completed intervention (t3). To determine the primary outcome, changes from t1 to t2 are examined. The analysis will be used for the planning of the RCT to test the efficacy of the developed intervention. Discussion The pilot study will evaluate a 12-session treatment manual for Long/Post-COVID sufferers and the therapy components it contains. The analysis will provide insights into the extent to which psychotherapeutic treatment approaches improve the symptoms of Long/Post-COVID sufferers. The treatment manual is designed to be carried out by psychotherapists as well as people with basic training in psychotherapeutic techniques. This approach was chosen to enable a larger number of practitioners to provide therapeutic support for Long/Post-COVID patients. After completion of the pilot study, it is planned to follow up with a randomized controlled study and to develop a treatment guideline for general practitioners and interested specialists. Trial registration The pilot trial has been registered with the German Clinical Trials Register (Deutsches Register Klinischer Studien; Trial-ID: DRKS00030866; URL: https://drks.de/search/de/trial/DRKS00030866) on March 7, 2023.",
+  "tldr": "The aim of the PsyLoCo-study is developing and piloting a psychotherapeutic manual, which addresses Long/Post-COVID-related psychosocial needs and supports in coping with persistent bodily symptoms as well as depressive or anxiety symptoms, and evaluating a 12-session treatment manual for Long/Post-COVID sufferers.",
+  "year": 2024,
+  "venue": "Frontiers in Psychiatry",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Christine Allwang",
+   "T. Frank",
+   "Paul Bruckmann",
+   "Andreas Dinkel",
+   "Marius Binneboese",
+   "Hannah Wallis"
+  ],
+  "citations": 9,
+  "source": "semanticscholar",
+  "source_id": "781f67f178768034863a4c1b942e83a0870cde9d",
+  "paper_id": "doi:10.3389/fpsyt.2024.1305691",
+  "doi": "10.3389/fpsyt.2024.1305691",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1305691/pdf",
+  "published_iso": "2024-03-06"
+ },
+ {
+  "title": "Lesion Network Guided Delta Frequency Neuromodulation Improves Cognition in Patients with Psychosis Spectrum Disorders: A Pilot Study",
+  "title_norm": "lesion network guided delta frequency neuromodulation improves cognition in pati",
+  "abstract": "Background Transcranial electric stimulation (tES) may improve cognition in psychosis spectrum disorders. However, few studies have used novel tES approaches, such as high definition tES (HD-tES) to target specific brain circuits. Recently, the extrastriate visual cortex (V5/MT) has been causally linked to visual hallucinations through lesion network mapping and this may be a promising approach for improving cognition. Objective We aim to determine if causal lesion network guided HD-tES to V5/MT improves cognitive performance as measured by the Brief Assessment of Cognition in Schizophrenia (BACS). Methods A single-blind pilot study with a within-subjects crossover design was performed to characterize the effect of cathodal HD-transcranial direct current stimulation (tDCS) and 2Hz HD-transcranial alternating current stimulation (tACS) on cognition. Enrolled patients received 20 mins of HD-tES twice daily for 5 consecutive days applied bilaterally to V5/MT with a washout between conditions. BACS assessments were performed at baseline, day-5, and 1-month. Results 6 participants with psychosis spectrum disorder were enrolled. 6 individuals received cathodal HD-tDCS. 4 individuals received 2Hz HD-tACS. HD-tACS resulted in significant (p<0.1 baseline to 1-month improvements for Digit Sequencing, Verbal Fluency, and Tower of London. HD-tDCS did not result in significant improvement on any task. Conclusions HD-tACS targeting V5/MT may be a promising treatment to improve cognitive abilities in individuals with psychosis. By promoting delta oscillations, tACS may enhance cortico-cortico communications across brain networks to improve verbal working memory, processing speed, and executive function. Large-scale investigations are needed to replicate these results.",
+  "tldr": "HD-tACS targeting V5/MT may be a promising treatment to improve cognitive abilities in individuals with psychosis by promoting delta oscillations, tACS may enhance cortico-cortico communications across brain networks to improve verbal working memory, processing speed, and executive function.",
+  "year": 2023,
+  "venue": "Asian Journal of Psychiatry",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "W. Molho",
+   "Nicolas Raymond",
+   "Robert M. G. Reinhart",
+   "R. Trotti",
+   "S. Grover",
+   "M. Keshavan"
+  ],
+  "citations": 16,
+  "source": "semanticscholar",
+  "source_id": "339e860c0e03436c3d6662bda60266f1ede67650",
+  "paper_id": "doi:10.1016/j.ajp.2023.103887",
+  "doi": "10.1016/j.ajp.2023.103887",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/339e860c0e03436c3d6662bda60266f1ede67650",
+  "published_iso": "2023-12-01"
+ },
+ {
+  "title": "An experimental laboratory-based minority stress paradigm for alcohol research among sexual minority women: A pilot study",
+  "title_norm": "an experimental laboratory based minority stress paradigm for alcohol research a",
+  "abstract": "Background: Sexual minority women (SMW) use alcohol at higher rates and experience greater alcohol-related harms compared to their heterosexual counterparts. Evidence from observational studies suggests minority stress (i.e., stress experienced due to marginalization in society) is an important risk factor among SMW, yet there is a lack of experimental evidence to establish the direct causal role of minority stress on their alcohol use. The current pilot study adapted the preexisting personalized guided stress induction paradigm to examine how minority stress is related to stress response (assessed via subjective measures and salivary cortisol) and mechanisms of alcohol use (craving, demand, and risky decision-making) in SMW. Methods: Using a within-subjects design (N = 8) cisgender SMW who endorsed high-risk drinking (≥1 heavy drinking episode in the past 30 days) completed three study visits: a script development session and two in-person imagery induction appointments (minority stress and neutral). Results: The paradigm significantly increased subjective stress response (g = 1.32). Data supported the feasibility, acceptability, and appropriateness of using the paradigm with SMW. While the paradigm did not significantly change scores on minority stress and alcohol outcomes measures, effect sizes for craving and minority stress outcomes were in the small-to-medium range (gs = 0.24 to 0.54). Conclusions: The adapted minority stress paradigm appears to be feasible and appropriate for use with SMW to induce stress in laboratory settings. Future research can use this paradigm to understand causal effects of minority stress on alcohol use and related outcomes.",
+  "tldr": "",
+  "year": 2023,
+  "venue": "Alcohol, clinical & experimental research",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Kalina M. L. Fahey",
+   "Anita Cservenka",
+   "M. Peltier",
+   "Ethan H. Mereish",
+   "S. Dermody"
+  ],
+  "citations": 5,
+  "source": "semanticscholar",
+  "source_id": "8a230704a5b9d9da34795c9b0b99b231902c9702",
+  "paper_id": "doi:10.1111/acer.15255",
+  "doi": "10.1111/acer.15255",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/8a230704a5b9d9da34795c9b0b99b231902c9702",
+  "published_iso": "2023-12-27"
+ },
+ {
+  "title": "Adjunctive ab-interno goniotomy in chronic angle-closure glaucoma: a retrospective proof-of-concept pilot study using doubly robust learning",
+  "title_norm": "adjunctive ab interno goniotomy in chronic angle closure glaucoma a retrospectiv",
+  "abstract": "Purpose To assess whether an anterior segment optical coherence tomography (AS-OCT)-informed causal framework could estimate the added benefit of adjunctive ab-interno goniotomy during phacoemulsification with goniosynechialysis (Phaco-GSL) in chronic angle-closure glaucoma (CACG). Design Retrospective single-center comparative cohort pilot study. Methods In a single-center development cohort of 102 eyes, 54 underwent phacoemulsification with goniosynechialysis alone and 48 underwent adjunctive ab-interno goniotomy. Marginal treatment effects were estimated using stabilized inverse probability of treatment weighting (IPTW) and augmented inverse probability weighting (AIPW). Medication-free complete success was defined as intraocular pressure (IOP) 5–18 mmHg with at least 20% reduction from baseline without IOP-lowering medications or additional glaucoma surgery; qualified success used the same IOP criteria with or without medications. Qualified failure was defined as loss of qualified success or need for additional glaucoma surgery. Time to qualified failure through 24 months was analyzed using stabilized IPTW-weighted Kaplan-Meier curves and weighted Cox models. Predicted individualized benefit estimates for 24-month medication-free complete success were derived from baseline clinical and AS-OCT features using a doubly robust learner with ridge regularization and 5-fold cross-fitting. Results Adjunctive goniotomy was associated with higher 24-month qualified-failure-free survival under stabilized IPTW adjustment (0.682 vs 0.425; weighted hazard ratio 0.475, 95% CI 0.257–0.880; p=0.018). Doubly robust estimates favored adjunctive goniotomy for 24-month medication-free complete success (risk difference 0.291; 95% CI 0.105–0.478) and qualified success (risk difference 0.233; 95% CI 0.064–0.403). Adjusted mean IOP differences were modest, whereas medication-free complete success and medication burden showed more apparent separation. Hyphema occurred numerically more often with adjunctive goniotomy. Predicted individualized benefit estimates (model-predicted absolute probability differences) were variable and were not interpreted as clinically actionable recommendations. Conclusions Adjunctive goniotomy was associated with more favorable 24-month surgical control in this retrospective pilot cohort. Imaging-informed doubly robust learning may support future studies of treatment-effect heterogeneity, but the current predicted individualized benefit estimates require external validation before clinical use.",
+  "tldr": "Adjunctive goniotomy was associated with more favorable 24-month surgical control in this retrospective pilot cohort and Imaging-informed doubly robust learning may support future studies of treatment-effect heterogeneity, but the current predicted individualized benefit estimates require external validation before clinical use.",
+  "year": 2026,
+  "venue": "Frontiers in Ophthalmology",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Yuqi Ren",
+   "Xiaojing Zha",
+   "Yizheng Zhang",
+   "Jin Xuan",
+   "Z. Meng",
+   "Chenming Zhang"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "76409604e750541cbbd998b60dae92d9ba584069",
+  "paper_id": "doi:10.3389/fopht.2026.1846121",
+  "doi": "10.3389/fopht.2026.1846121",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.frontiersin.org/journals/ophthalmology/articles/10.3389/fopht.2026.1846121/pdf",
+  "published_iso": "2026-06-19"
+ },
+ {
+  "title": "Multidimensional Fitness Responses to an 8-Week Mountain-Based Hiking and Trail Running Program in University Students: A Pilot Study",
+  "title_norm": "multidimensional fitness responses to an 8 week mountain based hiking and trail ",
+  "abstract": "This pilot study explored multidimensional fitness responses to an eight-week hiking and mountain running program in university students within an outdoor educational framework. As higher education increasingly emphasizes student well-being and experiential learning, mountain-based physical activity represents a promising but insufficiently investigated training modality in academic settings. Twenty students (18–25 years) participated in a structured mountain-based training program combining hiking and trail running. A single-group pretest–posttest design was employed to characterize fitness changes over time. Due to the exploratory nature of this educational intervention and the absence of a control group, causal inference cannot be established. Fitness was assessed using laboratory-based and field-based measures, including the 1.5-mile run, Bruce treadmill protocol, T-Test agility, and a mountain-specific Cardio-Trekking test. Statistical analyses included descriptive statistics, paired-samples comparisons, effect size estimation, confidence intervals, percentage change, and correlations between laboratory and field indicators. Participants showed consistent improvements across aerobic fitness, agility, and mountain-specific endurance indicators. Estimated VO₂ max increased by approximately 8–9%, treadmill performance improved, and agility times decreased. Cardio-Trekking performance was also characterized by faster completion times and lower physiological strain. Strong correlations between VO₂ max and mountain performance (r = –0.81, p < .001) support the ecological relevance of the assessment model.  These findings provide preliminary evidence that mountain-based training may represent a feasible and promising educational approach for promoting multidimensional fitness in university students. Further controlled studies are required to determine causal relationships and confirm the effectiveness of such programs.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Revista Romaneasca pentru Educatie Multidimensionala",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "A. Cătănescu",
+   "M. Butnariu",
+   "F. Cojanu",
+   "Ionut-Traian Mercea",
+   "Ana Maria Tataru",
+   "Diana Hristache"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "6aca43b69b77b355f61eb3367c6f74cee3ae724a",
+  "paper_id": "doi:10.66388/rrem/18.2/31",
+  "doi": "10.66388/rrem/18.2/31",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://journals.inmanifest.com/index.php/rrem/article/download/7714/5456",
+  "published_iso": "2026-06-29"
+ },
+ {
+  "title": "Study Design, Methods, and Modeling in Networks to Inform HIV Interventions and Policy in Marginalized Populations.",
+  "title_norm": "study design methods and modeling in networks to inform hiv interventions and po",
+  "abstract": "",
+  "tldr": "It is demonstrated that accounting for spillover improves understanding of the effectiveness of HIV and opioid use disorder (OUD) interventions, and can improve translation from intervention delivery to population-level impact, supporting evidence-based policy.",
+  "year": 2026,
+  "venue": "R.I. medical journal",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Ashley L. Buchanan",
+   "Claire Pearsall",
+   "Stephen J Kogut",
+   "Jeffrey Bratberg",
+   "Joseph W. Hogan",
+   "Samuel R. Friedman"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "0774597b1267c2f06727cceacd73d064d9e47217",
+  "paper_id": "semanticscholar:0774597b1267c2f06727cceacd73d064d9e47217",
+  "doi": "",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/0774597b1267c2f06727cceacd73d064d9e47217",
+  "published_iso": "2026-07-01"
+ },
+ {
+  "title": "A nurse-led climate resilience program for older adults: A one-group pre/post pilot study and implications for nursing management.",
+  "title_norm": "a nurse led climate resilience program for older adults a one group pre post pil",
+  "abstract": "BACKGROUND\nClimate-related stressors increasingly threaten older adults' psychological well-being, yet preliminary evidence guiding nurse-led, culturally situated community responses remains limited.\n\n\nPURPOSE\nTo examine whether a brief nurse-led climate resilience program was associated with preliminary within-group changes over time in eco-anxiety, eco-guilt, ecological grief, and psychological empowerment among older adults, and to identify implications for nursing leadership and policy.\n\n\nMETHODS\nThis pilot one-group pretest-posttest study included 140 community-dwelling adults aged 60 years and older attending a club for older adults in Damanhur, Egypt. Standardized measures were completed at baseline and 3-month follow-up; findings were interpreted as preliminary because the design did not include a comparison group and could not support causal inference.\n\n\nDISCUSSION\nAt 3-month follow-up, within-group mean scores were lower for eco-anxiety (57.74-44.47; d = 1.07), ecological grief (16.75-12.98; d = 0.94), eco-guilt (20.91-17.09; d = 0.58), and psychological empowerment (24.11-19.74; d = 0.57; lower scores indicate greater empowerment). Exploratory mediation and moderation findings were treated as hypothesis-generating only. These findings suggest that a nurse-led climate resilience program may be feasible in community nursing settings serving older adults; however, controlled multisite studies are needed to assess effectiveness, clarify causal mechanisms, and establish generalizability.\n\n\nCONCLUSION\nA brief nurse-led climate resilience program was associated with favorable preliminary within-group changes in climate-related emotional responses and psychological empowerment among older adults. Rigorous controlled research is needed before effectiveness can be concluded.",
+  "tldr": "It is suggested that a nurse-led climate resilience program may be feasible in community nursing settings serving older adults; however, controlled multisite studies are needed to assess effectiveness, clarify causal mechanisms, and establish generalizability.",
+  "year": 2026,
+  "venue": "Nursing Outlook",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "F. M. Ibrahim",
+   "Safaa Mabrouk Abdelaziz Elgarhy"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "a01bb5c32185de016928fbcba0b38fcf8eb84c2a",
+  "paper_id": "doi:10.1016/j.outlook.2026.102842",
+  "doi": "10.1016/j.outlook.2026.102842",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/a01bb5c32185de016928fbcba0b38fcf8eb84c2a",
+  "published_iso": "2026-07-01"
+ },
+ {
+  "title": "Use of virtual reality medical hypnosis for anxiolytic purposes during frozen embryo transfer: A prospective pilot study",
+  "title_norm": "use of virtual reality medical hypnosis for anxiolytic purposes during frozen em",
+  "abstract": "Objective To assess the feasibility of using a virtual reality medical hypnosis (VRH) device for anxiolytic purposes during frozen embryo transfer (FET) and to observe its effect on subsequent pregnancy rate. Design This is a prospective, single-center study conducted in a French public reproductive medicine ward between December 2023 and 1 May 2024. Subjects Women aged 18–45 years who undergoing IVF at the center. The present study included 50 women who had a scheduled FET. Interventions Study participants were using the VRH device during the FET. Main outcomes measures Feasibility was defined as optimal and incident-free device use. Anxiety levels were measured pre- and post-procedure using the State-Trait Anxiety Inventory (STAI-Y1). Women and caregiver satisfaction were assessed using Likert scales, while acceptability of the procedure was assessed by recording adverse events. HCG test was conducted afterward and compared with a concurrent non-exposed cohort from the same unit and inclusion period using causal inference to analyze pregnancy rates. Results 50 women were included from the active patient file undergoing FET at the center. The feasibility of using the VRH device was assessed at 96%, with 100% acceptability of the procedure. Women satisfaction was 98%, and caregiver satisfaction reached 100%, with a favorable device’s use opinion in routine practice. A significant reduction in anxiety was observed, with a mean anxiety score of 28.8/80 after the procedure compared to 39.3/80 before (p < 0.001). Regarding pregnancy outcomes, 25 women had a positive HCG test after the procedure, including 20 with HCG > 100 IU/L, resulting in a pregnancy rate of 40%. Although a positive trend was observed in the comparison with the concurrent non-exposed cohort, the difference was not statistically significant (OR 1.18, 95% CI 0.65–2.14; p = 0.583). Conclusion The use of a VRH device during FET is feasible and safe, suggesting a promising anxiolytic effect and a useful non-medical tool for optimizing care pathways in assisted reproduction. Further larger and controlled studies are warranted to confirm these encouraging findings and to more thoroughly assess the impact on pregnancy outcomes.",
+  "tldr": "The use of a VRH device during FET is feasible and safe, suggesting a promising anxiolytic effect and a useful non-medical tool for optimizing care pathways in assisted reproduction.",
+  "year": 2026,
+  "venue": "PLoS ONE",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Octavia Pingault",
+   "Annaëlle Testud",
+   "E. Labrune",
+   "Bruno Salle",
+   "M. Benchaib",
+   "E. Fraison"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "883aff4be31a1d0d271c524d855bfa21aea5e12f",
+  "paper_id": "doi:10.1371/journal.pone.0350101",
+  "doi": "10.1371/journal.pone.0350101",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://doi.org/10.1371/journal.pone.0350101",
+  "published_iso": "2026-05-26"
+ },
+ {
+  "title": "A pilot study evidencing the effectiveness of a new maths intervention",
+  "title_norm": "a pilot study evidencing the effectiveness of a new maths intervention",
+  "abstract": "This study evaluated a maths intervention programme, devised by the first author from psychological research into maths learning, difficulties, and intervention.Using a case series design, the first author collaborated with a Special Educational Needs and Disabilities Co-ordinator (SENDCo) and seven teaching assistants (TAs), who delivered the intervention to nine children (between four- and ten-years-old) of most concern to their teachers. Eight hours of training was provided for the adults, on the psychology of maths learning and use of a diagnostic assessment and intervention framework. Personalised intervention programmes were planned for the children. The adults worked one-to-one with the children, for 15–20 minutes a day, up to five times a week, over ten weeks. Researcher support and observational monitoring visits were provided each week. Pre- and poststandardised assessments were used to assess the intervention’s impact on the children’s maths achievement. Impact on the adults and children, and possible causal mechanisms, were explored through individual interviews.Pre-/post-assessments, interview and observational data showed that children’s maths levels and attitudes had improved significantly. Thematic analysis evidenced that adults’ knowledge, skills, and confidence had increased.Limitations include the small-scale nature of the study, coherence across structural elements (diagnostic assessment, framework, plans), lack of specific training on instructional methods, generalisability from out-of-class learning to classroom teaching, and problems associated with the operationalisation of mathematical constructs.This study provides tentative evidence for the programme’s effectiveness, feasibility, and potential to address both moderate and severe maths needs, justifying larger-scale evaluation.",
+  "tldr": "",
+  "year": 2023,
+  "venue": "Educational & Child Psychology",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Frances Graves",
+   "Phil Stringer"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "30bb7e775a222bb623a2bb17bf4dbc1655b3a517",
+  "paper_id": "doi:10.53841/bpsecp.2023.40.3.6",
+  "doi": "10.53841/bpsecp.2023.40.3.6",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/30bb7e775a222bb623a2bb17bf4dbc1655b3a517",
+  "published_iso": "2023-10-10"
+ },
+ {
+  "title": "The Impact of the Low-Carbon City Pilot Policy on Energy Intensity: Evidence from a Staggered Difference-in-Differences Design",
+  "title_norm": "the impact of the low carbon city pilot policy on energy intensity evidence from",
+  "abstract": "Under China’s dual-carbon agenda, a central question is whether the Low-Carbon City (LCC) pilot policy reduces energy intensity, whether this effect can be credibly interpreted as causal, and under which conditions and through which channels it operates. Using a balanced panel of 282 prefecture-level and higher-level cities from 2006 to 2023, this study develops a problem-oriented framework that integrates effect identification, credibility validation, and heterogeneity and mechanism analysis. The average treatment effect is estimated using staggered difference-in-differences, while dynamic effects are identified with interaction-weighted and imputation-based event-study estimators, and selection concerns are further addressed through propensity score matching difference-in-differences and a battery of stability checks. The results show that the LCC pilot policy reduces urban energy intensity, with the baseline estimate implying a decline of about 15%–16%, and that the policy effect accumulates over time rather than appearing immediately. This finding remains stable across alternative specifications, placebo tests, and matched-sample estimation. The policy effect is stronger in cities with higher initial energy intensity and higher levels of economic development. Mechanistic evidence indicates that adjustments in fixed asset investment and changes in AI-related resource allocation are two observable channels associated with the decline in energy intensity. By focusing on energy intensity as a process-oriented performance indicator, this study provides more direct evidence on the energy-efficiency consequences of low-carbon urban governance and clarifies the conditional and structural foundations of policy effectiveness.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Land",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Tianyu Wang",
+   "Yanying Wei"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "67b61668713063f96230027b00b0c9e001633af3",
+  "paper_id": "doi:10.3390/land15060913",
+  "doi": "10.3390/land15060913",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://doi.org/10.3390/land15060913",
+  "published_iso": "2026-05-25"
+ },
+ {
+  "title": "Mitigating Object Hallucination via Concentric Causal Attention",
+  "title_norm": "mitigating object hallucination via concentric causal attention",
+  "abstract": "Recent Large Vision Language Models (LVLMs) present remarkable zero-shot conversational and reasoning capabilities given multimodal queries. Nevertheless, they suffer from object hallucination, a phenomenon where LVLMs are prone to generate textual responses not factually aligned with image inputs. Our pilot study reveals that object hallucination is closely tied with Rotary Position Encoding (RoPE), a widely adopted positional dependency modeling design in existing LVLMs. Due to the long-term decay in RoPE, LVLMs tend to hallucinate more when relevant visual cues are distant from instruction tokens in the multimodal input sequence. Additionally, we observe a similar effect when reversing the sequential order of visual tokens during multimodal alignment. Our tests indicate that long-term decay in RoPE poses challenges to LVLMs while capturing visual-instruction interactions across long distances. We propose Concentric Causal Attention (CCA), a simple yet effective positional alignment strategy that mitigates the impact of RoPE long-term decay in LVLMs by naturally reducing relative distance between visual and instruction tokens. With CCA, visual tokens can better interact with instruction tokens, thereby enhancing model's perception capability and alleviating object hallucination. Without bells and whistles, our positional alignment method surpasses existing hallucination mitigation strategies by large margins on multiple object hallucination benchmarks.",
+  "tldr": "This work proposes Concentric Causal Attention (CCA), a simple yet effective positional alignment strategy that mitigates the impact of RoPE long-term decay in LVLMs by naturally reducing relative distance between visual and instruction tokens.",
+  "year": 2024,
+  "venue": "Neural Information Processing Systems",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Yun Xing",
+   "Yiheng Li",
+   "Ivan Laptev",
+   "Shijian Lu"
+  ],
+  "citations": 73,
+  "source": "semanticscholar",
+  "source_id": "48b23225d036b8aa306dfcfa9c35cfc4195e4bd1",
+  "paper_id": "dblp:conf/nips/XingLLL24",
+  "doi": "10.48550/arXiv.2410.15926",
+  "arxiv_id": "2410.15926",
+  "dblp_key": "conf/nips/XingLLL24",
+  "paper_url": "https://www.semanticscholar.org/paper/48b23225d036b8aa306dfcfa9c35cfc4195e4bd1",
+  "published_iso": "2024-10-21"
+ },
+ {
+  "title": "Impact of the Momentum pilot project on male involvement in maternal health and newborn care in Kinshasa, Democratic Republic of the Congo: a quasi-experimental study",
+  "title_norm": "impact of the momentum pilot project on male involvement in maternal health and ",
+  "abstract": "Background The World Health Organization recommends that programs that seek to improve maternal and newborn health outcomes actively involve men during pregnancy, childbirth, and postpartum. However, there is little evidence on what strategies work to increase male knowledge of and involvement in antenatal and postnatal care. This study assessed the impact of the Momentum project on male involvement in maternal health and newborn care. The project involved monthly home visits to a cohort of first-time mothers aged 15–24 recruited at six-months gestation and group education sessions for their male partners using the Program P toolkit. Participants were followed-up for 16 months. Methods The study used a quasi-experimental design with three intervention and three comparison health zones. Baseline data were collected in 2018 and endline data in 2020. Exploratory factor analysis was used to develop scales of male involvement. We measured the causal influence of Momentum using an intent-to-treat analysis at the health-zone level and a dose–response analysis at the individual level. We used random-effects probit and linear models for outcomes measured at baseline and endline, and treatment effects models with inverse-probability weighting for outcomes measured only at endline. The impact analysis involved 1,204 male partners of first-time mothers with live births. Results Intervention health zones were associated with an 18.1 percentage point (95% CI [(10.6, 25.6]) increase in knowledge of three or more obstetric danger signs and a 13.9 percentage point (95% CI [6.3, 21.6]) increase in knowledge of newborn danger signs. Significant increases in male involvement in antenatal care (average treatment effect (ATE) = 0.728, 95% CI [0.445, 1.010]), birth planning (ATE = 0.407, 95% CI [0.157, 0.657]), and newborn care (ATE = 0.690, 95% CI [0.359, 1.021]) were found. The magnitude of Momentum’s impact increased steadily with the number of prenatal home visits and was statistically significant for all behavioral outcomes except shared decision making. Exposure to both home visits and group education sessions during the prenatal period had a significant impact on all outcomes relative to no exposure. Conclusions The study demonstrated the effectiveness of Momentum on male involvement in maternal health and newborn care.",
+  "tldr": "The magnitude of Momentum’s impact increased steadily with the number of prenatal home visits and was statistically significant for all behavioral outcomes except shared decision making.",
+  "year": 2022,
+  "venue": "BMC Women's Health",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "A. Gage",
+   "Francine E. Wood",
+   "Madeline Woo",
+   "Rianne Gay"
+  ],
+  "citations": 8,
+  "source": "semanticscholar",
+  "source_id": "c0007f8feee99b575282cdb7d20dded2d45f3cf7",
+  "paper_id": "doi:10.1186/s12905-022-02032-1",
+  "doi": "10.1186/s12905-022-02032-1",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://bmcwomenshealth.biomedcentral.com/counter/pdf/10.1186/s12905-022-02032-1",
+  "published_iso": "2022-11-18"
+ },
+ {
+  "title": "Artificial intelligence, green innovation efficiency, and public health benefits: evidence from China’s pilot zones with a DID approach",
+  "title_norm": "artificial intelligence green innovation efficiency and public health benefits e",
+  "abstract": "Introduction China has established Artificial Intelligence Innovation and Development Pilot Zones (AIDP) to promote industrial upgrading and digital transformation. This study evaluates whether these AI oriented policies enhance firm-level green innovation efficiency (GIE) and generate potential environmental and health benefits. Methods Using panel data of Chinese firms from 2011 to 2022, we employed a difference-in-differences (DID) design exploiting the staggered implementation of AIDP as a quasi-experiment. The estimation identifies the causal effects of AIDP on green R&D efficiency and green innovation output efficiency, measured by DEA-based indicators and patent productivity. Results The DID estimates show that AIDP increases firms’ green R&D efficiency by approximately 1.7% and green innovation output efficiency by 1.4% relative to non-pilot firms, corresponding to the DID coefficients of 0.017 and 0.014. These effects are primarily driven by enhanced AI hardware investment, improved asset liquidity, and strengthened ESG performance, which together boost firms’ digital capability, operational efficiency, and sustainability orientation. Mechanism analysis further indicates that these improvements reduce pollution intensity and support cleaner production processes, suggesting potential environmental and health benefits inferred from pollution reduction. Heterogeneity analysis reveals that the treatment effects are larger among non-state-owned enterprises, manufacturing firms, and labor-intensive sectors, underscoring the importance of tailoring interventions to sectoral and institutional contexts. Conclusion AIDP generates economically and statistically significant improvements in green innovation efficiency, confirming the potential of AI oriented policies to promote sustainable industrial transformation. By fostering green technologies that cut emissions and reduce industrial pollution, these policies deliver dual dividends: advancing environmental sustainability and supporting public health. The findings highlight the importance of expanding pilot zones, integrating digital initiatives with green finance, and investing in digital infrastructure to maximize policy effectiveness and generate broader environmental and health benefits.",
+  "tldr": "AIDP generates economically and statistically significant improvements in green innovation efficiency, confirming the potential of AI oriented policies to promote sustainable industrial transformation and highlighting the importance of expanding pilot zones, integrating digital initiatives with green finance, and investing in digital infrastructure to generate broader environmental and health benefits.",
+  "year": 2025,
+  "venue": "Frontiers in Public Health",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Zhihong Zhang",
+   "Ming Zhang",
+   "Xing Xu"
+  ],
+  "citations": 5,
+  "source": "semanticscholar",
+  "source_id": "89e8a49bce7d3ccaaf88f394b8ec253f0a508f52",
+  "paper_id": "doi:10.3389/fpubh.2025.1713295",
+  "doi": "10.3389/fpubh.2025.1713295",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/89e8a49bce7d3ccaaf88f394b8ec253f0a508f52",
+  "published_iso": "2025-11-18"
+ },
+ {
+  "title": "Large Language Models as Co-Pilots for Causal Inference in Medical Studies",
+  "title_norm": "large language models as co pilots for causal inference in medical studies",
+  "abstract": "The validity of medical studies based on real-world clinical data, such as observational studies, depends on critical assumptions necessary for drawing causal conclusions about medical interventions. Many published studies are flawed because they violate these assumptions and entail biases such as residual confounding, selection bias, and misalignment between treatment and measurement times. Although researchers are aware of these pitfalls, they continue to occur because anticipating and addressing them in the context of a specific study can be challenging without a large, often unwieldy, interdisciplinary team with extensive expertise. To address this expertise gap, we explore the use of large language models (LLMs) as co-pilot tools to assist researchers in identifying study design flaws that undermine the validity of causal inferences. We propose a conceptual framework for LLMs as causal co-pilots that encode domain knowledge across various fields, engaging with researchers in natural language interactions to provide contextualized assistance in study design. We provide illustrative examples of how LLMs can function as causal co-pilots, propose a structured framework for their grounding in existing causal inference frameworks, and highlight the unique challenges and opportunities in adapting LLMs for reliable use in epidemiological research.",
+  "tldr": "This work explores the use of large language models (LLMs) as co-pilot tools to assist researchers in identifying study design flaws that undermine the validity of causal inferences, and proposes a conceptual framework for LLMs as causal co-pilots that encode domain knowledge across various fields.",
+  "year": 2024,
+  "venue": "arXiv.org",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Ahmed M. Alaa",
+   "Rachael V. Phillips",
+   "Emre Kıcıman",
+   "Laura B. Balzer",
+   "M. V. D. Laan",
+   "Maya L. Petersen"
+  ],
+  "citations": 9,
+  "source": "semanticscholar",
+  "source_id": "937c9aab25e7dc0da6412e8b4b19be0257e8a01e",
+  "paper_id": "dblp:journals/corr/abs-2407-19118",
+  "doi": "10.48550/arXiv.2407.19118",
+  "arxiv_id": "2407.19118",
+  "dblp_key": "journals/corr/abs-2407-19118",
+  "paper_url": "https://www.semanticscholar.org/paper/937c9aab25e7dc0da6412e8b4b19be0257e8a01e",
+  "published_iso": "2024-07-26"
+ },
+ {
+  "title": "THE POWER OF POLICY SYNERGY IN URBAN DECARBONIZATION: ASSESSING THE CARBON MITIGATION EFFECTS OF PREFABRICATED BUILDING PILOT POLICY IN CHINA",
+  "title_norm": "the power of policy synergy in urban decarbonization assessing the carbon mitiga",
+  "abstract": "\n Prefabricated buildings (PBs) have emerged as a pivotal strategy for sustainable construction, yet empirical evidence on their direct carbon mitigation potential remains understudied. This study evaluates the causal effects of a Prefabricated Building Pilot Policy (PBPP) on urban carbon emissions in China to address this gap. Using a staggered difference-in-differences (DID) design and panel data from 333 prefecture-level cities over 2010 to 2023, we find that PBPP implementation significantly reduces carbon emissions in pilot cities. Results highlight regional heterogeneity: emission reductions are stronger in western regions and cities without centralized heating systems than in eastern and centrally heated cities. Furthermore, PBPP exhibits synergistic effects when combined with climate-adaptive city pilots and smart city initiatives, enhancing mitigation outcomes. These findings underscore the value of integrated policy frameworks for urban decarbonization. The study contributes by (1) quantifying PB-related emission reductions at the urban scale, (2) demonstrating policy synergy effects, and (3) offering practical insights for optimizing China's PBPP strategy. The evidence supports coordinated policy design to amplify the climate benefits of sustainable construction.",
+  "tldr": "",
+  "year": 2025,
+  "venue": "Journal of Green Building, College Publishing, USA",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Hongcheng Shen",
+   "Ledi Lyu",
+   "Ming Yuan",
+   "Dongjie Chen",
+   "Han Lin"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "8d463079f2e33f911aa61975a30a5b58eb763fa8",
+  "paper_id": "doi:10.3992/jgb.20.4.173",
+  "doi": "10.3992/jgb.20.4.173",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/8d463079f2e33f911aa61975a30a5b58eb763fa8",
+  "published_iso": null
+ },
+ {
+  "title": "Integrating causal pathway diagrams into practice facilitation to address colorectal cancer screening disparities in primary care",
+  "title_norm": "integrating causal pathway diagrams into practice facilitation to address colore",
+  "abstract": "Colorectal cancer (CRC) is the second leading cause of cancer death and the second most common cancer diagnosis among the Hispanic population in the United States. However, CRC screening prevalence remains lower among Hispanic adults than among non-Hispanic white adults. To reduce CRC screening disparities, efforts to implement CRC screening evidence-based interventions in primary care organizations (PCOs) must consider their potential effect on existing screening disparities. More research is needed to understand how to leverage existing implementation science methodologies to improve health disparities. The Coaching to Improve Colorectal Cancer Screening Equity (CoachIQ) pilot study explores whether integrating two implementation science tools, Causal Pathway Diagrams and practice facilitation, is a feasible and effective way to address CRC screening disparities among Hispanic patients. We used a quasi-experimental, mixed methods design to evaluate feasibility and assess initial signals of effectiveness of the CoachIQ approach. Three PCOs received coaching from CoachIQ practice facilitators over a 12-month period. Three non-equivalent comparison group PCOs received coaching during the same period as participants in a state quality improvement program. We conducted descriptive analyses of screening rates and coaching activities. The CoachIQ practice facilitators discussed equity, facilitated prioritization of QI activities, and reviewed CRC screening disparities during a higher proportion of coaching encounters than the comparison group practice facilitator. While the mean overall CRC screening rate in the comparison PCOs increased from 34 to 41%, the mean CRC screening rate for Hispanic patients did not increase from 30%. In contrast, the mean overall CRC screening rate at the CoachIQ PCOs increased from 41 to 44%, and the mean CRC screening rate for Hispanic patients increased from 35 to 39%. The CoachIQ program merges two implementation science methodologies, practice facilitation and causal pathway diagrams, to help PCOs focus quality improvement efforts on improving CRC screening while also reducing screening disparities. Results from this pilot study demonstrate key differences between CoachIQ facilitation and standard facilitation, and point to the potential of the CoachIQ approach to decrease disparities in CRC screening.",
+  "tldr": "The CoachIQ program merges two implementation science methodologies, practice facilitation and causal pathway diagrams, to help PCOs focus quality improvement efforts on improving CRC screening while also reducing screening disparities.",
+  "year": 2024,
+  "venue": "BMC Health Services Research",
+  "publication_types": [
+   "JournalArticle",
+   "Review"
+  ],
+  "authors": [
+   "Brooke Ike",
+   "Ashley Johnson",
+   "Rosemary Meza",
+   "Allison Cole"
+  ],
+  "citations": 4,
+  "source": "semanticscholar",
+  "source_id": "25ee993ffa611f03794f5aba8efd5ec7d0ca0608",
+  "paper_id": "doi:10.1186/s12913-024-11471-5",
+  "doi": "10.1186/s12913-024-11471-5",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://doi.org/10.1186/s12913-024-11471-5",
+  "published_iso": "2024-08-30"
+ },
+ {
+  "title": "A causal relationship model of decent work for myanmar migrant workers in Pathum Thani province",
+  "title_norm": "a causal relationship model of decent work for myanmar migrant workers in pathum",
+  "abstract": "This study examined a causal relationship model of decent work (DCW) among Myanmar migrant workers in Pathum Thani Province, Thailand. Using a cross-sectional quantitative design, data were collected from 374 Myanmar migrant workers employed as pushcart service providers in the Si Mum Mueang Market through systematic random sampling from a registered worker list. The study developed a structured questionnaire covering four constructs: decent work, precarity and uncertainty, labor governance, and career adaptability. All the measures used 5-point Likert scales. Content validity was assessed by experts using item-objective congruence, and pilot testing with 30 migrant workers produced Cronbach’s alpha coefficients ranging from .714 to .869. The data were analyzed using structural equation modeling (SEM) with maximum likelihood estimation in AMOS. The adjusted model demonstrated a good fit to the empirical data, with χ² = 90.119, df = 36, RMSEA = .063, RMR = .008, CFI = .991, GFI = .966, and AGFI = .902, and explained 92.3% of the variance in decent work. Labor governance had the strongest positive direct effect on decent work (β = .576, p < .01), followed by precarity and uncertainty (β = .546, p < .01), whereas career adaptability had a negative but statistically nonsignificant direct effect (β = −.134). The findings indicate that structural and institutional conditions were more decisive than individual adaptive capacity in shaping decent work outcomes for migrant workers. In particular, labor inspections, voluntary labor measures, and third-party audits were key mechanisms associated with improved decent work, whereas instability in living conditions, employment, welfare, and working conditions remained central to workers’ vulnerabilities. Strengthening labor inspection systems, promoting employer responsibility through voluntary labor standards, expanding third-party monitoring, and integrating social protection with labor market policy are recommended to reduce the vulnerability of migrant workers and improve sustainable labor conditions in Thailand and other migrant-receiving settings.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Multidisciplinary Science Journal",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Narakate Yimsook",
+   "Kritsada Theerakosonphong"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "2a636ec13963a35ad11535d4d6ab1e6eca960607",
+  "paper_id": "doi:10.31893/multiscience.2026738",
+  "doi": "10.31893/multiscience.2026738",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://malque.pub/ojs/index.php/msj/article/download/15766/6693",
+  "published_iso": "2026-05-28"
+ },
+ {
+  "title": "Using FRAM for Causal Analysis of Marine Risks in the Motor Vessel Milano Bridge Accident: Identifying Potential Solutions",
+  "title_norm": "using fram for causal analysis of marine risks in the motor vessel milano bridge",
+  "abstract": "The levels of informatization, automation, and intelligence are continuously improving; however, the risks associated with the increased design and operational complexity of ship systems are increasing. Large-scale ship accidents can occur for several reasons. Existing accident analysis methods that examine marine accidents from the perspective of causal one-to-one correspondence have limitations in systematically analyzing complex marine risks during cause identification for the prevention of similar accidents. This study focuses on a systematic causality analysis of the factors related to human error in marine accidents that may occur during the arrival and departure of mega container ships. In particular, a representative case of the Motor Vessel (MV) Milano Bridge crane contact accident at Busan New Port is considered. To explore the complex organizational–technical, human–technical, and organizational–human relationships relevant to this case, human factors (seafarer, pilot, etc.) that are closely related to the linked causes were analyzed using the functional resonance analysis method. This study aims to reduce human error and prevent marine accidents, including pilotage.",
+  "tldr": "",
+  "year": 2023,
+  "venue": "Applied Sciences",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Yong-Ung Yu",
+   "Young-Joong Ahn",
+   "Chang-hee Lee"
+  ],
+  "citations": 5,
+  "source": "semanticscholar",
+  "source_id": "05678e5a21de48450973ae73ee01aac54cb94b2f",
+  "paper_id": "doi:10.3390/app13158764",
+  "doi": "10.3390/app13158764",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.mdpi.com/2076-3417/13/15/8764/pdf?version=1690610826",
+  "published_iso": "2023-07-29"
+ },
+ {
+  "title": "Impact evaluation of the turnaround arts pilot program: an interrupted time series analysis",
+  "title_norm": "impact evaluation of the turnaround arts pilot program an interrupted time serie",
+  "abstract": "Abstract The purpose of this study was to conduct an evaluation of the pilot program of the Turnaround Arts reform using a comparative interrupted time series design. Because the only existing evaluation of the Turnaround Arts pilot program lacks clarity and transparency, reanalyzing this program is important to understand the effects of the initiative. I created a unique dataset with nine variables to specifically evaluate the achievement outcomes of the pilot schools, which I paired with similarly matched control schools. Achievement measures included average math and reading language arts (RLA) percent proficient scores for each of the schools from 2010 to 2014 and were collected from the Stanford Education Data Archive. My results indicated that the original Turnaround Arts reform had no statistically significant impacts on the pilot schools achievement measures, an important link in the initiatives theory of action. These results support previous music education literature that found no positive causal effects between music education and non-music achievement scores. School music and arts programs are important for providing children with a well-rounded education; however, justifying the use of arts education for non-arts gains can undermine high-quality arts program development.",
+  "tldr": "",
+  "year": 2023,
+  "venue": "Arts education policy review",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Bri’Ann F. Wright"
+  ],
+  "citations": 2,
+  "source": "semanticscholar",
+  "source_id": "e88488ad125b3cc1c8779f284c393315ebfe63c3",
+  "paper_id": "doi:10.1080/10632913.2023.2285497",
+  "doi": "10.1080/10632913.2023.2285497",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/e88488ad125b3cc1c8779f284c393315ebfe63c3",
+  "published_iso": "2023-12-01"
+ },
+ {
+  "title": "REVOLUTIONIZING LANGUAGE LEARNING: A STUDY ON AI INTEGRATION IN UNIVERSITY-LEVEL ENGLISH CLASSROOMS",
+  "title_norm": "revolutionizing language learning a study on ai integration in university level ",
+  "abstract": "This research study investigates  the impact of artificial intelligence (AI) in English language classrooms at the university level, employing a quantitative approach to examine the phenomenon. The study utilizes a causal-comparative research design to explore the relationship between variables, which are measured through a cross-sectional survey providing numerical descriptions. The population consists of BS and M.Phil. English students from Riphah International University and Government University of Faisalabad. A random sampling technique ensures the sample's representativeness. The instrument is pilot-tested for validity and reliability. Statistical analysis, including descriptive statistics, independent samples t-test, One-Way ANOVA, and linear regression, is used to answer research questions. The findings indicate a positive correlation between AI integration and language learning outcomes. The study suggests that instructors should leverage AI applications to enhance language fluency and learning, and AI-powered tools can be utilized to develop various aspects of language proficiency.\"",
+  "tldr": "The study suggests that instructors should leverage AI applications to enhance language fluency and learning, and AI-powered tools can be utilized to develop various aspects of language proficiency.",
+  "year": 2025,
+  "venue": "Journal for Current Sign",
+  "publication_types": [
+   "JournalArticle",
+   "Review"
+  ],
+  "authors": [
+   "Muhammad Ezaan",
+   "Hira Shabbir",
+   "Dr. Noreen Saba"
+  ],
+  "citations": 1,
+  "source": "semanticscholar",
+  "source_id": "863abb59831ad2cc71e1dd0beb177bd6dfb0882d",
+  "paper_id": "doi:10.63075/jcs.v3i2.159",
+  "doi": "10.63075/jcs.v3i2.159",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/863abb59831ad2cc71e1dd0beb177bd6dfb0882d",
+  "published_iso": "2025-05-27"
+ },
+ {
+  "title": "Analysis of Voice Changes in Early-Stage Parkinson's Disease with AVQI and ABI: A Follow-up Study.",
+  "title_norm": "analysis of voice changes in early stage parkinson s disease with avqi and abi a",
+  "abstract": "OBJECTIVES\nThe purpose of this pilot study was to examine voice quality changes in individuals with early-stage Parkinson's disease (PD) utilizing the Acoustic Voice Quality Index (AVQI) and Acoustic Breathiness Index (ABI) over approximately a 1-year period.\n\n\nSTUDY DESIGN\nFollow-up study.\n\n\nMETHODS\nBaseline and follow-up data were gathered from the PDSTUlong speech corpus. The data for both time points included: speaker background information, sustained vowels, reading samples, and measures of PD severity (Hoehn and Yahr scores and Unified Parkinson's Disease Rating Scale III scores [UPDRS-III]). All speakers (N = 12) were native Finnish speakers. AVQIv03.01 and ABI analysis were completed in VOXplot v2.0.1. Changes in AVQI and ABI scores between baseline and follow-up were examined via causal analysis. Further, AVQI and ABI were analyzed in relation to measures of PD severity.\n\n\nRESULTS\nBaseline mean AVQI score was 1.79 (range 0.14-4.83, SD=1.60), whereas follow-up mean AVQI score was 2.25 (range 0.55-4.53, SD=1.36). Baseline mean ABI score, in turn, was 2.92 (range 1-27 - 5.31, SD=1.57), whereas follow-up mean ABI score was 3.42 (range 1.40-5.40, SD=1.38). A significant difference was found between baseline and follow-up measures for both AVQI (Z = -2.002, P = 0.045) and ABI (Z = -2.197, P = 0.028). A significant difference in smoothed cepstral peak prominence (Z = -2.118, P = 0.034) and harmonics-to-noise ratio (Z = -1.961, P = 0.050) was also found between the two measurement periods. Change in AVQI and ABI were not correlated with the change in measures of PD severity.\n\n\nCONCLUSION\nOver approximately 1-year, a statistical change was observed in AVQI and ABI scores, even in such a small dataset. The specific qualities of breathiness and hoarseness showed the most significant progression. Changes in voice quality were more prominent in ABI analysis.",
+  "tldr": "Over approximately 1-year, a statistical change was observed in AVQI and ABI scores, even in such a small dataset, and the specific qualities of breathiness and hoarseness showed the most significant progression.",
+  "year": 2024,
+  "venue": "Journal of Voice",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Rachel B Convey",
+   "A. Laukkanen",
+   "Sari Ylinen",
+   "Nelly Penttilä"
+  ],
+  "citations": 11,
+  "source": "semanticscholar",
+  "source_id": "9a7311bbbcab18b6e7005b292174754823024318",
+  "paper_id": "doi:10.1016/j.jvoice.2024.05.009",
+  "doi": "10.1016/j.jvoice.2024.05.009",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.jvoice.org/article/S0892-1997(24)00160-7/pdf",
+  "published_iso": "2024-06-01"
+ },
+ {
+  "title": "Environmental sustainability and firm performance: Unpacking the productivity effects of green data center pilots.",
+  "title_norm": "environmental sustainability and firm performance unpacking the productivity eff",
+  "abstract": "Infrastructure has become a core production factor, and its greening and efficiency have emerged as national priorities. However, causal evidence on whether China's Green Data Center Pilots raise firm-level labor productivity remains scarce. The study relies on the panel of A-share listed firms over 2012-2023 and estimate a staggered difference-in-differences design to identify the pilot's effect and its mechanism. The gains are concentrated among firms with low R&D uncertainty, low financial risk, and no university-industry collaborations. Mechanism tests show that the pilot improves productivity by curbing low-quality overtime; moreover, data-asset disclosure and embedding in global innovation networks attenuate the adverse marginal effect of overtime, thereby moderating the strength of the mediation channel. The study brings green digital infrastructure into the firm-level labor-productivity framework. Practically, it suggests prioritizing firms with strong absorptive capacity and low financial constraints, and strengthening data-governance disclosure and global collaboration to raise the marginal productivity of overtime and amplify policy returns.",
+  "tldr": "",
+  "year": 2025,
+  "venue": "Journal of Environmental Management",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Chuhong Wang",
+   "Yang Zhao",
+   "Yuhao Zhang",
+   "Dongbao Li"
+  ],
+  "citations": 6,
+  "source": "semanticscholar",
+  "source_id": "8dc7ddc9f5742c4413320de97f63ffb758623285",
+  "paper_id": "doi:10.1016/j.jenvman.2025.127764",
+  "doi": "10.1016/j.jenvman.2025.127764",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/8dc7ddc9f5742c4413320de97f63ffb758623285",
+  "published_iso": "2025-10-29"
+ },
+ {
+  "title": "Dual CO2 mitigations with diminishing margins: Evidence from China’s intensity-based national emissions trading scheme",
+  "title_norm": "dual co2 mitigations with diminishing margins evidence from china s intensity ba",
+  "abstract": "Summary China’s national emissions trading scheme (CN ETS) is the world’s largest carbon market in terms of covered emissions, yet rigorous empirical evidence on its mitigation effectiveness remains limited. Using a balanced panel of 1,957 thermal power units from 2018 to 2024, this study estimates the causal impacts of compliance pressure under the CN ETS on CO2 emissions. Units with allowance deficits reduced CO2 emission intensity by 0.8% and total emissions by 3.5%. Emission reductions are concentrated among small coal-fired units and are driven by efficiency improvements, higher heat supply ratios, and improved fuel quality. In contrast, the impacts on large coal-fired units are limited. Greater intensity reductions are observed among local state-owned and private firms, captive plants, non-pilot units, and technologically less advanced units. Overall, the intensity-based design provides limited incentives to curb output among low-emission-intensity units, suggesting the intensity-based mechanism functions as a transitional arrangement toward a cap-and-trade system.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "iScience",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Chen Lyu",
+   "Ke Wang",
+   "Bofeng Cai",
+   "Yujiao Xian"
+  ],
+  "citations": 1,
+  "source": "semanticscholar",
+  "source_id": "0e41a2721d2207a893d41aeacb8b0315e93cf6da",
+  "paper_id": "doi:10.1016/j.isci.2026.115424",
+  "doi": "10.1016/j.isci.2026.115424",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://doi.org/10.1016/j.isci.2026.115424",
+  "published_iso": "2026-03-01"
+ },
+ {
+  "title": "Supply chain digitization and corporate digital innovation: evidence from China",
+  "title_norm": "supply chain digitization and corporate digital innovation evidence from china",
+  "abstract": "\n \n Supply chain digitization utilizes digital technologies to connect supply chain partners, enhancing the flow of information and collaboration among them. Drawing on the knowledge spillover theory and the institutional theory, this paper aims to empirically investigate the effect of supply chain digitization on corporate digital innovation.\n \n \n \n This study employs a quasi-natural experimental design to examine the causal effect of supply chain digitization on corporate digital innovation. Utilizing China's 2018 Pilot Supply Chain Innovation and Application as an exogenous policy shock, it constructs a difference-in-differences model and uses Chinese A-share listed firms from 2012 to 2023 as research samples.\n \n \n \n Supply chain digitization significantly enhances firms' digital innovation outputs. Specifically, supply chain digitization has a more positive effect in firms with a wider supply chain partner base and those with lower initial levels of digital transformation. Furthermore, the effect is stronger in state-owned enterprises, larger firms, capital-intensive industries, and regions with advanced digital infrastructure.\n \n \n \n To the best of the authors' knowledge, this study is the first attempt to empirically identify the causal link between supply chain digitization and corporate digital innovation. It contributes to the literature on the economic consequences of supply chain digitization.\n",
+  "tldr": "This study employs a quasi-natural experimental design and constructs a difference-in-differences model and uses Chinese A-share listed firms from 2012 to 2023 as research samples to empirically investigate the effect of supply chain digitization on corporate digital innovation.",
+  "year": 2025,
+  "venue": "Industrial Management &amp; Data Systems",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Hongze Chen",
+   "Minghao Fang",
+   "Conggang Li",
+   "Peigong Li",
+   "Rong Xu"
+  ],
+  "citations": 3,
+  "source": "semanticscholar",
+  "source_id": "2a7be3e1ed08f6ea5298cf7bcb25f10345152b67",
+  "paper_id": "doi:10.1108/imds-03-2025-0378",
+  "doi": "10.1108/imds-03-2025-0378",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/2a7be3e1ed08f6ea5298cf7bcb25f10345152b67",
+  "published_iso": "2025-12-02"
+ },
+ {
+  "title": "The contribution of successful intelligence in predicting students' orientation toward academic quality of life",
+  "title_norm": "the contribution of successful intelligence in predicting students orientation t",
+  "abstract": "This study investigated the relationship between successful intelligence and the academic quality of life among university students in Saudi Arabia. A descriptive, correlational, and causal-comparative design was employed. The population comprised all undergraduate students at King Faisal University in Al-Ahsa (N = 33,833), across scientific and humanities disciplines. A stratified random sample of 395 students (190 males, 205 females) was selected, and a pilot sample of 100 students was used to validate the study instruments. Two validated instruments were used: the Successful Intelligence Scale Al-Otebi and Al-Qamash [1] and the Academic Quality of Life Scale Abd Elraziq [2] both demonstrating high internal consistency (omega = 0.705–0.909). The findings revealed a statistically significant positive correlation (p < .01) between successful intelligence and the total score and dimensions of academic quality of life, with Pearson's r ranging from 0.379 to 0.535. Furthermore, multivariate analysis of variance (MANOVA) showed significant differences based on academic major and the interaction between gender and major, with no differences by gender alone. Independent samples t-tests indicated higher scores for students in scientific majors on both variables. Simple linear regression analysis revealed that successful intelligence significantly predicted academic quality of life (R² = 0.286, F = 157.31, p < .01), explaining 28.6% of the variance. These findings highlight the predictive role of successful intelligence in enhancing the academic quality of life and suggest implications for support programs in higher education.",
+  "tldr": "",
+  "year": 2025,
+  "venue": "International journal of innovative research and scientific studies",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Abdulaziz Mohammed Alismail",
+   "Mazen Omar Almulla",
+   "Ibrahiem elsayd iesa Ghoniem",
+   "M. M. Alsubaie"
+  ],
+  "citations": 2,
+  "source": "semanticscholar",
+  "source_id": "77491fa6ecd80f403841d0eeafa166a6f1f817aa",
+  "paper_id": "doi:10.53894/ijirss.v8i5.8776",
+  "doi": "10.53894/ijirss.v8i5.8776",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "http://www.ijirss.com/index.php/ijirss/article/download/8776/1981",
+  "published_iso": "2025-07-22"
+ },
+ {
+  "title": "Job Satisfaction and Performance of Micro Finance Institutions",
+  "title_norm": "job satisfaction and performance of micro finance institutions",
+  "abstract": "Job satisfaction plays a crucial role in determining employee performance, which directly influences the effectiveness and sustainability of Microfinance Institutions (MFIs). In developing economies like Nepal, MFIs rely heavily on a motivated workforce to drive financial inclusion and economic empowerment. This study aims to examine the factors affecting job satisfaction in the microfinance sector and analyze how these factors impact employee performance and overall institutional efficiency. The study employs a descriptive and causal-comparative research design, collecting primary data from 119 employees working in six MFIs in Chitwan District, Nepal. A structured questionnaire was used to gather data, ensuring reliability through a pilot test (Cronbach’s Alpha = 0.78). Purposive sampling was applied to include employees from diverse backgrounds. Statistical analysis was conducted using SPSS version 25, incorporating descriptive statistics (mean, standard deviation) and inferential techniques (correlation and regression analysis) to identify key relationships. Findings reveal that reward and benefit structures significantly influence job satisfaction, followed by workplace relations and career development opportunities. However, gender disparities and varying employee perceptions highlight the need for targeted interventions. The study emphasizes the importance of enhancing compensation, promoting career growth, and fostering a supportive work environment to improve job satisfaction and, consequently, MFI performance. These insights provide valuable recommendations for HR policies in Nepal’s microfinance sector, contributing to employee well-being and long-term organizational success",
+  "tldr": "",
+  "year": 2025,
+  "venue": "Madhyabindu Journal",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Ashmita Dahal Chhetri"
+  ],
+  "citations": 2,
+  "source": "semanticscholar",
+  "source_id": "41f4895bb9f81cc44a820f1f7c0f6027cc696b1b",
+  "paper_id": "doi:10.3126/madhyabindu.v10i1.75627",
+  "doi": "10.3126/madhyabindu.v10i1.75627",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.nepjol.info/index.php/madhyabindu/article/download/75627/57984",
+  "published_iso": "2025-02-17"
+ },
+ {
+  "title": "Impact of Green Purchasing Practices on Performance of Sugar Manufacturing Firms in Western Region Kenya",
+  "title_norm": "impact of green purchasing practices on performance of sugar manufacturing firms",
+  "abstract": "Purpose: Green purchasing practices do not significantly impact performance of sugar manufacturing firms in Western region Kenya. \nDesign: This research adopted pragmatism research philosophy. The research utilized both descriptive and causal designs. The target people were the 152 procurement staffs so census was adopted. Through structured questionnaire and interview schedule primary data were achieved. Rift Valley Sugar Company conducted the pilot study. We adopted construct, face, and content validity and reliability focused on cronbach alpha. Descriptive and inferential statistics were utilised to analyse data. \nFindings: The study reported a positive significant relationship between green purchasing practices and performance of sugar manufacturing firms in Western region Kenya was positive and significant (β =0.925, p =0.000). \nValue: The management of sugar manufacturing firms should monitor the implementation of green purchasing practices.",
+  "tldr": "",
+  "year": 2025,
+  "venue": "Journal of Business and Social Review in Emerging Economies",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "E. R. Wasike",
+   "F. Kiongera",
+   "J. Odero",
+   "A. Mungai"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "dbda4f9803170d438e6e4de48ea99c12a8598e00",
+  "paper_id": "doi:10.26710/jbsee.v11i4.3757",
+  "doi": "10.26710/jbsee.v11i4.3757",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://doi.org/10.26710/jbsee.v11i4.3757",
+  "published_iso": "2025-12-31"
+ },
+ {
+  "title": "Impact of Green Warehouse Practices on Performance of Sugar Manufacturing Firms in Western Region Kenya",
+  "title_norm": "impact of green warehouse practices on performance of sugar manufacturing firms ",
+  "abstract": "Purpose: To examine the impact of green warehouse practices on performance of sugar manufacturing firms in Western region Kenya \nDesign/Methodology/Approach: This research used two types of designs, namely causal and descriptive research. The target population included 152 procurement staffs and thus census was adopted. Structured questionnaire and interview schedule were used as the methods of primary data. Pilot study was done in Rift valley Sugar Company. Construct, face and content validity were adopted and reliability focusing on cronbach alpha. Analysis of data was carried out using descriptive and inferential statistics. Descriptive analysis was used to determine frequency, percentages, mean and standard deviation. Inferential: Pearson correlation and regression analysis. Data presented with tables and graphs. \nFindings: The study reported a positive significant relationship between green warehouse practices and performance of sugar manufacturing firms in Western region Kenya (β =1.087, p =0.000). \nImplications/Originality/Value: The management and employees ought to ensure raw materials before and after production are well stored to avoid their deformation. The accepted storage means that are environmentally friendly such as storage bags and buckets should adhere to green warehouse requirements.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Journal of Accounting and Finance in Emerging Economies",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "E. R. Wasike",
+   "F. Kiongera",
+   "J. Odero",
+   "A. Mungai"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "59f6c00908768a3eb93bd803eb2c8ac9105a530e",
+  "paper_id": "doi:10.26710/jafee.v12i1.3756",
+  "doi": "10.26710/jafee.v12i1.3756",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://doi.org/10.26710/jafee.v12i1.3756",
+  "published_iso": "2026-03-31"
+ },
+ {
+  "title": "Financial Restructuring and Performance of Deposit Taking Saccos in Kiambu County, Kenya",
+  "title_norm": "financial restructuring and performance of deposit taking saccos in kiambu count",
+  "abstract": "Savings and Credit Cooperative Organizations (SACCOs) are critical microfinance institutions that serve as\nessential pillars of financial inclusion, particularly in developing economies. This study examined the effect of\nfinancial restructuring on the financial performance of Deposit-Taking SACCOs (DT-SACCOs) in Kiambu\nCounty, Kenya, for the period 2021–2024. The study was anchored on three theoretical frameworks: the\nResource-Based View (RBV), the Loanable Funds Theory, and the Financial Intermediation Theory. A causal\nresearch design was employed, targeting all 14 licensed DT-SACCOs in Kiambu County. A census approach\nyielded a sample of 42 management staff comprising branch managers, finance managers, and operations\nmanagers. Primary data were collected through structured questionnaires, and a pilot study was conducted in\nMurang'a County to assess instrument validity and reliability. Secondary data were drawn from audited financial\nstatements and SASRA regulatory reports. Data were analyzed using descriptive statistics and multiple linear\nregression analysis via SPSS Version 27. Results revealed that deposit restructuring exerted the strongest positive\neffect on financial performance (β = 0.326, Beta = 0.337, p = 0.001), followed by debt restructuring (β = 0.287,\nBeta = 0.301, p = 0.003), and equity restructuring (β = 0.268, Beta = 0.284, p = 0.004). The overall regression\nmodel was highly significant [F(3, 36) = 28.346, p < 0.001], with an R² of 0.707, indicating that the three\nrestructuring dimensions collectively explained 70.7% of the variance in financial performance. The study\nconcludes that strategic and integrated financial restructuring substantially improves the performance of DTSACCOs. It recommends that SACCO management adopt comprehensive restructuring frameworks that\nsimultaneously address debt management, deposit mobilization, and equity optimization. Policymakers,\nparticularly SASRA, should develop supportive regulatory guidelines that facilitate member-centered\nrestructuring without compromising institutional stability. Future studies should extend this inquiry to other\ncounties and incorporate governance quality, technology adoption, and competitive strategy as additional\ndeterminants of SACCO performance.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "IOSR Journal of Economics and Finance",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Siraj Jelle Hillow",
+   "James M. Gatauwa"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "2f78f8d828126c2be20a6abfccd6697daedeb165",
+  "paper_id": "doi:10.9790/5933-1703050111",
+  "doi": "10.9790/5933-1703050111",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://doi.org/10.9790/5933-1703050111",
+  "published_iso": "2026-03-01"
+ },
+ {
+  "title": "No sales after midnight: evaluating the impact of a business curfew on drug-related crime in San Francisco’s tenderloin",
+  "title_norm": "no sales after midnight evaluating the impact of a business curfew on drug relat",
+  "abstract": "Business curfews are emerging as regulatory policy instruments to reduce crime in high-risk areas, yet rigorous evaluations remain limited. This study examines San Francisco’s Tenderloin Retail Hours Restriction Pilot, which required select businesses to close from 12:00 a.m. to 5:00 a.m. starting July 2024. Using a customized Bayesian Structural Time Series model, we estimate a 56% reduction (95% credible interval: −72% to −27%) in drug-related incidents during curfew hours over nine months, with no evidence of spatial displacement to nearby areas or temporal displacement within the Tenderloin Public Safety Area. Results hold under Causal-ARIMA sensitivity tests. Findings suggest curfews may reduce opportunities for street-level drug activity, but potential economic costs and questions about long-term sustainability underscore the need for careful policy design.",
+  "tldr": "",
+  "year": 2025,
+  "venue": "Security Journal",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "M. Nazzari",
+   "M. Calaresu",
+   "M. Triventi"
+  ],
+  "citations": 1,
+  "source": "semanticscholar",
+  "source_id": "47fd18d11f7b04fed6551788529cbd0ef4a144ba",
+  "paper_id": "doi:10.1057/s41284-025-00517-w",
+  "doi": "10.1057/s41284-025-00517-w",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://link.springer.com/content/pdf/10.1057/s41284-025-00517-w.pdf",
+  "published_iso": "2025-11-15"
+ },
+ {
+  "title": "Organizational Learning and Job Satisfaction of Employees in Financial Sectors",
+  "title_norm": "organizational learning and job satisfaction of employees in financial sectors",
+  "abstract": "This study investigates the impact of organizational learning on employee job satisfaction in Nepal's banking sector, aiming to fill a critical research gap in this context. Specifically, it explores how workplace learning environments influence job satisfaction and examines the moderating roles of demographic factors such as gender, age, and educational qualifications. Adopting a causal research design, the study utilized a non-probability judgmental sampling method, collecting 425 valid responses. The survey instrument, divided into demographic details, job satisfaction, and organizational learning components, was developed from established studies and validated through pilot testing. Statistical tools were employed for data evaluation, including reliability analysis, regression, and principal component analysis. The results confirmed the survey's reliability, with Cronbach's Alpha values of 0.713 for job satisfaction and organizational learning. Two principal components explained 79.32% of the total variance. Findings revealed a positive impact of organizational learning on job satisfaction, with minor gender-based differences, except in perceptions of teamwork. Employees with over 20 years of experience reported higher satisfaction with learning culture and collaboration. The study's novelty is identifying organizational learning as a critical factor in enhancing job satisfaction, emphasizing the importance of fostering knowledge sharing and a supportive workplace culture. Its implications suggest that management strategies promoting learning opportunities can significantly improve employee morale, performance, and organizational competitiveness.",
+  "tldr": "",
+  "year": 2025,
+  "venue": "NPRC Journal of Multidisciplinary Research",
+  "publication_types": [
+   "JournalArticle",
+   "Review"
+  ],
+  "authors": [
+   "Surya Pd. Devakota",
+   "Ganesh Bhattarai"
+  ],
+  "citations": 1,
+  "source": "semanticscholar",
+  "source_id": "ff719a464bf3758d221c7ca1bd6e35d9b9fe8d8b",
+  "paper_id": "doi:10.3126/nprcjmr.v2i5.79680",
+  "doi": "10.3126/nprcjmr.v2i5.79680",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.nepjol.info/index.php/nprcjmr/article/download/79680/61007",
+  "published_iso": "2025-05-29"
+ },
+ {
+  "title": "Unequal gains: evaluating Alabama’s infant mortality reduction initiative by race and marital status",
+  "title_norm": "unequal gains evaluating alabama s infant mortality reduction initiative by race",
+  "abstract": "Infant mortality remains a critical public health concern in the United States, with disparities by race and maternal marital status. In response, Alabama implemented a pilot initiative in 2019 to reduce the state’s high infant mortality rate (IMR). This study evaluates the program’s effectiveness in mitigating IMR disparities across race and marital status. We utilized linked birth and infant death certificate data from 2014 to 2023 to assess program impact. A difference-in-differences (DiD) design and synthetic control approach were applied to a sample of over 400,000 births, comparing two pilot counties (Montgomery and Macon) to the rest of Alabama. Outcomes were stratified by maternal race (Black, White) and marital status (married, single). Causal evidence from both the DiD and synthetic control analyses indicates that the program reduced IMR among White married mothers (–0.0016; –39.8%, p = 0.001). In contrast, Black married mothers experienced an increase in IMR (+ 0.0043; + 54.7%, p = 0.014) that was not statistically robust in DiD but confirmed by the synthetic control method, suggesting a likely causal adverse effect. No significant changes in IMR were detected for Black single (p = 0.862) or White single mothers (p = 0.777). The pilot program produced improvements only for White married mothers. Disaggregated analysis revealed the necessity of jointly considering race and marital status to understand and address infant health inequities. Efforts to reduce IMR disparities must integrate both racial and social determinants—such as marital status. Resource allocation and program design should combine clinical services with broader social supports and prioritize the most vulnerable populations to effectively close persistent gaps in IMR.",
+  "tldr": "The pilot program produced improvements only for White married mothers, and the necessity of jointly considering race and marital status to understand and address infant health inequities was revealed.",
+  "year": 2025,
+  "venue": "BMC Public Health",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Natalie Malak",
+   "Holly Horan",
+   "David L Albright"
+  ],
+  "citations": 1,
+  "source": "semanticscholar",
+  "source_id": "66e2f8a2432645634d450f2b43fd605b33dbe1d9",
+  "paper_id": "doi:10.1186/s12889-025-25669-7",
+  "doi": "10.1186/s12889-025-25669-7",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/66e2f8a2432645634d450f2b43fd605b33dbe1d9",
+  "published_iso": "2025-11-27"
+ },
+ {
+  "title": "Estimator-Aligned Prospective Sample Size Determination for Designs Using Inverse Probability of Treatment Weighting",
+  "title_norm": "estimator aligned prospective sample size determination for designs using invers",
+  "abstract": "In observational studies, accurately characterizing variance is critical for sample size determination, yet unaccounted-for variability from propensity score estimation and the resulting weights limit the accuracy of standard variance approximations for design. Existing approaches often rely on heuristics or randomized controlled trial (RCT) formulas that treat weights as fixed, potentially misaligning prospective design with the causal estimator used at analysis. We propose an estimator-aligned framework for prospective sample size determination based on generalized estimating equations (GEE) and stacked M-estimation. By merging the propensity score model and marginal structural model (MSM) into a single system of estimating equations, the method propagates nuisance-model uncertainty and directly targets the large-sample variance of the IPTW estimator. For study planning, we estimate a pilot-based large-sample variance factor and introduce a bootstrap stabilization procedure that accounts for both within- and between-pilot variability. The framework applies uniformly across binary, count, and continuous outcomes through link-specific GEE representations under a common design principle. Simulation studies motivated by post-marketing safety and healthcare cost applications demonstrate that anchoring design to this variance improves power calibration relative to conventional RCT-style formulas, particularly in settings with weight instability, outcome sparsity, or heavy-tailed variability.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "",
+  "publication_types": [],
+  "authors": [
+   "Taekwon Hong",
+   "Daeyoung Lim",
+   "Woojung Bae",
+   "Yong Ma"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "15aa1ca20f9dc4b23fd4edd86bae655be4cc5ac6",
+  "paper_id": "arxiv:2604.21658",
+  "doi": "",
+  "arxiv_id": "2604.21658",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/15aa1ca20f9dc4b23fd4edd86bae655be4cc5ac6",
+  "published_iso": "2026-04-23"
+ },
+ {
+  "title": "Strengthening Work Safety Mindset and Competence as a Policy Strategy for Maritime Human Resource Development in Indonesia",
+  "title_norm": "strengthening work safety mindset and competence as a policy strategy for mariti",
+  "abstract": "This study examines the effect of Practice-Based Teaching (PBT) on maritime workforce readiness (MWR) with a focus on strengthening work safety mindset and competence, and the mediating roles of Maritime Safety Competence (MSC) and Safety Self-Efficacy (SSE). Employing a causal-comparative quantitative design, data were collected via a 20-item, 5-point Likert questionnaire from a purposive sample of 167 Nautical Technology students at Politeknik Pelayaran Sumatera Barat (pilot test n = 50). The instrument measures safety knowledge, emergency procedure skills, safety awareness attitudes, and regulatory compliance behaviors. Partial Least Squares Structural Equation Modeling (PLS-SEM) was used to evaluate measurement quality and test direct and indirect effects. Measurement indicators demonstrated excellent reliability and convergent validity (Cronbach’s α = 0.935–0.962; AVE > 0.79). Results show that PBT has a strong, significant direct effect on MWR (β = 0.749, t = 15.804, p < 0.001) and significantly predicts MSC (β = 0.575, t = 7.935, p < 0.001) and SSE (β = 0.592, t = 8.958, p < 0.001). MSC significantly influences MWR (β = 0.417, t = 5.652, p < 0.001), and mediates the PBT→MWR relationship partially (indirect β = 0.240, t = 4.592, p < 0.001). In contrast, SSE does not significantly predict MWR (β = 0.078, t = 0.992, p = 0.322), nor does it mediate the PBT→MWR link (indirect β = 0.046, t = 0.984, p = 0.326). The findings imply that PBT enhances maritimeemployability chiefly through strengthening demonstrable safety competencies; policy recommendations include: (1) integration of safety culture into structured practical curricula; (2) reinforcement of performance-based assessment using safety scenario simulations; (3) investment in safety simulators and emergency response training facilities; (4) industry partnerships to align safety competency standards with STCW requirements and operational vessel needs; and (5) safety mindset mentoring programs by maritime industry practitioners.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Jurnal Kebijakan Sosial Ekonomi Kelautan dan Perikanan",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Soleh Uddin",
+   "Syafni Yelvi Siska"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "e67e6bcfe56534bdebf28455b1d39db5724c3fd4",
+  "paper_id": "doi:10.15578/jksekp.v16i1.17872",
+  "doi": "10.15578/jksekp.v16i1.17872",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://ejournal-balitbang.kkp.go.id/index.php/jkse/article/download/17872/10221",
+  "published_iso": "2026-06-03"
+ },
+ {
+  "title": "Pengaruh Kemampuan Inisiatif, Kemampuan Berwirausaha, Dan Manajemen Diri Terhadap Kesiapan Kerja Siswa TKR SMK",
+  "title_norm": "pengaruh kemampuan inisiatif kemampuan berwirausaha dan manajemen diri terhadap ",
+  "abstract": "This study was conducted to analyze the effects of initiative ability, entrepreneurial ability, and self-management on the work readiness of twelfth-grade TKR vocational high school students in Lamongan Regency. The study employed a quantitative approach with a causal-comparative design. The sample consisted of 152 students, while 34 students were involved in the instrument pilot-testing stage. Data were collected through a Likert-scale questionnaire and subsequently analyzed using multiple linear regression in SPSS 31. The results showed that all three variables had a positive and significant effect on work readiness, both partially and simultaneously, indicating that vocational learning needs to systematically strengthen students’ personal competencies.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Educatio",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "H. Haryanto",
+   "W. Warju",
+   "Soeryanto Soeryanto",
+   "A. Agung",
+   "P. Rusimamto"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "83349bccf7cd0ad821534cc417759b68b7a2e8fd",
+  "paper_id": "doi:10.29408/edc.v21i1.34357",
+  "doi": "10.29408/edc.v21i1.34357",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://e-journal.hamzanwadi.ac.id/index.php/edc/article/download/34357/8337",
+  "published_iso": "2026-04-30"
+ },
+ {
+  "title": "Effectiveness of virtual and actual laboratory activities on science learning of Grade 10 learners",
+  "title_norm": "effectiveness of virtual and actual laboratory activities on science learning of",
+  "abstract": "This study aimed to determine the effectiveness of virtual and actual laboratory activities on the science learning of Grade 10 learners at Capiz Commercial School for School Year 2025–2026. Anchored on Experiential Learning Theory, Learning-by-Doing, and Cognitive Theory of Inquiry Teaching, the study examined the influence of different laboratory approaches on learners’ conceptual understanding, procedural knowledge, and scientific reasoning. A causal–comparative research design was employed involving two groups of Grade 10 learners, with twenty (20) students per group. One group was exposed to virtual laboratory activities using the LabXchange platform, while the other group participated in actual hands-on laboratory experiments. The type of laboratory activity served as the independent variable, while the level of science learning served as the dependent variable. Data were collected using a validated and pilot-tested 60-item researcher-made Science Learning Test. Mean and standard deviation were used to describe the level of science learning, while an independent samples t-test was used to determine significant differences between the two groups at a 0.05 level of significance. Learners exposed to virtual laboratory activities demonstrated a high level of science learning, while those exposed to actual laboratory activities also demonstrated a high level of science learning, with the latter performing better than the former. Furthermore, there was a significant difference between the two groups in terms of science learning, favoring actual laboratory activities.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "International journal of humanities and social sciences",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Maria Teresa Pamila Villasorca"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "006083c0f7de5a8ecb0d5625fc8f402a299eadb4",
+  "paper_id": "doi:10.69651/pijhss05021097",
+  "doi": "10.69651/pijhss05021097",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/006083c0f7de5a8ecb0d5625fc8f402a299eadb4",
+  "published_iso": null
+ },
+ {
+  "title": "Effect of Micro-Credit Services on Growth of Microenterprises in Bomet, County, Kenya",
+  "title_norm": "effect of micro credit services on growth of microenterprises in bomet county ke",
+  "abstract": "Microenterprises in Bomet County face persistent growth challenges despite their critical role in stimulating local trade and livelihoods. Nearly 80 percent of microenterprises in rural counties like Bomet operate informally, which limits access to credit, legal protection, and market linkages. Specifically, the study sought to assess the effect of micro-credit on growth of microenterprises in Bomet County, Kenya. The study was supported by credit rationing theory. The study employed a causal research design. The unit of analysis consisted of licensed microenterprises that have accessed microfinance services, while the unit of observation comprised the 1,783 owners of these selected microenterprises. Nassiuma’s formulae was used to determine a sample size of 95 microenterprises and a stratified random sampling was employed to select samples from each stratum. Primary data was collected using a structured questiornnaie. A pilot test was conducted in Nandi County to assess the reliability and validity of the data collection instrument. Content validity was evaluated by the help of the research supervisor while face validity was assessed during the pilot test. the reliability of the questionnaire was assessed using Cronbach's Alpha coefficient. Descriptive statistics such as frequencies, percentages, means and standard deviations was used summarize the characteristics of the data. Inferential statistics, including correlation and multiple regression analysis, will examine relationships between the study variables. The analyzed data was presented in table forms for easy interpretations. The study concluded that micro-credit services showed a strong and statistically significant relationship with the growth of microenterprises (r = 0.858; p = 0.000). The study recommended that microfinance institutions and other financial institutions continue expanding access to affordable loan products tailored to the financial capacity of micro- entrepreneurs. The study also recommended that training institutions, NGOs, and financial service providers reassess the relevance, quality and delivery approaches of the current training programs.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "International journal of research in social sciences and humanities",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Kenneth Mwangi Soi",
+   "Margaret Waruguru"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "4d3476d43b5ed0db1ce54e4930e50ffd94ce45e1",
+  "paper_id": "doi:10.47505/ijrss.2026.5.4",
+  "doi": "10.47505/ijrss.2026.5.4",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://doi.org/10.47505/ijrss.2026.5.4",
+  "published_iso": null
+ },
+ {
+  "title": "Surviving the Turbulence: A Dynamic Capabilities Perspective on Market Orientation and Business Performance of MSMEs",
+  "title_norm": "surviving the turbulence a dynamic capabilities perspective on market orientatio",
+  "abstract": "Purpose: This study seeks to understand how market and technological turbulence shape and potentially moderate the relationship between market orientation and the business performance of micro, small, and medium enterprises (MSMEs).Design/methodology/approach: The study employs a survey design. The respondents are owners or managers of MSMEs in Bali, a developing region in Indonesia. The primary data was analyzed using SEM-PLS. A robustness check was conducted by testing for non-linear effects and endogeneity.Findings: This study shows that market orientation positively influences business performance. Market turbulence weakens this relationship, while technological turbulence strengthens it, although with a weak effect. Customer orientation and inter-functional coordination are essential for enhancing MSME performance in developing regions.Research limitations: The cross-sectional design limits the ability to infer causal relationships. The absence of back translations from Indonesian to English and of a pilot test may reduce confidence in construct validity. This study used two different data collection methods, thus limiting the response rate calculation. The findings may have limited generalizability.Practical implications: MSMEs need to regularly explore consumer needs in a cost-effective way and participate in exhibitions to interact directly with customers. They should also strengthen their resources to improve their ability to respond to market information.Social implications: By adopting a market-oriented approach, MSMEs become more aware of consumer needs, enabling them to develop products and services that meet market demands, which, in turn, enhance business performance and employee welfare within the sector.Originality/value: This study contributes to the literature on intangible capital by conceptualizing market orientation as an intangible dynamic capability under environmental turbulence. It integrates market and technological turbulence as moderating variables in the relationship between market orientation and the business performance of MSMEs. This perspective remains underexplored in prior studies, as it situates the analysis within the dynamic context of MSMEs in Bali as a developing region that has a strong dependence on tourism, which in turn exposes firms to high levels of environmental uncertainty. We extend the scope of research beyond the conventional focus on large firms and developed regions to MSMEs in developing regions. This study further advances dynamic capabilities theory by demonstrating that environmental turbulence does not uniformly enhance the effectiveness of market-oriented capabilities in resource-constrained MSMEs.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Intangible Capital",
+  "publication_types": [
+   "JournalArticle",
+   "Review"
+  ],
+  "authors": [
+   "Ni Nyoman",
+   "Sri Rahayu",
+   "Damayanti",
+   "I. Dewa",
+   "Ayu Kristiantari",
+   "Gde Agung"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "67cb1dd6137f788ac34bc2cc4a0e4aaa7163200d",
+  "paper_id": "doi:10.3926/ic.3677",
+  "doi": "10.3926/ic.3677",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.intangiblecapital.org/index.php/ic/article/download/3677/916",
+  "published_iso": "2026-04-28"
+ },
+ {
+  "title": "Can digital village construction improve agricultural total factor productivity? Evidence from a quasi-natural experiment in China",
+  "title_norm": "can digital village construction improve agricultural total factor productivity ",
+  "abstract": "\n \n Digital Village Construction (DVC) represents a national strategy to integrate digital technologies with agriculture and rural development in China. Whether such a comprehensive, government-led digital transformation can raise agricultural total factor productivity (TFP) remains empirically underexplored, particularly at the county level. This study investigates the causal effect of DVC on agricultural TFP and clarifies the underlying mechanisms and heterogeneous impacts.\n \n \n \n We treat China’s National Digital Village Pilot policy as a quasi-natural experiment and construct a time-varying DID design using county-level panel data from 2009–2023. Agricultural TFP is primarily measured via DEA–Malmquist indices based on a land–labor–capital input system and real agricultural output. We include county and year fixed effects and standard controls, and conduct extensive robustness checks. Mechanisms are examined through mediation analyses focusing on non-farm employment opportunities and production technical intensification.\n \n \n \n Baseline DID estimates indicate that DVC significantly increases agricultural TFP, and the result remains robust across multiple identification and measurement checks. Mechanism analyses suggest that DVC promotes TFP mainly through expanding non-farm employment opportunities and stimulating production technical intensification. Heterogeneity analyses show stronger effects in counties with higher levels of digital financial inclusion, in administratively classified counties, and in areas closer to provincial capitals.\n \n \n \n The findings provide causal evidence that comprehensive digital rural policies can enhance agricultural productivity by improving factor allocation, facilitating labor structural transformation and accelerating technology- and energy-intensive modernization of production. These research conclusions provide empirical evidence for further advancing digital village construction.\n",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Frontiers in Sustainable Food Systems",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Guangyu Xia",
+   "Nan Li",
+   "Yanzhao Tang"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "0ccbff5fc4e4760b59ae09b5f9e35344d37b567c",
+  "paper_id": "doi:10.3389/fsufs.2026.1773740",
+  "doi": "10.3389/fsufs.2026.1773740",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://public-pages-files-2025.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2026.1773740/pdf",
+  "published_iso": "2026-02-27"
+ },
+ {
+  "title": "Large trials of psychosocial interventions: examples from individual placement and support",
+  "title_norm": "large trials of psychosocial interventions examples from individual placement an",
+  "abstract": "Objectives Large demonstration projects for health interventions often use randomized controlled trials (RCTs) to test the effectiveness of interventions implemented at larger scales, serving as crucial contributors to policy and funding decisions. Such trials are subject to limitations common to all RCTs, but their size and importance magnify the costs of failure to satisfy the assumptions for valid causal inference and generalizability. We examine common reasons for such threats to validity. Methods We examined large (N > 1,000) IPS RCTs for aspects of design and execution that undermine the validity of their results. Results We identified three large IPS RCTs and identified threats to validity associated with treatment adherence and attrition. Conclusion Large trials should rely on pilot studies to ensure that difficulties with recruitment, implementation of and participation in interventions, and follow-up measurement do not compromise study validity; intervention fidelity and participation should be measured to permit evaluation of study success. Funders should require and support the use of pilot studies and other prior research to justify the introduction of an intervention to a population and anticipate potential threats to validity.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "International Journal of Public Health",
+  "publication_types": [
+   "Review",
+   "JournalArticle"
+  ],
+  "authors": [
+   "Justin D. Metcalfe",
+   "K. Mueser",
+   "Robert E. Drake"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "821d79ef61a6ccccb7970bb083a0803f31c26290",
+  "paper_id": "doi:10.3389/ijph.2026.1609143",
+  "doi": "10.3389/ijph.2026.1609143",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.ssph-journal.org/journals/international-journal-of-public-health/articles/10.3389/ijph.2026.1609143/pdf",
+  "published_iso": "2026-06-09"
+ },
+ {
+  "title": "PENGARUH KEPEMIMPINAN VISIONER, BUDAYA ORGANISASI, DAN MOTIVASI KERJA TERHADAP KINERJA GURU DI SMP SE-KECAMATAN CISAUK KABUPATEN TANGERANG",
+  "title_norm": "pengaruh kepemimpinan visioner budaya organisasi dan motivasi kerja terhadap kin",
+  "abstract": "  \nThe principal plays a strategic role as a leader responsible for directing all school resources. This study aims to determine the influence of visionary leadership, organizational culture, and work motivation on teacher performance, both partially and simultaneously. This research employs a quantitative ex-post facto approach with a causal correlational design. The sampling technique uses cluster sampling, resulting in the selection of three public junior high schools in Cisauk District with a total of 107 teachers. The pilot test aims to determine validity using the Pearson product-moment correlation and the reliability of the instrument. Data collection was conducted through a survey using questionnaires. The data analysis technique uses multiple linear regression analysis, which was preceded by prerequisite tests. The results show that partially, visionary leadership has a significant effect on teacher performance (t-value = 11.110 > t-table = 1.983, Sig. 0.000 < 0.05), organizational culture has a significant effect on teacher performance (t-value = 6.629 > t-table = 1.983, Sig. 0.000 < 0.05), and work motivation has a significant effect on teacher performance (t-value = 9.730 > t-table = 1.983, Sig. 0.000 < 0.05). Simultaneously, visionary leadership, organizational culture, and work motivation significantly influence teacher performance in public junior high schools in Cisauk District, Tangerang Regency (F-value = 222.191 > F-table = 2.696, Sig. 0.000 < 0.05). Therefore, the improvement of teacher performance is not influenced by a single factor alone but is jointly affected by visionary school leadership, a conducive organizational culture, and high teacher work motivation. \n ",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Didaktik",
+  "publication_types": [
+   "JournalArticle",
+   "Review"
+  ],
+  "authors": [
+   "P. G. P Gunawan",
+   "Sri Utaminingsih Sri Utaminingsih",
+   "Nuryati Djihadah Nuryati Djihadah"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "cb48edcdf69d8acffd80410a06c794997e0969f1",
+  "paper_id": "doi:10.36989/didaktik.v12i02.12549",
+  "doi": "10.36989/didaktik.v12i02.12549",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "http://journal.stkipsubang.ac.id/index.php/didaktik/article/download/12549/7534",
+  "published_iso": "2026-04-11"
+ },
+ {
+  "title": "The implementation of Pendidikan Khas Kejogjaan in strengthening secondary school students' character",
+  "title_norm": "the implementation of pendidikan khas kejogjaan in strengthening secondary schoo",
+  "abstract": "This study examines the implementation profile of Pendidikan Khas Kejogjaan (PKJ), a culturally grounded character education programme operating in pilot secondary schools across the Special Region of Yogyakarta. Researchers deliberately frame our inquiry around the implementation level rather than causal effectiveness, since the cross-sectional design researchers used cannot establish that students' character changed because of PKJ. Data were gathered from 150 senior and vocational high school students selected from twelve pilot schools through multistage sampling, combining purposive selection of schools with proportional random selection of students. A 102-item questionnaire (Cronbach's α = 0.93) was used to measure three implementation dimensions: philosophy, cultural values, and cultural atmosphere. Descriptive statistics showed a mean of 4.1361 for the philosophical dimension, 4.0433 at the cultural-values dimension, and 3.9289 at the atmosphere dimension. Pearson correlation analysis revealed strong and significant correlations among the three dimensions (r = 0.716 to 0.880, p < 0.01). The lower atmosphere score, paired with the higher score for cognitive culture (4.1133) than for behavioural (3.8467) and material cultures (3.8271), suggests that PKJ is currently more prominent in symbols and signage than in everyday habituation and material environments. Researchers argue that the trilogy of hamemayu hayuning bawana, sangkan paraning dumadi, and manunggaling kawula Gusti has been internalised at the level of recognition; however, the gap between symbol and practice remains a critical area for further policy work. The study provides a baseline framework of PKJ implementation upon which future longitudinal and comparative designs can build.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Jurnal Cakrawala Pendidikan",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Sutrisna Wibawa",
+   "Yatun Romdonah Awaliah",
+   "Rony Kurniawan Pratama",
+   "Suwarna",
+   "Farid Setiawan"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "6319873e0d92a52b89437a2a5a5dd767aae62984",
+  "paper_id": "doi:10.21831/cp.v45i2.95036",
+  "doi": "10.21831/cp.v45i2.95036",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://journal.uny.ac.id/index.php/cp/article/download/95036/25716",
+  "published_iso": "2026-06-08"
+ },
+ {
+  "title": "EFFECT OF SELF REGULATED LEARNING STRATEGIES ON LOCUS OF CONTROL OF UNIVERSITY STUDENTS",
+  "title_norm": "effect of self regulated learning strategies on locus of control of university s",
+  "abstract": "            This study aimed at investigating how self-regulated learning (SRL) strategies can affect locus of control among university students. It was a quantitative research and the causal-comparative research design was used. The population of study included students of B.Ed. of six universities of Lahore district (three public and three private). Stratified random sampling method was employed by the researcher when selecting the sample of 300 students towards this end. In this study, the data from respondents were collected using two research instruments. The two instruments were adapted in order to meet the requirements of the research. The instruments were validated with respect to expert opinion. Pilot testing was done. The reliability of the instruments was verified by using Cronbach alpha. The results were obtained by descriptive (i.e. Mean, Standard Deviation, Frequency, and Percentage) and inferential statistics (i.e. Pearson’s r correlation and regression analysis). The results showed moderate but statistically significant levels of self-regulated learning and locus of control (LOC) among the students of the university. The positive correlations and the results of the regression indicated that self-regulated learning strategies are important in shaping the perception of control among students. The enhancement of SRL methods helps to enhance self-confidence, determination and academic performance of students.",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Contemporary Journal of Social Science Review",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Saher Akram (Corresponding Author)",
+   "Dr. Ahmad Bilal"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "26668c9ea641b10257c5454f1fa997ef25582b8a",
+  "paper_id": "doi:10.63878/cjssr.v4i1.2015",
+  "doi": "10.63878/cjssr.v4i1.2015",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://contemporaryjournal.com/index.php/14/article/download/2015/1759",
+  "published_iso": "2026-03-05"
+ },
+ {
+  "title": "Strengthening Self-Efficacy in the Graduate Application Process: Evidence From a Randomized Controlled Trial",
+  "title_norm": "strengthening self efficacy in the graduate application process evidence from a ",
+  "abstract": "\n Despite an increase in graduate school enrollment for students with marginalized identities, disparities in graduate school entrance persist, particularly for first-generation, low-income, and underrepresented students of color. Although pilot research has offered preliminary support for interventions designed to assist students in the postgraduate application process, rigorous research allowing for causal inference remains limited. Using a randomized control design, this study sought to extend pilot research on one such graduate school application intervention,\n Bridging the Graduate Application Process (GAP)\n , through assessing its effectiveness compared to an attention control (AC) condition and waitlist control (WLC) condition. A total of 188 participants recruited from Midwestern universities completed baseline assessments and were included in an intent-to-treat analysis using a linear mixed-effects model to assess changes in postgraduate school application self-efficacy scores across the three intervention conditions at pretest and posttest. A per protocol analysis was also conducted to determine the efficacy of the intervention using participants who completed the condition originally allocated. Results suggest statistically significant improvements in application self-efficacy in the experimental group compared to both the AC and WLC conditions. These findings provide robust support for\n GAP\n as a promising intervention to increase sociocognitive resources and promote equity in the graduate application process.\n",
+  "tldr": "",
+  "year": 2026,
+  "venue": "Journal of Career Assessment",
+  "publication_types": [
+   "JournalArticle"
+  ],
+  "authors": [
+   "Meaghan K. Rowe-Johnson",
+   "Alex Chavez",
+   "Bridgette Browning",
+   "Olivia Stuber",
+   "J. Porter",
+   "Deborah A. Cronin"
+  ],
+  "citations": 0,
+  "source": "semanticscholar",
+  "source_id": "5db0d6bc6ff88552ef820fc581e6e2170d938a8b",
+  "paper_id": "doi:10.1177/10690727261437110",
+  "doi": "10.1177/10690727261437110",
+  "arxiv_id": "",
+  "dblp_key": "",
+  "paper_url": "https://www.semanticscholar.org/paper/5db0d6bc6ff88552ef820fc581e6e2170d938a8b",
+  "published_iso": "2026-03-24"
+ }
+]

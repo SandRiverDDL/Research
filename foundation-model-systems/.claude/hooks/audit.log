@@ -1,0 +1,57 @@
+2026-06-29T12:44:22Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/sources/ 2>/dev/null
+2026-06-29T12:44:54Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/sources/qwen3/ && head -30 /Users/chy/Research/foundation-model-systems/sources/qwen3/dossier.md 2>/dev/null
+2026-06-29T12:44:58Z [ALLOW] head -50 /Users/chy/Research/foundation-model-systems/sources/qwen3/README.md && echo \
+2026-06-29T12:49:26Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/sources/glm-5.1/ /Users/chy/Research/foundation-model-systems/sources/glm-5.2/ 2>/dev/null && echo \
+2026-06-29T12:49:33Z [ALLOW] head -45 /Users/chy/Research/foundation-model-systems/sources/glm-5.1/README.md
+2026-06-29T12:49:41Z [ALLOW] find /Users/chy/Research/foundation-model-systems/sources -name \
+2026-06-29T12:50:29Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/sources/glm-5.1/notes/
+2026-06-29T12:51:16Z [ALLOW] mkdir -p /Users/chy/Research/foundation-model-systems/sources/qwen3.5/notes /Users/chy/Research/foundation-model-systems/sources/qwen3.6/notes /Users/chy/Research/foundation-model-systems/sources/qwen3.7-max-preview/notes
+2026-06-29T12:54:06Z [ALLOW] say \
+2026-06-29T12:57:36Z [ALLOW] mkdir -p /Users/chy/Research/foundation-model-systems/sources/qwen3.5/release-deltas
+2026-06-29T12:58:11Z [WARN:rm -rf] rm -rf /Users/chy/Research/foundation-model-systems/sources/qwen3.6 /Users/chy/Research/foundation-model-systems/sources/qwen3.7-max-preview && ls /Users/chy/Research/foundation-model-systems/sources/qwen3.5/
+2026-06-30T06:52:04Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/sources/ && echo \
+2026-06-30T06:54:44Z [ALLOW] mkdir -p /Users/chy/Research/foundation-model-systems/sources/anthropic-claude/release-deltas /Users/chy/Research/foundation-model-systems/sources/openai-frontier/release-deltas /Users/chy/Research/foundation-model-systems/sources/google-gemini/release-deltas
+2026-06-30T06:56:21Z [ALLOW] say \
+2026-06-30T07:02:28Z [ALLOW] find /Users/chy/Research/foundation-model-systems -type f \\( -name \
+2026-06-30T07:02:35Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/lenses/ /Users/chy/Research/foundation-model-systems/comparison/ 2>/dev/null
+2026-06-30T07:02:40Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/lenses/data-pipeline/ /Users/chy/Research/foundation-model-systems/lenses/rl-training/
+2026-06-30T07:02:46Z [ALLOW] grep -rli \
+2026-06-30T07:02:52Z [ALLOW] ls /Users/chy/Research/agent-data/notes/ /Users/chy/Research/agent-data/comparison/ 2>/dev/null && echo \
+2026-06-30T07:06:42Z [ALLOW] mkdir -p /Users/chy/Research/foundation-model-systems/sources/meta-frontier/release-deltas
+2026-06-30T07:10:44Z [ALLOW] say \
+2026-06-30T07:25:09Z [ALLOW] say \
+2026-06-30T07:29:56Z [ALLOW] wc -l /Users/chy/Research/foundation-model-systems/CLAUDE.md /Users/chy/Research/agent-data/AGENTS.md /Users/chy/Research/foundation-model-systems/doc/codex-research-process.md /Users/chy/Research/foundation-model-systems/doc/model-tr-stage-notes.md 2>/dev/null
+2026-06-30T07:32:50Z [ALLOW] readlink /Users/chy/Research/foundation-model-systems/CLAUDE.md /Users/chy/Research/agent-data/AGENTS.md 2>/dev/null; ls -la /Users/chy/Research/foundation-model-systems/ | grep -E \
+2026-06-30T07:33:24Z [ALLOW] readlink /Users/chy/Research/agent-data/AGENTS.md /Users/chy/Research/agent-data/CLAUDE.md 2>/dev/null; ls -la /Users/chy/Research/agent-data/ | grep -E \
+2026-06-30T07:33:30Z [ALLOW] grep -n \
+2026-06-30T07:33:58Z [ALLOW] say \
+2026-06-30T08:02:32Z [ALLOW] grep -ni \
+2026-07-09T14:29:40Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/sources/ 2>/dev/null && echo \
+2026-07-09T14:29:50Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/lenses/ /Users/chy/Research/foundation-model-systems/comparison/ 2>/dev/null; echo \
+2026-07-09T14:29:54Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/lenses/training-recipes/ /Users/chy/Research/foundation-model-systems/lenses/data-pipeline/ 2>/dev/null
+2026-07-09T14:30:03Z [ALLOW] find /Users/chy/Research/foundation-model-systems/sources -type f -name \
+2026-07-09T14:30:10Z [ALLOW] find /Users/chy/Research/foundation-model-systems/sources -type f -name \
+2026-07-09T14:30:15Z [ALLOW] grep -in -A2 -B1 -E \
+2026-07-09T14:30:22Z [ALLOW] grep -in -B1 -A3 -E \
+2026-07-09T14:45:59Z [ALLOW] grep -in -B1 -A4 -iE \
+2026-07-09T14:46:04Z [ALLOW] find /Users/chy/Research/foundation-model-systems/sources -type f -name \
+2026-07-09T14:46:11Z [ALLOW] for f in /Users/chy/Research/foundation-model-systems/sources/deepseek-v4/notes/consolidation.md /Users/chy/Research/foundation-model-systems/sources/qwen3/notes/post-training.md /Users/chy/Research/foundation-model-systems/sources/minimax-m2-series/notes/agentic-data-forge.md /Users/chy/Research/foundation-model-systems/sources/olmo-3/notes/sft*.md /Users/chy/Research/foundation-model-systems/sources/olmo-3/notes/post*.md; do echo \
+2026-07-09T14:46:18Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/sources/olmo-3/notes/ /Users/chy/Research/foundation-model-systems/sources/qwen3/notes/ /Users/chy/Research/foundation-model-systems/sources/deepseek-v4/notes/ /Users/chy/Research/foundation-model-systems/sources/minimax-m2-series/notes/ 2>/dev/null
+2026-07-09T14:46:24Z [ALLOW] for f in /Users/chy/Research/foundation-model-systems/sources/deepseek-v4/notes/consolidation.md /Users/chy/Research/foundation-model-systems/sources/deepseek-v4/notes/reward-verifier.md /Users/chy/Research/foundation-model-systems/sources/qwen3/notes/post-training.md /Users/chy/Research/foundation-model-systems/sources/minimax-m2-series/notes/agentic-data-forge.md /Users/chy/Research/foundation-model-systems/sources/olmo-3/notes/post-training.md /Users/chy/Research/foundation-model-systems/sources/nemotron-cascade-2/notes/cascade-rl.md; do echo \
+2026-07-09T14:46:30Z [ALLOW] grep -in -B1 -A3 -iE \
+2026-07-13T12:22:00Z [ALLOW] ls /Users/chy/Research/foundation-model-systems/sources/ 2>/dev/null && echo \
+2026-07-13T12:22:06Z [ALLOW] grep -rli -E \
+2026-07-13T12:22:11Z [ALLOW] grep -rli -E \
+2026-07-13T12:22:17Z [ALLOW] grep -rli -E \
+2026-07-13T12:22:24Z [ALLOW] for f in sources/longcat-flash-thinking-2601/notes/environment-scaling.md sources/minimax-m2-series/notes/agentic-data-forge.md sources/qwen3-coder-next/notes/agentic-training.md sources/qwen3/notes/post-training.md sources/kimi-k2.5/notes/agent-swarm.md; do echo \
+2026-07-13T12:22:29Z [ALLOW] grep -n -B1 -A5 -iE \
+2026-07-13T12:22:36Z [ALLOW] grep -rn -iE \
+2026-07-13T12:22:45Z [ALLOW] grep -rn -B1 -A6 -iE \
+2026-07-14T08:51:06Z [ALLOW] ls /Users/chy/Research/doc/research-project-template/ 2>/dev/null && echo \
+2026-07-14T08:53:19Z [ALLOW] cd /Users/chy/Research/doc/research-project-template && ls -la && echo \
+2026-07-14T08:53:24Z [ALLOW] cd /Users/chy/Research/doc/research-project-template && find . -type f | head -40 && echo \
+2026-07-14T08:53:33Z [ALLOW] cd /Users/chy/Research/doc/research-project-template && for f in doc/acceptance-rules.md.tpl doc/retrieval-strategy.md.tpl doc/triage-rules.json.tpl doc/taxonomy/failure-modes.md.tpl doc/taxonomy/design-knobs.md.tpl doc/memory/STATE.md.tpl doc/memory/DECISIONS.md.tpl doc/memory/OPEN-QUESTIONS.md.tpl doc/templates/l1-card.md.tpl comparison/queue.md.tpl comparison/seed-sources.md.tpl; do echo \
+2026-07-14T08:53:52Z [ALLOW] cd /Users/chy/Research && mkdir -p autoresearch && cp -R doc/research-project-template/. autoresearch/ && cd autoresearch && rm -f README.md && find . -name \
+2026-07-14T08:57:37Z [ALLOW] cd /Users/chy/Research/autoresearch && for f in doc/templates/l1-card.md comparison/queue.md comparison/seed-sources.md; do sed -i.bak 's/<PROJECT_TITLE>/Autoresearch/g' \
+2026-07-14T08:57:44Z [ALLOW] cd /Users/chy/Research/autoresearch && python3 scripts/autoresearch.py status 2>&1 | tail -30 && echo \
+2026-07-14T08:57:49Z [ALLOW] say \
