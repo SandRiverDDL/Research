@@ -1,0 +1,111 @@
+# ============================================================
+#  Homebrew（必须最早执行，这样 brew 装的工具才在 PATH 里）
+# ============================================================
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# ============================================================
+#  默认编辑器
+# ============================================================
+export VISUAL="code --wait"
+export EDITOR="code --wait"
+
+# ============================================================
+#  oh-my-zsh
+# ============================================================
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""   # 关掉 omz 自带主题 —— 由 starship 接管 prompt
+# fzf-tab 必须在 zsh-syntax-highlighting **之前**。
+# zsh-syntax-highlighting 必须是**最后一个**加载的插件。
+plugins=(
+  git
+  z
+  fzf-tab
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+source "$ZSH/oh-my-zsh.sh"
+
+# ============================================================
+#  Prompt（提示符）
+# ============================================================
+eval "$(starship init zsh)"
+
+# ============================================================
+#  各个 CLI 工具的 shell 集成
+# ============================================================
+# fzf 键位 + 补全（Ctrl-R 历史 / Ctrl-T 文件 / Alt-C 目录）
+source <(fzf --zsh)
+
+# atuin —— 更好用的 shell 历史（SQLite 后端）。
+# --disable-up-arrow：保留原生上箭头逐条翻历史的行为；用 Ctrl-R 触发 atuin 搜索。
+eval "$(atuin init zsh --disable-up-arrow)"
+
+# zoxide —— `z <pattern>` 智能 cd
+eval "$(zoxide init zsh)"
+
+# direnv —— 按目录自动加载 .envrc（HF_TOKEN、WANDB_API_KEY、venv 等）
+eval "$(direnv hook zsh)"
+
+# ============================================================
+#  深色背景下的可读性修正
+# ============================================================
+# zsh-autosuggestions 的"幽灵字"默认 fg=8（极暗灰），深色底上几乎看不见。
+# 默认用 #8b949e（GitHub Dark High Contrast 注释色）—— 比默认亮约 40%，
+# 强光环境下也能看清。暗环境想要更"次要"的观感可以换回 #565f89（Tokyo
+# Night 注释色）。详见 SKILL.md "配色与主题选择"。
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#8b949e'
+
+# fzf 配色 + 默认行为（Tokyo Night 调色板，浅色字在深底/强光下都清晰）
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+  --color=bg+:#283457,bg:-1,spinner:#ff9e64,hl:#7aa2f7 \
+  --color=fg:#c0caf5,header:#7aa2f7,info:#bb9af7,pointer:#ff9e64 \
+  --color=marker:#9ece6a,fg+:#c0caf5,prompt:#7aa2f7,hl+:#7aa2f7 \
+  --color=border:#414868 \
+  --height=40% --layout=reverse --border"
+
+# ============================================================
+#  别名
+# ============================================================
+alias ls='eza --git --icons --group-directories-first'
+alias ll='eza -lah --git --icons --group-directories-first'
+alias tree='eza --tree --git-ignore'
+alias cat='bat --paging=never'
+alias less='bat'
+alias grep='rg'
+alias find='fd'
+alias top='htop'
+
+# git
+alias gs='git status'
+alias gd='git diff'
+alias gl='git log --oneline --graph --decorate -20'
+
+# ============================================================
+#  历史（atuin 负责搜索；下面这些是原生历史的微调）
+# ============================================================
+HISTSIZE=100000
+SAVEHIST=100000
+setopt HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY INC_APPEND_HISTORY
+
+# ============================================================
+#  NVM（Node 版本管理）
+# ============================================================
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# ============================================================
+#  LLM / 训练相关
+# ============================================================
+export HF_HOME="$HOME/.cache/huggingface"
+# 各项目的 API key 用 direnv 在 .envrc 里设，**不要**写在这里。例如：
+#   export HF_TOKEN=hf_xxx
+#   export WANDB_API_KEY=xxx
+#   export ANTHROPIC_API_KEY=sk-ant-xxx
+
+# ============================================================
+#  本机覆盖（机器特定的内容，写这里就不会进这份 reference）
+#  例如某些 IDE / AI 工具的 PATH 注入（CodeBuddy、Cursor、JetBrains Toolbox）、
+#  公司内部的 zsh 别名、SSH ProxyCommand 等。
+# ============================================================
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"

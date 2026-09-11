@@ -1,0 +1,52 @@
+# Mac 端 ~/.ssh/config 模板（节选）
+#
+# 这个文件不是要被 install.sh 整体覆盖到 ~/.ssh/config 里 ——
+# 你已有的 git host / 旧 host 都要保留。这里只展示 **每个远端 Host 块** 应该
+# 包含的关键行，给你照抄。
+
+# ============================================================
+#  最小可用：避开 "lsls" 字符重复 bug
+# ============================================================
+# Ghostty 默认告诉远端 TERM=xterm-ghostty。多数 Linux 发行版（包括
+# TencentOS、CentOS、老 Ubuntu）的 ncurses terminfo 不认识这个值，
+# 导致 zsh-syntax-highlighting 的"实时重绘"指令被当成普通字符显示出来 ——
+# 你打 `ls` 看到 "lsls"，打 `pwd` 看到 "ppwwdd"。
+#
+# 修复：让 ssh 把 TERM 改写成所有 Linux 都认识的 xterm-256color。
+# 它仍然支持 truecolor + 256 色，损失为零。
+#
+# 注意：远端 sshd 默认会拒绝客户端设置任意环境变量（AcceptEnv 白名单），
+# 但 SetEnv TERM=... 在多数 OpenSSH 8.x+ 配置下都能工作。如果不工作，
+# 用方案 2（在远端 .terminfo 里安装 xterm-ghostty 条目）。
+
+Host my-dev-box
+    HostName 1.2.3.4
+    User myuser
+    Port 22
+    IdentityFile ~/.ssh/id_rsa
+    SetEnv TERM=xterm-256color
+
+# ============================================================
+#  方案 2（备用）：在远端安装 xterm-ghostty terminfo 条目
+# ============================================================
+# 如果 sshd 拒绝 SetEnv（你看到 ssh 警告 "Sending environment variables"），
+# 在 Mac 上跑这一行，把 ghostty terminfo 推到那台远端的 ~/.terminfo：
+#
+#   infocmp -x xterm-ghostty | ssh my-dev-box 'tic -x -o ~/.terminfo /dev/stdin'
+#
+# 一次到位，永久解决。每台远端只需要做一遍。
+
+# ============================================================
+#  常用其他选项（按需启用）
+# ============================================================
+# Host my-dev-box
+#     # 抗弱网，断线 60 秒内自动恢复（mosh 的轻量替代）
+#     ServerAliveInterval 30
+#     ServerAliveCountMax 3
+#     TCPKeepAlive yes
+#
+#     # 多路复用：第二次 ssh 复用第一条连接，秒进
+#     ControlMaster auto
+#     ControlPath ~/.ssh/sockets/%r@%h:%p
+#     ControlPersist 10m
+#     # （需要先 mkdir -p ~/.ssh/sockets）

@@ -1,0 +1,69 @@
+# ~/.config/starship.toml —— 面向 LLM 开发的偏好性覆盖
+# 只覆盖那些跟默认行为有差异的部分
+# 完整配置参考：https://starship.rs/config/
+
+# 加载时不闪一下，体感更顺
+add_newline = false
+command_timeout = 800
+
+# ---- 整体格式：尽量紧凑、单行 ----
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$conda\
+$nodejs\
+$kubernetes\
+$cmd_duration\
+$line_break\
+$character"""
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "cyan bold"
+
+[git_branch]
+symbol = " "
+style = "purple"
+
+[git_status]
+style = "yellow"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+
+[python]
+symbol = " "
+format = '[\($symbol$pyenv_prefix($version )(\($virtualenv\) ))]($style)'
+style = "yellow"
+# 只在 venv / conda 激活时显示，而不是看到 *.py 就显示
+detect_extensions = []
+detect_files = ["pyproject.toml", "requirements.txt", ".python-version"]
+
+[conda]
+symbol = " "
+style = "green"
+# 即使在 base 环境也显示 —— 训练时常需要确认是不是切错了
+ignore_base = false
+
+[nodejs]
+disabled = false
+symbol = " "
+detect_files = ["package.json", ".nvmrc"]
+
+[kubernetes]
+disabled = false
+symbol = "⎈ "
+style = "blue bold"
+
+[cmd_duration]
+# 仅当命令耗时 >2 秒才显示 —— 用来确认 "那一步训练真的跑完了吗"
+min_time = 2000
+style = "yellow"
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"

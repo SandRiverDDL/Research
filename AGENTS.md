@@ -64,6 +64,14 @@ say "Research 任务完成"
 - 写笔记 / idea 时**标注**：事实 / 解释 / 猜测 / 开放问题
 - 完成前要有新鲜验证：脚本跑过、validator 通过、引用可追踪，或明确说明没验证/验证失败
 
+## 项目内 skill 与换机恢复
+
+- 本项目维护的 skills 以根目录 `.agents/skills/` 内的版本为准；研究任务优先使用这里的同名 skill，避免与旧电脑上的全局副本分叉。
+- 已纳入 `research-codex-workflow`、`literature-zotero`、`autoresearch`、`pdf` 和 `mac-terminal-setup`，包含各自 references、scripts、assets 和许可证（如有）。
+- 换机后从克隆的 Research 项目使用这些 skills；`mac-terminal-setup` 仅在明确配置终端时执行，不随 clone 自动运行。
+- skill 文件不包含实际机器配置或凭据备份；Zotero/MCP 连接、SSH 密钥、插件及系统依赖需在新电脑单独配置。ARIS 恢复见 `doc/aris-setup.md`。
+- 迁入时保留了原全局目录。本仓库是后续维护的来源；其他项目需要使用时，再显式安装或同步。
+
 ## 默认 skill
 
 进入任意 `~/Research/<topic>/` 时这些 skill 默认参与：

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Autoresearch"
+  short_description: "Compatibility entrypoint for literature workflows"
+  default_prompt: "Use $autoresearch for legacy automated literature prompts; route current work through research-codex-workflow's literature pipeline."
