@@ -1,5 +1,46 @@
 # OPD 当前状态
 
+## 从传统 RL 迁移 OPD 方差缩减的选题讨论（2026-10-27）
+
+- 用户询问是否值得 follow vOPD，以及 PPO／传统 RL 的方差缩减方法能否结合 OPD 特点。轻量文献核查与研究判断，沿用不启动 ARIS、不跑训练；没有选定具体方法或授权大型 idea 流程。
+- OPD 特点：固定 prefix、可访问 teacher 分布时，可直接计算候选动作的即时蒸馏奖励；这与需要 rollout 估计未来 return 的 RL 不同。所有无偏性按固定 prefix 的局部 token 更新讨论，不自动推广到完整 sequence-KL 或 PPO clipping。
+- 直接近邻：ResOPD（2610.04882，§3.3–3.4／Table 2）已有稀疏 head 精确求和、尾部残差 control variate、双控制量最优系数及对 payload-matched Teacher-Top-k vOPD 的比较；原版 vOPD 使用 student top-k，不能混同。IER《1% of Tokens Can Be Enough》（2609.24432，§3–4/App.B.3）已有 Fisher 度量下的最优 baseline、梯度信噪比及 token selection，明确讨论 adaptive sampling budget；这些基本操作不是已确认空白。
+- 传统来源：Greensmith 2004 最优 baseline；Q-Prop（1611.02247）；Liu et al. ICML2019 Rao-Blackwellization（PMLR v97/liu19c）；Tucker et al. ICML2018《The Mirage of Action-Dependent Baselines》（PMLR v80/tucker18a）提示实现偏差可被误当降方差收益。检索包括共享 ICLR/ICML/ACL 2026 索引（10-23）和 NeurIPS 10-14 快照及定向 web，非穷尽查新。
+- 助手建议仅为待验证：先分解固定 prefix 动作采样方差与 prefix 间差异，再检查均值 baseline 在概率尖锐区域及实际参数／冻结预条件器下的失效；只有存在显著、低成本可恢复的方差缺口才继续方法设计。简单换 baseline／拼接理论可能增量不足。
+- 新鲜公式验证：两动作 student q=(.9,.1)、teacher p=(.5,.5)，固定 prefix 的 logit 梯度协方差迹：vanilla .3476356、vOPD .5561621（约增加60%）、最优标量 baseline 约0。该精确枚举反例只否定无条件降方差，不代表真实 LLM 普遍失效；没有运行 LLM 实验。
+- 用户进一步询问这些工作的创新是否来自迁移经典 RL／统计范式，以及还可迁移哪些工具。区分经典工具与 OPD-specific 可计算公式／稀疏反馈约束／机制证据；不能将使用旧定理等同没有创新，也不能把普通迁移当已确认新方法。
+- 本轮候选传统来源：Kool et al. ICLR2020 无放回离散梯度估计（2002.06043）、CARMS NeurIPS2021 相关多样本（2110.14002）、SVRPG ICML2018（PMLR v80/papini18a）、Multi-Fidelity Policy Gradient Algorithms（2503.05696，TMLR2026）。提出的 OPD 迁移仅为分析方向，定向检索不足以确认新颖性。
+- 重要边界：AsyncOPD（2606.24143 §6）已有同 prefix multi-sample 与陈旧动作 IS；简单增加候选或缓存不是空白。跨更新 control variate 要处理 prefix 分布漂移与旧梯度开销。多保真代理＋随机残差校正保留期望需查询概率为正且正确加权；少算 token loss 不等于少算 teacher 前向，节省计算应按实际轨迹／batch 查询核算。
+
+## PowerOPD 缺陷、优势设计原则与理论可证改进（2026-10-27）
+
+- 用户询问更好的优势变换、PowerOPD自身缺陷、设计原则，以及能否通过已有理论证明优于Power；本轮为轻量技术／理论讨论，不启动ARIS、不跑训练或方法idea流水线。
+- 重点核查：原文有界／符号一致条件的边界；幂变换的尾部抑制与信号消失；目标偏差／条件方差／实际任务收益的区别。候选公式仅作可分析的简单对照，未完成查新，不认定为新方法或更高分。
+- 已核查 Power §4 的 P1／P2 与公式：同倍率概率整体缩放 c 会令 power reward 缩放 c^α；α>1 时低概率区曲率退化，但 low-low 不等于低信噪比。固定 prefix、精确 on-policy、无 clipping 且 reward detach 时，助手推导其期望更新对应 F(u)=u^(α+1)/(α+1) 生成的 Bregman divergence；α=1 为平方概率误差，不能称仅对 RKL 无偏降噪。
+- 可分析对照为 log((pT+τ)/(pS+τ))：有界、保符号、低低近似概率差／τ、高于 τ 时接近 log-ratio；仅讨论数学性质，未认定新颖或更高分。严格可证例子是 Power 加最优 action-independent baseline，固定 prefix 条件方差不增且期望梯度不变；参考 Greensmith et al. JMLR 2004 与 vOPD 2605.07865 App.A.2，近似 baseline／PPO clipping／最终成绩不继承该保证。
+- 新鲜验证：标准库三动作 softmax 有限差分检查 α=.5/1/5 及平滑 log-ratio 的目标梯度（最大误差 <1e-9），核对最优 baseline 方差恒等式（误差 <1e-12）；这是公式检查，不是 LLM 实验。原文 https://arxiv.org/html/2606.17199；未完成候选查新。
+
+## Low-low、数值误差与训推不一致的机制追问（2026-10-27）
+
+- 用户询问相同prefix／相同engine（如Megatron）的前向差异、CPU/GPU调度／非结合律、student训推不一致，以及low-low是否更受噪声影响从而不应主导梯度。仅解释／原始文档核查，不触发research-refine或ARIS、不运行训练。
+- 核实一手来源：PyTorch numerical accuracy、NVIDIA Megatron deterministic training、Thinking Machines batch invariance、verl rollout correction。相同engine不保证相同kernel／batch／prefill-decode路径；确定性重复与batch invariance不同。无本机测量，不编造通用误差量级。
+- 数学边界：stable log-softmax下δlog p_i≈δz_i−Σp_jδz_j；低概率不自动放大logit噪声。标准库二logit例子验证p=1e-3/1e-6/1e-12、logit扰动1e-3时δlogp均约1e-3，非真实模型实测。若先舍入／下溢概率再取log则可能放大。
+- DIAL §3.3支持low-low替换改善学习，但没有隔离硬件数值噪声；低价值尾部／模型监督偏差、估计方差与系统误差应分开。用户噪声解释保留为待验证假说。
+
+## DIAL-OPD 强度、后续直接对比与 PowerOPD 基线观察（2026-10-27）
+
+- 用户要求核查 DIAL 在自己实验中的强弱、后续是否有论文直接对比 DIAL，并检查“比较 PowerOPD 的方法更稳定超过 Vanilla”的观察。仅原文／定向检索和聊天交付，不调用 ARIS、不跑实验、不抽卡或导入 Zotero。
+- 已核查 DIAL Tables 1–2：固定 β=1、40%保留率四组平均分24.7/35.4/24.6/34.6，均胜Vanilla19.4/32.1/20.0/32.9及Power23.8/34.1/23.7/33.5；20%不保证胜Power。SA／TA／Prefix／CC基线有适配，未找到多训练seed报告；官方代码仓库本次显示空。
+- 截至2026-10-27按名称／ID定向检索web、arXiv、OpenReview、ACL未找到经核实的后续直接实验对比DIAL；不声称不存在。DIAL与Power第一作者相同，DIAL对Power不是独立复现。
+- 用户观察在DIAL／TIDE／SimOPD等论文新方法的聚合均值上有例子支持，未做全领域胜率统计。Power自身跨任务非稳定占优：SimOPD代码均值57.1<OPD62.9；Group-Calibrated OPD共享长上下文机制实现38.88/41.53<OPD39.31/43.56，后者非完整原配方复现。
+- 证据与表格抽取：`tmp/dial-power-check-20261027/check-summary.json`及`dial-tables.json`。未运行训练或独立复现。
+
+## 月度 OPD 总结落盘（2026-10-27）
+
+- 用户明确授权将本轮调研保存为一份中文 MD。范围是此前 2026-09-22 至 10-22 的 arXiv 首发窗口；本轮不增量检索 10-23–27，不调用 ARIS、不抽卡、不导入 Zotero、不跑训练。
+- 交付：`synthesis/reading/arxiv-opd-2026-09-22-to-10-22.md`；保留 30 篇分类、原文入口、14 篇 baseline 核查、同表性能实例、Semi／Lightning／ReOPD 边界、OPD→RL 归因先例及 limitation／gap 的可解性。已在 `synthesis/README.md` 增加一行导航，旧总结保留原日期。
+- 事实、解释和开放问题分开；不将 30 篇当 30 个算法，不据跨设置最大增益排序，不把作者 future work 当已验证新颖方法。保存验证通过：30/30 主条目的版本与首发日期匹配、5 篇论文的 21 个表值核对、11 个本地 Markdown 链接可达、19 个原始 HTML 页的 32 个章节／表格锚点有效。修改仅为新增总结与已有导航／状态的局部更新；未运行 card validator（未改 cards）。
+
 ## Semi-OPD 定位、局限可解性与作者核查（2026-10-23）
 
 - 用户进一步质疑：Semi 相对 Lightning 是否主要经验／机制贡献，限制能否真正转化为可解决的方法 gap，并询问作者／机构与研究背景。继续聊天交付，不调用 ARIS、不跑实验。

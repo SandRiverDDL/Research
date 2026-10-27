@@ -9,6 +9,7 @@
 | 具体会坏在哪里，几篇方法是否处理同一个问题 | [具体 failure modes](failure-modes/concrete-failure-modes.md) | 当前重点综合；原文核查与卡片证据分开标注 |
 | teacher/student 是否适合蒸馏 | [Teacher–student mismatch](failure-modes/teacher-pattern-mismatch.md) | 保留的专题；76 张卡时期的覆盖，旧选题建议不视为当前决定 |
 | 学习方法大类 | [短版方法地图](reading/opd-method-map.md)、[逐篇方法索引](reading/opd-method-catalog.md) | 2026-09-28 的 77 卡快照，不是当前全库 |
+| 本月代表作、直接性能对照与局限 | [arXiv OPD 月度总结](reading/arxiv-opd-2026-09-22-to-10-22.md) | 2026-09-22 至 10-22 首发窗口；30 篇代表作，整理于 10-27，未补查 10-23–27 |
 | 选择 EMNLP 2026 阅读对象 | [会议候选总结](reading/emnlp-2026-opd-overview.md) | 2026-10-05 的 38 篇候选，多数仅摘要证据 |
 | Agent 场景入口 | [Agentic OPD](reading/agentic-opd.md) | 问题与论文导航，非完整新文献综述 |
 | 追溯旧判断、旧检索 | [历史资料](archive/README.md) | 旧内容保留，不能据其判断当前 novelty 或覆盖率 |
