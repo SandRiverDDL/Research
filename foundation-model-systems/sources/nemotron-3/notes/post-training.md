@@ -38,6 +38,14 @@ Nemotron 3 说明 2026 open frontier post-training 已经从“单一 RLVR”进
 - 合理解释：这是为数千 GPU RL 和多环境 rollout 吞吐服务的工程取舍。
 - 未披露 / 不能下结论：staleness control、importance weighting、policy lag 上限需要进一步深读。
 
+## Ultra Code / SWE Teachers 补核（2026-10-19）
+
+- **事实**：SWE teacher 为 agentic SFT -> single-step PivotRL -> multi-turn end-to-end SWE GRPO；hidden tests 给 binary reward，unfinished trajectories mask loss，错误 reasoning/tool-call tokens 得 negative advantage。[Ultra:22]
+- **事实**：SWE 环境物理删除 future commits，并在运行时阻止从网络恢复目标仓库 history / gold patch；这是防 reward leakage 的训练控制。[Ultra:22]
+- **事实**：Competitive Coding teacher 从 General Reasoning teacher 继续 RL，使用带强 tests 的竞赛题；删除 teacher 在 8/8 rollouts 都答对的题，保留约 3.5K prompts。[Ultra:26]
+- **事实**：不同 SFT pipelines 的 teachers 直接 MOPD 合并表现不佳；轻量 teacher-distribution SFT warmup 再 MOPD，在 agentic domains 的 ablation 有明确收益，不能推成所有 domains 必须 warmup。[Ultra:27]
+- **原文入口**：https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf ，§3.3.2–3.3.3。
+
 ## Gaps / Open Questions
 
 - Ultra MOPD 的公式/teacher selection 第一版没有完全展开。
@@ -45,6 +53,10 @@ Nemotron 3 说明 2026 open frontier post-training 已经从“单一 RLVR”进
 - GenRM / RLHF data 和 verifier details 需要回读。
 
 ## Evidence Anchors
+
+- **2026-10-19 训练来源补核（事实）**：Super / Ultra SWE trajectories 从 SWE-Gym、R2E-Gym、SWE-rebench 等 task instances 生成；Ultra 还列 SWE-rebench-V2。Terminal SFT 使用 Terminal-Task-Gen：静态 math/code 等任务适配 + skill/seed synthetic tasks，不应把 trajectories 数量当独立环境数量。[Super:20,25; Ultra:17-18]
+- **官方开放数据补核（事实）**：`nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1` 发布 31,111 个 next-action decision-point samples，来自 630 个 ATCB seed tasks / 2,716 successful trajectories；card 明确这些 seeds 用于 Nemotron Ultra 的 RL。发布数据是 history+reference-next-action，不能当作 31K 可自由 rollout 的完整 containers/verifiers。CC-BY-4.0。[terminal-pivot-card]
+- 原文入口 [terminal-pivot-card]：https://huggingface.co/datasets/nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1
 
 - Super 18-30: post-training pipeline。
 - Ultra 20-33: MOPD and RL infrastructure。

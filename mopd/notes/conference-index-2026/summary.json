@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-16",
+  "coverage": {
+    "ICLR:Conference": 5575,
+    "ICML:Conference": 6341,
+    "ICML:Position_Paper_Track": 222,
+    "NEURIPS:Conference": 5406,
+    "NEURIPS:Evaluations_and_Datasets_Track": 616,
+    "NEURIPS:Position_Paper_Track": 48,
+    "ACL:main-long": 2222,
+    "ACL:main-short": 74,
+    "ACL:Findings": 2163,
+    "EMNLP:CL": 13,
+    "EMNLP:TACL": 50,
+    "EMNLP:MAIN": 2710,
+    "EMNLP:FIND": 2487,
+    "EMNLP:IND": 265,
+    "EMNLP:DEMO": 86
+  },
+  "total_records": 28278,
+  "local_papers": 36,
+  "errors": [],
+  "exact_matches": [
+    {
+      "title": "Counteraction-Aware Multi-Teacher On-Policy Distillation for General Capability Recovery with Domain Preservation",
+      "venues": [
+        [
+          "EMNLP",
+          "MAIN",
+          "Poster",
+          "6445-MAIN"
+        ]
+      ]
+    },
+    {
+      "title": "AVSD: Adaptive-View Self-Distillation by Balancing Consensus and Teacher-Specific Privileged Signals",
+      "venues": [
+        [
+          "NEURIPS",
+          "Conference",
+          "Accept (poster)",
+          "fRtcETLCZ2"
+        ]
+      ]
+    },
+    {
+      "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-policy Distillation",
+      "venues": [
+        [
+          "EMNLP",
+          "MAIN",
+          "Poster",
+          "572-MAIN"
+        ]
+      ]
+    }
+  ]
+}

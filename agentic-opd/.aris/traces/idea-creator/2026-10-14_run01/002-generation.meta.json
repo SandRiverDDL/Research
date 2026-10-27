@@ -1,0 +1,18 @@
+{
+  "call_number": 2,
+  "agent_id": "/root/ideas_sol_object",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "ok",
+  "thread_limit_fallback": "two lenses per model in one context",
+  "candidate_count": 8,
+  "purpose": "generation",
+  "saved_at": "2026-10-14T23:04:24.416738+08:00",
+  "reviewer_family": "openai",
+  "duration_ms": null,
+  "duration_note": "No reliable per-call wall-clock measurement retained; archival time not reported as inference time.",
+  "selected_ideas": [],
+  "rejected_ideas": []
+}

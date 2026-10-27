@@ -1,0 +1,13 @@
+{
+  "call_number": 2,
+  "purpose": "g17-l2-astra-generation",
+  "agent_id": "/root/g17_l2_astra",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "ok",
+  "candidate_count": 4,
+  "timestamp": "2026-10-15T21:20:14.531429+08:00"
+}

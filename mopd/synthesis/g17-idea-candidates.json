@@ -1,0 +1,363 @@
+{
+  "task": "G17",
+  "selected_lenses": [
+    "L1",
+    "L2",
+    "L3"
+  ],
+  "generated_count": 12,
+  "dedup_rule": "NFKC+remove whitespace; exact dedup_key only; no quality filtering",
+  "dedup_count": 12,
+  "objective_exclusions": [],
+  "secondary_generator": {
+    "model": "gpt-6.1-sol",
+    "status": "unavailable",
+    "reason": "spawn_agent rejected twice: agent thread limit reached; no response produced"
+  },
+  "candidates": [
+    {
+      "id": "L1-A1",
+      "title": "用可核验的局部结论构成联合教学目标",
+      "method_steps": [
+        "student 自采样完整轨迹，每条只选一个已访问前缀；两个 specialists 各提出一个短结论或纠正，并附可执行证书，不要求提供完整解。",
+        "证明检查器依据原始题设检验证书；它只检验给定证书，不搜索解答。将通过检查的局部动作合并为候选集，保留其来源。",
+        "在该 student 前缀处，对认证动作集合做块级蒸馏；下一轮仍由 student 独立生成。不同 teacher 的必要结论由同一 student 逐渐掌握。",
+        "部署只保留 student；若任务原本允许证明检查器，则所有对照同样可用。局部证书只在训练提供。"
+      ],
+      "minimal_formalism": "令 C(s) 为通过证书检查的局部动作，q(c|s)∝1[c∈C(s)]·Σ_i p_i(c|s)；在 student 访问的 s 上最小化 KL(q||πθ)，C(s) 为空则跳过。动作是一条短证明语句或纠正，不能把任意全文当一个免费动作。",
+      "hypothesis": "【待验证】没有整题可靠 teacher 时，各 specialist 仍能提供互补且可认证的局部结论；其联合支持集足以产生可学习的完整策略。知识来自 specialists，可信性来自只检查局部证书的确定性工具。",
+      "closest_known_work": "据指定笔记：TU-OPD §3.3–3.4 使用整题可靠性门槛及 winner residual；Trust §3 已有随位置变化的监督；MAD-OPD §4 已有交互监督。局部验证、证明蒸馏方面的重合待后续查新。",
+      "claimed_delta": "候选干预是把监督许可单位从整题成功或内部可靠性 proxy 改为可认证的局部动作，并联合不同 teacher 的有效动作；不主张 Trust 普遍需要整题赢家。",
+      "minimum_test": "先审计100道低整题可靠性题：联合认证动作是否比最佳单 teacher 多覆盖必要推导；再用1000条 student 轨迹短训。对照适用的 TU-OPD、Trust、MAD-OPD、同证书数据的离线训练、同检查预算RL及更强单teacher。若联合覆盖没有增量，可直接推翻首要前提。数据及证明环境 availability 待核。",
+      "killer_result": "即使局部认证覆盖明显增加，student 的整题成功仍不超过同预算 Trust 或 checker-RL；或者有效证书实质上依赖一个已经能解完整题的外部模型。",
+      "compute_assumptions": "工作假设≤8×3090，非用户预算。1.7B student＋两个1.7B LoRA specialists；若需制备，每个teacher用1万条512-token局部样例训练2轮，共20.48M训练tokens及2万次样例验证。主阶段2万条512-token student轨迹，抽2万个前缀；teacher各生成≤128 tokens，共5.12M；共享前缀缓存后，候选评分最多15.36M输出tokens＋20.48M前缀tokens，≤4万次证书检查。100题×2teachers×16次×512 tokens的可靠性审计另计1.64M生成tokens；报告置信区间，不声称证明teacher绝不会解。",
+      "risk": "MEDIUM",
+      "effort": "最小验证约1–2周；完整方法验证约4–6周。",
+      "so_what": "若成立，可把整题失败但局部知识可靠的模型用于教学；若失败，可定位局部正确性与完整可学性之间的缺口。",
+      "dedup_key": "认证局部动作支持集上的蒸馏＋specialist生成的可检查证书",
+      "source_shard": "g17-l1-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L1-A2",
+      "title": "联合排错：从多个不完整的反例专家获得监督",
+      "method_steps": [
+        "student 对每题独立生成4个完整候选；每位 teacher 只负责指出自己擅长的一类错误，并给一个具体反例。",
+        "用可执行规格检查反例是否确实使候选违反要求；无效反例不参与监督。teacher 无须知道正确完整程序。",
+        "合并经过验证的否决，将 student 在候选集合中的概率质量重新分配给未被否决者；全被否决则该组不更新。未被否决不被标注为正确。",
+        "持续在新的 student 自采样候选上重复；部署移除 teachers，保留一个 student。"
+      ],
+      "minimal_formalism": "候选y₁…y₄由当前student采样，b_m=1表示不存在已验证反例；q_m∝stopgrad(πθ(y_m|x))·b_m，最小化−Σ_m q_m logπθ(y_m|x)，Σb_m=0时跳过。",
+      "hypothesis": "【待验证】不同 teacher 虽不能生成正确整题解，却能发现互不重合的致命错误；经过联合排错得到的相对监督，比单 teacher 的正答案模仿更可靠。反例正确性由规格执行验证，错误发现仍来自teachers。",
+      "closest_known_work": "据指定笔记：TU-OPD从可靠赢家提取正信号；Trust使用位移proxy；MAD-OPD依赖debate及自报confidence。反例驱动学习、拒绝采样和反馈型蒸馏存在潜在重合，未裁决。",
+      "claimed_delta": "将多teacher的联合信息表示为可核验的排除集合，而非联合答案或token概率平均。该机制属于反馈型MOPD；其与等预算RL的实质差异必须验证。",
+      "minimum_test": "100题各取4个student候选，只用最终验证器审计过滤前后的真实正确候选占比，并记录全否决率。随后1000题短训，对比单反例teacher、Trust、MAD-OPD、适用TU-OPD、同反例数据训练、等调用预算RL和更强单teacher。若联合排错不能提升正确候选占比，核心信号假设即失败。需要可执行规格，availability待核。",
+      "killer_result": "联合过滤主要留下同时逃过专家检查的错误答案，或几乎所有组都全否决；又或全部收益被相同反例预算的RL复现，无法建立独立方法价值。",
+      "compute_assumptions": "工作假设≤8×3090。1.7B student＋两个1.7B反例specialists；制备按两个teacher各1万条512-token局部反例样例、2轮计20.48M训练tokens，反例需逐条执行验证。2万题×4候选×512 tokens为40.96M student生成tokens；两个teacher读取候选最多81.92M tokens，分别输出≤64-token反例另计10.24M，最多16万次规格执行。只做整候选采样，不逐状态分叉；低整题可靠性审计另约1.64M teacher生成tokens。",
+      "risk": "HIGH",
+      "effort": "最小验证约1周；完整验证约4–6周。",
+      "so_what": "检验“知道哪些解一定错”是否足以让多个不完整专家教出会整题求解的student，并明确其相对普通RL的价值边界。",
+      "dedup_key": "联合认证否决后重分配student候选概率＋specialist反例",
+      "source_shard": "g17-l1-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L1-A3",
+      "title": "投影答案蒸馏：让每位 teacher 只监督自己能解的部分",
+      "method_steps": [
+        "限定有确定性输出投影的任务，例如同一结构化答案同时包含符号关系和单位或类型。投影器只解析共享实体与字段，不求解题目。",
+        "每位 specialist 只学习并评分自己负责的投影答案；完整题仍可能超出任一teacher的稳定能力。",
+        "student 自采样4个完整答案；对每个答案提取所有投影，以各teacher对投影的概率乘积构成联合候选目标，再蒸馏回原student。",
+        "部署student直接生成完整答案；不调用投影teachers。最终正确性验证只用于评测和公平RL对照。"
+      ],
+      "minimal_formalism": "给定固定解析投影φ_i及student候选y_m，q_m∝exp(Σ_i λ_i log p_i(φ_i(y_m)|x))；固定投影长度口径后，最小化−Σ_m stopgrad(q_m)logπθ(y_m|x)。λ_i在独立局部校准集上固定，不依赖整题赢家。",
+      "hypothesis": "【待验证】teacher在可解投影上的概率比其完整答案概率更有信息；多个投影共同约束同一组实体时，可从student候选中识别联合有效解。主要风险是各投影分别合理却联合矛盾。",
+      "closest_known_work": "据已有输入：Trust已有token分配，SMOPD已有同prompt多目标整合，AVSD已有geometric consensus，H-OPD已有信息桥接。该候选与product-of-experts及部分标签学习的重合需查新。",
+      "claimed_delta": "改变teacher被要求预测的对象：学习可求解的部分答案分布，再约束同一个完整student答案；不是把多个完整解分布直接平均。",
+      "minimum_test": "100道低整题可靠性题各采4个答案，检验联合投影分数是否比完整答案聚合更能识别真实正确答案；打乱跨teacher实体对应关系应破坏该收益。短训对照Trust、MAD-OPD、适用TU-OPD/SMOPD、同投影数据离线训练、同评分预算RL及获得全部局部数据的单teacher。现成任务、投影器及专长分离是否成立均待核。",
+      "killer_result": "联合投影分数系统性偏好部分正确但整体非法的答案；或必须加入能够解决整题的约束求解器才能有效。",
+      "compute_assumptions": "工作假设≤8×3090。1.7B student＋两个1.7B projection specialists；制备按每个1万条512-token投影样例×2轮，共20.48M训练tokens，局部样例验证成本另记录。2万题×4×512为40.96M student生成tokens；每个投影≤128 tokens，共20.48M teacher评分tokens；每题每teacher缓存一次≤512-token输入，另20.48M前缀tokens。无teacher整题生成、逐状态probe或分叉；可靠性审计另约1.64M生成tokens。",
+      "risk": "HIGH",
+      "effort": "最小验证约1–2周；完整验证约4–8周。",
+      "so_what": "若成立，教学资格可以定义在可求解投影而非完整任务上；若失败，可给出部分答案监督不足以确定联合能力的明确反例。",
+      "dedup_key": "完整student候选上的投影概率乘积蒸馏＋specialist部分答案分布",
+      "source_shard": "g17-l1-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L1-A4",
+      "title": "直接训练 teacher 的联合教学收益",
+      "method_steps": [
+        "从两个已有专长teacher出发；在同一student前缀，各输出≤128-token局部提示，不要求提供完整答案。",
+        "冻结的当前student副本读取两份提示，在原student前缀上给出下一token目标；实际student不看提示，只学习该条件目标。",
+        "抽取少量批次做一次临时student更新，再测未见组合题上的成功率变化；把这个真实教学增益作为两位teacher提示策略的共同奖励，更新teacher LoRA。",
+        "交替优化提示策略与常规OPD；最终冻结teachers完成蒸馏，部署只保留无提示student。"
+      ],
+      "minimal_formalism": "q=p_stopgrad(θ)(·|s,h₁,h₂)，θ′=θ−α∇θ KL(q||πθ)；teacher消息策略通过REINFORCE最大化R=Acc_V(θ′)−Acc_V(θ)，V与产生提示的训练题分离。",
+      "hypothesis": "【待验证】最会独立解题的teacher不一定最会提供联合可学信号；直接奖励共同教学增益，可使各teacher输出互补且能被student吸收的局部知识。必要知识来自初始专长训练，验证信号是实际student答案的任务检查结果，不是假设的局部oracle。",
+      "closest_known_work": "据指定笔记：TU-OPD已经联合考虑teacher制备与压缩；MAD-OPD已经把交互context藏于teacher侧。已有输入还包含privileged-context蒸馏。与元教学、learning-to-teach和协作RL的重合待查。",
+      "claimed_delta": "核心改变是teacher制备目标：从teacher自身的整题成功改为两个teacher共同造成的实际student学习增量；条件student副本仅是目标生成器，没有引入更强完整solver。",
+      "minimum_test": "用8个meta轮次、每轮4组提示试验，比较可训练提示与固定提示在独立组合题上的配对教学增益；随后做短OPD。对照MAD-OPD、Trust、适用TU-OPD、固定提示同数据训练、获得全部局部数据的单teacher，以及把全部meta验证预算用于student RL。去掉任一teacher应使联合增益下降。任务检查器和专长样例availability待核。",
+      "killer_result": "提示只帮助临时student记住训练题，不能提高未见组合；或额外student RL、更强单teacher在相同总预算下完全解释收益。",
+      "compute_assumptions": "工作假设≤8×3090。1.7B student和两个1.7B LoRA teachers；初始专长制备仍按20.48M训练tokens及2万次局部样例验证计。主训练2万条512-token轨迹：teacher消息5.12M＋前缀读取20.48M tokens，条件student副本最多25.6M输入/评分tokens。64个meta轮次×4试验×16训练题的一步临时更新约2.10M训练tokens；每试验16验证题、更新前后各采一次，另4.19M生成tokens及8192次任务验证；meta消息另约1.05M生成tokens。临时更新串行复用，不假定免费双层优化。",
+      "risk": "HIGH",
+      "effort": "最小验证约2–3周；完整验证约6–10周。",
+      "so_what": "把多teacher互补性从事后聚合属性变成可训练的教学目标；失败则能判断这种目标是否只是在昂贵地重做student RL。",
+      "dedup_key": "以实际student更新后的联合泛化收益训练teacher提示策略＋任务验证器",
+      "source_shard": "g17-l1-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L2-A1",
+      "title": "逐步撤去 teacher 前缀，让联合能力从后向前接通",
+      "method_steps": [
+        "A 为每道组合题生成经过验证的中间前缀，B 续写一次，保留确有联合解的训练题。",
+        "先提供完整 A 前缀，让 student 自采样后续并接受强动态多 teacher 监督；随后逐轮缩短提供的前缀，让 student 自己补齐越来越多的 A 阶段。",
+        "每次缩短都依据当前交接点的联合成功率；最终必须退到零前缀，在原始问题上训练和评测。"
+      ],
+      "minimal_formalism": "d_k(y|x)=δ(y≤k=z≤k^A)πθ(y>k|x,z≤k^A)；最小化 E_dk Σt>k KL(πθ,t‖q_dynamic,t)，仅当验证联合成功率≥τ时令k减小；k>0属于teacher roll-in混合分布，k=0才恢复完整student on-policy。",
+      "hypothesis": "【待验证】先让 B 所需状态稳定出现，再学习抵达它的前缀，可以跨过 A、B 必须同时成熟的学习障碍。风险是 student 依赖提供的前缀，撤去后收益消失。",
+      "closest_known_work": [
+        "TrustMOPD §3、App.C.4.1：已有随位置变化的动态监督。",
+        "H-OPD §3.3–3.4：已有信息桥接与逐 token 融合。",
+        "邻近机制：reverse curriculum、teacher roll-in、scheduled sampling；本轮未查新。"
+      ],
+      "claimed_delta": "【拟验证增量】干预的是联合状态的训练起点及其撤除路径；要求在完全撤除辅助后，优于固定前缀混合及普通由易到难训练。",
+      "minimum_test": "先用256题核查：单项A/B已具备、真实A前缀显著提高联合成功、普通轨迹很少到达该前缀类别。再用2k题可验证解析→执行任务测试；对比普通OPD、Trust或适配的H-OPD、普通curriculum、固定teacher-prefix mixing和完整轨迹SFT。等总student采样、teacher生成/评分及制备预算，报告无辅助联合成功、状态到达率、单项能力；另用较大student小规模检查容量解释。数据生成器需自建。",
+      "killer_result": "补足状态后仅辅助条件下成功，零前缀时优势消失；或等预算固定mixing/SFT达到相同结果；或收益完全由A单项进步解释。",
+      "compute_assumptions": "工作假设≤8×3090；1.7–3B student、两个3B teacher，2k×≤1024 student输出token。新增A前缀及B验证续写各≤512token/题，共≤2.05M teacher生成token；每条新轨迹仍需2次teacher整序列forward，Trust另1次reference。若无现成专长池，各预留2k×512token、1轮adapter制备，共2.05M teacher训练token；预检另256×2×512≈0.26M生成token。所有输入与重复上下文另计，制备失败则测试条件不成立。",
+      "risk": "MEDIUM",
+      "effort": "约2–3周完成最小实现与机制检验；未运行。",
+      "so_what": "若成立，给出把训练时可达状态逐步转成独立部署能力的简单路径；否则说明teacher辅助曝光不足以解决组合学习。",
+      "dedup_key": "teacher-prefix-shortening|joint-success-controlled-roll-in",
+      "source_shard": "g17-l2-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L2-A2",
+      "title": "在一个交接点分裂稀有成功状态",
+      "method_steps": [
+        "student 批量生成 A 阶段，在预先定义的 A→B 交接点用确定性验证器检查中间结果。",
+        "把固定的后续采样预算分配给已到达有效状态的前缀，每个有效前缀最多生成4条独立student后续；不对所有位置分叉。",
+        "A 前缀只计一次训练权重，新增后续照常接受动态多 teacher OPD；部署仍从原题独立生成。"
+      ],
+      "minimal_formalism": "L=E_z∼dπ L_prefix(z)+λE_z∼dπ(·|C(z)=1),u∼π(·|z) L_suffix(z,u)，每轮总生成token固定、每前缀副本数≤4；所有动作来自student，但后段占用分布经过条件化，不是原始无偏on-policy目标。",
+      "hypothesis": "【待验证】稀有有效前缀一旦出现，应当承担多次 B 学习机会；普通完整rollout可能把大部分后段预算消耗在无效状态。若有效前缀几乎从不出现，本法无法启动。",
+      "closest_known_work": [
+        "TrustMOPD §3：同一student prefix上监督分配已有覆盖。",
+        "TU-OPD §3：可解样本筛选已有覆盖，但本提案筛选student生成的中间状态。",
+        "邻近机制：rare-event splitting、prioritized replay；本轮未查新。"
+      ],
+      "claimed_delta": "【拟验证增量】用一次可验证交接点，把已经发现的联合状态转换为更多新鲜后续，而不制备teacher前缀。价值必须超过普通成功轨迹重放和提示重采样。",
+      "minimum_test": "在可生成的解析→约束执行任务上预检256题，分别测单项能力、正确中间结果条件下的B能力及自然到达率。用2k题预算对比普通OPD、强动态聚合、成功轨迹replay、按成功率采样prompt及普通curriculum；另对随机前缀做同样分裂。固定总采样token和teacher总预算，比较联合成功与每个新鲜有效状态的学习收益；用较大student核查容量。明确统计被丢弃前缀与上下文重算。",
+      "killer_result": "普通训练已经充分到达有效状态；或者分裂显著增加有效后续曝光却不改善独立联合成功；或者等预算replay/随机分裂完全解释收益。",
+      "compute_assumptions": "工作假设≤8×3090；1.7–3B student、两个3B teacher。总student输出预算约2.05M token，分裂消耗该预算，不额外扩张；每个后续最多4副本，重算前缀计入预算。新增teacher生成为0；每条采样分支需2次整序列teacher forward，Trust另reference，因此按实际上下文token配平。若需制备teacher，各2k×512token单轮adapter，共2.05M训练token；池预检约0.26M生成token。程序验证需自建，不使用环境重置。",
+      "risk": "MEDIUM",
+      "effort": "约2–3周；单检查点采样与预算控制，未运行。",
+      "so_what": "若成立，稀有状态的利用效率成为可调的训练变量；否则可排除重复利用少数成功前缀这一廉价路径。",
+      "dedup_key": "single-boundary-student-state-splitting|verified-reachability",
+      "source_shard": "g17-l2-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L2-A3",
+      "title": "把错误中间结果改配为正确的新题，提前训练 B",
+      "method_steps": [
+        "选用能精确反向生成题目的任务族，例如把自然语言解析成DSL，再执行DSL。student 对原题生成中间程序 z。",
+        "若 z 语法有效但不符合原题，用确定性渲染器生成新题 x′，使 z 对 x′ 恰好正确；不修改 z。",
+        "以 x′、z 为上下文，让 student 自采样后续并接受 B 及动态多 teacher 监督；原题仍继续普通OPD，最终只评测原始分布的完整生成。"
+      ],
+      "minimal_formalism": "构造R使g(R(z))=z；z∼πθ(·|x)，u∼πθ(·|R(z),z)，仅对u加入L_OPD(R(z),z,u)。z并非从πθ(·|R(z))采样，故这是显式relabelled off-policy前缀加on-policy后续。",
+      "hypothesis": "【待验证】部分失败A输出已经包含可供B学习的有效状态；通过改变题目一致性而非等待A完全正确，可以减少B监督饥饿。主要风险是逆向渲染分布过窄，收益不能回到原题。",
+      "closest_known_work": [
+        "H-OPD §3.3：已有对teacher输入的信息桥接，本方法改变的是训练题目与student中间状态的一致性。",
+        "TU-OPD §3：已有可解题覆盖，本方法尝试利用原本错误的student状态。",
+        "邻近机制：hindsight relabeling、合成数据curriculum；本轮未查新。"
+      ],
+      "claimed_delta": "【拟验证增量】复用student自然产生的中间状态，在不替换它的情况下生成可监督的联合上下文；须优于直接训练B子任务及普通新增合成题。",
+      "minimum_test": "自建可精确反演的DSL任务，留出操作关系组合与题面模板。预检256题确认单项A/B、正确前缀效应和自然状态稀缺。2k题预算比较普通OPD、强动态聚合、同一批z上的B单项训练、随机合成题curriculum、teacher-prefix off-policy mixing。配平全部生成/评分与训练token，并保持同一teacher池；报告原题联合成功、单项能力与到达率，另做较大student核查。自然任务是否存在可靠逆映射尚不确定。",
+      "killer_result": "仅在渲染新题上获益，原始组合题没有改善；或B单项训练/普通合成数据达到相同效果；或逆映射必须暴露最终答案才能成立。",
+      "compute_assumptions": "工作假设≤8×3090；1.7–3B student、两个3B teacher，总student输出约2.05M token，将至多25%预算分给重标记后续。确定性渲染不调用teacher，新增teacher生成为0；每个后续2次整序列forward，Trust另reference，改题后的完整上下文重新计费。若需teacher制备，各2k×512token单轮adapter，共2.05M训练token；预检约0.26M生成token。数据及逆映射需要实现和独立测试。",
+      "risk": "HIGH",
+      "effort": "约3–4周，主要成本是有效逆映射与分布控制；未运行。",
+      "so_what": "若成立，失败轨迹可直接提供互补能力的学习机会；否则明确这类机会不能仅靠题目重标记迁回真实任务。",
+      "dedup_key": "inverse-task-relabeling-of-student-prefix|exact-intermediate-consistency",
+      "source_shard": "g17-l2-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L2-A4",
+      "title": "用 B 能否接着完成，训练 student 抵达有用状态",
+      "method_steps": [
+        "student 从原题生成 A 阶段并提交不可更改的中间结果 z。",
+        "只在该交接点让 B 续写一次，以执行验证得到成功回报；任务契约禁止 B 忽略或修复已提交的 z。",
+        "把该回报用于更新student的A前缀策略；student自身的完整轨迹继续做动态多teacher OPD，使B最终也进入同一个student。"
+      ],
+      "minimal_formalism": "r_B(x,z)=V(x,z,u_B)，u_B∼π_B(·|x,z)；J_A=E_z∼πθ E_uB[r_B]，用(r_B−b(x))Σt∈A ∇logπθ(z_t|x,z<t)更新前缀，并保留L_dynamic_OPD。辅助回报来自πθ^Aπ_B^B的expert rollout，属于OPD+RL混合方法。",
+      "hypothesis": "【待验证】student尚不会B时，自己的终局失败会掩盖已接近成功的A状态；B的完成结果能提前训练这些状态的可达性。若A正确性标签已提供全部信号，额外B调用可能没有价值。",
+      "closest_known_work": [
+        "TrustMOPD §3、H-OPD §3.4：已有当前位置动态监督，本提案加入跨交接点的完成回报。",
+        "TU-OPD §3：已有teacher rollout验证，但其验证用于teacher与样本筛选。",
+        "邻近机制：expert rollout imitation、policy-gradient reward shaping；本轮未查新。"
+      ],
+      "claimed_delta": "【拟验证增量】把第二位teacher的条件完成能力转为第一阶段的探索信号；必须证明收益超过普通A正确性奖励、student终局RL及等预算更多OPD。",
+      "minimum_test": "先在256题可验证两阶段任务上检查单项A/B、自然到达率及B确实依赖提交的z。用2k题比较普通OPD、强动态聚合、OPD+A正确性奖励、OPD+student终局RL、普通curriculum/replay与teacher-prefix mixing；另将B回报在正确前缀之间打乱。等总采样、teacher制备和评分预算；报告独立联合成功及到达率，配合较大student检查容量。数据需自建；不把理想专家或可信交接验证器当现成资源。",
+      "killer_result": "A正确性奖励或打乱的B回报同样有效；B通过忽略中间结果获得奖励；或只增加有效状态到达率而不提高student独立联合成功。极低到达率导致一次B rollout无法提供可用信号亦构成失败。",
+      "compute_assumptions": "工作假设≤8×3090；1.7–3B student、两个3B teacher，2k×≤1024 student输出token。每题最多一次≤512token的B续写，新增≤1.024M teacher输出token及其输入前缀；无逐token probe、无环境重置。普通student轨迹仍需2次teacher整序列forward，Trust另reference。若需制备，两teacher各2k×512token单轮adapter，共2.05M训练token；预检约0.26M生成token。追加B成本从对照总预算扣齐。",
+      "risk": "HIGH",
+      "effort": "约3–4周；需处理稀疏回报、接口验证与OPD/RL预算匹配，未运行。",
+      "so_what": "若成立，互补teacher不仅提供答案分布，也能帮助student探索到彼此发挥作用的位置；否则可界定额外专家完成调用的价值边界。",
+      "dedup_key": "expert-completion-return-for-student-prefix-gradient|downstream-teacher-success",
+      "source_shard": "g17-l2-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L3-A1",
+      "title": "后缀分歧回传蒸馏",
+      "method_steps": [
+        "Student 按常规自采样；所有 experts 对同一轨迹评分，保留可信权重及未归一化的 geometric teacher factors。",
+        "把实际采到的后续 teacher log-score 与 student entropy 合成 return-to-go，使后续专长难以接续的代价影响较早决定。",
+        "用同题多条完整轨迹的独立基线降低方差；不为每个状态生成额外 continuation，也不增加部署组件。"
+      ],
+      "minimal_formalism": "固定本轮可信权重 w_k(h)，f(h,a)=exp(Σ_k w_k(h)log q_k(a|h))，Q_seq(y|x)∝∏_t f(h_t,y_t)。最小化 KL(P_θ||Q_seq)。对 y~π_old，R_t=Σ_{u≥t}[log f(h_u,y_u)−logπ_old(y_u|h_u)]；一次 on-policy 更新最大化 Σ_t stopgrad(R_t−b_t)logπ_θ(y_t|h_t)。b_t 不依赖当前动作；多次复用须处理 importance correction。全部未来分数来自实际轨迹，不假设 oracle continuation。",
+      "hypothesis": "【待验证】有限容量和有限更新预算下，只优化当前位置的条件分布，可能没有把后续跨专家不相容充分归因到上游选择；完整轨迹梯度能改善联合成功。不是断言 token 策略不能表达依赖。",
+      "closest_known_work": "Off-vs-On theory 已明确 sequence geometric target 及 continuation；sequence distillation、REINFORCE、soft policy iteration 是直接近邻。Trust 提供局部权重；AVSD/TU 提供 residual；SMOPD 已结合蒸馏与 RL。以上结构的具体重合待查新。",
+      "claimed_delta": "候选增量仅是可在现有 MOPD 评分流水线上计算的跨专长延迟信用更新，不声称发现 sequence objective。须进一步证明收益来自依赖信用，而非通用 sequence RL、熵或额外采样；否则只能算已有目标的应用。",
+      "minimum_test": "先构造可枚举的两阶段任务，允许每个 teacher 读取完整历史，并保证各关键前缀充分出现；再用约2千道可验证 math→code 任务做小规模测试。比较 Trust、TU residual、AVSD 适配、SMOPD、同目标普通 sequence PG、单 teacher 和结果 RL；固定轨迹及 teacher 评分，并加更大 student 的容量对照。",
+      "killer_result": "普通 sequence PG 等预算完全复现收益；或联合改善只随更多采样/容量出现；或局部权重近 one-hot 时未来因子没有额外信息。任何一项都削弱独立贡献。",
+      "compute_assumptions": "工作假设≤8×3090；现成2个3B experts，1.5B/3B LoRA student，2048 prompts×4 rollouts×1024 tokens。Teacher 评分为2×2048×4×1024 tokens；相对复用同4条轨迹的局部基线无额外 teacher forward，相对每题1条则4倍。Trust reference 评分另计且共享；不估 GPU 小时。",
+      "risk": "HIGH",
+      "effort": "中：更新实现较直接，方差控制与已有 sequence 方法区分困难。",
+      "so_what": "若成立，可用已经支付的 teacher 评分，把多个专长的接续后果纳入早期决策学习，而无需逐状态分叉。",
+      "dedup_key": "跨时间 return-to-go 更新早期决策｜同批完整 student 轨迹的多 teacher log-prob",
+      "source_shard": "g17-l3-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L3-A2",
+      "title": "跨步骤交叉比蒸馏",
+      "method_steps": [
+        "从同题两条 student 轨迹找到两个均局部有效的早期选择 p₁、p₂，以及两个后续片段 v₁、v₂；用解析规则确定同一种依赖关系。",
+        "让后续专长 teacher 在两个完整前缀下分别评分两个片段，形成2×2矩阵；仅需 teacher-forced scoring，不生成反事实 rollout。",
+        "在普通 MOPD 外匹配该矩阵的交叉 log-odds，使 student 保留早期选择如何改变后续偏好；所有对照共享四种评分与样本。"
+      ],
+      "minimal_formalism": "s_M(i,j)=log P_M(v_j|p_i)，Δ_M=s_M(1,1)+s_M(2,2)−s_M(1,2)−s_M(2,1)。L=L_MOPD+λ E[(Δ_θ−stopgrad(clip(Δ_B,−c,c)))²]；B 为已验证局部可靠的后续 expert。优先使用等长、语法有效片段；Δ 消除可分离的行列加性偏置，但不自动证明因果性。",
+      "hypothesis": "【待验证】局部可靠信号可能在有限训练中主要传递边际偏好；显式传递两个决定之间的条件偏好变化，比增加相同局部 loss 更有效。完整历史模型本可表示该关系，候选改变的是监督对象。",
+      "closest_known_work": "Relational KD、contrastive distillation、结构化预测中的 interaction potentials 是直接近邻，待查新；Trust、TU residual、AVSD 保留的是局部监督及独有信号，不能据此断言它们未保留该关系。",
+      "claimed_delta": "直接蒸馏跨步骤的二阶条件关系，而非再调整 teacher 权重。需证明在基线获得相同反事实评分、所有前缀均有覆盖时仍有增益，排除数据增广收益。",
+      "minimum_test": "约2千道执行可验证任务，前段决定算法/单位/表示选择，后段必须相应使用；单项测试先确认能力足够。比较四项评分上的普通 KD、完整 sequence KD、匹配样本的 DPO/RL、Trust、TU、AVSD、适用 SMOPD、强单 teacher，以及更大 student；同时打乱依赖配对检验机制。",
+      "killer_result": "同数据普通 KD 或 sequence preference 已达到同等联合成功；配对打乱不影响收益；或交叉片段的非自然性而非依赖关系解释全部差距。",
+      "compute_assumptions": "工作假设≤8×3090；2个3B experts，1.5B/3B student；2000 prompts×2 rollouts，最长1024 tokens。仅10%题形成一对，片段≤128 tokens；两个自然配对复用原评分，新增2个交叉配对，缓存前缀时额外≤200×2×128 teacher-scored tokens；不缓存则另计每次前缀 forward。无额外 teacher 生成；student 交叉评分与更新另计。",
+      "risk": "MEDIUM",
+      "effort": "中：主要工作是稳定识别依赖槽位和控制反事实样本质量。",
+      "so_what": "若成立，多个局部 experts 不必各自会解整题，也能通过可计算的条件关系教会 student 跨步骤配合。",
+      "dedup_key": "匹配跨步骤交叉 log-odds｜已访问前缀上的2×2 teacher-forced 评分",
+      "source_shard": "g17-l3-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L3-A3",
+      "title": "潜在监督路径蒸馏",
+      "method_steps": [
+        "把监督来源设为整条轨迹上的隐变量路径 z₁:T，使用小型 Markov 转移矩阵描述持续使用与跨专家接续；所有 experts 仍读取完整 student 历史。",
+        "每收到一个 student token，依据其在各 expert 下的似然更新路径后验，再计算下一位置的 teacher mixture。",
+        "把该精确可计算的条件目标蒸馏进一个 student；部署时移除路径变量。转移矩阵在小型校准集上固定，并与相同切换次数的普通平滑路由对照。"
+      ],
+      "minimal_formalism": "r₁=ν；Q_t(a|h_t)=Σ_k r_tk q_k(a|h_t)。观测 y_t 后，r̄_tk=r_tk q_k(y_t|h_t)/Q_t(y_t|h_t)，r_{t+1,j}=Σ_k r̄_tk A_kj。L=E_{y~πθ}Σ_t KL(Q_t||πθ(·|h_t))，监督 detached。该 Q 是对完整 Markov teacher 路径求和所得的合法自回归策略；不是把 teacher 当作无记忆模型。",
+      "hypothesis": "【待验证】某些互补结构需要保留监督来源的跨步骤关联，单点 reliability 权重可能在有限样本下破坏这种关联；完整路径后验可作为较便宜的归纳偏置。来源一致性并不保证任务正确性。",
+      "closest_known_work": "Switching experts、HMM mixture、Bayesian model averaging、option/sequence distillation 是直接近邻，待查新。Trust 的位置变化对照、SMOPD arithmetic mixture，以及 TU/AVSD residual 必须比较。",
+      "claimed_delta": "候选干预是联合监督路径及其后验，而非单独加入切换惩罚；若仅为普通路由平滑的重述则没有独立新意。还需证明允许 A→B 接续优于始终坚持一个 teacher，而非仅减少切换。",
+      "minimum_test": "先在可枚举的两阶段 full-history teachers 上检查目标本身能否改善联合成功，再用约2千道双专长任务测试。对照独立 token mixture、相同切换率平滑路由、response mixture、Trust/TU/AVSD/SMOPD、普通 sequence KD、单 teacher、结果 RL；保持评分、参数量、总 compute 一致并测试更大 student。",
+      "killer_result": "路径后验仅追踪文风或 token 频率；相同切换率的简单平滑已复现收益；或 Q 自身就不比局部 mixture 更能联合成功。此时不能将来源相关性包装成能力依赖。",
+      "compute_assumptions": "工作假设≤8×3090；2个3B experts、1.5B/3B student；2000 prompts×2 rollouts×1024 tokens。复用全部 teacher logits，额外 teacher forward/token为0；额外过滤计算 O(TK²)，K=2。约200条校准轨迹若不能复用，另计2×200×1024 teacher-scored tokens。",
+      "risk": "HIGH",
+      "effort": "低至中：算法实现简单，机制成立与查新风险高。",
+      "so_what": "若来源路径确实携带可迁移的依赖信息，可在几乎不增加 teacher 评分成本的条件下将其压入单 student。",
+      "dedup_key": "对整条 teacher 隐变量路径求后验并蒸馏｜现有各 expert 的轨迹似然",
+      "source_shard": "g17-l3-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    },
+    {
+      "id": "L3-A4",
+      "title": "未履行承诺蒸馏",
+      "method_steps": [
+        "在 student 轨迹中识别早期已经作出、仍约束后续动作的承诺，如选定单位、变量绑定、算法不变量或尚未满足的输出要求；由程序规则或局部可靠 expert 标注其有效区间。",
+        "在每条轨迹一个较晚位置，仅用 student 此刻最后一个 hidden state 重建仍有效的承诺集合，加入一个小型辅助 decoder loss。",
+        "与普通局部 MOPD 联合更新；辅助 decoder 部署时丢弃，student 使用原有完整上下文直接作答。"
+      ],
+      "minimal_formalism": "C_t 为截止 t 仍活跃的承诺，h_t 为 student 最后位置表示；L=L_MOPD+λ E_{t~sample}[−log D_φ(C_t|h_t)]。D_φ 只能读取 h_t，不能重新读取完整 prefix；梯度回传 θ。承诺已履行即移出 C_t，避免仅训练复制所有历史。",
+      "hypothesis": "【待验证】各局部 expert 的当前动作监督未必足够维持对未来仍有用的约束表示；辅助压缩活跃承诺可能使后续专长更稳定地服从前面的决定。历史原本可访问，问题不是上下文缺失，也不是 teacher 间格式转换。",
+      "closest_known_work": "Auxiliary-state prediction、belief-state supervision、scratchpad/representation distillation、prospective memory training 是直接近邻，待查新。Trust、TU/AVSD residual 与普通 sequence KD 都需检验是否已经达到相同效果。",
+      "claimed_delta": "候选监督对象是多个局部专长共同需要维护的未完成义务，而非完整答案或全部历史；单一辅助目标直接约束其跨时间保留。是否超出通用状态重建方法仍开放。",
+      "minimum_test": "先用约2千道带可执行检查的组合任务，自动抽取承诺，保证每个关键状态和单项能力充分覆盖。比较普通 MOPD、同容量历史重建头、随机标签头、通用 scratchpad、普通 sequence KD、单 teacher/RL，以及适用 Trust/TU/AVSD/SMOPD；保持参数、更新与 teacher 信息相同，检查更大 student 是否自然消除差距。",
+      "killer_result": "承诺可被准确解码但联合成功不改善；任意辅助预测同样有效；或额外 teacher 标注实际提供了答案/新增解题知识。任一结果都不支持依赖保留解释。",
+      "compute_assumptions": "工作假设≤8×3090；2个3B experts、1.5B/3B student；2000 prompts×2 rollouts×1024 tokens。规则可抽取场景额外 teacher forward/token为0；每轨迹一个≤32-token承诺集合，辅助 decoder新增≤12.8万训练 tokens。若扩展到自然语言并由 teacher 标注，每轨迹一次≤64-token生成，另计其全部输入评分和≤25.6万输出 tokens；标注质量须核查。",
+      "risk": "MEDIUM",
+      "effort": "中：辅助目标简单，承诺抽取和自然任务适用性是主要工作。",
+      "so_what": "若成立，可用少量训练期状态监督帮助不同专长共享长期约束，部署仍为原来一个 student，且不增加逐状态 teacher 调用。",
+      "dedup_key": "最后位置表示重建活跃承诺｜规则或局部 expert 标注的跨步骤义务集合",
+      "source_shard": "g17-l3-astra",
+      "source_model": "gpt-6-astra",
+      "objective_feasibility": {
+        "status": "pass_conditional",
+        "reason": "无已证实数据不可得或超一周GPU预算；实际GPU预算未由用户指定，tokens估算未测速。实现周数不等于GPU周数。",
+        "pilot": "not_run"
+      }
+    }
+  ]
+}

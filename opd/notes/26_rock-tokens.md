@@ -3,7 +3,7 @@ title: "Cornerstones or Stumbling Blocks? Deciphering the Rock Tokens in On-Poli
 authors: [Yuxuan Jiang, et al.]
 org: umbc-case-asu-vu
 year: 2026
-venue: arxiv
+venue: neurips-2026
 arxiv_id: 2605.09253
 url: https://arxiv.org/abs/2605.09253
 
@@ -63,3 +63,5 @@ $$\mathrm{RockScore}(v)=\sum_{(x,t):y_t=v}\mathbf{1}[\ell_t\ \text{persistently 
 
 <!-- pdf: arXiv HTML v2 Abstract / §2 Rock Tokens / §3 Pillar Tokens / §4 Genuine Contribution / Appendix A -->
 <!-- song-2026: References / survey-reference-audit -->
+
+<!-- venue verified 2026-10-04: https://neurips.cc/Downloads/2026 ; official entry: https://neurips.cc/virtual/2026/poster/152055 -->

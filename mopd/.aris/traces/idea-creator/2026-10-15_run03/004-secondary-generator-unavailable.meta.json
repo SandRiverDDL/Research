@@ -1,0 +1,5 @@
+{
+  "model": "gpt-6.1-sol",
+  "status": "unavailable",
+  "reason": "spawn_agent rejected twice: agent thread limit reached; no response produced"
+}

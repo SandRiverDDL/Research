@@ -1,0 +1,18 @@
+{
+  "call_number": 4,
+  "purpose": "critical",
+  "agent_id": "/root/ideas_astra_object",
+  "model": "gpt-6-astra",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "ok",
+  "saved_at": "2026-10-14T23:04:24.416738+08:00",
+  "duration_ms": null,
+  "duration_note": "No reliable per-call wall-clock measurement retained; archival time not reported as inference time.",
+  "selected_ideas": [
+    "A1",
+    "A2"
+  ],
+  "rejected_ideas": []
+}

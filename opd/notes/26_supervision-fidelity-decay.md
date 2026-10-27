@@ -3,7 +3,7 @@ title: "Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay i
 authors: [Yanjiang Liu, et al.]
 org: cas-xiaohongshu
 year: 2026
-venue: arxiv
+venue: neurips-2026
 arxiv_id: 2605.30833
 url: https://arxiv.org/abs/2605.30833
 
@@ -56,3 +56,5 @@ $$\mathrm{Fidelity}(t)=\mathrm{sim}(\pi_T(\cdot|y^S_{<t}),\pi_T(\cdot|y^T_{<t}))
 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。
 
 <!-- pdf: cached arXiv HTML brief Abstract / §2 / §3 / §4 / Appendix E-F -->
+
+<!-- venue verified 2026-10-04: https://neurips.cc/Downloads/2026 ; official entry: https://neurips.cc/virtual/2026/poster/154216 -->

@@ -1,0 +1,69 @@
+{
+  "L1": [
+    [
+      "COST",
+      "https://arxiv.org/html/2503.04046",
+      "https://papers.nips.cc/paper_files/paper/2025/hash/fa30825df7ceaba452d5533538ea29c2-Abstract-Conference.html"
+    ],
+    [
+      "MER",
+      "https://arxiv.org/abs/1810.11910"
+    ],
+    [
+      "Efficient MER for LLM",
+      "https://arxiv.org/html/2508.01908"
+    ],
+    [
+      "La-MAML",
+      "https://arxiv.org/html/2007.13904"
+    ],
+    [
+      "Churn reduction/NTK plasticity",
+      "https://proceedings.mlr.press/v267/tang25g.html"
+    ],
+    [
+      "PLATE",
+      "https://proceedings.mlr.press/v306/cosentino26a.html"
+    ],
+    [
+      "MetaDistil",
+      "https://aclanthology.org/2022.acl-long.485/"
+    ],
+    [
+      "Meta Pseudo Labels",
+      "https://openaccess.thecvf.com/content/CVPR2021/html/Pham_Meta_Pseudo_Labels_CVPR_2021_paper.html"
+    ]
+  ],
+  "L2": [
+    [
+      "STRIDE cross-domain multi-teacher",
+      "https://arxiv.org/html/2609.14636"
+    ],
+    [
+      "PG-OPD",
+      "https://arxiv.org/html/2606.21994"
+    ],
+    [
+      "Prefix OPD",
+      "https://arxiv.org/html/2602.15260"
+    ],
+    [
+      "Backplay",
+      "https://arxiv.org/abs/1807.06919"
+    ],
+    [
+      "LeCTR",
+      "https://ojs.aaai.org/index.php/AAAI/article/download/4570/4448"
+    ]
+  ],
+  "L5": [
+    [
+      "Commute Your Domains",
+      "https://arxiv.org/html/2501.15556"
+    ],
+    [
+      "La-MAML",
+      "https://arxiv.org/html/2007.13904"
+    ]
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "candidate_id": "L1-A1",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-certified-local-actions --inspired_by--> paper:xu2026_who_teaches_which\nEdge added: idea:g17-certified-local-actions --inspired_by--> paper:lu2026_beyond_best_teacher\nEdge added: idea:g17-certified-local-actions --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-certified-local-actions.md [stage=proposed outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L1-A2",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-counterexample-union --inspired_by--> paper:he2026_learn_from_whoever\nEdge added: idea:g17-counterexample-union --inspired_by--> paper:wang2026_madopd_breaking_ceiling\nEdge added: idea:g17-counterexample-union --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-counterexample-union.md [stage=archived outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L1-A3",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-projected-answer-distillation --inspired_by--> paper:wang2026_smopd_multireward_reinforcement\nEdge added: idea:g17-projected-answer-distillation --inspired_by--> paper:nguyen2026_avsd_adaptiveview_selfdistillation\nEdge added: idea:g17-projected-answer-distillation --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-projected-answer-distillation.md [stage=proposed outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L1-A4",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-joint-teaching-gain --inspired_by--> paper:he2026_learn_from_whoever\nEdge added: idea:g17-joint-teaching-gain --inspired_by--> paper:wang2026_madopd_breaking_ceiling\nEdge added: idea:g17-joint-teaching-gain --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-joint-teaching-gain.md [stage=proposed outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L2-A1",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-reverse-prefix-curriculum --inspired_by--> paper:sun2026_distill_what_you\nEdge added: idea:g17-reverse-prefix-curriculum --inspired_by--> paper:yin2026_hopd_confidence_aware\nEdge added: idea:g17-reverse-prefix-curriculum --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-reverse-prefix-curriculum.md [stage=archived outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L2-A2",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-checkpoint-branching --inspired_by--> paper:sun2026_distill_what_you\nEdge added: idea:g17-checkpoint-branching --inspired_by--> paper:xu2026_who_teaches_which\nEdge added: idea:g17-checkpoint-branching --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-checkpoint-branching.md [stage=archived outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L2-A3",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-intermediate-task-relabeling --inspired_by--> paper:yin2026_hopd_confidence_aware\nEdge added: idea:g17-intermediate-task-relabeling --inspired_by--> paper:lu2026_beyond_best_teacher\nEdge added: idea:g17-intermediate-task-relabeling --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-intermediate-task-relabeling.md [stage=proposed outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L2-A4",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-downstream-expert-returns --inspired_by--> paper:yin2026_hopd_confidence_aware\nEdge added: idea:g17-downstream-expert-returns --inspired_by--> paper:sun2026_distill_what_you\nEdge added: idea:g17-downstream-expert-returns --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-downstream-expert-returns.md [stage=proposed outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L3-A1",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-future-credit-distillation --inspired_by--> paper:di2026_understanding_off_onpolicy\nEdge added: idea:g17-future-credit-distillation --inspired_by--> paper:sun2026_distill_what_you\nEdge added: idea:g17-future-credit-distillation --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-future-credit-distillation.md [stage=archived outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L3-A2",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-cross-step-odds-distillation --inspired_by--> paper:sun2026_distill_what_you\nEdge added: idea:g17-cross-step-odds-distillation --inspired_by--> paper:di2026_understanding_off_onpolicy\nEdge added: idea:g17-cross-step-odds-distillation --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-cross-step-odds-distillation.md [stage=proposed outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L3-A3",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-latent-teacher-paths --inspired_by--> paper:sun2026_distill_what_you\nEdge added: idea:g17-latent-teacher-paths --inspired_by--> paper:yin2026_hopd_confidence_aware\nEdge added: idea:g17-latent-teacher-paths --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-latent-teacher-paths.md [stage=proposed outcome=pending]\n",
+    "stderr": ""
+  },
+  {
+    "candidate_id": "L3-A4",
+    "returncode": 0,
+    "stdout": "Edge added: idea:g17-active-obligation-distillation --inspired_by--> paper:sun2026_distill_what_you\nEdge added: idea:g17-active-obligation-distillation --inspired_by--> paper:he2026_learn_from_whoever\nEdge added: idea:g17-active-obligation-distillation --addresses_gap--> gap:G17\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g17-active-obligation-distillation.md [stage=proposed outcome=pending]\n",
+    "stderr": ""
+  }
+]

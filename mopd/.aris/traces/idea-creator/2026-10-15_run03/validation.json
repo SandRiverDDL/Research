@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "candidate_count": 12,
+  "reviewed_count": 12,
+  "idea_count": 12,
+  "proposed": 8,
+  "archived": 4,
+  "all_outcomes": "pending",
+  "local_link_count": 49,
+  "local_anchor_count": 1,
+  "input_papers_unchanged": 9,
+  "graph_edges": 143,
+  "existing_graph_lines_preserved": 107,
+  "issues": [],
+  "limits": "Local structure/link checks only; no pilot, no external link crawl or scientific claim verification by this script.",
+  "checked_at": "2026-10-15T21:53:17.086966+08:00",
+  "report_version_matches_latest": true
+}

@@ -1,0 +1,16 @@
+{
+  "skill": "idea-creator-from-gap",
+  "upstream_skill": "idea-creator",
+  "run_id": "2026-10-15_run01",
+  "started_at": "2026-10-15T20:48:08+08:00",
+  "executor": "codex",
+  "executor_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "project_dir": "/home/chy/notes/Research/mopd",
+  "phase": "2-lenses-only",
+  "skipped_phases": [
+    0,
+    1
+  ]
+}

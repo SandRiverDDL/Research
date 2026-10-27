@@ -1,0 +1,37 @@
+{
+  "skill": "idea-creator",
+  "run_id": "2026-10-14_run01",
+  "started_at": "2026-10-14T22:35:59.433474+08:00",
+  "executor": "codex",
+  "executor_model": "session-default",
+  "executor_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "project_dir": "/home/chy/notes/Research/agentic-opd",
+  "generator_models": [
+    "gpt-6-astra",
+    "gpt-6.1-sol"
+  ],
+  "requested_second_model": "gpt-6.1",
+  "status": "complete",
+  "completed_at": "2026-10-14T23:04:24.416738+08:00",
+  "candidate_count": 16,
+  "exact_duplicates": 0,
+  "quality_eliminations": 0,
+  "shortlisted": [
+    "A1",
+    "A2"
+  ],
+  "high_upside_reserve": [
+    "A6"
+  ],
+  "pilots_run": 0,
+  "gpu_hours_consumed": 0,
+  "wiki_ideas_written": 16,
+  "reserve_count": 14,
+  "reviewer_deviations": [
+    "Two fresh generation contexts, each covering two lenses, due to runtime thread limit.",
+    "Novelty reviewer reused earlier literature context and had not generated these candidates; model inherited and not exposed.",
+    "Critical reviewer continued original Astra generation context and received jury ranking before final output."
+  ]
+}

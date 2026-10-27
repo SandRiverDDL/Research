@@ -1,0 +1,607 @@
+{
+  "shard_id": "g17-l3-cross-review-by-l2",
+  "assigned_ids": [
+    "L3-A1",
+    "L3-A2",
+    "L3-A3",
+    "L3-A4"
+  ],
+  "reviewer_model": "gpt-6-astra",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "context_reused": true,
+  "search_log": [
+    {
+      "candidate_ids": [
+        "L3-A1"
+      ],
+      "claim": "用未局部归一化的多teacher geometric factors定义sequence目标。",
+      "queries": [
+        "on policy distillation sequence reverse KL geometric multi teacher return to go gammaOPD",
+        "\"γOPD\" \"multi-teacher\"",
+        "\"Understanding Off- vs On-Policy Distillation\" continuation"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2609.16937v1",
+        "https://arxiv.org/html/2609.38666v1",
+        "https://arxiv.org/html/2607.28582v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A1"
+      ],
+      "claim": "实际student轨迹上的未来teacher log-score与entropy构成return-to-go并更新早期token。",
+      "queries": [
+        "on policy distillation future teacher log probability rewards discounted temporal credit 2026",
+        "\"sequence-level\" \"distillation\" \"return-to-go\" teacher",
+        "site:arxiv.org 2026 \"distillation\" \"temporal credit\""
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2609.16937v1",
+        "https://arxiv.org/html/2607.28582v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A1"
+      ],
+      "claim": "复用多teacher评分而不额外分叉，提供超出普通sequence PG的联合能力增量。",
+      "queries": [
+        "multi teacher distillation sequence policy gradient no additional teacher queries 2025 2026",
+        "site:openreview.net distillation multi teacher future reward",
+        "site:arxiv.org \"distillation\" \"credit\" \"2026\" \"September\""
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2609.16937v1",
+        "https://arxiv.org/html/2609.38666v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A2"
+      ],
+      "claim": "匹配跨两个prefix和两个后续片段的交叉log-odds，消除可分离行列偏置。",
+      "queries": [
+        "distillation \"cross ratio\" \"log odds\" conditional",
+        "\"RouteOPD\" pairwise log odds",
+        "\"knowledge distillation\" \"odds ratio\" relational"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2609.08337v1",
+        "https://arxiv.org/pdf/1904.05068"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A2"
+      ],
+      "claim": "通过四项teacher-forced评分取得条件关系，无反事实rollout。",
+      "queries": [
+        "\"distillation\" \"counterfactual\" \"prefix\" 2026",
+        "\"teacher forced\" \"contrastive\" \"distillation\" 2025 2026",
+        "language model distillation cross prefix pairwise preference interaction 2026"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2609.08337v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A2"
+      ],
+      "claim": "在局部expert和关键状态充分覆盖时，关系目标比同数据KD更有效整合联合能力。",
+      "queries": [
+        "\"amalgamation\" \"dependencies\" \"ANT\" 2023",
+        "site:openreview.net \"relational\" \"distillation\" 2025 2026",
+        "site:arxiv.org \"distillation\" \"conditional\" \"interaction\" \"2026\""
+      ],
+      "sources_checked": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/26190/25962",
+        "https://arxiv.org/pdf/1904.05068"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A3"
+      ],
+      "claim": "以Markov teacher路径和Bayesian filtering定义合法自回归teacher。",
+      "queries": [
+        "\"Switching between Hidden Markov Models using Fixed Share\"",
+        "Bayesian filtering Markov expert mixture next token likelihood knowledge distillation",
+        "\"hidden Markov\" \"teacher\" \"distillation\" 2025 2026"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/pdf/1008.4532"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A3"
+      ],
+      "claim": "将路径边缘条件目标蒸馏入单student，部署去掉路径变量。",
+      "queries": [
+        "\"distillation\" \"latent\" \"expert\" \"sequence\" Markov",
+        "\"knowledge distillation\" \"switching\" \"experts\" language model",
+        "site:arxiv.org 2026 \"multi-teacher\" \"Markov\""
+      ],
+      "sources_checked": [
+        "https://arxiv.org/pdf/1008.4532"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A3"
+      ],
+      "claim": "posterior来源关联超出普通平滑路由，低开销保留跨专长依赖。",
+      "queries": [
+        "\"multi teacher\" \"routing\" \"temporal\" distillation 2025 2026",
+        "site:openreview.net \"distillation\" \"HMM\"",
+        "site:arxiv.org 2026 \"distillation\" \"Bayesian\" \"mixture\""
+      ],
+      "sources_checked": [
+        "https://arxiv.org/pdf/1008.4532"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A4"
+      ],
+      "claim": "从最后hidden state重建仍活跃的承诺集合，区别于全部历史。",
+      "queries": [
+        "language model hidden state auxiliary reconstruction active constraints commitments",
+        "\"language model\" \"obligations\" \"auxiliary\"",
+        "\"language model\" \"state tracking\" \"auxiliary loss\" 2025 2026"
+      ],
+      "sources_checked": [
+        "https://aclanthology.org/2023.findings-acl.795.pdf",
+        "https://arxiv.org/html/2410.23506v3"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A4"
+      ],
+      "claim": "辅助状态预测联合OPD，推理移除decoder而保持收益。",
+      "queries": [
+        "\"prospective memory\" \"training\" \"language models\"",
+        "\"belief state\" \"supervision\" transformer reasoning",
+        "site:arxiv.org 2026 \"hidden state\" \"reconstruction\" \"reasoning\""
+      ],
+      "sources_checked": [
+        "https://aclanthology.org/2023.findings-acl.795.pdf",
+        "https://arxiv.org/html/2410.23506v3"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A4"
+      ],
+      "claim": "该训练信号帮助多teacher专长共享跨步骤约束，超过通用state supervision。",
+      "queries": [
+        "\"multi teacher\" \"distillation\" \"state\" \"memory\" 2025 2026",
+        "site:openreview.net \"state tracking\" \"supervision\" language models",
+        "\"reasoning\" \"auxiliary\" \"state prediction\" \"2026\""
+      ],
+      "sources_checked": [
+        "https://aclanthology.org/2023.findings-acl.795.pdf",
+        "https://arxiv.org/html/2410.23506v3"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A4"
+      ],
+      "claim": "补充精确机制检索、原始入口定位和失败访问核查；只用打开的方法正文作实质判断。",
+      "queries": [
+        "\"language models\" \"prospective memory\" training auxiliary",
+        "\"transformer\" \"state supervision\" \"hidden\" reasoning auxiliary",
+        "\"language model\" \"active constraints\" training state reconstruction"
+      ],
+      "sources_checked": [
+        "https://aclanthology.org/2023.findings-acl.795.pdf",
+        "https://openreview.net/pdf?id=MUr7Fl93QS",
+        "https://arxiv.org/html/2410.23506v3"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A4"
+      ],
+      "claim": "补充精确机制检索、原始入口定位和失败访问核查；只用打开的方法正文作实质判断。",
+      "queries": [
+        "\"language models\" \"state tracking\" \"auxiliary\" loss",
+        "\"language model\" \"intermediate state\" \"supervision\" 2025 2026"
+      ],
+      "sources_checked": [
+        "https://aclanthology.org/2023.findings-acl.795.pdf",
+        "https://openreview.net/pdf?id=MUr7Fl93QS",
+        "https://arxiv.org/html/2410.23506v3"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A4"
+      ],
+      "claim": "补充精确机制检索、原始入口定位和失败访问核查；只用打开的方法正文作实质判断。",
+      "queries": [
+        "\"MUr7Fl93QS\"",
+        "\"We introduce an auxiliary training loss\" \"state\" transformer",
+        "\"Language Modeling with Latent Situations\""
+      ],
+      "sources_checked": [
+        "https://aclanthology.org/2023.findings-acl.795.pdf",
+        "https://openreview.net/pdf?id=MUr7Fl93QS",
+        "https://arxiv.org/html/2410.23506v3"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A2",
+        "L3-A4"
+      ],
+      "claim": "补充精确机制检索、原始入口定位和失败访问核查；只用打开的方法正文作实质判断。",
+      "queries": [
+        "\"MUr7Fl93QS\" title",
+        "\"state supervision\" transformers \"each line\"",
+        "\"state supervision\" \"hidden representations\" transformer arxiv",
+        "\"Relational Knowledge Distillation\" arxiv Park 2019"
+      ],
+      "sources_checked": [
+        "https://aclanthology.org/2023.findings-acl.795.pdf",
+        "https://openreview.net/pdf?id=MUr7Fl93QS",
+        "https://arxiv.org/html/2410.23506v3"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L3-A4"
+      ],
+      "claim": "补充精确机制检索、原始入口定位和失败访问核查；只用打开的方法正文作实质判断。",
+      "queries": [
+        "\"programs containing individual steps\"",
+        "\"Grounding code understanding in step-by-step execution\"",
+        "\"code execution\" \"state supervision\" arxiv"
+      ],
+      "sources_checked": [
+        "https://aclanthology.org/2023.findings-acl.795.pdf",
+        "https://openreview.net/pdf?id=MUr7Fl93QS",
+        "https://arxiv.org/html/2410.23506v3"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "Beyond Token-Local Imitation: Reward-Compatible Temporal Credit Assignment for On-Policy Distillation (γOPD)",
+      "url": "https://arxiv.org/html/2609.16937v1",
+      "anchors": [
+        "§3.1 Proposition 3.2, Eq.8",
+        "§3.2 Eq.9–10, γ=1 endpoint",
+        "§4.1–4.2, Table 2",
+        "Appendix D Algorithm"
+      ],
+      "read_depth": "method",
+      "finding": "原文给出完整未来teacher–student log-ratio的return-to-go；γ=1恢复sequence gradient，γ<1控制方差；有数学和代码多teacher实验。已核查段落未证明与状态依赖、未局部归一化的多teacher因子目标完全相同，表2也不是同题联合执行率。"
+    },
+    {
+      "source_id": "S2",
+      "title": "Distillation as Probability Transport: Routed On-Policy Distillation (RouteOPD)",
+      "url": "https://arxiv.org/html/2609.08337v1",
+      "anchors": [
+        "§3.1–3.3, Eq.3–12",
+        "§3.3 shared bounded token potential",
+        "§2 action-space versus temporal selection"
+      ],
+      "read_depth": "method",
+      "finding": "在一个student-visited state的词表中配对excess/deficit token，通过pairwise log-odds传输概率；共享potential保证成对目标可共同实现。未在核查方法中使用跨两个prefix、两个后续片段的2×2差分。"
+    },
+    {
+      "source_id": "S3",
+      "title": "Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives",
+      "url": "https://arxiv.org/html/2609.38666v1",
+      "anchors": [
+        "§5 Eq.5.1–5.2",
+        "Remark 5.2",
+        "§6.3 Long Horizons"
+      ],
+      "read_depth": "method",
+      "finding": "原文定义sequence geometric target，token conditional包含未来continuation partition；原式teacher权重依prompt而非prefix。这覆盖sequence目标和未来项的理论动机，不直接证明L3-A1的动态权重版本有独立方法价值。"
+    },
+    {
+      "source_id": "S4",
+      "title": "Switching between Hidden Markov Models using Fixed Share",
+      "url": "https://arxiv.org/pdf/1008.4532",
+      "anchors": [
+        "§3 Expert Hidden Markov Models, pp.4–5",
+        "Figure 3",
+        "Example 3.2 Bayesian mixture",
+        "§1.1 tracking the best expert"
+      ],
+      "read_depth": "method",
+      "finding": "EHMM用latent transition与expert predictions定义完整预测分布，观测历史后以posterior mixture预测下一结果；Q=expert identity及一般transition就是L3-A3过滤结构的直接已有工具。本文没有LLM MOPD student压缩与同题能力组合结果。"
+    },
+    {
+      "source_id": "S5",
+      "title": "The Belief State Transformer",
+      "url": "https://arxiv.org/html/2410.23506v3",
+      "anchors": [
+        "§2 Architecture and Objective（页面概览）",
+        "§3.3–3.6",
+        "§4 Definition 1"
+      ],
+      "read_depth": "method",
+      "finding": "前后向表示和previous-token目标用于获得对未来充分的belief state；空suffix部署与消融表明训练期表征目标可改善规划。它不等同于只从单个最后hidden state重建仍活跃义务的辅助头。"
+    },
+    {
+      "source_id": "S6",
+      "title": "Knowledge Amalgamation for Multi-Label Classification via Label Dependency Transfer (ANT)",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/26190/25962",
+      "anchors": [
+        "Proposed Method: ANT, pp.3–4",
+        "Transfer Indicator",
+        "Knowledge Transfer Module",
+        "Figure 3"
+      ],
+      "read_depth": "method",
+      "finding": "先以共享label建立teacher间关系，让一位teacher的预测改变另一位的条件预测，再整合到student。partial teachers的关系知识整合已有直接方法，但不是LLM跨prefix交叉log-odds损失。"
+    },
+    {
+      "source_id": "S7",
+      "title": "β-OPSD: Deriving with Policy Optimization, Training with Self-Distillation",
+      "url": "https://arxiv.org/html/2607.28582v1",
+      "anchors": [
+        "§2.3 Eq.12–15",
+        "§2.4 Eq.16–19",
+        "局部归一化近似说明"
+      ],
+      "read_depth": "method",
+      "finding": "已有在student完整轨迹上求未来log-ratio return-to-go、detach后乘student log-prob的实现；其目标是局部归一化的reference/privileged-teacher interpolant。不能把这一梯度载体声称为新机制。"
+    },
+    {
+      "source_id": "S9",
+      "title": "Language Modeling with Latent Situations",
+      "url": "https://aclanthology.org/2023.findings-acl.795.pdf",
+      "anchors": [
+        "§3.1 Eq.2–3, pp.3–4",
+        "Figure 2 caption"
+      ],
+      "read_depth": "method",
+      "finding": "辅助decoder从共享context representation预测情境状态，与语言目标联合训练；推理时丢弃辅助decoder。直接覆盖状态重建辅助训练与无部署开销这两个主张；未精确覆盖active commitment生命周期和单个最后位置瓶颈。"
+    },
+    {
+      "source_id": "S10",
+      "title": "Relational Knowledge Distillation",
+      "url": "https://arxiv.org/pdf/1904.05068",
+      "anchors": [
+        "§3.2 Eq.4",
+        "§3.2.1 Eq.5–8",
+        "§3.2.2 Eq.9"
+      ],
+      "read_depth": "method",
+      "finding": "RKD明确用关系potential匹配teacher/student的多样本结构，实例为距离与角度，且强调对低阶属性的不变性。关系蒸馏及消除低阶偏置并非新概念；未核见L3-A2的跨prefix条件odds四项关系。"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "L3-A1",
+      "core_claims": [
+        "未局部归一化f的乘积定义Q_seq，将多teacher信号置于sequence分布。",
+        "用同批student轨迹计算未来log-ratio回报，对早期token做带独立baseline的policy gradient。",
+        "不增加逐状态continuation调用，相比局部MOPD传递跨专长延迟信用。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "S1",
+          "overlap": "Eq.8和Eq.10的γ=1端点已给出相同形式的return-to-go梯度；已有多teacher math/code实验及无逐状态分叉的实现。",
+          "delta": "候选使用状态依赖权重和未局部归一化的多teacher factors，不能直接当作该文归一化teacher实例；同题联合依赖收益也未由其跨域均分证明。"
+        },
+        {
+          "source_id": "S3",
+          "overlap": "sequence geometric目标及continuation correction已有明确理论。",
+          "delta": "候选权重随prefix变化，并提出用MC PG训练；这些选择能否带来可规模化的新增结果尚无证据。"
+        },
+        {
+          "source_id": "S7",
+          "overlap": "实际轨迹未来log-ratio求和、stop-gradient及token log-prob更新已作为实用recipe出现。",
+          "delta": "其采用局部归一化reference/privileged-teacher混合，不是本候选的全局factor目标。"
+        }
+      ],
+      "technical_issues": [
+        "【数学核查】固定本轮目标、完整支持集且有限EOS horizon时，给定return-to-go在θ=θ_old处是该sequence KL的无偏梯度方向；未知全局normalizer对θ为常数，不需估计。多轮旧轨迹更新则不再自动无偏。",
+        "【命名风险：目标归一化】令q_dyn=f/Z(h)，候选log f=log q_dyn+log Z(h)。它相对归一化teacher的sequence PG多出未来log Z(h)项；不能在实现中把f重新softmax后仍声称优化原目标，也不能把此差别抹掉后直接宣布γOPD已完整包含。",
+        "【命名风险：一致但错误】Z(h)的奖励可能偏好teacher一致的容易/错误路径；较强sequence credit不会自动纠正teacher pool缺知识。须先验证候选Q对正确联合解确有偏好。",
+        "同题baseline必须来自其他独立rollout或只依赖当前history；把当前轨迹放进均值会改变估计。原提案4 rollouts相对1 rollout的总采样四倍必须配平。",
+        "近one-hot权重使Z接近1，真正剩余增量可能消失；top-k或sampled-token近似与全分布目标差异应明确。"
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 3,
+      "method_value_score": 5,
+      "pilot_information_score": 8,
+      "risk": "HIGH",
+      "recommendation": "deprioritize",
+      "best_case": "在局部专家均可靠但未来接续有结构性代价的任务上，未局部归一化目标揭示一个可复用的joint-state偏好，并以已有评分实现独立联合成功提升。",
+      "strongest_objection": "核心更新已经是γOPD/β-OPSD公开的return-to-go；当前剩余的是动态factor目标的具体实例，尚未给出它为何优于普通同目标sequence PG的独立机制。不能用已知梯度换一个多teacher名字。",
+      "likely_failure": "长horizon方差使稳定局部OPD更强；或者收益完全是已有sequence PG，factor质量反而把错误共识放大。",
+      "frontier_durability": "时序信用对长程模型仍重要，但这已是通用训练问题。更强student消除低预算优化差距后，候选必须仍展示多teacher特有、可定位的剩余效应，否则方法价值容易被成熟recipe吸收。",
+      "metric_gaming": "降低序列KL、增加teacher共识、缩短回复或改善跨域均分都可能不提高同题联合成功。须固定输出预算并使用端到端执行验证。",
+      "fair_baselines": [
+        "同轨迹、同teacher scoring的普通sequence PG；γOPD γ=1及调优γ<1，分别有/无结果reward。",
+        "Trust局部动态监督；相同f与归一化q_dyn两个目标的控制。",
+        "普通OPD、强单teacher、适配的TU/AVSD/SMOPD；额外样本、curriculum、replay或off-policy mixing用于排除状态覆盖解释。",
+        "配平4-rollout总预算及reference评分、teacher制备/验证/校准；原有专长checkpoint可用性尚未核实。"
+      ],
+      "minimum_test": "不训练LLM：在可枚举二阶段、full-history双expert系统中，固定teacher知识、覆盖和student容量，精确计算候选Q、局部目标与γOPD目标的联合成功偏好及单步梯度；专门比较保留/除去log Z项。只要目标层面无新可用偏好，就无须上GPU。当前未运行；实际GPU预算未指定，原tokens估算未测速。",
+      "kill_criterion": "若未归一化项没有改善正确联合解的目标排序，且候选梯度与普通同目标sequence PG逐项相同，则放弃其独立新方法定位，保留为基线；不将此写成已完成实验。"
+    },
+    {
+      "id": "L3-A2",
+      "core_claims": [
+        "蒸馏两个前缀对两个后续片段偏好变化的2×2交叉log-odds。",
+        "四项teacher-forced评分能传递关系，无需生成反事实continuation。",
+        "同数据/同评分条件下，关系监督超出局部KD并改善多个专长的联合使用。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "S2",
+          "overlap": "pairwise log-odds和可共同实现的teacher目标已有OPD方法，必须成为强对照。",
+          "delta": "RouteOPD的pair位于一个state的词表；本候选约束两个不同prefix间的条件偏好变化，且对象可为多token片段。此delta具体可检验。"
+        },
+        {
+          "source_id": "S10",
+          "overlap": "关系potential蒸馏、传递高阶结构并消去低阶属性已有一般框架。",
+          "delta": "候选的条件log-prob四项差分不是RKD的距离/角度实例结果；须证明这一特定potential的任务价值，不能宣称关系蒸馏本身新。"
+        },
+        {
+          "source_id": "S6",
+          "overlap": "多个partial teachers的依赖知识能够进入同一student已有直接方法。",
+          "delta": "ANT通过共享label调整teacher条件预测；候选针对自回归prefix×suffix的关系，方法目标与数据对象不同。"
+        }
+      ],
+      "technical_issues": [
+        "【数学核查】Δ确实消除任意行偏置a_i及列偏置b_j，但仅是条件关联，不自动具有因果解释。不同prefix之外的任务信息、文风或token长度差异仍可产生大Δ。",
+        "【命名风险：不可共同实现的截断】对重叠配对分别clip(Δ_B)可能破坏关系恒等式。例如固定p1/p2、三个suffix时，未截断D13=D12+D23；若D12=D23=0.8c，分别clip后D13=c而两者和=1.6c。候选没有定义如何处理冲突；不能把零loss可实现性当保证。",
+        "【采样分布】p1、p2可来自student，但v2放到p1之后形成未按该条件采样的状态。因此整体是on-policy MOPD加反事实off-policy scoring辅助loss，不是完整无偏on-policy目标。",
+        "仅匹配Δ允许四个候选suffix的绝对概率都很小；普通MOPD承担边际学习。关系误差下降不能替代部署成功。",
+        "B在自然配对上的局部可靠性不认证它在交叉组合上的可靠性；语法有效和等长也不能保证语义有意义。验证与配对成本须计入，禁止默认免费oracle。"
+      ],
+      "novelty_verdict": "PROCEED",
+      "novelty_score": 6,
+      "method_value_score": 7,
+      "pilot_information_score": 9,
+      "risk": "MEDIUM",
+      "recommendation": "prioritize",
+      "best_case": "获得一个直接、廉价的依赖监督对象：前面选什么会改变后面该怎么做；不要求每位expert独立解整题，也不增加部署组件。",
+      "strongest_objection": "这是RKD的一种potential加反事实数据增广；如果在同一四格评分上的普通KD或sequence preference已经达到同样效果，专门交叉比损失没有方法必要性。",
+      "likely_failure": "有效配对稀少，交叉组合不自然；teacher评分反映表面兼容而非可执行依赖；或者独立clipping制造互相矛盾目标。",
+      "frontier_durability": "在科学单位、程序绑定及可替换算法接口等依赖严格的场景仍可能有价值。若更强student自然保留全部关系，收益可能只在小模型压缩成立；须验证成本优势而非假设两年后仍有普遍瓶颈。",
+      "metric_gaming": "交叉比拟合、teacher偏好一致率可通过压低全部候选概率或记住模板改善。用未见prefix/suffix关系组合的真实执行成功，辅以单项保持和概率质量监控。",
+      "fair_baselines": [
+        "同四格数据、相同B评分的普通token KD、完整sequence KD和sequence preference/DPO。",
+        "RouteOPD与RKD风格关系损失；Trust及适配的TU/AVSD/SMOPD。",
+        "强单teacher、结果RL、更大student；普通curriculum/replay及反事实数据augmentation配平状态覆盖。",
+        "两条自然rollout、交叉prefix重算、B可靠性验证、teacher制备均计总成本；不以≤51,200 suffix scoring tokens替代完整prefill开销。"
+      ],
+      "minimum_test": "先离线构建约128个可执行的2×2配对，保留部分重叠三suffix组，检查B的Δ是否预测真实配合、是否存在clip循环冲突；再以小型参数化student固定同四格监督比较KD与关系loss的未见关系泛化。这是便宜且直接的证伪路线，不需要先跑2k题LLM训练。未运行；实际GPU预算未指定，tokens估算未测速。",
+      "kill_criterion": "若B的条件关系不对应执行依赖，或打乱配对/同数据普通KD完全复现联合收益，则该具体方法主张不成立；发现局部clip冲突则记录原方法数学缺陷，不在本审阅中替它新增修复模块。"
+    },
+    {
+      "id": "L3-A3",
+      "core_claims": [
+        "latent Markov teacher路径经Bayesian filtering形成合法的完整自回归teacher。",
+        "student在自身prefix上匹配该条件mixture，部署时无需保留路径变量。",
+        "来源路径相关性比普通平滑路由更能保留跨专长依赖，且几乎不增加teacher评分。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "S4",
+          "overlap": "EHMM的latent transition、posterior mixture及下一步预测直接包含该过滤器结构；这一数学机制本身已知。",
+          "delta": "已核查论文不含把该完整teacher压缩到LLM student的MOPD训练及联合能力结果。应用增量尚未被一篇论文完整包含，故不能仅因HMM已知而ABANDON。"
+        },
+        {
+          "source_id": "S1",
+          "overlap": "已有MOPD设置下的时间信用方法，说明超越token-local训练不是空白。",
+          "delta": "γOPD干预梯度时间范围；本候选干预监督生成模型的latent来源关联，二者不同。"
+        }
+      ],
+      "technical_issues": [
+        "【数学核查】ν、A为概率分布/转移矩阵，各q_k为合法条件分布且Q_t(y_t)>0时，给定递推正确；full-history experts不违反EHMM定义，无需假设teacher自身无记忆。",
+        "在student轨迹上做detached forward-KL是student-state加权的局部蒸馏，不等于sequence KL(Q‖π)；候选未声称后者，但报告不可混写。",
+        "【命名风险：把生成来源当可靠性】后验解释的是哪个teacher更可能生成student已经写出的token；它不是哪个teacher更适合未来，也可能奖励复现student的错误、文风和通用高频token。",
+        "固定齐次A只提供通用持续/切换先验，未显式知道任务中的承诺或A→B边界。若联合解需要在低B-likelihood前缀后立即交给B，过滤器可能恰好延迟这种转换。",
+        "A的校准目标、额外标签和hyperparameter选择预算未定义；若靠联合答案选A，需与平滑路由共享信息。完整mixture需要一致支持集，top-k截断及underflow会改变实际Q。"
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 4,
+      "method_value_score": 5,
+      "pilot_information_score": 9,
+      "risk": "HIGH",
+      "recommendation": "reserve",
+      "best_case": "极小的过滤计算在无额外teacher forward下提供有用的sequence归纳偏置，并可被普通student吸收。",
+      "strongest_objection": "这是标准EHMM/Fixed Share预测器接现成KD；来源一致性与任务依赖没有必然联系。必须先证明Q自身优于同切换率平滑，才能谈student优化贡献。",
+      "likely_failure": "路径后验追踪文风而非专长；简单平滑同样有效；或者Q持续选到当前student风格相似但错误的teacher。",
+      "frontier_durability": "如果真正瓶颈是全程规划与约束，固定Markov来源先验可能过弱；更强模型本来就能保留这些依赖。优势若成立应主要是低成本压缩的归纳偏置，需在更复杂依赖和新teacher池保持。",
+      "metric_gaming": "降低切换率、提高teacher来源识别、降低蒸馏loss均不代表联合能力。不能用稳定路由代替正确完成。",
+      "fair_baselines": [
+        "EHMM/Fixed Share目标直接采样或精确评价；同切换率低通平滑、response mixture、独立token mixture。",
+        "Trust及适配的TU/AVSD/SMOPD；普通sequence KD和γOPD，强单teacher、结果RL。",
+        "保持同teacher logits、calibration数据和标签预算；加入等总数据curriculum/replay/mixing排除状态访问解释。",
+        "teacher制备/适配和校准200条的完整prefill需计入；O(TK²)额外CPU/张量计算虽小也不宣称实测零成本。"
+      ],
+      "minimum_test": "只做可枚举的双expert两阶段问题：固定局部准确率与状态覆盖，直接计算Q的联合成功，对比独立mixture和同切换率平滑；再改变文风相似性但保持能力不变。Q本身无优势即可在任何LLM训练前证伪。未运行；实际GPU预算未指定，tokens估算未测速。",
+      "kill_criterion": "若Q在控制切换率后不能改善正确联合解概率，或只改变文风就翻转优势，则来源路径不是候选所需的依赖信号；无需把它升级成更复杂router来维持候选。"
+    },
+    {
+      "id": "L3-A4",
+      "core_claims": [
+        "只监督尚未履行的活跃承诺集合，并在履行后删除，区别于全部历史重建。",
+        "从单个最后hidden state通过辅助decoder重建集合，联合OPD且部署丢弃decoder。",
+        "该表示监督促进多个专长共享跨步骤义务，超出一般状态预测或scratchpad收益。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "S9",
+          "overlap": "§3.1 Eq.2–3已有辅助state decoder、共享表示联合训练及推理移除decoder；这两个核心实现主张已明确覆盖。",
+          "delta": "候选强调未履行义务生命周期、单个最后位置瓶颈，以及MOPD跨专长交接；已读论文监督的是情境/实体状态，未证明精确包含这些结果。"
+        },
+        {
+          "source_id": "S5",
+          "overlap": "训练期辅助目标塑造对未来充分的表示、部署不必提供训练辅助信息已有规划研究。",
+          "delta": "BST用前后向编码与previous-token目标，不是active commitments标签；不能据此否定候选的特定监督对象。"
+        },
+        {
+          "source_id": "S10",
+          "overlap": "知识转移可使用隐藏表示和更高阶目标的一般思想已成熟。",
+          "delta": "它不提供活跃义务预测机制；这里只限制泛称representation distillation的新颖性。"
+        }
+      ],
+      "technical_issues": [
+        "【数学核查】辅助CE目标可定义；C_t必须只由截至t的可用信息确定。依据未来正确答案决定哪些义务活跃，会产生新增答案知识而不是纯记忆监督。",
+        "【命名风险：可读不等于会用】decoder能从h_t解码义务，不证明生成head在未来步骤利用该表示。decoder也可能即时重算当前容易信息；一次较晚位置监督未保证长程保持。",
+        "承诺集合需有规范化表示或明确集合损失，否则序列CE会惩罚等价顺序；候选未指定实现。单点采样如何覆盖义务生命周期亦未定义。",
+        "从当前完整prefix生成标签可能需要额外teacher推理；规则覆盖只在可执行任务可得。自然任务的有效区间和已履行判断不是免费oracle。",
+        "一般state监督可能已经提供相同改进；多teacher特异性必须来自跨专长共享义务的证据，而不能仅把相同辅助任务加在MOPD上。"
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 5,
+      "method_value_score": 6,
+      "pilot_information_score": 8,
+      "risk": "MEDIUM",
+      "recommendation": "reserve",
+      "best_case": "用很少的训练期标签选择真正仍影响未来的义务，使多个专长在同一模型内共享约束，并保持部署成本不变。",
+      "strongest_objection": "辅助decoder预测状态再在推理移除已在ACL 2023明确出现；当前新增主要是标签定义。必须证明active而非all-state/recent-state监督具有独立可迁移价值，才能成为方法贡献。",
+      "likely_failure": "承诺读出变好却不改变实际生成；标签抽取成本高或暗含解题知识；收益与任意辅助任务/额外更新一致。",
+      "frontier_durability": "长程约束保持可能在强模型仍存在，但小模型最后hidden-state瓶颈也可能是人为限制。若更强student无需该目标即可保留义务，应把价值限定为可部署小模型的数据效率，而非普遍架构缺陷。",
+      "metric_gaming": "标签复述、义务读出准确率和模板格式遵循可以改善，而整题执行失败。需要留出义务组合，控制义务距当前token的间隔，并分别考查已履行义务被正确忽略。",
+      "fair_baselines": [
+        "Language Modeling with Latent Situations式普通state reconstruction、全历史重建、只重建最近状态及已履行义务；辅助head参数和训练token配平。",
+        "随机标签head、通用scratchpad、普通sequence KD、Trust及适配的TU/AVSD/SMOPD，强单teacher和结果RL。",
+        "等总采样/更新的curriculum、replay或off-policy mixing用于排除训练机会解释；更大student检查容量。",
+        "规则/teacher标签获取、验证、完整上下文prefill、decoder训练与teacher pool制备全部计费；自然数据可用性未确认。"
+      ],
+      "minimum_test": "在约128–256个可执行单位/绑定任务中自动产生active、all-state及已履行三类等长度标签；先核验无未来答案泄漏，再以同预算小模型比较联合成功和读出准确率是否分离。优先测试义务寿命和未见组合，不先扩成自然语言标注工程。未运行；实际GPU预算未指定，tokens估算未测速。",
+      "kill_criterion": "active标签对真实联合成功不优于同预算普通state supervision，或仅decoder读出提升；若标签包含额外解题信息也不能作为原机制成功。"
+    }
+  ],
+  "ranking": [
+    "L3-A2",
+    "L3-A4",
+    "L3-A3",
+    "L3-A1"
+  ],
+  "top_choice_rationale": "L3-A2通过本轮早期新颖性检查：相对RouteOPD的同位置词表pair，它匹配跨prefix的条件偏好变化，delta明确且尚未找到直接完整覆盖论文。应先验证cross-score语义与clip循环可实现性；这不是正式接受或已证实增益。",
+  "high_upside_choice": {
+    "id": "L3-A3",
+    "rationale": "HIGH风险但开销极小；若来源路径后验确能优于同切换率平滑并提高Q自身联合成功，可能给出可广泛复用的训练归纳偏置。可枚举目标检查成本低，值得保留一个高信息量检验，而非立即做LLM训练。"
+  },
+  "coverage_limits": [
+    "本次复用曾生成L2候选的上下文，仅交叉评价L3；同family provisional，不是fresh-context、跨family接受或最终论文新颖性裁决。",
+    "实际执行12组承重claim检索，每组至少3种查询，共36条基础查询；另有针对active-state supervision、来源定位与精确近邻的追踪查询。检索覆盖当前web、arXiv、ACL、AAAI、CVPR和OpenReview入口，含2025–2026及近六个月结果，并追溯必要旧作；不宣称穷尽。",
+    "OpenReview对ThRMTCgpvo和MUr7Fl93QS正文访问返回浏览器验证。前者改读公开arXiv原文2410.23506v3；后者只得到搜索片段，未作为完整覆盖或ABANDON依据。其片段涉及逐行最后token的state-supervision head，仍是后续需核查的近邻。",
+    "CVPR官方RKD页面/PDF访问403，改读作者公开arXiv PDF1904.05068方法正文。ANT直接download入口失败，但官方view/26190/25962的PDF成功读取；旧HMM HTML404，改读arXiv原PDF。",
+    "没有调用Semantic Scholar、DBLP或Crossref API，不能宣称独立数据库穷尽。未读query_pack、未重建landscape、未训练或运行pilot。",
+    "文献表中的数值结果未用于声称候选已经失败或现有方法普遍不能组合；论文只读承重方法段及必要实验设置，不冒称全文复现。",
+    "实际GPU预算未由用户指定；≤8×3090和token预算仅为原候选工作假设，未测速，未确认teacher checkpoint专长、数据生成器或自然任务标注可用性。",
+    "所有四项均保留可验证剩余delta或应用结果空间；本轮没有足够证据认定某一篇已完整包含全部候选，因此不作ABANDON。deprioritize反映当前方法投入价值，不等于已被完整scoop。"
+  ]
+}

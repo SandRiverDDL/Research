@@ -1,0 +1,20 @@
+{
+  "kind": "CPU exact-enumeration sanity checks; not a training experiment",
+  "cv_expected": [
+    0.136,
+    -0.16000000000000003,
+    0.023999999999999994
+  ],
+  "true_task_gradient": [
+    0.13600000000000004,
+    -0.16,
+    0.023999999999999994
+  ],
+  "max_bias": 2.7755575615628914e-17,
+  "example_variance_constant_value_baseline": 0.06691199999999999,
+  "example_variance_action_control_variate": 0.0058654999999999975,
+  "atod_same_first_turn_d_h": {
+    "before_extreme_suffix": 0.7500000000000001,
+    "after_extreme_suffix": 0.020099989796959372
+  }
+}

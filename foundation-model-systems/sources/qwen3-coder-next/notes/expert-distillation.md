@@ -30,10 +30,20 @@ need_expert_review: false
 - 合理解释：这是 coding-agent 领域的 multi-teacher consolidation，但不一定是 MiMo 式 token-level MOPD。
 - 未披露 / 不能下结论：exact loss、teacher weighting、student sampling policy、filtering 和是否 on-policy 尚需深读或查 repo。
 
+## Code Expert Recipe 补核（2026-10-19）
+
+- **解释（用户追问后的术语澄清）**：四类 expert 是按 task/workflow、交互形态、优化目标与验证方式混合划分的训练分支，并非互斥的基础能力 taxonomy。WebDev 是应用场景，UX 是跨 CLI/IDE 的使用质量与 tool-format 目标，Single-turn QA 是交互/反馈形态，SWE 是 repository-level 多步开发工作流；任务之间可以重叠。这里的 expert 是独立 checkpoint/policy，不是 MoE 内部 FFN expert。[6-11]
+- **事实**：四类 experts 共享初始模型，但 data、recipe 和 eval 不同；不能把全部 experts 概括为同一种 RL。[6-11]
+- **事实**：WebDev expert 用浏览器渲染 + VLM 静态截图检查 + 自动交互验证过滤 trajectories；UX expert 强调跨 CLI/IDE scaffold 的 tool-call format 验证与 data-mixture ablation。[6-9]
+- **事实**：Single-turn QA expert 用 execution-based RL，任务包括竞赛题、library/API usage、多语言和 secure coding；合成 tests 通过多份独立 solutions 的 majority consensus 选择。[9-10]
+- **事实**：SWE expert 在真实/合成 repository environments 做多轮 RL；SFT/RL prompts disjoint，按 pass rate 筛选，最终 completion reward 外加 unfinished-trajectory 与 malformed-tool-call penalties。运行时 blocker 拦截恢复 GitHub history / reference patches 的行为。[10-11]
+- **事实**：最终蒸馏回 SFT model；TR 没有给出足以判定其为 token-logit MOPD 的 objective。[11]
+- **原文入口**：https://arxiv.org/html/2603.00729#S4.SS2
+
 ## Gaps / Open Questions
 
 - Distillation objective 不够明确。
-- 各 expert 的训练数据、reward 和 selection criteria 仍需细读。
+- 各 expert 的机制已补核；exact training configs、mixture weights、filter thresholds 与独立 ablations 仍不足。
 - 需要确认是否有公开训练数据或只开放 weights/repo。
 
 ## Evidence Anchors

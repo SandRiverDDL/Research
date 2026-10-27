@@ -1,0 +1,18 @@
+{
+  "call_number": 9,
+  "purpose": "g15-final-ranking",
+  "timestamp": "2026-10-15T13:55:43.126357+00:00",
+  "agent_id": "/root/g15_fresh_review",
+  "model": "gpt-6-astra",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "ok",
+  "selected_ideas": [
+    "C07",
+    "C03",
+    "C04-S4"
+  ],
+  "abandoned_ideas": [],
+  "correction": "C02 novelty score 3 to 4; verdict unchanged."
+}

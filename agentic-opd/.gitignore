@@ -1,0 +1,11 @@
+# Machine-local ARIS installation; retain custom skills and research traces.
+/.agents/skills/experiment-plan
+/.agents/skills/idea-creator
+/.agents/skills/novelty-check
+/.agents/skills/research-refine
+/.agents/skills/research-review
+/.agents/skills/shared-references
+/.aris/installed-skills-codex.txt
+/.aris/installed-skills-codex.txt.prev
+/.aris/skills-declined-codex.txt
+/.aris/.install-codex.lock.d/

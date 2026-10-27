@@ -1,0 +1,16 @@
+{
+  "skill": "idea-creator",
+  "run_id": "2026-10-19_run01",
+  "executor": "codex",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "project_dir": "/home/chy/notes/Research/agentic-opd",
+  "scope": "ATOD v6全文驱动的方法idea，跳过GPU pilot",
+  "status": "completed",
+  "generated": 16,
+  "mechanical_families": 15,
+  "recommended_main": 2,
+  "diagnostic_reserve": 1,
+  "pilot_runs": 0,
+  "validation": "targeted links/schema/source anchors + CPU algebra only"
+}

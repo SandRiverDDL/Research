@@ -1,0 +1,662 @@
+{
+  "direction": "G15",
+  "date": "2026-10-15",
+  "selected_lenses": [
+    "L1",
+    "L2",
+    "L5"
+  ],
+  "generated_count": 18,
+  "mechanical_cluster_count": 13,
+  "objective_feasibility_drops": [],
+  "feasibility_note": "资源预算未指定、吞吐未测；没有客观依据因预算或数据不可用淘汰候选。复杂度只注释。",
+  "dedup_rule": "仅合并核心干预与目标相同的近重复，保留变体差异；未按新颖性、质量或影响淘汰。",
+  "clusters": [
+    {
+      "id": "C01",
+      "title": "功能不变的可学性再参数化",
+      "lens": "L1",
+      "source_ids": [
+        "A1"
+      ],
+      "merge_reason": "独立候选；不与邻近机制混合。",
+      "variants": [
+        {
+          "id": "A1",
+          "lens": "L1",
+          "title": "功能不变的可学性再参数化",
+          "method": [
+            "利用SwiGLU中up通道乘正对角矩阵D、down对应通道乘D逆的精确对称性，改变参数尺度而保持student当前输出不变。",
+            "每隔固定训练块，在缓存的A/B轨迹上虚拟执行等预算、等更新范数的短OPD；仅优化D，使两域中较小的留出集学习收益提高。",
+            "将选定变换及对应梯度坐标下的optimizer moments写回同一个student，随后继续常规联合OPD；部署不增加模块。"
+          ],
+          "hypothesis": "A训练可能改变因子尺度及后续B更新的有效几何，即使当前B能力相同，也形成可逆的可学性下降。",
+          "core_claims": [
+            "机制：借助功能不变的参数变换，直接调整下一阶段的学习响应。",
+            "差异：保持当前预测与teacher监督不变，区别于调teacher权重、保护历史梯度或分配更多预算。",
+            "可检验结果：变换前后当前能力一致，但等预算B学习曲线改善，最终单checkpoint组合能力随之提高。"
+          ],
+          "minimum_experiment": "在不同A训练深度处配对当前B能力，比较本法、恒等变换、普通因子均衡及强预条件器；固定轨迹、监督尺度、更新范数与总成本。",
+          "positive_negative_null": {
+            "positive": "功能一致性通过，收益来自后续学习且随A训练深度呈系统变化。",
+            "negative": "只靠增大更新范数获益，或一般尺度均衡完全复现。",
+            "null": "可学性不随A变化，或所有允许变换均无影响。"
+          },
+          "closest_known_work": "DN-MOPD尺度校准；参数对称性、因子均衡与重参数化预条件是需定向查新的邻域。",
+          "named_risk": "可逆尺度自由度可能不足；短步代理可能偏好不稳定几何，optimizer状态运输也容易实现错误。",
+          "compute_assumptions_and_estimate": "拟先用1.5–3B短序列；每64–128步做双域少步虚拟更新及元反传。吞吐未测，完整成本计入rollout、scoring与缓存重放。",
+          "effort": "中高：实现精确变换、状态运输和短步元优化。",
+          "contribution_type": "训练几何方法；新颖性待核查",
+          "dedup_key": "function-preserving-gauge-for-cross-teacher-plasticity",
+          "model": "gpt-6-astra"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "互惠可学性元蒸馏",
+      "lens": "L1",
+      "source_ids": [
+        "A2"
+      ],
+      "merge_reason": "独立候选；不与邻近机制混合。",
+      "variants": [
+        {
+          "id": "A2",
+          "lens": "L1",
+          "title": "互惠可学性元蒸馏",
+          "method": [
+            "在普通A更新后的student上，用固定B support轨迹虚拟训练k步，计算独立query上的增益G_B=L_B(训练前)−L_B(训练后)；teacher评分在该episode内固定。",
+            "对G_B反传得到可学性元梯度，并去掉其沿当前B query梯度的分量，避免通过一阶恶化起点loss制造虚假学习增益。",
+            "将限幅后的元梯度作为实际A更新的附加修正；训练B时对称处理A，虚拟权重丢弃，最终仍只有一个student。"
+          ],
+          "hypothesis": "A的可行更新方向对未来B学习效率具有不同影响，而普通A loss下降及梯度夹角无法充分区分它们。",
+          "core_claims": [
+            "机制：直接优化另一teacher固定预算训练后的边际收益，而非其当前loss或KL下降速度。",
+            "差异：不改变teacher采样份额；元梯度编码真实短程适应过程，区别于动态权重与当前batch保护。",
+            "可检验结果：在起点能力、B监督量和尺度匹配时，互惠修正提高后续B学习收益及最终联合能力。"
+          ],
+          "minimum_experiment": "运行A→B与B→A短链，比较标准OPD、额外普通B更新、仅优化终点loss及打乱域对应的元梯度；分别匹配训练预算和完整计算成本。",
+          "positive_negative_null": {
+            "positive": "起点能力未下降，后续多种预算下的能力增益提高。",
+            "negative": "收益完全来自起点恶化、额外B训练或query过拟合。",
+            "null": "元梯度可改变代理增益，但真实能力学习曲线不变。"
+          },
+          "closest_known_work": "D³调度、UP局部保护；双层优化及learning-to-learn是需核查的直接方法邻域。",
+          "named_risk": "一阶去分量不能阻止有限步起点退化；高阶噪声、截断偏差及OPD loss与能力脱节可能使机制失效。",
+          "compute_assumptions_and_estimate": "拟在1.5–3B、k=1–3且每32–64步一次的设置起步；每次增加双域虚拟更新及反传，计入rollout、scoring、重放；吞吐未知。",
+          "effort": "高：需要可微短程更新及严格的等成本对照。",
+          "contribution_type": "交叉可学性的双层训练方法",
+          "dedup_key": "reciprocal-adaptation-gain-hypergradient",
+          "model": "gpt-6-astra"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "title": "跨teacher学习方向输运",
+      "lens": "L1",
+      "source_ids": [
+        "A3"
+      ],
+      "merge_reason": "独立候选；不与邻近机制混合。",
+      "variants": [
+        {
+          "id": "A3",
+          "lens": "L1",
+          "title": "跨teacher学习方向输运",
+          "method": [
+            "在B能够有效学习的checkpoint，保存少量成功B更新方向及其在固定B锚点上的logit变化，作为B的低秩学习响应基；A对称保存。",
+            "经历A训练后，用当前student的JVP与小型正则最小二乘，重新寻找能产生相同响应的参数方向，将旧学习方向输运到当前参数位置。",
+            "用输运后的方向构造B梯度的低秩预条件器，基外仍做常规更新；按固定间隔刷新，同一student持续吸收两个teacher。"
+          ],
+          "hypothesis": "A可能扭曲B原本有效的学习方向，使相同B监督难以转化成有效功能变化；这种下降可以通过方向输运部分逆转。",
+          "core_claims": [
+            "机制：维护有效监督如何改变函数的响应，而非冻结旧参数或保存已取得的预测。",
+            "差异：PMOPD限制历史子空间中的改变；本法主动恢复未来B更新的有效通道，不要求当前A loss逐步单调。",
+            "可检验结果：在起点能力匹配时，输运恢复B单位预算收益，并优于仅保留原方向或重新缩放梯度。"
+          ],
+          "minimum_experiment": "在共同LoRA设置下比较无输运、旧方向直接复用、当前梯度低秩预条件及本法；匹配方向数、更新范数、缓存量和完整成本。",
+          "positive_negative_null": {
+            "positive": "A训练造成响应映射变化，输运恢复该响应并提升真实B学习。",
+            "negative": "旧方向直接复用同样有效，或收益仅由更新范数改变解释。",
+            "null": "响应可恢复但能力不改善，或所需变化无法低秩表达。"
+          },
+          "closest_known_work": "PMOPD历史子空间、Gradients→Capabilities更新分析；自然梯度与切空间输运需进一步查新。",
+          "named_risk": "旧响应可能随B剩余学习空间变化而过时；固定锚点和局部线性近似可能无法代表真实能力。",
+          "compute_assumptions_and_estimate": "拟用1.5–3B的共同LoRA设置、秩4–8、每64步刷新；每次约8–16次JVP/VJP另加求解，完整成本含rollout、scoring、重放，吞吐未测。",
+          "effort": "中高：需要响应基缓存、低秩求解与跨checkpoint核验。",
+          "contribution_type": "恢复交叉可学性的几何预条件方法",
+          "dedup_key": "transport-successful-teaching-tangents",
+          "model": "gpt-6-astra"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "教学前缀概率质量保护",
+      "lens": "L2",
+      "source_ids": [
+        "A4",
+        "S4"
+      ],
+      "merge_reason": "共同核心为保护B更新后A有效前缀概率质量。保留A4概率惩罚与S4实际位移约束两种实现，筛选标准不强制统一。",
+      "variants": [
+        {
+          "id": "A4",
+          "lens": "L2",
+          "title": "跨teacher更新中的教学前缀占用保护",
+          "method": [
+            "从A的当前student轨迹中，保存少量student续写失败、A续写通过验证的前缀，记录更新前的到达概率。",
+            "训练B时，对这些完整前缀加入概率下界惩罚，限制相对于B更新前的到达概率下降；不限制A监督loss或梯度夹角。",
+            "A仍从当前student根节点自采样；完成A训练后刷新前缀库，并淘汰过期条目。"
+          ],
+          "hypothesis": "B可能在A当前监督loss变化很小时，降低student进入A可有效纠正状态的概率；保护这些状态的可达性能保留下一轮学习机会。",
+          "core_claims": [
+            "机制待检验：限制跨teacher造成的前缀概率流失，能保留后续A教学事件。",
+            "差异待检验：完整前缀占用约束提供当前batch损失保护之外的作用。",
+            "结果待检验：相同A监督预算下，后续A收益随教学事件恢复，而非仅随参数移动减小。"
+          ],
+          "minimum_experiment": "待运行：1.5–3B、可验证的A/B任务，采用A→B→A短周期；比较强归一化、UP和等成本随机前缀约束，统一最终checkpoint与总成本。",
+          "positive_negative_null": "正：教学前缀到达率和后续A收益同时恢复；负：到达率恢复但A收益不变；零：B没有造成可测的机会流失。",
+          "closest_known_work": "UP保护当前域一阶loss；Road处理同轨迹辅助监督；本候选保护下一轮A采样会到达的前缀。",
+          "named_risk": "若随机前缀约束或普通KL同样有效，贡献退化为通用正则化；前缀筛选也可能保住无用路径。",
+          "compute_assumptions_and_estimate": "假设存在便宜验证器。每四个B批次追加一次小前缀批次前向/反传；完整成本另含teacher续写、验证和刷新，吞吐未测，GPU预算未知。",
+          "effort": "中等：前缀缓存、序列概率约束及对照实现。",
+          "contribution_type": "训练方法；跨teacher采样分布保护",
+          "dedup_key": "l2-cross-teacher-prefix-occupancy-barrier",
+          "model": "gpt-6-astra"
+        },
+        {
+          "id": "S4",
+          "lens": "L2",
+          "title": "对跨教师更新施加监督机会质量约束",
+          "method": [
+            "固定A/B监督预算；收集A自采样的定长前缀，经少量探测筛出能产生A学习收益的区域，保存采样概率。",
+            "B更新提交前，用前缀likelihood ratio估计这些区域的概率质量变化；若下降超过阈值，对实际optimizer displacement施加一个机会质量下界约束。",
+            "提交修正更新，滚动替换已学会的前缀；A监督量和loss尺度保持固定。"
+          ],
+          "hypothesis": "B可能降低student进入A可学习轨迹区域的概率；保护这些区域能改善后续A监督的有效性。",
+          "core_claims": [
+            "机制：直接限制B引起的A轨迹机会流失。",
+            "差异：保护采样分布中的有效区域，不以当前A训练loss为约束。",
+            "可检验结果：相同A预算下，机会质量保留应先于A学习收益改善。"
+          ],
+          "minimum_experiment": "待运行：选择可核验的数学与约束遵循任务，比较固定权重、UP、等幅缩步、普通KL约束和本方法；加入固定轨迹训练作为中介对照，报告同一checkpoint的A/B能力。",
+          "positive_negative_null": "正：只在自采样条件下稳定恢复A机会与能力；负：约束阻碍B且不改善A；零：普通KL约束或缩步即可匹配。",
+          "closest_known_work": "UP约束当前batch的一阶loss；D³调整prompt预算；这里约束跨教师改变的有效前缀概率质量，新颖性仍待核查。",
+          "named_risk": "有效区域可能只是proxy；长前缀比率高方差，约束可能退化为普遍减小步长。",
+          "compute_assumptions_and_estimate": "先用1.5–3B短序列试验；每个B block增加一批前缀概率复算和约束梯度，周期性收益探测另计。吞吐未测，完整成本含rollout、teacher scoring及缓存。",
+          "effort": "中高：需稳定概率估计与更新约束。",
+          "contribution_type": "训练方法：跨教师采样分布约束。",
+          "dedup_key": "l2-productive-prefix-mass-constraint",
+          "model": "gpt-6.1-sol"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "title": "跨teacher采样分布梯度修正",
+      "lens": "L2",
+      "source_ids": [
+        "A5",
+        "S6"
+      ],
+      "merge_reason": "共同核心为用后续A学习收益构造score-function项修正跨teacher采样反馈；A5用虚拟实际收益，S6用一阶hᵀPg近似，两者必须分别审查。",
+      "variants": [
+        {
+          "id": "A5",
+          "lens": "L2",
+          "title": "以实际教学收益修正跨teacher采样外部性",
+          "method": [
+            "B更新后，从当前student为A生成两个小轨迹批次；每批由A评分，并分别在临时参数副本上执行一次虚拟A更新。",
+            "用同一组独立A探针测量虚拟更新带来的loss下降，作为该批轨迹的教学收益；丢弃临时参数。",
+            "将中心化教学收益作为整批轨迹的score-function回报，执行一次采样分布校正，再继续正式多teacher训练。"
+          ],
+          "hypothesis": "某些B更新损害的是随后A样本的可教学性；直接奖励能够产生A学习收益的自采样轨迹，能够修复这种跨teacher反馈。",
+          "core_claims": [
+            "机制待检验：采样校正能增加实际支持A学习的轨迹，而非单纯增加teacher分歧。",
+            "差异待检验：控制变量是轨迹概率，回报是虚拟A更新收益，不是域权重或rollout新鲜度。",
+            "结果待检验：作用在B诱发机会退化时增强，并超过等成本直接追加A更新。"
+          ],
+          "minimum_experiment": "待运行：1.5–3B两teacher短周期，比较无校正、KL分歧回报、等成本额外A训练和相同机制的A单teacher版本；检验B干预与方法效果的交互。",
+          "positive_negative_null": "正：校正恢复B后下降的教学收益并改善最终A/B组合；负：探针收益提高但正式评测不变；零：没有B特异作用，仅表现为一般探索。",
+          "closest_known_work": "D³依据相对KL与速度调整prompt预算；此处以虚拟学习结果训练轨迹分布。邻近元学习方法仍须定向查新。",
+          "named_risk": "批次回报方差大，探针可能被间接过拟合；收益可能只是额外A优化，无法证明采样反馈贡献。",
+          "compute_assumptions_and_estimate": "每次校正需两次虚拟A反传、探针前向及一次策略反传，可每若干周期执行；另计rollout、teacher评分和参数副本内存。吞吐未测，资源未知。",
+          "effort": "较高：虚拟更新、回报方差控制与等成本消融。",
+          "contribution_type": "训练方法；跨teacher教学机会优化",
+          "dedup_key": "l2-realized-learning-gain-score-function-correction",
+          "model": "gpt-6-astra"
+        },
+        {
+          "id": "S6",
+          "lens": "L2",
+          "title": "通过采样分布导数修正跨教师更新",
+          "method": [
+            "在B虚拟更新后的student上采样A轨迹；用独立A probe得到梯度h，并计算每条轨迹的A蒸馏梯度g与实际预条件器P。",
+            "以停止梯度的r=hᵀPg近似该轨迹能带来的A收益，用加权logprob得到只穿过采样分布的score-function梯度。",
+            "当B更新降低A的预期r时，用该分布梯度修正B更新；固定A监督量，不对r本身反传。"
+          ],
+          "hypothesis": "常规蒸馏忽略轨迹分布随参数变化的路径；B可能沿该路径减少下一轮真正有益的A样本。",
+          "core_claims": [
+            "机制：优化B之后A自采样轨迹的预期教学价值。",
+            "差异：只修正跨教师的分布路径，不改变A/B名义权重。",
+            "可检验结果：收益应依赖重新采样，冻结轨迹后该修正应失去优势。"
+          ],
+          "minimum_experiment": "待运行：比较固定权重、随机探索、以teacher分歧为reward及本方法；分别关闭采样分布梯度、改用固定轨迹，并以真实小步A更新校验r，最终检验A/B能力。",
+          "positive_negative_null": "正：r校准有效，分布修正提高后续A实际收益；负：只抬高proxy或损害B；零：分布路径效应很小，归一化已足够。",
+          "closest_known_work": "邻近meta-gradient curriculum与探索方法，需查新；D³调prompt采样，UP保护局部loss，本方法针对更新后的轨迹分布导数。",
+          "named_risk": "线性收益估计可能失真；score-function方差与proxy gaming可能抵消方法价值，不能把r提升当能力提升。",
+          "compute_assumptions_and_estimate": "先用1.5–3B少步试验；每个B block额外需要一批A rollout与scoring、一次probe backward和方向导数计算，可按block稀疏执行。吞吐未测，完整成本须实测。",
+          "effort": "高：需方向导数实现及方差控制。",
+          "contribution_type": "训练方法：跨教师分布路径修正。",
+          "dedup_key": "l2-cross-teacher-occupancy-score-gradient",
+          "model": "gpt-6.1-sol"
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "title": "丢失前缀的当前student续写补偿",
+      "lens": "L2",
+      "source_ids": [
+        "A6",
+        "S5"
+      ],
+      "merge_reason": "共同核心为按B引起的前缀概率流失启动当前student fresh续写。A6额外有渐退桥接，S5直接补偿；保留该区别，不把渐退视为已接受的补救模块。",
+      "variants": [
+        {
+          "id": "A6",
+          "lens": "L2",
+          "title": "针对跨teacher丢失轨迹的渐退前缀桥接",
+          "method": [
+            "缓存A训练中可被A成功纠正的student前缀；B更新后重新计算其概率，只选择显著下降且仍可被A纠正的前缀。",
+            "从这些前缀开始，让当前student重新生成后缀并接受A监督；不复用旧后缀，不对强制输入的前缀计算蒸馏loss。",
+            "后缀学会后逐段缩短强制前缀，使被释放的段落重新进入student采样与A监督；最终撤掉桥接，并仅从根节点评测。"
+          ],
+          "hypothesis": "B可能切断student进入A有效教学区域的路径；从尚可学习的后缀向根节点逐步恢复路径，比增加同量根节点rollout更有效。",
+          "core_claims": [
+            "机制待检验：桥接能恢复被B切断的教学机会，并逐步把条件能力转回根节点可用能力。",
+            "差异待检验：干预对象由跨teacher造成的前缀概率下降确定，不是统一长短课程或普通历史轨迹重放。",
+            "结果待检验：撤掉全部前缀后仍保留收益，且优于不缩短前缀与等成本随机桥接。"
+          ],
+          "minimum_experiment": "待运行：1.5–3B、A→B→A循环，比较额外根节点rollout、普通前缀replay、固定长度桥接与本方法；记录桥接撤除曲线及单checkpoint最终表现。",
+          "positive_negative_null": "正：较少桥接后根节点教学事件与能力恢复；负：条件后缀变好但撤桥即失效；零：B未降低目标前缀概率或随机桥接效果相同。",
+          "closest_known_work": "Open-MOPD的refresh不改变已采样prefix；本候选主动改变roll-in。与前缀课程和条件rollout方法的重合尚未核查。",
+          "named_risk": "属于受控roll-in，并非纯根节点on-policy；可能产生条件能力依赖，或只是普通课程学习的应用。",
+          "compute_assumptions_and_estimate": "需要前缀缓存、概率复算和验证器；桥接后缀替换部分根节点rollout，完整成本仍计筛选、teacher纠正、评分及重采样。吞吐未测，GPU预算未知。",
+          "effort": "中等：桥接采样与渐退调度，主要难点是恢复根节点能力。",
+          "contribution_type": "训练方法；跨teacher教学路径重建",
+          "dedup_key": "l2-cross-teacher-lost-prefix-backward-bridge",
+          "model": "gpt-6-astra"
+        },
+        {
+          "id": "S5",
+          "lens": "L2",
+          "title": "用当前student续写补回被跨教师更新挤出的监督机会",
+          "method": [
+            "在A自采样中保留少量有学习价值的前缀；B更新后复算其概率，识别被B显著挤出的部分。",
+            "按丢失的概率质量分配补偿份额，把这些前缀作为起始状态，由当前student重新采样后缀，再向A请求监督。",
+            "只训练新后缀，以补偿样本替换部分常规A样本；总teacher监督token固定，并淘汰已恢复或失效的前缀。"
+          ],
+          "hypothesis": "A机会流失可能源于进入某些中间状态的概率下降；从这些状态继续自采样可恢复A的学习入口。",
+          "core_claims": [
+            "机制：针对B造成的曝光缺口重新接入A轨迹。",
+            "差异：缓存起点，后缀始终重新采样，区别于重放旧答案。",
+            "可检验结果：补偿收益应集中于发生跨教师概率流失的前缀。"
+          ],
+          "minimum_experiment": "待运行：固定权重下比较完整旧轨迹replay、均匀前缀续写、按流失量补偿及普通增加rollout；匹配teacher token，另报告全部采样与prefill成本，检验最终单checkpoint能力。",
+          "positive_negative_null": "正：定向补偿优于均匀续写且恢复A；负：只提高缓存状态表现，部署任务无收益；零：普通replay或更多采样已足够。",
+          "closest_known_work": "最近邻是trajectory replay与条件续写；Open-MOPD的reward refresh不改变已采样prefix。本方法专门补偿另一teacher造成的入口流失，需定向查新。",
+          "named_risk": "这是条件on-policy而非完整原始分布on-policy；改变起始状态可能制造部署时不可达的收益，概率流失也可能只是学习进展。",
+          "compute_assumptions_and_estimate": "1.5–3B短序列试验；监督token可固定，但增加缓存prefill与概率复算，续写长度决定节省或增耗。吞吐未测，完整成本含rollout、scoring及replay。",
+          "effort": "中：缓存和续写易实现，目标分布评估较难。",
+          "contribution_type": "训练方法：跨教师机会补偿采样。",
+          "dedup_key": "l2-displacement-triggered-fresh-continuation",
+          "model": "gpt-6.1-sol"
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "title": "对恢复算子求导的终点保护",
+      "lens": "L5",
+      "source_ids": [
+        "A7",
+        "S7"
+      ],
+      "merge_reason": "共同核心为对B→A恢复复合映射求导并约束宏步终点；预条件器处理有差异，完整optimizer展开未视为必需。",
+      "variants": [
+        {
+          "id": "A7",
+          "lens": "L5",
+          "title": "通过恢复映射优化的终点保护",
+          "method": [
+            "保存宏步起点与独立A检验集，定义一至两步A更新组成的恢复映射R_A，固定虚拟计算中的预条件器。",
+            "将B位移d的目标写成恢复后B损失L_B(R_A(θ+d))，对恢复过程求导，并约束恢复后A损失不超过起点。",
+            "执行B位移后刷新student轨迹，再执行A恢复；检验宏步终点，失败则回退并缩短位移。中间状态允许A暂时下降。"
+          ],
+          "hypothesis": "存在可恢复的A下降路径；将恢复后的结果纳入B方向选择，可以到达逐步保护排除的能力组合。",
+          "core_claims": [
+            "机制：恢复映射的导数使B更新主动进入容易恢复A的区域。",
+            "差异：约束组合更新的终点，并改变更新方向，区别于放宽UP阈值或固定AB循环。",
+            "可检验结果：中间A下降、终点恢复，并在同一checkpoint获得更好的A/B组合。"
+          ],
+          "minimum_experiment": "待运行：小模型双域，对照UP、固定权重、等长AB循环和无约束训练；匹配总成本，记录每个宏步前、中、后的独立能力评测。",
+          "positive_negative_null": {
+            "positive": "恢复感知方向优于相同恢复预算的普通B方向。",
+            "negative": "A损失恢复但能力不恢复，或恢复消除全部B收益。",
+            "null": "收益完全由额外A更新或终点筛选解释。"
+          },
+          "closest_known_work": "UP的一阶保护、PMOPD的顺序保护；一般可微优化与终点约束方法存在邻近性，尚未查新。",
+          "named_risk": "固定轨迹上的可微恢复模型可能无法预测刷新后的真实恢复过程。",
+          "compute_assumptions_and_estimate": "可先用1.5–3B短序列；每宏步增加少量虚拟反传及Hessian-vector计算。吞吐未测，成本含rollout、scoring、恢复和回退。",
+          "effort": "中高：需可微虚拟更新与状态回退。",
+          "contribution_type": "有限时域约束优化方法",
+          "dedup_key": "l5_repair_map_differentiated_terminal_constraint",
+          "model": "gpt-6-astra"
+        },
+        {
+          "id": "S7",
+          "lens": "L5",
+          "title": "通过修复算子优化蒸馏宏步",
+          "method": [
+            "冻结本轮轨迹并复制optimizer状态，构造一步B更新后接两步A修复的可微宏步。",
+            "优化B步方向，使修复后的B损失下降且A终点达标；反传经过修复算子，允许中途A退步。",
+            "执行完整宏步，用新采样核验A/B终点；违约则回滚模型与optimizer状态。"
+          ],
+          "hypothesis": "最终student容量足够；部分B更新对A的损伤可被短程训练修复，但逐步保护排除了这些路径。",
+          "core_claims": [
+            "机制：利用修复后的效果选择当前B更新方向。",
+            "差异：约束包含实际修复动力学，并非仅调松UP阈值。",
+            "可检验结果：短暂A退步能够换来更好的同一checkpoint的A/B组合。"
+          ],
+          "minimum_experiment": "待运行：在1.5–3B student上选两个teacher能力对，比较固定归一化混合、UP、普通B→A修复及本方法；匹配teacher tokens、修复次数与完整成本，记录中间和终点能力。",
+          "positive_negative_null": {
+            "positive": "A中途下降、修复后恢复，且B收益超过同预算普通修复。",
+            "negative": "修复持续失败，或恢复A必然抹掉新增B能力。",
+            "null": "普通B→A修复达到相同终点，超梯度没有独立价值。"
+          },
+          "closest_known_work": "UP的一阶逐步保护；PMOPD的历史更新保护。额外必要对照是无需反传的顺序修复。",
+          "named_risk": "短批训练loss上的可恢复性不能代表benchmark恢复；截断反传也可能错误预测有限步动力学。",
+          "compute_assumptions_and_estimate": "假设两步修复可微；每宏步增加反传与终点核验，需保存短展开图。吞吐未测，总成本计入rollout、teacher scoring、修复及回滚重做，不假定现有GPU预算。",
+          "effort": "高：需实现optimizer展开与完整状态回滚。",
+          "contribution_type": "方法：以可恢复终点定义多teacher更新。",
+          "dedup_key": "repair-operator-hypergradient-terminal-macrostep",
+          "model": "gpt-6.1-sol"
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "title": "教师更新对易子转向",
+      "lens": "L5",
+      "source_ids": [
+        "A8",
+        "S9"
+      ],
+      "merge_reason": "共同核心为利用A/B更新的非对易方向进行可核验的转向；有限差分与HVP保留为估计变体。",
+      "variants": [
+        {
+          "id": "A8",
+          "lens": "L5",
+          "title": "利用教师更新的顺序差构造绕行方向",
+          "method": [
+            "每隔K步固定A/B轨迹与预条件器，从同一θ分别虚拟执行AB、BA两种更新，计算顺序差c=θ_AB−θ_BA。",
+            "提取c中普通加权更新无法表达的分量，用少量系数构造θ+d+κc候选终点；d取原有联合更新。",
+            "用独立轨迹选择满足A终点保护且改善B的候选，分两段执行d和κc；宏步后重新检验，允许中间A暂时下降。"
+          ],
+          "hypothesis": "教师更新不交换产生的曲率方向包含有效绕行通道；逐步一阶保护可能删除进入这些通道所需的位移。",
+          "core_claims": [
+            "机制：顺序差估计H_Bg_A−H_Ag_B所描述的二阶方向。",
+            "差异：显式利用更新顺序的几何效应，区别于仅改变task ordering或投影历史子空间。",
+            "可检验结果：顺序差具有可复现方向信息，并提高固定容量student的终点能力组合。"
+          ],
+          "minimum_experiment": "待运行：双域小模型，对照UP、PMOPD式循环及等成本候选搜索；加入等范数随机方向和打乱顺序差，比较同一checkpoint。",
+          "positive_negative_null": {
+            "positive": "真实顺序差优于随机方向，且收益伴随可恢复的中间下降。",
+            "negative": "顺序差信号不稳定，或终点保护持续拒绝该方向。",
+            "null": "收益只来自更多候选评估或额外优化步。"
+          },
+          "closest_known_work": "PMOPD的task ordering、UP的候选位移保护；与二阶优化及交换子方法的重叠待定向核查。",
+          "named_risk": "顺序差为小量，易被采样噪声、低精度和optimizer状态差异污染。",
+          "compute_assumptions_and_estimate": "每K步约增加四次虚拟梯度及终点scoring；可顺序重算减少副本内存。吞吐未测，完整成本计入rollout与检验。",
+          "effort": "中高：需高精度差分和严格配对计算。",
+          "contribution_type": "利用路径曲率的更新方法",
+          "dedup_key": "l5_teacher_update_commutator_detour",
+          "model": "gpt-6-astra"
+        },
+        {
+          "id": "S9",
+          "lens": "L5",
+          "title": "利用更新对易子打开后续学习路径",
+          "method": [
+            "当局部保护后的更新接近停滞但单teacher梯度仍明显时，固定当前Adam预条件器，在同批轨迹上构造归一化更新场vA、vB。",
+            "用两个HVP或有限差分估计q=JvB·vA−JvA·vB，得到教师更新顺序产生的二阶方向。",
+            "分别短程虚拟评估±q后接固定混合更新的终点，执行通过A/B核验的一支；中间允许退步，失败则采用原更新。"
+          ],
+          "hypothesis": "部分停滞来自当前梯度几何；二阶顺序效应可以移动到新的区域，使后续共同下降方向重新出现。",
+          "core_claims": [
+            "机制：用两个teacher更新场的非对易性生成路径转向。",
+            "差异：不只重排task blocks，而是显式计算并执行顺序效应方向。",
+            "可检验结果：转向后共同下降空间扩大，最终能力收益超过等范数探索。"
+          ],
+          "minimum_experiment": "待运行：在1.5–3B上比较UP、PMOPD、固定混合及等成本随机或切空间转向；加入对称曲率方向对照，匹配虚拟计算和teacher预算，并评估同一终点checkpoint。",
+          "positive_negative_null": {
+            "positive": "对易子转向能稳定解锁后续联合收益，且随机或对称曲率方向不能复现。",
+            "negative": "二阶方向主要制造不可恢复损伤，或共同下降空间始终不变。",
+            "null": "收益来自额外探索或lookahead，与非对易性无关。"
+          },
+          "closest_known_work": "PMOPD的ordering/cycling和UP的一阶QP；对易子控制是机制近邻，尚未完成查新。",
+          "named_risk": "随机梯度噪声可能淹没二阶信号；固定预条件器近似也可能与真实Adam动力学不一致。",
+          "compute_assumptions_and_estimate": "每次触发增加两个HVP及两条短虚拟分支；先限于少步短序列。吞吐未测，成本包含真实rollout、teacher scoring、虚拟梯度和终点核验，不假定已分配GPU预算。",
+          "effort": "高：需要稳定二阶估计及严格成本对照。",
+          "contribution_type": "方法：通过二阶可达方向修正蒸馏路径。",
+          "dedup_key": "teacher-update-lie-bracket-reachability-steering",
+          "model": "gpt-6.1-sol"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "title": "通道分裂与重合",
+      "lens": "L5",
+      "source_ids": [
+        "A9"
+      ],
+      "merge_reason": "独立候选；不与邻近机制混合。",
+      "variants": [
+        {
+          "id": "A9",
+          "lens": "L5",
+          "title": "通过通道分裂与重合扩展训练路径",
+          "method": [
+            "在少数MLP层复制部分通道，将输出权重平分；用成对参数μ±λδ表示复制通道，λ=0时严格保持原函数。",
+            "逐渐增大λ，以原有A/B教师进行联合OPD，让临时增加的自由度承担能力整合过程中的冲突。",
+            "逐渐将λ收回零，同时继续优化共享中心μ；成对通道重合后合并输出权重，恢复原student宽度并评测。"
+          ],
+          "hypothesis": "原容量存在较好的联合解，但固定参数化下的受保护路径难以抵达；临时增宽能提供可收缩的绕行通道。",
+          "core_claims": [
+            "机制：通过函数保持的分裂与最终重合，对可用训练路径做连续扩展。",
+            "差异：改变训练期间的参数空间，区别于UP的局部可行方向和PMOPD的历史投影。",
+            "可检验结果：收缩回原宽度后仍保留收益，并超过等总成本的固定宽度训练。"
+          ],
+          "minimum_experiment": "待运行：双域小模型，对照等成本固定宽度训练、通道扰动及保持增宽的模型；跟踪收缩曲线，分离路径收益与最终容量收益。",
+          "positive_negative_null": {
+            "positive": "回到原宽度后联合收益仍在，直接训练难以复现。",
+            "negative": "收缩必然损失一域能力，说明收益依赖额外容量。",
+            "null": "等成本延长训练或普通扰动获得相同结果。"
+          },
+          "closest_known_work": "函数保持增宽、网络形态变换和扩展式持续学习已有基础；本提案的分裂后强制重合机制尚未查新。",
+          "named_risk": "临时容量可能只是推迟真实冲突；强制重合还可能导致优化不稳定。",
+          "compute_assumptions_and_estimate": "可先拆分少数层约10%通道，局部MLP成本随增宽增加；吞吐未测，总预算须覆盖扩展、收缩、rollout和teacher scoring。",
+          "effort": "中：需成对通道参数化与合并校验。",
+          "contribution_type": "训练参数化与连续收缩方法",
+          "dedup_key": "l5_function_preserving_split_rejoin_continuation",
+          "model": "gpt-6-astra"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "title": "交叉学习收益的共享塑性度量",
+      "lens": "L1",
+      "source_ids": [
+        "S1"
+      ],
+      "merge_reason": "独立候选；不与邻近机制混合。",
+      "variants": [
+        {
+          "id": "S1",
+          "lens": "L1",
+          "title": "面向交叉学习收益的共享塑性度量",
+          "method": [
+            "在共享LoRA坐标中学习低秩正定更新度量P；所有teacher共用P，将变换后更新重新归一到原更新范数，保持监督预算与步长尺度。",
+            "周期性使用同一组固定student prefixes建立短虚拟分支：B连续学习、A后接相同步数B，并交换A/B；记录held-out B的有限步收益。",
+            "按B起点loss分桶校正剩余学习空间，用交叉学习收益差反向更新P；常规训练继续执行teacher监督，结束后合并LoRA。"
+          ],
+          "hypothesis": "A可能改变B所需方向的条件数，而当前梯度夹角与信号尺度不足以描述这种变化；共享塑性度量能够改善这一条件。",
+          "core_claims": [
+            "机制：直接优化一个teacher更新后另一teacher的有限步学习收益。",
+            "差异：改变共享更新几何，不依靠重新分配teacher预算或只保护当前loss。",
+            "检验：起点B能力与更新范数匹配后，A后学习B的收益仍提高。"
+          ],
+          "minimum_experiment": "待运行：两个能力teacher、1.5–3B student，以固定预算比较普通Adam、DN归一化、UP和本法；至少交换两种顺序，并加入无A分支及只优化B自身学习速度的P消融。",
+          "positive_negative_null": {
+            "positive": "交叉学习收益与单checkpoint联合能力同步改善。",
+            "negative": "只改善起点loss或单teacher学习速度。",
+            "null": "充分匹配起点能力后交叉收益差消失。"
+          },
+          "closest_known_work": "元学习预条件器；DN-MOPD的尺度校准；UP的当前batch一阶约束。邻近关系未经另行查新。",
+          "named_risk": "有限步元目标可能过拟合少数任务；按loss匹配仍可能遗漏真实能力空间。",
+          "compute_assumptions_and_estimate": "仅作规划：每隔若干常规步执行2–3步可微虚拟更新；局部检查约需数倍训练计算，总增量取决于频率。吞吐未测，须计入rollout、teacher scoring与分支重算。",
+          "effort": "中高：低秩度量、可微优化器与checkpointing。",
+          "contribution_type": "训练更新几何方法",
+          "dedup_key": "l1-meta-shared-plasticity-metric",
+          "model": "gpt-6.1-sol"
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "title": "目标相关切向可学性保护",
+      "lens": "L1",
+      "source_ids": [
+        "S2"
+      ],
+      "merge_reason": "独立候选；不与邻近机制混合。",
+      "variants": [
+        {
+          "id": "S2",
+          "lens": "L1",
+          "title": "保留另一teacher的目标相关切向可学性",
+          "method": [
+            "在常规B监督batch上，用teacher–student残差选定输出方向，构造student输出Jacobian的低秩随机sketch，估计这些方向对应的局部学习核。",
+            "执行A更新时，对B目标相关学习核的显著谱塌缩加入正则；约束按残差与更新尺度归一化，允许B当前预测随A变化。",
+            "交换A/B轮流维护参考；每个短训练块重新估计sketch，所有正则仅在训练使用，部署保留一个student。"
+          ],
+          "hypothesis": "即使B当前表现相同，A训练也可能压缩B目标残差可被参数更新修正的方向，使后续相同B监督更难转化为能力。",
+          "core_claims": [
+            "机制：保存未来B监督可利用的切向响应空间。",
+            "差异：保护目标相关学习核，不保存历史更新子空间，也不以当前B loss不增作为核心约束。",
+            "检验：匹配B起点能力及信号尺度后，保留的谱方向对应更快的实际B学习。"
+          ],
+          "minimum_experiment": "待运行：先在小student验证A前后学习核变化与固定步数B收益的关系，再比较固定混合、UP、PMOPD及本法；控制正则开销，并设随机方向sketch和仅梯度范数约束消融。",
+          "positive_negative_null": {
+            "positive": "核塌缩减少，同时后续B学习收益和最终联合能力提高。",
+            "negative": "核被保存但真实能力无收益，或A学习显著受阻。",
+            "null": "可学性差异完全由当前loss与监督尺度解释。"
+          },
+          "closest_known_work": "NTK与Jacobian正则；PMOPD历史子空间保护；UP当前loss保护。具体重合需要后续定向查新。",
+          "named_risk": "局部核未必预测长期能力；随机sketch可能遗漏关键方向，过度保存旧几何也可能阻碍表示成长。",
+          "compute_assumptions_and_estimate": "仅作规划：每块使用少量随机方向，检查包含JVP/VJP及正则反传，检查步可能增加数倍计算；均摊成本取决于检查频率，另计全部rollout与scoring，吞吐未测。",
+          "effort": "高：需要稳定的低秩核估计和二阶反传。",
+          "contribution_type": "可学性保持训练正则",
+          "dedup_key": "l1-target-residual-tangent-kernel-preservation",
+          "model": "gpt-6.1-sol"
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "title": "交叉学习反应驱动的监督目标编译",
+      "lens": "L1",
+      "source_ids": [
+        "S3"
+      ],
+      "merge_reason": "独立候选；不与邻近机制混合。",
+      "variants": [
+        {
+          "id": "S3",
+          "lens": "L1",
+          "title": "以交叉学习反应编译teacher监督目标",
+          "method": [
+            "在固定student prefixes上，为A的teacher logits添加训练专用低秩修正器；限制修正后的分布接近原teacher，并保持监督logratio尺度。",
+            "通过短虚拟A更新和固定步数B更新训练修正器，使B的held-out学习收益提高；收益按B起点loss校正，同时约束A自身监督收益，交换A/B执行。",
+            "常规OPD使用编译后的目标训练同一个student；修正器仅处理训练监督，部署时删除。"
+          ],
+          "hypothesis": "同一teacher分布中存在教学效果近似等价的监督方向，其中部分方向会使另一个teacher后续更容易学习；单纯调权无法选择这些方向。",
+          "core_claims": [
+            "机制：依据对另一teacher学习过程的影响改变监督目标方向。",
+            "差异：保持teacher预算与总体尺度，优化目标内容，不只进行gradient投影或采样调度。",
+            "检验：在A学习收益相近时，编译目标使后续B获得更高的单位监督收益。"
+          ],
+          "minimum_experiment": "待运行：两teacher、1.5–3B student，比较原目标、固定温度、平均目标、DN和本法；加入只优化A自身loss的修正器、随机修正及固定修正器消融，在未参与元训练的任务上检验。",
+          "positive_negative_null": {
+            "positive": "相同A收益下B更易学，且最终单checkpoint能力组合改善。",
+            "negative": "修正器实际牺牲A、增大B起点误差或只记住元训练batch。",
+            "null": "固定温度或尺度匹配能够复现全部收益。"
+          },
+          "closest_known_work": "元蒸馏与可学习软目标；Open-MOPD平均target；Road梯度方向处理。未完成针对该机制的查新。",
+          "named_risk": "满足分布接近并不保证知识等价；修正器可能通过错误监督制造虚假的可学性收益。",
+          "compute_assumptions_and_estimate": "仅作规划：每隔若干步执行一次短双层更新；修正器较小，但主要开销来自可微student分支。完整预算须包括rollout、双teacher scoring、重算与元验证，吞吐未测。",
+          "effort": "中高：目标约束、双层梯度与防止元目标取巧。",
+          "contribution_type": "跨teacher监督目标编译",
+          "dedup_key": "l1-meta-target-compilation-cross-learning-response",
+          "model": "gpt-6.1-sol"
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "title": "临时能力残差与零残差回收",
+      "lens": "L5",
+      "source_ids": [
+        "S8"
+      ],
+      "merge_reason": "独立候选；不与邻近机制混合。",
+      "variants": [
+        {
+          "id": "S8",
+          "lens": "L5",
+          "title": "训练期能力缓冲与零残差回收",
+          "method": [
+            "给已学A的student添加训练期低秩残差，并用已知训练域标签启用；A轨迹由带残差的当前student自采样。",
+            "让共享主干学习B，同时在A轨迹上拟合残差以承接主干更新造成的A损伤；不投影主干B更新。",
+            "逐步把残差门控降到零，通过联合teacher OPD将能力回收到主干；最终删除残差，仅评估原架构student。"
+          ],
+          "hypothesis": "最终原架构具有联合容量，但直接共享参数学习受到路径限制；临时缓冲能把获得B与回收A分开完成。",
+          "core_claims": [
+            "机制：把暂时需要保护的能力放入可撤销参数缓冲。",
+            "差异：保护位置暂时移出共享主干，区别于UP和PMOPD限制主干更新。",
+            "可检验结果：残差归零后，原架构student仍获得更好的A/B组合。"
+          ],
+          "minimum_experiment": "待运行：比较固定混合、UP、相同参数量的普通adapter训练后压缩及本方法；匹配总成本，固定最终架构，观察门控下降时的能力和残差范数。",
+          "positive_negative_null": {
+            "positive": "主干获得B后能够吸收A，零残差终点保持联合收益。",
+            "negative": "残差一撤就丢A，或回收A必然丢B，提示容量或目标真实冲突。",
+            "null": "普通扩容压缩同样有效，能力缓冲没有额外贡献。"
+          },
+          "closest_known_work": "UP、PMOPD；adapter扩容再压缩是概念近邻，需要后续定向查新。",
+          "named_risk": "训练期表现可能完全由额外容量支撑；必须完成零残差回收，且不能用域路由后的结果替代最终student结果。",
+          "compute_assumptions_and_estimate": "假设训练域标签已有且残差秩较小；增加A残差拟合和回收阶段。吞吐未测，完整成本包含两个域的rollout、teacher scoring与所有回收训练，不预设GPU资源。",
+          "effort": "中高：训练接入简单，稳定回收是主要难点。",
+          "contribution_type": "方法：利用临时能力缓冲改变整合路径。",
+          "dedup_key": "temporary-capability-buffer-zero-residual-collapse",
+          "model": "gpt-6.1-sol"
+        }
+      ]
+    }
+  ]
+}

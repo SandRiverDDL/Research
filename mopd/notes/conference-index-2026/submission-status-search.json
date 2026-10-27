@@ -1,0 +1,668 @@
+[
+  {
+    "query": "MOPD",
+    "count": 57,
+    "retrieved": 57,
+    "hits": [
+      {
+        "arxiv": "2609.35347",
+        "local_title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+        "id": "IJKUVDoKy1",
+        "title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=IJKUVDoKy1"
+      },
+      {
+        "arxiv": "2610.02381",
+        "local_title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
+        "id": "YGDYGf6pa2",
+        "title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=YGDYGf6pa2"
+      },
+      {
+        "arxiv": "2606.30406",
+        "local_title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
+        "id": "Ir65sQ5tV6",
+        "title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
+        "venue": "ICML 2026 RLxF Workshop",
+        "venueid": "ICML.cc/2026/Workshop/RLxF",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=Ir65sQ5tV6"
+      },
+      {
+        "arxiv": "2610.08398",
+        "local_title": "UP-MOPD: Update Projection in Multi-Teacher On-Policy Distillation",
+        "id": "LZxfSX1Oqu",
+        "title": "UP-MOPD: Update Projection in Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=LZxfSX1Oqu"
+      },
+      {
+        "arxiv": "2609.30837",
+        "local_title": "MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation",
+        "id": "7Ajj2iy7yC",
+        "title": "MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=7Ajj2iy7yC"
+      },
+      {
+        "arxiv": "2609.34745",
+        "local_title": "No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation",
+        "id": "VNjcy5xYcF",
+        "title": "No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=VNjcy5xYcF"
+      },
+      {
+        "arxiv": "2608.19098",
+        "local_title": "Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation",
+        "id": "acOWuxDgZs",
+        "title": "Open-MOPD: Diagnosing and fixing capability im-balance in multi-teacher on-policy distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=acOWuxDgZs"
+      },
+      {
+        "arxiv": "2610.04272",
+        "local_title": "Rethinking Self-Distillation for Multi-Teacher Capability Merging",
+        "id": "YzYnYsf1PF",
+        "title": "Rethinking Self-Distillation for Multi-Teacher Capability Merging",
+        "venue": "ICLR 2027 Conference Desk Rejected Submission",
+        "venueid": "ICLR.cc/2027/Conference/Desk_Rejected_Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=YzYnYsf1PF"
+      },
+      {
+        "arxiv": "2608.26735",
+        "local_title": "Recovering General Capabilities via Uncertainty-Calibrated Multi-Teacher On-Policy Distillation",
+        "id": "dQbHXq138L",
+        "title": "Recovering General Capabilities via Uncertainty-Calibrated Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=dQbHXq138L"
+      },
+      {
+        "arxiv": "2610.13521",
+        "local_title": "Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation",
+        "id": "q5NpkqNLNY",
+        "title": "Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=q5NpkqNLNY"
+      },
+      {
+        "arxiv": "2609.34605",
+        "local_title": "PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation",
+        "id": "Th9EmakZ47",
+        "title": "PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=Th9EmakZ47"
+      },
+      {
+        "arxiv": "2608.27409",
+        "local_title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+        "id": "AoBpLhdXID",
+        "title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=AoBpLhdXID"
+      },
+      {
+        "arxiv": "2608.27409",
+        "local_title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+        "id": "tPjYTwZljp",
+        "title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+        "venue": "CoRR 2026",
+        "venueid": "OpenReview.net/Public_Article",
+        "authors": [
+          {
+            "fullname": "Siye Wu",
+            "username": ""
+          },
+          {
+            "fullname": "Kai Yang",
+            "username": ""
+          },
+          {
+            "fullname": "Yuchen Cai",
+            "username": ""
+          },
+          {
+            "fullname": "Xin Xu",
+            "username": ""
+          },
+          {
+            "fullname": "Peng-Yuan Wang",
+            "username": ""
+          },
+          {
+            "fullname": "Jiaxuan Wang",
+            "username": "~Jiaxuan_Wang9"
+          },
+          {
+            "fullname": "Jiashun Liu",
+            "username": ""
+          },
+          {
+            "fullname": "Jiafei Lyu",
+            "username": ""
+          },
+          {
+            "fullname": "Yangkun Chen",
+            "username": ""
+          },
+          {
+            "fullname": "Saiyong Yang",
+            "username": ""
+          },
+          {
+            "fullname": "Yanghua Xiao",
+            "username": ""
+          }
+        ],
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=tPjYTwZljp"
+      },
+      {
+        "arxiv": "2610.02179",
+        "local_title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
+        "id": "kqCLUujaMh",
+        "title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=kqCLUujaMh"
+      },
+      {
+        "arxiv": "2609.23697",
+        "local_title": "Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation",
+        "id": "7OM4vVAkEd",
+        "title": "Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=7OM4vVAkEd"
+      }
+    ]
+  },
+  {
+    "query": "Uni-OPD",
+    "count": 1,
+    "retrieved": 1,
+    "hits": [
+      {
+        "arxiv": "2605.03677",
+        "local_title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+        "id": "ck9F16zS9F",
+        "title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+        "venue": "ICLR 2027 Conference Desk Rejected Submission",
+        "venueid": "ICLR.cc/2027/Conference/Desk_Rejected_Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=Uni-OPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=ck9F16zS9F"
+      }
+    ]
+  },
+  {
+    "query": "MAD-OPD",
+    "count": 2,
+    "retrieved": 2,
+    "hits": [
+      {
+        "arxiv": "2605.01347",
+        "local_title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+        "id": "vTPKOmuzFp",
+        "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "authors": null,
+        "source": "https://api2.openreview.net/notes/search?term=MAD-OPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=vTPKOmuzFp"
+      },
+      {
+        "arxiv": "2605.01347",
+        "local_title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+        "id": "UZOzPkYC22",
+        "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+        "venue": "CoRR 2026",
+        "venueid": "OpenReview.net/Public_Article",
+        "authors": [
+          {
+            "fullname": "Jianze Wang",
+            "username": "~Jianze_Wang2"
+          },
+          {
+            "fullname": "Ying Liu",
+            "username": ""
+          },
+          {
+            "fullname": "Jinlong Chen",
+            "username": ""
+          },
+          {
+            "fullname": "Xuchun Hu",
+            "username": ""
+          },
+          {
+            "fullname": "Qilong Zhang",
+            "username": ""
+          },
+          {
+            "fullname": "Yu Cao",
+            "username": ""
+          },
+          {
+            "fullname": "Jun Wang",
+            "username": ""
+          },
+          {
+            "fullname": "Hua Yang",
+            "username": ""
+          },
+          {
+            "fullname": "Yong Xie",
+            "username": ""
+          },
+          {
+            "fullname": "Qianglong Chen",
+            "username": ""
+          }
+        ],
+        "source": "https://api2.openreview.net/notes/search?term=MAD-OPD&limit=1000",
+        "forum": "https://openreview.net/forum?id=UZOzPkYC22"
+      }
+    ]
+  },
+  {
+    "query": "Teacher-Union",
+    "count": 4,
+    "retrieved": 4,
+    "hits": []
+  },
+  {
+    "query": "ACLArena",
+    "count": 1,
+    "retrieved": 1,
+    "hits": [
+      {
+        "arxiv": "2609.23989",
+        "local_title": "ACLArena: Agent Continual Learning in Multi-stage Post-training",
+        "id": "PHAPWKhHml",
+        "title": "ACLArena: Agent Continual Learning in Multi-stage Post-training",
+        "venue": "CL4FMAgents @ NeurIPS 2026",
+        "venueid": "NeurIPS.cc/2026/Workshop/CL4FMAgents",
+        "authors": [
+          {
+            "username": "~Haixin_Wang3",
+            "fullname": "Haixin Wang",
+            "institutions": [
+              {
+                "name": "UCLA Computer Science Department, University of California, Los Angeles",
+                "domain": "cs.ucla.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Xiaoxuan_Wang2",
+            "fullname": "Xiaoxuan Wang",
+            "institutions": [
+              {
+                "name": ", University of California, Los Angeles",
+                "domain": "cs.ucla.edu"
+              }
+            ]
+          },
+          {
+            "username": "~Junkai_Zhang2",
+            "fullname": "Junkai Zhang",
+            "institutions": [
+              {
+                "name": "University of California, Los Angeles",
+                "domain": "ucla.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Han_Zhang24",
+            "fullname": "Han Zhang",
+            "institutions": [
+              {
+                "name": "University of California, Los Angeles",
+                "domain": "ucla.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Renliang_Sun2",
+            "fullname": "Renliang Sun",
+            "institutions": [
+              {
+                "name": "UCLA Computer Science Department, University of California, Los Angeles",
+                "domain": "cs.ucla.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Alexander_K_Taylor1",
+            "fullname": "Alexander K Taylor",
+            "institutions": [
+              {
+                "name": "UCLA Computer Science Department, University of California, Los Angeles",
+                "domain": "cs.ucla.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Yidan_Shi1",
+            "fullname": "Yidan Shi",
+            "institutions": [
+              {
+                "name": "University of California, Los Angeles",
+                "domain": "ucla.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Haoran_Deng2",
+            "fullname": "Haoran Deng",
+            "institutions": [
+              {
+                "name": "University of California, Los Angeles",
+                "domain": "ucla.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Chenguang_Wang1",
+            "fullname": "Chenguang Wang",
+            "institutions": [
+              {
+                "name": "University of California, Santa Cruz",
+                "domain": "ucsc.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Jason_Cong1",
+            "fullname": "Jason Cong",
+            "institutions": [
+              {
+                "name": "University of California, Los Angeles",
+                "domain": "cs.ucla.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Yizhou_Sun1",
+            "fullname": "Yizhou Sun",
+            "institutions": [
+              {
+                "name": "University of California, Los Angeles",
+                "domain": "ucla.edu",
+                "country": "US"
+              }
+            ]
+          },
+          {
+            "username": "~Wei_Wang13",
+            "fullname": "Wei Wang",
+            "institutions": [
+              {
+                "name": "University of California, Los Angeles",
+                "domain": "ucla.edu",
+                "country": "US"
+              }
+            ]
+          }
+        ],
+        "source": "https://api2.openreview.net/notes/search?term=ACLArena&limit=1000",
+        "forum": "https://openreview.net/forum?id=PHAPWKhHml"
+      }
+    ]
+  },
+  {
+    "query": "\"Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives\"",
+    "target_arxiv": "2609.38666",
+    "count": 1,
+    "retrieved": 1,
+    "hits": [
+      {
+        "arxiv": "2609.38666",
+        "local_title": "Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives",
+        "id": "QzAdsHLXcH",
+        "title": "Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "source": "https://api2.openreview.net/notes/search?term=%22Understanding+Off-+vs+On-Policy+Distillation%3A+A+Tale+of+Distinct+Training+Objectives%22&limit=100",
+        "forum": "https://openreview.net/forum?id=QzAdsHLXcH"
+      }
+    ],
+    "near": []
+  },
+  {
+    "query": "\"Rethinking On-Policy Distillation of Large Language Models II: One Training Example\"",
+    "target_arxiv": "2609.04172",
+    "count": 0,
+    "retrieved": 0,
+    "hits": [],
+    "near": []
+  },
+  {
+    "query": "\"Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs\"",
+    "target_arxiv": "2609.02548",
+    "count": 0,
+    "retrieved": 0,
+    "hits": [],
+    "near": []
+  },
+  {
+    "query": "\"Data-Free On-Policy Distillation: How Far Can We Go Without External Data?\"",
+    "target_arxiv": "2609.14193",
+    "count": 1,
+    "retrieved": 1,
+    "hits": [
+      {
+        "arxiv": "2609.14193",
+        "local_title": "Data-Free On-Policy Distillation: How Far Can We Go Without External Data?",
+        "id": "OyPHHYZnia",
+        "title": "Data-Free On-Policy Distillation: How Far Can We Go Without External Data?",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "source": "https://api2.openreview.net/notes/search?term=%22Data-Free+On-Policy+Distillation%3A+How+Far+Can+We+Go+Without+External+Data%3F%22&limit=100",
+        "forum": "https://openreview.net/forum?id=OyPHHYZnia"
+      }
+    ],
+    "near": []
+  },
+  {
+    "query": "\"Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models\"",
+    "target_arxiv": "2608.16647",
+    "count": 0,
+    "retrieved": 0,
+    "hits": [],
+    "near": []
+  },
+  {
+    "query": "\"Beyond the Best Teacher: Expanding and Compressing the Reasoning Solution Manifold\"",
+    "target_arxiv": "2607.27770",
+    "count": 0,
+    "retrieved": 0,
+    "hits": [],
+    "near": []
+  },
+  {
+    "query": "\"One Student, Many Teachers: Multi-Task On-Policy Distillation via Soft-Prompt Privileged Context\"",
+    "target_arxiv": "2607.18293",
+    "count": 1,
+    "retrieved": 1,
+    "hits": [
+      {
+        "arxiv": "2607.18293",
+        "local_title": "One Student, Many Teachers: Multi-Task On-Policy Distillation via Soft-Prompt Privileged Context",
+        "id": "bRuZJRVJx3",
+        "title": "One Student, Many Teachers: Multi-Task On-Policy Distillation via Soft-Prompt Privileged Context",
+        "venue": "ACL ARR 2026 October Submission",
+        "venueid": "aclweb.org/ACL/ARR/2026/October/Submission",
+        "source": "https://api2.openreview.net/notes/search?term=%22One+Student%2C+Many+Teachers%3A+Multi-Task+On-Policy+Distillation+via+Soft-Prompt+Privileged+Context%22&limit=100",
+        "forum": "https://openreview.net/forum?id=bRuZJRVJx3"
+      }
+    ],
+    "near": []
+  },
+  {
+    "query": "\"Video-MOPD: Multi-Teacher On-Policy Distillation for Video Understanding\"",
+    "target_arxiv": "2609.09300",
+    "count": 0,
+    "retrieved": 0,
+    "hits": [],
+    "near": []
+  },
+  {
+    "query": "\"Composing What Each Teacher Learned: Multi-Teacher On-Policy Distillation through Teacher-Relative Shifts\"",
+    "target_arxiv": "2610.10460",
+    "count": 0,
+    "retrieved": 0,
+    "hits": [],
+    "near": []
+  },
+  {
+    "query": "\"When Top-K Misses the Decision: Tool-Call Drift in Multi-Teacher On-Policy Distillation\"",
+    "target_arxiv": "2607.07050",
+    "count": 1,
+    "retrieved": 1,
+    "hits": [
+      {
+        "arxiv": "2607.07050",
+        "local_title": "When Top-K Misses the Decision: Tool-Call Drift in Multi-Teacher On-Policy Distillation",
+        "id": "OgxhRCb2g3",
+        "title": "When Top-K Misses the Decision: Tool-Call Drift in Multi-Teacher On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "source": "https://api2.openreview.net/notes/search?term=%22When+Top-K+Misses+the+Decision%3A+Tool-Call+Drift+in+Multi-Teacher+On-Policy+Distillation%22&limit=100",
+        "forum": "https://openreview.net/forum?id=OgxhRCb2g3"
+      }
+    ],
+    "near": []
+  },
+  {
+    "query": "\"D³-MOPD: Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation\"",
+    "target_arxiv": "2608.24987",
+    "count": 0,
+    "retrieved": 0,
+    "hits": [],
+    "near": []
+  },
+  {
+    "query": "\"SMOPD: Multi-Reward Reinforcement Learning via Specialize-and-Merge Online Policy Distillation\"",
+    "target_arxiv": "2608.03092",
+    "count": 0,
+    "retrieved": 0,
+    "hits": [],
+    "near": []
+  },
+  {
+    "query": "\"Qwen-Image-2.0-RL Technical Report\"",
+    "target_arxiv": "2606.27608",
+    "count": 1,
+    "retrieved": 1,
+    "hits": [
+      {
+        "arxiv": "2606.27608",
+        "local_title": "Qwen-Image-2.0-RL Technical Report",
+        "id": "X0aAhfFzoG",
+        "title": "Qwen-Image-2.0-RL Technical Report",
+        "venue": "CoRR 2026",
+        "venueid": "OpenReview.net/Public_Article",
+        "source": "https://api2.openreview.net/notes/search?term=%22Qwen-Image-2.0-RL+Technical+Report%22&limit=100",
+        "forum": "https://openreview.net/forum?id=X0aAhfFzoG"
+      }
+    ],
+    "near": []
+  },
+  {
+    "query": "\"Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning\"",
+    "target_arxiv": "2609.15404",
+    "count": 1,
+    "retrieved": 1,
+    "hits": [
+      {
+        "arxiv": "2609.15404",
+        "local_title": "Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning",
+        "id": "dP8uHxOdEG",
+        "title": "Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "source": "https://api2.openreview.net/notes/search?term=%22Who+Teaches+Which+Token%3F+Verifier-Gated+Multi-Expert+On-Policy+Distillation+for+Scientific+Reasoning%22&limit=100",
+        "forum": "https://openreview.net/forum?id=dP8uHxOdEG"
+      }
+    ],
+    "near": []
+  },
+  {
+    "query": "\"Slow-Fast Multi-Teacher On-Policy Distillation for Capability Preservation\"",
+    "target_arxiv": "2610.02324",
+    "count": 0,
+    "retrieved": 0,
+    "hits": [],
+    "near": []
+  },
+  {
+    "query": "\"Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation\"",
+    "target_arxiv": "2609.02998",
+    "count": 1,
+    "retrieved": 1,
+    "hits": [
+      {
+        "arxiv": "2609.02998",
+        "local_title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+        "id": "9uQm8TP4zN",
+        "title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+        "venue": "ICLR 2027 Conference Submission",
+        "venueid": "ICLR.cc/2027/Conference/Submission",
+        "source": "https://api2.openreview.net/notes/search?term=%22Verify+Before+You+Distill%3A+Prompt-Level+Teacher+Gating+for+On-Policy+Distillation%22&limit=100",
+        "forum": "https://openreview.net/forum?id=9uQm8TP4zN"
+      }
+    ],
+    "near": []
+  }
+]

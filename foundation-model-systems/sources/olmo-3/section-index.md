@@ -24,6 +24,7 @@ coverage:
 | Introduction / Model Flow | 3-6 | source-level design | `notes/model-flow.md` | model flow, Dolma, Dolci | read |
 | Costs / flagship results | 6-8 | cost/openness framing | `README.md` | H100, costs, results | skim |
 | Base architecture / eval design | 8-13 | base model and dev eval | `notes/eval.md` | OlmoBaseEval | partial |
+| §3.2 architecture / Table 33 | HTML §3.2 / A.1 | OLMo 2 inheritance, SWA/full, MHA/GQA, norms | `notes/architecture.md` | SWA, QK-Norm, RMSNorm | read (HTML, 2026-10-07) |
 | Pretraining | 13-20 | Dolma 3 Mix | `notes/pretraining-data.md` | dedup, mixing, PDFs | partial |
 | Midtraining | 20-30 | Dolmino and post-trainability | `notes/pretraining-data.md` | source feedback, integration tests | partial |
 | Long-context extension | 30-35 | Longmino, science PDFs | `notes/pretraining-data.md` | 65K, long docs | partial |
@@ -44,4 +45,3 @@ coverage:
 - Figure 1: open model flow vs open-weight model flow.
 - Figure 2: full Olmo 3 model flow.
 - Appendix A.2-A.8: data/eval/hyperparameter details.
-

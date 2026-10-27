@@ -1,0 +1,47 @@
+{
+  "skill": "idea-creator-from-gap",
+  "run_id": "2026-10-15_run03",
+  "started_at": "2026-10-15T21:01:51.328944+08:00",
+  "executor": "codex",
+  "executor_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "project_dir": "/home/chy/notes/Research/mopd",
+  "selected_lenses": [
+    "G17-L1",
+    "G17-L2",
+    "G17-L3"
+  ],
+  "skipped_phases": [
+    0,
+    1
+  ],
+  "pilot": "not_authorized_not_run",
+  "completed_at": "2026-10-15T21:52:13.162951+08:00",
+  "status": "completed_with_declared_workflow_limits",
+  "generated_count": 12,
+  "reviewed_count": 12,
+  "review_queries_logged": 136,
+  "primary_priorities": [
+    "L3-A2",
+    "L1-A1"
+  ],
+  "high_risk_reserve": [
+    "L1-A4"
+  ],
+  "deprioritized": [
+    "L3-A1",
+    "L2-A1",
+    "L1-A2",
+    "L2-A2"
+  ],
+  "rejected_as_fully_scooped": [],
+  "secondary_generator_completed": false,
+  "review_context_reused": true,
+  "report": "synthesis/g17-idea-report.md",
+  "report_version": "synthesis/g17-idea-report-20261015-215213.md",
+  "wiki_proposed": 8,
+  "wiki_archived": 4,
+  "wiki_outcomes": "pending",
+  "validation": "PASS"
+}

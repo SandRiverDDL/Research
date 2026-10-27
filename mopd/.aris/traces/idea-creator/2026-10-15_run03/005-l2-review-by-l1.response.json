@@ -1,0 +1,601 @@
+{
+  "shard_id": "g17-l2-review-by-l1",
+  "assigned_ids": [
+    "L2-A1",
+    "L2-A2",
+    "L2-A3",
+    "L2-A4"
+  ],
+  "reviewer_model": "gpt-6-astra",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "context_reused": true,
+  "search_log": [
+    {
+      "candidate_ids": [
+        "L2-A1"
+      ],
+      "claim": "C1：teacher前缀启动student后续OPD，再逐步撤至零前缀。",
+      "queries": [
+        "\"reverse curriculum\" \"on-policy distillation\" prefix teacher",
+        "\"reasoning\" \"reverse curriculum\" \"R3\" reinforcement learning",
+        "\"STRIDE\" \"on-policy distillation\" prefix"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2402.05808v2",
+        "https://arxiv.org/html/2604.24005v2",
+        "https://arxiv.org/html/2609.14636v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A1"
+      ],
+      "claim": "C2：联合teacher提供可达状态，收益应迁回无辅助student；不是单纯增加完整示范。",
+      "queries": [
+        "multi teacher distillation teacher prefix curriculum complementary skills 2025 2026",
+        "site:arxiv.org on policy distillation \"prefix\" \"curriculum\" 2026",
+        "site:openreview.net multi teacher prefix rollout reasoning distillation"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2604.24005v2",
+        "https://proceedings.mlr.press/v306/setlur26a.html",
+        "https://arxiv.org/html/2607.02592v3",
+        "https://arxiv.org/html/2609.23697v3"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A1"
+      ],
+      "claim": "C3：按当前成功率控制前缀撤除，增量应超过固定前缀/普通curriculum。",
+      "queries": [
+        "adaptive demonstration prefix removal success threshold reasoning curriculum",
+        "site:proceedings.mlr.press reverse curriculum reinforcement learning success probability",
+        "LLM reasoning hint length adaptive curriculum annealing 2025 2026"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2607.07674v1",
+        "https://arxiv.org/html/2402.05808v2",
+        "https://aclanthology.org/2026.findings-acl.680.pdf"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A2"
+      ],
+      "claim": "C1：在通过检查的student交接前缀分裂多个新鲜后续。",
+      "queries": [
+        "on policy distillation successful prefix restart branching student trajectories",
+        "site:arxiv.org language model training \"trajectory splitting\"",
+        "site:openreview.net reasoning reinforcement learning prefix resampling 2026"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2610.13481v1",
+        "https://arxiv.org/html/2606.21994v1",
+        "https://arxiv.org/html/2609.14636v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A2"
+      ],
+      "claim": "C2：共享前缀只训练一次，后缀为条件student分布，不声称原始无偏occupancy。",
+      "queries": [
+        "site:arxiv.org \"branching\" \"distillation\" \"prefix\" loss weight",
+        "site:openreview.net language model prefix tree policy optimization duplicated prefix loss 2025 2026",
+        "\"student\" \"prefix\" \"conditional\" \"resampling\" \"distillation\""
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2610.13481v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A2"
+      ],
+      "claim": "C3：固定总预算下，正确交接点分裂比replay或一般rollout分配更有效。",
+      "queries": [
+        "site:arxiv.org \"Prefix-Guided On-Policy Distillation\"",
+        "site:proceedings.mlr.press \"Cache Coherent Resampling\"",
+        "LLM training successful prefix reuse replay fixed rollout budget distillation 2025 2026"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2610.13481v1",
+        "https://arxiv.org/html/2606.21994v1",
+        "https://arxiv.org/html/2609.14636v1",
+        "https://aclanthology.org/2026.findings-acl.680.pdf"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A3"
+      ],
+      "claim": "C1：通过重标记题目利用原题失败的student输出。",
+      "queries": [
+        "\"Hindsight Instruction Relabeling\" language model",
+        "site:arxiv.org failed reasoning trajectory instruction relabeling 2025 2026",
+        "site:aclanthology.org hindsight instruction relabeling"
+      ],
+      "sources_checked": [
+        "https://proceedings.mlr.press/v202/zhang23ab/zhang23ab.pdf",
+        "https://arxiv.org/html/2410.12481v1",
+        "https://arxiv.org/html/2607.04235v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A3"
+      ],
+      "claim": "C2：确定性逆映射使不改动的DSL中间程序成为新题正确状态。",
+      "queries": [
+        "semantic parsing \"hindsight\" \"program\" \"relabeling\"",
+        "site:aclanthology.org semantic parsing program natural language back translation synthetic data",
+        "site:arxiv.org intermediate program inverse instruction relabeling reasoning"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2402.04858v2",
+        "https://proceedings.mlr.press/v202/zhang23ab/zhang23ab.pdf"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A3"
+      ],
+      "claim": "C3：重标记中间状态后新采student后续并接受B监督，迁回原题联合能力。",
+      "queries": [
+        "on policy distillation hindsight relabeling intermediate prefix teacher",
+        "site:arxiv.org \"SAC-GLAM\" hindsight",
+        "site:openreview.net \"hindsight\" \"distillation\" 2025 2026"
+      ],
+      "sources_checked": [
+        "https://proceedings.mlr.press/v202/zhang23ab/zhang23ab.pdf",
+        "https://arxiv.org/html/2607.04235v1",
+        "https://arxiv.org/html/2410.12481v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A4"
+      ],
+      "claim": "C1：用expert后续完成回报更新learner前缀策略。",
+      "queries": [
+        "expert rollout learner rollin policy gradient prefix completion reward AggreVaTeD",
+        "site:arxiv.org teacher completion rollout reward prefix reasoning 2025 2026",
+        "site:proceedings.mlr.press imitation learning expert cost to go rollout student"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2306.11816v2",
+        "https://arxiv.org/html/2007.00795v2"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A4"
+      ],
+      "claim": "C2：来自多个分工专家的状态依赖完成能力，可促进单一learner超越任一整题专家。",
+      "queries": [
+        "\"MAMBA\" \"multiple\" \"oracles\" imitation learning",
+        "\"MAPS\" \"MAPS-SE\" policy improvement multiple oracles",
+        "site:proceedings.mlr.press \"multiple oracles\" \"2023\""
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2007.00795v2",
+        "https://arxiv.org/html/2306.10259v2"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A4"
+      ],
+      "claim": "C3：一次不可修复交接处的B完成回报，提供超出A正确性及student终局回报的信息。",
+      "queries": [
+        "\"language model\" \"expert rollout\" \"AggreVaTeD\"",
+        "site:arxiv.org \"teacher\" \"completion\" \"prefix\" \"reward shaping\"",
+        "LLM prefix policy optimization downstream expert completion immutable intermediate state"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2306.11816v2",
+        "https://arxiv.org/html/2306.10259v2",
+        "https://arxiv.org/html/2606.07190v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A1",
+        "L2-A2"
+      ],
+      "claim": "追踪STRIDE引用与最近OPD curriculum：复用于A1-C1/C3及A2-C3，发现并核对TCOD-B2F。",
+      "queries": [
+        "\"temporal curriculum\" \"on-policy distillation\"",
+        "\"TCOD\" \"back\" \"distillation\"",
+        "\"teacher prefix\" \"multi-teacher\" distillation curriculum 2026"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2604.24005v2",
+        "https://aclanthology.org/2026.findings-acl.680.pdf"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A4"
+      ],
+      "claim": "2025–2026补充检索teacher completion、prefix reward与官方ICLR来源；复用A4-C1/C3；未据未读PDF片段作覆盖裁决。",
+      "queries": [
+        "site:arxiv.org \"teacher rollout\" \"prefix\" \"reward\" 2026",
+        "site:arxiv.org \"expert completion\" \"student\" reasoning",
+        "site:openreview.net teacher continuation reward prefix policy gradient 2025 2026"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2306.11816v2",
+        "https://arxiv.org/html/2606.07190v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L2-A3"
+      ],
+      "claim": "重查中间状态instruction relabeling与近期agent hindsight；复用A3-C1/C3，核对HSL。",
+      "queries": [
+        "site:arxiv.org \"hindsight\" \"relabeling\" \"distillation\"",
+        "\"intermediate\" \"relabeling\" \"on-policy\"",
+        "\"program\" \"instruction relabeling\" teacher"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2607.04235v1",
+        "https://proceedings.mlr.press/v202/zhang23ab/zhang23ab.pdf"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "tcod",
+      "title": "TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents",
+      "url": "https://arxiv.org/html/2604.24005v2",
+      "anchors": "§4.2 TCOD-B2F；Eq.5；Algorithm 2；train-test mismatch段",
+      "read_depth": "method",
+      "finding": "teacher执行成功轨迹前缀，student续写并只在后续蒸馏；前缀按课程缩短到零。直接覆盖reverse OPD路径；论文使用单teacher成功轨迹及预设pacing，不等于本候选全部联合teacher设定。"
+    },
+    {
+      "source_id": "adaprefix",
+      "title": "Max Out GRPO Signal: Adaptive Trace Prefix Control for Hard Reasoning Problems",
+      "url": "https://arxiv.org/html/2607.07674v1",
+      "anchors": "§4.2 Closed-loop adaptation / Annealing；Eq.2；§3 prefix masking",
+      "read_depth": "method",
+      "finding": "成功率反馈调节参考前缀长度并最终退火到零已经存在。训练目标是GRPO而非MOPD；原文把部分预处理排除在训练FLOPs外，本审阅要求总成本计入。"
+    },
+    {
+      "source_id": "r3",
+      "title": "Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning",
+      "url": "https://arxiv.org/html/2402.05808v2",
+      "anchors": "§3.1–3.3；Eq.3",
+      "read_depth": "method",
+      "finding": "从示范中间状态开始，逐步把起点退回原点；同时讨论阶段切换退化及混合起点。覆盖reverse curriculum思想，不直接覆盖多teacher蒸馏。"
+    },
+    {
+      "source_id": "prefixrl",
+      "title": "Reuse your FLOPs: Scaling RL on Hard Problems by Conditioning on Very Off-Policy Prefixes",
+      "url": "https://proceedings.mlr.press/v306/setlur26a.html",
+      "anchors": "PMLR 306官方abstract",
+      "read_depth": "abstract",
+      "finding": "官方摘要报告以成功off-policy前缀启动RL及无前缀back-generalization。仅摘要补充，不以其证明候选算法被完整覆盖。"
+    },
+    {
+      "source_id": "branch",
+      "title": "Branching On-Policy Distillation",
+      "url": "https://arxiv.org/html/2610.13481v1",
+      "anchors": "§4.1–4.3；Eqs.6–11；Proposition 1；2026-10-09 v1",
+      "read_depth": "method",
+      "finding": "共享student前缀重新采样后续并逐token蒸馏，前缀loss只计一次；论证的是给定fork的条件无偏。选点依据entropy/disagreement，而非本候选的确定性交接正确性。"
+    },
+    {
+      "source_id": "pg",
+      "title": "Prefix-Guided On-Policy Distillation: Mining Golden Trajectories from Rollouts",
+      "url": "https://arxiv.org/html/2606.21994v1",
+      "anchors": "Method: Prefix-Based Trajectory Scoring；Eqs.10–14；Algorithm 1",
+      "read_depth": "method",
+      "finding": "对短student前缀评分后分配有限长续写预算，保留普通OPD损失。评分来自top-k overlap；并非对一个正确前缀复制多后续。"
+    },
+    {
+      "source_id": "stride",
+      "title": "Know When to Stop, Where to Restart: Accelerating Multi-Turn Agentic On-Policy Distillation",
+      "url": "https://arxiv.org/html/2609.14636v1",
+      "anchors": "§4.2；Eq.6；§5.3 multi-teacher setting",
+      "read_depth": "method",
+      "finding": "以teacher endorsement选高质量student前缀，从最弱正确turn重启；已有跨域多teacher实验，不能把多teacher使用本身算作新delta。其正确性是proxy，非确定性交接验证。"
+    },
+    {
+      "source_id": "hir",
+      "title": "The Wisdom of Hindsight Makes Language Models Better Instruction Followers",
+      "url": "https://proceedings.mlr.press/v202/zhang23ab/zhang23ab.pdf",
+      "anchors": "ICML 2023 PDF pp.4–5；§4.2–4.3；Algorithm 1；Sub-output Relabeling",
+      "read_depth": "method",
+      "finding": "已有失败输出指令重标记，且明确支持中间sub-output重标记及后续序列监督。因此不能把中间而非整条重标记本身当新颖性；候选区别在精确DSL逆映射后新采后续。"
+    },
+    {
+      "source_id": "codeit",
+      "title": "CodeIt: Self-Improving Language Models with Prioritized Hindsight Replay",
+      "url": "https://arxiv.org/html/2402.04858v2",
+      "anchors": "§2.2 Sampling and hindsight relabeling / Learning；Eq.1",
+      "read_depth": "method",
+      "finding": "执行语法有效的采样程序，以实际输出重标任务并训练程序生成器；失败程序转为有效样例已存在。候选是在中间程序处停下后另采B后续。"
+    },
+    {
+      "source_id": "hsl",
+      "title": "Spinning Straw into Gold: Relabeling LLM Agent Trajectories in Hindsight for Successful Demonstrations",
+      "url": "https://arxiv.org/html/2607.04235v1",
+      "anchors": "§3.2–3.4；Goal identification；Action relevance labeling",
+      "read_depth": "method",
+      "finding": "从轨迹中发现已达成目标和对应片段，形成hindsight监督并维护动态buffer。用外部LLM重标，非精确逆映射，也不等于重标后新采B后续。"
+    },
+    {
+      "source_id": "sac",
+      "title": "SAC-GLAM: Improving Online RL for LLM agents with Soft Actor-Critic and Hindsight Relabeling",
+      "url": "https://arxiv.org/html/2410.12481v1",
+      "anchors": "§2.1–2.3；尤其§2.3 HER",
+      "read_depth": "method",
+      "finding": "LLM agent已有失败轨迹片段的goal relabeling与off-policy replay；提供分布处理背景，不直接覆盖多teacher OPD。"
+    },
+    {
+      "source_id": "llmguide",
+      "title": "Learning to Generate Better Than Your LLM",
+      "url": "https://arxiv.org/html/2306.11816v2",
+      "anchors": "§4；Algorithm 2 AggreVaTeD；Algorithm 3 D²LOLS",
+      "read_depth": "method",
+      "finding": "LLM learner roll-in、guide roll-out、利用guide回报/advantage更新learner已经实现。原文用价值估计和PPO；候选用固定交接处一次MC回报更新整个A前缀，并保留MOPD。"
+    },
+    {
+      "source_id": "mamba",
+      "title": "Policy Improvement via Imitation of Multiple Oracles",
+      "url": "https://arxiv.org/html/2007.00795v2",
+      "anchors": "§3.2；Algorithm 1 lines 2–7；§4；Eqs.12–14",
+      "read_depth": "method",
+      "finding": "多个弱oracle的完成价值可作为learner改进信号；实际算法包含learner roll-in后切换oracle及另采learner轨迹，不是免费已知价值接口。"
+    },
+    {
+      "source_id": "maps",
+      "title": "Active Policy Improvement from Multiple Black-box Oracles",
+      "url": "https://arxiv.org/html/2306.10259v2",
+      "anchors": "§3.2 Eq.9；§4.1–4.2；Algorithm 1",
+      "read_depth": "method",
+      "finding": "多个black-box oracle的值估计、选择和state exploration已有方法；用oracle rollout采集监督。候选的单边界单调用较轻，但不能宣称多expert cost-to-go首次用于探索。"
+    },
+    {
+      "source_id": "pum",
+      "title": "From Correctness to Utility: Gain-Based Prefix Evaluation for LLM Reasoning",
+      "url": "https://arxiv.org/html/2606.07190v1",
+      "anchors": "§3.1–3.4；Eqs.1–5、9",
+      "read_depth": "method",
+      "finding": "按有/无prefix的完成成功率差定义utility，区分共享与solver-dependent效应；后训练ranking model。支持A4必须区别正确性与实际后续效用，但不同于直接以B回报训练A。"
+    },
+    {
+      "source_id": "crps",
+      "title": "CRPS: Curriculum Replay via Progressive Suffixes from Successful Trajectories for Long-Horizon LLM Agents",
+      "url": "https://aclanthology.org/2026.findings-acl.680.pdf",
+      "anchors": "ACL Findings 2026 PDF pp.4–5；§3.4；Eqs.5、8–12",
+      "read_depth": "method",
+      "finding": "保存成功轨迹、恢复suffix起点，并按replay成功率调节长度。属于RL；环境重置与replay成本真实存在，本候选文本任务不必采用这些操作。"
+    },
+    {
+      "source_id": "trust",
+      "title": "Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation",
+      "url": "https://arxiv.org/html/2609.23697v3",
+      "anchors": "§3.3 Eqs.5–6",
+      "read_depth": "method",
+      "finding": "同student状态逐token动态分配多个teacher监督，weights stop-gradient。审阅不把它描述成固定prompt路由或整题赢家筛选。"
+    },
+    {
+      "source_id": "hopd",
+      "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-policy Distillation",
+      "url": "https://arxiv.org/html/2607.02592v3",
+      "anchors": "§3.3 Eqs.5–6；Heterogeneous Teacher and Student Policies",
+      "read_depth": "method",
+      "finding": "VL description传给text teacher，两teacher在相同student前缀给监督；信息桥接已有覆盖。这里只核对桥接方法，未重读全部实验。"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "L2-A1",
+      "core_claims": [
+        "通过teacher前缀把student送到另一专长有用的状态，并只蒸馏student续写。",
+        "按联合成功率逐步撤掉前缀，最终在零辅助下获得完整组合能力。",
+        "多teacher联合构造的起点和撤除路径，应产生超出普通reverse curriculum、固定mixing及额外示范的增量。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "tcod",
+          "overlap": "teacher执行成功前缀→student续写OPD→前缀逐步缩到零，已由TCOD-B2F明确实现。",
+          "delta": "候选用A前缀+B验证形成联合起点，并以联合成功率而非固定pacing撤除；需要证明该具体变化而非reverse OPD本身带来增益。"
+        },
+        {
+          "source_id": "adaprefix",
+          "overlap": "成功率反馈控制前缀长度并最终撤除，已在AdaPrefix-GRPO实现。",
+          "delta": "候选用动态MOPD目标及互补teacher，而非GRPO；更换目标并不自动构成足够方法增量。"
+        },
+        {
+          "source_id": "r3",
+          "overlap": "后向起点课程及起点混合的基本机制已有。",
+          "delta": "缺少整题可靠单teacher而由互补池提供可学前缀，是可核验但尚未成立的适用条件差异。"
+        }
+      ],
+      "technical_issues": [
+        "RISK_DIRECT_RECIPE_OVERLAP：TCOD-B2F直接覆盖主要OPD操作；剩余delta集中在联合teacher前缀和成功率课程，不能以三篇工作的组合被想象成某单篇已完整包含而ABANDON，但也不能继续宣称基础路径新颖。",
+        "RISK_CURRICULUM_STALL：k>0的混合分布标注正确；只在后缀算loss并不直接训练被提供的A tokens。当前k达到阈值不保证更短k可学，撤除阶段可能停滞或遗忘。",
+        "RISK_UNSPECIFIED_SURROGATE：q_dynamic未被固定，实践应与对照使用同一已有聚合；对采样state stop-gradient是常用local OPD surrogate，不能额外声称完整求导E_dθ的优化保证。",
+        "RISK_VERIFIED_DEMO_ADVANTAGE：A前缀+B一次成功已经提供联合成功数据；所有SFT/PrefixRL/TCOD等对照应获得相同数据。自然语言中间正确性检查不能由一句“验证”免费获得。",
+        "RISK_COST_UNDERSPECIFIED：2k×1024只描述一次遍历；多个课程阶段、成功率测量、重复prefill和失败teacher制备未包含在一个确定总数内。现成专家能否达到所需能力尚未核实。"
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 3,
+      "method_value_score": 5,
+      "pilot_information_score": 7,
+      "risk": "MEDIUM",
+      "recommendation": "deprioritize",
+      "best_case": "联合teacher能构造单teacher难以稳定提供的起点，课程使这些状态对应的能力真正内化；机制简单，可作为重要方法对照和条件性recipe。",
+      "strongest_objection": "这是否只是给TCOD-B2F接上Trust式动态teacher及已有成功率调度？必须找出组合设定中可重复、无法由原版课程解释的增益。",
+      "likely_failure": "前缀辅助时表现好，撤除后下降；或者完全由额外成功示范、A单项改进及一般课程解释。",
+      "frontier_durability": "若更强student自然到达关键状态，收益会消失。仍有价值的条件是实际长任务中的低到达率持续存在，且专家前缀制备比同预算直接增强student便宜。",
+      "metric_gaming": "只报告辅助成功率、筛掉无法联合验证的题、把条件B成功当整题能力，或只给新方法额外示范都会夸大结果。",
+      "fair_baselines": "直接加入TCOD-B2F＋同一q_dynamic、AdaPrefix式成功率控制、固定prefix mixing、PrefixRL/普通RL、同联合轨迹SFT；另保留Trust、适用H-OPD、MAD-OPD及适用TU-OPD。强单teacher获得相同数据及总制备预算。总成本包含课程重访、成功率验证、全部prefill与失败样例。",
+      "minimum_test": "不训练的最便宜检查：64道可验证组合题，在零/半/完整A前缀上各采4次student后续，固定teachers及q_dynamic，检查正确前缀是否确实打开普通student极少到达、而B能提供有效监督的状态。约0.39M student后续tokens（每次≤512），另计A/B制备与验证。如果此条件不成立，停止本机制；条件成立也只说明值得后续与TCOD-B2F短训比较。未运行，实际GPU预算未指定、token估算未测速。",
+      "kill_criterion": "预检没有稀有状态与条件增益，或后续等总预算下与TCOD-B2F＋同teacher聚合无差异；这否定当前方法价值主张，不等于发现论文完整scoop。"
+    },
+    {
+      "id": "L2-A2",
+      "core_claims": [
+        "验证student中间前缀，在单一交接处生成至多4个新鲜后续。",
+        "共享前缀只计一次loss，后续来自已验证状态条件下的student分布。",
+        "固定总预算下，此状态分裂应优于成功replay、随机分叉和一般rollout分配。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "branch",
+          "overlap": "共享student前缀分叉、条件student后续、teacher逐token监督及prefix loss去重全部已实现。",
+          "delta": "候选在一个确定性验证的A→B交接点分叉；BranchOPD按entropy/disagreement选点。只有验证正确性选点在互补结构中的特殊价值尚未被该文直接回答。"
+        },
+        {
+          "source_id": "pg",
+          "overlap": "用短前缀质量分配固定长续写预算已存在。",
+          "delta": "候选从单个正确前缀生成多个后续，而PG-OPD主要继续高overlap候选；需控制正确性信息优势。"
+        },
+        {
+          "source_id": "stride",
+          "overlap": "缓存高质量student前缀并重启后续OPD，且已有多teacher实验。",
+          "delta": "候选是单轮边界内的有限分裂与确定性检查；不是缓存后跨轮重启，也不是teacher endorsement proxy。"
+        }
+      ],
+      "technical_issues": [
+        "RISK_GATE_ONLY_DELTA：BranchOPD已经包含主要采样和loss操作，single boundary与最多4分支是预算选择；真正可承担贡献的是正确性选择与跨teacher监督机会的可验证关系。",
+        "RISK_OCCUPANCY_REWEIGHTING：候选承认dπ(z|C=1)改变训练分布，这是正确的。prefix去重只消除重复计数，不会恢复原始occupancy；λ、token归一化和分支长度会改变前后段有效权重。",
+        "RISK_LOW_EFFECTIVE_DIVERSITY：四个suffix共享同一稀有prefix，增加的是条件后续曝光而非四个独立状态；需要按unique prefix和题目聚类评估，不能把branch数当有效样本数。",
+        "RISK_NO_START_AND_NO_REACHABILITY_GRADIENT：若正确prefix极少，本法没有可分裂对象；对suffix做local OPD不直接奖励A抵达该状态，且后段预算可能挤占A学习。",
+        "RISK_VERIFIER_AND_COST：C(z)若依赖人工中间标签，其信息必须给各baseline。分支teacher评分会重复读取上下文；固定student输出token不等于固定训练FLOPs或teacher成本。"
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 2,
+      "method_value_score": 4,
+      "pilot_information_score": 7,
+      "risk": "MEDIUM",
+      "recommendation": "deprioritize",
+      "best_case": "如果只有确定性有效交接点包含可迁移的第二专长信号，正确性选择能把少量发现转为高效学习，并有低复杂度实现。",
+      "strongest_objection": "为什么不是BranchOPD的一个选点消融？仅把entropy选点换成已知正确边界不足以支撑独立方法论文。",
+      "likely_failure": "重复少量容易prefix降低多样性，或正确性门控与普通随机分叉/高overlap选点表现相同；联合成功不随曝光量增加。",
+      "frontier_durability": "通用分支复用持续有工程价值，但多teacher特有价值需随规模存在。更强student提高正确prefix率后，门控优势可能缩小。",
+      "metric_gaming": "把分支数或条件B成功率当独立组合能力；忽略失败prefix、重复prefill及分支相关性；只按生成tokens而不按teacher/训练总成本配平。",
+      "fair_baselines": "BranchOPD原选点及单边界版本、PG-OPD、STRIDE、同prefix成功replay与随机分裂必须加入；共享同一动态teacher目标。另对比Trust、适用H-OPD/TU-OPD、MAD-OPD、更强单teacher以及使用同C(z)标签的RL。固定所有上下文处理与训练token预算。",
+      "minimum_test": "用现有student在64题各采4个prefix；只对可验证正确prefix各采4个≤512-token后续，同时给等额预算的随机/BranchOPD选点。审计单位总token中的unique有效状态、有效B监督及分支相关性，最多约0.52M后续tokens。不训练即可发现无可启动状态或无信息增量；未运行，GPU预算未指定，token未测速。",
+      "kill_criterion": "正确性选点不提高有效B监督密度或unique状态覆盖，或者短训中等预算BranchOPD已经复现全部收益。不能仅因邻近工作存在就ABANDON，但当前独立方法优先级低。"
+    },
+    {
+      "id": "L2-A3",
+      "core_claims": [
+        "不改动student原本错误但语法有效的中间程序，通过逆映射构造使其正确的新题。",
+        "在重标记上下文中重新采样student后续，并由B/动态多teacher提供监督。",
+        "这种失败状态再利用应迁回原题完整策略，超过B单项训练和等量普通合成数据。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "hir",
+          "overlap": "失败输出重标指令、中间sub-output重标及后缀监督均已存在。",
+          "delta": "候选要求确定性DSL逆映射，并在重标记后新采B后续，而不是对旧输出做监督。"
+        },
+        {
+          "source_id": "codeit",
+          "overlap": "以错误程序的真实行为构造有效新任务，再学习这些程序已实现。",
+          "delta": "候选把程序当中间状态而非最终预测目标，后接另一个teacher擅长的续写任务。"
+        },
+        {
+          "source_id": "hsl",
+          "overlap": "利用轨迹中非原目标的中间成功、重标目标并持续训练已有。",
+          "delta": "候选不依赖LLM猜目标，也不复用旧后续，而是精确构题后新采student续写；这些具体差异尚未被已核论文完整包含。"
+        }
+      ],
+      "technical_issues": [
+        "RISK_RELABEL_REDUNDANCY：在典型DSL→执行任务中，若z已是B的充分输入，则正确后续仅取决于z。此时R(z)没有新增下游信息，候选可能退化为直接B子任务训练；这是当前设定的关键内部反例。",
+        "RISK_INVERSE_SCOPE：g(R(z))=z只有在明确的形式语法/语义映射内才可保证；自然问题中别名、隐藏约束及歧义使等式不成立。不能把强LLM重写器当确定性inverse。",
+        "RISK_DISTRIBUTION_SHIFT：原z来自π(z|x)，不是π(z|R(z))；候选已正确标注显式off-policy前缀。这里有意改变任务分布，无需假装importance correction能自动变回原题目标。",
+        "RISK_NO_A_UPDATE：只对u计算额外loss，不直接训练student从新题生成z。B曝光增加不保证A→B联合可达性提高，且student易学到渲染模板shortcut。",
+        "RISK_SYNTHETIC_COVERAGE：需对原题、R(z)题和随机合成题的难度/操作关系配平；错z可能集中于简单或无效程序。teacher额外生成为零仍不等于没有prefill、B评分和数据验证成本。"
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 5,
+      "method_value_score": 5,
+      "pilot_information_score": 8,
+      "risk": "HIGH",
+      "recommendation": "reserve",
+      "best_case": "失败的A输出本身提供真实student分布中的B学习机会；精确改题避免新teacher生成成本，而新采后续能把旧失败转为另一专长的有效教学。",
+      "strongest_objection": "既然只训练B且z已足以执行，为什么要改题？相对“同一批z直接训练B”的因果增量是什么？",
+      "likely_failure": "仅渲染题或B单项分数提升，原题联合能力无收益；R(z)只是冗余上下文或模板提示，普通合成数据即可解释。",
+      "frontier_durability": "形式化可逆任务上的失败再利用可能持续便宜，但两年价值取决于是否有实际重要任务具备这种逆映射；不能仅靠自建DSL证明规模化普适性。",
+      "metric_gaming": "评测也使用同一渲染器、训练测试共享操作模板、只报告B成功或新题成功，均可制造组合能力假象。",
+      "fair_baselines": "首要是同一批z上的B-only训练及同分布随机合成题；再加HIR/CodeIt式重标监督、teacher-prefix mixing、Trust及适用H-OPD/TU-OPD、MAD-OPD。所有方法使用相同逆映射、局部标签、teacher池与总token；加入同预算RL和获得全部数据的单teacher。",
+      "minimum_test": "最便宜先做64个真实失败z的依赖审计：检验R与g的精确往返，并在相同z上比较B的目标分布/完成结果是否因提供R(z)而获得原题所需的新信息；与只给z的B子任务输入逐一配对，最多128个≤512-token续写约0.066M tokens。若B目标完全由z决定，则重标记特有机制没有成立，仍可把数据复用视为一般B训练。未运行；实际GPU预算未指定，估算未测速。",
+      "kill_criterion": "在所选任务族中，R(z)相对同z的B子任务监督没有信息或迁移增量；或inverse需泄露最终答案/调用完整solver。若后续原题收益被普通合成数据完全解释，当前方法主张也失败。"
+    },
+    {
+      "id": "L2-A4",
+      "core_claims": [
+        "student生成不可更改的A中间结果，B在唯一交接点完成一次并由任务验证器给回报。",
+        "将B完成回报直接用于student前缀policy gradient，同时用动态多teacher OPD学习完整student策略。",
+        "B回报应提供超出A正确性标签和student自身终局回报的训练信息，并在无teacher部署时保留收益。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "llmguide",
+          "overlap": "LLM learner roll-in、guide rollout、用guide完成回报构造advantage更新learner已由AggreVaTeD/RLGF实现。",
+          "delta": "候选固定在一个有不可修改契约的专长交接点，使用一次MC回报更新整个A前缀并并行MOPD，而不是一般状态采样与价值网络。"
+        },
+        {
+          "source_id": "mamba",
+          "overlap": "多弱oracle完成价值帮助learner改进及超越单oracle已有完整框架。",
+          "delta": "候选不估计所有oracle的值，也不逐状态选择，只把已知下游specialist的一次完成作为阶段级信号；需要证明这种简化在MOPD中的实际优势。"
+        },
+        {
+          "source_id": "maps",
+          "overlap": "多个black-box oracle的rollout价值、state exploration及其采样效率已有研究。",
+          "delta": "候选利用任务接口固定调用位置并最终把下游能力蒸馏到student；目前没有新的oracle选择算法或普遍改进保证。"
+        }
+      ],
+      "technical_issues": [
+        "RISK_KNOWN_GRADIENT：固定B时，(r_B−b(x))∇logπθ(z|x)是J_A的合法单样本REINFORCE估计，未重复乘proposal。该公式本身是既有expert cost-to-go思路，不是新policy-gradient结果。",
+        "RISK_TEACHER_STUDENT_UTILITY_MISMATCH：J_A优化的是πθ^Aπ_B^B的成功，不是πθ完整成功。它可能偏好B擅长但student最终难以掌握的表示；普通OPD是否弥合此差距没有保证。",
+        "RISK_REWARD_REDUNDANCY：若B对所有正确z几乎必成功、错误z必失败，r_B只是昂贵且有噪声的A正确性标签；若B过弱，一次rollout又可能全零。",
+        "RISK_UNENFORCED_COMMITMENT：自然语言要求B不要修复z不够。执行接口必须实际约束后续依赖已提交z；否则B忽略z或偷偷重解会奖励错误A。",
+        "RISK_MULTI_TEACHER_SPECIFICITY：新增辅助信号实际仅来自B，另一teacher只出现在既有OPD；必须证明互补池贡献超出单强guide或一般expert-rollout RL。",
+        "RISK_COST_AND_UPDATE_LAG：2k次B调用≤1.024M输出tokens是单轮上界，需加输入prefill、verification、普通OPD的所有teacher/reference forwards与teacher制备。若复用旧prefix多轮更新，需明确old-policy处理，不能把当前公式自动当无偏。"
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 4,
+      "method_value_score": 6,
+      "pilot_information_score": 9,
+      "risk": "HIGH",
+      "recommendation": "reserve",
+      "best_case": "B在student尚不会完成后半题时，能识别A中真正可延展的状态；单交接调用成本可控，信号直接服务student可达性，并最终由OPD完成独立部署。",
+      "strongest_objection": "这是AggreVaTeD式expert-rollout reward再加普通MOPD吗？若r_B不能提供A标签之外的信息，连额外调用的必要性都不存在。",
+      "likely_failure": "学出对B友好但对student不友好的前缀；B回报等价A标签；或者稀疏一次采样造成极高方差而收益被等预算student RL消除。",
+      "frontier_durability": "在可执行、不可逆的真实多阶段接口中仍可能有持久价值；若frontier student自己完成B已不困难，额外expert回报就失去优势。需要至少一个更强student切片检查这一边界。",
+      "metric_gaming": "把student-A＋teacher-B的混合策略成功当部署成功；B偷偷修复中间结果；偏好可被B格式识别的shortcut；只报到达率而不报独立整题成功。",
+      "fair_baselines": "直接加入LLM AggreVaTeD/RLGF式单guide回报、OPD＋A正确性奖励、OPD＋student终局RL、等预算更多OPD及teacher-prefix课程；同teacher池的Trust/MAD-OPD和适用H-OPD/TU-OPD保持不变。更强单teacher可获得同一专长数据、验证器及teacher制备总预算；所有方案对齐额外B调用和prefill。",
+      "minimum_test": "首选一个不训练的信号检查：64题各采4个student A前缀，固定不可更改接口；每个prefix让B与student各续写2次，并记录A正确性。总≤0.524M续写tokens（其中B≤0.262M），另计前缀生成。检验B回报是否在A标签条件下仍区分可学的有用状态，是否比student回报更少全零，并审计B不能修复z。若这些都不成立，无需进入训练。未运行；实际GPU预算未指定，token未测速。",
+      "kill_criterion": "B回报在控制A正确性后无新增信息，或B通过绕过z取得成功，或B偏好的状态仅对B有效。即便信号成立，后续等预算AggreVaTeD＋MOPD或普通A奖励完全复现效果，也会使独立方法delta不成立。"
+    }
+  ],
+  "ranking": [
+    "L2-A4",
+    "L2-A3",
+    "L2-A1",
+    "L2-A2"
+  ],
+  "top_choice_rationale": "L2-A4排第一仅表示最值得做便宜且有决定性的信号检查，不表示已成为优先投入的方法论文。它把下游专长是否能提供A标签之外的可学信息变成直接可证伪问题；当前novelty仍受RLGF/MAMBA/MAPS限制。L2-A3有可描述的具体delta，但先检验R(z)是否冗余。L2-A1/A2已有直接OPD近邻，应优先视为强对照。四项均为PROCEED WITH CAUTION，无完整scoop证据，因此没有ABANDON；也没有任何一项被接受或承诺顶会价值。",
+  "high_upside_choice": "L2-A4：若一次B完成回报确有A标签以外的信息、并能迁回student自己的B能力，成本受控的联合状态学习可能有实用价值；这是条件性高收益选择。",
+  "coverage_limits": [
+    "本次复用原L1生成agent上下文，但只审阅指定L2四项，没有评价自身L1候选；review_independence=same-family、acceptance_status=provisional、context_reused=true。",
+    "执行12组claim检索、每组3种表述，另3组追踪检索，共45条query；同一claim的来源跨候选复用已在search_log注明。覆盖web索引中的arXiv、PMLR/ICML、OpenReview、ACL与NeurIPS官方入口，含2025–2026、近六个月及必要旧文，最新承重文献为2026-10-09 BranchOPD。",
+    "没有直接查询独立arXiv API、DBLP、Semantic Scholar或Crossref数据库；未声称数据库穷尽。搜索引擎召回与索引时间仍有限制，零命中不作新颖性证明。",
+    "承重结论来自原文方法段；PrefixRL仅核官方摘要，不用于完整覆盖裁决。HIR一个猜测的v3 HTML地址返回404，已改读ICML官方PDF §4.2–4.3。未读完所有全文、补充材料或代码。",
+    "未复现实验，也未验证任何候选的teacher pool、数据生成器、逆映射、不可修改接口或联合任务是否实际存在。公开方法上的实验数字不作为本项目效果证据。",
+    "未运行pilot、训练或长推理，未安装软件；仅写本次独占review trace。实际GPU预算未由用户指定，≤8×3090只是生成时工作假设；token估算未测速，不提供GPU小时。",
+    "novelty_score、method_value_score与pilot_information_score均为0–10定性排序辅助；novelty_score=5表示存在可核验delta、值得小型证伪检查，非通过论文级查新。deprioritize不等于ABANDON。",
+    "没有将Trust/H-OPD描述为只做prompt级选择或普遍依赖整题赢家；也未把组合benchmark不足当作方法失败证据。全部机制价值判断仍为待验证解释。"
+  ]
+}

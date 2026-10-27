@@ -1,0 +1,16 @@
+{
+  "call_number": 8,
+  "purpose": "g15-fresh-novelty-review",
+  "timestamp": "2026-10-15T13:46:52.648Z",
+  "tool": "spawn_agent",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "files_referenced": [
+    ".aris/traces/idea-creator/2026-10-15_run02/g15-generation-context.md",
+    ".aris/traces/idea-creator/2026-10-15_run02/g15-candidates.json",
+    ".aris/traces/idea-creator/2026-10-15_run02/g15-l1-evidence.md",
+    ".aris/traces/idea-creator/2026-10-15_run02/g15-l2-evidence.md",
+    ".aris/traces/idea-creator/2026-10-15_run02/g15-l5-evidence.md"
+  ],
+  "prompt": "你是fresh研究审阅者，负责G15全部候选的查新交叉核查与批判评估。只读，不写文件，不生成新方案，不增加模块；本轮不跑实验。工作目录 /home/chy/notes/Research/mopd。按此顺序读取：.aris/traces/idea-creator/2026-10-15_run02/g15-generation-context.md；同目录 g15-candidates.json（18原候选机械合并13组，必须全看、保留变体区别）；同目录 g15-l1-evidence.md、g15-l2-evidence.md、g15-l5-evidence.md（含已核查原文、claims、queries、缺口）。不读其他chat G17，不加载query_pack、不扫全库。用户仅选择L1/L2/L5，目标实质且可规模化的多teacher OPD方法论文，不是普遍梯度冲突或通用遗忘；DN/UP/PMOPD/Road等现有覆盖必须尊重。你未参加候选生成，当前证据文件没有预先排序。必要时只定点打开最关键一手原文补核，不再宽搜。\n\n输出中文：1) 每个C01–C13一行，novelty verdict、最近邻及精确delta、最强风险；给0–10主观novelty分（5=有可辩护delta值得pilot，不能把分数当客观概率）。所有未发现完整已发表覆盖者不得因邻近直接判ABANDON。2) 每项简短最强支持/最强反对，尤其识别代数等价、虚假可学性收益、conditional on-policy和额外compute。3) 暂按信息价值/方法上限/最小验证可执行性选top3并排序，至少说明一个高风险高上限候选；不能因实现复杂但无客观预算证据直接剔除。4) 每个top候选一句可检验贡献、必要强baseline、明确杀死主张的信号。5) 科学前提尚未证实、搜索缺口、无pilot限制。建议2500–4000中文字符，必须覆盖全部13；不要重写候选来应对批评。之后会同一agent followup进行最终批判排序。\n\n=== NOVELTY VERDICT LIMITS (these bound how you judge, never how widely you search) ===\nSearch exhaustively; judge calibrated. Two failures waste months equally:\npassing an idea a published paper already contains, and killing a viable idea\nbecause the territory has neighbors.\n1. Proximity is information, not a verdict. Someone working nearby goes in the\n   report; it is not by itself a reason to reject.\n2. ABANDON has exactly one qualification: a specific published paper already\n   contains this result — name that paper. No named paper, no ABANDON.\n3. Crowded-but-deltaed is PROCEED: state the delta in one sentence a reviewer\n   could verify. Thin or contested delta is PROCEED WITH CAUTION — say what\n   would make it carry, not why it should die. CAUTION is not a safe middle:\n   if you cannot name the specific thing that makes the delta thin, the\n   verdict is PROCEED.\n4. Concurrent or competing work is not a veto. That is a race — report it and\n   let the user decide whether to run it.\n5. A direct attack on a central problem is legitimate novelty when nobody has\n   executed it well. \"This area is hot\" does not mean \"this area is taken.\"\n6. This check is an early gate, never the last one — more triage, pilots, or\n   external review still stand between any idea and a paper, whatever order\n   this run uses. A wrongly passed idea dies cheaply at one of them; a wrongly\n   killed idea is never seen again. When torn between two verdicts, choose the\n   more permissive one.\nSay plainly when an idea clears the check. Do not manufacture overlap."
+}

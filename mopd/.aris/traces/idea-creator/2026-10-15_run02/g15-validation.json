@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-15T14:01:14.354737+00:00",
+  "status": "PASS",
+  "scope": "G15 deliverables only; structure and local links, not experimental validity",
+  "deliverable_files": 15,
+  "checked_local_links": 61,
+  "paper_pages_unchanged": 36,
+  "candidate_clusters": 13,
+  "raw_candidates": 18,
+  "wiki_ideas": 13,
+  "proposed": 3,
+  "archived": 10,
+  "all_outcomes": "pending",
+  "graph_edges": 182,
+  "graph_duplicates": 0,
+  "dangling_nodes": [],
+  "pilot_status": "not-run",
+  "voice_commands_available": [],
+  "errors": []
+}

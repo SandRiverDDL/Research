@@ -1,0 +1,86 @@
+# Research Wiki Log
+
+_Append-only timeline._
+- `2026-10-14T13:05:13Z` Wiki initialized
+- `2026-10-14T13:05:39Z` ingest_paper: ingested paper:wang2026_tcod_exploring_temporal (arxiv:2604.24005)
+- `2026-10-14T13:09:19Z` wiki-enrich: enriched paper:wang2026_tcod_exploring_temporal from original arXiv 2604.24005v3 HTML + PDF; filled 9/9 remaining sections, existing thesis retained; visual checks PDF pp. 5,6,8,9,10; no experiments reproduced; single-paper pilot only.
+- `2026-10-14T13:10:42Z` ingest_paper: skipped existing paper wang2026_tcod_exploring_temporal.md (arxiv:2604.24005)
+- `2026-10-14T13:20:28Z` ingest_paper: ingested paper:liao2026_multiturn_onpolicy_distillation (arxiv:2607.04763)
+- `2026-10-14T13:22:01Z` wiki-enrich: enriched paper:liao2026_multiturn_onpolicy_distillation from original arXiv 2607.04763v3 HTML + PDF; filled 9 remaining TODO sections; visual checks PDF pp. 12,14,15,16,19; timed second-paper run; no experiments reproduced.
+- `2026-10-14T13:23:22Z` ingest_paper: skipped existing paper liao2026_multiturn_onpolicy_distillation.md (arxiv:2607.04763)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:agarwal2023_onpolicy_distillation_language (arxiv:2306.13649)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:gu2023_minillm_onpolicy_distillation (arxiv:2306.08543)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:xu2024_speculative_knowledge_distillation (arxiv:2410.11325)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:song2026_survey_onpolicy_distillation (arxiv:2604.00626)
+- `2026-10-14T14:09:06Z` ingest_paper: skipped existing paper wang2026_tcod_exploring_temporal.md (arxiv:2604.24005)
+- `2026-10-14T14:09:06Z` ingest_paper: skipped existing paper liao2026_multiturn_onpolicy_distillation.md (arxiv:2607.04763)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:chen2026_look_ahead_before (arxiv:2608.01953)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:zhong2026_sod_stepwise_onpolicy (arxiv:2605.07725)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:li2026_onpolicy_distillation_curriculum (arxiv:2606.15912)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:zhou2026_sageopd_selective_agentguided (arxiv:2606.19659)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:tan2026_atod_annealed_turnaware (arxiv:2606.27814)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:zhou2026_turnopd_making_onpolicy (arxiv:2607.05804)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:wang2026_cast_game_solvers (arxiv:2607.25308)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:xia2026_dashopd_discrepancyaware_switching (arxiv:2607.29078)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:liu2026_memopd_onpolicy_distillation (arxiv:2608.07068)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:li2026_katcoderv2_technical_report (arxiv:2603.27703)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:wang2026_madopd_breaking_ceiling (arxiv:2605.01347)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:huang2026_katcoderv25_technical_report (arxiv:2607.05471)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:shen2026_when_topk_misses (arxiv:2607.07050)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:team2026_machmind4flash_technical_report (arxiv:2607.09375)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:men2026_physics_multiturn_longhorizon (arxiv:2607.24720)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:chen2026_crossdomain_hybrid_opd (arxiv:2608.02101)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:kotoge2025_can_compact_language (arxiv:2508.20324)
+- `2026-10-14T14:09:06Z` ingest_paper: ingested paper:sun2026_easyopd_easytouse_onpolicy (arxiv:2607.11012)
+- `2026-10-14T14:13:36Z` research-lit: Awesome-Agentic-OPD 71 rows / 70 unique; retained 24 (19 methods/reports, 1 framework, 4 background), excluded 46; 22 new pages, 2 existing pages preserved; original metadata and selected HTML sections checked; no experiments or idea generation. Summary: awesome-agentic-opd-review.md
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:successor-equivalence-mass-distillation [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:contingent-controller-distillation [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:teacher-evidence-bottleneck [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:counterfactual-response-relation [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:teacher-choice-over-student-options [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:post-update-transfer-selected-demonstrations [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:teacher-waypoint-student-realization [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:proposal-edit-operator-distillation [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:effect-quotient-distillation [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:evidence-belief-ledger-transfer [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:temporal-contract-trajectory-supervision [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:counterfactual-observation-action-contrast [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:student-draft-teacher-edit-policy [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:teacher-optimized-student-learning-gain [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:teacher-selected-environment-counterexample [stage=proposed outcome=pending]
+- `2026-10-14T15:02:56Z` upsert_idea: added idea:teach-back-independent-teacher-target [stage=proposed outcome=pending]
+- `2026-10-15T06:20:49Z` 2026-10-15 gap regeneration from the existing 24-paper corpus: five method gaps G1/G2/G5/G6/G7; G3 retained as historical interface/consolidation umbrella, G4 as evaluation constraint. Added 12 qualified paper-gap edges; preserved existing edges and all paper/idea pages. Rebuilt index/query pack; evidence and migration recorded in gap_map.md. No ideation or experiments.
+- `2026-10-15T06:21:58Z` Gap regeneration verification: all 24 papers covered; 40 existing paper/idea page hashes unchanged; 51 unique edges with valid endpoints; no broken local links in changed wiki entry files; query pack 4036 characters with all five method gaps; strict scans clean. Content conclusions remain literature synthesis, not replication or novelty certification.
+- `2026-10-15T08:46:01Z` Contemporary-method comparison: [report](../synthesis/contemporary-method-comparison.md); checked original HTML experimental settings/tables for 20 method/report/framework papers, explained 4 background exclusions, 35 comparison tables. Preserved paper/idea pages and graph; no new ingestion, query-pack change, replication, code audit, or ideation. Source coverage/table structure/local links and shard transcription checks passed.
+- `2026-10-18T17:03:50Z` upsert_idea: added idea:evidence-separated-decision-target [stage=proposed outcome=pending]
+- `2026-10-18T17:03:50Z` upsert_idea: added idea:teacher-plan-portfolio-exploration [stage=archived outcome=pending]
+- `2026-10-18T17:03:50Z` upsert_idea: added idea:teacher-action-control-variate [stage=proposed outcome=pending]
+- `2026-10-18T17:03:50Z` upsert_idea: added idea:partial-order-option-distillation [stage=archived outcome=pending]
+- `2026-10-18T17:03:50Z` upsert_idea: added idea:bayes-consistent-hindsight-belief-distillation [stage=proposed outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:teacher-knowledge-to-evidence-demand [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:budget-neutral-random-horizon-opd [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:semantic-quotient-action-distillation [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:observation-differential-policy-response [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:grounded-belief-retraction-operator [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:transition-effect-equivalence-distillation [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:teacher-evidence-posterior-potential-credit [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:amortized-external-teacher-correction-model [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:reversible-error-inoculation-on-policy [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` upsert_idea: added idea:blackbox-conditional-action-density-ratio [stage=archived outcome=pending]
+- `2026-10-18T17:03:51Z` 2026-10-19：全文阅读ATOD v6并生成16项/机械合并15组，fresh Astra全部审阅；2条方法主候选+1条靶点储备，12项本轮暂存。报告idea-stage/atod-ideas-2026-10-19.md；15个新idea保留pending，旧16项未改。仅CPU代数核查，无GPU pilot/独立复现；同家族评审provisional，用户尚未选题。
+- `2026-10-18T18:19:55Z` 2026-10-19 stepwise pattern 调研：[机制与成本表](stepwise-transfer-patterns.md)，10类跨Agentic OPD／RL／DPO／tool-use／经典RL操作。原HTML方法与主要metadata核查；迁移判断明确标注，未生成新idea或训练。原paper／idea／graph／index／query pack共58文件聚合hash不变；本次结构与本地链接检查通过。新增报告作为topic入口，未新增实体节点。
+- `2026-10-18T18:27:23Z` 2026-10-19 覆盖扩展：按用户反馈补[报告§7–12](stepwise-transfer-patterns.md#7-扩展按什么目标找训练方法)，12个目标轴，31篇原方法/recipe及2篇邻近来源；三个只读分片17/14/15候选，另补5个目标方法。性能、三类效率、安全/鲁棒、泛化、探索、memory、个性化及解多样性分开；保留待读/排除层。33个方法HTML和章节锚点有效，主要metadata与本次表结构/链接核查通过，原58文件hash不变。未新增paper/idea节点、未训练或完整查新。
+- `2026-10-19` 用户否定按领域/目标铺开的交付，要求可接入Agentic OPD的实际机制。报告新增§0并将旧谱系降为来源池；7项迁移/对照分别列改动、信号、成本和前提，排除将昂贵原方法泛称廉价插件。候选概率/熵温度CPU代数核查通过，原58文件hash不变。迁移均未训练或完成查新，未作为用户认可idea。
+- `2026-10-18T20:03:14Z` 2026-10-19 用户指定三个近邻的迁移清单，新增报告§0.4。补读SafeDAgger/SCoRe原HTML方法，复用GiGPO/HGPO、iStar及preference来源；8行迁移/成本/前提表，新2个来源章节与结构检查通过，58个原实体/派生文件对本轮快照hash不变。均为迁移解释，无训练或查新认证，未新增idea节点。
+- `2026-10-22T09:36:35Z` ingest_paper: ingested paper:lin2026_graphopd_graphaugmented_onpolicy (arxiv:2610.08959)
+- `2026-10-22T09:36:35Z` ingest_paper: ingested paper:liu2026_stochastic_teacher_intervention (arxiv:2610.10878)
+- `2026-10-22T09:36:35Z` ingest_paper: ingested paper:chen2026_branching_onpolicy_distillation (arxiv:2610.13481)
+- `2026-10-22T09:36:35Z` ingest_paper: ingested paper:yuan2026_actionopd_distilling_decisions (arxiv:2610.19820)
+- `2026-10-22T09:36:35Z` ingest_paper: ingested paper:zhao2026_capable_teacher_myopic (arxiv:2610.28586)
+- `2026-10-22T09:38:35Z` wiki-enrich: enriched paper:lin2026_graphopd_graphaugmented_onpolicy from original arXiv HTML https://arxiv.org/html/2610.08959v2; 9 TODO sections filled, thesis retained; scope, metrics and compute caveats recorded; not independently reproduced.
+- `2026-10-22T09:38:35Z` wiki-enrich: enriched paper:liu2026_stochastic_teacher_intervention from original arXiv HTML https://arxiv.org/html/2610.10878v1; 9 TODO sections filled, thesis retained; scope, metrics and compute caveats recorded; not independently reproduced.
+- `2026-10-22T09:38:35Z` wiki-enrich: enriched paper:chen2026_branching_onpolicy_distillation from original arXiv HTML https://arxiv.org/html/2610.13481v1; 9 TODO sections filled, thesis retained; scope, metrics and compute caveats recorded; not independently reproduced.
+- `2026-10-22T09:38:35Z` wiki-enrich: enriched paper:yuan2026_actionopd_distilling_decisions from original arXiv HTML https://arxiv.org/html/2610.19820v1; 9 TODO sections filled, thesis retained; scope, metrics and compute caveats recorded; not independently reproduced.
+- `2026-10-22T09:38:35Z` wiki-enrich: enriched paper:zhao2026_capable_teacher_myopic from original arXiv HTML https://arxiv.org/html/2610.28586v1; 9 TODO sections filled, thesis retained; scope, metrics and compute caveats recorded; not independently reproduced.
+- `2026-10-22T09:39:11Z` 2026-10-22 five-paper backfill: 29 paper pages (24 existing preserved, 4 new external-teacher methods + GraphOPD self-distillation boundary); 8 sourced paper-gap edges added. Existing gap-map remains its dated 24-paper synthesis and was not re-reviewed; no experiments or new ideas.
+- `2026-10-22T09:40:08Z` Backfill validation passed: 29 unique arXiv paper pages; 5 new pages complete; 45 original HTML anchors and local links checked; original 24 paper and 31 idea pages unchanged; 8 new edges (92 total); query pack 4036 chars. Temporary source cache removed. No independent reproduction.

@@ -3,7 +3,7 @@ title: "When Are Teacher Tokens Reliable? Position-Weighted On-Policy Self-Disti
 authors: [Xiaogeng Liu, et al.]
 org: jhu-uw-ntu
 year: 2026
-venue: arxiv
+venue: neurips-2026
 arxiv_id: 2605.21606
 url: https://arxiv.org/abs/2605.21606
 
@@ -56,3 +56,5 @@ $$\mathcal{L}_{\mathrm{PW}}=\sum_t w(t)D(\pi_T(\cdot|y_{<t})\|\pi_\theta(\cdot|y
 未从 paper brief 核到 Table/Fig anchor 的数字不放入 headline number。
 
 <!-- pdf: cached arXiv HTML brief §3 / §4 / §5 / Appendix A-G -->
+
+<!-- venue verified 2026-10-04: https://neurips.cc/Downloads/2026 ; official entry: https://neurips.cc/virtual/2026/poster/148618 -->

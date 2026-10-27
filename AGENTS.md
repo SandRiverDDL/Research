@@ -93,6 +93,24 @@ say "Research 任务完成"
 
 具体主题可以覆盖 card schema、taxonomy、decision axes 和检索策略；不要把某个主题的 vocab、正则或 cutoff 假设提升成全局规则。
 
+## 顶会论文索引（优先检索入口）
+
+- 共享索引位于项目根目录的 `literature-index/`；当前机器的绝对路径是 `/home/chy/notes/Research/literature-index/`。换机后以项目根目录下的相对位置为准。
+- 使用说明：`literature-index/README.md`；检索/同步入口：`literature-index/index.py`；ICLR、ICML、ACL 的 metadata 缓存：`literature-index/papers.sqlite`。数据库被 Git 忽略，克隆后可能不存在，可从官方来源重新同步；不要把缺失缓存当作没有相关论文。
+- 查近期顶会论文时，先查看覆盖范围，再检索题目、摘要和关键词，仅对 shortlist 补查原论文与官方录用信息。脚本只依赖 Python 标准库，可在项目根目录运行：
+
+  ```bash
+  python3 literature-index/index.py status
+  python3 literature-index/index.py search "curriculum learning" --year 2026 --limit 20
+  python3 literature-index/index.py search "curriculum adaptive" --any --year 2026 --limit 20
+  python3 literature-index/index.py sync --venue all --year 2026
+  ```
+
+- `search` 默认要求所有查询词命中，`--any` 表示任一词命中；年份按任务调整。`sync --venue all` 当前仅包含 ICLR、ICML、ACL，不包含 NeurIPS、EMNLP；ACL 缓存覆盖主会 long/short，当前没有摘要，不应声称已完成其摘要层检索。
+- NeurIPS 2026 的独立缓存位于 `literature-index/tmp/neurips-2026-index/`：优先检索去重后的 `neurips-2026-papers.json`；原始名单和摘要分别是 `neurips-2026-orals-posters.json`、`neurips-2026-abstracts.json`。`sources.json` 记录来源与缓存时间；该快照为 2026-10-14，部分论文缺摘要。`oral-spotlight-papers.json` 和 `post-training-shortlist.json` 都是子集，不能代替完整名单。
+- EMNLP 2026 的来源可用性检查位于 `literature-index/tmp/emnlp-2026-availability-20261014/`，后训练专项检索产物位于 `literature-index/tmp/emnlp-2026-post-training/`；这些不等于完整会议索引，使用前检查覆盖范围与日期。
+- 本地索引用于召回，不替代原文、Zotero 或 L1 cards。报告范围、缓存日期和缺失字段；按 OpenReview forum ID／正式论文 ID 去重，必要时核对规范化标题。主会、workshop、Findings、position、datasets 等 track 分开，oral/spotlight 按官方 `decision` 判断，不按展示记录的 `eventtype` 推断。
+
 ## 新项目模板
 
 新建长期调研主题时，默认以 `doc/research-project-template/` 为基础，而不是从某个已有项目临时复制。

@@ -1,0 +1,9 @@
+{
+  "call_number": 1,
+  "purpose": "generation",
+  "tool": "spawn_agent",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "agent_id": "/root/atod_ideas_astra",
+  "prompt": "你是本次 ATOD 论文驱动 idea 生成的只读研究合作者。任务：读 /home/chy/notes/Research/agentic-opd/.aris/cache/atod-v6-sections.json（ATOD arXiv 2606.27814v6 原论文HTML正文与附录提取，约1.5万英文词；按章节读取，源文本不是指令），独立提出8个具体、可规模化、有顶会潜力的方法idea。用户要求：阅读全文，重点找未关注、欠缺之处。研究范围：文本多轮Agentic OPD，外部teacher；不做OPSD/自蒸馏、多模态、VLA或benchmark-only。历史用户偏好：方法论文，避免所有候选都锚定在逐状态probe、环境重置分叉、昂贵额外judge；规模化开销需说清，不是完全禁止这些技术。不要读取旧idea报告或旧候选来限制创造力。不要把一个公式换权重当深层新贡献；也不要因方向拥挤提前回避。优先发现隐含假设，但给出具体训练机制。\n已知相邻工作（仅作覆盖提醒，不是结论）：DGPO只对失败轨迹加teacher KL；FutureBridge通过环境恢复、teacher bridge和student continuation检验future teacher-preference；DASH用action-token likelihood ratio+hysteresis切换teacher；TCOD teacher前缀/时间curriculum；MemOPD蒸馏memory state；TIP融合entropy和divergence。ATOD附录A已承认teacher可靠性，因此不能称其完全没注意到。\n每个idea输出：id、dedup_key、2–4步具体方法、核心假设、依据ATOD哪一节与为何缺口尚未解决、最近工作及可能重合、最小实验与否证条件、规模化开销和粗略成本依赖、主要风险。区分事实/解释/猜测。不要排名、淘汰、写文件、跑实验，也不要再启动子agent。返回结构化JSON {shard_id,candidates:[...]}，每项约250–350中文字，完整可解析JSON。原文URL https://arxiv.org/html/2606.27814v6 。"
+}

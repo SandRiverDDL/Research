@@ -3,7 +3,7 @@ title: "Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Dis
 authors: [Yuchen Cai, et al.]
 org: ustc-tencent-nus
 year: 2026
-venue: arxiv
+venue: neurips-2026
 arxiv_id: 2605.11739
 url: https://arxiv.org/abs/2605.11739
 
@@ -61,3 +61,5 @@ $$\theta'=\theta_t+\alpha(\theta_t-\theta_{t_0})$$
 
 <!-- pdf: arXiv HTML v3 Abstract / §2 Functional Redundancy Avoidance / §3 Early Low-Rank Lock-in / §4.1-4.2 / Appendix C -->
 <!-- song-2026: §6 Training Efficiency / Table 9 -->
+
+<!-- venue verified 2026-10-04: https://neurips.cc/Downloads/2026 ; official entry: https://neurips.cc/virtual/2026/poster/154435 -->

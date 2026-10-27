@@ -67,6 +67,8 @@ Olmo 3 不是最强 frontier 模型，但它是当前最值得精读的 fully-op
 
 ## 阅读入口
 
+- `notes/architecture.md`: OLMo 2 架构继承、SWA/full attention 与成熟组件选择（2026-10-07 按官方 HTML 回读）。
+
 - `section-index.md`: 118 页 TR 的回读地图。
 - `notes/model-flow.md`: fully-open model flow 和读法。
 - `notes/pretraining-data.md`: pretraining/midtraining/long-context 数据机制。

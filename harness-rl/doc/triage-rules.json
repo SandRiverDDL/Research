@@ -1,0 +1,56 @@
+{
+  "description": "Harness RL project-local triage rules.",
+  "hard_gates": [
+    "Queue row is not a card.",
+    "Survey mention is recall evidence, not paper evidence.",
+    "No original paper PDF/HTML brief, no formal L1 card.",
+    "Formal L1 cards in notes/ root must pass scripts/autoresearch.py validate before being reported as complete."
+  ],
+  "required_frontmatter": [
+    "title",
+    "year",
+    "venue",
+    "paper_type",
+    "lifecycle_role"
+  ],
+  "required_nested_frontmatter": {},
+  "allowed": {
+    "paper_type": [
+      "core-method",
+      "survey",
+      "benchmark-eval",
+      "background",
+      "adjacent"
+    ],
+    "lifecycle_role": [
+      "survey-seed",
+      "canonical-anchor",
+      "strong-baseline",
+      "frontier-candidate",
+      "background",
+      "low-confidence-novelty-risk"
+    ],
+    "boundary_risk": [
+      "none",
+      "adjacent",
+      "eval",
+      "recipe",
+      "infra"
+    ]
+  },
+  "select_rules": [
+    "在目标 harness 下用 RL 训练模型使用工具、理解返回信息、管理状态并完成任务；不要求修改 harness 或提出新的 RL objective。",
+    "多个 harness 的联合 / 混合 RL、配比或调度，以及专用适配与通用能力之间的迁移 / 干扰。"
+  ],
+  "maybe_rules": [
+    "与当前 lens 直接相关但尚无原文机制证据的论文，先 queue / review。"
+  ],
+  "move_elsewhere_rules": [
+    "仅在 harness 下评测、未训练或无可追踪训练说明的工作；可作背景，不据此当成 harness RL 证据。"
+  ],
+  "overrides": {
+    "select": {},
+    "maybe": {},
+    "skip": {}
+  }
+}

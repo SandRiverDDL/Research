@@ -1,0 +1,135 @@
+[
+  {
+    "id": "C01",
+    "slug": "g15-function-preserving-reparameterization",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 3.5,
+    "verdict": "PROCEED WITH CAUTION",
+    "risk": "Parameter Symmetries与COST已覆盖核心近邻；剩余双teacher目标较薄，需排除普通预条件。",
+    "helper_output": "Edge added: idea:g15-function-preserving-reparameterization --inspired_by--> paper:li2026_beyond_teacher_assignment\nEdge added: idea:g15-function-preserving-reparameterization --inspired_by--> paper:zhu2026_from_gradients_capabilities\nEdge added: idea:g15-function-preserving-reparameterization --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-function-preserving-reparameterization.md [stage=archived outcome=pending]"
+  },
+  {
+    "id": "C02",
+    "slug": "g15-reciprocal-meta-distillation",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 4,
+    "verdict": "PROCEED WITH CAUTION",
+    "risk": "投影学习增益可能精确等价于投影终点loss；需排除起点恶化与一般meta-learning。",
+    "helper_output": "Edge added: idea:g15-reciprocal-meta-distillation --inspired_by--> paper:sun2026_d³mopd_dynamic_domain\nEdge added: idea:g15-reciprocal-meta-distillation --inspired_by--> paper:zhu2026_upmopd_update_projection\nEdge added: idea:g15-reciprocal-meta-distillation --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-reciprocal-meta-distillation.md [stage=archived outcome=pending]"
+  },
+  {
+    "id": "C03",
+    "slug": "g15-learning-response-transport",
+    "stage": "proposed",
+    "outcome": "pending",
+    "novelty_score": 7,
+    "verdict": "PROCEED",
+    "risk": "旧成功功能响应可能过时；必须在重建成功后仍改善真实B学习，并胜过当前方向重算和一般预条件。",
+    "helper_output": "Edge added: idea:g15-learning-response-transport --inspired_by--> paper:liu2026_pmopd_task_ordering\nEdge added: idea:g15-learning-response-transport --inspired_by--> paper:zhu2026_from_gradients_capabilities\nEdge added: idea:g15-learning-response-transport --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-learning-response-transport.md [stage=proposed outcome=pending]"
+  },
+  {
+    "id": "C04",
+    "slug": "g15-teaching-opportunity-mass",
+    "stage": "proposed",
+    "outcome": "pending",
+    "novelty_score": {
+      "S4": 6,
+      "A4": 4
+    },
+    "verdict": "variant-specific",
+    "risk": "仅S4条件推荐：有效区域定义、采样测度与likelihood-ratio估计尚未闭合，须先对应fresh root频率及后续收益。A4为CAUTION，常见hinge近似触发式CE replay，不继承S4结论。",
+    "helper_output": "Edge added: idea:g15-teaching-opportunity-mass --inspired_by--> paper:gao2026_openmopd_diagnosing_fixing\nEdge added: idea:g15-teaching-opportunity-mass --inspired_by--> paper:zhu2026_upmopd_update_projection\nEdge added: idea:g15-teaching-opportunity-mass --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-teaching-opportunity-mass.md [stage=proposed outcome=pending]"
+  },
+  {
+    "id": "C05",
+    "slug": "g15-sampling-distribution-gradient",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 4.5,
+    "verdict": "PROCEED WITH CAUTION",
+    "risk": "E-MAML、MPL及元探索直接覆盖基础机制；需证明B引起的特异采样外部性，score项不是完整无偏meta-gradient。",
+    "helper_output": "Edge added: idea:g15-sampling-distribution-gradient --inspired_by--> paper:gao2026_openmopd_diagnosing_fixing\nEdge added: idea:g15-sampling-distribution-gradient --inspired_by--> paper:sun2026_d³mopd_dynamic_domain\nEdge added: idea:g15-sampling-distribution-gradient --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-sampling-distribution-gradient.md [stage=archived outcome=pending]"
+  },
+  {
+    "id": "C06",
+    "slug": "g15-lost-prefix-continuation",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 5,
+    "verdict": "PROCEED WITH CAUTION",
+    "risk": "STRIDE已有多teacher前缀fresh续写；Backplay已有渐退。conditional roll-in须在root部署分布产生收益。",
+    "helper_output": "Edge added: idea:g15-lost-prefix-continuation --inspired_by--> paper:gao2026_openmopd_diagnosing_fixing\nEdge added: idea:g15-lost-prefix-continuation --inspired_by--> paper:tian2026_beyond_domainrouted_supervision\nEdge added: idea:g15-lost-prefix-continuation --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-lost-prefix-continuation.md [stage=archived outcome=pending]"
+  },
+  {
+    "id": "C07",
+    "slug": "g15-repair-aware-endpoint",
+    "stage": "proposed",
+    "outcome": "pending",
+    "novelty_score": 6.5,
+    "verdict": "PROCEED",
+    "risk": "须胜过同修复次数、核验预算及完整成本的普通B→A修复；短展开和真实fresh rollout的动力学可能不符。",
+    "helper_output": "Edge added: idea:g15-repair-aware-endpoint --inspired_by--> paper:zhu2026_upmopd_update_projection\nEdge added: idea:g15-repair-aware-endpoint --inspired_by--> paper:liu2026_pmopd_task_ordering\nEdge added: idea:g15-repair-aware-endpoint --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-repair-aware-endpoint.md [stage=proposed outcome=pending]"
+  },
+  {
+    "id": "C08",
+    "slug": "g15-teacher-commutator-steering",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 5.5,
+    "verdict": "PROCEED WITH CAUTION",
+    "risk": "Commute Your Domains已有交换子与顺序效应；显式方向必须胜过等成本AB/BA选择，且考虑optimizer状态及噪声。",
+    "helper_output": "Edge added: idea:g15-teacher-commutator-steering --inspired_by--> paper:liu2026_pmopd_task_ordering\nEdge added: idea:g15-teacher-commutator-steering --inspired_by--> paper:zhu2026_upmopd_update_projection\nEdge added: idea:g15-teacher-commutator-steering --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-teacher-commutator-steering.md [stage=archived outcome=pending]"
+  },
+  {
+    "id": "C09",
+    "slug": "g15-channel-split-rejoin",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 5,
+    "verdict": "PROCEED WITH CAUTION",
+    "risk": "Net2Net和ExpandNets已有增宽/收缩；非线性通道不能一般精确压回，收益可能依赖临时容量。",
+    "helper_output": "Edge added: idea:g15-channel-split-rejoin --inspired_by--> paper:zhu2026_upmopd_update_projection\nEdge added: idea:g15-channel-split-rejoin --inspired_by--> paper:liu2026_pmopd_task_ordering\nEdge added: idea:g15-channel-split-rejoin --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-channel-split-rejoin.md [stage=archived outcome=pending]"
+  },
+  {
+    "id": "C10",
+    "slug": "g15-cross-learning-metric",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 3.5,
+    "verdict": "PROCEED WITH CAUTION",
+    "risk": "GAP、La-MAML已有元预条件；配对交叉收益目标需证明超过一般学习加速。",
+    "helper_output": "Edge added: idea:g15-cross-learning-metric --inspired_by--> paper:li2026_beyond_teacher_assignment\nEdge added: idea:g15-cross-learning-metric --inspired_by--> paper:zhu2026_from_gradients_capabilities\nEdge added: idea:g15-cross-learning-metric --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-cross-learning-metric.md [stage=archived outcome=pending]"
+  },
+  {
+    "id": "C11",
+    "slug": "g15-target-tangent-plasticity",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 6,
+    "verdict": "PROCEED",
+    "risk": "目标相关传输退化已有近邻证据；raw核谱不是Adam有效学习核，保谱不等于真实能力收益。",
+    "helper_output": "Edge added: idea:g15-target-tangent-plasticity --inspired_by--> paper:liu2026_pmopd_task_ordering\nEdge added: idea:g15-target-tangent-plasticity --inspired_by--> paper:zhu2026_from_gradients_capabilities\nEdge added: idea:g15-target-tangent-plasticity --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-target-tangent-plasticity.md [stage=archived outcome=pending]"
+  },
+  {
+    "id": "C12",
+    "slug": "g15-cross-teacher-target-compilation",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 4,
+    "verdict": "PROCEED WITH CAUTION",
+    "risk": "MetaDistil已有student反馈改teacher；需区别于换quiz域并排除牺牲A、增大B起点误差。",
+    "helper_output": "Edge added: idea:g15-cross-teacher-target-compilation --inspired_by--> paper:tian2026_beyond_domainrouted_supervision\nEdge added: idea:g15-cross-teacher-target-compilation --inspired_by--> paper:li2026_beyond_teacher_assignment\nEdge added: idea:g15-cross-teacher-target-compilation --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-cross-teacher-target-compilation.md [stage=archived outcome=pending]"
+  },
+  {
+    "id": "C13",
+    "slug": "g15-temporary-capability-buffer",
+    "stage": "archived",
+    "outcome": "pending",
+    "novelty_score": 4.5,
+    "verdict": "PROCEED WITH CAUTION",
+    "risk": "Progress & Compress/FOSTER已有扩容压缩；必须撤残差后保收益且超过普通expand/compress。",
+    "helper_output": "Edge added: idea:g15-temporary-capability-buffer --inspired_by--> paper:zhu2026_upmopd_update_projection\nEdge added: idea:g15-temporary-capability-buffer --inspired_by--> paper:liu2026_pmopd_task_ordering\nEdge added: idea:g15-temporary-capability-buffer --addresses_gap--> gap:G15\nquery_pack.md rebuilt: 4037 chars\nIdea added: research-wiki/ideas/g15-temporary-capability-buffer.md [stage=archived outcome=pending]"
+  }
+]

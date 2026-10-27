@@ -1,0 +1,13 @@
+{
+  "call_number": 4,
+  "purpose": "g15-gen-l5-astra",
+  "timestamp": "2026-10-15T13:30:39.821584+00:00",
+  "agent_id": "/root/g15_gen_l5_astra",
+  "model": "gpt-6-astra",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "stage": "candidate-generation-not-verdict",
+  "status": "ok",
+  "candidates": 3
+}

@@ -3,7 +3,7 @@ title: "The Many Faces of On-Policy Distillation: Pitfalls, Mechanisms, and Fixe
 authors: [Siqi Zhu, et al.]
 org: uiuc-ruc-pku
 year: 2026
-venue: arxiv
+venue: neurips-2026
 arxiv_id: 2605.11182
 url: https://arxiv.org/abs/2605.11182
 
@@ -57,3 +57,5 @@ $$\text{OPSD works better when PI is shared-rule-like, not instance-specific.}$$
 无稳定 Table/Fig anchor 的摘要数字不放入 headline number。
 
 <!-- pdf: arXiv Abstract / §1 / PDF snippet -->
+
+<!-- venue verified 2026-10-04: https://neurips.cc/Downloads/2026 ; official entry: https://neurips.cc/virtual/2026/poster/153073 -->

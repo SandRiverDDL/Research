@@ -1,0 +1,30 @@
+{
+  "recommended": [
+    "A1",
+    "A2"
+  ],
+  "high_upside_reserve": [
+    "A6"
+  ],
+  "reserve_count": 14,
+  "archived_count": 0,
+  "outcome": "pending",
+  "pages": [
+    "research-wiki/ideas/successor-equivalence-mass-distillation.md",
+    "research-wiki/ideas/contingent-controller-distillation.md",
+    "research-wiki/ideas/teacher-evidence-bottleneck.md",
+    "research-wiki/ideas/counterfactual-response-relation.md",
+    "research-wiki/ideas/teacher-choice-over-student-options.md",
+    "research-wiki/ideas/post-update-transfer-selected-demonstrations.md",
+    "research-wiki/ideas/teacher-waypoint-student-realization.md",
+    "research-wiki/ideas/proposal-edit-operator-distillation.md",
+    "research-wiki/ideas/effect-quotient-distillation.md",
+    "research-wiki/ideas/evidence-belief-ledger-transfer.md",
+    "research-wiki/ideas/temporal-contract-trajectory-supervision.md",
+    "research-wiki/ideas/counterfactual-observation-action-contrast.md",
+    "research-wiki/ideas/student-draft-teacher-edit-policy.md",
+    "research-wiki/ideas/teacher-optimized-student-learning-gain.md",
+    "research-wiki/ideas/teacher-selected-environment-counterexample.md",
+    "research-wiki/ideas/teach-back-independent-teacher-target.md"
+  ]
+}

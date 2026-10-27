@@ -1,0 +1,9 @@
+{
+  "call_number": 2,
+  "purpose": "g17-l2-astra-generation",
+  "tool": "spawn_agent",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "agent_id": "/root/g17_l2_astra",
+  "prompt": "你是 ARIS idea-creator 的只读发散生成 shard，model=Astra，lens=G17-L2。用户已明确确认 L1/L2/L3，当前只让你负责 L2“联合能力所需学习状态的可达性”。工作目录 /home/chy/notes/Research/mopd。你不是唯一协作者，不写共享文件、不撤销他人修改、不运行实验、不做广泛检索、不读 query_pack 或其他 gap/ideas。\n直接读 /home/chy/notes/Research/mopd/synthesis/g17-idea-lenses.md 的输入边界和 L2；/home/chy/notes/Research/mopd/synthesis/mopd-gap-analysis.md 的第1节和G17；research-wiki/papers/sun2026_distill_what_you.md、yin2026_hopd_confidence_aware.md、lu2026_beyond_best_teacher.md（均相对此工作目录）。不能预设现有方法普遍失败；Trust/H-OPD已有动态token监督。\n只为 L2 生成4个互不相同的具体方法 idea：teacher B 的价值需要A先执行正确，student在普通自采样中很少到达相应状态，如何使互补知识变成单一student可用的联合能力。方法是目标，诊断用于验证；不是新lens或仅benchmark。每个idea只有一个清晰核心机制，先用2–4具体步骤说明做什么。允许高风险、创造性，不能只堆router/gate。若方法偏离严格on-policy要准确标注采样分布，不能把teacher prefix回放叫纯on-policy。不要自做novelty裁决或淘汰，已知邻近只标记。\n每个idea必须包含：id=L2-A1..A4；title；method_steps；minimal_formalism（一句目标/更新规则或伪代码，精确）；hypothesis；closest_known_work；claimed_delta；minimum_test（便宜可推翻，不运行）；killer_result；compute_assumptions（明确模型/样本规模和额外teacher forward/token量，不捏造GPU小时；默认中等算力<=8x3090仅工作假设）；risk LOW/MEDIUM/HIGH；effort；so_what；dedup_key（核心干预+信号）。必须区分状态可达性、单项能力不足、错误监督、普通增加训练/数据和容量。把teacher制备/验证成本计入；不默认逐状态probe、环境重置或分叉rollout，若采用须解释成本与规模化。必要对照应包含普通OPD、强动态聚合、普通curriculum/replay/off-policy或mixing以及等总采样预算。数据availability不确定要标注。\n返回严格JSON {shard_id:'g17-l2-astra',model:'gpt-6-astra',candidates:[4 items]}；总输出控制在6500中文字符以内。不要排名、删候选或写文件。所有创新与机制均待验证。"
+}

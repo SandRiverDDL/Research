@@ -1,0 +1,110 @@
+# Research Wiki Log
+
+_Append-only timeline._
+- `2026-10-15T03:30:28Z` Wiki initialized
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:ma2026_mopd_multiteacher_onpolicy (arxiv:2606.30406)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:ma2026_mopd_multiteacher_onpolicy from versioned arxiv-html 2606.30406v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:gao2026_openmopd_diagnosing_fixing (arxiv:2608.19098)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:gao2026_openmopd_diagnosing_fixing from versioned arxiv-html 2608.19098v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:li2026_beyond_teacher_assignment (arxiv:2609.35347)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:li2026_beyond_teacher_assignment from versioned arxiv-html 2609.35347v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:sun2026_distill_what_you (arxiv:2609.23697)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:sun2026_distill_what_you from versioned arxiv-html 2609.23697v3; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:liu2026_pmopd_task_ordering (arxiv:2609.34605)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:liu2026_pmopd_task_ordering from versioned arxiv-html 2609.34605v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:tian2026_beyond_domainrouted_supervision (arxiv:2610.13521)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:tian2026_beyond_domainrouted_supervision from versioned arxiv-html 2610.13521v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:zhu2026_upmopd_update_projection (arxiv:2610.08398)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:zhu2026_upmopd_update_projection from versioned arxiv-html 2610.08398v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:kim2026_pain_more_gain (arxiv:2609.34745)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:kim2026_pain_more_gain from versioned arxiv-html 2609.34745v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:fang2026_latentmopd_latent_multiteacher (arxiv:2610.02381)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:fang2026_latentmopd_latent_multiteacher from versioned arxiv-html 2610.02381v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:sang2026_composing_what_each (arxiv:2610.10460)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:sang2026_composing_what_each from versioned arxiv-html 2610.10460v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:chen2026_counteractionaware_multiteacher_onpolicy (arxiv:2605.27115)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:chen2026_counteractionaware_multiteacher_onpolicy from versioned arxiv-html 2605.27115v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:yin2026_slowfast_multiteacher_onpolicy (arxiv:2610.02324)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:yin2026_slowfast_multiteacher_onpolicy from versioned arxiv-html 2610.02324v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:xie2026_rethinking_selfdistillation_multiteacher (arxiv:2610.04272)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:xie2026_rethinking_selfdistillation_multiteacher from versioned arxiv-html 2610.04272v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:nguyen2026_avsd_adaptiveview_selfdistillation (arxiv:2605.20643)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:nguyen2026_avsd_adaptiveview_selfdistillation from versioned arxiv-html 2605.20643v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:he2026_learn_from_whoever (arxiv:2609.02548)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:he2026_learn_from_whoever from versioned arxiv-html 2609.02548v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:zhu2026_from_gradients_capabilities (arxiv:2610.02179)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:zhu2026_from_gradients_capabilities from versioned arxiv-html 2610.02179v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:shen2026_when_topk_misses (arxiv:2607.07050)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:shen2026_when_topk_misses from versioned arxiv-html 2607.07050v6; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:li2026_datafree_onpolicy_distillation (arxiv:2609.14193)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:li2026_datafree_onpolicy_distillation from versioned arxiv-html 2609.14193v4; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:xu2026_mopdrouter_rethinking_teacher (arxiv:2609.30837)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:xu2026_mopdrouter_rethinking_teacher from versioned arxiv-html 2609.30837v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:wang2026_aclarena_agent_continual (arxiv:2609.23989)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:wang2026_aclarena_agent_continual from versioned arxiv-html 2609.23989v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:xu2026_qwenimage20rl_technical_report (arxiv:2606.27608)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:xu2026_qwenimage20rl_technical_report from versioned arxiv-html 2606.27608v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:sun2026_d³mopd_dynamic_domain (arxiv:2608.24987)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:sun2026_d³mopd_dynamic_domain from versioned arxiv-html 2608.24987v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:liu2026_recovering_general_capabilities (arxiv:2608.26735)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:liu2026_recovering_general_capabilities from versioned arxiv-html 2608.26735v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:wang2026_smopd_multireward_reinforcement (arxiv:2608.03092)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:wang2026_smopd_multireward_reinforcement from versioned arxiv-html 2608.03092v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:hou2026_uniopd_unifying_onpolicy (arxiv:2605.03677)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:hou2026_uniopd_unifying_onpolicy from versioned arxiv-html 2605.03677v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:zhang2026_verify_before_you (arxiv:2609.02998)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:zhang2026_verify_before_you from versioned arxiv-html 2609.02998v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:lu2026_beyond_best_teacher (arxiv:2607.27770)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:lu2026_beyond_best_teacher from versioned arxiv-html 2607.27770v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:di2026_understanding_off_onpolicy (arxiv:2609.38666)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:di2026_understanding_off_onpolicy from versioned arxiv-html 2609.38666v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:wu2026_consolidating_rlvr_capabilities (arxiv:2608.27409)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:wu2026_consolidating_rlvr_capabilities from versioned arxiv-html 2608.27409v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:fu2026_rethinking_onpolicy_distillation (arxiv:2609.04172)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:fu2026_rethinking_onpolicy_distillation from versioned arxiv-html 2609.04172v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:li2026_every_coin_has (arxiv:2608.16647)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:li2026_every_coin_has from versioned arxiv-html 2608.16647v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:yin2026_hopd_confidence_aware (arxiv:2607.02592)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:yin2026_hopd_confidence_aware from versioned arxiv-html 2607.02592v3; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:ma2026_one_student_many (arxiv:2607.18293)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:ma2026_one_student_many from versioned arxiv-html 2607.18293v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:xu2026_who_teaches_which (arxiv:2609.15404)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:xu2026_who_teaches_which from versioned arxiv-html 2609.15404v2; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:qin2026_videomopd_multiteacher_onpolicy (arxiv:2609.09300)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:qin2026_videomopd_multiteacher_onpolicy from versioned arxiv-html 2609.09300v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:47:15Z` ingest_paper: ingested paper:wang2026_madopd_breaking_ceiling (arxiv:2605.01347)
+- `2026-10-15T03:47:15Z` wiki-enrich: enriched paper:wang2026_madopd_breaking_ceiling from versioned arxiv-html 2605.01347v1; metadata verified via arxiv abs; 10 sections filled
+- `2026-10-15T03:48:48Z` research-lit: 36 enriched papers, 5 open evidence gaps, explicit source-backed method relationships; no ideas/claims/experiments created
+- `2026-10-15T03:56:19Z` research-lit complete: topic navigation and synthesis saved; 36 papers (15 seeds + 21 discovered), 50 edges, 5 open evidence gaps; independent shard transcription review fixes applied. Structure/local links/source anchors checked. Windows Zotero local API scanned: 40 non-attachment user-library items, 0 matches; no import.
+- `2026-10-15T04:23:08Z` Gap重审：撤回旧G1–G5为方法gap；G6/G7保留为有直接残差且替代方案未排除的候选，另两条条件候选不升格。新增synthesis/mopd-gap-analysis.md，补3篇正文证据、5条关系；未新增idea/claim/experiment。
+- `2026-10-15T05:34:32Z` 2026-10-15 本地重做gap综合：逐篇复用36篇页和正常综述，独立形成G8–G14后才处理旧ID；无联网、检索、新原文核查、查新、idea或实验。G1–G7及其旧关系仅为历史，不再作为当前判断；新报告、gap_map、综述/主题入口已同步。以下新关系表示部分覆盖，不表示全部解决。
+- `2026-10-15T05:38:44Z` 2026-10-15 本轮本地验证PASS：报告及当前gap关系覆盖36/36论文，198处本地链接/16处锚点无失效；95条关系无悬空/重复，当前40条/历史41条/非gap14条。query_pack覆盖全部G8–G14。详情LINT_REPORT.md；不含远端来源核查。
+- `2026-10-15T08:49:33Z` 按用户确认执行多teacher相关性筛选：原1/6剔除，2/3收窄合并，4收窄，5/7保留并限定边界。当前四个问题主题G15–G18仅通过相关性筛选，未确认高价值gap、方法必要性或novelty。G1–G14及95条旧关系保留历史语义，新增12条当前部分覆盖关系；主报告、gap_map、主题/综述入口、README、STATE及helper摘要同步。无检索、原文核查、查新或idea生成。
+- `2026-10-15T08:52:59Z` 范围修订完成并通过本地验证：四个当前主题G15–G18与摘要一致；161处本地链接、12处锚点无失效，36篇论文页哈希不变；107条关系无重复/悬空，旧95条完整保留。仅范围筛选，未认定高价值gap，未重新核查原文或查新。
+- `2026-10-15T13:48:25Z` upsert_idea: added idea:g17-certified-local-actions [stage=proposed outcome=pending]
+- `2026-10-15T13:48:25Z` upsert_idea: added idea:g17-counterexample-union [stage=archived outcome=pending]
+- `2026-10-15T13:48:25Z` upsert_idea: added idea:g17-projected-answer-distillation [stage=proposed outcome=pending]
+- `2026-10-15T13:48:26Z` upsert_idea: added idea:g17-joint-teaching-gain [stage=proposed outcome=pending]
+- `2026-10-15T13:48:26Z` upsert_idea: added idea:g17-reverse-prefix-curriculum [stage=archived outcome=pending]
+- `2026-10-15T13:48:26Z` upsert_idea: added idea:g17-checkpoint-branching [stage=archived outcome=pending]
+- `2026-10-15T13:48:26Z` upsert_idea: added idea:g17-intermediate-task-relabeling [stage=proposed outcome=pending]
+- `2026-10-15T13:48:26Z` upsert_idea: added idea:g17-downstream-expert-returns [stage=proposed outcome=pending]
+- `2026-10-15T13:48:26Z` upsert_idea: added idea:g17-future-credit-distillation [stage=archived outcome=pending]
+- `2026-10-15T13:48:26Z` upsert_idea: added idea:g17-cross-step-odds-distillation [stage=proposed outcome=pending]
+- `2026-10-15T13:48:26Z` upsert_idea: added idea:g17-latent-teacher-paths [stage=proposed outcome=pending]
+- `2026-10-15T13:48:26Z` upsert_idea: added idea:g17-active-obligation-distillation [stage=proposed outcome=pending]
+- `2026-10-15T14:00:13Z` upsert_idea: added idea:g15-function-preserving-reparameterization [stage=archived outcome=pending]
+- `2026-10-15T14:00:13Z` upsert_idea: added idea:g15-reciprocal-meta-distillation [stage=archived outcome=pending]
+- `2026-10-15T14:00:13Z` upsert_idea: added idea:g15-learning-response-transport [stage=proposed outcome=pending]
+- `2026-10-15T14:00:13Z` upsert_idea: added idea:g15-teaching-opportunity-mass [stage=proposed outcome=pending]
+- `2026-10-15T14:00:13Z` upsert_idea: added idea:g15-sampling-distribution-gradient [stage=archived outcome=pending]
+- `2026-10-15T14:00:13Z` upsert_idea: added idea:g15-lost-prefix-continuation [stage=archived outcome=pending]
+- `2026-10-15T14:00:13Z` upsert_idea: added idea:g15-repair-aware-endpoint [stage=proposed outcome=pending]
+- `2026-10-15T14:00:13Z` upsert_idea: added idea:g15-teacher-commutator-steering [stage=archived outcome=pending]
+- `2026-10-15T14:00:14Z` upsert_idea: added idea:g15-channel-split-rejoin [stage=archived outcome=pending]
+- `2026-10-15T14:00:14Z` upsert_idea: added idea:g15-cross-learning-metric [stage=archived outcome=pending]
+- `2026-10-15T14:00:14Z` upsert_idea: added idea:g15-target-tangent-plasticity [stage=archived outcome=pending]
+- `2026-10-15T14:00:14Z` upsert_idea: added idea:g15-cross-teacher-target-compilation [stage=archived outcome=pending]
+- `2026-10-15T14:00:14Z` upsert_idea: added idea:g15-temporary-capability-buffer [stage=archived outcome=pending]
+
+- 2026-10-17 G17：根据创新性、训练吞吐和框架侵入性反馈，撤回L3-A2/L1-A1/L1-A4推荐；三条archived、outcome=pending。未启动生成或实验。

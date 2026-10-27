@@ -1,0 +1,109 @@
+[
+  {
+    "id": "fRtcETLCZ2",
+    "url": "https://api2.openreview.net/notes?id=fRtcETLCZ2",
+    "error": "HTTP Error 403: Forbidden",
+    "index_evidence": {
+      "title": "AVSD: Adaptive-View Self-Distillation by Balancing Consensus and Teacher-Specific Privileged Signals",
+      "authors": [
+        "Duy Nguyen",
+        "Hanqi Xiao",
+        "Archiki Prasad",
+        "Zaid Khan",
+        "Anirban Das",
+        "Shi-Xiong Zhang",
+        "Sambit Sahu",
+        "Hyunji Lee",
+        "Elias Stengel-Eskin",
+        "Mohit Bansal"
+      ],
+      "track": "Conference",
+      "decision": "Accept (poster)",
+      "paper_url": "https://openreview.net/forum?id=fRtcETLCZ2",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+      "official_url": "https://neurips.cc/virtual/2026/poster/150780"
+    },
+    "abstract_evidence": "Self-distillation enables language models to learn in an on-policy fashion from their own trajectories by using the same model as both the teacher and student, with the teacher being conditioned on privileged information that is unavailable to the student. This information can take multiple forms or views, including solutions, demonstrations, or feedback; for example, for a math problem, one view might be a ground truth reasoning trace. Supervising the student via the privileged teacher enables fine-grained token-level feedback and removes misalignment caused by distillation from external policies with different semantic biases. However, self-distillation also creates a fundamental asymmetry: the teacher may encode view-specific information tied to the privileged information provided during training, which the student cannot access at inference time. Moreover, the best form of privileged information is often task-dependent, making it difficult to choose a single teacher view. In this work, we address both these challenges jointly by introducing AVSD (Adaptive-View Self-Distillation), a novel method of self-distillation with multiple privileged-information views, which reconstructs token-level supervision by separating stable cross-view consensus from view-specific residual support. The consensus signal provides a robust update direction, while the residual signal is selectively used to adjust the update magnitude. Together, these components form a gated aggregation mechanism that balances a conservative target (geometric mean) with a more permissive target (arithmetic mean) for aggregating teacher signals at the token level. Experiments on math competition benchmarks (AIME24, AIME25, and HMMT25) show that AVSD consistently outperforms single-view self-distillation baselines and GRPO, achieving 3.1\\% Avg@8 gain over the strongest baseline on Qwen3-8B on average. Moreover, on code-generation benchmarks (Codeforces, LiveCodeBench) using Qwen3-8B, AVSD outperforms single-view self-distillation baselines by 2.9\\% on average. More broadly, our analysis shows that AVSD provides better token-level learning signals than any single-view method by reconstructing supervision from multiple privileged teachers.",
+    "interpretation": "AVSD完整标题匹配，9位本地作者与官方记录一致，Conference/Accept (poster)。"
+  },
+  {
+    "id": "8Ljh5OkXTi",
+    "url": "https://api2.openreview.net/notes?id=8Ljh5OkXTi",
+    "error": "HTTP Error 403: Forbidden",
+    "index_evidence": {
+      "title": "Mixture-Trained Merging for Unified Multi-Objective Models",
+      "authors": [
+        "SeongHyeon Kim",
+        "Chaeyun Jang",
+        "Seungyoo Lee",
+        "Jiyeon Ham",
+        "Yunju Bak",
+        "Boseop Kim",
+        "Juho Lee"
+      ],
+      "track": "Conference",
+      "decision": "Accept (poster)",
+      "paper_url": "https://openreview.net/forum?id=8Ljh5OkXTi",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+      "official_url": "https://neurips.cc/virtual/2026/poster/155106"
+    },
+    "abstract_evidence": "Unified language models are increasingly expected to combine heterogeneous capabilities, such as mathematics, code, instruction following, and controllable thinking behavior, within a single set of parameters. A common solution is sequential post-training on multiple objectives, but this entangles all objectives along one optimization trajectory and makes the final model highly sensitive to training order, data ratios, schedules, and stopping criteria. Weight-space merging offers a modular alternative, but naive merging of single-objective experts often fails: domain capabilities degrade sharply, or think/non-think modes collapse into one dominant behavior. We attribute both failures to incompatible weight-space geometry: experts trained on isolated objectives drift to distant regions of parameter space, placing their interpolations outside any shared low-loss basin. We propose Mixture-Trained Merging (MTM), which trains each branch on an objective-biased data mixture rather than a single objective, exposing it to cross-objective interactions and making branches compatible at merge time. MTM uses merged-model evaluations as a low-cost signal for selecting branch mixtures, avoiding expensive data-mixture ablations. The procedure is iterative: each round promotes the base model using globally selected merge coefficients and refines each branch mixture using domain-preferred coefficients under constraints that preserve other objectives. To scale beyond simplex grid search, MTM uses qNEHVI-based multi-objective Bayesian optimization. Across code, mathematics, instruction following, and think/non-think control, MTM outperforms naive merging and preserves behavioral separation where single-objective merging collapses, suggesting that effective unified models require branches trained to be mergeable.",
+    "interpretation": "与IM-MOPD共享4位作者，但MTM训练branch数据混合以改善权重合并；IM-MOPD在OPD中迭代注入task vectors。方法不同，不据作者交集认定改名。"
+  },
+  {
+    "id": "MnkwYa1NsV",
+    "url": "https://api2.openreview.net/notes?id=MnkwYa1NsV",
+    "error": "HTTP Error 403: Forbidden",
+    "index_evidence": {
+      "title": "SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation",
+      "authors": [
+        "Jie Sun",
+        "Mao Zheng",
+        "Mingyang Song",
+        "Qiyong Zhong",
+        "Yilin Cheng",
+        "Bichuan Feng",
+        "Pengfei Liu",
+        "Junfeng Fang",
+        "Xiang Wang"
+      ],
+      "track": "Conference",
+      "decision": "Accept (poster)",
+      "paper_url": "https://openreview.net/forum?id=MnkwYa1NsV",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+      "official_url": "https://neurips.cc/virtual/2026/poster/153233"
+    },
+    "abstract_evidence": "On-policy distillation (OPD) is a standard tool for transferring teacher behavior to a smaller student, but it implicitly assumes that teacher and student predictions are comparable token by token, an assumption that fails whenever the two models tokenize the same text differently. Under heterogeneous tokenizers, exact shared-token matching silently discards a large fraction of the teacher signal at precisely the positions where vocabularies disagree. We propose \\textbf{\\underline{Sim}ple \\underline{C}ross-\\underline{T}okenizer OPD (SimCT)}, which restores this signal by enlarging the supervision space: alongside shared tokens, SimCT compares teacher and student over short multi-token continuations that both tokenizers can realize, leaving the OPD loss form itself unchanged. We show that these units are the finest jointly tokenizable supervision interface, and that coarser alternatives remove teacher-student distinctions that are useful for on-policy learning. Across three heterogeneous teacher-student pairs on mathematical reasoning and code-generation benchmarks, SimCT shows consistent gains over shared-vocabulary OPD and representative cross-tokenizer baselines, with ablations confirming that the improvements come from recovering supervision discarded by exact shared-token matching. Code is available at \\href{https://anonymous.4open.science/r/SimCT}{https://anonymous.4open.science/r/SimCT}.",
+    "interpretation": "与TrustMOPD共享7位作者，但SimCT解决cross-tokenizer supervision；与Data-Free OPD也共享作者。方法/目标不同，不认定为改名。"
+  },
+  {
+    "id": "DZ7U9SWcJx",
+    "url": "https://api2.openreview.net/notes?id=DZ7U9SWcJx",
+    "error": "HTTP Error 403: Forbidden",
+    "index_evidence": {
+      "title": "Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation",
+      "authors": [
+        "Yuchen Cai",
+        "Ding Cao",
+        "Liang Lin",
+        "Chunxi Luo",
+        "Xin Xu",
+        "Kai Yang",
+        "Weijie Liu",
+        "Saiyong Yang",
+        "Tianxiang Zhao",
+        "Guangzhong Sun",
+        "Guiquan Liu",
+        "Junfeng Fang"
+      ],
+      "track": "Conference",
+      "decision": "Accept (poster)",
+      "paper_url": "https://openreview.net/forum?id=DZ7U9SWcJx",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+      "official_url": "https://neurips.cc/virtual/2026/poster/154435"
+    },
+    "abstract_cache_used": "/home/chy/notes/Research/literature-index/tmp/neurips-2026-index/neurips-2026-abstracts.json",
+    "abstract_evidence": "On-policy distillation (OPD) has emerged as an efficient post-training paradigm for large language models. However, existing studies largely attribute this advantage to denser and more stable supervision, while the parameter-level mechanisms underlying OPD's efficiency remain insufficiently understood. In this work, we argue that OPD's efficiency stems from a form of ``foresight'': it establishes a direct and stable path from the initial model to the final model early in training. This foresight manifests in two aspects. First, at the \\textbf{Module-Allocation Level}, OPD identifies regions with low marginal utility and concentrates updates on modules that are more critical to reasoning. Second, at the \\textbf{Update-Direction Level}, OPD exhibits stronger low-rank concentration, with its dominant subspace aligning closely with the final update subspace early in training. Motivated by this theory, we propose \\textbf{EffOPD}, a plug-and-play acceleration method that speeds up OPD by searching for an effective step size and extrapolating along the current update direction. EffOPD requires no additional trainable modules or complex hyperparameter tuning, and achieves up to $3.5\\times$ training acceleration while maintaining comparable final performance. Overall, our findings provide a parameter-dynamics perspective for understanding the efficiency of OPD and offer practical insights for designing more efficient post-training methods for large language models. Our code is available at: https://anonymous.4open.science/r/EffOPD-7C58.",
+    "interpretation": "与Consolidating RLVR共享作者，但本文研究OPD参数动力学并提出EffOPD加速；后者比较Merge/Mix-RL/MOPD五域fusion。目标不同，不认定为改名。"
+  }
+]

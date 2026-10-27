@@ -1,0 +1,14 @@
+{
+  "tool": "verify_wiki_coverage.sh",
+  "wiki_root": "/home/chy/notes/Research/mopd/research-wiki",
+  "scanned_paths": [
+    "research-wiki/topics/multi-teacher-opd.md"
+  ],
+  "generated_at": "2026-10-15T05:36:28Z",
+  "referenced_arxiv_ids": 36,
+  "ingested_arxiv_ids": 36,
+  "missing_from_wiki": 0,
+  "diagnostic_only": true,
+  "missing_ids": [
+  ]
+}

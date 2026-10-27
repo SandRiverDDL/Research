@@ -1,0 +1,1136 @@
+{
+  "date": "2026-10-16",
+  "counts": {
+    "iclr2027_submission": 18,
+    "desk_rejected": 2,
+    "unknown": 10,
+    "workshop_record": 2,
+    "arr_submission": 1
+  },
+  "papers": [
+    {
+      "arxiv": "2605.01347",
+      "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+      "source": "https://arxiv.org/abs/2605.01347",
+      "first_arxiv_submission_date": "2026-05-02",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Sat, 2 May 2026 09:41:37 UTC",
+          "date": "2026-05-02"
+        }
+      ],
+      "comments": "Preprint. 9-page main paper + appendix. 8 figures, 7 tables. Code: this https URL",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 167,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2605.01347",
+          "local_title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+          "id": "vTPKOmuzFp",
+          "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MAD-OPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=vTPKOmuzFp"
+        }
+      ]
+    },
+    {
+      "arxiv": "2605.03677",
+      "title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+      "source": "https://arxiv.org/abs/2605.03677",
+      "first_arxiv_submission_date": "2026-05-05",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Tue, 5 May 2026 12:15:21 UTC",
+          "date": "2026-05-05"
+        },
+        {
+          "version": 2,
+          "timestamp": "Mon, 6 Jul 2026 06:34:16 UTC",
+          "date": "2026-07-06"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 164,
+      "status_kind": "desk_rejected",
+      "public_status": "ICLR 2027：Desk Rejected Submission；原因未核实",
+      "public_records": [
+        {
+          "arxiv": "2605.03677",
+          "local_title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+          "id": "ck9F16zS9F",
+          "title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+          "venue": "ICLR 2027 Conference Desk Rejected Submission",
+          "venueid": "ICLR.cc/2027/Conference/Desk_Rejected_Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=Uni-OPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=ck9F16zS9F"
+        }
+      ]
+    },
+    {
+      "arxiv": "2606.27608",
+      "title": "Qwen-Image-2.0-RL Technical Report",
+      "source": "https://arxiv.org/abs/2606.27608",
+      "first_arxiv_submission_date": "2026-06-25",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Thu, 25 Jun 2026 23:49:50 UTC",
+          "date": "2026-06-25"
+        }
+      ],
+      "comments": "16 pages, 6 figures, 1 table",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 113,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实；technical report",
+      "public_records": []
+    },
+    {
+      "arxiv": "2606.30406",
+      "title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
+      "source": "https://arxiv.org/abs/2606.30406",
+      "first_arxiv_submission_date": "2026-06-29",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Mon, 29 Jun 2026 14:51:28 UTC",
+          "date": "2026-06-29"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 109,
+      "status_kind": "workshop_record",
+      "public_status": "有workshop记录：ICML 2026 RLxF Workshop；本轮未独立核对decision",
+      "public_records": [
+        {
+          "arxiv": "2606.30406",
+          "local_title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
+          "id": "Ir65sQ5tV6",
+          "title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
+          "venue": "ICML 2026 RLxF Workshop",
+          "venueid": "ICML.cc/2026/Workshop/RLxF",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=Ir65sQ5tV6"
+        }
+      ]
+    },
+    {
+      "arxiv": "2607.18293",
+      "title": "One Student, Many Teachers: Multi-Task On-Policy Distillation via Soft-Prompt Privileged Context",
+      "source": "https://arxiv.org/abs/2607.18293",
+      "first_arxiv_submission_date": "2026-06-30",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Tue, 30 Jun 2026 19:56:05 UTC",
+          "date": "2026-06-30"
+        }
+      ],
+      "comments": "10 pages, 5 figures",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 108,
+      "status_kind": "arr_submission",
+      "public_status": "ACL ARR 2026 October：Submission",
+      "public_records": [
+        {
+          "arxiv": "2607.18293",
+          "local_title": "One Student, Many Teachers: Multi-Task On-Policy Distillation via Soft-Prompt Privileged Context",
+          "id": "bRuZJRVJx3",
+          "title": "One Student, Many Teachers: Multi-Task On-Policy Distillation via Soft-Prompt Privileged Context",
+          "venue": "ACL ARR 2026 October Submission",
+          "venueid": "aclweb.org/ACL/ARR/2026/October/Submission",
+          "source": "https://api2.openreview.net/notes/search?term=%22One+Student%2C+Many+Teachers%3A+Multi-Task+On-Policy+Distillation+via+Soft-Prompt+Privileged+Context%22&limit=100",
+          "forum": "https://openreview.net/forum?id=bRuZJRVJx3"
+        }
+      ]
+    },
+    {
+      "arxiv": "2607.07050",
+      "title": "When Top-K Misses the Decision: Tool-Call Drift in Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2607.07050",
+      "first_arxiv_submission_date": "2026-07-08",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Wed, 8 Jul 2026 06:26:13 UTC",
+          "date": "2026-07-08"
+        },
+        {
+          "version": 2,
+          "timestamp": "Wed, 15 Jul 2026 06:02:40 UTC",
+          "date": "2026-07-15"
+        },
+        {
+          "version": 3,
+          "timestamp": "Wed, 29 Jul 2026 05:11:59 UTC",
+          "date": "2026-07-29"
+        },
+        {
+          "version": 4,
+          "timestamp": "Sun, 2 Aug 2026 05:11:29 UTC",
+          "date": "2026-08-02"
+        },
+        {
+          "version": 5,
+          "timestamp": "Thu, 27 Aug 2026 07:19:42 UTC",
+          "date": "2026-08-27"
+        },
+        {
+          "version": 6,
+          "timestamp": "Sat, 5 Sep 2026 07:34:57 UTC",
+          "date": "2026-09-05"
+        }
+      ],
+      "comments": "33 pages, 5 figures. Code and aggregate artifacts: this https URL",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 100,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2607.07050",
+          "local_title": "When Top-K Misses the Decision: Tool-Call Drift in Multi-Teacher On-Policy Distillation",
+          "id": "OgxhRCb2g3",
+          "title": "When Top-K Misses the Decision: Tool-Call Drift in Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "source": "https://api2.openreview.net/notes/search?term=%22When+Top-K+Misses+the+Decision%3A+Tool-Call+Drift+in+Multi-Teacher+On-Policy+Distillation%22&limit=100",
+          "forum": "https://openreview.net/forum?id=OgxhRCb2g3"
+        }
+      ]
+    },
+    {
+      "arxiv": "2607.27770",
+      "title": "Beyond the Best Teacher: Expanding and Compressing the Reasoning Solution Manifold",
+      "source": "https://arxiv.org/abs/2607.27770",
+      "first_arxiv_submission_date": "2026-07-30",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Thu, 30 Jul 2026 07:05:37 UTC",
+          "date": "2026-07-30"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 78,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实",
+      "public_records": []
+    },
+    {
+      "arxiv": "2608.03092",
+      "title": "SMOPD: Multi-Reward Reinforcement Learning via Specialize-and-Merge Online Policy Distillation",
+      "source": "https://arxiv.org/abs/2608.03092",
+      "first_arxiv_submission_date": "2026-08-04",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Tue, 4 Aug 2026 04:08:08 UTC",
+          "date": "2026-08-04"
+        },
+        {
+          "version": 2,
+          "timestamp": "Fri, 21 Aug 2026 14:46:20 UTC",
+          "date": "2026-08-21"
+        }
+      ],
+      "comments": "21 pages, 5 figures, 12 tables",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 73,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实",
+      "public_records": []
+    },
+    {
+      "arxiv": "2608.16647",
+      "title": "Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models",
+      "source": "https://arxiv.org/abs/2608.16647",
+      "first_arxiv_submission_date": "2026-08-17",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Mon, 17 Aug 2026 14:46:53 UTC",
+          "date": "2026-08-17"
+        },
+        {
+          "version": 2,
+          "timestamp": "Sun, 23 Aug 2026 15:08:29 UTC",
+          "date": "2026-08-23"
+        }
+      ],
+      "comments": "Under Review",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 60,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实；作者arXiv标注Under Review",
+      "public_records": []
+    },
+    {
+      "arxiv": "2608.19098",
+      "title": "Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2608.19098",
+      "first_arxiv_submission_date": "2026-08-19",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Wed, 19 Aug 2026 16:50:39 UTC",
+          "date": "2026-08-19"
+        }
+      ],
+      "comments": "Project page: this https URL",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 58,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2608.19098",
+          "local_title": "Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation",
+          "id": "acOWuxDgZs",
+          "title": "Open-MOPD: Diagnosing and fixing capability im-balance in multi-teacher on-policy distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=acOWuxDgZs"
+        }
+      ]
+    },
+    {
+      "arxiv": "2608.24987",
+      "title": "D³-MOPD: Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation",
+      "source": "https://arxiv.org/abs/2608.24987",
+      "first_arxiv_submission_date": "2026-08-25",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Tue, 25 Aug 2026 17:57:11 UTC",
+          "date": "2026-08-25"
+        },
+        {
+          "version": 2,
+          "timestamp": "Wed, 16 Sep 2026 15:35:02 UTC",
+          "date": "2026-09-16"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 52,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实",
+      "public_records": []
+    },
+    {
+      "arxiv": "2608.27409",
+      "title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+      "source": "https://arxiv.org/abs/2608.27409",
+      "first_arxiv_submission_date": "2026-08-27",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Thu, 27 Aug 2026 17:38:04 UTC",
+          "date": "2026-08-27"
+        },
+        {
+          "version": 2,
+          "timestamp": "Fri, 18 Sep 2026 10:01:44 UTC",
+          "date": "2026-09-18"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 50,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2608.27409",
+          "local_title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+          "id": "AoBpLhdXID",
+          "title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=AoBpLhdXID"
+        }
+      ]
+    },
+    {
+      "arxiv": "2608.26735",
+      "title": "Recovering General Capabilities via Uncertainty-Calibrated Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2608.26735",
+      "first_arxiv_submission_date": "2026-08-27",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Thu, 27 Aug 2026 07:28:00 UTC",
+          "date": "2026-08-27"
+        },
+        {
+          "version": 2,
+          "timestamp": "Mon, 28 Sep 2026 15:26:33 UTC",
+          "date": "2026-09-28"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 50,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2608.26735",
+          "local_title": "Recovering General Capabilities via Uncertainty-Calibrated Multi-Teacher On-Policy Distillation",
+          "id": "dQbHXq138L",
+          "title": "Recovering General Capabilities via Uncertainty-Calibrated Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=dQbHXq138L"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.02548",
+      "title": "Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs",
+      "source": "https://arxiv.org/abs/2609.02548",
+      "first_arxiv_submission_date": "2026-09-02",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Wed, 2 Sep 2026 13:00:45 UTC",
+          "date": "2026-09-02"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 44,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实",
+      "public_records": []
+    },
+    {
+      "arxiv": "2609.02998",
+      "title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2609.02998",
+      "first_arxiv_submission_date": "2026-09-02",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Wed, 2 Sep 2026 17:54:09 UTC",
+          "date": "2026-09-02"
+        },
+        {
+          "version": 2,
+          "timestamp": "Wed, 16 Sep 2026 17:51:24 UTC",
+          "date": "2026-09-16"
+        }
+      ],
+      "comments": "17 pages, 6 figures, 7 tables",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 44,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2609.02998",
+          "local_title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+          "id": "9uQm8TP4zN",
+          "title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "source": "https://api2.openreview.net/notes/search?term=%22Verify+Before+You+Distill%3A+Prompt-Level+Teacher+Gating+for+On-Policy+Distillation%22&limit=100",
+          "forum": "https://openreview.net/forum?id=9uQm8TP4zN"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.04172",
+      "title": "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
+      "source": "https://arxiv.org/abs/2609.04172",
+      "first_arxiv_submission_date": "2026-09-03",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Thu, 3 Sep 2026 17:54:38 UTC",
+          "date": "2026-09-03"
+        }
+      ],
+      "comments": "29 pages, 20 figures",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 43,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实",
+      "public_records": []
+    },
+    {
+      "arxiv": "2609.09300",
+      "title": "Video-MOPD: Multi-Teacher On-Policy Distillation for Video Understanding",
+      "source": "https://arxiv.org/abs/2609.09300",
+      "first_arxiv_submission_date": "2026-09-08",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Tue, 8 Sep 2026 18:00:22 UTC",
+          "date": "2026-09-08"
+        }
+      ],
+      "comments": "Technical report",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 38,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实；technical report",
+      "public_records": []
+    },
+    {
+      "arxiv": "2609.14193",
+      "title": "Data-Free On-Policy Distillation: How Far Can We Go Without External Data?",
+      "source": "https://arxiv.org/abs/2609.14193",
+      "first_arxiv_submission_date": "2026-09-12",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Sat, 12 Sep 2026 23:51:35 UTC",
+          "date": "2026-09-12"
+        },
+        {
+          "version": 2,
+          "timestamp": "Thu, 17 Sep 2026 20:45:40 UTC",
+          "date": "2026-09-17"
+        },
+        {
+          "version": 3,
+          "timestamp": "Thu, 1 Oct 2026 20:06:23 UTC",
+          "date": "2026-10-01"
+        },
+        {
+          "version": 4,
+          "timestamp": "Wed, 7 Oct 2026 17:57:03 UTC",
+          "date": "2026-10-07"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 34,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2609.14193",
+          "local_title": "Data-Free On-Policy Distillation: How Far Can We Go Without External Data?",
+          "id": "OyPHHYZnia",
+          "title": "Data-Free On-Policy Distillation: How Far Can We Go Without External Data?",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "source": "https://api2.openreview.net/notes/search?term=%22Data-Free+On-Policy+Distillation%3A+How+Far+Can+We+Go+Without+External+Data%3F%22&limit=100",
+          "forum": "https://openreview.net/forum?id=OyPHHYZnia"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.15404",
+      "title": "Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning",
+      "source": "https://arxiv.org/abs/2609.15404",
+      "first_arxiv_submission_date": "2026-09-14",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Mon, 14 Sep 2026 11:34:22 UTC",
+          "date": "2026-09-14"
+        },
+        {
+          "version": 2,
+          "timestamp": "Tue, 15 Sep 2026 09:48:17 UTC",
+          "date": "2026-09-15"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 32,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2609.15404",
+          "local_title": "Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning",
+          "id": "dP8uHxOdEG",
+          "title": "Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "source": "https://api2.openreview.net/notes/search?term=%22Who+Teaches+Which+Token%3F+Verifier-Gated+Multi-Expert+On-Policy+Distillation+for+Scientific+Reasoning%22&limit=100",
+          "forum": "https://openreview.net/forum?id=dP8uHxOdEG"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.23697",
+      "title": "Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2609.23697",
+      "first_arxiv_submission_date": "2026-09-20",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Sun, 20 Sep 2026 15:15:24 UTC",
+          "date": "2026-09-20"
+        },
+        {
+          "version": 2,
+          "timestamp": "Wed, 30 Sep 2026 05:42:02 UTC",
+          "date": "2026-09-30"
+        },
+        {
+          "version": 3,
+          "timestamp": "Sun, 11 Oct 2026 07:05:49 UTC",
+          "date": "2026-10-11"
+        }
+      ],
+      "comments": "35 pages, 9 figures, 12 table",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 26,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2609.23697",
+          "local_title": "Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation",
+          "id": "7OM4vVAkEd",
+          "title": "Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=7OM4vVAkEd"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.23989",
+      "title": "ACLArena: Agent Continual Learning in Multi-stage Post-training",
+      "source": "https://arxiv.org/abs/2609.23989",
+      "first_arxiv_submission_date": "2026-09-21",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Mon, 21 Sep 2026 01:48:37 UTC",
+          "date": "2026-09-21"
+        }
+      ],
+      "comments": "25 pages, 7 figures, under review",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 25,
+      "status_kind": "workshop_record",
+      "public_status": "有workshop记录：CL4FMAgents @ NeurIPS 2026；本轮未独立核对decision",
+      "public_records": [
+        {
+          "arxiv": "2609.23989",
+          "local_title": "ACLArena: Agent Continual Learning in Multi-stage Post-training",
+          "id": "PHAPWKhHml",
+          "title": "ACLArena: Agent Continual Learning in Multi-stage Post-training",
+          "venue": "CL4FMAgents @ NeurIPS 2026",
+          "venueid": "NeurIPS.cc/2026/Workshop/CL4FMAgents",
+          "authors": [
+            {
+              "username": "~Haixin_Wang3",
+              "fullname": "Haixin Wang",
+              "institutions": [
+                {
+                  "name": "UCLA Computer Science Department, University of California, Los Angeles",
+                  "domain": "cs.ucla.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Xiaoxuan_Wang2",
+              "fullname": "Xiaoxuan Wang",
+              "institutions": [
+                {
+                  "name": ", University of California, Los Angeles",
+                  "domain": "cs.ucla.edu"
+                }
+              ]
+            },
+            {
+              "username": "~Junkai_Zhang2",
+              "fullname": "Junkai Zhang",
+              "institutions": [
+                {
+                  "name": "University of California, Los Angeles",
+                  "domain": "ucla.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Han_Zhang24",
+              "fullname": "Han Zhang",
+              "institutions": [
+                {
+                  "name": "University of California, Los Angeles",
+                  "domain": "ucla.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Renliang_Sun2",
+              "fullname": "Renliang Sun",
+              "institutions": [
+                {
+                  "name": "UCLA Computer Science Department, University of California, Los Angeles",
+                  "domain": "cs.ucla.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Alexander_K_Taylor1",
+              "fullname": "Alexander K Taylor",
+              "institutions": [
+                {
+                  "name": "UCLA Computer Science Department, University of California, Los Angeles",
+                  "domain": "cs.ucla.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Yidan_Shi1",
+              "fullname": "Yidan Shi",
+              "institutions": [
+                {
+                  "name": "University of California, Los Angeles",
+                  "domain": "ucla.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Haoran_Deng2",
+              "fullname": "Haoran Deng",
+              "institutions": [
+                {
+                  "name": "University of California, Los Angeles",
+                  "domain": "ucla.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Chenguang_Wang1",
+              "fullname": "Chenguang Wang",
+              "institutions": [
+                {
+                  "name": "University of California, Santa Cruz",
+                  "domain": "ucsc.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Jason_Cong1",
+              "fullname": "Jason Cong",
+              "institutions": [
+                {
+                  "name": "University of California, Los Angeles",
+                  "domain": "cs.ucla.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Yizhou_Sun1",
+              "fullname": "Yizhou Sun",
+              "institutions": [
+                {
+                  "name": "University of California, Los Angeles",
+                  "domain": "ucla.edu",
+                  "country": "US"
+                }
+              ]
+            },
+            {
+              "username": "~Wei_Wang13",
+              "fullname": "Wei Wang",
+              "institutions": [
+                {
+                  "name": "University of California, Los Angeles",
+                  "domain": "ucla.edu",
+                  "country": "US"
+                }
+              ]
+            }
+          ],
+          "source": "https://api2.openreview.net/notes/search?term=ACLArena&limit=1000",
+          "forum": "https://openreview.net/forum?id=PHAPWKhHml"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.30837",
+      "title": "MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2609.30837",
+      "first_arxiv_submission_date": "2026-09-25",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Fri, 25 Sep 2026 05:32:03 UTC",
+          "date": "2026-09-25"
+        },
+        {
+          "version": 2,
+          "timestamp": "Mon, 28 Sep 2026 12:07:02 UTC",
+          "date": "2026-09-28"
+        }
+      ],
+      "comments": "19 pages, 5 figures",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 21,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2609.30837",
+          "local_title": "MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation",
+          "id": "7Ajj2iy7yC",
+          "title": "MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=7Ajj2iy7yC"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.35347",
+      "title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2609.35347",
+      "first_arxiv_submission_date": "2026-09-28",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Mon, 28 Sep 2026 15:01:25 UTC",
+          "date": "2026-09-28"
+        }
+      ],
+      "comments": "Project page: this https URL . Code: this https URL",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 18,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2609.35347",
+          "local_title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+          "id": "IJKUVDoKy1",
+          "title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=IJKUVDoKy1"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.34745",
+      "title": "No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2609.34745",
+      "first_arxiv_submission_date": "2026-09-28",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Mon, 28 Sep 2026 09:37:22 UTC",
+          "date": "2026-09-28"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 18,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2609.34745",
+          "local_title": "No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation",
+          "id": "VNjcy5xYcF",
+          "title": "No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=VNjcy5xYcF"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.34605",
+      "title": "PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2609.34605",
+      "first_arxiv_submission_date": "2026-09-28",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Mon, 28 Sep 2026 08:36:16 UTC",
+          "date": "2026-09-28"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 18,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2609.34605",
+          "local_title": "PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation",
+          "id": "Th9EmakZ47",
+          "title": "PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=Th9EmakZ47"
+        }
+      ]
+    },
+    {
+      "arxiv": "2609.38666",
+      "title": "Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives",
+      "source": "https://arxiv.org/abs/2609.38666",
+      "first_arxiv_submission_date": "2026-09-29",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Tue, 29 Sep 2026 23:47:58 UTC",
+          "date": "2026-09-29"
+        }
+      ],
+      "comments": "68 pages, 4 figures",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 17,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2609.38666",
+          "local_title": "Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives",
+          "id": "QzAdsHLXcH",
+          "title": "Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "source": "https://api2.openreview.net/notes/search?term=%22Understanding+Off-+vs+On-Policy+Distillation%3A+A+Tale+of+Distinct+Training+Objectives%22&limit=100",
+          "forum": "https://openreview.net/forum?id=QzAdsHLXcH"
+        }
+      ]
+    },
+    {
+      "arxiv": "2610.02179",
+      "title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2610.02179",
+      "first_arxiv_submission_date": "2026-10-01",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Thu, 1 Oct 2026 17:57:44 UTC",
+          "date": "2026-10-01"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 15,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2610.02179",
+          "local_title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
+          "id": "kqCLUujaMh",
+          "title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=kqCLUujaMh"
+        }
+      ]
+    },
+    {
+      "arxiv": "2610.02381",
+      "title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2610.02381",
+      "first_arxiv_submission_date": "2026-10-01",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Thu, 1 Oct 2026 19:01:56 UTC",
+          "date": "2026-10-01"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 15,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2610.02381",
+          "local_title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
+          "id": "YGDYGf6pa2",
+          "title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=YGDYGf6pa2"
+        }
+      ]
+    },
+    {
+      "arxiv": "2610.02324",
+      "title": "Slow-Fast Multi-Teacher On-Policy Distillation for Capability Preservation",
+      "source": "https://arxiv.org/abs/2610.02324",
+      "first_arxiv_submission_date": "2026-10-01",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Thu, 1 Oct 2026 18:00:27 UTC",
+          "date": "2026-10-01"
+        }
+      ],
+      "comments": "5 pages, 2 figures",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 15,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实",
+      "public_records": []
+    },
+    {
+      "arxiv": "2610.04272",
+      "title": "Rethinking Self-Distillation for Multi-Teacher Capability Merging",
+      "source": "https://arxiv.org/abs/2610.04272",
+      "first_arxiv_submission_date": "2026-10-03",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Sat, 3 Oct 2026 03:57:33 UTC",
+          "date": "2026-10-03"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 13,
+      "status_kind": "desk_rejected",
+      "public_status": "ICLR 2027：Desk Rejected Submission；原因未核实",
+      "public_records": [
+        {
+          "arxiv": "2610.04272",
+          "local_title": "Rethinking Self-Distillation for Multi-Teacher Capability Merging",
+          "id": "YzYnYsf1PF",
+          "title": "Rethinking Self-Distillation for Multi-Teacher Capability Merging",
+          "venue": "ICLR 2027 Conference Desk Rejected Submission",
+          "venueid": "ICLR.cc/2027/Conference/Desk_Rejected_Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=YzYnYsf1PF"
+        }
+      ]
+    },
+    {
+      "arxiv": "2610.08398",
+      "title": "UP-MOPD: Update Projection in Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2610.08398",
+      "first_arxiv_submission_date": "2026-10-06",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Tue, 6 Oct 2026 14:13:31 UTC",
+          "date": "2026-10-06"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 10,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2610.08398",
+          "local_title": "UP-MOPD: Update Projection in Multi-Teacher On-Policy Distillation",
+          "id": "LZxfSX1Oqu",
+          "title": "UP-MOPD: Update Projection in Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=LZxfSX1Oqu"
+        }
+      ]
+    },
+    {
+      "arxiv": "2610.10460",
+      "title": "Composing What Each Teacher Learned: Multi-Teacher On-Policy Distillation through Teacher-Relative Shifts",
+      "source": "https://arxiv.org/abs/2610.10460",
+      "first_arxiv_submission_date": "2026-10-07",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Wed, 7 Oct 2026 17:27:46 UTC",
+          "date": "2026-10-07"
+        }
+      ],
+      "comments": null,
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 9,
+      "status_kind": "unknown",
+      "public_status": "会议投稿/结果未核实",
+      "public_records": []
+    },
+    {
+      "arxiv": "2610.13521",
+      "title": "Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation",
+      "source": "https://arxiv.org/abs/2610.13521",
+      "first_arxiv_submission_date": "2026-10-09",
+      "versions": [
+        {
+          "version": 1,
+          "timestamp": "Fri, 9 Oct 2026 12:41:51 UTC",
+          "date": "2026-10-09"
+        }
+      ],
+      "comments": "30 pages, 9 figures, 10 tables, including references and appendices",
+      "journal_reference": null,
+      "age_days_on_2026_10_16": 7,
+      "status_kind": "iclr2027_submission",
+      "public_status": "ICLR 2027：公开列为Submission，尚无录用结果",
+      "public_records": [
+        {
+          "arxiv": "2610.13521",
+          "local_title": "Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation",
+          "id": "q5NpkqNLNY",
+          "title": "Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation",
+          "venue": "ICLR 2027 Conference Submission",
+          "venueid": "ICLR.cc/2027/Conference/Submission",
+          "authors": null,
+          "source": "https://api2.openreview.net/notes/search?term=MOPD&limit=1000",
+          "forum": "https://openreview.net/forum?id=q5NpkqNLNY"
+        }
+      ]
+    }
+  ]
+}

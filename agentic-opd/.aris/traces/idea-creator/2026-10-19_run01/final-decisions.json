@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ASTRA-01",
+    "slug": "evidence-separated-decision-target",
+    "stage": "proposed",
+    "status": "靶点验证储备",
+    "novelty": "provisional",
+    "risk_note": "SOPD/GC-OPD/ActionOPD近邻；先固定真实交互、改变reasoning测teacher action漂移。若只是短上下文或dropout收益，不足方法成篇。"
+  },
+  {
+    "id": "ASTRA-02",
+    "slug": "teacher-plan-portfolio-exploration",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "层次options与计划数据增广已有；需超越同teacher tokens、同rollout数的普通计划多样化。"
+  },
+  {
+    "id": "ASTRA-03",
+    "slug": "teacher-action-control-variate",
+    "stage": "proposed",
+    "status": "主候选2，高风险",
+    "novelty": "provisional",
+    "risk_note": "Q-Prop已有action-dependent control variate，vOPD已有OPD baseline。必须证明同总成本task梯度收益；on-policy、冻结且独立/交叉拟合c、精确或无偏期望是边界。PPO clipping、GRPO标准差归一化与忽略尾部不能自动继承无偏性。"
+  },
+  {
+    "id": "ASTRA-04",
+    "slug": "partial-order-option-distillation",
+    "stage": "archived",
+    "status": "本轮暂不投入；与SOL-04机械合并",
+    "novelty": "provisional",
+    "risk_note": "与options、GC-OPD和项目旧时序契约方向近；人工契约验证与跨域schema成本可能主导收益。"
+  },
+  {
+    "id": "ASTRA-05",
+    "slug": "bayes-consistent-hindsight-belief-distillation",
+    "stage": "proposed",
+    "status": "主候选1",
+    "novelty": "provisional",
+    "risk_note": "Privileged POMDP belief learning与Meta-RL task inference已存在；此方案延续旧ledger。teacher软后验校准、prefix确定schema、成功失败不偏采样与部署真实使用belief必须成立；未来标签本身不等于泄漏。"
+  },
+  {
+    "id": "ASTRA-06",
+    "slug": "teacher-knowledge-to-evidence-demand",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "与普通query/evidence蒸馏和旧teacher-evidence-bottleneck差异不足；必须同检索预算比较。"
+  },
+  {
+    "id": "ASTRA-07",
+    "slug": "budget-neutral-random-horizon-opd",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "随机截断与重要性校正已有；长尾方差及同步成本可能抵消深状态覆盖优势。"
+  },
+  {
+    "id": "ASTRA-08",
+    "slug": "semantic-quotient-action-distillation",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "ASL与ActionOPD覆盖行动语义/转移等价；schema能证明的部分可能只剩格式规范化。"
+  },
+  {
+    "id": "SOL-01",
+    "slug": "observation-differential-policy-response",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "与旧观察差分候选延续；必须超越完全相同成对数据的普通OPD，不能将数据收益算成差分loss贡献。"
+  },
+  {
+    "id": "SOL-02",
+    "slug": "grounded-belief-retraction-operator",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "延续旧belief ledger；可能只是memory schema变化。完整MemOPD与等长摘要应分别作为对照，不混同两者。"
+  },
+  {
+    "id": "SOL-03",
+    "slug": "transition-effect-equivalence-distillation",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "ASL §3.2已有S(a)=T(s,a)与等价集。真实交互纠正错误合并尚有delta；相同文字观察不保证相同奖励/后继分布，未访问action的等价性不能凭空识别。"
+  },
+  {
+    "id": "SOL-05",
+    "slug": "teacher-evidence-posterior-potential-credit",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "potential shaping为经典机制；若V_new=V−Phi则TD residual逐项相同。剩余贡献只能来自更好的价值先验或优化，不是新信用分配。"
+  },
+  {
+    "id": "SOL-06",
+    "slug": "amortized-external-teacher-correction-model",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "proxy teacher、active distillation近邻；需胜过随机查询/缓存/普通小teacher，在漂移下证明同总算力收益。"
+  },
+  {
+    "id": "SOL-07",
+    "slug": "reversible-error-inoculation-on-policy",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "与recovery curriculum/扰动增广近邻；同环境步数随机扰动若等效则teacher选错机制不成立。"
+  },
+  {
+    "id": "SOL-08",
+    "slug": "blackbox-conditional-action-density-ratio",
+    "stage": "archived",
+    "status": "本轮暂不投入",
+    "novelty": "provisional",
+    "risk_note": "GAD §2已覆盖teacher/student判别器、在线负样本与策略奖励；动态agent场景本身不足形成新算法。"
+  }
+]

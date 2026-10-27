@@ -1,0 +1,56 @@
+{
+  "description": "Agentic OPD project-local triage rules.",
+  "hard_gates": [
+    "Queue row is not a card.",
+    "Survey mention is recall evidence, not paper evidence.",
+    "No original paper PDF/HTML brief, no formal L1 card.",
+    "Formal L1 cards in notes/ root must pass scripts/autoresearch.py validate before being reported as complete."
+  ],
+  "required_frontmatter": [
+    "title",
+    "year",
+    "venue",
+    "paper_type",
+    "lifecycle_role"
+  ],
+  "required_nested_frontmatter": {},
+  "allowed": {
+    "paper_type": [
+      "core-method",
+      "survey",
+      "benchmark-eval",
+      "background",
+      "adjacent"
+    ],
+    "lifecycle_role": [
+      "survey-seed",
+      "canonical-anchor",
+      "strong-baseline",
+      "frontier-candidate",
+      "background",
+      "low-confidence-novelty-risk"
+    ],
+    "boundary_risk": [
+      "none",
+      "adjacent",
+      "eval",
+      "recipe",
+      "infra"
+    ]
+  },
+  "select_rules": [
+    "Core contribution changes on-policy teacher supervision or rollout distribution in multi-turn agent interaction.",
+    "Direct diagnosis or evaluation of agentic OPD mechanisms with original evidence."
+  ],
+  "maybe_rules": [
+    "General OPD or offline agent distillation that supplies a necessary baseline; retain as adjacent/background."
+  ],
+  "move_elsewhere_rules": [
+    "Pure reward/policy optimization goes to agentic-rl; data pipeline contributions go to agent-data; general OPD goes to opd."
+  ],
+  "overrides": {
+    "select": {},
+    "maybe": {},
+    "skip": {}
+  }
+}

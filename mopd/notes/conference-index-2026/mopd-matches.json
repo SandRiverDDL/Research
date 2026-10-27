@@ -1,0 +1,3587 @@
+[
+  {
+    "file": "research-wiki/papers/chen2026_counteractionaware_multiteacher_onpolicy.md",
+    "title": "Counteraction-Aware Multi-Teacher On-Policy Distillation for General Capability Recovery with Domain Preservation",
+    "arxiv": "2605.27115",
+    "authors": [
+      "Tianlei Chen",
+      "Jiao Ou",
+      "Ziyuan Liu",
+      "Ruiming Tang",
+      "Jian Liang",
+      "Han Li"
+    ],
+    "exact_matches": [
+      {
+        "venue": "EMNLP",
+        "year": 2026,
+        "track": "MAIN",
+        "decision": "Poster",
+        "paper_id": "6445-MAIN",
+        "title": "Counteraction-Aware Multi-Teacher On-Policy Distillation for General Capability Recovery with Domain Preservation",
+        "authors": [],
+        "abstract": "",
+        "official_url": "https://2026.emnlp.org/program/",
+        "paper_url": "",
+        "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+      }
+    ],
+    "identifier_matches": [],
+    "candidates": []
+  },
+  {
+    "file": "research-wiki/papers/di2026_understanding_off_onpolicy.md",
+    "title": "Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives",
+    "arxiv": "2609.38666",
+    "authors": [
+      "Qiwei Di",
+      "Xuheng Li",
+      "Kaixuan Ji",
+      "Chenggong Zhang",
+      "Heyang Zhao",
+      "Quanquan Gu"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "ly6MB2Cfx2",
+          "title": "Towards a Sharp Analysis of Offline Policy Learning for $f$-Divergence-Regularized Contextual Bandits",
+          "authors": [
+            "Qingyue Zhao",
+            "Kaixuan Ji",
+            "Heyang Zhao",
+            "Tong Zhang",
+            "Quanquan Gu"
+          ],
+          "abstract": "Many offline reinforcement learning algorithms are underpinned by $f$-divergence regularization, but their sample complexity *defined with respect to regularized objectives* still lacks tight analyses, especially in terms of concrete data coverage conditions. In this paper, we study the exact concentrability requirements to achieve the $\\tilde{\\Theta}(\\epsilon^{-1})$ sample complexity for offline $f$-divergence-regularized contextual bandits. For reverse Kullback–Leibler (KL) divergence, arguably the most commonly used one, we achieve an $\\tilde{O}(\\epsilon^{-1})$ sample complexity under single-policy concentrability for the first time via a novel pessimism-based analysis, surpassing existing $\\tilde{O}(\\epsilon^{-1})$ bound under all-policy concentrability and $\\tilde{O}(\\epsilon^{-2})$ bound under single-policy concentrability. We also propose a near-matching lower bound, demonstrating that a multiplicative dependency on single-policy concentrability is necessary to maximally exploit the curvature property of reverse KL. Moreover, for $f$-divergences with strongly convex $f$, to which reverse KL *does not* belong, we show that the sharp sample complexity $\\tilde{\\Theta}(\\epsilon^{-1})$ is achievable even without pessimistic estimation or single-policy concentrability. We further corroborate our theoretical insights with numerical experiments and extend our analysis to contextual dueling bandits. We believe these results take a significant step towards a comprehensive understanding of objectives with $f$-divergence regularization.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10007632",
+          "paper_url": "https://openreview.net/forum?id=ly6MB2Cfx2",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3439,
+        "shared_authors": [
+          "heyangzhao",
+          "kaixuanji",
+          "quanquangu"
+        ],
+        "score": 0.7939
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "5SbBySWwEj",
+          "title": "On the Optimal Sample Complexity of Offline Multi-Armed Bandits with KL Regularization",
+          "authors": [
+            "Kaixuan Ji",
+            "Qiwei Di",
+            "Heyang Zhao",
+            "Qingyue Zhao",
+            "Quanquan Gu"
+          ],
+          "abstract": "Kullback-Leibler (KL) regularization is widely used in offline decision-making and offers several benefits, motivating recent work on the sample complexity of offline learning with respect to \\emph{KL-regularized performance metrics}. Nevertheless, the exact sample complexity of KL-regularized offline learning remains largely from fully characterized. In this paper, we study this question in the setting of multi-armed bandits (MABs). We provide a sharp analysis of KL-PCB~(Zhao et al., 2026), showing that it achieves a sample complexity of $\\tilde{O}(\\eta SAC^{\\pi^\\*}/\\epsilon)$ under large regularization $\\eta = \\tilde{O}(\\epsilon^{-1})$, and a sample complexity of $\\tilde{\\Omega}(SAC^{\\pi^\\*}/\\epsilon^2)$ under small regularization $\\eta = \\tilde{\\Omega}(\\epsilon^{-1})$, where $\\eta$ is the regularization parameter, $S$ is the number of contexts, $A$ is the number of arms, $C^{\\pi^\\*}$ is the policy coverage coefficient at the optimal policy $\\pi^*$, $\\epsilon$ is the desired sub-optimality, and $\\tilde{O}$ and $\\tilde{\\Omega}$ hide all poly-logarithmic factors. We further provide a pair of sharper sample complexity lower bounds, which matches the upper bounds over the entire range of regularization strengths. Overall, our results provide a nearly complete characterization of offline multi-armed bandits with KL regularization.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/155456",
+          "paper_url": "https://openreview.net/forum?id=5SbBySWwEj",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.1931,
+        "shared_authors": [
+          "heyangzhao",
+          "kaixuanji",
+          "qiweidi",
+          "quanquangu"
+        ],
+        "score": 0.7931
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "XarOZG8Un0",
+          "title": "Near-Optimal Regret for KL-Regularized Multi-Armed Bandits",
+          "authors": [
+            "Kaixuan Ji",
+            "Qingyue Zhao",
+            "Heyang Zhao",
+            "Qiwei Di",
+            "Quanquan Gu"
+          ],
+          "abstract": "Recent studies have shown that reinforcement learning with KL-regularized objectives can enjoy faster rates of convergence or logarithmic regret, in contrast to the classical $\\sqrt{T}$-type regret in the unregularized setting. However, the statistical efficiency of online learning with respect to KL-regularized objectives remains far from completely characterized, even when specialized to multi-armed bandits (MABs). We address this problem for MABs via a sharp analysis of KL-UCB (Zhao et al., 2025b) using a novel peeling argument, which yields a $\\tilde{O}(\\eta K\\log^2T)$ KL-regularized regret upper bound: the first high-probability regret bound with linear dependence on $K$. Here, $T$ is the time horizon, $K$ is the number of arms, $\\eta^{-1}$ is the regularization intensity, and $\\tilde{O}$ hides all logarithmic factors except those involving $\\log T$. The near-tightness of our analysis is certified by the first non-constant lower bound $\\Omega(\\eta K \\log T)$, which follows from subtle hard-instance constructions and a tailored decomposition of the Bayes prior. Moreover, in the low-regularization regime (i.e., large $\\eta$), we show that the KL-regularized regret for MABs is $\\eta$-independent and scales as $\\tilde{\\Theta}(\\sqrt{KT})$. Overall, our results provide a thorough understanding of KL-regularized MABs across all regimes of $\\eta$ and yield nearly optimal bounds in terms of $K$, $\\eta$, and $T$.",
+          "official_url": "https://icml.cc/virtual/2026/poster/63388",
+          "paper_url": "https://openreview.net/forum?id=XarOZG8Un0",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.1322,
+        "shared_authors": [
+          "heyangzhao",
+          "kaixuanji",
+          "qiweidi",
+          "quanquangu"
+        ],
+        "score": 0.7322
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/fang2026_latentmopd_latent_multiteacher.md",
+    "title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
+    "arxiv": "2610.02381",
+    "authors": [
+      "Zhengyu Fang",
+      "Seoyeon Hong",
+      "Jie Yang",
+      "Muyang Li",
+      "Koyoshi Shindo",
+      "Brandon Joseph Lwowski",
+      "Jing Li"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "572-MAIN",
+          "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.6393,
+        "shared_authors": [],
+        "score": 0.6393
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "09mcfBxsZ4",
+          "title": "AsyncOPD: How Stale Can On-Policy Distillation Be?",
+          "authors": [
+            "Wonjun Kang",
+            "Kevin Galim",
+            "Seunghyuk Oh",
+            "Minjun Kang",
+            "Sanghyun Park",
+            "Donghoon Kim",
+            "Minjae Lee",
+            "Minseo Kim",
+            "Rishabh Tiwari",
+            "Yuchen Zeng",
+            "HYUNG IL KOO",
+            "Kangwook Lee"
+          ],
+          "abstract": "On-policy distillation (OPD) is an increasingly important way to post-train large language models (LLMs), but, like reinforcement learning (RL), it relies on rollouts from the model being optimized. For reasoning workloads, rollout generation can dominate training time. Asynchronous RL alleviates this bottleneck by decoupling rollout generation from learner updates, but doing so introduces stale-policy data; prior work studies how to stabilize learning from such data. However, it remains underexplored whether these asynchronous RL ideas and stale-data solutions transfer to OPD, and what OPD-specific constraints arise. To address this gap, we provide the first systematic study of staleness in asynchronous OPD. We first show that KL direction changes the stale-data problem: teacher-weighted forward KL is robust to stale rollouts, whereas student-weighted reverse KL is vulnerable. Second, for this vulnerable reverse-KL case, we study whether methods designed to stabilize asynchronous RL can mitigate OPD staleness. We find that they do not improve over a simpler OPD-specific surrogate: recomputing the reverse-KL signal under the current student at learner time without clipping. Third, we identify an OPD-specific teacher-cache constraint: under asynchronous execution, teacher scores are available at learner time only on cached actions. The resulting bias-variance tradeoff for sparse and sampled reverse-KL OPD implementations motivates multi-sample Monte Carlo (MC), which preserves MC correctability while reducing one-sample variance. Finally, we present and open-source **AsyncOPD**, a fully asynchronous OPD training pipeline built from these estimator choices. Experiments show that AsyncOPD improves training throughput by $1.6\\times$ to $3.8\\times$ over strict synchronous training while reaching comparable accuracy.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/156136",
+          "paper_url": "https://openreview.net/forum?id=09mcfBxsZ4",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.6292,
+        "shared_authors": [],
+        "score": 0.6292
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "ioYRAhS4qE",
+          "title": "Trust Region Policy Distillation",
+          "authors": [
+            "Zhengpeng Xie",
+            "Li Lyna Zhang",
+            "Zeke Xie",
+            "Mao Yang"
+          ],
+          "abstract": "Big goals are hard to achieve all at once; breaking them into small steps is wiser. We present Trust Region Policy Distillation (TOP-D), which transforms the notoriously unstable, high-variance On-Policy Distillation (OPD) into a stable training paradigm by dynamically constructing a proximal teacher. Theoretically, we establish a rigorous framework demonstrating that TOP-D inherently controls gradient variance. By providing a formal global convergence analysis alongside a monotonic improvement bound, we mathematically formalize the reliability and stability of the overall training dynamics. Empirically, TOP-D dramatically enhances training stability, sample efficiency, and final performance on mathematical reasoning tasks. More importantly, TOP-D introduces zero additional computational overhead, positioning itself as a promising alternative to the well-established OPD paradigm.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/150346",
+          "paper_url": "https://openreview.net/forum?id=ioYRAhS4qE",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5974,
+        "shared_authors": [],
+        "score": 0.5974
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/fu2026_rethinking_onpolicy_distillation.md",
+    "title": "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
+    "arxiv": "2609.04172",
+    "authors": [
+      "Zixuan Fu",
+      "Bingxiang He",
+      "Yuxin Zuo",
+      "Haohuan Huang",
+      "Jinqian Zhang",
+      "Ruhang Xiao",
+      "Cheng Qian",
+      "Qinyu Luo",
+      "Huan-ang Gao",
+      "Yudong Wang",
+      "Zhiyuan Liu",
+      "Ning Ding",
+      "Chaojun Xiao"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "VesLZukY5E",
+          "title": "How Far Can Unsupervised RLVR Scale LLM Training?",
+          "authors": [
+            "Bingxiang He",
+            "Yuxin Zuo",
+            "Zeyuan Liu",
+            "Shangziqi Zhao",
+            "Zixuan Fu",
+            "Junlin Yang",
+            "Cheng Qian",
+            "Kaiyan Zhang",
+            "Yuchen Fan",
+            "Ganqu Cui",
+            "Xiusi Chen",
+            "Youbang Sun",
+            "Xingtai Lv",
+            "Xuekai Zhu",
+            "Li Sheng",
+            "Ran Li",
+            "Huan-ang Gao",
+            "Yuchen Zhang",
+            "Lifan Yuan",
+            "Bowen Zhou",
+            "Zhiyuan Liu",
+            "Ning Ding"
+          ],
+          "abstract": "Unsupervised reinforcement learning with verifiable rewards (URLVR) offers a pathway to scale LLM training beyond the supervision bottleneck by deriving rewards without ground truth labels. Recent works leverage model intrinsic signals, showing promising early gains, yet their potential and limitations remain unclear. In this work, we revisit URLVR and provide a comprehensive analysis spanning taxonomy, theory and extensive experiments. We first classify URLVR methods into intrinsic versus external based on reward sources, then establish a unified theoretical framework revealing that all intrinsic methods converge toward sharpening the model's initial distribution This sharpening mechanism succeeds when initial confidence aligns with correctness but fails catastrophically when misaligned. Through systematic experiments, we show intrinsic rewards consistently follow a rise-then-fall pattern across methods, with collapse timing determined by model prior rather than engineering choices. Despite these scaling limits, we find intrinsic rewards remain valuable in test-time training on small datasets, and propose Model Collapse Step to measure model prior, serving as a practical indicator for RL trainability. Finally, we explore external reward methods that ground verification in computational asymmetries, showing preliminary evidence they may escape the confidence-correctness ceiling. Our findings chart boundaries for intrinsic URLVR while motivating paths toward scalable alternatives. Code is available at \\url{https://github.com/PRIME-RL/TTRL}.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10009117",
+          "paper_url": "https://openreview.net/forum?id=VesLZukY5E",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2679,
+        "shared_authors": [
+          "bingxianghe",
+          "chengqian",
+          "huananggao",
+          "ningding",
+          "yuxinzuo",
+          "zhiyuanliu",
+          "zixuanfu"
+        ],
+        "score": 0.8679
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "JlX4RDitRr",
+          "title": "CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning",
+          "authors": [
+            "Ran Li",
+            "Zeyuan Liu",
+            "Yinghao Chen",
+            "Bingxiang He",
+            "Jiarui Yuan",
+            "Zixuan Fu",
+            "Weize Chen",
+            "Jinyi Hu",
+            "Chen Qian",
+            "Zhiyuan Liu",
+            "Maosong Sun"
+          ],
+          "abstract": "Large Language Models (LLMs) have demonstrated strong potential in complex reasoning, yet their progress remains fundamentally constrained by reliance on massive high-quality human-curated tasks and labels, either through supervised fine-tuning (SFT) or reinforcement learning (RL) on reasoning-specific data. This dependence renders supervision-heavy training paradigms increasingly unsustainable, with signs of diminishing scalability already evident in practice. To overcome this limitation, we introduce CPMöbius, a collaborative Coach–Player paradigm for data-free reinforcement learning of reasoning models. Unlike traditional adversarial self-play frameworks, CPMöbius inspired by multi-agent collaboration treats the Coach and Player as independent but cooperative roles. The Coach proposes instructions targeted at the Player’s capability and receives rewards based on changes in the Player’s performance, while the Player is rewarded for solving the increasingly instructive tasks generated by the Coach. This cooperative optimization loop is designed to directly enhance the Player’s mathematical reasoning ability. Remarkably, CPMöbius achieves substantial improvement without relying on any external training data, outperforming existing unsupervised approaches. For example, on the Qwen2.5-Math-7B-Instruct, our method improves accuracy by overall average +4.9 and out-of-distribution average +5.4, which exceed RENT for +1.5 on overall accuracy and R-zero for +4.2 on OOD accuracy.",
+          "official_url": "https://icml.cc/virtual/2026/poster/64791",
+          "paper_url": "https://openreview.net/forum?id=JlX4RDitRr",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2714,
+        "shared_authors": [
+          "bingxianghe",
+          "zhiyuanliu",
+          "zixuanfu"
+        ],
+        "score": 0.7214
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "lObnTKbm9U",
+          "title": "FlowRL: Matching Reward Distributions for LLM Reasoning",
+          "authors": [
+            "Xuekai Zhu",
+            "Daixuan Cheng",
+            "Dinghuai Zhang",
+            "Henry Li",
+            "Kaiyan Zhang",
+            "Che Jiang",
+            "Youbang Sun",
+            "Ermo Hua",
+            "Yuxin Zuo",
+            "Xingtai Lv",
+            "Qizheng Zhang",
+            "Lin Chen",
+            "Fanghao Shao",
+            "Bo Xue",
+            "Yunchong Song",
+            "Zhenjie Yang",
+            "Ganqu Cui",
+            "Ning Ding",
+            "Jianfeng Gao",
+            "Xiaodong Liu",
+            "Bowen Zhou",
+            "Hongyuan Mei",
+            "Zhouhan Lin"
+          ],
+          "abstract": "We propose FlowRL: matching the full reward distribution via flow balancing instead of solely maximizing rewards in large language model (LLM) reinforcement learning (RL). Recent advanced reasoning models adopt reward-maximizing methods (e.g., PPO and GRPO), which tend to over-optimize dominant reward signals while neglecting less frequent but valid reasoning paths, thus reducing diversity. In contrast, we transform scalar rewards into a normalized target distribution using a learnable partition function, and then minimize the reverse KL divergence between the policy and the target distribution. We implement this idea as a flow-balanced optimization method that promotes diverse exploration and generalizable reasoning trajectories. We conduct experiments on both math and code reasoning tasks: FlowRL achieves a significant average improvement of $10.0\\%$ over GRPO and $5.1\\%$ over PPO on math benchmarks, and performs consistently better on code reasoning tasks. These results highlight reward distribution-matching as a key step toward efficient exploration and diverse reasoning in LLM reinforcement learning.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10007683",
+          "paper_url": "https://openreview.net/forum?id=lObnTKbm9U",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3866,
+        "shared_authors": [
+          "ningding",
+          "yuxinzuo"
+        ],
+        "score": 0.6866
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/gao2026_openmopd_diagnosing_fixing.md",
+    "title": "Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation",
+    "arxiv": "2608.19098",
+    "authors": [
+      "Huan-ang Gao",
+      "Haohan Chi",
+      "Yong Yan",
+      "Shiyuan Feng",
+      "Hanlin Wu",
+      "Zheng Jiang",
+      "Bingxiang He",
+      "Wei-Ying Ma",
+      "Ya-Qin Zhang",
+      "Hao Zhou"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "nSRbKvrmsH",
+          "title": "Beyond Euclidean Clipping: Overcoming Exploration Collapse in LLM RL via Riemannian Isometric Policy Optimization",
+          "authors": [
+            "Zhicheng Cai",
+            "Xinyuan Guo",
+            "Hanlin Wu",
+            "Mingxuan Wang",
+            "Wei-Ying Ma",
+            "Ya-Qin Zhang",
+            "Hao Zhou"
+          ],
+          "abstract": "Reinforcement learning (RL) has become a dominant paradigm for enhancing LLMs' reasoning capabilities. However, RL algorithms with PPO-Clip are inherently limited by exploration collapse. Subsequent works remain primarily heuristic and fail to identify the essential cause of PPO-Clip’s failure. This work reveals the fundamental flaw of PPO-Clip: it implicitly measures policy discrepancy using Euclidean metric, which is theoretically inconsistent with the intrinsic geometry on the policy Riemannian manifold. This geometric mismatch results in overly conservative updates in low-probability regions while aggressive in high-probability regions, ultimately collapsing exploration. To correct this geometric flaw, we propose Riemannian Isometric Policy Optimization (RIPO), which guarantees isometric policy updates on the Riemannian manifold, effectively balancing exploration and exploitation. We further show that RIPO achieves a favorable bias-variance trade-off, which stabilizes optimization. Extensive experiments demonstrate that RIPO significantly surpasses existing LLM RL algorithms across seven competition-level benchmarks (up to 60% improvement over GRPO on AIME24).",
+          "official_url": "https://icml.cc/virtual/2026/poster/61727",
+          "paper_url": "https://openreview.net/forum?id=nSRbKvrmsH",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3687,
+        "shared_authors": [
+          "hanlinwu",
+          "haozhou",
+          "weiyingma",
+          "yaqinzhang"
+        ],
+        "score": 0.9687
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "MCmQyZ9Gxa",
+          "title": "CubeBench: Diagnosing Interactive, Long-Horizon Physical Intelligence under Partial Observations",
+          "authors": [
+            "Huan-ang Gao",
+            "Zikang Zhang",
+            "Tianwei Luo",
+            "Kaisen Yang",
+            "Xinzhe Juan",
+            "Jiahao Qiu",
+            "Tianxing Chen",
+            "Bingxiang He",
+            "Hao Zhao",
+            "Hao Zhou",
+            "Shilong Liu",
+            "Mengdi Wang"
+          ],
+          "abstract": "Large Language Model (LLM) agents, while proficient in the digital realm, face a significant gap in physical-world deployment due to the challenge of forming and maintaining a robust spatial mental model. We identify three core cognitive challenges hindering this transition: spatial reasoning, long-horizon state tracking via mental simulation, and active exploration under partial observation. To isolate and evaluate these faculties, we introduce \\textbf{CubeBench}, a novel generative benchmark centered on the Rubik's Cube. CubeBench uses a three-tiered diagnostic framework that progressively assesses agent capabilities, from foundational state tracking with full symbolic information to active exploration with only partial visual data. Our experiments on leading LLMs reveal critical limitations, including a uniform 0.00\\% pass rate on all long-horizon tasks, exposing a fundamental failure in long-term planning. We also propose a diagnostic framework to isolate these cognitive bottlenecks by providing external solver tools. By analyzing the failure modes, we provide key insights to guide the development of more physically-grounded intelligent agents.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10009967",
+          "paper_url": "https://openreview.net/forum?id=MCmQyZ9Gxa",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.4242,
+        "shared_authors": [
+          "bingxianghe",
+          "haozhou",
+          "huananggao"
+        ],
+        "score": 0.8742
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Evaluations_and_Datasets_Track",
+          "decision": "Accept (poster)",
+          "paper_id": "fHaQSToCTh",
+          "title": "CSBench: A Comprehensive Benchmark for Evaluating Project-Level System Construction in Computer Science",
+          "authors": [
+            "Hongli Yu",
+            "Huan-ang Gao",
+            "Botian Wang",
+            "Hanlin Wu",
+            "YiFei Wang",
+            "Daoguang Zan",
+            "Huang Anni",
+            "Weinan Dai",
+            "Qiying Yu",
+            "Jiaze Chen",
+            "Wei-Ying Ma",
+            "Ya-Qin Zhang",
+            "Jingjing Liu",
+            "Mingxuan Wang",
+            "Hao Zhou"
+          ],
+          "abstract": "",
+          "official_url": "https://neurips.cc/virtual/2026/poster/139195",
+          "paper_url": "https://openreview.net/forum?id=fHaQSToCTh",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2588,
+        "shared_authors": [
+          "hanlinwu",
+          "haozhou",
+          "huananggao",
+          "weiyingma",
+          "yaqinzhang"
+        ],
+        "score": 0.8588
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/he2026_learn_from_whoever.md",
+    "title": "Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs",
+    "arxiv": "2609.02548",
+    "authors": [
+      "Xixiang He",
+      "Xingming Li",
+      "Baiqi Wu",
+      "Qiyao Sun",
+      "Xuanyu Ji",
+      "Ao Cheng",
+      "Qingyong Hu"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "MKNimf9bIx",
+          "title": "Advantage Collapse in Group Relative Policy Optimization: Diagnosis and Mitigation",
+          "authors": [
+            "Xixiang He",
+            "Qiyao Sun",
+            "Ao Cheng",
+            "Xingming Li",
+            "Xuanyu Ji",
+            "Hailun Lu",
+            "Runke Huang",
+            "Qingyong Hu"
+          ],
+          "abstract": "Group Relative Policy Optimization (GRPO), a prominent algorithm within the Reinforcement Learning from Verifiable Rewards (RLVR) framework, has achieved strong results in improving the reasoning capabilities of large language models (LLMs). However, GRPO is prone to advantage collapse, a failure mode where homogeneous rewards within a group (e.g., all correct or all incorrect answers) yield near-zero advantages and vanishing gradients. To address this, we introduce the Advantage Collapse Rate (ACR), the first diagnostic metric quantifying the proportion of training batches with ineffective gradients. Across models from 0.5B to 14B parameters on mathematical reasoning benchmarks, we show that ACR strongly predicts training stagnation and final performance. We then propose Adaptive Virtual Sample Policy Optimization (AVSPO), a lightweight extension of GRPO that injects virtual reward samples, guided by real-time ACR monitoring, to enable learning from homogeneous groups without additional model rollouts. AVSPO reduces advantage collapse by 58–63% relative to GRPO and yields consistent accuracy gains of 4–6 percentage points across all model scales, while maintaining generalization on the evaluated out-of-domain task. Code and datasets are available at https://github.com/hexixiang/Advantage-Collapse-Rate.",
+          "official_url": "https://icml.cc/virtual/2026/poster/64547",
+          "paper_url": "https://openreview.net/forum?id=MKNimf9bIx",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3046,
+        "shared_authors": [
+          "aocheng",
+          "qingyonghu",
+          "qiyaosun",
+          "xingmingli",
+          "xixianghe",
+          "xuanyuji"
+        ],
+        "score": 0.9046
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "celqEfIjq2",
+          "title": "Learning from Disagreement: Multi-Teacher Distillation for Chinese Spelling Correction",
+          "authors": [
+            "Hongcheng Ding",
+            "Xuanze Zhao",
+            "Ziping Hu",
+            "Hongdan Xiao",
+            "Kang Xu",
+            "Weiyu Zhang"
+          ],
+          "abstract": "Chinese Spelling Correction (CSC) is hard precisely because a single misspelling can originate from any of four loosely coupled dimensions (glyph, phonetic, syntactic, or semantic confusion), yet existing systems treat the four as a flat fusion target. Multimodal pre-training and fixed-weight gating let evidence from each dimension co-exist, but never arbitrate: when a phonetic-plausible candidate contradicts a syntactic-plausible one, the model averages them, and learning effort is spent uniformly on cases where every dimension already agrees. Our diagnosis is that the bottleneck is no longer representation but \\emph{decision}: the cases where dimensions disagree are exactly the cases worth specializing for, and dimension-specific teachers expose this disagreement as a usable signal rather than as noise to be smoothed away. We instantiate this view as SEMTD (Self-Evolving Multi-Teacher Distillation), a 4B-parameter student trained from four single-dimension experts (glyph / phonetic / syntactic / semantic) under three coupled objectives: multi-teacher distillation with input-dependent expert selection, self-evolving learning that turns disagreement into a composite reward, and reflective path optimization that replays high-disagreement decisions. Across four benchmarks the student reaches Cor-F1 of $83.8$ on SIGHAN15, $62.3$ on LEMON (7-domain average), $98.2$ on ECSpell (3-domain average), and $73.0$ on CSCD-NS, matching or surpassing 14B LLM-based correctors at $3.5{\\times}$ fewer parameters. The takeaway is methodological: in CSC, treating teacher disagreement as the supervision target, rather than a residual to be averaged out, reopens headroom that flat fusion has saturated.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/151148",
+          "paper_url": "https://openreview.net/forum?id=celqEfIjq2",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5806,
+        "shared_authors": [],
+        "score": 0.5806
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "tz5T3eSFDA",
+          "title": "Scaling Multi-Teacher Distillation for Digital Pathology",
+          "authors": [
+            "Sofiène Boutaj",
+            "Pierre Marza",
+            "Varun Belagali",
+            "Dimitris Samaras",
+            "Maria Vakalopoulou",
+            "Stergios Christodoulidis"
+          ],
+          "abstract": "Multi-teacher distillation allows transferring knowledge from multiple “teacher” networks to a single “student” network. This method is promising in fields such as digital pathology, where many powerful foundation models were proposed recently. However, as we show in this paper, the standard multi-teacher distillation approach reacts poorly to an increase in the number of teachers used to train a student encoder. We demonstrate that learning teacher-specific representations is a key to scaling in MTD. Importantly, different design choices, such as learnable teacher tokens, a tailored attention scheme, additional mixture-of-experts layers and a contrastive loss, are proposed to better learn such teacher-specific representations. We show that our method better scales with respect to the number of considered teachers, allowing us to train compact student encoders, up to 10X more efficient than larger teacher foundation models, while matching their performance and even outperforming them on a large set of tile-level and slide-level tasks. We conduct a thorough empirical validation, evaluating more than 10 foundation models on 39 tasks spanning tile and slide levels. As a result, we release a new collection of strong and efficient foundation models, named OMNI, trained from the knowledge of 10 state-of-the-art foundation models. We finally conduct an analysis of the learned teacher-specific representations, highlighting their complementarity and explaining why they can be easily aggregated at downstream time.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/148948",
+          "paper_url": "https://openreview.net/forum?id=tz5T3eSFDA",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5271,
+        "shared_authors": [],
+        "score": 0.5271
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/hou2026_uniopd_unifying_onpolicy.md",
+    "title": "Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe",
+    "arxiv": "2605.03677",
+    "authors": [
+      "Wenjin Hou",
+      "Shangpin Peng",
+      "Weinong Wang",
+      "Zheng Ruan",
+      "Yue Zhang",
+      "Zhenglin Zhou",
+      "Mingqi Gao",
+      "Yifei Chen",
+      "Kaiqi Wang",
+      "Hongming Yang",
+      "Chengquan Zhang",
+      "Zhuotao Tian",
+      "Han Hu",
+      "Yi Yang",
+      "Fei Wu",
+      "Hehe Fan"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "G7DBGlgjjp",
+          "title": "Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs",
+          "authors": [
+            "Shangpin Peng",
+            "Weinong Wang",
+            "Zhuotao Tian",
+            "Senqiao Yang",
+            "Xing W",
+            "Haotian Xu",
+            "Chengquan Zhang",
+            "Takashi Isobe",
+            "Baotian Hu",
+            "Min Zhang"
+          ],
+          "abstract": "Direct Preference Optimization (DPO) has emerged as a cornerstone of reinforcement learning from human feedback (RLHF) due to its simplicity and efficiency. However, existing DPO-based methods typically treat all preference pairs equally, overlooking substantial variations in data quality and learning difficulty, which leads to inefficient data utilization and suboptimal performance. To address this limitation, we propose **Uni-DPO**, a unified dynamic preference optimization framework that jointly considers (a) the inherent quality of preference pairs and (b) the model's evolving performance during training. By adaptively reweighting samples based on both factors, Uni-DPO enables more effective use of preference data and achieves superior performance. Extensive experiments across models and benchmarks demonstrate the effectiveness and generalization of Uni-DPO. On textual tasks, Gemma-2-9B-IT fine-tuned with Uni-DPO surpasses the leading LLM, Claude 3 Opus, by 6.7 points on Arena-Hard. On mathematical and multimodal tasks, Uni-DPO consistently outperforms baseline methods across all benchmarks, providing strong empirical evidence of its effectiveness and robustness.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10010533",
+          "paper_url": "https://openreview.net/forum?id=G7DBGlgjjp",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.35,
+        "shared_authors": [
+          "chengquanzhang",
+          "shangpinpeng",
+          "weinongwang",
+          "zhuotaotian"
+        ],
+        "score": 0.95
+      },
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "main-long",
+          "decision": "accepted",
+          "paper_id": "2026.acl-long.1807",
+          "title": "One Refiner to Unlock Them All: Inference-Time Reasoning Elicitation via Reinforcement Query Refinement",
+          "authors": [
+            "Yixiao Zhou",
+            "Dongzhou Cheng",
+            "Zhiliang wu",
+            "Yi Yang",
+            "Yu Cheng",
+            "Hehe Fan"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.acl-long.1807/",
+          "paper_url": "https://aclanthology.org/2026.acl-long.1807/",
+          "source_url": "https://aclanthology.org/volumes/2026.acl-long.xml"
+        },
+        "title_similarity": 0.3624,
+        "shared_authors": [
+          "hehefan",
+          "yiyang"
+        ],
+        "score": 0.6624
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "VgOWxor3LV",
+          "title": "Stroke3D: Lifting 2D strokes into rigged 3D model via latent diffusion models",
+          "authors": [
+            "Ruisi Zhao",
+            "Haoren Zheng",
+            "Zongxin Yang",
+            "Hehe Fan",
+            "Yi Yang"
+          ],
+          "abstract": "Rigged 3D assets are fundamental to 3D deformation and animation. However, existing 3D generation methods face challenges in generating animatable geometry, while rigging techniques lack fine-grained structural control over skeleton creation. To address these limitations, we introduce Stroke3D, a novel framework that directly generates rigged meshes from user inputs: 2D drawn strokes and a descriptive text prompt. Our approach pioneers a two-stage pipeline that separates the generation into: 1) Controllable Skeleton Generation, we employ the Skeletal Graph VAE Sk-VAE to encode the skeleton's graph structure into a latent space, where the Skeletal Graph DiT Sk-DiT generates a skeletal embedding. The generation process is conditioned on both the text for semantics and the 2D strokes for explicit structural control, with the VAE's decoder reconstructing the final high-quality 3D skeleton; and 2) Enhanced Mesh Synthesis via TextuRig and SKA-DPO, where we then synthesize a textured mesh conditioned on the generated skeleton. For this stage, we first enhance an existing skeleton-to-mesh model by augmenting its training data with TextuRig—a dataset of textured and rigged meshes with captions, curated from Objaverse-XL. Additionally, we employ a preference optimization strategy, SKA-DPO, guided by a skeleton-mesh alignment score, to further improve geometric fidelity. Together, our framework enables a more intuitive workflow for creating ready-to-animate 3D content. To the best of our knowledge, our work is the first to generate rigged 3D meshes conditioned on user-drawn 2D strokes. Extensive experiments demonstrate that Stroke3D produces plausible skeletons and high-quality meshes.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10009115",
+          "paper_url": "https://openreview.net/forum?id=VgOWxor3LV",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.336,
+        "shared_authors": [
+          "hehefan",
+          "yiyang"
+        ],
+        "score": 0.636
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/kim2026_pain_more_gain.md",
+    "title": "No Pain, More Gain: Iterative Merging for Effective Multi-Teacher On-Policy Distillation",
+    "arxiv": "2609.34745",
+    "authors": [
+      "Seonghyeon Kim",
+      "Chaeyun Jang",
+      "Noah Lee",
+      "Boseop Kim",
+      "Juho Lee"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "8Ljh5OkXTi",
+          "title": "Mixture-Trained Merging for Unified Multi-Objective Models",
+          "authors": [
+            "SeongHyeon Kim",
+            "Chaeyun Jang",
+            "Seungyoo Lee",
+            "Jiyeon Ham",
+            "Yunju Bak",
+            "Boseop Kim",
+            "Juho Lee"
+          ],
+          "abstract": "Unified language models are increasingly expected to combine heterogeneous capabilities, such as mathematics, code, instruction following, and controllable thinking behavior, within a single set of parameters. A common solution is sequential post-training on multiple objectives, but this entangles all objectives along one optimization trajectory and makes the final model highly sensitive to training order, data ratios, schedules, and stopping criteria. Weight-space merging offers a modular alternative, but naive merging of single-objective experts often fails: domain capabilities degrade sharply, or think/non-think modes collapse into one dominant behavior. We attribute both failures to incompatible weight-space geometry: experts trained on isolated objectives drift to distant regions of parameter space, placing their interpolations outside any shared low-loss basin. We propose Mixture-Trained Merging (MTM), which trains each branch on an objective-biased data mixture rather than a single objective, exposing it to cross-objective interactions and making branches compatible at merge time. MTM uses merged-model evaluations as a low-cost signal for selecting branch mixtures, avoiding expensive data-mixture ablations. The procedure is iterative: each round promotes the base model using globally selected merge coefficients and refines each branch mixture using domain-preferred coefficients under constraints that preserve other objectives. To scale beyond simplex grid search, MTM uses qNEHVI-based multi-objective Bayesian optimization. Across code, mathematics, instruction following, and think/non-think control, MTM outperforms naive merging and preserves behavioral separation where single-objective merging collapses, suggesting that effective unified models require branches trained to be mergeable.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/155106",
+          "paper_url": "https://openreview.net/forum?id=8Ljh5OkXTi",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.384,
+        "shared_authors": [
+          "boseopkim",
+          "chaeyunjang",
+          "juholee",
+          "seonghyeonkim"
+        ],
+        "score": 0.984
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "572-MAIN",
+          "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5811,
+        "shared_authors": [],
+        "score": 0.5811
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "1dvDUYc8nm",
+          "title": "Confidence is Not Universal: Task-Dependent Calibration and Emergent Behavior in LLMs",
+          "authors": [
+            "Chaeyun Jang",
+            "Moonseok Choi",
+            "Yegon Kim",
+            "Seungyoo Lee",
+            "Juho Lee",
+            "Hyungi Lee"
+          ],
+          "abstract": "Large language models (LLMs) increasingly support human decision-making, rendering human-interpretable confidence essential. However, it remains unclear whether verbalized confidence calibration generalizes across heterogeneous tasks without degrading accuracy. We show that universal confidence calibration fails. Across diverse benchmarks, we identify two incompatible task families with distinct confidence semantics. In reasoning-centric tasks, confidence supervision transfers within the family, often improving calibration while preserving or even improving accuracy, and induces emergent behaviors such as confidence-dependent reasoning length and self-verification. Retrieval- and copy-oriented tasks also exhibit within-family transfer, but fail to generalize to reasoning tasks, with cross-family supervision degrading both calibration and accuracy. Motivated by this finding, we disentangle confidence into reasoning uncertainty and evidence localization uncertainty. This simple decomposition restores cross-family generalization using supervised fine-tuning alone, suggesting that effective confidence alignment requires task-aware semantics rather than a universal scalar notion.",
+          "official_url": "https://icml.cc/virtual/2026/poster/66660",
+          "paper_url": "https://openreview.net/forum?id=1dvDUYc8nm",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2585,
+        "shared_authors": [
+          "chaeyunjang",
+          "juholee"
+        ],
+        "score": 0.5585
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/li2026_beyond_teacher_assignment.md",
+    "title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+    "arxiv": "2609.35347",
+    "authors": [
+      "Xin Li",
+      "Hao Jiang",
+      "Xin Gao",
+      "Annan Wang",
+      "Yuchen Xie",
+      "Jinghao Guo",
+      "Xingwei Qu",
+      "Yichi Zhang",
+      "Chau Yuen"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "aDT1e7R9q8",
+          "title": "FedSSM: State Space Model-based Proactive Inference for Heterogeneous Multimodal Federated Learning",
+          "authors": [
+            "Hengyi Ren",
+            "Yuchen Xie",
+            "Changlong Wang",
+            "Xin Li",
+            "Yue Huang",
+            "Jian Guo",
+            "Lijuan Sun"
+          ],
+          "abstract": "Multimodal Federated Learning (MMFL) addresses collaborative training across clients with heterogeneous modality configurations, where effective client selection becomes critical under the compounded challenges of modality, distribution, and quantity heterogeneity. Existing selection methods operate within a reactive paradigm, responding to current observations without anticipating how decisions influence future optimization trajectories. This myopic approach leads to suboptimal convergence when training dynamics shift rapidly under severe heterogeneity. We propose FedSSM, which reconceptualizes client selection as a proactive decision-making process by predicting training dynamics through decision-aware state space models. The prediction error yields a \\emph{surprise} signal that quantifies uncertainty and governs adaptive participation budgets and exploration-exploitation trade-offs via counterfactual reasoning over candidate actions. For aggregation, we introduce trust-weighted fusion with modality-specific routing, where surprise calibrates sensitivity to client anomalies. Experiments on four multimodal benchmarks demonstrate that FedSSM achieves 2.5--4.5\\% accuracy improvements over state-of-the-art methods while reducing communication rounds by over 30\\%.",
+          "official_url": "https://icml.cc/virtual/2026/poster/63087",
+          "paper_url": "https://openreview.net/forum?id=aDT1e7R9q8",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3165,
+        "shared_authors": [
+          "xinli",
+          "yuchenxie"
+        ],
+        "score": 0.6165
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "572-MAIN",
+          "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5793,
+        "shared_authors": [],
+        "score": 0.5793
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "NrU0jOBYTv",
+          "title": "Beyond SFT-to-RL: Pre-alignment via Black-box On-policy Distillation for Multimodal RL",
+          "authors": [
+            "Sudong Wang",
+            "Weiquan Huang",
+            "Xiaomin Yu",
+            "Zuhao Yang",
+            "Hehai Lin",
+            "Keming Wu",
+            "Chaojun Xiao",
+            "CHEN CHEN",
+            "Wenxuan Wang",
+            "Beier Zhu",
+            "Yunjian Zhang",
+            "Chengwei Qin"
+          ],
+          "abstract": "",
+          "official_url": "https://neurips.cc/virtual/2026/poster/153111",
+          "paper_url": "https://openreview.net/forum?id=NrU0jOBYTv",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5634,
+        "shared_authors": [],
+        "score": 0.5634
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/li2026_datafree_onpolicy_distillation.md",
+    "title": "Data-Free On-Policy Distillation: How Far Can We Go Without External Data?",
+    "arxiv": "2609.14193",
+    "authors": [
+      "Gengsheng Li",
+      "Mao Zheng",
+      "Mingyang Song",
+      "Jie Sun",
+      "Zeyuan Liu",
+      "Ruiqi Liu",
+      "Tianyu Yang",
+      "Qiyong Zhong",
+      "Haiyun Guo",
+      "Junfeng Fang",
+      "Shiming Xiang",
+      "Jinqiao Wang",
+      "Tat-Seng Chua"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "MnkwYa1NsV",
+          "title": "SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation",
+          "authors": [
+            "Jie Sun",
+            "Mao Zheng",
+            "Mingyang Song",
+            "Qiyong Zhong",
+            "Yilin Cheng",
+            "Bichuan Feng",
+            "Pengfei Liu",
+            "Junfeng Fang",
+            "Xiang Wang"
+          ],
+          "abstract": "On-policy distillation (OPD) is a standard tool for transferring teacher behavior to a smaller student, but it implicitly assumes that teacher and student predictions are comparable token by token, an assumption that fails whenever the two models tokenize the same text differently. Under heterogeneous tokenizers, exact shared-token matching silently discards a large fraction of the teacher signal at precisely the positions where vocabularies disagree. We propose \\textbf{\\underline{Sim}ple \\underline{C}ross-\\underline{T}okenizer OPD (SimCT)}, which restores this signal by enlarging the supervision space: alongside shared tokens, SimCT compares teacher and student over short multi-token continuations that both tokenizers can realize, leaving the OPD loss form itself unchanged. We show that these units are the finest jointly tokenizable supervision interface, and that coarser alternatives remove teacher-student distinctions that are useful for on-policy learning. Across three heterogeneous teacher-student pairs on mathematical reasoning and code-generation benchmarks, SimCT shows consistent gains over shared-vocabulary OPD and representative cross-tokenizer baselines, with ablations confirming that the improvements come from recovering supervision discarded by exact shared-token matching. Code is available at \\href{https://anonymous.4open.science/r/SimCT}{https://anonymous.4open.science/r/SimCT}.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/153233",
+          "paper_url": "https://openreview.net/forum?id=MnkwYa1NsV",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.378,
+        "shared_authors": [
+          "jiesun",
+          "junfengfang",
+          "maozheng",
+          "mingyangsong",
+          "qiyongzhong"
+        ],
+        "score": 0.978
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "DZiuKVvrJW",
+          "title": "R-Diverse: Mitigating Diversity Illusion in Self-Play LLM Training",
+          "authors": [
+            "Gengsheng Li",
+            "Jinghan He",
+            "Shijie Wang",
+            "Ruiqi Liu",
+            "Renrui Zhang",
+            "Zijun Yao",
+            "Junfeng Fang",
+            "Haiyun Guo",
+            "Dan Zhang",
+            "Jinqiao Wang"
+          ],
+          "abstract": "Self-play bootstraps LLM reasoning through an iterative Challenger--Solver loop: the Challenger is trained to generate questions that target the Solver's capabilities, and the Solver is optimized on the generated data to expand its reasoning skills. However, existing frameworks like R-Zero often exhibit non-sustained improvement, where early gains degrade as self-play continues. We identify a key failure mode, **Diversity Illusion**, where the Solver's training signals appear diverse yet collapse into recurring underlying patterns. It manifests as (1) *Local Diversity Illusion*, where diversity is enforced only within-batch, inducing cross-iteration mode cycling; and (2) *Surface Diversity Illusion*, where questions vary superficially but require near-identical reasoning skills. To mitigate them, we propose R-Diverse with two aligned innovations: **Memory-Augmented Penalty (MAP)**, which uses a persistent memory bank to discourage recycling across iterations, and **Skill-Aware Measurement (SAM)**, which evaluates diversity by the reasoning skills exercised rather than surface variation of questions. Across 10 math and general reasoning benchmarks, R-Diverse sustains gains over more iterations and consistently outperforms prior self-play methods.",
+          "official_url": "https://icml.cc/virtual/2026/poster/65447",
+          "paper_url": "https://openreview.net/forum?id=DZiuKVvrJW",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3448,
+        "shared_authors": [
+          "gengshengli",
+          "haiyunguo",
+          "jinqiaowang",
+          "junfengfang",
+          "ruiqiliu"
+        ],
+        "score": 0.9448
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "o6AFRNewXC",
+          "title": "Visual-Advantage On-Policy Distillation for Vision-Language Models",
+          "authors": [
+            "Ruiqi Liu",
+            "Xiaolei Lv",
+            "Gengsheng Li",
+            "Ximo Zhu",
+            "Zhiheng Wang",
+            "Zhengbo Zhang",
+            "Junkai Chen",
+            "Zhiheng Li",
+            "Bo Li",
+            "Jun Gao",
+            "Shu Wu"
+          ],
+          "abstract": "On-policy knowledge distillation has proven effective for language models, yet its application to vision-language models (VLMs) remains underexplored. We observe that standard on-policy distillation can improve a student's output quality while failing to strengthen its reliance on visual input: on vision-critical tokens, the student's predictions remain largely unchanged whether or not fine-grained visual detail is present, even though the teacher's predictions depend heavily on it. To make this difference observable, we introduce *visual advantage* (VA), the token-level log-probability difference when the teacher scores a student-generated rollout with versus without access to fine-grained visual detail. VA is concentrated in a small minority of tokens, and these high-VA tokens are the ones that actually carry the visual supervision signal. This motivates a distillation objective that treats them differently from language scaffolding, so their contribution is not diluted by the abundant surrounding language tokens. We propose **Visual-Advantage On-Policy Distillation (VA-OPD)**, which uses VA at two granularities: rollout-level reweighting by trajectory-averaged VA, and token-level KL averaged within high-VA and low-VA groups separately. We train on two math datasets (Geometry3K and ViRL-39k) and evaluate on eight benchmarks covering both mathematical reasoning and visual understanding, across three teacher sizes (4B, 8B, and 32B) on the Qwen3-VL family. VA-OPD improves over standard on-policy distillation on every benchmark, with the gain growing monotonically along both the teacher-size and data-scale axes, suggesting that these factors compound consistently.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/149701",
+          "paper_url": "https://openreview.net/forum?id=o6AFRNewXC",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5593,
+        "shared_authors": [
+          "gengshengli",
+          "ruiqiliu"
+        ],
+        "score": 0.8593
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/li2026_every_coin_has.md",
+    "title": "Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models",
+    "arxiv": "2608.16647",
+    "authors": [
+      "Zhaoyi Li",
+      "Deyang Kong",
+      "Yuan Wei",
+      "Evan Yang",
+      "Ranran Shen",
+      "Mahardika Krisna Ihsani",
+      "Ming Yang",
+      "Wei Zhang",
+      "Chuan Hao",
+      "Jian Yang",
+      "Ran Tao",
+      "Bryan Dai",
+      "Shikun Zhang",
+      "Wei Ye",
+      "Ying Wei",
+      "Defu Lian"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "Findings",
+          "decision": "accepted",
+          "paper_id": "2026.findings-acl.796",
+          "title": "LoopCoder: Scaling Code Intelligence via Looped Language Models",
+          "authors": [
+            "Jian Yang",
+            "Wei Zhang",
+            "Shuyue Guo",
+            "Yizhi LI",
+            "Linzheng Chai",
+            "Zhengmao Ye",
+            "Shukai Liu",
+            "Yuyang Song",
+            "Jiajun Wu",
+            "Che Liu",
+            "Tianyu Zheng",
+            "Siwei Wu",
+            "Leo L",
+            "Xudong Ma",
+            "Chuan Hao",
+            "Ran Tao",
+            "Yan Xing",
+            "Jianzhou Wang",
+            "Mingjie Tang",
+            "Aishan Liu",
+            "Zhoujun Li",
+            "Xianglong Liu",
+            "Weifeng Lv",
+            "Bryan Dai"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.findings-acl.796/",
+          "paper_url": "https://aclanthology.org/2026.findings-acl.796/",
+          "source_url": "https://aclanthology.org/volumes/2026.findings-acl.xml"
+        },
+        "title_similarity": 0.4295,
+        "shared_authors": [
+          "bryandai",
+          "chuanhao",
+          "jianyang",
+          "rantao",
+          "weizhang"
+        ],
+        "score": 1.0295
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "qK4JKOu0Gx",
+          "title": "Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models",
+          "authors": [
+            "Zhaoyi Li",
+            "Jiatong Li",
+            "Gangwei Jiang",
+            "Linqi Song",
+            "Defu Lian",
+            "Ying Wei"
+          ],
+          "abstract": "Chain-of-thought (CoT) reasoning has become the standard paradigm for enabling Large Language Models (LLMs) to solve complex problems. However, recent studies reveal a sharp performance drop in *reasoning hop generalization* scenarios, where the required number of reasoning steps exceeds training distributions while the underlying algorithm remains unchanged. The internal mechanisms driving this failure remain poorly understood. In this work, we conduct a systematic study on tasks from multiple domains, and find that errors concentrate at token positions of a few critical error types, rather than being uniformly distributed. Closer inspection reveals that these token-level erroneous predictions stem from internal *competition mechanisms*: certain attention heads, termed *erroneous processing heads* (ep heads), tip the balance by amplifying incorrect reasoning trajectories while suppressing correct ones. Notably, removing individual ep heads during inference can often restore the correct predictions. Motivated by these insights, we propose test-time correction of reasoning, a lightweight intervention method that dynamically identifies and deactivates ep heads in the reasoning process. Extensive experiments across different tasks and LLMs show that it consistently improves reasoning hop generalization, highlighting both its effectiveness and potential.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10007253",
+          "paper_url": "https://openreview.net/forum?id=qK4JKOu0Gx",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.4688,
+        "shared_authors": [
+          "defulian",
+          "yingwei",
+          "zhaoyili"
+        ],
+        "score": 0.9187
+      },
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "Findings",
+          "decision": "accepted",
+          "paper_id": "2026.findings-acl.487",
+          "title": "Scaling Laws for Code: Every Programming Language Matters",
+          "authors": [
+            "Jian Yang",
+            "Shuyue Guo",
+            "Linzheng Chai",
+            "Wei Zhang",
+            "Aishan Liu",
+            "Chuan Hao",
+            "Zhoujun Li",
+            "Xin Zhao",
+            "Xianglong Liu",
+            "Weifeng Lv",
+            "Bryan Dai"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.findings-acl.487/",
+          "paper_url": "https://aclanthology.org/2026.findings-acl.487/",
+          "source_url": "https://aclanthology.org/volumes/2026.findings-acl.xml"
+        },
+        "title_similarity": 0.2797,
+        "shared_authors": [
+          "bryandai",
+          "chuanhao",
+          "jianyang",
+          "weizhang"
+        ],
+        "score": 0.8797
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/liu2026_pmopd_task_ordering.md",
+    "title": "PMOPD: Task Ordering, Cycling, and Parameter-Update Subspace Protection in Multi-Teacher On-Policy Distillation",
+    "arxiv": "2609.34605",
+    "authors": [
+      "Youzhi Liu",
+      "Ruobing Zheng",
+      "Boyuan Tong",
+      "Tianqi Li",
+      "Pingqi Li",
+      "Hanbo Bi",
+      "Yi Yuan",
+      "Jingdong Chen"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "572-MAIN",
+          "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5833,
+        "shared_authors": [],
+        "score": 0.5833
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "7pvJoB4aKO",
+          "title": "Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs",
+          "authors": [
+            "Ruihan Jin",
+            "Pengpeng Shao",
+            "Zhengqi Wen",
+            "Jinyang Wu",
+            "Mingkuan Feng",
+            "Shuo Yang",
+            "Chu Yuan Zhang",
+            "Jianhua Tao"
+          ],
+          "abstract": "Knowledge distillation has emerged as a pivotal technique for transferring knowledge from stronger large language models (LLMs) to smaller, more efficient models. However, traditional distillation approaches face challenges related to knowledge conflicts and high resource demands, particularly when leveraging multiple teacher models. In this paper, we introduce the concept of **Knowledge Purification**, which consolidates the rationales from multiple teacher LLMs into a single rationale, thereby mitigating conflicts and enhancing efficiency. To investigate the effectiveness of knowledge purification, we further propose five purification methods from various perspectives. Our experiments demonstrate that these methods not only improve the performance of the distilled model but also effectively alleviate knowledge conflicts. Moreover, router-based methods exhibit robust generalization capabilities, underscoring the potential of innovative purification techniques in optimizing multi-teacher distillation and facilitating the practical deployment of powerful yet lightweight models.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10011259",
+          "paper_url": "https://openreview.net/forum?id=7pvJoB4aKO",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5301,
+        "shared_authors": [],
+        "score": 0.5301
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/liu2026_recovering_general_capabilities.md",
+    "title": "Recovering General Capabilities via Uncertainty-Calibrated Multi-Teacher On-Policy Distillation",
+    "arxiv": "2608.26735",
+    "authors": [
+      "Ziyuan Liu",
+      "Jiao Ou",
+      "Jian Liang",
+      "Ruiming Tang",
+      "Cheng Luo"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "6018-MAIN",
+          "title": "Calibrating Student Models via Uncertainty-Integrated Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5655,
+        "shared_authors": [],
+        "score": 0.5655
+      },
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "main-long",
+          "decision": "accepted",
+          "paper_id": "2026.acl-long.666",
+          "title": "Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation",
+          "authors": [
+            "Hengyuan Zhang",
+            "Shiping Yang",
+            "Xiao Liang",
+            "Chenming Shang",
+            "Yuxuan Jiang",
+            "Chaofan Tao",
+            "Jing Xiong",
+            "Hayden Kwok-Hay So",
+            "Ruobing Xie",
+            "Angel X Chang",
+            "Ngai Wong"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.acl-long.666/",
+          "paper_url": "https://aclanthology.org/2026.acl-long.666/",
+          "source_url": "https://aclanthology.org/volumes/2026.acl-long.xml"
+        },
+        "title_similarity": 0.538,
+        "shared_authors": [],
+        "score": 0.538
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "572-MAIN",
+          "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5157,
+        "shared_authors": [],
+        "score": 0.5157
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/lu2026_beyond_best_teacher.md",
+    "title": "Beyond the Best Teacher: Expanding and Compressing the Reasoning Solution Manifold",
+    "arxiv": "2607.27770",
+    "authors": [
+      "Songshuo Lu",
+      "Zhi Chen",
+      "Yaohua Tang"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "Z4xgDCwiYE",
+          "title": "ReorgGS: Equivalent Distribution Reorganization for 3D Gaussian Splatting",
+          "authors": [
+            "Luchao Wang",
+            "Kaimin Liao",
+            "Hua Wang",
+            "Qian Ren",
+            "Zhi Chen",
+            "Yaohua Tang"
+          ],
+          "abstract": "",
+          "official_url": "https://neurips.cc/virtual/2026/poster/151643",
+          "paper_url": "https://openreview.net/forum?id=Z4xgDCwiYE",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2794,
+        "shared_authors": [
+          "yaohuatang",
+          "zhichen"
+        ],
+        "score": 0.5794
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/ma2026_mopd_multiteacher_onpolicy.md",
+    "title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
+    "arxiv": "2606.30406",
+    "authors": [
+      "Wenhan Ma",
+      "Jianyu Wei",
+      "Liang Zhao",
+      "Hailin Zhang",
+      "Bangjun Xiao",
+      "Lei Li",
+      "Qibin Yang",
+      "Bofei Gao",
+      "Yudong Wang",
+      "Rang Li",
+      "Jinhao Dong",
+      "Zhifang Sui",
+      "Fuli Luo"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "ZMkfGplf4b",
+          "title": "Stabilizing MoE Reinforcement Learning by Aligning Training and Inference Routers",
+          "authors": [
+            "Wenhan Ma",
+            "Hailin Zhang",
+            "Liang Zhao",
+            "Yifan Song",
+            "Yudong Wang",
+            "Fuli Luo",
+            "Zhifang Sui"
+          ],
+          "abstract": "Reinforcement learning (RL) has emerged as a crucial approach for enhancing the capabilities of large language models. However, in Mixture-of-Experts (MoE) models, RL training tends to be unstable and can even collapse entirely. We analyze the training-inference consistency of MoE models and identify a notable discrepancy in routing behaviors between the two phases. To address this issue, we propose Rollout Routing Replay (R3), a novel and effective method that records routing distributions from the inference engine and replays them during training. R3 significantly reduces training-inference policy KL divergence and mitigates extreme discrepancies without compromising training speed. Extensive experiments on various settings confirm that R3 succeeds in stabilizing RL training, preventing collapse and outperforming strong baselines. R3 is orthogonal to most policy optimization algorithm improvements, allowing it to be used in conjunction with them. We believe this work can offer a new solution for stabilizing RL in MoE model.",
+          "official_url": "https://icml.cc/virtual/2026/poster/63177",
+          "paper_url": "https://openreview.net/forum?id=ZMkfGplf4b",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.349,
+        "shared_authors": [
+          "fuliluo",
+          "hailinzhang",
+          "liangzhao",
+          "wenhanma",
+          "yudongwang",
+          "zhifangsui"
+        ],
+        "score": 0.949
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Evaluations_and_Datasets_Track",
+          "decision": "Accept (poster)",
+          "paper_id": "GlpMVukwjK",
+          "title": "Claw-Eval: Towards Trustworthy Evaluation of Autonomous Agents",
+          "authors": [
+            "Bowen Ye",
+            "Rang Li",
+            "Qibin Yang",
+            "Yuanxin Liu",
+            "Linli Yao",
+            "Hanglong Lv",
+            "Zhihui Xie",
+            "Chenxin An",
+            "Lei Li",
+            "Lingpeng Kong",
+            "Qi Liu",
+            "Zhifang Sui",
+            "Tong Yang"
+          ],
+          "abstract": "Large language models are increasingly deployed as autonomous agents for multi-step workflows in real-world software environments. However, existing agent benchmarks are limited by trajectory-opaque grading, underspecified safety and robustness evaluation, and narrow coverage of modalities and interaction paradigms. We introduce Claw-Eval, an end-to-end evaluation suite addressing these gaps with 300 human-verified tasks spanning 9 categories across three groups: general service orchestration, multimodal perception and interaction, and multi-turn professional dialogue. To enable trajectory-aware grading, each run is recorded through three independent evidence channels: execution traces, audit logs, and environment snapshots, yielding 2,159 fine-grained rubric items. The scoring protocol evaluates Completion, Safety, and Robustness, with Average Score, Pass@k, and Pass^k across three trials to distinguish genuine capability from lucky outcomes. Experiments on 14 frontier models show that: (1) Trajectory-opaque evaluation is systematically unreliable, missing 44% of safety violations and 13% of robustness failures detected by our framework. (2) Capability does not imply consistency, with Pass@3 remaining stable under error injection while Pass^3 dropping by up to 24 percentage points. (3) Agent capability is strongly multi-dimensional, with model rankings varying across task groups and metrics, indicating that our heterogeneous evaluation coverage is essential. Claw-Eval highlights directions for developing agents that are not only capable but reliably deployable.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/139588",
+          "paper_url": "https://openreview.net/forum?id=GlpMVukwjK",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2901,
+        "shared_authors": [
+          "leili",
+          "qibinyang",
+          "rangli",
+          "zhifangsui"
+        ],
+        "score": 0.8901
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "zc8ZDMJmKB",
+          "title": "RaBitQCache: Rotated Binary Quantization for KVCache in Long Context LLM Inference",
+          "authors": [
+            "Wenhao Li",
+            "Jinhao Dong",
+            "Hailin Zhang",
+            "Wenhang Shi",
+            "WEI LU",
+            "Xiaoyong Du"
+          ],
+          "abstract": "Long-context Large Language Model inference is severely bottlenecked by the massive Key-Value (KV) cache, yet existing sparse attention methods often suffer from static fixed-budget (Top-k) retrieval or rely on proxy scores that are computationally expensive and biased. To address these limitations, we propose RaBitQCache, a novel sparse attention framework that utilizes randomized rotated binary quantization and high-throughput binary-INT4 arithmetic to efficiently estimate attention weights. Our proxy score serves as an unbiased estimator with a proven error bound, enabling adaptive Top-p retrieval that dynamically adjusts the token budget based on actual attention sparsity. We further implement a hardware-aware system with asynchronous pipelining and lazy updates to mask overhead. Evaluations demonstrate that RaBitQCache significantly accelerates inference and reduces memory I/O while preserving generation quality compared to state-of-the-art baselines. Code is available at https://github.com/Sakuraaa0/RaBitQCache.git.",
+          "official_url": "https://icml.cc/virtual/2026/poster/60504",
+          "paper_url": "https://openreview.net/forum?id=zc8ZDMJmKB",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.4595,
+        "shared_authors": [
+          "hailinzhang",
+          "jinhaodong"
+        ],
+        "score": 0.7595
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/ma2026_one_student_many.md",
+    "title": "One Student, Many Teachers: Multi-Task On-Policy Distillation via Soft-Prompt Privileged Context",
+    "arxiv": "2607.18293",
+    "authors": [
+      "Yingzi Ma",
+      "Zichen Zhu",
+      "Ming Jiang",
+      "Chaowei Xiao"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "2pQJ37HKk3",
+          "title": "MaskForge: Structure-Aware Adaptive Attacks for Jailbreaking Diffusion Large Language Models",
+          "authors": [
+            "Yingzi Ma",
+            "Zhengyue Zhao",
+            "Xiaogeng Liu",
+            "Minhui Xue",
+            "Yue Zhao",
+            "Chaowei Xiao"
+          ],
+          "abstract": "Diffusion large language models (dLLMs) generate text by iteratively denoising partially masked sequences under bidirectional context, exposing a safety surface distinct from autoregressive LLMs. Because mask tokens are native inputs and tokens are committed by confidence rather than position, harmful content can be induced through infilling and outside the monitored prefix. Existing jailbreaks either miss this native infill capability or rely on low-diversity mask-bearing templates applied uniformly across goals, with little structural adaptation or accumulated attack experience. We propose MaskForge, a fully black-box adaptive attack that casts dLLM red-teaming as optimized search over a growing library of structural patterns. MaskForge abstracts successful attempts into reusable schemas, selects goal-compatible patterns with a UCB bandit, and invokes a scorer-guided fallback when the current library fails. Successful attempts are distilled back into the pattern library, enabling experience to accumulate across goals. Across five public dLLMs and three benchmarks, MaskForge achieves an average attack success rate of 79.3\\%, a 17.6\\% relative improvement over the strongest competing dLLM baseline. The matured pattern library further transfers to AdvBench without any updates, achieving a 88.2\\% attack success rate and a 67\\% relative improvement over the strongest competing baseline.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/155796",
+          "paper_url": "https://openreview.net/forum?id=2pQJ37HKk3",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3457,
+        "shared_authors": [
+          "chaoweixiao",
+          "yingzima"
+        ],
+        "score": 0.6457
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "4cZVcqbvw1",
+          "title": "SEAD: Competence-Aware On-Policy Distillation via Entropy-Guided Supervision",
+          "authors": [
+            "Michael Lee",
+            "Zelei Cheng",
+            "Yu Wang",
+            "Renkun Ni",
+            "Sambit Sahu",
+            "Shi-Xiong Zhang",
+            "William Campbell"
+          ],
+          "abstract": "",
+          "official_url": "https://neurips.cc/virtual/2026/poster/155569",
+          "paper_url": "https://openreview.net/forum?id=4cZVcqbvw1",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5578,
+        "shared_authors": [],
+        "score": 0.5578
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "572-MAIN",
+          "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5161,
+        "shared_authors": [],
+        "score": 0.5161
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/nguyen2026_avsd_adaptiveview_selfdistillation.md",
+    "title": "AVSD: Adaptive-View Self-Distillation by Balancing Consensus and Teacher-Specific Privileged Signals",
+    "arxiv": "2605.20643",
+    "authors": [
+      "Duy Nguyen",
+      "Hanqi Xiao",
+      "Archiki Prasad",
+      "Zaid Khan",
+      "Anirban Das",
+      "Austin Zhang",
+      "Sambit Sahu",
+      "Hyunji Lee",
+      "Elias Stengel-Eskin",
+      "Mohit Bansal"
+    ],
+    "exact_matches": [
+      {
+        "venue": "NEURIPS",
+        "year": 2026,
+        "track": "Conference",
+        "decision": "Accept (poster)",
+        "paper_id": "fRtcETLCZ2",
+        "title": "AVSD: Adaptive-View Self-Distillation by Balancing Consensus and Teacher-Specific Privileged Signals",
+        "authors": [
+          "Duy Nguyen",
+          "Hanqi Xiao",
+          "Archiki Prasad",
+          "Zaid Khan",
+          "Anirban Das",
+          "Shi-Xiong Zhang",
+          "Sambit Sahu",
+          "Hyunji Lee",
+          "Elias Stengel-Eskin",
+          "Mohit Bansal"
+        ],
+        "abstract": "Self-distillation enables language models to learn in an on-policy fashion from their own trajectories by using the same model as both the teacher and student, with the teacher being conditioned on privileged information that is unavailable to the student. This information can take multiple forms or views, including solutions, demonstrations, or feedback; for example, for a math problem, one view might be a ground truth reasoning trace. Supervising the student via the privileged teacher enables fine-grained token-level feedback and removes misalignment caused by distillation from external policies with different semantic biases. However, self-distillation also creates a fundamental asymmetry: the teacher may encode view-specific information tied to the privileged information provided during training, which the student cannot access at inference time. Moreover, the best form of privileged information is often task-dependent, making it difficult to choose a single teacher view. In this work, we address both these challenges jointly by introducing AVSD (Adaptive-View Self-Distillation), a novel method of self-distillation with multiple privileged-information views, which reconstructs token-level supervision by separating stable cross-view consensus from view-specific residual support. The consensus signal provides a robust update direction, while the residual signal is selectively used to adjust the update magnitude. Together, these components form a gated aggregation mechanism that balances a conservative target (geometric mean) with a more permissive target (arithmetic mean) for aggregating teacher signals at the token level. Experiments on math competition benchmarks (AIME24, AIME25, and HMMT25) show that AVSD consistently outperforms single-view self-distillation baselines and GRPO, achieving 3.1\\% Avg@8 gain over the strongest baseline on Qwen3-8B on average. Moreover, on code-generation benchmarks (Codeforces, LiveCodeBench) using Qwen3-8B, AVSD outperforms single-view self-distillation baselines by 2.9\\% on average. More broadly, our analysis shows that AVSD provides better token-level learning signals than any single-view method by reconstructing supervision from multiple privileged teachers.",
+        "official_url": "https://neurips.cc/virtual/2026/poster/150780",
+        "paper_url": "https://openreview.net/forum?id=fRtcETLCZ2",
+        "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+        "arxiv_ids": []
+      }
+    ],
+    "identifier_matches": [],
+    "candidates": []
+  },
+  {
+    "file": "research-wiki/papers/qin2026_videomopd_multiteacher_onpolicy.md",
+    "title": "Video-MOPD: Multi-Teacher On-Policy Distillation for Video Understanding",
+    "arxiv": "2609.09300",
+    "authors": [
+      "Zhenxin Qin",
+      "Peng Shi",
+      "Cong Han",
+      "Yinlong Qian",
+      "Zequn Jie",
+      "Lin Ma"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "2835-MAIN",
+          "title": "MosaicAudio: Multi-Teacher On-Policy Distillation for Controllable Video-to-Audio Generation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.6901,
+        "shared_authors": [],
+        "score": 0.6901
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "oNmMv7Lcj5",
+          "title": "SPECS: Decoupling Multimodal Learning via Self-distilled Preference-based Cold Start",
+          "authors": [
+            "Kun Chen",
+            "Peng Shi",
+            "Haibo Qiu",
+            "Zhixiong Zeng",
+            "Siqi Yang",
+            "Wenji Mao",
+            "Lin Ma"
+          ],
+          "abstract": "Reinforcement learning with verifiable rewards (RLVR) has recently catalyzed a wave of \"MLLM-r1\" approaches that bring RL to vision language models. Most representative paradigms begin with a cold start, typically employing supervised fine-tuning (SFT), to initialize the policy before RL. However, SFT-based cold start adopts the reasoning paradigm intertwined with task solution and output format, which may induce instruction-style overfitting, weakens out-of-distribution generalization, and ultimately affects downstream RL. We revisit the cold start along two views, its training method and data construction, and introduce the Generalization Factor (GF) coefficient to quantify the generalization capability under different methods. Our empirical study finds that preference–based training methods (e.g. DPO) generalizes better than SFT-based methods in cold start. Motivated by this, we propose $\\textbf{SPECS}$—a $\\textbf{S}$elf-distilled, $\\textbf{P}$r$\\textbf{e}$ference-based $\\textbf{C}$old $\\textbf{S}$tart framework that decouples multimodal learning: (1) generates introspective preference data pairs via self-distillation, avoiding reliance on larger teachers or manual annotation; (2) performs preference–based training to learn, focusing on shallow, transferable surface-form criteria (format, structure, style) rather than memorizing content; and (3) hands off to RLVR for deep reasoning results. Experimental results across multiple multimodal benchmarks show that our decoupling learning framework yields consistent performance gains over strong baselines, improving MEGA-Bench by 4.1\\% and MathVista by 12.2\\%. Additional experiments indicate that SPECS contributes to reducing in-distribution \"stuckness,\" improving exploration, stabilizing training, and raising the performance ceiling. Project Page: https://kwen-chen.github.io/SPECS-VL/",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10007417",
+          "paper_url": "https://openreview.net/forum?id=oNmMv7Lcj5",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3852,
+        "shared_authors": [
+          "linma",
+          "pengshi"
+        ],
+        "score": 0.6852
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "UhPwL6LYOc",
+          "title": "Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding",
+          "authors": [
+            "Yuan Xie",
+            "Tianshui Chen",
+            "Zheng Ge",
+            "Lionel Ni"
+          ],
+          "abstract": "Long-form video understanding remains a formidable challenge due to the complexity of modeling long-range temporal dependencies and multi-event narratives. Existing methods often rely on static reasoning or external Visual-Language Models (VLMs), resulting in high computational complexity and sub-optimal performance. In this paper, we propose Video-MTR, a reinforced multi-turn reasoning framework that operates solely through data-efficient, pure RL post-training. Video-MTR reformulates video understanding as a dynamic decision-making process, where the agent iteratively selects key segments conditioned on the evolving context of previously processed frames and the query. To ensure effective intermediate reasoning and training stability, we introduce a novel gated bi-level reward system, which synergizes trajectory-level rewards (answer correctness) with turn-level rewards (frame-query relevance). This mechanism eliminates the need for data-intensive supervised fine-tuning, thereby substantially reducing reliance on large-scale datasets. Remarkably, Video-MTR achieves competitive or superior performance using only $\\sim$8K training samples, compared to existing approaches that require 257K to 4.4M examples. Extensive experiments on benchmarks including VideoMME, MLVU, LongVideoBench, LVBench, and EgoSchema demonstrate that Video-MTR surpasses state-of-the-art methods in both accuracy and efficiency. Code is available at https://github.com/Xyuan13/Video-MTR.",
+          "official_url": "https://icml.cc/virtual/2026/poster/63678",
+          "paper_url": "https://openreview.net/forum?id=UhPwL6LYOc",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.6667,
+        "shared_authors": [],
+        "score": 0.6667
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/sang2026_composing_what_each.md",
+    "title": "Composing What Each Teacher Learned: Multi-Teacher On-Policy Distillation through Teacher-Relative Shifts",
+    "arxiv": "2610.10460",
+    "authors": [
+      "Hejian Sang",
+      "Zhengze Zhou",
+      "Shayan Mohajer Hamidi",
+      "Xiaomin Li",
+      "Rohit Jain",
+      "Alborz Geramifard"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "2835-MAIN",
+          "title": "MosaicAudio: Multi-Teacher On-Policy Distillation for Controllable Video-to-Audio Generation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5731,
+        "shared_authors": [],
+        "score": 0.5731
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "6445-MAIN",
+          "title": "Counteraction-Aware Multi-Teacher On-Policy Distillation for General Capability Recovery with Domain Preservation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.555,
+        "shared_authors": [],
+        "score": 0.555
+      },
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "Findings",
+          "decision": "accepted",
+          "paper_id": "2026.findings-acl.2094",
+          "title": "Stable On-Policy Distillation through Adaptive Target Reformulation",
+          "authors": [
+            "Ijun Jang",
+            "Jewon Yeom",
+            "Juan Yeo",
+            "Hyunggyu Lim",
+            "Taesup Kim"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.findings-acl.2094/",
+          "paper_url": "https://aclanthology.org/2026.findings-acl.2094/",
+          "source_url": "https://aclanthology.org/volumes/2026.findings-acl.xml"
+        },
+        "title_similarity": 0.543,
+        "shared_authors": [],
+        "score": 0.543
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/shen2026_when_topk_misses.md",
+    "title": "When Top-K Misses the Decision: Tool-Call Drift in Multi-Teacher On-Policy Distillation",
+    "arxiv": "2607.07050",
+    "authors": [
+      "Jiabin Shen",
+      "Guang Chen",
+      "Chengjun Mao"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Virtual Pres",
+          "paper_id": "543-MAIN",
+          "title": "Beyond Top-k : Mass-Aware Support Sampling for On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5736,
+        "shared_authors": [],
+        "score": 0.5736
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "572-MAIN",
+          "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5205,
+        "shared_authors": [],
+        "score": 0.5205
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "7pvJoB4aKO",
+          "title": "Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs",
+          "authors": [
+            "Ruihan Jin",
+            "Pengpeng Shao",
+            "Zhengqi Wen",
+            "Jinyang Wu",
+            "Mingkuan Feng",
+            "Shuo Yang",
+            "Chu Yuan Zhang",
+            "Jianhua Tao"
+          ],
+          "abstract": "Knowledge distillation has emerged as a pivotal technique for transferring knowledge from stronger large language models (LLMs) to smaller, more efficient models. However, traditional distillation approaches face challenges related to knowledge conflicts and high resource demands, particularly when leveraging multiple teacher models. In this paper, we introduce the concept of **Knowledge Purification**, which consolidates the rationales from multiple teacher LLMs into a single rationale, thereby mitigating conflicts and enhancing efficiency. To investigate the effectiveness of knowledge purification, we further propose five purification methods from various perspectives. Our experiments demonstrate that these methods not only improve the performance of the distilled model but also effectively alleviate knowledge conflicts. Moreover, router-based methods exhibit robust generalization capabilities, underscoring the potential of innovative purification techniques in optimizing multi-teacher distillation and facilitating the practical deployment of powerful yet lightweight models.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10011259",
+          "paper_url": "https://openreview.net/forum?id=7pvJoB4aKO",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5,
+        "shared_authors": [],
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/sun2026_distill_what_you.md",
+    "title": "Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation",
+    "arxiv": "2609.23697",
+    "authors": [
+      "Jie Sun",
+      "Mao Zheng",
+      "Mingyang Song",
+      "Zeyuan Liu",
+      "Gengsheng Li",
+      "Houcheng Jiang",
+      "Yilin Cheng",
+      "Bichuan Feng",
+      "Yuchen Cai",
+      "Junfeng Fang",
+      "Xiang Wang"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "MnkwYa1NsV",
+          "title": "SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation",
+          "authors": [
+            "Jie Sun",
+            "Mao Zheng",
+            "Mingyang Song",
+            "Qiyong Zhong",
+            "Yilin Cheng",
+            "Bichuan Feng",
+            "Pengfei Liu",
+            "Junfeng Fang",
+            "Xiang Wang"
+          ],
+          "abstract": "On-policy distillation (OPD) is a standard tool for transferring teacher behavior to a smaller student, but it implicitly assumes that teacher and student predictions are comparable token by token, an assumption that fails whenever the two models tokenize the same text differently. Under heterogeneous tokenizers, exact shared-token matching silently discards a large fraction of the teacher signal at precisely the positions where vocabularies disagree. We propose \\textbf{\\underline{Sim}ple \\underline{C}ross-\\underline{T}okenizer OPD (SimCT)}, which restores this signal by enlarging the supervision space: alongside shared tokens, SimCT compares teacher and student over short multi-token continuations that both tokenizers can realize, leaving the OPD loss form itself unchanged. We show that these units are the finest jointly tokenizable supervision interface, and that coarser alternatives remove teacher-student distinctions that are useful for on-policy learning. Across three heterogeneous teacher-student pairs on mathematical reasoning and code-generation benchmarks, SimCT shows consistent gains over shared-vocabulary OPD and representative cross-tokenizer baselines, with ablations confirming that the improvements come from recovering supervision discarded by exact shared-token matching. Code is available at \\href{https://anonymous.4open.science/r/SimCT}{https://anonymous.4open.science/r/SimCT}.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/153233",
+          "paper_url": "https://openreview.net/forum?id=MnkwYa1NsV",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.4478,
+        "shared_authors": [
+          "bichuanfeng",
+          "jiesun",
+          "junfengfang",
+          "maozheng",
+          "mingyangsong",
+          "xiangwang",
+          "yilincheng"
+        ],
+        "score": 1.0478
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "maOM1OWNZ6",
+          "title": "Contrastive Weak-to-Strong Generalization",
+          "authors": [
+            "Houcheng Jiang",
+            "Junfeng Fang",
+            "Jiaxin Wu",
+            "Tianyu Zhang",
+            "Chen Gao",
+            "Xiang Wang",
+            "Xiangnan He",
+            "Yang Deng"
+          ],
+          "abstract": "Weak-to-strong generalization provides a promising paradigm for scaling large language models (LLMs) by training stronger models on samples from aligned weaker ones, without requiring human feedback or explicit reward modeling. However, its robustness and generalization are hindered by the noise and biases in weak-model outputs, which limit its applicability in practice. To address this challenge, we leverage implicit rewards, which approximate explicit rewards through log-likelihood ratios, and reveal their structural equivalence with Contrastive Decoding (CD), a decoding strategy shown to reduce noise in LLM generation. Building on this connection, we propose \\textbf{Contrastive Weak-to-Strong Generalization (ConG)}, a framework that employs contrastive decoding between pre- and post-alignment weak models to generate higher-quality samples. This approach enables more reliable capability transfer, denoising, and improved robustness, substantially mitigating the limitations of traditional weak-to-strong methods. Empirical results across different model families confirm consistent improvements, demonstrating the generality and effectiveness of ConG. Taken together, our findings highlight the potential of ConG to advance weak-to-strong generalization and provide a promising pathway toward AGI. Our code is available at: \\url{https://github.com/jianghoucheng/ConG}",
+          "official_url": "https://icml.cc/virtual/2026/poster/61829",
+          "paper_url": "https://openreview.net/forum?id=maOM1OWNZ6",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3462,
+        "shared_authors": [
+          "houchengjiang",
+          "junfengfang",
+          "xiangwang"
+        ],
+        "score": 0.7962
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "BDgXsrFjIF",
+          "title": "Rubric-Align: Safety Alignment through Dynamically Co-Evolving Rubrics",
+          "authors": [
+            "Ruipeng Wang",
+            "Junfeng Fang",
+            "Houcheng Jiang",
+            "Kai Tang",
+            "Pengyu Cheng",
+            "xiaoxi jiang",
+            "Guanjun Jiang",
+            "Xiang Wang"
+          ],
+          "abstract": "Recent progress in large language models (LLMs) has led to impressive performance across diverse domains. However, their deployment in critical areas such as healthcare, law, and education raises serious concerns regarding the potential generation of harmful content. While reinforcement learning (RL)-based safety alignment methods have been extensively studied, they face persistent challenges, including sparse reward signals, limited interpretability, and limited transferability across domains. In this paper, we introduce Rubric‑Align, a framework that replaces static binary scalar rewards with dynamic, natural‑language evaluation rubrics. Instead of assigning a single reward to each response, Rubric‑Align provides fine‑grained and interpretable feedback, thereby alleviating reward sparsity and improving the transparency of the alignment signal. A key feature of Rubric-Align is its dynamic rubric evolution mechanism. Rather than using fixed reward templates, Rubric-Align periodically refines prompt-specific rubrics based on the current policy behavior, keeping the supervision signal informative and aligned with the model’s evolving failure modes. Experiments on safety benchmarks and vertical-domain settings show that Rubric-Align improves robustness against harmful and jailbreak prompts while largely preserving general capabilities, suggesting that natural-language rubrics provide a transferable interface for adapting safety supervision to new safety subdomains.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/154753",
+          "paper_url": "https://openreview.net/forum?id=BDgXsrFjIF",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3281,
+        "shared_authors": [
+          "houchengjiang",
+          "junfengfang",
+          "xiangwang"
+        ],
+        "score": 0.7781
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/sun2026_d³mopd_dynamic_domain.md",
+    "title": "D³-MOPD: Dynamic Domain ScheDuling for Efficient Multi-Teacher Distillation",
+    "arxiv": "2608.24987",
+    "authors": [
+      "Zechen Sun",
+      "Zhiwei Zhang",
+      "Fei Zhao",
+      "Juntao Li",
+      "Mu Chuan",
+      "Huayu Deng",
+      "Guojian Zhan",
+      "Wenliang Chen",
+      "Yao Hu",
+      "Min Zhang"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "main-long",
+          "decision": "accepted",
+          "paper_id": "2026.acl-long.911",
+          "title": "IS-CoT: Breaking the Long-form Generation Collapse via Interleaved Structural Thinking",
+          "authors": [
+            "Zechen Sun",
+            "Yuyang Sun",
+            "Zecheng Tang",
+            "Juntao Li",
+            "Wenpeng Hu",
+            "Wenliang Chen",
+            "Zhunchen Luo",
+            "Guotong Geng",
+            "Min Zhang"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.acl-long.911/",
+          "paper_url": "https://aclanthology.org/2026.acl-long.911/",
+          "source_url": "https://aclanthology.org/volumes/2026.acl-long.xml"
+        },
+        "title_similarity": 0.3022,
+        "shared_authors": [
+          "juntaoli",
+          "minzhang",
+          "wenliangchen",
+          "zechensun"
+        ],
+        "score": 0.9022
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "jhqqoimoWt",
+          "title": "FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning",
+          "authors": [
+            "Yuyang Ding",
+            "Chi Zhang",
+            "Juntao Li",
+            "Haibin Lin",
+            "Xin Liu",
+            "Min Zhang"
+          ],
+          "abstract": "Reinforcement learning with verifiable rewards (RLVR) has emerged as a promising paradigm for enhancing the reasoning capabilities of large language models (LLMs). In this context, models explore reasoning trajectories and exploit rollouts with correct answers as positive signals for policy optimization. However, these rollouts might involve flawed patterns such as answer-guessing and jump-in-reasoning. Such flawed-positive rollouts are rewarded identically to fully correct ones, causing policy models to internalize these unreliable reasoning patterns. In this work, we first conduct a systematic study of flawed-positive rollouts in RL and find that they enable rapid capability gains during the early optimization stage, while constraining reasoning capability later by reinforcing unreliable patterns. Building on these insights, we propose **F**lawed-**A**ware **P**olicy **O**ptimization (**FAPO**), which presents a parameter-free reward penalty for flawed-positive rollouts, enabling the policy to leverage them as useful shortcuts in the warm-up stage, securing stable early gains, while gradually shifting optimization toward reliable reasoning in the later refinement stage. To accurately and comprehensively detect flawed-positive rollouts, we introduce a generative reward model (GenRM) with a process-level reward that precisely localizes reasoning errors. Experiments show that FAPO is effective in broad domains, improving outcome correctness, process reliability, and training stability without increasing the token budget.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10007861",
+          "paper_url": "https://openreview.net/forum?id=jhqqoimoWt",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.4,
+        "shared_authors": [
+          "juntaoli",
+          "minzhang"
+        ],
+        "score": 0.7
+      },
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "main-long",
+          "decision": "accepted",
+          "paper_id": "2026.acl-long.1880",
+          "title": "Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors",
+          "authors": [
+            "Zhiwei Zhang",
+            "Fei Zhao",
+            "Rui Wang",
+            "Zezhong Wang",
+            "Bin Liang",
+            "Jiakang Wang",
+            "Yao Hu",
+            "Shaosheng Cao",
+            "Kam-Fai Wong"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.acl-long.1880/",
+          "paper_url": "https://aclanthology.org/2026.acl-long.1880/",
+          "source_url": "https://aclanthology.org/volumes/2026.acl-long.xml"
+        },
+        "title_similarity": 0.25,
+        "shared_authors": [
+          "feizhao",
+          "yaohu",
+          "zhiweizhang"
+        ],
+        "score": 0.7
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/tian2026_beyond_domainrouted_supervision.md",
+    "title": "Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation",
+    "arxiv": "2610.13521",
+    "authors": [
+      "Shi-Yu Tian",
+      "Yong Liu",
+      "Ximan Liu",
+      "Tianrui Zhu",
+      "Sule Bai",
+      "Xinwei Yang",
+      "Ruiqi Liu",
+      "Kun-Yang Yu",
+      "Ming Yang",
+      "Zhi Zhou",
+      "Yu-Feng Li",
+      "Yipeng Sun",
+      "Gu Simiu"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "Findings",
+          "decision": "accepted",
+          "paper_id": "2026.findings-acl.759",
+          "title": "TabularMath: Understanding Math Reasoning over Tables with Large Language Models",
+          "authors": [
+            "Shi-Yu Tian",
+            "Zhi Zhou",
+            "Wei Dong",
+            "Kun-Yang Yu",
+            "Ming Yang",
+            "Zi-Jian Cheng",
+            "Lan-Zhe Guo",
+            "Yu-Feng Li"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.findings-acl.759/",
+          "paper_url": "https://aclanthology.org/2026.findings-acl.759/",
+          "source_url": "https://aclanthology.org/volumes/2026.findings-acl.xml"
+        },
+        "title_similarity": 0.2727,
+        "shared_authors": [
+          "kunyangyu",
+          "mingyang",
+          "shiyutian",
+          "yufengli",
+          "zhizhou"
+        ],
+        "score": 0.8727
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "4oZDo5v9zt",
+          "title": "VT-Bench: A Unified Benchmark for Visual-Tabular Multi-Modal Learning",
+          "authors": [
+            "贾 子怡",
+            "Zijian Cheng",
+            "Xinyue Zhang",
+            "Kun-Yang Yu",
+            "Zhi Zhou",
+            "Yu-Feng Li",
+            "Lan-Zhe Guo"
+          ],
+          "abstract": "Multi-model learning has attracted great attention in visual-text tasks. However, visual-tabular data, which plays a pivotal role in high-stakes domains like healthcare and industry, remains underexplored. In this paper, we introduce \\textit{VT-Bench}, the first unified benchmark for standardizing vision-tabular discriminative prediction and generative reasoning tasks. VT-Bench aggregates 14 datasets across 9 domains (medical-centric, while covering pets, media, and transportation) with over 756K samples. We evaluate 23 representative models, including unimodal experts, specialized visual-tabular models, general-purpose vision-language models (VLMs), and tool-augmented methods, highlighting substantial challenges of visual-tabular learning. We believe VT-Bench will stimulate the community to build more powerful multi-modal vision-tabular foundation models. Benchmark: \\url{https://github.com/LAMDA-NeSy/VT-Bench}",
+          "official_url": "https://icml.cc/virtual/2026/poster/66313",
+          "paper_url": "https://openreview.net/forum?id=4oZDo5v9zt",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3662,
+        "shared_authors": [
+          "kunyangyu",
+          "yufengli",
+          "zhizhou"
+        ],
+        "score": 0.8162
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "cnJvwUqEyu",
+          "title": "On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective",
+          "authors": [
+            "Zhi Zhou",
+            "Ming Yang",
+            "Shi-Yu Tian",
+            "Kun-Yang Yu",
+            "Lan-Zhe Guo",
+            "Yu-Feng Li"
+          ],
+          "abstract": "Test-time adaptation (TTA) aims to adapt models to maintain reliable performance on non-stationary test streams without requiring labeled data. Despite its empirical success, the learnability of TTA under non-stationary streams remains unexplored. A key challenge is the lack of a principled theoretical framework that simultaneously aligns with the TTA objective and captures both continuously evolving distribution shifts and intrinsic information constraints. To address this gap, we propose the first theoretical framework for studying the learnability of TTA and introduce $(\\epsilon,\\delta)$-Recovery Complexity and $(\\epsilon,\\rho)$-TTA Learnability. Recovery complexity measures the post-shift time needed to maintain excess risk below a target level with high probability, and is further extended to TTA learnability, which measures the long-term reliability of TTA. Within this framework, we introduce a novel discrete surrogate for non-stationary test streams, enabling a unified and tractable analysis of both gradual and abrupt shifts. We derive order-wise matching lower and upper bounds on recovery complexity, revealing fundamental limits of TTA and an intrinsic adaptivity-information trade-off. These results provide unified learnability guarantees for TTA that complement regret-based analyses.",
+          "official_url": "https://icml.cc/virtual/2026/poster/62832",
+          "paper_url": "https://openreview.net/forum?id=cnJvwUqEyu",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2119,
+        "shared_authors": [
+          "kunyangyu",
+          "mingyang",
+          "shiyutian",
+          "yufengli",
+          "zhizhou"
+        ],
+        "score": 0.8119
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/wang2026_aclarena_agent_continual.md",
+    "title": "ACLArena: Agent Continual Learning in Multi-stage Post-training",
+    "arxiv": "2609.23989",
+    "authors": [
+      "Haixin Wang",
+      "Xiaoxuan Wang",
+      "Junkai Zhang",
+      "Han Zhang",
+      "Renliang Sun",
+      "Alexander K Taylor",
+      "Yidan Shi",
+      "Haoran Deng",
+      "Chenguang Wang",
+      "Jason Cong",
+      "Yizhou Sun",
+      "Wei Wang"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "90kxFi9VGP",
+          "title": "ARLArena: A Unified Framework for Stable Agentic Reinforcement Learning",
+          "authors": [
+            "Xiaoxuan Wang",
+            "Han Zhang",
+            "Haixin Wang",
+            "Yidan Shi",
+            "Ruoyan Li",
+            "Kaiqiao Han",
+            "Chenyi Tong",
+            "Haoran Deng",
+            "Alexander Taylor",
+            "Renliang Sun",
+            "Yanqiao Zhu",
+            "Jason Cong",
+            "Yizhou Sun",
+            "Wei Wang"
+          ],
+          "abstract": "Agentic reinforcement learning (ARL) has rapidly gained attention as a promising paradigm for training agents to solve complex, multi-step interactive tasks. Despite encouraging early results, ARL remains highly unstable, often leading to training collapse. This instability limits scalability to larger environments and longer interaction horizons, and constrains systematic exploration of algorithmic design choices. In this paper, we first propose **ARLArena**, a stable training recipe and systematic analysis framework that examines training stability in a controlled and reproducible setting. ARLArena first constructs a clean and standardized testbed. Then, we decompose policy gradient into four core design dimensions and assess the performance and stability of each dimension. Through this fine-grained analysis, we propose **SAMPO**, a stable agentic policy optimization method designed to mitigate the dominant sources of instability in ARL. Empirically, SAMPO achieves consistently stable training and strong performance across diverse agentic tasks. Our code is open-sourced at: https://github.com/WillDreamer/ARL-Arena.git",
+          "official_url": "https://icml.cc/virtual/2026/poster/65909",
+          "paper_url": "https://openreview.net/forum?id=90kxFi9VGP",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.4138,
+        "shared_authors": [
+          "haixinwang",
+          "hanzhang",
+          "haorandeng",
+          "jasoncong",
+          "renliangsun",
+          "weiwang",
+          "xiaoxuanwang",
+          "yidanshi",
+          "yizhousun"
+        ],
+        "score": 1.0138
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "grIvSXVJ65",
+          "title": "Preference Leakage: A Contamination Problem in LLM-as-a-judge",
+          "authors": [
+            "Dawei Li",
+            "Renliang Sun",
+            "Yue Huang",
+            "Ming Zhong",
+            "Bohan Jiang",
+            "Jiawei Han",
+            "Xiangliang Zhang",
+            "Wei Wang",
+            "huan liu"
+          ],
+          "abstract": "Large Language Models (LLMs) as judges and LLM-based data synthesis have emerged as two fundamental LLM-driven data annotation methods in model development. While their combination significantly enhances the efficiency of model training and evaluation, little attention has been given to the potential contamination brought by this new model development paradigm. In this work, we expose preference leakage, a contamination problem in LLM-as-a-judge caused by the relatedness between the synthetic data generators and LLM-based evaluators. To study this issue, we first define three common relatednesses between the data generator LLM and the judge LLM: being the same model, having an inheritance relationship, and belonging to the same model family. Through extensive experiments, we empirically confirm the bias of judges towards their related student models caused by preference leakage across multiple LLM baselines and benchmarks. Further analysis suggests that preference leakage is a pervasive and real-world problem that is harder to detect compared to previously identified biases in LLM-as-a-judge scenarios. All of these findings imply that preference leakage is a widespread and challenging problem in the area of LLM-as-a-judge. We release all codes and data at: \\url{https://github.com/David-Li0406/Preference-Leakage}.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10008112",
+          "paper_url": "https://openreview.net/forum?id=grIvSXVJ65",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.381,
+        "shared_authors": [
+          "renliangsun",
+          "weiwang"
+        ],
+        "score": 0.681
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "C9TDQ8Wwx7",
+          "title": "Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data",
+          "authors": [
+            "Haoran Deng",
+            "Yingyu Lin",
+            "Zhenghao Lin",
+            "Xiao Liu",
+            "Yizhou Sun",
+            "Yian Ma",
+            "Yeyun Gong"
+          ],
+          "abstract": "Long-context language models unlock advanced capabilities in reasoning, code generation, and document summarization by leveraging dependencies across extended spans of text. However, a significant portion of readily available long-text data lacks meaningful long-distance dependencies; most spans can be predicted using only local context. Training on such data is inefficient, making careful data selection crucial. Therefore, we introduce LongFilter, a framework for curating training data tailored to long-context pretraining. LongFilter measures the information gain provided by extended context by contrasting model predictions under long-context versus short-context settings, thereby identifying samples where long-range dependencies are essential. Experiments with LLaMA-3-8B, extending its context length from 8K to 64K, show that LongFilter efficiently selects high-quality data and yields substantial improvements on benchmarks such as HELMET, LongBench, and RULER.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10010884",
+          "paper_url": "https://openreview.net/forum?id=C9TDQ8Wwx7",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3721,
+        "shared_authors": [
+          "haorandeng",
+          "yizhousun"
+        ],
+        "score": 0.6721
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/wang2026_madopd_breaking_ceiling.md",
+    "title": "MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate",
+    "arxiv": "2605.01347",
+    "authors": [
+      "Jianze Wang",
+      "Ying Liu",
+      "Jinlong Chen",
+      "Xuchun Hu",
+      "Qilong Zhang",
+      "Yu Cao",
+      "Jun Wang",
+      "Hua Yang",
+      "Yong Xie",
+      "Qianglong Chen"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "Tke3BVwUz6",
+          "title": "Correlated Policy Optimization in Multi-Agent Subteams",
+          "authors": [
+            "Dingyang Chen",
+            "Jianing Ye",
+            "Zhenyu Zhang",
+            "Xiaolong Kuang",
+            "Xinyang Shen",
+            "Ozalp Ozer",
+            "Chongjie Zhang",
+            "Qi Zhang"
+          ],
+          "abstract": "In cooperative multi-agent reinforcement learning, agents often face scalability challenges due to the exponential growth of the joint action and observation spaces. Inspired by the structure of human teams, we explore subteam-based coordination, where agents are partitioned into fully correlated subgroups with limited inter-group interaction. We formalize this structure using Bayesian networks and propose a class of correlated joint policies induced by directed acyclic graphs . Theoretically, we prove that regularized policy gradient ascent converges to near-optimal policies under a decomposability condition of the environment. Empirically, we introduce a heuristic for dynamically constructing context-aware subteams with limited dependency budgets, and demonstrate that our method outperforms standard baselines across multiple benchmark environments.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10009287",
+          "paper_url": "https://openreview.net/forum?id=Tke3BVwUz6",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5841,
+        "shared_authors": [],
+        "score": 0.5841
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Oral",
+          "paper_id": "5562-MAIN",
+          "title": "Escaping the KL Agreement Trap in On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5664,
+        "shared_authors": [],
+        "score": 0.5664
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "3258-MAIN",
+          "title": "Draft-OPD: On-Policy Distillation for Speculative Draft Models",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5424,
+        "shared_authors": [],
+        "score": 0.5424
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/wang2026_smopd_multireward_reinforcement.md",
+    "title": "SMOPD: Multi-Reward Reinforcement Learning via Specialize-and-Merge Online Policy Distillation",
+    "arxiv": "2608.03092",
+    "authors": [
+      "Wen Wang",
+      "Jiahua Bao",
+      "Tu Yongsiqi",
+      "Yihao Liu",
+      "Haotian Zhou",
+      "Haoxuan Ma",
+      "Mengyu Zhou",
+      "Wenkui Fan",
+      "Junwei He",
+      "Xiaoxi Jiang",
+      "Guanjun Jiang"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "IobTEbQ3vt",
+          "title": "Bringing Stability to Diffusion: Decomposing and Reducing Variance of Training Masked Diffusion Models",
+          "authors": [
+            "Mengni Jia",
+            "Mengyu Zhou",
+            "Yihao Liu",
+            "xiaoxi jiang",
+            "guanjunjiang"
+          ],
+          "abstract": "Masked diffusion models (MDMs) are a promising alternative to autoregressive models (ARMs), but they suffer from **inherently** much higher training variance. High variance leads to noisier gradient estimates and unstable optimization, so even equally strong pretrained MDMs and ARMs that are competitive at initialization often diverge after task-specific training, with MDMs falling far behind. Currently, there has been no theoretical explanation or systematic solution. In this paper, we derive **the first decomposition** of MDM training variance into three sources: {A} masking pattern noise, {B} masking rate noise, and {C} data noise -- while ARMs are only affected by {C}. This cleanly explains the fundamental training gap. Building on this foundation, we design six variance-reduction methods, including two core methods: (1) P-POTS, a **Pareto-optimal** $t$-sampler that minimizes training variance by sampling harder $t$ values more often with appropriately smaller update steps, and (2) MIRROR, which uses negatively correlated samples to reduce {A}. Experiments show that, compared to standard MDM training, our methods improve accuracy by **7–8\\%** on complex reasoning tasks, while simultaneously reducing run-to-run variability to **near ARM levels**, substantially narrowing the gap with strong ARM baselines; in most settings, even the best baseline method runs remain below the worst run of our method.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10010266",
+          "paper_url": "https://openreview.net/forum?id=IobTEbQ3vt",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3392,
+        "shared_authors": [
+          "guanjunjiang",
+          "mengyuzhou",
+          "xiaoxijiang",
+          "yihaoliu"
+        ],
+        "score": 0.9392
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "PgTu2nTEh7",
+          "title": "Reward Budgeting Reduces Premature Convergence in Reinforcement Learning for LLM Reasoning",
+          "authors": [
+            "Mengni Jia",
+            "Mengyu Zhou",
+            "xiaoxi jiang",
+            "Guanjun Jiang"
+          ],
+          "abstract": "RL often plateaus early: policies sharpen quickly, and further training yields little gain despite remaining model- and data-capacity. Entropy is recently used to combat this plateau, but its promotion alone is not a sufficient intervention target in the settings we study. By analyzing RL's dynamics through the optimal policy, we instead identify a sharpness factor $\\kappa$ as a more effective alternative. We then introduce a plug-in reward-budget mechanism, which allocates a fixed total reward budget to each prompt and distributes it among correct rollouts. Theoretically, this induces a more regulated $\\kappa$-trajectory that deviates from many RL methods, and its updates are equivalent to optimizing a concave objective, approximately $\\mathbb{E}(\\log R)$. Empirically, our method achieves significant gains on Qwen3-8B and Llama3.2-3B-Instruct (up to +12.50 on AMC23 and +10.00 on AIME24 \\& AIME25). Together, these results suggest that regulating algorithm-induced sharpening is more effective for mitigating premature convergence than directly preserving entropy.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/152882",
+          "paper_url": "https://openreview.net/forum?id=PgTu2nTEh7",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.4074,
+        "shared_authors": [
+          "guanjunjiang",
+          "mengyuzhou",
+          "xiaoxijiang"
+        ],
+        "score": 0.8574
+      },
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "main-long",
+          "decision": "accepted",
+          "paper_id": "2026.acl-long.1828",
+          "title": "MARCH: Multi-Agent Reinforced Check for Hallucination",
+          "authors": [
+            "Zhuo Li",
+            "Yupeng Zhang",
+            "Pengyu Cheng",
+            "Jiajun Song",
+            "Mengyu Zhou",
+            "Hao Li",
+            "Shujie Hu",
+            "Yu Qin",
+            "Erchao Zhao",
+            "Xiaoxi Jiang",
+            "Guanjun Jiang"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.acl-long.1828/",
+          "paper_url": "https://aclanthology.org/2026.acl-long.1828/",
+          "source_url": "https://aclanthology.org/volumes/2026.acl-long.xml"
+        },
+        "title_similarity": 0.3906,
+        "shared_authors": [
+          "guanjunjiang",
+          "mengyuzhou",
+          "xiaoxijiang"
+        ],
+        "score": 0.8406
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/wu2026_consolidating_rlvr_capabilities.md",
+    "title": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+    "arxiv": "2608.27409",
+    "authors": [
+      "Siye Wu",
+      "Kai Yang",
+      "Yuchen Cai",
+      "Xin Xu",
+      "Peng-Yuan Wang",
+      "Jiaxuan Wang",
+      "Jiashun Liu",
+      "Jiafei Lyu",
+      "Yangkun Chen",
+      "Saiyong Yang",
+      "Yanghua Xiao"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "uSnERGG6v9",
+          "title": "Composition-RL: Compose Your Verifiable Prompts for Reinforcement Learning of Large Language Models",
+          "authors": [
+            "Xin Xu",
+            "Clive Bai",
+            "Kai Yang",
+            "Tianhao Chen",
+            "Yuchen Cai",
+            "Yangkun Chen",
+            "Weijie Liu",
+            "Hao CHEN",
+            "Yang Wang",
+            "Saiyong Yang",
+            "Can Yang"
+          ],
+          "abstract": "",
+          "official_url": "https://neurips.cc/virtual/2026/poster/148886",
+          "paper_url": "https://openreview.net/forum?id=uSnERGG6v9",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2564,
+        "shared_authors": [
+          "kaiyang",
+          "saiyongyang",
+          "xinxu",
+          "yangkunchen",
+          "yuchencai"
+        ],
+        "score": 0.8564
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "JUzdxqEbBC",
+          "title": "Listwise Policy Optimization: Group-based RLVR as Target-Projection on the LLM Response Simplex",
+          "authors": [
+            "Yun Qu",
+            "Qi Wang",
+            "Yixiu Mao",
+            "Heming Zou",
+            "Yuhang Jiang",
+            "Yingyue Li",
+            "Wutong Xu",
+            "Lizhou Cai",
+            "Weijie Liu",
+            "Clive Bai",
+            "Kai Yang",
+            "Yangkun Chen",
+            "Saiyong Yang",
+            "Xiangyang Ji"
+          ],
+          "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become a standard approach for large language models (LLMs) post-training to incentivize reasoning capacity. Among existing recipes, group-based policy gradient is prevalent, which samples a group of responses per prompt and updates the policy via group-relative advantage signals. This work reveals that these optimization strategies share a common geometric structure: each implicitly defines a target distribution on the response simplex and projects toward it via first-order approximation. Building on this insight, we propose Listwise Policy Optimization (LPO) to explicitly conduct the target-projection, which demystifies the implicit target by restricting the proximal RL objective to the response simplex, and then projects the policy via exact divergence minimization. This framework provides (i) monotonic improvement on the listwise objective with bounded, zero-sum, and self-correcting projection gradients, and (ii) flexibility in divergence selection with distinct structural properties through the decoupled projection step. On diverse reasoning tasks and LLM backbones, LPO consistently improves training performance over typical policy gradient baselines under matched targets, while intrinsically preserving optimization stability and response diversity. The code is available at https://anonymous.4open.science/r/LPO.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/153692",
+          "paper_url": "https://openreview.net/forum?id=JUzdxqEbBC",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3311,
+        "shared_authors": [
+          "kaiyang",
+          "saiyongyang",
+          "yangkunchen"
+        ],
+        "score": 0.7811
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "DZ7U9SWcJx",
+          "title": "Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation",
+          "authors": [
+            "Yuchen Cai",
+            "Ding Cao",
+            "Liang Lin",
+            "Chunxi Luo",
+            "Xin Xu",
+            "Kai Yang",
+            "Weijie Liu",
+            "Saiyong Yang",
+            "Tianxiang Zhao",
+            "Guangzhong Sun",
+            "Guiquan Liu",
+            "Junfeng Fang"
+          ],
+          "abstract": "",
+          "official_url": "https://neurips.cc/virtual/2026/poster/154435",
+          "paper_url": "https://openreview.net/forum?id=DZ7U9SWcJx",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.1714,
+        "shared_authors": [
+          "kaiyang",
+          "saiyongyang",
+          "xinxu",
+          "yuchencai"
+        ],
+        "score": 0.7714
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/xie2026_rethinking_selfdistillation_multiteacher.md",
+    "title": "Rethinking Self-Distillation for Multi-Teacher Capability Merging",
+    "arxiv": "2610.04272",
+    "authors": [
+      "Roy Xie",
+      "Dan Friedman",
+      "Feng Nan",
+      "Yukun Huang",
+      "Zhichao Xu",
+      "Chengjiu Zhang",
+      "Jun Xu",
+      "Manaal Faruqui",
+      "Vivek Rathod",
+      "Bhuwan Dhingra"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "YIzy3CMHAw",
+          "title": "LensVLM: Selective Context Expansion for Compressed Visual Representation of Text",
+          "authors": [
+            "Roy Xie",
+            "Dan Friedman",
+            "Donghan Yu",
+            "Bowen Pan",
+            "Christopher Fifty",
+            "Jang-Hyun Kim",
+            "Xianzhi Du",
+            "Zhe Gan",
+            "Vivek Rathod",
+            "Bhuwan Dhingra"
+          ],
+          "abstract": "",
+          "official_url": "https://neurips.cc/virtual/2026/poster/151754",
+          "paper_url": "https://openreview.net/forum?id=YIzy3CMHAw",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3411,
+        "shared_authors": [
+          "bhuwandhingra",
+          "danfriedman",
+          "royxie",
+          "vivekrathod"
+        ],
+        "score": 0.9411
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "ZRO79e2BHI",
+          "title": "When Greedy Wins: Emergent Exploitation Bias in Meta-Bandit LLM Training",
+          "authors": [
+            "Sanxing Chen",
+            "Xiaoyin Chen",
+            "Yukun Huang",
+            "Roy Xie",
+            "Bhuwan Dhingra"
+          ],
+          "abstract": "While Large Language Models (LLMs) hold promise to become autonomous agents, they often explore suboptimally in sequential decision-making. Recent work has sought to enhance this capability via supervised fine-tuning (SFT) or reinforcement learning (RL), improving regret on the classic multi-armed bandit task. However, it remains unclear how these learning methods shape exploration strategies and how well they generalize. We investigate both paradigms by training LLMs with SFT on expert trajectories and RL with a range of tailored reward signals including a strategic, regret-shaped reward to reduce variance, and an algorithmic reward that enables oracle imitation. The resulting agents outperform pre-trained models and achieve performance comparable to Upper Confidence Bound (UCB) and Thompson Sampling, with robust generalization to 6$\\times$ longer horizons and across bandit families. Behavioral analysis reveals that gains often stem from more sophisticated but greedier exploitation: RL/SFT agents are more prone to early catastrophic failure than pre-trained models, prematurely abandoning exploration. Furthermore, agents trained to imitate UCB learn to outperform their teacher by adopting more exploitative variants. Our findings clarify when each training paradigm is preferable and advocate tailored reward design and evaluation beyond average regret to promote robust exploratory behavior.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10008807",
+          "paper_url": "https://openreview.net/forum?id=ZRO79e2BHI",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3866,
+        "shared_authors": [
+          "bhuwandhingra",
+          "royxie",
+          "yukunhuang"
+        ],
+        "score": 0.8366
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "D9bLUj7wUW",
+          "title": "Cite Pretrain: Retrieval-Free Knowledge Attribution for Large Language Models",
+          "authors": [
+            "Yukun Huang",
+            "Sanxing Chen",
+            "Jian Pei",
+            "Manzil Zaheer",
+            "Bhuwan Dhingra"
+          ],
+          "abstract": "Trustworthy language models should provide both correct and verifiable answers. However, citations generated directly by standalone LLMs are often unreliable due to hallucinations. As a result, current systems insert citations by querying an external retriever at inference time, introducing latency, infrastructure dependence, and vulnerability to retrieval noise. We explore whether LLMs can be made to reliably attribute to the documents seen during (continual) pretraining, without test‑time retrieval, by revising the training process. To study this, we construct **CitePretrainBench**, a benchmark that mixes real‑world corpora (Wikipedia, Common Crawl, arXiv) with novel, unseen documents and probes both short‑form (single fact) and long‑form (multi‑fact) citation tasks. Our approach follows a two-stage process: (1) Continual-pretraining to index factual knowledge by binding it to persistent document identifiers; (2) Instruction tuning to elicit citation behavior. We introduce **Active Indexing** for the first stage, which creates generalizable, source-anchored bindings by augmenting training with synthetic data that (i) restate each fact in diverse, compositional forms and (ii) enforce bidirectional training (source$\\to$fact and fact$\\to$source). This equips the model to both generate content from a cited source and attribute its own answers, improving robustness to paraphrase and composition. Experiments with Qwen‑2.5‑7B and 3B show that Active Indexing consistently outperforms a Passive Indexing baseline, which simply appends an identifier to each document, achieving citation precision gains of up to 30.2\\% across all tasks and models. Our ablation studies reveal that performance continues to improve as we scale the amount of augmented data, showing a clear upward trend even at 16× the original token count. Finally, we show that internal citations complement external ones by making the model more robust to retrieval noise.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10010805",
+          "paper_url": "https://openreview.net/forum?id=D9bLUj7wUW",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.384,
+        "shared_authors": [
+          "bhuwandhingra",
+          "yukunhuang"
+        ],
+        "score": 0.684
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/xu2026_mopdrouter_rethinking_teacher.md",
+    "title": "MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation",
+    "arxiv": "2609.30837",
+    "authors": [
+      "Tianze Xu",
+      "Yanzhao Zheng",
+      "Zhentao Zhang",
+      "Yuanqiang Yu",
+      "Chao Ma",
+      "Jihuai Zhu",
+      "Lelun Wu",
+      "Lyumanshan Ye",
+      "Pengfei Liu",
+      "Baohua Dong",
+      "Hangcheng Zhu",
+      "Ruohui Huang",
+      "Gang Yu"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "w8rZ2Jd6Jo",
+          "title": "InnovatorBench: Evaluating Agents’ Ability to Conduct Innovative AI Research",
+          "authors": [
+            "Yunze Wu",
+            "Dayuan Fu",
+            "Weiye Si",
+            "Zhen Huang",
+            "Mohan Jiang",
+            "Keyu Li",
+            "Shijie Xia",
+            "Jie Sun",
+            "Tianze Xu",
+            "Yang Xiao",
+            "Pengrui Lu",
+            "Xiaojie Cai",
+            "Lyumanshan Ye",
+            "Wenhong Zhu",
+            "Xiangkun Hu",
+            "Pengfei Liu"
+          ],
+          "abstract": "AI agents could accelerate scientific discovery by automating hypothesis formation, experiment design, coding, execution, and analysis, yet existing benchmarks probe narrow skills in simplified settings. To address this gap, we introduce InnovatorBench, a benchmark-platform pair for realistic, end-to-end assessment of agents performing Large Language Model (LLM) research. It comprises 20 tasks spanning Data Construction, Filtering, Augmentation, Loss Design, Reward Design, and Scaffold Construction, which require runnable artifacts and assessment of correctness, performance, output quality, and uncertainty. To support agent operation, we develop ResearchGym, a research environment offering rich action spaces, distributed and long-horizon execution, asynchronous monitoring, and snapshot saving. We also implement a lightweight agent that couples explicit reasoning with executable planning using frontier models such as Claude-4, GPT-5, GLM-4.5, and Kimi-K2. Our experiments demonstrate that while frontier models show promise in code-driven research tasks, they struggle with fragile algorithm-related tasks and long-horizon decision making, such as impatience, poor resource management, and overreliance on template-based reasoning. Furthermore, agents require over 11 hours to achieve their best performance on InnovatorBench, underscoring the benchmark's difficulty and showing the potential of InnovatorBench to be the next generation of code-based research benchmark.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10006754",
+          "paper_url": "https://openreview.net/forum?id=w8rZ2Jd6Jo",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2836,
+        "shared_authors": [
+          "lyumanshanye",
+          "pengfeiliu",
+          "tianzexu"
+        ],
+        "score": 0.7336
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "572-MAIN",
+          "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.6197,
+        "shared_authors": [],
+        "score": 0.6197
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "FIND",
+          "decision": "Not Presenting",
+          "paper_id": "3133-FIND",
+          "title": "OPD-Evolver: Cultivating Holistic Agent Evolver via On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.6061,
+        "shared_authors": [],
+        "score": 0.6061
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/xu2026_qwenimage20rl_technical_report.md",
+    "title": "Qwen-Image-2.0-RL Technical Report",
+    "arxiv": "2606.27608",
+    "authors": [
+      "Yixian Xu",
+      "Kaiyuan Gao",
+      "Yuxiang Chen",
+      "Yilei Chen",
+      "Zecheng Tang",
+      "Zihao Liu",
+      "Zikai Zhou",
+      "Deqing Li",
+      "Hao Meng",
+      "Kuan Cao",
+      "Jiahao Li",
+      "Jie Zhang",
+      "Liang Peng",
+      "Lihan Jiang",
+      "Ningyuan Tang",
+      "Shengming Yin",
+      "Tianhe Wu",
+      "Xiaoyue Chen",
+      "Yan Shu",
+      "Yanran Zhang",
+      "Yi Wang",
+      "Yu Wu",
+      "Yujia Wu",
+      "Zekai Zhang",
+      "Zhendong Wang",
+      "Xiao Xu",
+      "Kun Yan",
+      "Chenfei Wu"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "w9Qub62Qf5",
+          "title": "MIST: Moment-Aligned Invariant Stability Transform for Robust Flow Matching",
+          "authors": [
+            "Liang Peng",
+            "Deqing Li",
+            "Yujia Wu",
+            "Hao Meng",
+            "Kuan Cao",
+            "Yu Wu",
+            "Xiaoxiao Xu",
+            "Lin Qu"
+          ],
+          "abstract": "Classifier-Free Guidance (CFG) is a cornerstone of flow-matching models, significantly enhancing visual quality and prompt adherence. However, high guidance scales inherently violate the optimal transport dynamics, leading to visual artifacts and mode collapse. In this paper, we investigate the mechanisms of this failure through the lens of velocity moment decomposition. Our analysis reveals that the distributional shift induced by CFG decouples into two geometric components: a Linear Barycentric Drift that shifts the global distribution center, and a Quadratic Energetic Instability that injects surplus kinetic energy, disrupting the transport cost and triggering variance explosion. To mitigate these issues, we introduce MIST (Moment-aligned Invariant Stability Transform), a training-free method designed to confine the sampling trajectory to the learned data manifold. MIST comprises two hierarchical stages: (1) Invariant Alignment (IA), a global statistical rectifier that restores structural integrity by removing the linear drift and realigning the energy profile; and (2) Stability Thresholding (ST), a local dynamical regulator that enforces Lipschitz-like smoothness via temporal decay and spatial suppression. MIST enables robust, high-fidelity generation across a wide range of guidance scales while consistently improving performance at moderate scales. Extensive experiments on diverse text-to-image and text-to-video benchmarks demonstrate that MIST outperforms standard CFG and state-of-the-art corrections, establishing a new benchmark for robust guidance in flow-based generative models.",
+          "official_url": "https://icml.cc/virtual/2026/poster/60840",
+          "paper_url": "https://openreview.net/forum?id=w9Qub62Qf5",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.1935,
+        "shared_authors": [
+          "deqingli",
+          "haomeng",
+          "kuancao",
+          "liangpeng",
+          "yujiawu",
+          "yuwu"
+        ],
+        "score": 0.7935
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Oral)",
+          "paper_id": "3JPAkwSVc4",
+          "title": "Quotient-Space Diffusion Models",
+          "authors": [
+            "Yixian Xu",
+            "Yusong Wang",
+            "Shengjie Luo",
+            "Kaiyuan Gao",
+            "Tianyu He",
+            "Di He",
+            "Chang Liu"
+          ],
+          "abstract": "Diffusion-based generative models have reformed generative AI, and have enabled new capabilities in the science domain, for example, generating 3D structures of molecules. Due to the intrinsic problem structure of certain tasks, there is often a symmetry in the system, which identifies objects that can be converted by a group action as equivalent, hence the target distribution is essentially defined on the quotient space with respect to the group. In this work, we establish a formal framework for diffusion modeling on a general quotient space, and apply it to molecular structure generation which follows the special Euclidean group SE(3) symmetry. The framework reduces the necessity of learning the component corresponding to the group action, hence simplifies learning difficulty over conventional group-equivariant diffusion models, and the sampler guarantees recovering the target distribution, while heuristic alignment strategies lack proper samplers. The arguments are empirically validated on structure generation for small molecules and proteins, indicating that the principled quotient-space diffusion model provides a new framework that outperforms previous symmetry treatments.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10011652",
+          "paper_url": "https://openreview.net/forum?id=3JPAkwSVc4",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.25,
+        "shared_authors": [
+          "kaiyuangao",
+          "yixianxu"
+        ],
+        "score": 0.55
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Oral)",
+          "paper_id": "2026-Oral--7627-15b0b32e",
+          "title": "Quotient-Space Diffusion Models",
+          "authors": [
+            "Yixian Xu",
+            "Yusong Wang",
+            "Shengjie Luo",
+            "Kaiyuan Gao",
+            "Tianyu He",
+            "Di He",
+            "Chang Liu"
+          ],
+          "abstract": "Diffusion-based generative models have reformed generative AI, and have enabled new capabilities in the science domain, for example, generating 3D structures of molecules. Due to the intrinsic problem structure of certain tasks, there is often a symmetry in the system, which identifies objects that can be converted by a group action as equivalent, hence the target distribution is essentially defined on the quotient space with respect to the group. In this work, we establish a formal framework for diffusion modeling on a general quotient space, and apply it to molecular structure generation which follows the special Euclidean group SE(3) symmetry. The framework reduces the necessity of learning the component corresponding to the group action, hence simplifies learning difficulty over conventional group-equivariant diffusion models, and the sampler guarantees recovering the target distribution, while heuristic alignment strategies lack proper samplers. The arguments are empirically validated on structure generation for small molecules and proteins, indicating that the principled quotient-space diffusion model provides a new framework that outperforms previous symmetry treatments.",
+          "official_url": "https://iclr.cc/virtual/2026/oral/10011653",
+          "paper_url": "https://openreview.net/forum?id=2026-Oral--7627-15b0b32e",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.25,
+        "shared_authors": [
+          "kaiyuangao",
+          "yixianxu"
+        ],
+        "score": 0.55
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/xu2026_who_teaches_which.md",
+    "title": "Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning",
+    "arxiv": "2609.15404",
+    "authors": [
+      "Xun Xu",
+      "Zaixi Zhang"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "OMf3w00d95",
+          "title": "CoT-Evo: Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning",
+          "authors": [
+            "Kehua Feng",
+            "Keyan Ding",
+            "Zhihui Zhu",
+            "Lei Liang",
+            "Qiang Zhang",
+            "Huajun Chen"
+          ],
+          "abstract": "While chain-of-thought (CoT) distillation from advanced large language models (LLMs) has proven effective in general reasoning tasks, it struggles in scientific domains where even advanced models often produce incorrect or superficial reasoning due to high complexity and specialized knowledge requirements. Directly distilling from such flawed outputs results in low-quality training data and limits the performance of smaller student models. To overcome this, we propose CoT-Evo, an evolutionary CoT distillation framework. It begins by constructing a diverse pool of reasoning trajectories from multiple LLM thinkers, enriches them with automatically retrieved domain knowledge, and iteratively refines the trajectories using novelty-driven selection, reflective recombination and mutation. The refinement is guided by a fitness function that evaluates answer correctness, coherence, and effective knowledge utilization. This results in a high-quality CoT dataset tailored for scientific reasoning. We employ this evolved dataset to fine-tune a compact model, which achieves state-of-the-art performance on scientific reasoning benchmarks. Our work establishes a scalable approach to synthesizing high-fidelity scientific reasoning data from diverse and fallible LLMs.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10009790",
+          "paper_url": "https://openreview.net/forum?id=OMf3w00d95",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5844,
+        "shared_authors": [],
+        "score": 0.5844
+      },
+      {
+        "record": {
+          "venue": "NEURIPS",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (poster)",
+          "paper_id": "DsDVXNgrHK",
+          "title": "CoTrek: Toward Scalable On-Policy Distillation for Long Chain-of-Thought Reasoning",
+          "authors": [
+            "Heng Zhang",
+            "Chengyu Zhou",
+            "Jiajun Wu",
+            "Estella Liu",
+            "Liheng Zhang",
+            "Yueqi Guo",
+            "Rui Liu",
+            "JiaHao Hong",
+            "Xuanxun Lian",
+            "Jinpeng Lu",
+            "Jin Huang"
+          ],
+          "abstract": "On-policy distillation has emerged as an efficient paradigm for improving long chain-of-thought reasoning in large language models, where the student learns from its own rollouts while receiving dense teacher feedback on the states it actually visits. Prior work in this paradigm has focused on advancing \\textit{continuation learning} through better teacher scoring, more stable optimization, or more learnable traces, yet largely overlooks a critical failure mode in long-horizon reasoning: once the student drifts at a deep prefix, the bottleneck is no longer how to \\textit{continue} from the current path but how to \\textit{recover} to an effective one. To address this gap, we propose \\ourmethod, a recovery-centric framework for on-policy distillation in long chain-of-thought reasoning. \\ourmethod operates on student-generated deep prefixes that have already drifted off track yet still admit successful teacher recovery. From each such prefix, it samples multiple teacher recoveries, extracts the short \\textit{repair segment} they share, and trains the student to produce this repair before continuing the remaining reasoning on policy. This design shifts the distillation target from full-suffix imitation to focused path re-entry. To further support long-horizon learning, \\ourmethod follows a depth curriculum that expands training depth according to the observed recovery gap, allowing the student to progressively extend its effective reasoning horizon. Extensive experiments on long chain-of-thought benchmarks demonstrate that \\ourmethod delivers (I) \\textbf{substantial performance gains}, improving strong on-policy distillation baselines by up to $6.84\\%$ in final accuracy and $9.27\\%$ in recovery success; and (II) \\textbf{strong long-horizon robustness}, bringing $3.11\\%$--$7.46\\%$ gains on deeper prefix regimes and consistent pass@$k$ improvements under longer reasoning horizons.",
+          "official_url": "https://neurips.cc/virtual/2026/poster/154397",
+          "paper_url": "https://openreview.net/forum?id=DsDVXNgrHK",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5385,
+        "shared_authors": [],
+        "score": 0.5385
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Virtual Pres",
+          "paper_id": "3193-MAIN",
+          "title": "Rubric-Aware Multi-Expert Online Policy Distillation for Chinese Elementary School Essay Writing",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.5294,
+        "shared_authors": [],
+        "score": 0.5294
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/yin2026_hopd_confidence_aware.md",
+    "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-policy Distillation",
+    "arxiv": "2607.02592",
+    "authors": [
+      "Qixiang Yin",
+      "Huanjin Yao",
+      "Yuchen Cai",
+      "Jianghao Chen",
+      "Ziyi Wang",
+      "Fei Su",
+      "Zhicheng Zhao"
+    ],
+    "exact_matches": [
+      {
+        "venue": "EMNLP",
+        "year": 2026,
+        "track": "MAIN",
+        "decision": "Poster",
+        "paper_id": "572-MAIN",
+        "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+        "authors": [],
+        "abstract": "",
+        "official_url": "https://2026.emnlp.org/program/",
+        "paper_url": "",
+        "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+      }
+    ],
+    "identifier_matches": [],
+    "candidates": []
+  },
+  {
+    "file": "research-wiki/papers/yin2026_slowfast_multiteacher_onpolicy.md",
+    "title": "Slow-Fast Multi-Teacher On-Policy Distillation for Capability Preservation",
+    "arxiv": "2610.02324",
+    "authors": [
+      "Xiaofei Yin",
+      "Tong Chu",
+      "Jiyuan Fu",
+      "Jun Lan",
+      "Shuheng Zhou",
+      "Huijia Zhu"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "bVXx0K0j4c",
+          "title": "Zooming without Zooming: Region-to-Image Distillation for Fine-Grained Multimodal Perception",
+          "authors": [
+            "Lai Wei",
+            "Liangbo He",
+            "jun lan",
+            "Lingzhong Dong",
+            "Yutong Cai",
+            "Siyuan Li",
+            "Huijia Zhu",
+            "Weiqiang Wang",
+            "Linghe Kong",
+            "Yue Wang",
+            "Zhuosheng Zhang",
+            "Weiran Huang"
+          ],
+          "abstract": "Multimodal Large Language Models (MLLMs) excel at broad visual understanding but still struggle with fine-grained perception, where decisive evidence is small and easily overwhelmed by global context. Recent \"Thinking-with-Images\" methods alleviate this by iteratively zooming in and out regions of interest during inference, but incur high latency due to repeated tool calls and visual re-encoding. To address this, we propose Region-to-Image Distillation, which transforms zooming from an inference-time tool into a training-time primitive, thereby internalizing the benefits of agentic zooming into a single forward pass of an MLLM. In particular, we first zoom in to micro-cropped regions to let strong teacher models generate high-quality VQA data, and then distill this region-grounded supervision back to the full image. After training on such data, the smaller student model improves \"single-glance\" fine-grained perception without tool use. To rigorously evaluate this capability, we further present ZoomBench, a hybrid-annotated benchmark spanning six fine-grained perceptual dimensions, together with a dual-view protocol that quantifies the global-regional \"zooming gap\". Experiments show that our models achieve leading performance across multiple fine-grained perception benchmarks (Figure 1), and also improve general multimodal cognition on benchmarks such as visual reasoning and GUI agents. Our code is available at https://github.com/inclusionAI/Zooming-without-Zooming.",
+          "official_url": "https://icml.cc/virtual/2026/poster/62952",
+          "paper_url": "https://openreview.net/forum?id=bVXx0K0j4c",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.4414,
+        "shared_authors": [
+          "huijiazhu",
+          "junlan"
+        ],
+        "score": 0.7414
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "6445-MAIN",
+          "title": "Counteraction-Aware Multi-Teacher On-Policy Distillation for General Capability Recovery with Domain Preservation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.7273,
+        "shared_authors": [],
+        "score": 0.7273
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "2835-MAIN",
+          "title": "MosaicAudio: Multi-Teacher On-Policy Distillation for Controllable Video-to-Audio Generation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.6897,
+        "shared_authors": [],
+        "score": 0.6897
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/zhang2026_verify_before_you.md",
+    "title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+    "arxiv": "2609.02998",
+    "authors": [
+      "Zhiwei Zhang",
+      "Zechen Sun",
+      "Fei Zhao",
+      "Kang Peng",
+      "Bin Liang",
+      "Huayu Deng",
+      "Yao Hu",
+      "Kam-Fai Wong",
+      "Mu Chuan"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "main-long",
+          "decision": "accepted",
+          "paper_id": "2026.acl-long.1880",
+          "title": "Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors",
+          "authors": [
+            "Zhiwei Zhang",
+            "Fei Zhao",
+            "Rui Wang",
+            "Zezhong Wang",
+            "Bin Liang",
+            "Jiakang Wang",
+            "Yao Hu",
+            "Shaosheng Cao",
+            "Kam-Fai Wong"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.acl-long.1880/",
+          "paper_url": "https://aclanthology.org/2026.acl-long.1880/",
+          "source_url": "https://aclanthology.org/volumes/2026.acl-long.xml"
+        },
+        "title_similarity": 0.2121,
+        "shared_authors": [
+          "binliang",
+          "feizhao",
+          "kamfaiwong",
+          "yaohu",
+          "zhiweizhang"
+        ],
+        "score": 0.8121
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "vQf2YR2Kpd",
+          "title": "Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents",
+          "authors": [
+            "Yiming Du",
+            "Baojun Wang",
+            "Yifan Xiang",
+            "Zhaowei Wang",
+            "Wenyu Huang",
+            "Boyang XUE",
+            "Bin Liang",
+            "Xingshan Zeng",
+            "Fei Mi",
+            "Haoli Bai",
+            "Lifeng Shang",
+            "J Pan",
+            "Yuxin Jiang",
+            "Kam-Fai Wong"
+          ],
+          "abstract": "Temporal reasoning over long, multi-session dialogues is a critical capability for conversational agents. As dialogue histories grow in length and accumulate noise, existing long-context models struggle to accurately identify temporally pertinent information, significantly impairing reasoning performance. To address this, we introduce **Memory-T1**, a framework that learns a time-aware memory selection policy using reinforcement learning (RL). It employs a coarse-to-fine strategy, first pruning the dialogue history into a candidate set with temporal and retriever filters, followed by an RL agent that selects the precise evidence. The RL training is guided by a multi-level reward function optimizing (i) accuracy, (ii) evidence grounding, and (iii) temporal consistency. This temporal consistency reward provides a dense signal by evaluating alignment at both the session-level (range proximity) and the utterance-level (evidence density), enabling the agent to resolve subtle chronological ambiguities. On the Time-Dialog benchmark, Memory-T1 boosts a 7B model to an overall score of 67.0\\%, establishing a new state-of-the-art performance for open-source models and outperforming a 14B baseline by 10.2\\%. Ablation studies show temporal consistency and evidence grounding rewards jointly contributing to a 15.0\\% performance gain.Moreover, Memory-T1 maintains robustness up to 128k tokens, where baseline models collapse, proving effectiveness against noise in extensive dialogue histories.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10006811",
+          "paper_url": "https://openreview.net/forum?id=vQf2YR2Kpd",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3913,
+        "shared_authors": [
+          "binliang",
+          "kamfaiwong"
+        ],
+        "score": 0.6913
+      },
+      {
+        "record": {
+          "venue": "ICLR",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (Poster)",
+          "paper_id": "UZIjskfbfU",
+          "title": "Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models",
+          "authors": [
+            "Wenxuan Huang",
+            "Bohan Jia",
+            "Shaosheng Cao",
+            "Zheyu Ye",
+            "Fei zhao",
+            "Zhe Xu",
+            "Yao Hu",
+            "Shaohui Lin"
+          ],
+          "abstract": "DeepSeek-R1-Zero has successfully demonstrated the emergence of reasoning capabilities in LLMs purely through Reinforcement Learning (RL). Inspired by this breakthrough, we explore how RL can be utilized to enhance the reasoning capability of MLLMs. However, direct training with RL struggles to activate complex reasoning capabilities such as questioning and reflection in MLLMs, due to the absence of substantial high-quality multimodal reasoning data. To address this issue, we propose the reasoning MLLM, Vision-R1, to improve multimodal reasoning capability. Specifically, we first construct a high-quality multimodal CoT dataset without human annotations by leveraging an existing MLLM and DeepSeek-R1 through modality bridging and data filtering to obtain a 200K multimodal CoT dataset, Vision-R1-cold dataset. It serves as cold-start initialization data for Vision-R1. To mitigate the optimization challenges caused by overthinking after cold start, we propose Progressive Thinking Suppression Training (PTST) strategy and employ Group Relative Policy Optimization (GRPO) with the hard formatting result reward function to gradually refine the model's ability to learn correct and complex reasoning processes on the multimodal math dataset. Comprehensive experiments show our model achieves an average improvement of $\\sim$6\\% across various multimodal math reasoning benchmarks using only a 10K multimodal math data during RL training. Vision-R1-7B achieves a 73.5\\% accuracy on the widely used MathVista benchmark, which is only 0.4\\% lower than the leading reasoning model, OpenAI O1. Scaling up the amount of multimodal math data in the RL training, Vision-R1-32B and Vison-R1-72B achieves 76.4\\% and 78.2\\% MathVista benchmark scores, respectively. The datasets, weight and code will be released in: https://github.com/Osilly/Vision-R1.",
+          "official_url": "https://iclr.cc/virtual/2026/poster/10009210",
+          "paper_url": "https://openreview.net/forum?id=UZIjskfbfU",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.3286,
+        "shared_authors": [
+          "feizhao",
+          "yaohu"
+        ],
+        "score": 0.6286
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/zhu2026_from_gradients_capabilities.md",
+    "title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
+    "arxiv": "2610.02179",
+    "authors": [
+      "Siqi Zhu",
+      "Suozhi Huang",
+      "Kaixuan Zhang",
+      "Yuheng Yang",
+      "Zhanyang Jin",
+      "Yihang Sun",
+      "Jiaxuan You"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "gY9mL1HW2M",
+          "title": "Probing the Knowledge Boundary: An Interactive Agentic Framework for Deep Knowledge Extraction",
+          "authors": [
+            "Yuheng Yang",
+            "Siqi Zhu",
+            "Tao Feng",
+            "Ge Liu",
+            "Jiaxuan You"
+          ],
+          "abstract": "Large Language Models (LLMs) can be seen as compressed knowledge bases, but it remains unclear what knowledge they truly contain and how far their knowledge boundary extends. Existing benchmarks are mostly static and provide limited support for systematic knowledge probing. In this paper, we propose an interactive agentic framework to systematically extract and quantify the knowledge of LLMs. Our method includes four adaptive exploration policies to probe knowledge at different granularity. To ensure the quality of extracted knowledge, we introduce a three-stage knowledge processing pipeline that combines vector-based filtering to remove strict duplicates, LLM-based adjudication to resolve ambiguous semantic overlap, and domain relevance auditing to retain valid knowledge units. Through extensive experiments, we find that Recursive Taxonomy is the most effective exploration strategy. We also observe a clear knowledge scaling law, where larger models consistently recover more knowledge. In addition, we identify a Pass@1 versus Pass@k trade-off: domain-specialized models achieve higher initial accuracy but experience rapid degradation, while general-purpose models maintain stable performance over extended extraction. Finally, our results show that differences in training data composition lead to distinct and measurable knowledge profiles across model families, reflecting how pretraining shapes each model's parametric knowledge.",
+          "official_url": "https://icml.cc/virtual/2026/poster/62443",
+          "paper_url": "https://openreview.net/forum?id=gY9mL1HW2M",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.2468,
+        "shared_authors": [
+          "jiaxuanyou",
+          "siqizhu",
+          "yuhengyang"
+        ],
+        "score": 0.6968
+      },
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "main-long",
+          "decision": "accepted",
+          "paper_id": "2026.acl-long.1716",
+          "title": "From Detection to Understanding: Multi-Turn Reasoning for Video Misinformation Analysis",
+          "authors": [
+            "Zhi Zeng",
+            "Jiaying Wu",
+            "Minnan Luo",
+            "Di Zhang",
+            "Yifei Yang",
+            "Xiangzheng Kong",
+            "Herun Wan",
+            "Zihan Ma"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.acl-long.1716/",
+          "paper_url": "https://aclanthology.org/2026.acl-long.1716/",
+          "source_url": "https://aclanthology.org/volumes/2026.acl-long.xml"
+        },
+        "title_similarity": 0.5811,
+        "shared_authors": [],
+        "score": 0.5811
+      },
+      {
+        "record": {
+          "venue": "ICML",
+          "year": 2026,
+          "track": "Conference",
+          "decision": "Accept (regular)",
+          "paper_id": "8aTV77lBaG",
+          "title": "TMS: Trajectory-Mixed Supervision for On-Policy Self Distillation",
+          "authors": [
+            "Rana Khan",
+            "Zijie Liu",
+            "Zhen Tan",
+            "Charles Fleming",
+            "Tianlong Chen"
+          ],
+          "abstract": "Reinforcement Learning (RL) and Supervised Fine-Tuning (SFT) are the two dominant paradigms for enhancing Large Language Model (LLM) performance on downstream tasks. While RL generally preserves broader model capabilities (retention) better than SFT, it comes with significant costs: complex reward engineering, instability, and expensive on-policy sampling. In contrast, SFT is efficient but brittle, often suffering from catastrophic forgetting due to $\\textbf{Supervision Mismatch}$: the divergence between the model's evolving policy and static training labels. We address this trade-off with $\\textbf{Trajectory-Mixed Supervision (TMS)}$, a reward-free framework that approximates the on-policy benefits of RL by creating a dynamic curriculum from the model's own historical checkpoints. TMS minimizes $\\textit{Policy-Label Divergence (PLD)}$, preventing the mode collapse that drives forgetting in standard SFT. Experiments across reasoning (MATH, GSM8K) and instruction-following benchmarks demonstrate that TMS effectively shifts the accuracy-retention Pareto frontier. While RL remains the gold standard for retention, TMS significantly outperforms standard and iterative SFT, bridging the gap to RL without requiring reward models or verifiers. Mechanistic analysis confirms that PLD drift accurately predicts forgetting, and that TMS successfully mitigates this drift.",
+          "official_url": "https://icml.cc/virtual/2026/poster/65950",
+          "paper_url": "https://openreview.net/forum?id=8aTV77lBaG",
+          "source_url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+          "arxiv_ids": []
+        },
+        "title_similarity": 0.5469,
+        "shared_authors": [],
+        "score": 0.5469
+      }
+    ]
+  },
+  {
+    "file": "research-wiki/papers/zhu2026_upmopd_update_projection.md",
+    "title": "UP-MOPD: Update Projection in Multi-Teacher On-Policy Distillation",
+    "arxiv": "2610.08398",
+    "authors": [
+      "Taojie Zhu",
+      "Jing Jin",
+      "Yuan Xia",
+      "Chenyang Ding",
+      "Qunshan He",
+      "Wanke Xia",
+      "Tao Sun",
+      "Yan Chen",
+      "Jian Wang",
+      "Jinjie Gu",
+      "Tao Feng"
+    ],
+    "exact_matches": [],
+    "identifier_matches": [],
+    "candidates": [
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "572-MAIN",
+          "title": "H-OPD: Confidence Aware Heterogeneous Multi-Teacher Multimodal On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.6615,
+        "shared_authors": [],
+        "score": 0.6615
+      },
+      {
+        "record": {
+          "venue": "EMNLP",
+          "year": 2026,
+          "track": "MAIN",
+          "decision": "Poster",
+          "paper_id": "3136-MAIN",
+          "title": "SecOPD: Mitigating Adaptive Prompt Injections by On-Policy Distillation",
+          "authors": [],
+          "abstract": "",
+          "official_url": "https://2026.emnlp.org/program/",
+          "paper_url": "",
+          "source_url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490"
+        },
+        "title_similarity": 0.6271,
+        "shared_authors": [],
+        "score": 0.6271
+      },
+      {
+        "record": {
+          "venue": "ACL",
+          "year": 2026,
+          "track": "Findings",
+          "decision": "accepted",
+          "paper_id": "2026.findings-acl.1260",
+          "title": "GroupRank: A Groupwise Paradigm for Effective and Efficient Passage Reranking with LLMs",
+          "authors": [
+            "Meixiu Long",
+            "Duolin Sun",
+            "Dan Yang",
+            "Yihan Jiao",
+            "Lei Liu",
+            "Jiahai Wang",
+            "Binbin Hu",
+            "Yue Shen",
+            "Jie Feng",
+            "Zhehao Tan",
+            "Junjie Wang",
+            "Lianzhen Zhong",
+            "Jian Wang",
+            "Peng Wei",
+            "Jinjie Gu"
+          ],
+          "abstract": "",
+          "official_url": "https://aclanthology.org/2026.findings-acl.1260/",
+          "paper_url": "https://aclanthology.org/2026.findings-acl.1260/",
+          "source_url": "https://aclanthology.org/volumes/2026.findings-acl.xml"
+        },
+        "title_similarity": 0.3206,
+        "shared_authors": [
+          "jianwang",
+          "jinjiegu"
+        ],
+        "score": 0.6206
+      }
+    ]
+  }
+]

@@ -1,5 +1,7 @@
 # Teacher–student mismatch / capacity gap
 
+> 2026-10-06 状态：保留的 mismatch 专题，覆盖范围仍是下述旧卡快照；末尾选题推荐属于历史解释，未经新的 novelty／实验核查，不作为当前已确认方向。具体数值信号与估计器问题先读[最新 failure-mode 综合](concrete-failure-modes.md)。
+
 > 覆盖说明：对当前 76 张 cards 做全文召回，再精读 22 张候选卡；主表保留 20 篇直接改变 mismatch 决策的工作。旧 YAML taxonomy 只用于召回，不作为归类依据。
 
 ## 现象

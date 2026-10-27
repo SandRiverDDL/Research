@@ -31,6 +31,9 @@ need_expert_review: false
 
 ## Evidence Anchors
 
+- **2026-10-19 数据来源补核（事实）**：§2.1 点名 SWE-smith、SWE-Flow、SWE-rebench、Multi-SWE-RL 作为带 executable repositories/tests 的 seed datasets，并进一步合成新 issues；另一路从真实 GitHub PR 构造 buggy/fixed states、Docker 与 verifier。点名 seeds 不等于最终扩展 corpus 全部公开。[2-3]
+- 原文入口：https://arxiv.org/html/2603.00729#S2.SS1
+
 - 1-3: task synthesis and environment-grounded training。
 - 3-6: mid-training data。
 - 13: Slurm/Ray infra bottlenecks。

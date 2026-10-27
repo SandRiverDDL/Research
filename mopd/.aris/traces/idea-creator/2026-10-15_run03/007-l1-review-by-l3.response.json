@@ -1,0 +1,657 @@
+{
+  "shard_id": "g17-l1-cross-review-by-l3",
+  "assigned_ids": [
+    "L1-A1",
+    "L1-A2",
+    "L1-A3",
+    "L1-A4"
+  ],
+  "reviewer_model": "gpt-6-astra",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "context_reused": true,
+  "review_date": "2026-10-15",
+  "search_log": [
+    {
+      "candidate_ids": [
+        "L1-A1"
+      ],
+      "claim": "将许可对象从整题答对改为student前缀上的认证局部动作",
+      "queries": [
+        "multi teacher distillation locally verified proof steps no complete proof teacher 2025 2026",
+        "on policy distillation certified local actions proof checker partial teacher",
+        "site:openreview.net 2025 2026 proof step distillation verifier teacher"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2609.15404v2",
+        "https://arxiv.org/html/2606.20068"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A1"
+      ],
+      "claim": "局部证书检查提供可信监督而非完整求解oracle",
+      "queries": [
+        "site:arxiv.org 2025 2026 \"proof\" \"local\" \"distillation\" verifier",
+        "site:openreview.net \"proof\" \"intermediate\" \"teacher\" verification 2025",
+        "Lean theorem proving training verified intermediate steps incomplete proofs multi expert"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2606.20068",
+        "https://arxiv.org/html/2603.19514"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A1"
+      ],
+      "claim": "多局部专家认证动作集合可教出联合策略而无整题可靠教师",
+      "queries": [
+        "\"Who Teaches Which Token\" \"criterion\"",
+        "multi teacher partial knowledge verified reasoning steps no teacher complete solution distillation",
+        "site:proceedings.mlr.press 2025 2026 \"teacher\" \"partial\" \"proof\""
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2609.15404v2",
+        "https://arxiv.org/html/2609.02548v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A2"
+      ],
+      "claim": "多个不完整反例专家联合认证否决student完整候选",
+      "queries": [
+        "multi teacher counterexample guided distillation student program synthesis 2025 2026",
+        "language model training multiple critics verified counterexamples rejection sampling",
+        "site:arxiv.org \"counterexample\" \"distillation\" 2026"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2603.25810",
+        "https://arxiv.org/html/2603.19514",
+        "https://arxiv.org/html/2506.03136"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A2"
+      ],
+      "claim": "仅执行具体反例即可提供无需完整答案的可信训练信号",
+      "queries": [
+        "\"ExVerus\" counterexample learning",
+        "site:openreview.net 2025 2026 counterexample guided language model training unit tests",
+        "site:proceedings.mlr.press 2025 2026 language models counterexamples training"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2603.25810",
+        "https://arxiv.org/html/2603.19514"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A2"
+      ],
+      "claim": "将存活student样本按自身概率重加权的独立增量与proposal处理",
+      "queries": [
+        "language model rejection sampling fine tuning probability weighted self generated candidates",
+        "\"counterexample\" \"self-training\" \"language models\"",
+        "\"negative\" \"multi-teacher\" \"distillation\" language model 2025 2026"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2506.03136",
+        "https://aclanthology.org/2022.naacl-main.341.pdf"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A3"
+      ],
+      "claim": "各teacher只学习和评分固定输出投影并联合约束完整student答案",
+      "queries": [
+        "multi teacher knowledge amalgamation partial label dependency \"ANT\"",
+        "site:arxiv.org 2025 2026 distillation \"partial\" \"output\" \"teachers\"",
+        "site:openreview.net 2025 2026 \"partial\" \"knowledge amalgamation\""
+      ],
+      "sources_checked": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/26190/25962"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A3"
+      ],
+      "claim": "确定性投影及局部分布乘积可提供无完整答案的联合监督",
+      "queries": [
+        "\"product of experts\" \"partial\" \"distillation\" language model",
+        "\"knowledge amalgamation\" \"dependencies\" teacher",
+        "\"projection\" \"weak supervision\" \"structured prediction\" teacher distillation"
+      ],
+      "sources_checked": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/26190/25962",
+        "https://aclanthology.org/2022.naacl-main.341.pdf"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A3"
+      ],
+      "claim": "student采样候选上的投影概率乘积及候选归一化目标",
+      "queries": [
+        "\"language model\" \"product of experts\" \"distillation\" 2025 2026",
+        "site:proceedings.mlr.press \"product of experts\" \"distillation\"",
+        "\"sampled\" \"candidate\" \"knowledge amalgamation\""
+      ],
+      "sources_checked": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/26190/25962",
+        "https://aclanthology.org/2022.naacl-main.341.pdf"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A4"
+      ],
+      "claim": "以student更新后无提示泛化收益训练teacher提示策略",
+      "queries": [
+        "\"The Assistance Dilemma\" \"teacher\"",
+        "learning to teach language models teacher reward student learning parameter update 2025 2026",
+        "\"Interactive Knowledge Distillation\" \"exam\""
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2109.04641",
+        "https://arxiv.org/html/2610.06446"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A4"
+      ],
+      "claim": "两个局部teacher提示经privileged student副本产生可部署蒸馏目标",
+      "queries": [
+        "\"multi-teacher\" \"privileged\" \"feedback\" distillation 2026",
+        "\"teacher\" \"hints\" \"meta\" \"distillation\" language models 2025",
+        "\"Learn from Whoever Is Right\" method"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2609.02548v1"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A4"
+      ],
+      "claim": "共同真实教学增益奖励能制备互补teachers而非奖励其解题表现",
+      "queries": [
+        "\"multi teacher\" \"meta learning\" \"student\" validation loss distillation",
+        "\"teacher\" \"student learning gain\" reinforcement learning language model",
+        "site:openreview.net 2025 2026 \"teaching\" \"student\" \"reward\""
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2109.04641",
+        "https://arxiv.org/html/2306.06634"
+      ]
+    },
+    {
+      "candidate_ids": [
+        "L1-A1",
+        "L1-A2"
+      ],
+      "claim": "追踪正式过程验证和代码反例训练的强基线；补核公开原文入口",
+      "queries": [
+        "\"CURE\" \"code\" \"unit test\" reinforcement learning 2025",
+        "\"counterexample\" \"rejection\" \"fine-tuning\" language model",
+        "\"Process-Verified Reinforcement Learning\" Lean arxiv",
+        "\"Tool-Assisted Multi-Turn Theorem Proving\" arxiv"
+      ],
+      "sources_checked": [
+        "https://arxiv.org/html/2606.20068",
+        "https://arxiv.org/html/2603.25810",
+        "https://arxiv.org/html/2506.03136",
+        "https://openreview.net/pdf?id=sKvVHgmRP2",
+        "https://openreview.net/pdf?id=jWJeuyOM2H"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning",
+      "url": "https://arxiv.org/html/2609.15404v2",
+      "anchors": [
+        "§3.2 Eq.4–5",
+        "§3.3 Eq.6",
+        "§3.4 Eq.8–10"
+      ],
+      "read_depth": "method",
+      "finding": "Teacher 对原题生成缓存答案，以特定 criterion 的得分优势获得教学许可，再用 teacher 在 student 原轨迹上的低似然位置确定监督 mask。整题答对不是许可条件；但许可没有直接认证被蒸馏的当前局部动作。"
+    },
+    {
+      "source_id": "S2",
+      "title": "Process-Verified Reinforcement Learning for Theorem Proving via Lean",
+      "url": "https://arxiv.org/html/2606.20068",
+      "anchors": [
+        "§3.2 Tactic-Level MDP",
+        "§4.1 Define Tactic-level Rewards",
+        "§4.2",
+        "§5.3 Reward Strategy"
+      ],
+      "read_depth": "method",
+      "finding": "Lean 提供 tactic 有效性和整题 outcome，过程与结果 advantage 共同训练。方法区分局部可执行与完成证明，并对首个错误后的步骤传播无效标记；因此局部确定性检查及其与进展的区别已有明确方法。OpenReview 原链接受浏览器验证阻挡，本次以 arXiv 方法为证据，不据搜索摘要认证 venue。"
+    },
+    {
+      "source_id": "S3",
+      "title": "Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs",
+      "url": "https://arxiv.org/html/2609.02548v1",
+      "anchors": [
+        "§4.3 Eq.4–5",
+        "§4.4 Eq.6–7"
+      ],
+      "read_depth": "method",
+      "finding": "先用 teacher 私有整题答案认证资格，合并合格 feedback 和 student 成功 peer anchor，供 EMA self-teacher 读取后蒸馏给无 privileged context 的 student。Sanitizer 主要是词面检查，作者明确不认证 critique 的语义正确性。"
+    },
+    {
+      "source_id": "S4",
+      "title": "ExVerus: Verus Proof Repair via Counterexample Reasoning",
+      "url": "https://arxiv.org/html/2603.25810",
+      "anchors": [
+        "§2.3 Definition 2.2",
+        "§3.1 Counterexample Generation with Validation",
+        "§3.2"
+      ],
+      "read_depth": "method",
+      "finding": "LLM 生成 SMT 查询以寻找反例，并对 invariant errors 的反例执行非LLM验证，随后迭代修复证明；反例验证并非覆盖所有错误类型。直接覆盖可核验反例驱动改进，但该机制是推理时证明修复，不是多个反例 experts 训练一个部署 student。"
+    },
+    {
+      "source_id": "S5",
+      "title": "Learning to Disprove: Formal Counterexample Generation with Large Language Models",
+      "url": "https://arxiv.org/html/2603.19514",
+      "anchors": [
+        "§2 Formal Counterexample Generation",
+        "§3.1",
+        "§3.2 Multi-reward Guided Training"
+      ],
+      "read_depth": "method",
+      "finding": "生成候选反例及形式证明，用 Lean 验证后进行 expert iteration；还利用较容易的必要条件证明提供辅助信号。它训练反例生成/证明能力，不是对完整解候选取多个专家否决集合。"
+    },
+    {
+      "source_id": "S6",
+      "title": "Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning",
+      "url": "https://arxiv.org/html/2506.03136",
+      "anchors": [
+        "§3.1 Eq.1",
+        "§3.2 Theorem 3.1",
+        "§3.3 Eq.3–4"
+      ],
+      "read_depth": "method",
+      "finding": "CURE 生成程序与测试并构造执行矩阵，优化测试的 reward precision；训练 coder 的主奖励来自已有 ground-truth tests，无 ground-truth code 不等于无正确性信息。该工作是排错/测试信号训练 coder 的强基线，不完整覆盖多种已认证否决的候选目标。"
+    },
+    {
+      "source_id": "S7",
+      "title": "Knowledge Amalgamation for Multi-Label Classification via Label Dependency Transfer",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/26190/25962",
+      "anchors": [
+        "pp.9982–9984 Problem Formulation",
+        "Proposed Method: ANT",
+        "Prediction Integrator Eq.4 onward"
+      ],
+      "read_depth": "method",
+      "finding": "ANT 已让仅掌握标签子集的 teachers 合成覆盖全部标签的 student，并利用共享标签传递依赖。通过 transfer indicator、条件修订和最终预测整合完成，不是对 LLM 自采样完整答案的固定投影概率乘积。官方 AAAI PDF 已阅读方法页。"
+    },
+    {
+      "source_id": "S8",
+      "title": "Symbolic Knowledge Distillation: from General Language Models to Commonsense Models",
+      "url": "https://aclanthology.org/2022.naacl-main.341.pdf",
+      "anchors": [
+        "§2.1 Eq.1–3",
+        "§4 Critic Model",
+        "§5"
+      ],
+      "read_depth": "method",
+      "finding": "把生成模型分布与质量 critic 的乘积定义为 critical teacher，通过生成、过滤、再训练压缩到 student。故用概率乘积/筛选构造蒸馏分布已有方法；该文不包含多个部分答案投影的联合约束。"
+    },
+    {
+      "source_id": "S9",
+      "title": "Learning to Teach with Student Feedback",
+      "url": "https://arxiv.org/html/2109.04641",
+      "anchors": [
+        "Method / Course Step Eq.2–5",
+        "Exam Step Eq.6–8",
+        "Eq.11"
+      ],
+      "read_depth": "method",
+      "finding": "Interactive Knowledge Distillation 先用 teacher soft targets 更新 student 一步，再用独立 exam 样本上的 student loss 更新 teacher；以真实参数更新后的泛化表现优化教师已经存在。它不涉及两个LLM生成局部消息的共同 REINFORCE 奖励。"
+    },
+    {
+      "source_id": "S10",
+      "title": "The Assistance Dilemma: Learning to Teach via Multi-Turn Reinforcement Learning",
+      "url": "https://arxiv.org/html/2610.06446",
+      "anchors": [
+        "§3.1",
+        "§3.2",
+        "§3.4–3.5"
+      ],
+      "read_depth": "method",
+      "finding": "以 unseen near-transfer 问题上的前后增益奖励 tutor，后测屏蔽 tutor 话语但保留 student 自写笔记。Student 参数冻结，学习发生在上下文中；不能把此文误称为已实现参数更新后的教师元优化。"
+    },
+    {
+      "source_id": "S11",
+      "title": "Adaptive Multi-Teacher Knowledge Distillation with Meta-Learning",
+      "url": "https://arxiv.org/html/2306.06634",
+      "anchors": [
+        "§III-A",
+        "§III-B Eq.6–9",
+        "§III-C"
+      ],
+      "read_depth": "method",
+      "finding": "MMKD 在 student 副本更新后以 hard-buffer loss 元优化多 teacher 的 logits/feature 聚合权重。多teacher监督按 student 学习效果优化已有覆盖；它优化聚合网络，而非直接训练多个生成式 teacher 的局部提示策略。"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "L1-A1",
+      "core_claims": [
+        "C1 许可单位是 student 真实前缀处的具体局部动作证书，而非整题 teacher 成功或内部可靠性 proxy。",
+        "C2 确定性检查器只检查给定证书，知识和动作发现来自 specialists；不会免费搜索完整解。",
+        "C3 多个整题不可靠但局部互补的 teachers，其认证动作集合足以给同一 student 带来联合成功增量。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "S1",
+          "overlap": "VG-OPD 已以 criterion 局部优势许可多专家，整题成功并非必要条件；因此取消整题门槛已被部分直接覆盖。",
+          "delta": "候选改为认证 student 当前前缀上的具体动作，并蒸馏认证块的有限支持集；VG-OPD 的原题 probe 和 disagreement mask 不提供这种动作证书。"
+        },
+        {
+          "source_id": "S2",
+          "overlap": "确定性验证局部 tactics 并用过程反馈训练已有明确方法。",
+          "delta": "候选从多个 specialists 取得有方向的认证动作目标，区别于对 student 自生成 tactics 赋过程奖励。"
+        },
+        {
+          "source_id": "S3",
+          "overlap": "已有多teacher纠错反馈压缩入单student。",
+          "delta": "MT-SDPO 的整题资格与词面 sanitizer 不等于具体局部结论的形式认证。"
+        }
+      ],
+      "technical_issues": [
+        {
+          "name": "R1-CERTIFIED-IS-NOT-PROGRESS",
+          "severity": "HIGH",
+          "finding": "检查器证明结论成立不等于动作推进原始目标。重复题设、恒真命题、冗余 have 均可能认证通过；动作支持集不保证存在通往完整证明的可学路径。不能用通过率代替有用覆盖率。"
+        },
+        {
+          "name": "R1-STATE-SOUNDNESS",
+          "severity": "HIGH",
+          "finding": "任意 student 文本前缀未必对应合法 proof state。原方法虽要求根据原始题设核验证书，仍须定义错误前缀上的纠正如何成为下一动作；不能把不可信先前断言当公理，也不能假设检查器负责搜索修复。"
+        },
+        {
+          "name": "R1-FINITE-ACTION-TARGET",
+          "severity": "MEDIUM",
+          "finding": "若 C(s) 指本轮生成后通过检查的有限去重动作，q 可归一化且块级交叉熵可算；若指所有可认证动作则没有可计算枚举。动作是否含证书、块终止符及不同形式证明是否视为同一动作必须固定，否则概率权重可被表示长度和重复证书改变。"
+        },
+        {
+          "name": "R1-ONPOLICY-BOUNDARY",
+          "severity": "MEDIUM",
+          "finding": "监督起点来自 student，成立；teacher 生成块内较晚 token 的前缀则是 teacher-forced，不是全部 token 都来自 student 自采样。应如实记为 student-visited state 上的块级混合蒸馏，而非宣称完整轨迹严格 on-policy。"
+        },
+        {
+          "name": "R1-INFORMATION-AND-COST",
+          "severity": "MEDIUM",
+          "finding": "两个 specialists 必须确有互补信息，且制备样例不能隐含完整证明教师。Cross-scoring 每个认证候选的两个 teacher 概率、前缀读取、证书执行和无效提案均须计费。现有 token 数是估算，非实测。"
+        }
+      ],
+      "novelty_verdict": "PROCEED",
+      "novelty_score": 6,
+      "method_value_score": 7,
+      "pilot_information_score": 9,
+      "risk": "MEDIUM",
+      "recommendation": "prioritize",
+      "best_case": "在自然存在局部可认证知识、但每位 teacher 都缺少另一专长的任务上，具体动作认证能同时减少错误监督与整题门槛造成的浪费。剩余 delta 明确、可独立核验，值得最小 pilot；这不是已证明的方法必要性。",
+      "strongest_objection": "它是否只是多来源的经过验证 SFT 数据？VG-OPD 已放弃整题赢家假设，过程验证 RL 已训练局部 tactics；候选必须说明新增动作知识如何在相同检查与数据预算下超出这两类强基线。",
+      "likely_failure": "大部分认证动作正确但无关，或错误 student 前缀无法接续；结果只有局部通过率上升而整题成功无增量。",
+      "frontier_durability": "形式验证的可靠性在更强模型下仍有价值，但若更强单teacher很便宜地解决全部题，多个不完整 experts 的必要性会缩小。应看专长/知识仍分散的任务，而非靠人为把teacher削弱。",
+      "metric_gaming": "可通过输出重复事实、短而无用的恒真动作、证书重复和容易目标提高局部认证率；以完整proof checker的联合成功为主指标，同时报告初始题难度、动作有用性与全题覆盖。",
+      "fair_baselines": [
+        "VG-OPD 的 criterion 许可与相同验证器适配；过程验证 Lean RL；不得只比较 TU-OPD 的整题门槛。",
+        "Trust、可适配的 TU residual、MAD-OPD/MT-SDPO；AVSD/SMOPD 仅在对应 privileged-view/reward 条件可公平实现时加入，不要求不适用的形式比较。",
+        "同一认证动作数据的普通 block SFT、离线版本与单teacher；全部局部训练数据交给一个teacher/直接student的对照。",
+        "更强初始化/更大student、等全部 teacher 制备、生成、cross-scoring、检查器调用和 student 更新预算的 RL。"
+      ],
+      "minimum_test": "未运行。只做32道已有形式证明题的信号审计：每题选择一个实际student前缀，两位teacher各交一个短动作及证书；已知证明仅用于离线评估动作对目标的贡献，不提供给teacher。比较联合认证集合相对最佳单teacher是否新增可连接的有用动作，并统计非法前缀与无关动作率。实际GPU预算未指定，token估算未测速。",
+      "kill_criterion": "若在该任务分布上联合集合没有稳定新增有用动作，或有效动作证书实际依赖完整解生成器，则核心监督充分性前提被推翻。局部有增量但等数据SFT/过程RL完全复现时，方法价值下调，而非据邻近文献直接ABANDON。"
+    },
+    {
+      "id": "L1-A2",
+      "core_claims": [
+        "C1 各teacher无需正确完整程序，只需发现互补的具体错误反例。",
+        "C2 可执行规格能独立认证否决，不把未被否决当作已证明正确。",
+        "C3 对student自采样候选联合排错并按其原概率重加权，能形成优于单critic和普通RL的训练目标。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "S4",
+          "overlap": "生成、验证具体反例并据此改进程序证明已有直接机制。",
+          "delta": "ExVerus 做推理时修复；候选把多个专长否决集合用于训练一个无teacher部署模型。"
+        },
+        {
+          "source_id": "S5",
+          "overlap": "不依赖完整正解、生成可形式验证反例并从验证信号训练已有工作。",
+          "delta": "它训练反例生成器及证明器，没有本候选的多critic生存集合目标。"
+        },
+        {
+          "source_id": "S6",
+          "overlap": "可执行测试的错误识别能力用于训练coder和tester，且不要求ground-truth code。",
+          "delta": "候选强调多种已认证的具体否决，CURE的coder主奖励仍基于ground-truth tests；多teacher价值和具体重加权规则尚未被该文完整包含。"
+        }
+      ],
+      "technical_issues": [
+        {
+          "name": "R2-PROPOSAL-DOUBLE-COUNTING",
+          "severity": "HIGH",
+          "finding": "y_m 已按 π_old 采样，随后 q_m∝π_old(y_m)b_m 又乘一次 proposal。对保留样本重复计数的经验分布，大样本极限为 Q(y)∝π_old(y)^2 Pr(b=1|y)，而不是 π_old(y|b=1)。四样本自归一化有额外有限样本偏差。有限候选目标本身合法，但不能解释为单纯条件化或精确KL投影。"
+        },
+        {
+          "name": "R2-UNSUPERVISED-SHARPENING",
+          "severity": "HIGH",
+          "finding": "所有候选均未被否决时仍产生偏向当前高概率输出的自强化；没有新专家证据也可能压缩熵。该效应可能制造 apparent training gains，亦可能锁定高概率错误。"
+        },
+        {
+          "name": "R2-SURVIVAL-NOT-SOUNDNESS",
+          "severity": "HIGH",
+          "finding": "认证一个反例可以可靠否决，但没有反例不认证程序。联合critic可能留下共同盲区，或将全部组否决，导致训练停滞；原方法没有从全否决组取得方向性学习信号。"
+        },
+        {
+          "name": "R2-SPECIFICATION-ORACLE",
+          "severity": "HIGH",
+          "finding": "必须确有可执行规格判断反例输出是否错误。普通自然语言题只有候选程序和teacher声称的expected output时，仅运行程序不能证明反例有效。完整参考程序不是唯一方式，但若使用它需计入信息与数据条件。"
+        },
+        {
+          "name": "R2-METHOD-VS-RL",
+          "severity": "MEDIUM",
+          "finding": "当前增量主要是多来源测试/反例的并集。二值生存奖励、拒绝采样SFT或测试精度优化可能完全复现；不能仅凭反馈来自teacher就排除这些直接基线。"
+        }
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 4,
+      "method_value_score": 5,
+      "pilot_information_score": 9,
+      "risk": "HIGH",
+      "recommendation": "deprioritize",
+      "best_case": "在错误种类分散、具体反例容易认证且student偶尔产生正确完整解的场景，专家并集可能有效提高训练样本质量；没有发现完整包含该多专家训练设置的单篇论文。",
+      "strongest_objection": "与既有反例驱动改进、测试生成和拒绝采样训练相比，剩余方法差异很薄；目前唯一具体重加权还重复使用proposal，可能只是额外自锐化而非互补能力整合。",
+      "likely_failure": "四样本组缺少正确解，过滤留下共同盲区或全否决；再按π加权进一步固化错误高概率模式。",
+      "frontier_durability": "反例验证在软件可靠性上会持续有用，但多critic的独立价值取决于其相对一个更强测试生成器的成本和错误互补性。更强基础模型可能让四样本过滤更有效，也可能让多teacher变得冗余。",
+      "metric_gaming": "模型可适应公开测试、输出通过简单用例而违反未测规格的程序，或通过缩短答案获取更高sequence likelihood；存活率、已有测试通过率均不能代替独立完整规格/隐藏测试成功率。",
+      "fair_baselines": [
+        "同一认证否决数据的uniform survivor RFT、二值生存奖励RL、普通unlikelihood/偏好训练；分别报告原π重加权和数据筛选的贡献。",
+        "单反例teacher、合并训练数据的单critic、等预算更多随机/系统测试，以及CURE式测试精度训练。",
+        "Trust、MAD-OPD和适用的TU/MT-SDPO；有相同多reward时比较SMOPD；全部方法获得相同真实规格信息。",
+        "等teacher制备、候选生成、反例输入/输出tokens、执行次数、student更新预算；更大student与更强单teacher。"
+      ],
+      "minimum_test": "未运行。对固定100题×4个已有student候选，只做认证反例过滤与独立隐藏规格审计；测联合否决相对最佳单critic是否提升真实正确候选比例、全否决率及共同盲区率，并比较uniform与原π加权的有效样本数。无需训练。实际GPU预算未指定，token估算未测速。",
+      "kill_criterion": "若正确候选占比没有增加，或有效训练组稀少，核心信号假设失败；若优势仅来自π自锐化，或等反例预算RFT/RL复现，则当前独立方法价值不足。没有找到完整直接覆盖的单篇论文，故不作ABANDON。"
+    },
+    {
+      "id": "L1-A3",
+      "core_claims": [
+        "C1 每位teacher只需学会完整答案的一个确定性投影，而非完整任务。",
+        "C2 多个投影分布乘积约束共享实体，能够提供超出各自部分正确性的联合信息。",
+        "C3 在student自采样完整候选上归一化这些因子并蒸馏，可以学到同题联合成功。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "S7",
+          "overlap": "ANT 已从掌握不同标签子集的teachers向覆盖全部标签的student迁移局部知识及共享依赖；部分teacher整合本身不新。",
+          "delta": "候选针对生成式完整答案的固定投影，用各自可解的分布评分student自采样答案，不采用ANT的teacher间条件修订与标签整合器。"
+        },
+        {
+          "source_id": "S8",
+          "overlap": "用product-of-experts式质量因子构造目标并训练student已有方法。",
+          "delta": "候选的因子来自不同部分答案分布，且采样者为student；尚需证明投影信息而非一般reward weighting产生增量。"
+        }
+      ],
+      "technical_issues": [
+        {
+          "name": "R3-IMPLICIT-PROPOSAL",
+          "severity": "HIGH",
+          "finding": "设 F(y)=∏_i p_i(φ_i(y)|x)^λ_i。对 y_m~π_old 后按 F(y_m) 加权，经验目标在大样本下趋于 Q(y)∝π_old(y)F(y)，而非 Q(y)∝F(y)。前者可解释为KL约束的指数倾斜更新，有限四候选目标也可定义；问题是当前claimed_delta尚未区分这个已知优化含义与纯teacher联合分布。"
+        },
+        {
+          "name": "R3-PROJECTION-IDENTIFIABILITY",
+          "severity": "HIGH",
+          "finding": "若不同完整答案有相同全部投影，却只有一个合法，则所有teacher因子完全相同，方法没有信息区分它们。共享实体不自动排除这种纤维内歧义；例如字段分别正确但关系、程序行为或证明连贯性错误。"
+        },
+        {
+          "name": "R3-PRIOR-DOUBLE-COUNTING",
+          "severity": "MEDIUM",
+          "finding": "各p_i(φ_i(y)|x)都是条件分布，直接乘积可能重复计算共享实体/先验，不能自动视为一致联合分布。固定λ校准尺度不等价于证明概率兼容；candidate-set score可以使用，但语义需保持为评分而非正确posterior。"
+        },
+        {
+          "name": "R3-CANDIDATE-SUPPORT",
+          "severity": "HIGH",
+          "finding": "四个完整student候选中如果没有联合有效解，目标只能相对偏好现有候选；投影teacher本身不生成缺失的完整解。可以跨轮渐进改进，但原方法没有对此提供保证，不能把局部可解直接等同监督充分。"
+        },
+        {
+          "name": "R3-NO-HIDDEN-SOLVER",
+          "severity": "MEDIUM",
+          "finding": "φ_i必须只是解析，不得通过求解题目、修正实体或判断正确答案提供免费额外知识。不同长度/表述的projection logprob、重复字段与语义等价变体都可能改变乘积。"
+        }
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 5,
+      "method_value_score": 6,
+      "pilot_information_score": 9,
+      "risk": "HIGH",
+      "recommendation": "reserve",
+      "best_case": "如果能找到自然的联合任务，其正确性确实由少数可学投影共同辨识，候选能把弱专家的可靠部分信息转成单student联合能力。该生成式on-policy设定与已核查ANT并不相同，留下值得审计的delta。",
+      "strongest_objection": "目前更像partial-label amalgamation加通用product评分及reward-weighted self-training。需要实证证明投影对象本身解决了完整答案监督的具体失败，而不是把任务拆成若干独立字段后再拼接。",
+      "likely_failure": "联合分数偏好每个字段局部合理但整体非法的答案；或者评分仅按长度/风格排序，不能区分真实正确解。",
+      "frontier_durability": "面对信息/专业能力持续分散的模型，部分答案监督有长期价值；若主要困难只是小teacher的完整解能力不足，更强单teacher会低成本消除优势。真正有价值的结果应涉及共享约束，而非独立字段准确率。",
+      "metric_gaming": "填对高分投影字段、忽略未被投影的全局约束；重复常见实体或使用高概率短表达提高乘积；用平均字段准确率掩盖联合成功下降。",
+      "fair_baselines": [
+        "同投影数据直接SFT/soft-label蒸馏、普通sequence候选评分、F奖励的KL正则RL，以及仅把全部局部数据交给一个teacher或student。",
+        "ANT式partial-output amalgamation的合适适配；去掉实体对应、单投影与完整答案teacher评分消融。",
+        "Trust、适用TU residual、AVSD、SMOPD、MAD-OPD；保持privileged信息、teacher训练数据和候选支持完全一致。",
+        "相同teacher制备/评分/prefix缓存预算、相同student候选数与更新tokens；更大student与更强单teacher，端到端联合指标。"
+      ],
+      "minimum_test": "未运行。只对32道已有完整答案及全局验证器的题做projection碰撞和排序审计：为每题取现成student候选，检查同一组φ_i是否包含正确/错误完整答案，并比较联合分数相对单投影和完整答案聚合的真实正确性排序。所有正确答案仅用于审计。实际GPU预算未指定，token估算未测速。",
+      "kill_criterion": "若高频存在全部投影相同而全局正确性相反的候选，或联合投影分数不能改善真实正确性排序，则该任务上的监督充分性被推翻；若必须引入完整求解器消歧才能生效，已超出原候选。"
+    },
+    {
+      "id": "L1-A4",
+      "core_claims": [
+        "C1 直接用student一次真实参数更新后的独立组合题增益奖励teacher，而非其自身整题表现。",
+        "C2 两位teacher局部消息通过privileged student副本转成无提示student的蒸馏目标。",
+        "C3 共享教学增益能让teacher提示策略学出可被student吸收的互补性，值得其元训练成本。"
+      ],
+      "closest_work": [
+        {
+          "source_id": "S9",
+          "overlap": "IKD 的course/exam双层优化已用student真实一步更新后的独立数据表现优化teacher，这是候选中心目标的直接先例。",
+          "delta": "候选优化两个LLM的离散局部消息策略，用联合验证回报和REINFORCE，而非单teacher连续soft-target的meta-gradient。"
+        },
+        {
+          "source_id": "S11",
+          "overlap": "MMKD 已按更新后student表现优化多teacher监督的联合组织。",
+          "delta": "候选更新teacher消息生成策略本身；MMKD更新聚合权重网络。这是具体差异，但尚未证明该差异解决互补性问题。"
+        },
+        {
+          "source_id": "S3",
+          "overlap": "多teacher反馈→privileged self-teacher→无提示student的内循环已经存在。",
+          "delta": "候选允许不完整teacher并外层学习其消息，而MT-SDPO的teacher固定且先经整题资格验证。"
+        }
+      ],
+      "technical_issues": [
+        {
+          "name": "R4-KNOWN-META-TEACHING-CORE",
+          "severity": "HIGH",
+          "finding": "不能把以student真实学习增益训练teacher写成首次贡献，IKD已直接包含该双层目标；与MMKD的多teacher元优化相比，新意主要落在局部生成消息及其互补性。"
+        },
+        {
+          "name": "R4-SPARSE-META-REWARD",
+          "severity": "HIGH",
+          "finding": "一个临时更新对16个验证题各采一次的accuracy差可能低于噪声。独立Bernoulli前后估计在最坏方差下标准误约0.177，且一次样本差以1/16为粒度。teacher提示策略将获得高方差、稀疏共同奖励；不能把这些调用估算当作足够统计功效。"
+        },
+        {
+          "name": "R4-COMPLEMENTARITY-NOT-IDENTIFIED",
+          "severity": "HIGH",
+          "finding": "两位teacher同收一个总奖励不保证互补，一位可能承担全部有用信息，另一位搭便车；也可能等价于一个teacher生成双倍长度消息。去掉任意teacher后掉分还须排除总token/信息量减少。"
+        },
+        {
+          "name": "R4-LOCAL-HINT-BOUNDARY",
+          "severity": "MEDIUM",
+          "finding": "128-token上限不保证消息仅有局部知识，短消息也可泄露完整答案。需如实审计消息的信息来源，不能把conditioned student副本称为天然不具完整求解能力；其获得两个消息后可能就是联合solver，这不违规但须计入方法定义和成本。"
+        },
+        {
+          "name": "R4-OBJECTIVE-CADENCE",
+          "severity": "MEDIUM",
+          "finding": "q在单个s上的next-token形式清楚，sampling prefix来自无提示student也清楚；但每条轨迹只提示一次还是所有位置重新提示未完全定义，必须在实施前固定，不能按一次消息预算却按全轨迹逐位置提示效果叙述。"
+        },
+        {
+          "name": "R4-META-OVERFITTING-COST",
+          "severity": "HIGH",
+          "finding": "验证集必须与teacher生成消息的题及最终测试隔离。持续依据相同验证集更新teacher会适应元训练集，不能把其收益当未见泛化。teacher制备、临时student更新、前后验证、消息生成和副本评分需全部计费，原token估算未测速。"
+        }
+      ],
+      "novelty_verdict": "PROCEED WITH CAUTION",
+      "novelty_score": 4.5,
+      "method_value_score": 7,
+      "pilot_information_score": 6,
+      "risk": "HIGH",
+      "recommendation": "reserve",
+      "best_case": "若短局部消息的可学互补性确实可以由真实参数学习增益训练出来，结果可能超出固定expert聚合，形成可复用的teacher制备原则；价值潜力高于当前方法新意确定性。",
+      "strongest_objection": "中心双层教学目标已由IKD建立，多teacher的student感知元优化又有MMKD；privileged反馈蒸馏已由MT-SDPO覆盖。剩余组合是否提供独立方法贡献，不能靠昂贵的LLM化实现回答。",
+      "likely_failure": "一步更新的真实泛化增益太小且噪声太大，teacher优化学到元验证集捷径或一方主导，最终不如把相同计算用于student直接RL。",
+      "frontier_durability": "优化教学效果而非教师答题能力在更强模型下仍有意义，但元优化成本随模型扩展上升，固定强teacher消息可能已足够。必须跨student初始化/容量看是否能复用教学策略，而非依赖一个特定弱student。",
+      "metric_gaming": "通过反复接触元验证集优化其表面模式、泄露短答案、仅提高有提示临时表现，或用teacher输出tokens增长制造所谓互补；最终无提示独立组合题成功率才对应目标。",
+      "fair_baselines": [
+        "IKD式真实post-update教学目标；MMKD式只学习聚合策略；固定消息的MT-SDPO/privileged-context蒸馏，分离内外循环收益。",
+        "同总消息tokens的单teacher、teacher池局部数据合并训练的单teacher、随机/固定提示和双teacher但不元训练。",
+        "Trust、MAD-OPD、适用TU；同信号条件下SMOPD/结果RL。不能把Assistance Dilemma当已实现student参数更新的同方法：该文student冻结且保留自身上下文笔记。",
+        "把所有meta验证、临时更新、副本评分和teacher训练成本给student直接RL的等总compute对照，以及更大student/更强单teacher。"
+      ],
+      "minimum_test": "未运行。仅检查元奖励是否可辨认：冻结同一student起点，在8个训练小批次各比较4组已有teacher提示的一步临时更新，用独立32题进行配对前后评估，并重复相同提示估计随机噪声。若提示间教学增益差小于重复噪声，当前meta奖励不足以支持优化。实际GPU预算未指定，token估算未测速，不承诺所需GPU小时。",
+      "kill_criterion": "如果真实post-update无提示增益不可区分于采样噪声，或固定单teacher同token提示已达到相同增益，原方法的核心可学互补性前提失败。未找到完整包含双生成teacher消息元训练的单篇论文，因此不ABANDON；当前优先级受成本和已有核心机制限制。"
+    }
+  ],
+  "ranking": [
+    "L1-A1",
+    "L1-A3",
+    "L1-A4",
+    "L1-A2"
+  ],
+  "top_choice_rationale": "L1-A1通过本次有限查新门槛：具体局部动作在student真实前缀处被认证，与VG-OPD的criterion许可及过程RL分别有可核验差异；验证成本、信息来源与无关真命题风险可用不训练的信号审计先检验。其排名不是顶会保证或新方法必要性结论。",
+  "high_upside_choice": {
+    "id": "L1-A4",
+    "rationale": "直接训练可被student吸收的多teacher局部消息，若能克服元奖励噪声和已有meta-teaching覆盖，可能产生更通用的teacher制备原则。但它是高风险保留项，不能把IKD已有核心目标重新命名为首创。"
+  },
+  "coverage_limits": [
+    "本次40条实际web查询：四候选各3个承重claim、每claim至少3种表述，另4条近邻追踪；已访问arXiv原文、AAAI和ACL官方PDF，查询OpenReview及PMLR等官方入口，覆盖2025–2026与近六个月材料以及必要旧工作。有限检索不等于穷尽查新，未命中不构成不存在证明。",
+    "OpenReview的sKvVHgmRP2与jWJeuyOM2H PDF触发浏览器验证；前者通过arXiv 2606.20068核对方法，后者未读到原文，不作为直接覆盖证据。没有调用Semantic Scholar/OpenAlex等独立API，也没有伪称其检索已完成。",
+    "指定lenses输入边界与L1/L2/L3已读；本次只提取并审阅L1-A1至L1-A4。已有G17范围边界沿用同会话已读资料，没有读取query_pack或重新扫描研究库。",
+    "11项承重来源均读到方法/公式段；未全文逐页精读、未复现实验、未下载运行数据或代码。事实与本次数学推导分开；proposal极限是对原候选目标的审阅者推导，不冒充引用论文中的结论。",
+    "每个方法都尚未证明teacher池的信息足以联合解题；人工弱化teacher、完整答案泄漏、参考程序/规格提供的额外知识及student候选覆盖是竞争解释。",
+    "实际GPU预算未由用户指定。候选的≤8×3090只是工作假设，token估算、内存可行性和验证器吞吐均未实测；未运行任何pilot、训练或长推理，未给GPU小时承诺。",
+    "本次复用生成L3候选的agent上下文，只交叉审阅L1候选；不是fresh-context，也不是跨family评审。所有verdict为same-family provisional，后续pilot和外部审阅仍必要。",
+    "没有找到完整包含任一候选的特定单篇论文，因此没有ABANDON。PROCEED表示通过早期有限查新门槛；CAUTION的原因分别是明确的近邻重合、proposal/信息充分性或元奖励可学性问题，不能视作最终淘汰。",
+    "本轮未请求或完成用户端系统语音通知；交叉审阅结果由主协作者统一交付。"
+  ]
+}

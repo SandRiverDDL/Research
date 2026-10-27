@@ -1,0 +1,81 @@
+{
+  "task": "second-paper-ingest",
+  "started_at_utc": "2026-10-14T13:18:42.786966+00:00",
+  "marks": [
+    {
+      "stage": "start",
+      "epoch": 1791983922.7869663,
+      "monotonic": 1752.866381541
+    },
+    {
+      "stage": "preparation_done_fetch_start",
+      "epoch": 1791983962.8958817,
+      "monotonic": 1792.975280841
+    },
+    {
+      "stage": "fetch_done_read_start",
+      "epoch": 1791983966.234801,
+      "monotonic": 1796.31419985
+    },
+    {
+      "stage": "read_done_write_start",
+      "epoch": 1791984028.655673,
+      "monotonic": 1858.73507169
+    },
+    {
+      "stage": "write_done_verify_start",
+      "epoch": 1791984121.634606,
+      "monotonic": 1951.714004395
+    },
+    {
+      "stage": "verification_and_recording_done",
+      "epoch": 1791984202.3945317,
+      "monotonic": 2032.473930984
+    }
+  ],
+  "paper": "Multi-Turn On-Policy Distillation with Prefix Replay",
+  "arxiv_id": "2607.04763v3",
+  "network_seconds_parallel": {
+    "pdf": 2.9,
+    "html": 1.936,
+    "metadata": 1.47
+  },
+  "page": "research-wiki/papers/liao2026_multiturn_onpolicy_distillation.md",
+  "verification": {
+    "schema": "pass",
+    "protected_fields": "unchanged",
+    "local_links": "pass",
+    "original_html_anchors": 10,
+    "dedup_body_sha256": "79fce2bbe958a8bb8b0cfea74b9425e76990fd81eecfef9b635f106e3d603e45",
+    "query_pack_chars": 1099,
+    "papers": 2,
+    "edges": 2,
+    "strict_scan": "clean",
+    "content_review": "original HTML + PDF visual checks; no independent reviewer or replication",
+    "legacy_card_validator": "not run"
+  },
+  "ended_at_utc": "2026-10-14T13:23:22.394532+00:00",
+  "stages": [
+    {
+      "stage": "准备与选文",
+      "seconds": 40.109
+    },
+    {
+      "stage": "获取原文与元数据（并行）",
+      "seconds": 3.339
+    },
+    {
+      "stage": "阅读原文、核对 PDF",
+      "seconds": 62.421
+    },
+    {
+      "stage": "整理正文、入库与更新索引",
+      "seconds": 92.979
+    },
+    {
+      "stage": "验证、状态更新与计时记录",
+      "seconds": 80.76
+    }
+  ],
+  "total_seconds": 279.608
+}

@@ -1,0 +1,9 @@
+{
+  "call_number": 3,
+  "purpose": "g17-l3-astra-generation",
+  "tool": "spawn_agent",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "agent_id": "/root/g17_l3_astra",
+  "prompt": "你是 ARIS idea-creator 的只读发散生成 shard，model=Astra，lens=G17-L3。用户已明确确认 L1/L2/L3，当前只让你负责 L3“局部监督如何保留跨步骤依赖”。工作目录 /home/chy/notes/Research/mopd。你不是唯一协作者，不写共享文件、不撤销他人修改、不运行实验、不做广泛检索、不读 query_pack 或其他 gap/ideas。\n直接读 /home/chy/notes/Research/mopd/synthesis/g17-idea-lenses.md 的输入边界和L3；/home/chy/notes/Research/mopd/synthesis/mopd-gap-analysis.md 第1节和G17；research-wiki/papers/di2026_understanding_off_onpolicy.md、sun2026_distill_what_you.md、nguyen2026_avsd_adaptiveview_selfdistillation.md、wang2026_smopd_multireward_reinforcement.md（均相对此工作目录）。现有token聚合完全可以定义合法自回归策略；不能把“逐token=不能表达依赖”当事实。Sequence geometric target的conditional含continuation已有理论；arithmetic mixture与独有residual已有方法。\n只为 L3 生成4个互不相同的具体方法idea：在单项能力、局部可信监督、关键状态访问足够时，如何保留多teacher互补所需的跨步骤依赖，让同一student联合成功。方法是目标，诊断用于验证，不要仅benchmark。每个idea一个清晰核心机制，先给2–4具体步骤，允许大胆方案，不能靠堆模块/门控来制造新意。要说明信号在实际LLM中能否取得，不能把不可计算continuation或oracle cost-to-go当免费信息。若是已知结构化预测/RL/sequence distillation的应用，明确待查新而不自行淘汰。\n每个idea必须包含：id=L3-A1..A4；title；method_steps；minimal_formalism（精确目标/更新规则或伪代码）；hypothesis；closest_known_work；claimed_delta；minimum_test（便宜可推翻，不运行）；killer_result；compute_assumptions（明确模型/样本规模和额外teacher forward/token量，不捏造GPU小时；默认<=8x3090仅工作假设）；risk LOW/MEDIUM/HIGH；effort；so_what；dedup_key（核心干预+信号来源）。对照应含适用的Trust/TU residual/AVSD/SMOPD及普通sequence objective/单teacher/RL、容量与等总compute。要注意局部prefix本就含历史，不可用一个只对无记忆router成立的反例声称打败所有token方法。不默认逐状态probe、环境重置、分叉rollout；如果采用须计成本与可规模化限制。\n返回严格JSON {shard_id:'g17-l3-astra',model:'gpt-6-astra',candidates:[4 items]}；总输出控制在6500中文字符以内。不要排名、删候选或写文件；所有机制与创新均待验证。"
+}

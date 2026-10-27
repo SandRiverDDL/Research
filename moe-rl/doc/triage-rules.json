@@ -1,0 +1,56 @@
+{
+  "description": "MoE-Aware RL Optimization project-local triage rules.",
+  "hard_gates": [
+    "Queue row is not a card.",
+    "Survey mention is recall evidence, not paper evidence.",
+    "No original paper PDF/HTML brief, no formal L1 card.",
+    "Formal L1 cards in notes/ root must pass scripts/autoresearch.py validate before being reported as complete."
+  ],
+  "required_frontmatter": [
+    "title",
+    "year",
+    "venue",
+    "paper_type",
+    "lifecycle_role"
+  ],
+  "required_nested_frontmatter": {},
+  "allowed": {
+    "paper_type": [
+      "core-method",
+      "survey",
+      "benchmark-eval",
+      "background",
+      "adjacent"
+    ],
+    "lifecycle_role": [
+      "survey-seed",
+      "canonical-anchor",
+      "strong-baseline",
+      "frontier-candidate",
+      "background",
+      "low-confidence-novelty-risk"
+    ],
+    "boundary_risk": [
+      "none",
+      "adjacent",
+      "eval",
+      "recipe",
+      "infra"
+    ]
+  },
+  "select_rules": [
+    "针对 MoE 路由特性设计的 RL objective、importance weighting、clipping 与梯度估计。",
+    "router-aware policy optimization、routing replay / correction 及 router / expert 更新规则。"
+  ],
+  "maybe_rules": [
+    "与当前 lens 直接相关但尚无原文机制证据的论文，先 queue / review。"
+  ],
+  "move_elsewhere_rules": [
+    "仅使用 MoE backbone、没有结构相关算法或证据的 RL 应用。"
+  ],
+  "overrides": {
+    "select": {},
+    "maybe": {},
+    "skip": {}
+  }
+}

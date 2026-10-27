@@ -1,0 +1,92 @@
+[
+  {
+    "name": "iclr-2026-abstracts.json",
+    "url": "https://iclr.cc/static/virtual/data/iclr-2026-abstracts.json",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/iclr-2026-abstracts.json",
+    "mode": "downloaded-local",
+    "bytes": 8118594,
+    "sha256": "2272dfefab54bb8de3736d43dcab3925be4db2c35fe2b75b59fbf90563844c41",
+    "download_error": null
+  },
+  {
+    "name": "icml-2026-abstracts.json",
+    "url": "https://icml.cc/static/virtual/data/icml-2026-abstracts.json",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/icml-2026-abstracts.json",
+    "mode": "downloaded-local",
+    "bytes": 8776249,
+    "sha256": "b00ef53ec82ed83f520494ad3fda6d906617e3e0c4fd8c9b61c8643ffb027702",
+    "download_error": null
+  },
+  {
+    "name": "iclr-2026-orals-posters.json",
+    "url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/iclr-2026-orals-posters.json",
+    "mode": "downloaded-local",
+    "bytes": 15031089,
+    "sha256": "064c43404a720a56ae51831dd6db48bfb58ec79f300f29b8d7cc8f889fcf1aca",
+    "download_error": null
+  },
+  {
+    "name": "icml-2026-orals-posters.json",
+    "url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/icml-2026-orals-posters.json",
+    "mode": "downloaded-local",
+    "bytes": 16407780,
+    "sha256": "62f8b15db521c2c4185127f013ca88403d663a7d5b441fc7a3b1dd8675a7fb2b",
+    "download_error": null
+  },
+  {
+    "name": "neurips-2026-abstracts.json",
+    "url": "https://neurips.cc/static/virtual/data/neurips-2026-abstracts.json",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/neurips-2026-abstracts.json",
+    "mode": "downloaded-local",
+    "bytes": 8273641,
+    "sha256": "979616b2eb3bc2afcfb6a71513dbc7cd5b9b797afc94b19d831c62c6ac1ec0a2",
+    "download_error": null
+  },
+  {
+    "name": "2026.acl-short.xml",
+    "url": "https://aclanthology.org/volumes/2026.acl-short.xml",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/2026.acl-short.xml",
+    "mode": "downloaded-local",
+    "bytes": 259320,
+    "sha256": "7fbe966082e4b2fd25663ace2544ae969d7c7b44125eb66ecc1b51c428d346c3",
+    "download_error": null
+  },
+  {
+    "name": "emnlp-2026-schedule.csv",
+    "url": "https://docs.google.com/spreadsheets/d/1aXGTy_7Xeh-OXIs3iJSbDpUsZ6YhbfA76b17kBZH0Yk/export?format=csv&gid=943432490",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/emnlp-2026-schedule.csv",
+    "mode": "downloaded-local",
+    "bytes": 980665,
+    "sha256": "63dca474aa699b43856b336b0d59fa0a50586eea3d57d5f3e6ce1b633c7a24cc",
+    "download_error": null
+  },
+  {
+    "name": "2026.findings-acl.xml",
+    "url": "https://aclanthology.org/volumes/2026.findings-acl.xml",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/2026.findings-acl.xml",
+    "mode": "downloaded-local",
+    "bytes": 8474879,
+    "sha256": "06400574ec4f48d1a127cce2d0ea7b575aef94d9915e501a053bfd1d8495b572",
+    "download_error": null
+  },
+  {
+    "name": "2026.acl-long.xml",
+    "url": "https://aclanthology.org/volumes/2026.acl-long.xml",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/2026.acl-long.xml",
+    "mode": "downloaded-local",
+    "bytes": 9086090,
+    "sha256": "a8fe4f14f0183f7e8914e549434fb50f06be89a50dad8fbcab4f75d59ce6eead",
+    "download_error": null
+  },
+  {
+    "name": "neurips-2026-orals-posters.json",
+    "url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+    "path": "/home/chy/notes/Research/mopd/notes/conference-index-2026/raw/neurips-2026-orals-posters.json",
+    "mode": "downloaded-local",
+    "bytes": 19452520,
+    "sha256": "37f5e46839f8940871d2157041c6a7c4cc2d0d8b97b39c58ea58a968318fb7a5",
+    "download_error": null
+  }
+]

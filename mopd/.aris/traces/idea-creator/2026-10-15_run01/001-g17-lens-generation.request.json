@@ -1,0 +1,19 @@
+{
+  "call_number": 1,
+  "purpose": "g17-lens-generation",
+  "timestamp": "2026-10-15T20:48:08+08:00",
+  "tool": "spawn_agent",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "files_referenced": [
+    "research-wiki/gap_map.md#G17",
+    "synthesis/mopd-gap-analysis.md#g17",
+    "research-wiki/papers/sun2026_distill_what_you.md",
+    "research-wiki/papers/lu2026_beyond_best_teacher.md",
+    "research-wiki/papers/yin2026_hopd_confidence_aware.md",
+    "research-wiki/papers/wang2026_smopd_multireward_reinforcement.md",
+    "research-wiki/papers/nguyen2026_avsd_adaptiveview_selfdistillation.md",
+    "research-wiki/papers/wang2026_madopd_breaking_ceiling.md"
+  ],
+  "prompt": "你负责 G17 的 Phase 2 研究 lenses 生成，使用 ARIS idea-creator-from-gap 的覆盖流程。本轮只生成 4–6 个 analytic lenses（提出问题的研究视角），绝不能生成具体方法候选；用户确认 lenses 后才能进入候选生成。只读，不写文件，不做广泛检索、不加载 query_pack、不扫描全库、不运行训练。\n\n当前项目 /home/chy/notes/Research/mopd。先读 AGENTS.md。限定输入：research-wiki/gap_map.md 的 G17；synthesis/mopd-gap-analysis.md 第1节和③G17节；以下六篇 paper pages 全文（各60行）：sun2026_distill_what_you.md、lu2026_beyond_best_teacher.md、yin2026_hopd_confidence_aware.md、wang2026_smopd_multireward_reinforcement.md、nguyen2026_avsd_adaptiveview_selfdistillation.md、wang2026_madopd_breaking_ceiling.md（均位于 research-wiki/papers/）。不要展开其他 gap 或旧 ideas。\n\n用户目标：基于 G17 和已有 lit 成果生成有实质贡献、可规模化的顶会方法 idea，核心是分散于多个 teacher 的能力怎样进入同一个部署 student。覆盖更多可解样本 ≠ 同题联合使用。已有方法普遍组合失败尚未证明，不能靠缺 benchmark 直接宣布方法 gap。此前助手曾随手把串行依赖/联合约束/纠错互补当 lenses，用户未认可；本次需提出真正能指导发散方法生成的研究视角，不能只给任务分类。\n\n主协作者本轮已定点核对六篇版本一致 HTML 方法段和 Trust 的 response-level ablation/limitations。可使用以下原文边界，但不得把推论冒充作者结论：\n1) TrustMOPD 2609.23697v3：每个 student prefix 上用 calibrated teacher-reference displacement 分配 token 权重；MultiCap 训练含 math+IF、code+IF、math+code；response-level ablation 保持每条response每位teacher总权重而去掉位置变化，MultiCap Overall 降0.92；主要 evaluation 是各域benchmark汇总，另有局部算术/格式案例。已有部分同题整合相关证据，不能说只有分域路由，也不能把汇总98% recovery写成同题端到端组合率。共同 pre-RL reference，3B/7B范围。\n2) TU-OPD 2607.27770v1 §3.3–3.4：按整题验证成功率选可靠teachers；只对至少一位teacher达到threshold的prompt蒸馏。sampled-token reverse-KL加winner-specific residual，winner是该题success最高teacher，residual还有peer/margin gate。明确研究 union/complementarity/consensus collapse。不能把保留独有模式本身当新意。\n3) H-OPD 2607.02592v3：VL teacher离线description给text teacher，两者看同一student prefix，逐token熵加权。信息桥接和不同阶段专长已有覆盖。\n4) SMOPD 2608.03092v2：同prompt reward specialists，arithmetic teacher mixture forward-KL + equal-weight GDPO。不能把多约束兼顾或算术混合当空白；必须分清RL和蒸馏贡献。\n5) AVSD 2605.20643v1：同backbone privileged views，geometric consensus/arithmetic residual及gate已有方法；不是独立domain RL experts。\n6) MAD-OPD 2605.01347v1：teachers debate相互读历史，再confidence加权监督同一student action；student看不到debate。交互产生监督已有方法，有K×R及context成本。\n\n给每个 lens：短名称；它改变的核心提问/隐含假设；为什么关系到G17而不是任务类型；具体追问的互补结构；最近已有覆盖与仍需证实的边界；若要形成方法论文必须发现什么、什么结果会否定必要性。每项简洁，拒绝用新增模块堆新意。可以提出高风险高价值视角，但标记假设。容量不足必须作为竞争解释，不能预设为结论。关注总训练成本，不能默认逐状态probe、分叉rollout或环境重置。\n\n返回中文，结构化 JSON：{\"shard_id\":\"g17-lenses-astra\",\"candidates\":[{\"lens_id\":\"L1\", \"dedup_key\":\"...\", \"name\":\"...\", \"question\":\"...\", \"structure\":\"...\", \"prior_boundary\":\"...\", \"method_opportunity_condition\":\"...\", \"falsifier\":\"...\"}],\"cross_cutting_controls\":[...],\"scope_note\":\"...\"}。不要排序或淘汰lenses；不要给算法、loss或具体训练recipe，不做新颖性裁决。本次属于同family探索，结果 provisional。"
+}

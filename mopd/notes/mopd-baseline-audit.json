@@ -1,0 +1,2111 @@
+[
+  {
+    "paper": "chen2026_counteractionaware_multiteacher_onpolicy",
+    "source": "https://arxiv.org/html/2605.27115v2",
+    "table_count": 3,
+    "tables": [
+      {
+        "anchor": "S3.T1",
+        "caption": "Table 1: Results for the Role-Play dialogue instantiation on general capability benchmarks and Role-Play domain benchmarks. Higher is better for all metrics. Bold marks the best result among baselines. CaMOPD denotes our method.",
+        "methods": [
+          "MOPD",
+          "CaMOPD"
+        ],
+        "rows": [
+          "Model General capability Role-Play domain capability",
+          "GPQA Diamond Zebra Logic HMMT 25 LCB v5 LCB v6 IF Eval Arena HP Arena CW LiveBench 1125 Avg. Story Cons. Anthro. Char. Fid. Story Qual. Avg.",
+          "General Teacher 61.49 79.50 33.12 34.77 20.57 83.18 36.50 65.80 65.60 53.39 34.74 23.09 23.89 41.98 30.92",
+          "Role-Play Teacher 54.29 31.50 26.67 25.09 16.00 67.65 9.70 4.20 42.80 30.88 42.27 33.42 38.75 49.89 41.08",
+          "Off-policy KD 60.35 68.50 28.54 30.47 23.43 75.97 23.60 11.20 57.00 42.12 41.25 32.15 38.23 49.61 40.31",
+          "Vanilla MOPD 61.99 71.30 29.17 31.54 22.29 79.67 25.50 13.70 58.90 43.78 43.57 34.91 41.45 51.50 42.86",
+          "Relaxed OPD 63.51 71.40 31.25 32.26 22.86 79.67 30.10 17.30 59.00 45.26 45.42 33.35 41.53 52.84 43.28",
+          "SelecTKD 60.98 70.60 31.04 34.41 24.00 78.93 27.10 16.90 58.90 44.76 43.87 32.28 39.46 51.54 41.79",
+          "CaMOPD 62.63 76.30 31.04 37.28 24.00 80.41 33.20 33.30 63.50 49.07 47.81 33.96 44.65 53.47 45.00"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "30.47 23.43 75.97 23.60 11.20 57.00 42.12 41.25 32.15 38.23 49.61 40.31 Vanilla MOPD 61.99 71.30 29.17 31.54 22.29 79.67 25.50 13.70 58.90 43.78 43.57 34.91 41.45 51.50 42.86 Relaxed OPD 63.51 71.40 31.25 32.26 22.86 79.67 30.10 17.30 59.00 45."
+          },
+          {
+            "method": "CaMOPD",
+            "text": ". Higher is better for all metrics. Bold marks the best result among baselines. CaMOPD denotes our method. Model General capability Role-Play domain capability GPQA Diamond Zebra Logic HMMT 25 LCB v5 LCB v6 IF Eval Arena HP Arena CW LiveBench 112"
+          }
+        ]
+      },
+      {
+        "anchor": "S3.T2",
+        "caption": "Table 2: Results for the Medical Reasoning QA instantiation on general capability benchmarks and Medical domain benchmarks. Higher is better for all metrics. Bold marks the best result among baselines. CaMOPD denotes our method.",
+        "methods": [
+          "MOPD",
+          "CaMOPD"
+        ],
+        "rows": [
+          "Model General capability Medical domain capability",
+          "GPQA Diamond Zebra Logic HMMT 25 LCB v5 LCB v6 IF Eval Arena HP Arena CW LiveBench 1125 Avg. MedQA USMLE MedXpertQA Text Avg.",
+          "General Teacher 62.50 84.80 45.00 58.42 31.43 84.66 24.80 36.50 52.10 53.36 79.03 17.22 48.13",
+          "Medical Teacher 62.37 71.60 28.33 48.75 27.43 48.98 10.90 36.40 34.40 41.02 86.17 22.90 54.54",
+          "Off-policy KD 60.10 70.30 34.38 50.54 24.57 48.61 13.20 32.60 41.70 41.78 85.23 22.41 53.82",
+          "Vanilla MOPD 60.10 72.60 33.96 51.25 24.00 48.06 14.80 33.00 42.80 42.29 86.02 23.55 54.79",
+          "Relaxed OPD 61.49 73.20 32.92 53.76 29.14 48.61 15.40 34.90 40.70 43.35 85.94 24.12 55.03",
+          "SelecTKD 58.46 72.10 33.54 54.48 29.71 49.17 15.20 35.60 41.80 43.34 85.78 23.51 54.65",
+          "CaMOPD 61.99 72.60 34.58 56.63 29.71 59.89 16.40 31.80 49.00 45.84 85.78 23.63 54.71"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "70.30 34.38 50.54 24.57 48.61 13.20 32.60 41.70 41.78 85.23 22.41 53.82 Vanilla MOPD 60.10 72.60 33.96 51.25 24.00 48.06 14.80 33.00 42.80 42.29 86.02 23.55 54.79 Relaxed OPD 61.49 73.20 32.92 53.76 29.14 48.61 15.40 34.90 40.70 43.35 85.94 24."
+          },
+          {
+            "method": "CaMOPD",
+            "text": ". Higher is better for all metrics. Bold marks the best result among baselines. CaMOPD denotes our method. Model General capability Medical domain capability GPQA Diamond Zebra Logic HMMT 25 LCB v5 LCB v6 IF Eval Arena HP Arena CW LiveBench 1125 "
+          }
+        ]
+      },
+      {
+        "anchor": "A1.T4",
+        "caption": "Table 4: Dataset roles in CaMOPD. Domain-preservation prompts provide preservation gradients for the active vertical domain, while the general branch uses a compact proportional sample from Nemotron to recover general capability under a limited MOPD budget.",
+        "methods": [
+          "MOPD",
+          "CaMOPD"
+        ],
+        "rows": [
+          "Data Size Used for Notes",
+          "CoSER remainder 300K Role-Play SFT teacher Trains T d T_{d}",
+          "CoSER long-turn heldout 10K Role-Play domain preservation Unseen by Role-Play SFT",
+          "Medical prompt mixture 10K Medical domain preservation Prompt-only; no labels used",
+          "Nemotron proportional sample 10K General recovery Proxy general prompts"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "proportional sample from Nemotron to recover general capability under a limited MOPD budget. Data Size Used for Notes CoSER remainder 300K Role-Play SFT teacher Trains T d T_{d} CoSER long-turn heldout 10K Role-Play domain preservation Unseen b"
+          },
+          {
+            "method": "CaMOPD",
+            "text": "Table 4: Dataset roles in CaMOPD. Domain-preservation prompts provide preservation gradients for the active vertical domain, while the general branch uses a compact proportional sample from Ne"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "abstract1.1",
+        "methods": [
+          "MOPD",
+          "CaMOPD"
+        ],
+        "text": "Domain specialization can improve LLM behavior, but often weakens the general capabilities inherited from the original model. Recent Multi-Teacher On-Policy Distillation (MOPD) pipelines recover model capabilities by supervising student-generated trajectories with teacher feedback, but typically assume teacher-aligned prompt coverage, requiring prompts to match the teachers’ training distributions. This assumption is difficult to satisfy when the general teacher is an open-source model whose post-training data are unknown. Instead of attempting to reconstruct this hidden distribution, we study general capability recovery with readily available proxy general prompts. We identify two failure modes of vanilla MOPD in this incomplete-coverage situation: recovery-preservation counteraction from mixing conflicting recovery and preservation gradients, and weak-signal flattening from uniformly averaging samples with unequal correction demand. We propose Counteraction-Aware Multi-Teacher On-Policy Distillation ( CaMOPD ), which addresses these issues with decoupled alternating training and gap-based sample selection. CaMOPD allocates dedicated updates to general recovery, periodically performs domain-preservation updates, and selects samples with larger averaged token-level teacher-student log-probability gaps to concentrate correction signals. Across role-play dialogue and medical reasoning QA scenarios, CaMOPD outperforms all baselines in general capability recovery while maintaining domain-specific behavior. Gradient coherence analyses further support the intended effect of CaMOPD in producing more coherent correction signals."
+      },
+      {
+        "anchor": "S5.p1.1",
+        "methods": [
+          "MOPD",
+          "CaMOPD"
+        ],
+        "text": "We studied general capability recovery after domain specialization under an incomplete-coverage setting, where only proxy general prompts are available for the general teacher. We identified two failure modes of Vanilla MOPD: recovery-preservation counteraction and weak-signal flattening. To address them, we proposed CaMOPD, which combines alternating recovery/preservation updates with gap-based sample selection. Experiments on role-play dialogue and medical reasoning QA show that CaMOPD improves general recovery over baselines while maintaining domain capability. Gradient and selection analyses further suggest that CaMOPD reduces mixed-update counteraction and produces more coherent correction signals."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "di2026_understanding_off_onpolicy",
+    "source": "https://arxiv.org/html/2609.38666v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "fang2026_latentmopd_latent_multiteacher",
+    "source": "https://arxiv.org/html/2610.02381v1",
+    "table_count": 1,
+    "tables": [
+      {
+        "anchor": "A9.T4",
+        "caption": "Table 4: Where multi-teacher capability integration happens. Among the methods compared here, Latent-MOPD combines multiple teachers, hidden-state supervision and student-generated training samples. A dash denotes not applicable.",
+        "methods": [
+          "MOPD",
+          "Latent-MOPD"
+        ],
+        "rows": [
+          "Multi-t. Pre-head On-policy",
+          "Parameter merging ( Wortsman et al., 2022 ) ✓ — ✗",
+          "Multi-teacher feature KD, off-policy ( You et al., 2017 ) ✓ ✓ ✗",
+          "Uniform averaging ✓ ✗ ✓",
+          "MOPD ( Ma et al., 2026 ) ✓ ✗ ✓",
+          "LastOPD / OPRD ( Yang et al., 2026a ; Yang et al., 2026b ) ✗ ✓ ✓",
+          "Latent-MOPD (ours) ✓ ✓ ✓"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "acher feature KD, off-policy ( You et al., 2017 ) ✓ ✓ ✗ Uniform averaging ✓ ✗ ✓ MOPD ( Ma et al., 2026 ) ✓ ✗ ✓ LastOPD / OPRD ( Yang et al., 2026a ; Yang et al., 2026b ) ✗ ✓ ✓ Latent-MOPD (ours) ✓ ✓ ✓"
+          },
+          {
+            "method": "Latent-MOPD",
+            "text": " multi-teacher capability integration happens. Among the methods compared here, Latent-MOPD combines multiple teachers, hidden-state supervision and student-generated training samples. A dash denotes not applicable. Multi-t. Pre-head On-policy Paramet"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "A1.SS0.SSS0.Px16.p1.1",
+        "methods": [
+          "MOPD",
+          "Latent-MOPD"
+        ],
+        "text": "Our MOPD-style baseline retains MOPD’s domain routing and uses the same token estimator, prompts, batches, optimizer and budget as Latent-MOPD. It is not a replication of the published system ( Ma et al., 2026 ) , which trains same-origin teachers at a much larger scale on a different domain mix and uses a policy-gradient reverse-KL estimator by default. The published system’s top- k k variant uses teacher-selected support and a correction for truncation. Our token channel uses student-selected support, full-vocabulary log-probability ratios and student-normalized candidate weights in a fixed-advantage policy-gradient update (Appendix C ). Our Norm also uses the headroom-weighted definition below, not MOPD’s uniform average of per-domain normalized scores."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "fu2026_rethinking_onpolicy_distillation",
+    "source": "https://arxiv.org/html/2609.04172v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "gao2026_openmopd_diagnosing_fixing",
+    "source": "https://arxiv.org/html/2608.19098v1",
+    "table_count": 1,
+    "tables": [
+      {
+        "anchor": "S2.T2",
+        "caption": "Table 2 : Integration gap on SmolLM3-3B. Each domain reports its sub-dataset scores and macro-average. We define the total score as the average of the three domain averages. The four SFT rows are checkpoints after successive epochs. Single-domain RL and OPD report results only for their respective domains. Gray-shaded RouteRL and RouteOPD use a separate model for each domain and select that model using the domain label at evaluation time. They therefore cannot be deployed as one model. The recovery rate is Row Total − SFT RouteRL − SFT \\frac{\\text{Row Total}-\\text{SFT}}{\\text{RouteRL}-\\text{SF",
+        "methods": [
+          "Open-MOPD"
+        ],
+        "rows": [
+          "Math (avg@64) Code (avg@10) IF",
+          "Method AIME24 AIME25 avg LCBv5 LCBv6 avg IFEval IFB test avg Total Recovery rate",
+          "SmolLM3-3B-Base 2.08 1.72 1.90 3.41 6.17 4.79 16.08 13.00 14.54 7.08 —",
+          "SFT",
+          "π mixsft \\pi_{\\mathrm{mixsft}} (e1) 12.24 16.61 14.43 13.29 17.20 15.25 64.70 16.00 40.35 23.34 —",
+          "π mixsft \\pi_{\\mathrm{mixsft}} (e2) 12.55 17.97 15.26 13.17 16.63 14.90 65.62 16.00 40.81 23.66 —",
+          "π mixsft \\pi_{\\mathrm{mixsft}} (e3) 15.10 19.53 17.32 14.97 18.57 16.77 66.36 18.00 42.18 25.42 —",
+          "π mixsft \\pi_{\\mathrm{mixsft}} (e4) 15.63 20.26 17.95 15.99 19.20 17.60 66.91 16.00 41.46 25.67 —",
+          "RL",
+          "π ϕ math \\pi_{\\phi_{\\mathrm{math}}} 23.65 24.84 24.24 — — — — — — — —",
+          "π ϕ code \\pi_{\\phi_{\\mathrm{code}}} — — — 22.16 21.31 21.73 — — — — —",
+          "π ϕ IF \\pi_{\\phi_{\\mathrm{IF}}} — — — — — — 74.49 27.67 51.08 — —",
+          "RouteRL 23.65 24.84 24.24 22.16 21.31 21.73 74.49 27.67 51.08 32.35 100%",
+          "OPD",
+          "Math-OPD 22.34 23.96 23.15 — — — — — — — —",
+          "Code-OPD — — — 22.28 21.14 21.71 — — — — —"
+        ],
+        "snippets": [
+          {
+            "method": "Open-MOPD",
+            "text": "D Naive M-OPD 20.92 21.60 21.26 17.53 20.99 19.26 68.61 18.67 43.64 28.05 35.6% Open-MOPD (Ours) 21.98 22.86 22.42 20.84 22.63 21.73 74.49 24.67 49.58 31.24 83.4%"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "he2026_learn_from_whoever",
+    "source": "https://arxiv.org/html/2609.02548v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S2.p2.1",
+        "methods": [
+          "MOPD",
+          "MT-SDPO"
+        ],
+        "text": "(1) Capability Consolidation for Multi-Domain LLMs. Prior routes build or consolidate multi-domain capabilities by 1) joint or cascaded multi-domain RL ( Yang et al. 2025 ; Wang et al. 2025 ) , 2) off-policy finetuning on teacher completions ( DeepSeek-AI et al. 2025 ) , 3) weight-space merging ( Wortsman et al. 2022 ; Ilharco et al. 2023 ) , or 4) mixed-domain training with negative-transfer control ( Yu et al. 2020 ; Cai et al. 2026 ; Yang et al. 2026a ; Ye et al. 2025 ) . Closest to us is MOPD ( Ma et al. 2026 ) , which routes the student’s own rollouts to the domain-matched frozen teacher; we implement this rule as our Domain Routing baseline. It assumes the matched teacher is the right supervisor for every sample from its domain, whereas MT-SDPO keeps MOPD’s two-stage split but selects the supervisor per sample by verification."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "hou2026_uniopd_unifying_onpolicy",
+    "source": "https://arxiv.org/html/2605.03677v2",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "kim2026_pain_more_gain",
+    "source": "https://arxiv.org/html/2609.34745v1",
+    "table_count": 4,
+    "tables": [
+      {
+        "anchor": "S4.T1",
+        "caption": "Table 1 : MOPD results across 5-domains at Qwen3-4B and Qwen3-1.7B. IM-MOPD achieves the highest average normalized score among the compared student initialization methods at both model sizes, without an additional SFT stage. Domain Teacher reports the performance of the domain specialist for each domain. The best result in each column within each model size is shown in bold .",
+        "methods": [
+          "MOPD",
+          "IM-MOPD"
+        ],
+        "rows": [
+          "Method MedQA CaseHOLD FinQA IFBench 𝝉 𝟐 \\bm{\\tau^{2}} Norm.",
+          "Qwen3-4B",
+          "Qwen3-4B-OT3 69.5 61.8 59.1 24.9 5.3 0.0",
+          "Domain Teacher 80.7 73.4 75.0 59.4 66.7 100.0",
+          "MOPD 69.1 64.7 74.3 56.9 7.9 42.8",
+          "SFT Warm-up + MOPD 73.9 68.2 71.1 53.4 31.6 59.0",
+          "Uniform Merge + MOPD 72.7 67.6 74.7 53.6 11.4 53.8",
+          "IM-MOPD 76.6 70.9 74.0 57.8 69.3 86.9",
+          "Qwen3-1.7B",
+          "Qwen3-1.7B-OT3 44.1 44.6 42.4 18.4 7.9 0.0",
+          "Domain Teacher 58.5 69.6 62.4 46.4 28.1 100.0",
+          "MOPD 49.0 52.2 59.1 36.8 0.0 34.9",
+          "SFT Warm-up + MOPD 52.7 56.6 54.8 32.6 10.5 46.5",
+          "Uniform Merge + MOPD 51.2 59.9 58.6 34.6 4.4 46.3",
+          "IM-MOPD 53.7 59.4 55.9 42.9 28.1 76.0"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "Table 1 : MOPD results across 5-domains at Qwen3-4B and Qwen3-1.7B. IM-MOPD achieves the highest average normalized score among the compared student initialization methods at"
+          },
+          {
+            "method": "IM-MOPD",
+            "text": "Table 1 : MOPD results across 5-domains at Qwen3-4B and Qwen3-1.7B. IM-MOPD achieves the highest average normalized score among the compared student initialization methods at both model sizes, without an additional SFT stage. Domain Te"
+          }
+        ]
+      },
+      {
+        "anchor": "S4.T2",
+        "caption": "Table 2 : Merge-timing ablation on Qwen3-4B. We take the final cumulative merge coefficients produced by IM-MOPD and apply them either entirely at initialization or entirely after MOPD. Both controls underperform the original IM-MOPD schedule, showing that when the same final merge coefficients are applied matters. The best result in each column is shown in bold .",
+        "methods": [
+          "MOPD",
+          "IM-MOPD"
+        ],
+        "rows": [
+          "Merge timing MedQA CaseHOLD FinQA IFBench 𝝉 𝟐 \\bm{\\tau^{2}} Norm.",
+          "No merge (Base MOPD) 69.1 64.7 74.3 56.9 7.9 42.8",
+          "All at initialization 76.3 70.8 74.0 52.4 57.0 79.0",
+          "All after MOPD 68.1 71.0 59.6 38.2 10.5 23.3",
+          "Iterative (IM-MOPD) 76.6 70.9 74.0 57.8 69.3 86.9"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "d by IM-MOPD and apply them either entirely at initialization or entirely after MOPD. Both controls underperform the original IM-MOPD schedule, showing that when the same final merge coefficients are applied matters. The best result in each col"
+          },
+          {
+            "method": "IM-MOPD",
+            "text": "lation on Qwen3-4B. We take the final cumulative merge coefficients produced by IM-MOPD and apply them either entirely at initialization or entirely after MOPD. Both controls underperform the original IM-MOPD schedule, showing that when the same f"
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T8",
+        "caption": "Table 8 : Five-domain performance for the initializations in Figure 1 . Each entry shows before / after MOPD. IF is evaluated with IFEval prompt-level strict accuracy.",
+        "methods": [
+          "MOPD",
+          "IM-MOPD"
+        ],
+        "rows": [
+          "Initialization MedQA CaseHOLD FinQA IFEval τ 2 \\tau^{2}",
+          "No init 69.5 / 69.1 61.8 / 64.7 59.1 / 74.3 37.5 / 74.9 5.3 / 7.9",
+          "SFT warm-up 72.6 / 73.9 65.4 / 68.2 69.1 / 71.1 56.6 / 71.0 30.7 / 31.6",
+          "Merge ( λ = 1.0 \\lambda=1.0 ) 71.7 / 72.7 66.5 / 67.6 69.0 / 74.7 52.5 / 74.7 0.9 / 11.4",
+          "Merge ( λ = 2.1 \\lambda=2.1 ) 73.7 / 77.5 67.9 / 68.9 66.0 / 73.5 52.7 / 66.2 13.2 / 50.9",
+          "IM-MOPD 71.7 / 76.6 66.5 / 70.9 69.0 / 74.0 52.5 / 75.0 0.9 / 69.3"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "rformance for the initializations in Figure 1 . Each entry shows before / after MOPD. IF is evaluated with IFEval prompt-level strict accuracy. Initialization MedQA CaseHOLD FinQA IFEval τ 2 \\tau^{2} No init 69.5 / 69.1 61.8 / 64.7 59.1 / 74.3 "
+          },
+          {
+            "method": "IM-MOPD",
+            "text": "= 2.1 \\lambda=2.1 ) 73.7 / 77.5 67.9 / 68.9 66.0 / 73.5 52.7 / 66.2 13.2 / 50.9 IM-MOPD 71.7 / 76.6 66.5 / 70.9 69.0 / 74.0 52.5 / 75.0 0.9 / 69.3"
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T11",
+        "caption": "Table 11 : Two-domain performance before and after MOPD. Simplex coefficients are ordered as Medical and IF. The last row uses uniform initialization and mid-training merging.",
+        "methods": [
+          "MOPD",
+          "IM-MOPD"
+        ],
+        "rows": [
+          "Initialization After MOPD",
+          "Initialization / method MedQA IFEval Norm. MedQA IFEval Norm.",
+          "( 0.2 , 0.8 ) (0.2,0.8) 73.4 79.7 76.7 76.0 78.4 86.4",
+          "( 0.4 , 0.6 ) (0.4,0.6) 75.6 79.7 86.7 76.7 79.5 91.3",
+          "( 0.6 , 0.4 ) (0.6,0.4) 77.4 64.5 75.4 79.4 79.1 102.5",
+          "( 0.8 , 0.2 ) (0.8,0.2) 80.0 49.9 68.9 80.3 78.4 105.4",
+          "IM-MOPD 78.3 68.8 84.8 80.0 79.3 105.2"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "Table 11 : Two-domain performance before and after MOPD. Simplex coefficients are ordered as Medical and IF. The last row uses uniform initialization and mid-training merging. Initialization After MOPD Initializatio"
+          },
+          {
+            "method": "IM-MOPD",
+            "text": "4.5 75.4 79.4 79.1 102.5 ( 0.8 , 0.2 ) (0.8,0.2) 80.0 49.9 68.9 80.3 78.4 105.4 IM-MOPD 78.3 68.8 84.8 80.0 79.3 105.2"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S1.I1.i3.p1.1",
+        "methods": [
+          "MOPD",
+          "IM-MOPD"
+        ],
+        "text": "Iterative merging during MOPD. We propose IM-MOPD , which periodically adds fixed task-vector increments for domains whose recovery remains below a threshold. In a 5-domain setting, IM-MOPD achieves higher average normalized recovery than MOPD baselines using SFT warm-up or uniform merge initialization ( Table 1 , Figure 4 )."
+      },
+      {
+        "anchor": "S4.SS2.SSS0.Px2.p1.1",
+        "methods": [
+          "MOPD",
+          "IM-MOPD"
+        ],
+        "text": "For Qwen3-4B, iterative merging increases the average normalized recovery from 53.8% with uniform initialization to 86.9%. For Qwen3-1.7B, IM-MOPD reaches 76.0%, compared with 46.5% for SFT warm-up, and recovers Tool Use to the teacher level. Across both model sizes, IM-MOPD achieves higher scores than SFT warm-up on all five benchmarks. Relative to uniform initialization, the largest improvements are observed in Medical and Tool Use, while performance on Finance and Instruction Following remains broadly comparable. These results show that iterative corrections can improve recovery in domains that remain under-recovered after initialization without substantially degrading domains already transferred effectively by MOPD."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "li2026_beyond_teacher_assignment",
+    "source": "https://arxiv.org/html/2609.35347v1",
+    "table_count": 7,
+    "tables": [
+      {
+        "anchor": "S3.T1",
+        "caption": "Table 1: Capability integration at 9B. Qwen3.5-9B scores (%) on six public tasks. Total averages the six task scores.",
+        "methods": [
+          "MOPD",
+          "DN-MOPD"
+        ],
+        "rows": [
+          "Math (avg@64) Code (avg@6) IF (avg@16)",
+          "Method AIME25 AIME26 LCB v5 LCB v6 IFEval IFBench Total",
+          "Initial student 57.7 62.6 54.9 51.4 82.4 33.8 57.1",
+          "RL experts",
+          "Math expert 59.7 69.4 53.4 49.4 82.3 34.9 58.2",
+          "Code expert 58.5 65.4 58.5 54.3 82.3 34.6 58.9",
+          "IF expert 54.6 60.5 54.0 51.5 86.5 42.1 58.2",
+          "Offline distillation",
+          "SeqKD-SFT 61.3 67.6 62.7 56.0 86.0 42.4 62.6",
+          "Parameter merging",
+          "ParamMerge-Avg 59.4 68.3 54.0 50.9 84.1 36.4 58.9",
+          "ParamMerge-TA 59.1 68.6 55.2 50.9 86.1 43.3 60.5",
+          "Single-teacher OPD",
+          "Math teacher 58.9 69.5 53.7 49.4 82.4 34.7 58.1",
+          "Code teacher 58.3 66.2 57.0 52.6 82.6 34.2 58.5",
+          "IF teacher 56.8 61.9 52.1 49.2 84.7 38.9 57.3"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "3 83.3 35.7 58.0 Dynamic router 56.4 63.5 55.4 51.5 84.3 37.7 58.1 Label-routed MOPD 55.3 63.2 56.8 52.6 84.0 38.4 58.4 DN-MOPD (Ours) 58.9 67.7 56.3 51.4 84.5 38.7 59.6 Bold : best within the multi-teacher OPD block."
+          },
+          {
+            "method": "DN-MOPD",
+            "text": "5 55.4 51.5 84.3 37.7 58.1 Label-routed MOPD 55.3 63.2 56.8 52.6 84.0 38.4 58.4 DN-MOPD (Ours) 58.9 67.7 56.3 51.4 84.5 38.7 59.6 Bold : best within the multi-teacher OPD block."
+          }
+        ]
+      },
+      {
+        "anchor": "S3.T2",
+        "caption": "Table 2: Capability integration at smaller scales. Independently trained Qwen3.5-4B and 2B expert pools. Each domain averages its two tasks; Total weights the three domains equally.",
+        "methods": [
+          "MOPD",
+          "DN-MOPD"
+        ],
+        "rows": [
+          "Qwen3.5-4B Qwen3.5-2B",
+          "Method Math Code IF Total Math Code IF Total",
+          "Initial student 52.2 38.1 52.8 47.7 17.6 11.3 43.3 24.0",
+          "RL experts",
+          "Math expert 54.2 39.7 54.0 49.3 22.1 13.4 44.7 26.7",
+          "Code expert 51.6 47.4 53.6 50.8 20.7 21.6 44.4 28.9",
+          "IF expert 50.7 38.1 60.6 49.8 15.6 12.5 52.8 27.0",
+          "Offline distillation",
+          "SeqKD-SFT 55.6 52.3 59.7 55.9 23.1 23.9 51.6 32.9",
+          "Parameter merging",
+          "ParamMerge-Avg 54.5 43.1 56.2 51.2 20.7 16.3 47.5 28.2",
+          "ParamMerge-TA 53.8 44.4 61.4 53.2 24.4 20.4 53.3 32.7",
+          "Single-teacher OPD",
+          "Math teacher 53.9 39.9 53.6 49.1 22.1 14.1 44.2 26.8",
+          "Code teacher 52.2 46.8 53.5 50.9 20.4 21.2 44.9 28.8",
+          "IF teacher 50.3 39.2 57.6 49.0 16.5 11.7 49.2 25.8"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "6 46.2 26.9 Dynamic router 49.9 44.7 57.1 50.6 17.3 13.8 48.5 26.5 Label-routed MOPD 50.2 43.3 57.4 50.3 17.0 13.4 49.5 26.6 DN-MOPD (Ours) 54.0 45.4 58.2 52.5 20.7 16.3 49.9 29.0 Bold : best within the multi-teacher OPD block at each size."
+          },
+          {
+            "method": "DN-MOPD",
+            "text": "6 17.3 13.8 48.5 26.5 Label-routed MOPD 50.2 43.3 57.4 50.3 17.0 13.4 49.5 26.6 DN-MOPD (Ours) 54.0 45.4 58.2 52.5 20.7 16.3 49.9 29.0 Bold : best within the multi-teacher OPD block at each size."
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T1",
+        "caption": "Table B.1: Complete results for Qwen3.5-4B at 16K. Scores (%) on the six public tasks; all OPD students use 80 updates. Total equally averages the tasks. Boldface identifies the best result within the multi-teacher OPD block.",
+        "methods": [
+          "MOPD",
+          "DN-MOPD"
+        ],
+        "rows": [
+          "Math (avg@64) Code (avg@6) IF (avg@16)",
+          "Method AIME25 AIME26 LCB v5 LCB v6 IFEval IFBench Total",
+          "Initial student 48.4 56.0 39.1 37.0 78.3 27.2 47.7",
+          "RL experts",
+          "Math expert 50.6 57.9 41.1 38.4 79.0 29.0 49.3",
+          "Code expert 48.5 54.6 49.5 45.2 79.2 28.0 50.8",
+          "IF expert 47.9 53.4 38.4 37.8 84.3 36.9 49.8",
+          "Offline distillation",
+          "SeqKD-SFT 51.9 59.3 55.2 49.4 83.2 36.2 55.9",
+          "Parameter merging",
+          "ParamMerge-Avg 50.3 58.6 46.7 39.4 81.0 31.3 51.2",
+          "ParamMerge-TA 49.9 57.8 45.3 43.4 84.4 38.3 53.2",
+          "Single-teacher OPD",
+          "Math teacher 49.9 57.8 42.4 37.4 78.7 28.5 49.1",
+          "Code teacher 47.7 56.6 49.5 44.2 78.4 28.7 50.9",
+          "IF teacher 46.6 54.0 40.1 38.2 81.8 33.4 49.0"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "4 80.0 30.0 49.6 Dynamic router 46.0 53.9 46.6 42.9 81.4 32.7 50.6 Label-routed MOPD 46.0 54.4 46.3 40.3 81.6 33.2 50.3 DN-MOPD (Ours) 50.2 57.8 48.0 42.9 82.0 34.4 52.5"
+          },
+          {
+            "method": "DN-MOPD",
+            "text": "9 46.6 42.9 81.4 32.7 50.6 Label-routed MOPD 46.0 54.4 46.3 40.3 81.6 33.2 50.3 DN-MOPD (Ours) 50.2 57.8 48.0 42.9 82.0 34.4 52.5"
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T2",
+        "caption": "Table B.2: Complete results for Qwen3.5-2B at 16K. Scores (%) on the six public tasks; all OPD students use 80 updates. Total equally averages the tasks. Boldface identifies the best result within the multi-teacher OPD block.",
+        "methods": [
+          "MOPD",
+          "DN-MOPD"
+        ],
+        "rows": [
+          "Math (avg@64) Code (avg@6) IF (avg@16)",
+          "Method AIME25 AIME26 LCB v5 LCB v6 IFEval IFBench Total",
+          "Initial student 17.7 17.4 9.0 13.5 62.8 23.9 24.0",
+          "RL experts",
+          "Math expert 20.9 23.3 10.1 16.7 64.1 25.3 26.7",
+          "Code expert 19.6 21.8 20.1 23.0 63.5 25.3 28.9",
+          "IF expert 16.0 15.2 10.0 15.0 74.6 30.9 27.0",
+          "Offline distillation",
+          "SeqKD-SFT 21.0 25.3 21.7 26.2 71.9 31.3 32.9",
+          "Parameter merging",
+          "ParamMerge-Avg 19.4 22.0 13.8 18.9 68.7 26.2 28.2",
+          "ParamMerge-TA 22.7 26.1 18.6 22.3 74.7 31.9 32.7",
+          "Single-teacher OPD",
+          "Math teacher 20.8 23.3 11.6 16.7 63.7 24.6 26.8",
+          "Code teacher 19.9 20.9 18.1 24.3 64.8 25.0 28.8",
+          "IF teacher 16.4 16.6 10.4 13.0 70.0 28.4 25.8"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "4 66.9 25.5 26.9 Dynamic router 16.9 17.8 11.3 16.3 69.1 27.8 26.5 Label-routed MOPD 16.8 17.1 11.4 15.4 70.0 28.9 26.6 DN-MOPD (Ours) 19.7 21.6 14.5 18.1 70.2 29.6 29.0"
+          },
+          {
+            "method": "DN-MOPD",
+            "text": "8 11.3 16.3 69.1 27.8 26.5 Label-routed MOPD 16.8 17.1 11.4 15.4 70.0 28.9 26.6 DN-MOPD (Ours) 19.7 21.6 14.5 18.1 70.2 29.6 29.0"
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T3",
+        "caption": "Table B.3: Complete results for Qwen3.5-9B at 8K. Scores (%) on the six public tasks; all OPD students use 80 updates. Total equally averages the tasks. Boldface identifies the best result within the multi-teacher OPD block.",
+        "methods": [
+          "MOPD",
+          "DN-MOPD"
+        ],
+        "rows": [
+          "Math (avg@64) Code (avg@6) IF (avg@16)",
+          "Method AIME25 AIME26 LCB v5 LCB v6 IFEval IFBench Total",
+          "Initial student 45.5 50.7 45.0 42.2 82.0 34.0 49.9",
+          "RL experts",
+          "Math expert 56.2 64.6 45.5 44.3 82.5 35.0 54.7",
+          "Code expert 48.3 55.7 52.1 46.4 82.2 34.3 53.2",
+          "IF expert 45.2 50.0 45.1 43.9 86.4 41.9 52.1",
+          "Offline distillation",
+          "SeqKD-SFT 58.7 66.7 55.8 49.9 85.9 42.6 59.9",
+          "Parameter merging",
+          "ParamMerge-Avg 50.1 60.5 48.0 45.2 83.9 36.1 54.0",
+          "ParamMerge-TA 55.9 66.4 50.4 47.6 86.2 43.5 58.3",
+          "Single-teacher OPD",
+          "Math teacher 54.6 63.0 48.1 44.6 81.9 35.0 54.5",
+          "Code teacher 49.6 57.0 50.6 46.5 82.5 34.1 53.4",
+          "IF teacher 45.6 48.9 44.7 41.7 84.6 38.8 50.7"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "2 83.2 36.0 52.7 Dynamic router 46.6 53.1 47.7 44.4 84.1 37.7 52.2 Label-routed MOPD 47.7 54.6 47.5 44.6 84.3 38.3 52.8 DN-MOPD (Ours) 51.3 60.0 51.1 46.0 84.3 39.2 55.3"
+          },
+          {
+            "method": "DN-MOPD",
+            "text": "1 47.7 44.4 84.1 37.7 52.2 Label-routed MOPD 47.7 54.6 47.5 44.6 84.3 38.3 52.8 DN-MOPD (Ours) 51.3 60.0 51.1 46.0 84.3 39.2 55.3"
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T4",
+        "caption": "Table B.4: Complete results for Qwen3.5-4B at 8K. Scores (%) on the six public tasks; all OPD students use 80 updates. Total equally averages the tasks. Boldface identifies the best result within the multi-teacher OPD block.",
+        "methods": [
+          "MOPD",
+          "DN-MOPD"
+        ],
+        "rows": [
+          "Math (avg@64) Code (avg@6) IF (avg@16)",
+          "Method AIME25 AIME26 LCB v5 LCB v6 IFEval IFBench Total",
+          "Initial student 37.8 43.0 30.6 32.1 78.5 27.6 41.6",
+          "RL experts",
+          "Math expert 49.4 57.1 34.0 33.2 79.4 28.9 47.0",
+          "Code expert 42.3 47.7 43.5 41.5 79.3 28.3 47.1",
+          "IF expert 37.4 41.8 31.3 32.9 84.4 36.7 44.1",
+          "Offline distillation",
+          "SeqKD-SFT 51.0 57.9 48.2 43.6 83.2 36.0 53.3",
+          "Parameter merging",
+          "ParamMerge-Avg 44.4 52.9 37.5 34.0 81.3 31.8 47.0",
+          "ParamMerge-TA 49.4 56.8 41.0 39.0 84.1 38.5 51.5",
+          "Single-teacher OPD",
+          "Math teacher 47.7 56.7 32.8 33.3 78.5 29.1 46.3",
+          "Code teacher 42.1 48.9 43.1 38.0 78.5 28.6 46.5",
+          "IF teacher 38.6 42.9 31.0 31.9 81.8 33.6 43.3"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "3 79.8 29.9 44.8 Dynamic router 39.2 44.9 38.3 34.8 81.4 32.2 45.1 Label-routed MOPD 40.5 44.0 37.8 35.1 81.8 33.6 45.5 DN-MOPD (Ours) 46.4 52.9 39.7 35.8 82.1 34.4 48.6"
+          },
+          {
+            "method": "DN-MOPD",
+            "text": "9 38.3 34.8 81.4 32.2 45.1 Label-routed MOPD 40.5 44.0 37.8 35.1 81.8 33.6 45.5 DN-MOPD (Ours) 46.4 52.9 39.7 35.8 82.1 34.4 48.6"
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T5",
+        "caption": "Table B.5: Complete results for Qwen3.5-2B at 8K. Scores (%) on the six public tasks; all OPD students use 80 updates. Total equally averages the tasks. Boldface identifies the best result within the multi-teacher OPD block.",
+        "methods": [
+          "MOPD",
+          "DN-MOPD"
+        ],
+        "rows": [
+          "Math (avg@64) Code (avg@6) IF (avg@16)",
+          "Method AIME25 AIME26 LCB v5 LCB v6 IFEval IFBench Total",
+          "Initial student 11.1 8.0 7.6 12.0 63.6 24.1 21.1",
+          "RL experts",
+          "Math expert 19.6 21.6 8.4 15.2 63.5 25.2 25.6",
+          "Code expert 17.8 17.3 15.7 19.9 63.9 24.8 26.6",
+          "IF expert 12.1 8.2 8.0 12.8 74.8 30.5 24.4",
+          "Offline distillation",
+          "SeqKD-SFT 20.6 22.0 21.9 25.1 71.7 31.4 32.1",
+          "Parameter merging",
+          "ParamMerge-Avg 16.4 16.0 10.5 16.9 69.1 26.3 25.8",
+          "ParamMerge-TA 22.3 24.6 18.6 21.5 74.6 31.9 32.3",
+          "Single-teacher OPD",
+          "Math teacher 19.5 20.9 9.1 13.5 63.9 24.9 25.3",
+          "Code teacher 16.6 17.8 17.2 21.6 64.3 25.1 27.1",
+          "IF teacher 11.9 9.1 7.5 11.3 69.6 28.5 23.0"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": ".4 66.7 25.3 24.5 Dynamic router 14.3 11.8 8.9 14.6 69.5 28.2 24.5 Label-routed MOPD 14.5 11.7 9.9 14.4 70.3 29.0 25.0 DN-MOPD (Ours) 19.1 19.8 11.5 17.0 70.2 29.6 27.9"
+          },
+          {
+            "method": "DN-MOPD",
+            "text": "1.8 8.9 14.6 69.5 28.2 24.5 Label-routed MOPD 14.5 11.7 9.9 14.4 70.3 29.0 25.0 DN-MOPD (Ours) 19.1 19.8 11.5 17.0 70.2 29.6 27.9"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "li2026_datafree_onpolicy_distillation",
+    "source": "https://arxiv.org/html/2609.14193v4",
+    "table_count": 1,
+    "tables": [
+      {
+        "anchor": "A2.T2",
+        "caption": "Table 2: Teacher and student configurations. Model names refer to publicly released checkpoints. The three MOPD domains share the same student initialization and use the checkpoint collection released by Open-MOPD.",
+        "methods": [
+          "MOPD",
+          "Open-MOPD"
+        ],
+        "rows": [
+          "Setting Student Teacher Relationship",
+          "RL-tuned teacher DeepSeek-R1-Distill-Qwen-1.5B JustRL-DeepSeek-1.5B RL-tuned from the student",
+          "Larger teacher Qwen3-1.7B Qwen3-30B-A3B-Instruct-2507 Different-scale models from the Qwen3 family",
+          "MOPD: math SmolLM3-3B-MixSFT SmolLM3-3B-RL-Math Math-specific RL from MixSFT",
+          "MOPD: code SmolLM3-3B-MixSFT SmolLM3-3B-RL-Code Code-specific RL from MixSFT",
+          "MOPD: instruction following SmolLM3-3B-MixSFT SmolLM3-3B-RL-IF Instruction-following RL from MixSFT"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "t configurations. Model names refer to publicly released checkpoints. The three MOPD domains share the same student initialization and use the checkpoint collection released by Open-MOPD. Setting Student Teacher Relationship RL-tuned teacher De"
+          },
+          {
+            "method": "Open-MOPD",
+            "text": "e the same student initialization and use the checkpoint collection released by Open-MOPD. Setting Student Teacher Relationship RL-tuned teacher DeepSeek-R1-Distill-Qwen-1.5B JustRL-DeepSeek-1.5B RL-tuned from the student Larger teacher Qwen3-1.7B Q"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S2.SS2.p2.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD"
+        ],
+        "text": "Datasets. For single-teacher experiments, DAPO-Math-17k (DAPO) ( Yu et al., 2025 ) serves as the primary source of external training questions. We additionally use a subset of DeepMath ( He et al., 2026 ) and Open-Reasoner-Zero (ORZ) ( Hu et al., 2025 ) to examine sensitivity to the data source, and a subset of DeepCoder ( Luo et al., 2025 ) with mathematics-related problems removed to study transfer from programming to mathematics. For MOPD, the external-data baseline uses a subset of the RL training prompts released by Open-MOPD. Appendix B.2 details the data sources and preparation. Self-generated questions are introduced in Section 4.1 ."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "li2026_every_coin_has",
+    "source": "https://arxiv.org/html/2608.16647v2",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "liu2026_pmopd_task_ordering",
+    "source": "https://arxiv.org/html/2609.34605v1",
+    "table_count": 1,
+    "tables": [
+      {
+        "anchor": "S6.T3",
+        "caption": "Table 3: Results across the Qwen2.5-7B and Llama-3.1-8B families. Each group reports task-specific scores and their unweighted average. Bold values mark the best within each model family and column.",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "PMOPD"
+        ],
+        "rows": [
+          "Qwen2.5-7B Llama-3.1-8B",
+          "Model / method Math Reason Code Avg. Math Reason Code Avg.",
+          "Student Model 51.78 50.20 49.67 50.55 11.33 58.56 27.33 32.41",
+          "Math Teacher 66.89 56.84 49.67 57.80 18.22 57.08 27.33 34.21",
+          "Reason Teacher 58.89 70.35 50.00 59.75 8.89 68.55 24.33 33.92",
+          "Code Teacher 64.22 60.69 58.00 60.97 11.33 56.43 42.00 36.59",
+          "Parameter Merge 61.56 60.44 53.67 58.56 12.22 63.64 30.00 35.29",
+          "MOPD 65.56 71.74 56.00 64.43 18.22 68.63 30.00 38.95",
+          "BB-MOPD 65.33 70.68 55.67 63.89 15.33 64.21 29.33 36.29",
+          "Open-MOPD 66.44 70.52 53.67 63.54 14.89 65.52 25.00 35.14",
+          "PMOPD 67.78 73.46 59.67 66.97 21.33 69.45 32.33 41.04"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": ".43 42.00 36.59 Parameter Merge 61.56 60.44 53.67 58.56 12.22 63.64 30.00 35.29 MOPD 65.56 71.74 56.00 64.43 18.22 68.63 30.00 38.95 BB-MOPD 65.33 70.68 55.67 63.89 15.33 64.21 29.33 36.29 Open-MOPD 66.44 70.52 53.67 63.54 14.89 65.52 25.00 35."
+          },
+          {
+            "method": "Open-MOPD",
+            "text": "18.22 68.63 30.00 38.95 BB-MOPD 65.33 70.68 55.67 63.89 15.33 64.21 29.33 36.29 Open-MOPD 66.44 70.52 53.67 63.54 14.89 65.52 25.00 35.14 PMOPD 67.78 73.46 59.67 66.97 21.33 69.45 32.33 41.04"
+          },
+          {
+            "method": "PMOPD",
+            "text": ".33 64.21 29.33 36.29 Open-MOPD 66.44 70.52 53.67 63.54 14.89 65.52 25.00 35.14 PMOPD 67.78 73.46 59.67 66.97 21.33 69.45 32.33 41.04"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S5.SS2.p1.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "PMOPD"
+        ],
+        "text": "We compare against: (i) the shared base model; (ii) each single-domain teacher; (iii) parameter merging, which averages compatible specialist parameters; (iv) MOPD, the reported multi-teacher OPD baseline that mixes examples from different tasks within each mini-batch ( Ma et al., 2026 ) ; (v) BB-MOPD, which performs between-batch mixing by interleaving task-homogeneous mini-batches while updating the same shared student; and (vi) Open-MOPD ( Gao et al., 2026 ) , which we reproduce on our model families and task datasets using its proposed capability-balancing method. Details and variants of our MOPD implementation are deferred to Appendix A.3 . All OPD comparisons in the main tables use the reverse-KL objective and the same total number of task prompts. We report the task-specific percentage score produced by the same evaluation pipeline for every method and their unweighted average across the three tasks. PMOPD uses a Code → \\rightarrow Reason → \\rightarrow Math schedule with four cycles and a batch size of 16. The reported PMOPD results are averaged over three independent runs with different random seeds."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "liu2026_recovering_general_capabilities",
+    "source": "https://arxiv.org/html/2608.26735v2",
+    "table_count": 3,
+    "tables": [
+      {
+        "anchor": "S4.T2",
+        "caption": "Table 2: Main specialization results for role-playing (left) and medical-domain (right) specialization. Base and SFT denote the pre-specialization and supervised domain-specialized models; the remaining columns are general-capability recovery methods. Bold marks the best recovery-method result per metric. “Gen. Avg.” averages general benchmarks, while “Vertical Avg.” averages the listed vertical benchmarks.",
+        "methods": [
+          "MOPD",
+          "CaMOPD",
+          "UCMOPD"
+        ],
+        "rows": [
+          "Metric Role-playing specialization Medical-domain specialization",
+          "Base SFT MOPD SelecTKD ReOPOLD CaMOPD UCMOPD Base SFT MOPD SelecTKD ReOPOLD CaMOPD UCMOPD",
+          "MMLU-Redux 82.39 82.39 75.05 75.05 78.86 78.86 78.60 78.60 78.65 78.65 79.07 79.07 80.56 84.67 84.67 85.77 85.77 86.21 86.21 86.30 86.21 86.21 86.21 86.21 86.11 86.11",
+          "MMLU-Pro 68.33 68.33 54.45 54.45 62.20 62.20 61.60 61.60 62.36 62.36 64.31 64.31 65.72 73.08 73.08 74.80 74.80 74.53 74.53 74.67 74.14 74.14 74.53 74.53 74.04 74.04",
+          "GPQA-Diamond 61.49 61.49 54.29 54.29 59.60 59.60 60.98 60.98 63.51 63.51 62.63 62.63 63.64 62.50 62.50 62.37 62.37 60.10 60.10 58.46 58.46 61.49 61.49 61.99 61.74 61.74",
+          "AIME25 45.21 45.21 40.62 40.62 47.29 45.00 45.00 43.12 43.12 45.21 45.21 43.54 43.54 65.00 65.00 41.67 41.67 54.37 54.37 53.75 53.75 52.08 52.08 54.37 54.37 56.25",
+          "ZebraLogic 79.50 79.50 31.50 31.50 71.10 71.10 70.60 70.60 71.40 71.40 76.30 76.20 76.20 84.80 84.80 71.60 71.60 72.60 72.60 72.10 72.10 73.20 73.20 72.60 72.60 73.70",
+          "HMMT25 33.12 33.12 26.67 26.67 31.04 31.04 31.04 31.04 31.25 31.25 31.04 31.04 32.08 45.00 45.00 28.33 28.33 33.96 33.96 33.54 33.54 32.92 32.92 34.58 34.58 35.62",
+          "LiveCodeBench v5 34.76 34.76 25.09 25.09 35.12 35.12 34.41 34.41 32.26 32.26 37.28 37.28 39.78 58.42 58.42 48.75 48.75 51.25 51.25 54.48 54.48 53.76 53.76 56.63 54.84 54.84",
+          "LiveCodeBench v6 20.57 20.57 16.00 16.00 25.14 24.00 24.00 22.86 22.86 24.00 24.00 25.14 31.43 31.43 27.43 27.43 24.00 24.00 29.71 29.14 29.14 29.71 27.43 27.43",
+          "IF-Eval 83.18 83.18 67.65 67.65 78.00 78.00 78.93 78.93 79.67 79.67 80.41 80.41 80.96 84.66 84.66 48.98 48.98 48.06 48.06 49.17 49.17 48.61 48.61 59.89 59.89 71.53",
+          "IFBench 30.95 30.95 23.81 23.81 26.53 26.53 26.53 26.53 26.19 26.19 26.87 26.87 27.55 21.09 21.09 22.45 22.45 22.11 20.41 20.41 21.09 21.09 22.11 21.09 21.09",
+          "WritingBench 83.80 83.80 69.58 69.58 80.30 80.30 80.53 80.53 80.39 80.39 81.64 81.64 81.71 79.87 79.87 79.42 79.42 79.62 79.62 79.78 79.78 79.84 79.62 79.62 79.73 79.73",
+          "Arena-Hard v2 51.15 51.15 6.95 6.95 22.60 22.60 22.00 22.00 23.70 23.70 33.25 29.35 29.35 30.65 30.65 23.65 23.65 23.90 23.90 25.40 25.40 25.15 25.15 24.10 24.10 26.05",
+          "LiveBench 1125 65.60 65.60 42.80 42.80 59.40 59.40 58.90 58.90 59.00 59.00 63.50 61.30 61.30 52.10 52.10 34.40 34.40 42.80 42.80 41.80 41.80 40.70 40.70 49.00 49.00 58.30",
+          "Storyline Consistency 34.74 34.74 42.27 42.27 43.57 43.57 43.87 43.87 45.42 45.42 47.81 47.39 47.39 –"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "arks. Metric Role-playing specialization Medical-domain specialization Base SFT MOPD SelecTKD ReOPOLD CaMOPD UCMOPD Base SFT MOPD SelecTKD ReOPOLD CaMOPD UCMOPD MMLU-Redux 82.39 82.39 75.05 75.05 78.86 78.86 78.60 78.60 78.65 78.65 79.07 79.07 "
+          },
+          {
+            "method": "CaMOPD",
+            "text": "ing specialization Medical-domain specialization Base SFT MOPD SelecTKD ReOPOLD CaMOPD UCMOPD Base SFT MOPD SelecTKD ReOPOLD CaMOPD UCMOPD MMLU-Redux 82.39 82.39 75.05 75.05 78.86 78.86 78.60 78.60 78.65 78.65 79.07 79.07 80.56 84.67 84.67 85.77 "
+          },
+          {
+            "method": "UCMOPD",
+            "text": "cialization Medical-domain specialization Base SFT MOPD SelecTKD ReOPOLD CaMOPD UCMOPD Base SFT MOPD SelecTKD ReOPOLD CaMOPD UCMOPD MMLU-Redux 82.39 82.39 75.05 75.05 78.86 78.86 78.60 78.60 78.65 78.65 79.07 79.07 80.56 84.67 84.67 85.77 85.77 8"
+          }
+        ]
+      },
+      {
+        "anchor": "S4.T3",
+        "caption": "Table 3: Cumulative component removal from UCMOPD on role-playing specialization.",
+        "methods": [
+          "MOPD",
+          "UCMOPD"
+        ],
+        "rows": [
+          "Method Gen. Avg. Vertical Avg. IF-Eval GPQA Zebra Arena-Hard v2",
+          "UCMOPD 54.43 45.00 80.96 63.64 76.20 29.35",
+          "− - Positive-advantage-density filtering 53.32 53.32 43.24 43.24 80.04 80.04 63.13 63.13 74.30 74.30 28.45 28.45",
+          "− - Dual-temperature sampling 52.17 52.17 43.36 43.36 77.63 77.63 62.63 62.63 72.00 72.00 23.70 23.70",
+          "− - Teacher-Endorsement Filtering = = MOPD 52.09 52.09 41.22 41.22 78.00 78.00 59.60 59.60 71.10 71.10 22.60 22.60"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "77.63 62.63 62.63 72.00 72.00 23.70 23.70 − - Teacher-Endorsement Filtering = = MOPD 52.09 52.09 41.22 41.22 78.00 78.00 59.60 59.60 71.10 71.10 22.60 22.60"
+          },
+          {
+            "method": "UCMOPD",
+            "text": "Table 3: Cumulative component removal from UCMOPD on role-playing specialization. Method Gen. Avg. Vertical Avg. IF-Eval GPQA Zebra Arena-Hard v2 UCMOPD 54.43 45.00 80.96 63.64 76.20 29.35 − - Positive-advanta"
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T7",
+        "caption": "Table 7: Rollout-budget control with eight sampled responses per prompt.",
+        "methods": [
+          "MOPD",
+          "UCMOPD"
+        ],
+        "rows": [
+          "Method Gen. Avg. Vertical Avg. IF-Eval GPQA Zebra Arena-Hard v2",
+          "MOPD, 8 rollouts 53.31 53.31 43.38 43.38 80.22 80.22 60.98 60.98 72.90 72.90 26.90 26.90",
+          "UCMOPD, 8 rollouts 54.43 45.00 80.96 63.64 76.20 29.35"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "ses per prompt. Method Gen. Avg. Vertical Avg. IF-Eval GPQA Zebra Arena-Hard v2 MOPD, 8 rollouts 53.31 53.31 43.38 43.38 80.22 80.22 60.98 60.98 72.90 72.90 26.90 26.90 UCMOPD, 8 rollouts 54.43 45.00 80.96 63.64 76.20 29.35"
+          },
+          {
+            "method": "UCMOPD",
+            "text": "ollouts 53.31 53.31 43.38 43.38 80.22 80.22 60.98 60.98 72.90 72.90 26.90 26.90 UCMOPD, 8 rollouts 54.43 45.00 80.96 63.64 76.20 29.35"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S4.SS1.p1.1",
+        "methods": [
+          "MOPD",
+          "CaMOPD"
+        ],
+        "text": "We evaluate domain specialization recovery in two vertical settings: role-playing and medical-domain adaptation. In each setting, the student is initialized from the supervised domain-specialized model, and MOPD uses a domain teacher and a general teacher to provide token-level on-policy supervision. We compare against the original general model, the supervised fine-tuned (SFT) domain model, vanilla MOPD, and three additional distillation baselines: SelecTKD ( Huang et al., 2025a ) , ReOPOLD ( Ko et al., 2026 ) , and CaMOPD ( Chen et al., 2026 ) . Our dual-temperature rollout uses one anchor response at temperature 1.0 1.0 in both domains. The role-playing setting uses seven exploration responses at temperature 1.5 1.5 , while the medical setting uses three exploration responses at temperature 1.5 1.5 . Appendix A provides the complete checkpoints, teacher–student scale relationship, routing rules, prompt sources, precision, and optimization configuration."
+      },
+      {
+        "anchor": "S4.SS2.p1.1",
+        "methods": [
+          "MOPD",
+          "CaMOPD",
+          "UCMOPD"
+        ],
+        "text": "Table 2 and Figure 4 summarize the role-playing results. SFT substantially improves role-playing ability, raising the vertical average from 30.92 30.92 to 41.08 41.08 , but it causes a large drop in the general average from 56.93 56.93 to 41.11 41.11 . Vanilla MOPD recovers much of the general ability ( 52.09 52.09 ) but barely improves the role-playing average over SFT ( 41.22 41.22 ). UCMOPD obtains a strong trade-off among the compared methods: it reaches the best general average of 54.43 54.43 , slightly above CaMOPD’s 54.27 54.27 , and the best role-playing average ( 45.00 45.00 , tied with CaMOPD). Compared with vanilla MOPD, UCMOPD improves the general average by + 2.33 +2.33 points and the role-playing average by + 3.78 +3.78 points."
+      },
+      {
+        "anchor": "S4.SS3.p2.1",
+        "methods": [
+          "MOPD",
+          "UCMOPD"
+        ],
+        "text": "To verify that the improvement is not simply due to more responses per prompt, we compare against a rollout-budget-matched vanilla MOPD baseline. Both methods use eight responses per prompt, and UCMOPD achieves higher general and role-playing averages; Appendix Table 7 reports the full results."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "lu2026_beyond_best_teacher",
+    "source": "https://arxiv.org/html/2607.27770v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "ma2026_mopd_multiteacher_onpolicy",
+    "source": "https://arxiv.org/html/2606.30406v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "ma2026_one_student_many",
+    "source": "https://arxiv.org/html/2607.18293v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "nguyen2026_avsd_adaptiveview_selfdistillation",
+    "source": "https://arxiv.org/html/2605.20643v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "qin2026_videomopd_multiteacher_onpolicy",
+    "source": "https://arxiv.org/html/2609.09300v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "sang2026_composing_what_each",
+    "source": "https://arxiv.org/html/2610.10460v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "shen2026_when_topk_misses",
+    "source": "https://arxiv.org/html/2607.07050v6",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "sun2026_distill_what_you",
+    "source": "https://arxiv.org/html/2609.23697v3",
+    "table_count": 2,
+    "tables": [
+      {
+        "anchor": "S4.T1",
+        "caption": "Table 1: For trained methods, results are mean ± \\pm standard deviation over five seeds, using the final checkpoint from each run. Bold and underlined values mark the best and second-best label-free methods within each block; green rows use ground-truth domain labels and are excluded from ranking. Δ Init \\Delta_{\\mathrm{Init}} is the overall-score change from the initial student. The “teacher alone” rows evaluate each specialist directly; their domain-matched scores form the Routed Teachers row.",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "TrustMOPD"
+        ],
+        "rows": [
+          "Data Method / allocation rule Math Code IF Overall Δ I ​ n ​ i ​ t \\Delta_{Init}",
+          "AIME 25/26 LCB v5/v6 IFEval/IFBench",
+          "No-distillation references",
+          "Student initialization 17.02 ± \\pm 0.00 15.97 ± \\pm 0.00 41.66 ± \\pm 0.00 24.89 ± \\pm 0.00 0.00 \\phantom{+}0.00",
+          "Math teacher alone π math \\pi_{\\mathrm{math}} 22.50 ± \\pm 0.00 17.26 41.16 26.97 + 2.08 +2.08",
+          "Code teacher alone π code \\pi_{\\mathrm{code}} 20.62 21.34 ± \\pm 0.00 41.55 27.84 + 2.95 +2.95",
+          "IF teacher alone π IF \\pi_{\\mathrm{IF}} 15.83 14.92 47.73 ± \\pm 0.00 26.16 + 1.27 +1.27",
+          "Oracle-routed teachers 22.50 ± \\pm 0.00 21.34 ± \\pm 0.00 47.73 ± \\pm 0.00 30.52 ± \\pm 0.00 + 5.63 +5.63",
+          "Parameter-averaged teacher 19.29 16.84 43.86 26.66 + 1.77 +1.77",
+          "SingleCap MOPD 1 1 1 Our reported MOPD results use the OpenMOPD ( Gao et al., 2026 ) implementation. 𝐞 z ⁡ ( x ) \\mathbf{e}_{z(x)} 22.58 ± \\pm 0.77 20.48 ± \\pm 0.39 47.49 ± \\pm 1.37 30.18 ± \\pm 0.25 + 5.29 +5.29",
+          "Uniform 1 K ​ 𝟏 \\tfrac{1}{K}\\mathbf{1} 20.14 ± \\pm 0.23 18.67 ± \\pm 0.38 45.04 ± \\pm 1.23 27.95 ± \\pm 0.59 + 3.06 +3.06",
+          "Random Dirichlet ⁡ ( 1 , … , 1 ) \\operatorname{Dirichlet}(1,\\ldots,1) 20.22 ± \\pm 0.95 18.31 ± \\pm 0.59 44.62 ± \\pm 0.99 27.72 ± \\pm 0.72 + 2.83 +2.83",
+          "Single teacher 𝐞 math \\mathbf{e}_{\\mathrm{math}} 21.80 ± \\pm 0.61 17.01 ± \\pm 0.45 40.80 ± \\pm 0.73 26.54 ± \\pm 0.29 + 1.65 +1.65",
+          "Single teacher 𝐞 code \\mathbf{e}_{\\mathrm{code}} 20.44 ± \\pm 1.48 20.77 ± \\pm 0.56 42.17 ± \\pm 0.71 27.79 ± \\pm 0.55 + 2.90 +2.90",
+          "Single teacher 𝐞 IF \\mathbf{e}_{\\mathrm{IF}} 16.41 ± \\pm 0.50 15.60 ± \\pm 0.51 48.33 ± \\pm 0.53 26.78 ± \\pm 0.13 + 1.89 +1.89",
+          "TrustMOPD ∝ 𝐫 t γ \\propto\\mathbf{r}_{t}^{\\gamma} 21.91 ± \\pm 0.61 20.67 ± \\pm 0.75 47.56 ± \\pm 0.48 30.04 ± \\pm 0.47 + 5.15 +5.15"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "+5.63 Parameter-averaged teacher 19.29 16.84 43.86 26.66 + 1.77 +1.77 SingleCap MOPD 1 1 1 Our reported MOPD results use the OpenMOPD ( Gao et al., 2026 ) implementation. 𝐞 z ⁡ ( x ) \\mathbf{e}_{z(x)} 22.58 ± \\pm 0.77 20.48 ± \\pm 0.39 47.49 ± \\"
+          },
+          {
+            "method": "Open-MOPD",
+            "text": "43.86 26.66 + 1.77 +1.77 SingleCap MOPD 1 1 1 Our reported MOPD results use the OpenMOPD ( Gao et al., 2026 ) implementation. 𝐞 z ⁡ ( x ) \\mathbf{e}_{z(x)} 22.58 ± \\pm 0.77 20.48 ± \\pm 0.39 47.49 ± \\pm 1.37 30.18 ± \\pm 0.25 + 5.29 +5.29 Uniform 1 K"
+          },
+          {
+            "method": "TrustMOPD",
+            "text": "6.41 ± \\pm 0.50 15.60 ± \\pm 0.51 48.33 ± \\pm 0.53 26.78 ± \\pm 0.13 + 1.89 +1.89 TrustMOPD ∝ 𝐫 t γ \\propto\\mathbf{r}_{t}^{\\gamma} 21.91 ± \\pm 0.61 20.67 ± \\pm 0.75 47.56 ± \\pm 0.48 30.04 ± \\pm 0.47 + 5.15 +5.15 MultiCap Uniform 1 K ​ 𝟏 \\tfrac{1}{K}\\m"
+          }
+        ]
+      },
+      {
+        "anchor": "A4.T12",
+        "caption": "Table 12: Computational cost of distillation and calibration. Measurements use 8 × 8\\times H20 GPUs under the protocol in § B.4 . Scored models counts distinct teacher and reference models evaluated per step, excluding the student. For label-routed MOPD, each example uses one teacher, while mixed-domain batches invoke all three teachers. Total GPU-h is elapsed time multiplied by eight, summed over five training seeds and including evaluation. Peak memory is reported per GPU. † Offline calibration is measured separately and performed once per prompt set; its percentage is relative to the report",
+        "methods": [
+          "MOPD",
+          "TrustMOPD"
+        ],
+        "rows": [
+          "Allocation rule Scored models / step Total GPU-h GPU-h vs. Uniform Peak mem (GB/GPU)",
+          "Teachers Reference",
+          "Per-step training cost",
+          "Single teacher 𝐞 k 0 \\mathbf{e}_{k_{0}} 1 1 0 0 149 149 − 16.8 % -16.8\\% 69.2 69.2",
+          "MOPD 𝐞 d ⁡ ( x ) \\mathbf{e}_{d(x)} 3 3 0 0 187 187 + 4.5 % +4.5\\% 79.8 79.8",
+          "Uniform 1 K ​ 𝟏 \\tfrac{1}{K}\\mathbf{1} 3 3 0 0 179 179 0.0 % \\phantom{+}0.0\\% 87.5 87.5",
+          "Random Unif ⁡ ( Δ K − 1 ) \\operatorname{Unif}(\\Delta^{K-1}) 3 3 0 0 183 183 + 2.2 % +2.2\\% 88.4 88.4",
+          "TrustMOPD ∝ 𝐫 t γ \\propto\\mathbf{r}_{t}^{\\gamma} 3 3 1 1 192 192 + 7.3 % +7.3\\% 92.6 92.6",
+          "One-off cost, incurred once per prompt set before training",
+          "Offline calibration of μ k \\mu_{k} (8 batches) 3 3 1 1 1.3 1.3 + 0.7 % † +0.7\\%^{\\dagger} 92.6 92.6"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "nd reference models evaluated per step, excluding the student. For label-routed MOPD, each example uses one teacher, while mixed-domain batches invoke all three teachers. Total GPU-h is elapsed time multiplied by eight, summed over five trainin"
+          },
+          {
+            "method": "TrustMOPD",
+            "text": "y and performed once per prompt set; its percentage is relative to the reported TrustMOPD GPU-hour total. Allocation rule Scored models / step Total GPU-h GPU-h vs. Uniform Peak mem (GB/GPU) Teachers Reference Per-step training cost Single teacher 𝐞"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "abstract1.1",
+        "methods": [
+          "MOPD",
+          "TrustMOPD"
+        ],
+        "text": "Multi-teacher on-policy distillation allows a student to learn from complementary specialists on its own trajectories. Domain-routed approaches, however, select one teacher per example and keep it fixed throughout the response. This design both depends on domain labels that mixed training corpora often lack and cannot adapt teacher selection when the expertise required changes within a trajectory. We observe that each specialist deviates more from a shared reference on in-domain prompts than on out-of-domain prompts, on average. Based on this observation, we propose TrustMOPD , which replaces example-level teacher selection with label-free, token-level supervision allocation. At each student-generated prefix, TrustMOPD measures this displacement in next-token preferences, calibrates its magnitude across teachers, and uses the resulting scores as proxies for local reliability to weight teacher-specific distillation losses. Evaluated across mathematics, code, and instruction following, TrustMOPD closes 91.5% and 98.0% of the overall-score gap between the initial student and oracle-routed teachers when trained on SingleCap and MultiCap , respectively, compared with 54.4% and 54.5% for the strongest label-free baseline in each setting. On SingleCap , it approaches label-based MOPD without using domain labels. Our code is available at https://github.com/sunjie279/TrustMOPD- ."
+      },
+      {
+        "anchor": "S1.p5.1",
+        "methods": [
+          "MOPD",
+          "TrustMOPD"
+        ],
+        "text": "We evaluate TrustMOPD with three specialists in mathematics, code, and instruction following using two training sets: SingleCap , containing single-capability prompts, and MultiCap , containing both single- and multi-capability prompts. Figure 1 (c) summarizes the overall performance. On SingleCap , TrustMOPD closes 91.5 % 91.5\\% of the overall-score gap between the initial student and oracle-routed teachers, versus 54.4 % 54.4\\% for the strongest label-free baseline, approaching label-based MOPD without domain labels. On MultiCap , where most prompts combine two capabilities and lack a unique domain label, TrustMOPD increases the recovery ratio from 54.5 % 54.5\\% for the strongest label-free baseline to 98.0 % 98.0\\% . Further ablations indicate that calibration and token-level allocation are particularly beneficial when training prompts combine multiple capabilities. Together, these results support label-free, state-dependent supervision allocation as an effective approach to integrating complementary expertise from multiple teachers."
+      },
+      {
+        "anchor": "S4.SS1.SSS0.Px3.p1.1",
+        "methods": [
+          "MOPD",
+          "TrustMOPD"
+        ],
+        "text": "All distillation methods share the same training protocol and differ only in teacher supervision allocation. We compare TrustMOPD with Uniform weighting ( w k , t = 1 / K w_{k,t}=1/K ), Random weighting sampled independently at each token from the uniform distribution over the teacher simplex, and three single-teacher variants that use the mathematics, code, or instruction-following teacher throughout training. The Dirichlet distribution is uniform over nonnegative teacher-weight vectors that sum to one. On SingleCap , we additionally evaluate MOPD ( Ma et al., 2026 ) , which selects one teacher per response using the ground-truth domain label. We omit this baseline on MultiCap , where mixed-capability prompts lack a unique domain label. We also report three training-free references: the initial student, the arithmetic parameter average of the three teachers ( Wortsman et al., 2022 ) , and Routed Teachers , which directly uses the corresponding RL teacher to generate responses for each evaluation domain. Baseline details appear in Appendix B.3 ."
+      },
+      {
+        "anchor": "S4.SS2.p2.1",
+        "methods": [
+          "MOPD",
+          "TrustMOPD"
+        ],
+        "text": "∙ \\bullet Obs. 1: TrustMOPD approaches label-based routing on SingleCap without domain labels. TrustMOPD achieves 30.04 ± 0.47 30.04\\pm 0.47 overall, 0.14 0.14 points below label-based MOPD and 2.09 2.09 points above the strongest label-free baseline, Uniform . This closes 91.5 % 91.5\\% of the overall-score gap between the initial student and Routed Teachers , compared with 54.4 % 54.4\\% for Uniform . TrustMOPD improves scores in all three domains over the initial student."
+      },
+      {
+        "anchor": "S6.p1.1",
+        "methods": [
+          "MOPD",
+          "TrustMOPD"
+        ],
+        "text": "We introduce TrustMOPD, a label-free method that allocates token-level supervision using calibrated teacher displacement from a shared reference. Across both training corpora, it achieves the highest overall score among the compared label-free distillation methods and approaches label-based MOPD on SingleCap . Analyses show domain alignment in displacement and supervision weights and illustrate within-response changes in allocation. Transfer experiments further show gains over matched uniform-weighting baselines on an additional backbone and independently sourced training data. These results support calibrated reference-relative displacement as a useful signal for integrating complementary teacher capabilities. The current formulation assumes a shared reference. Future work includes extending TrustMOPD to teachers without a common initialization and evaluating it on larger models and a broader range of datasets and domains."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "sun2026_d³mopd_dynamic_domain",
+    "source": "https://arxiv.org/html/2608.24987v2",
+    "table_count": 5,
+    "tables": [
+      {
+        "anchor": "S4.T1",
+        "caption": "Table 1: Ablation results. Best-S denotes the rollout step whose checkpoint achieves the highest average across the evaluated benchmarks over the full 256-step run. All variants differ from D 3 -MOPD in only the ablated variable; other settings are identical.",
+        "methods": [
+          "MOPD",
+          "D3-MOPD"
+        ],
+        "rows": [
+          "Math IF Code Tool",
+          "Method Best-S AIME25 HMMT(N) IFBench IFEval LCB v6 OJB C++ BFCL(B) Avg",
+          "Vanilla MOPD 143 73.17 71.04 45.74 91.04 60.95 27.59 60.00 61.36",
+          "w/o velocity 127 72.66 71.15 45.17 90.91 59.52 28.45 62.00 61.41 ( + + 0.05)",
+          "w/o gap 255 71.72 71.46 49.01 90.83 60.10 24.57 62.50 61.46 ( + + 0.10)",
+          "w/o jitter ( η = 0 \\eta{=}0 ) 95 72.66 71.15 46.58 89.90 60.95 27.16 63.00 61.63 ( + + 0.27)",
+          "w/o smoothing ( R = 1 R{=}1 ) 95 73.07 71.46 46.94 92.14 61.81 26.29 63.50 62.17 ( + + 0.81)",
+          "D 3 -MOPD ( η = 0.30 \\eta{=}0.30 , R = 3 R{=}3 ) 95 74.01 71.35 45.07 91.16 62.52 29.74 62.50 62.34 ( + + 0.98)"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": " Method Best-S AIME25 HMMT(N) IFBench IFEval LCB v6 OJB C++ BFCL(B) Avg Vanilla MOPD 143 73.17 71.04 45.74 91.04 60.95 27.59 60.00 61.36 w/o velocity 127 72.66 71.15 45.17 90.91 59.52 28.45 62.00 61.41 ( + + 0.05) w/o gap 255 71.72 71.46 49.01 "
+          },
+          {
+            "method": "D3-MOPD",
+            "text": "s the evaluated benchmarks over the full 256-step run. All variants differ from D 3 -MOPD in only the ablated variable; other settings are identical. Math IF Code Tool Method Best-S AIME25 HMMT(N) IFBench IFEval LCB v6 OJB C++ BFCL(B) Avg Vanilla MO"
+          }
+        ]
+      },
+      {
+        "anchor": "S4.T2",
+        "caption": "Table 2: Per-benchmark peak accuracy (%) and normalized score (§ 4.2 ) over 256 256 rollout steps. Each value represents the maximum across all 16 16 checkpoints. Δ \\Delta rows show gaps to the domain-expert teacher. Bold marks the column best, underline the runner-up.",
+        "methods": [
+          "MOPD",
+          "D3-MOPD"
+        ],
+        "rows": [
+          "Math Instruction Following Code Tool-use",
+          "Method AIME25 HMMT(N) IFBench IFEval LCB-v6 OJB-C++ BFCL(B) Norm.",
+          "Teacher 76.2 72.3 52.1 91.9 64.8 28.5 67.0 1.00",
+          "Student 69.8 70.7 30.0 86.8 60.0 25.9 57.5 0.00",
+          "Δ \\Delta (Student − - Teacher) − - 6.4 − - 1.6 − - 22.1 − - 5.1 − - 4.8 − - 2.6 − - 9.5 − - 1.00",
+          "Vanilla MOPD 73.9 72.0 46.1 91.1 61.5 27.6 61.5 0.63",
+          "Δ \\Delta (Vanilla − - Teacher) − - 2.3 − - 0.3 − - 6.0 − - 0.8 − - 3.3 − - 0.9 − - 5.5 − - 0.37",
+          "D 3 -MOPD (Ours) 74.1 73.2 48.9 92.3 63.2 29.7 62.5 0.97",
+          "Δ \\Delta (D 3 -MOPD − - Teacher) − - 2.1 + + 0.9 − - 3.2 + + 0.4 − - 1.6 + + 1.2 − - 4.5 − - 0.03"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "cher) − - 6.4 − - 1.6 − - 22.1 − - 5.1 − - 4.8 − - 2.6 − - 9.5 − - 1.00 Vanilla MOPD 73.9 72.0 46.1 91.1 61.5 27.6 61.5 0.63 Δ \\Delta (Vanilla − - Teacher) − - 2.3 − - 0.3 − - 6.0 − - 0.8 − - 3.3 − - 0.9 − - 5.5 − - 0.37 D 3 -MOPD (Ours) 74.1 7"
+          },
+          {
+            "method": "D3-MOPD",
+            "text": "a − - Teacher) − - 2.3 − - 0.3 − - 6.0 − - 0.8 − - 3.3 − - 0.9 − - 5.5 − - 0.37 D 3 -MOPD (Ours) 74.1 73.2 48.9 92.3 63.2 29.7 62.5 0.97 Δ \\Delta (D 3 -MOPD − - Teacher) − - 2.1 + + 0.9 − - 3.2 + + 0.4 − - 1.6 + + 1.2 − - 4.5 − - 0.03"
+          }
+        ]
+      },
+      {
+        "anchor": "A4.T6",
+        "caption": "Table 6: Per-benchmark accuracy (%) and normalized score at the best-average checkpoint (vanilla MOPD: step 143 143 ; D 3 -MOPD: step 95 95 ). The Teacher row reports each domain’s dedicated expert model (one specialized model per domain, not a single model). Unlike Table 2 , all values in each row come from a single checkpoint. Bold marks the column best, underline the runner-up.",
+        "methods": [
+          "MOPD",
+          "D3-MOPD"
+        ],
+        "rows": [
+          "Math Instruction Following Code Tool-use",
+          "Method AIME25 HMMT(N) IFBench IFEval LCB-v6 OJB-C++ BFCL(B) Norm.",
+          "Teacher 76.2 72.3 52.1 91.9 64.8 28.5 67.0 1.00",
+          "Student 69.8 70.7 30.0 86.8 60.0 25.9 57.5 0.00",
+          "Vanilla MOPD (step 143) 73.2 71.0 45.7 91.0 61.0 27.6 60.0 0.48",
+          "Δ ⁡ ( Vanilla − Teacher ) \\Delta(\\text{Vanilla}-\\text{Teacher}) − - 3.0 − - 1.3 − - 6.4 − - 0.9 − - 3.8 − - 0.9 − - 7.0 − - 0.52",
+          "D 3 -MOPD (step 95) 74.0 71.4 45.1 91.2 62.5 29.7 62.5 0.73",
+          "Δ ⁡ ( D 3 ​ -MOPD − Teacher ) \\Delta(\\text{D}^{3}\\text{-MOPD}-\\text{Teacher}) − - 2.2 − - 0.9 − - 7.0 − - 0.7 − - 2.3 + + 1.2 − - 4.5 − - 0.27",
+          "Δ ⁡ ( D 3 ​ -MOPD − Vanilla ) \\Delta(\\text{D}^{3}\\text{-MOPD}-\\text{Vanilla}) + + 0.8 + + 0.4 − - 0.6 + + 0.2 + + 1.5 + + 2.1 + + 2.5 + + 0.25"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "hmark accuracy (%) and normalized score at the best-average checkpoint (vanilla MOPD: step 143 143 ; D 3 -MOPD: step 95 95 ). The Teacher row reports each domain’s dedicated expert model (one specialized model per domain, not a single model). U"
+          },
+          {
+            "method": "D3-MOPD",
+            "text": "d normalized score at the best-average checkpoint (vanilla MOPD: step 143 143 ; D 3 -MOPD: step 95 95 ). The Teacher row reports each domain’s dedicated expert model (one specialized model per domain, not a single model). Unlike Table 2 , all values"
+          }
+        ]
+      },
+      {
+        "anchor": "A5.T7",
+        "caption": "Table 7: Per-benchmark accuracy (%) and normalized score with Qwen3.5-4B student (vanilla MOPD: step 159 159 ; D 3 -MOPD: step 119 119 ). The Teacher row reports each domain’s dedicated GRPO-trained 4B expert. Bold marks the column best, underline the runner-up.",
+        "methods": [
+          "MOPD",
+          "D3-MOPD"
+        ],
+        "rows": [
+          "Math Instruction Following Code Tool-use",
+          "Method AIME25 HMMT(N) IFBench IFEval LCB-v6 OJB-C++ BFCL(B) Norm.",
+          "Teacher 63.4 66.4 55.9 85.3 53.3 18.1 63.0 1.00",
+          "Student 47.8 51.7 35.9 85.3 39.4 13.8 51.0 0.00",
+          "Vanilla MOPD (step 159) 59.3 63.4 45.4 82.7 53.7 18.5 63.0 0.86",
+          "Δ ⁡ ( Vanilla − Teacher ) \\Delta(\\text{Vanilla}-\\text{Teacher}) − - 4.1 − - 3.0 − - 10.5 − - 2.6 + + 0.4 + + 0.4 0.0 − - 0.14",
+          "D 3 -MOPD (step 119) 61.8 64.4 49.5 84.5 54.6 19.8 64.5 1.01",
+          "Δ ⁡ ( D 3 ​ -MOPD − Teacher ) \\Delta(\\text{D}^{3}\\text{-MOPD}-\\text{Teacher}) − - 1.6 − - 2.0 − - 6.4 − - 0.8 + + 1.3 + + 1.7 + + 1.5 + + 0.01",
+          "Δ ⁡ ( D 3 ​ -MOPD − Vanilla ) \\Delta(\\text{D}^{3}\\text{-MOPD}-\\text{Vanilla}) + + 2.5 + + 1.0 + + 4.1 + + 1.8 + + 0.9 + + 1.3 + + 1.5 + + 0.15"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "er-benchmark accuracy (%) and normalized score with Qwen3.5-4B student (vanilla MOPD: step 159 159 ; D 3 -MOPD: step 119 119 ). The Teacher row reports each domain’s dedicated GRPO-trained 4B expert. Bold marks the column best, underline the ru"
+          },
+          {
+            "method": "D3-MOPD",
+            "text": " (%) and normalized score with Qwen3.5-4B student (vanilla MOPD: step 159 159 ; D 3 -MOPD: step 119 119 ). The Teacher row reports each domain’s dedicated GRPO-trained 4B expert. Bold marks the column best, underline the runner-up. Math Instruction "
+          }
+        ]
+      },
+      {
+        "anchor": "A9.T8",
+        "caption": "Table 8: Per-benchmark accuracy for the velocity floor ablation. The variant with ϕ = 0.2 \\phi=0.2 scores highest on the shaded IF columns and LCB-v6, and stays close to D 3 -MOPD elsewhere.",
+        "methods": [
+          "MOPD",
+          "D3-MOPD"
+        ],
+        "rows": [
+          "Math Instruction Following Code Tool-use",
+          "Method AIME25 HMMT(N) IFBench IFEval LCB-v6 OJB-C++ BFCL(B) Avg.",
+          "Vanilla MOPD (step 143) 73.2 71.0 45.7 91.0 61.0 27.6 60.0 61.4",
+          "D 3 -MOPD (step 95) 74.0 71.4 45.1 91.2 62.5 29.7 62.5 62.3",
+          "D 3 -MOPD w/ velocity floor ( ϕ = 0.2 \\phi{=}0.2 , step 95) 74.0 71.3 45.9 91.5 62.7 29.3 61.0 62.2"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "ol-use Method AIME25 HMMT(N) IFBench IFEval LCB-v6 OJB-C++ BFCL(B) Avg. Vanilla MOPD (step 143) 73.2 71.0 45.7 91.0 61.0 27.6 60.0 61.4 D 3 -MOPD (step 95) 74.0 71.4 45.1 91.2 62.5 29.7 62.5 62.3 D 3 -MOPD w/ velocity floor ( ϕ = 0.2 \\phi{=}0.2"
+          },
+          {
+            "method": "D3-MOPD",
+            "text": "\\phi=0.2 scores highest on the shaded IF columns and LCB-v6, and stays close to D 3 -MOPD elsewhere. Math Instruction Following Code Tool-use Method AIME25 HMMT(N) IFBench IFEval LCB-v6 OJB-C++ BFCL(B) Avg. Vanilla MOPD (step 143) 73.2 71.0 45.7 91."
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S1.p4.1",
+        "methods": [
+          "MOPD",
+          "D3-MOPD"
+        ],
+        "text": "We validate D 3 -MOPD on a Qwen3.6-35B-A3B \\citep qwen36_35b_a3b student distilled from four domain-expert teachers spanning Math, Code, Instruction Following, and Tool-use. Experimental results highlight that D 3 -MOPD outperforms vanilla MOPD, closing 97 % 97\\% of the average student-to-teacher performance gap (compared to 63 % 63\\% for the baseline) while achieving a higher peak accuracy across all tasks, surpassing the specialist teachers on three of seven benchmarks. It also improves training efficiency by reaching the baseline’s optimal performance in just 47 47 rollout steps, approximately 3 × 3\\times faster than vanilla MOPD ( 143 143 steps). Furthermore, we argue that the expected benefits of D 3 -MOPD will naturally scale with K K , as more domains introduce more diverse convergence patterns for the scheduler to exploit. Overall, this paper first identifies a systematic mismatch between MOPD’s static mixture and the student’s asynchronous per-domain convergence, and resolves it with D 3 -MOPD, a zero-overhead scheduler that turns the reverse-KL signal already computed by the training loop into a dynamic data mixture to improve both peak quality and training efficiency."
+      },
+      {
+        "anchor": "S4.SS5.SSS0.Px1.p1.1",
+        "methods": [
+          "MOPD",
+          "D3-MOPD"
+        ],
+        "text": "Table 2 compares peak accuracy against the student baseline and domain-expert teachers. Vanilla MOPD closes 63 % 63\\% of the average student-to-teacher gap ( s ^ ¯ = 0.63 \\bar{\\hat{s}}=0.63 ), whereas D 3 -MOPD closes 97 % 97\\% of this gap ( s ^ ¯ = 0.97 \\bar{\\hat{s}}=0.97 ). Consistent with findings by \\citet ma2026mopd, both methods generally remain below the maximum performance of the domain-expert teachers, indicating that distillation primarily closes existing capability gaps rather than generating novel skills. Notably, D 3 -MOPD surpasses the teacher on three benchmarks (HMMT(N), IFEval, and OJBench C++, s ^ b > 1.0 \\hat{s}_{b}>1.0 ), whereas vanilla MOPD remains below the teacher on all tasks. Because these three benchmarks exhibit small initial student-to-teacher absolute accuracy gaps ( Δ ≤ 5.1 \\Delta\\leq 5.1 ), even modest absolute improvements translate into normalized scores exceeding 1.0 1.0 . Appendix D further compares the two methods at their respective best-average checkpoints, confirming that D 3 -MOPD’s improvement persists under this setting."
+      },
+      {
+        "anchor": "S6.p1.1",
+        "methods": [
+          "MOPD",
+          "D3-MOPD"
+        ],
+        "text": "This paper identifies and addresses a systematic inefficiency in multi-teacher on-policy distillation (MOPD) arising from the mismatch between its static domain mixture and the student’s asynchronous per-domain convergence rates. D 3 -MOPD resolves this by combining each domain’s remaining KL gap with its descent velocity into a composite signal and mapping the result to an updated sampling ratio through a softmax-floor formulation, all without modifying the core training loop. Experiments across four domains with a Qwen3.6-35B-A3B student show that D 3 -MOPD closes 97 % 97\\% of the student-teacher performance gap (vs. 63 % 63\\% for vanilla MOPD) while reaching the baseline’s peak accuracy in 3 × 3\\times fewer rollout steps. Ablation studies confirm that each design choice, namely the composite signal, batch jitter, and velocity smoothing, contributes to both peak accuracy and convergence speed. Trajectory analysis reveals an emergent implicit curriculum in which the scheduler concentrates budget on each domain during its active learning window."
+      },
+      {
+        "anchor": "A4.SS0.SSS0.Px1.p1.1",
+        "methods": [
+          "MOPD",
+          "D3-MOPD"
+        ],
+        "text": "Compared with Table 2 , the normalized scores drop for both methods (vanilla MOPD: 0.63 → 0.48 0.63\\to 0.48 ; D 3 -MOPD: 0.97 → 0.73 0.97\\to 0.73 ), since no single checkpoint can maximize every benchmark at once. The drop is concentrated in benchmarks whose peaks occur far from the best-average step: for example, D 3 -MOPD’s HMMT(N) falls from 73.2 73.2 (per-benchmark peak) to 71.4 71.4 at step 95 95 , indicating that HMMT(N) peaks at a later checkpoint. Nevertheless, D 3 -MOPD at step 95 95 still outperforms vanilla MOPD at step 143 143 on six of seven benchmarks and achieves a notably higher normalized score ( 0.73 0.73 vs. 0.48 0.48 ), confirming that the improvement holds when deploying a single checkpoint."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "tian2026_beyond_domainrouted_supervision",
+    "source": "https://arxiv.org/html/2610.13521v1",
+    "table_count": 6,
+    "tables": [
+      {
+        "anchor": "S4.T1",
+        "caption": "Table 1: Main results across paired-domain settings. Domain Avg. averages benchmarks within each domain; Avg. averages the two domains. Bold/underlined scores mark the best/second-best multi-domain methods per student model.",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "CaMOPD"
+        ],
+        "rows": [
+          "[0pt][0pt] (a) Math × \\times Medical",
+          "[0pt][0pt] Student Model: Qwen3-4B",
+          "Method Math Medical All",
+          "AIME24 AIME25 HMMT25 Feb. HMMT25 Nov. Domain Avg. MedQA MedXpert QA MedMCQA SuperGPQA -Med Domain Avg. Avg.",
+          "Student 21.46 21.77 10.00 8.23 15.37 64.73 13.80 55.63 29.87 41.01 28.19",
+          "Single OPD 58.13 51.67 31.56 35.73 44.27 77.06 15.31 62.44 36.81 47.90 46.09",
+          "Vanilla MOPD 58.75 55.21 31.98 37.92 45.97 62.61 12.24 55.39 27.55 39.45 42.71",
+          "ExOPD 61.67 55.62 33.54 37.92 47.19 69.99 13.76 59.50 32.23 43.87 45.53",
+          "Open-MOPD 56.56 55.10 32.60 37.08 45.34 70.31 13.06 60.94 33.76 44.52 44.93",
+          "CaMOPD 61.15 54.27 33.12 38.02 46.64 77.45 16.61 61.89 35.03 47.75 47.20",
+          "Ours 63.85 53.96 33.65 38.96 47.60 77.06 15.67 62.83 37.35 48.23 47.92",
+          "[0pt][0pt] Student Model: Qwen3-1.7B",
+          "Method Math Medical All",
+          "AIME24 AIME25 HMMT25 Feb. HMMT25 Nov. Domain Avg. MedQA MedXpert QA MedMCQA SuperGPQA -Med Domain Avg. Avg.",
+          "Student 11.98 10.21 6.04 3.96 8.05 46.03 10.33 42.55 22.58 30.37 19.21",
+          "Single OPD 39.90 34.48 18.75 17.29 27.60 53.81 13.39 50.99 24.50 35.67 31.64"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "e OPD 58.13 51.67 31.56 35.73 44.27 77.06 15.31 62.44 36.81 47.90 46.09 Vanilla MOPD 58.75 55.21 31.98 37.92 45.97 62.61 12.24 55.39 27.55 39.45 42.71 ExOPD 61.67 55.62 33.54 37.92 47.19 69.99 13.76 59.50 32.23 43.87 45.53 Open-MOPD 56.56 55.10"
+          },
+          {
+            "method": "Open-MOPD",
+            "text": "5 42.71 ExOPD 61.67 55.62 33.54 37.92 47.19 69.99 13.76 59.50 32.23 43.87 45.53 Open-MOPD 56.56 55.10 32.60 37.08 45.34 70.31 13.06 60.94 33.76 44.52 44.93 CaMOPD 61.15 54.27 33.12 38.02 46.64 77.45 16.61 61.89 35.03 47.75 47.20 Ours 63.85 53.96 33."
+          },
+          {
+            "method": "CaMOPD",
+            "text": ".53 Open-MOPD 56.56 55.10 32.60 37.08 45.34 70.31 13.06 60.94 33.76 44.52 44.93 CaMOPD 61.15 54.27 33.12 38.02 46.64 77.45 16.61 61.89 35.03 47.75 47.20 Ours 63.85 53.96 33.65 38.96 47.60 77.06 15.67 62.83 37.35 48.23 47.92 [0pt][0pt] Student Mod"
+          }
+        ]
+      },
+      {
+        "anchor": "S4.T4",
+        "caption": "",
+        "methods": [
+          "MOPD",
+          "Road MOPD"
+        ],
+        "rows": [],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "average shaded steps 39–58. (b) Domain accuracy (%). Table 4: Ablations of Road MOPD . Domain-average accuracy (%). Avg.: mean across the two domains. Math × \\times Med. Math Med. Avg. w/o Credit Assign. 45.78 47.74 46.76 w/o Grad. Protect. 47."
+          },
+          {
+            "method": "Road MOPD",
+            "text": "bels average shaded steps 39–58. (b) Domain accuracy (%). Table 4: Ablations of Road MOPD . Domain-average accuracy (%). Avg.: mean across the two domains. Math × \\times Med. Math Med. Avg. w/o Credit Assign. 45.78 47.74 46.76 w/o Grad. Protect. 47."
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T6",
+        "caption": "Table 6: Shared optimization and rollout settings of Road MOPD . Each rollout batch produces one optimizer update.",
+        "methods": [
+          "MOPD",
+          "Road MOPD"
+        ],
+        "rows": [
+          "Hyperparameter Value",
+          "Training / PPO minibatch size 1,008 / 1,008 prompts",
+          "Rollout batches (paired / three-domain) 58 / 116",
+          "PPO epochs per rollout batch 1",
+          "Responses per prompt 1",
+          "Rollout temperature / top- p p 1.0 / 1.0",
+          "Maximum prompt / response length 2,048 / 16,384 tokens",
+          "Optimizer AdamW",
+          "Learning rate / schedule 10 − 5 10^{-5} / constant, no warm-up",
+          "Adam betas / weight decay ( 0.9 , 0.999 ) (0.9,0.999) / 0.01",
+          "Global gradient norm clipping 1.0, after merging domain gradients",
+          "Advantage clipping [ − 10 , 10 ] [-10,10] , full method and all ablations",
+          "PPO ratio-clipping parameter 0.2",
+          "Distillation estimator Sampled-token k 1 k_{1} , policy-gradient surrogate",
+          "Task reward / separate trainer KL reward Disabled / disabled",
+          "Checkpoint interval 29 optimizer steps"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "Table 6: Shared optimization and rollout settings of Road MOPD . Each rollout batch produces one optimizer update. Hyperparameter Value Training / PPO minibatch size 1,008 / 1,008 prompts Rollout batches (paired / three-do"
+          },
+          {
+            "method": "Road MOPD",
+            "text": "Table 6: Shared optimization and rollout settings of Road MOPD . Each rollout batch produces one optimizer update. Hyperparameter Value Training / PPO minibatch size 1,008 / 1,008 prompts Rollout batches (paired / three-do"
+          }
+        ]
+      },
+      {
+        "anchor": "A3.T7",
+        "caption": "Table 7: Per-benchmark breakdown of the ablations and PCGrad comparison. Avg. is the benchmark mean; rounding may cause small differences from the mean of displayed scores. Scores are percentages (higher is better).",
+        "methods": [
+          "MOPD",
+          "Road MOPD"
+        ],
+        "rows": [
+          "(a) Math × \\times Medical",
+          "Math Medical",
+          "Method AIME24 AIME25 HMMT 25 Feb. HMMT 25 Nov. Avg. MedQA Med Xpert QA Med- MCQA GPQA Med Avg.",
+          "w/o Credit Assign. 59.69 53.54 32.71 37.19 45.78 76.98 15.88 62.08 36.01 47.74",
+          "w/o Grad. Protection 61.46 54.48 33.75 39.06 47.19 76.04 15.39 63.28 37.71 48.11",
+          "w/o Adaptive Retention 58.13 55.42 33.02 36.56 45.78 77.53 15.59 63.61 36.84 48.40",
+          "PCGrad † 62.60 53.54 33.75 37.50 46.85 77.93 14.65 62.54 36.99 48.03",
+          "Road MOPD 63.85 53.96 33.65 38.96 47.60 77.06 15.67 62.83 37.35 48.23",
+          "(b) Code × \\times Medical",
+          "Code Medical",
+          "Method Human Eval+ MBPP+ LCB Avg. MedQA Med Xpert QA Med- MCQA GPQA Med Avg.",
+          "w/o Credit Assign. 84.15 69.05 25.43 59.54 76.20 16.08 61.77 35.79 47.46",
+          "w/o Grad. Protection 87.65 71.96 29.43 63.01 75.18 14.16 61.53 36.62 46.87",
+          "w/o Adaptive Retention 86.74 73.68 28.14 62.85 76.12 14.08 62.25 35.68 47.03",
+          "PCGrad † 84.45 70.11 28.14 60.90 76.90 15.71 62.49 35.17 47.57",
+          "Road MOPD 87.65 72.69 28.71 63.02 75.73 15.96 62.97 36.33 47.75"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "48.40 PCGrad † 62.60 53.54 33.75 37.50 46.85 77.93 14.65 62.54 36.99 48.03 Road MOPD 63.85 53.96 33.65 38.96 47.60 77.06 15.67 62.83 37.35 48.23 (b) Code × \\times Medical Code Medical Method Human Eval+ MBPP+ LCB Avg. MedQA Med Xpert QA Med- MC"
+          },
+          {
+            "method": "Road MOPD",
+            "text": "6.84 48.40 PCGrad † 62.60 53.54 33.75 37.50 46.85 77.93 14.65 62.54 36.99 48.03 Road MOPD 63.85 53.96 33.65 38.96 47.60 77.06 15.67 62.83 37.35 48.23 (b) Code × \\times Medical Code Medical Method Human Eval+ MBPP+ LCB Avg. MedQA Med Xpert QA Med- MC"
+          }
+        ]
+      },
+      {
+        "anchor": "A3.T9",
+        "caption": "Table 9: Full results for low-conflict Math × \\times Code. Per-benchmark Qwen3-4B scores underlying Table 3 . Scores are percentages (higher is better); Avg. weights benchmarks equally within each domain. Bold and underlining mark the best and second-best multi-domain methods, respectively.",
+        "methods": [
+          "MOPD",
+          "CaMOPD"
+        ],
+        "rows": [
+          "Benchmark Student Single OPD Vanilla MOPD ExOPD Open- MOPD CaMOPD Ours",
+          "Math",
+          "AIME24 21.46 58.13 60.21 63.33 56.77 61.04 60.73",
+          "AIME25 21.77 51.67 55.21 57.71 53.33 54.17 57.40",
+          "HMMT25 Feb. 10.00 31.56 31.98 33.85 30.52 31.87 33.33",
+          "HMMT25 Nov. 8.23 35.73 37.08 38.23 36.67 38.12 39.48",
+          "Avg. 15.37 44.27 46.12 48.28 44.32 46.30 47.73",
+          "Code",
+          "HumanEval+ 76.68 84.30 85.06 86.59 83.08 84.91 86.89",
+          "MBPP+ 65.08 70.44 70.37 71.16 70.37 70.50 72.75",
+          "LCB v6 17.14 28.00 28.29 27.71 26.00 25.71 29.57",
+          "Avg. 52.97 60.91 61.24 61.82 59.82 60.37 63.07"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "d-best multi-domain methods, respectively. Benchmark Student Single OPD Vanilla MOPD ExOPD Open- MOPD CaMOPD Ours Math AIME24 21.46 58.13 60.21 63.33 56.77 61.04 60.73 AIME25 21.77 51.67 55.21 57.71 53.33 54.17 57.40 HMMT25 Feb. 10.00 31.56 31."
+          },
+          {
+            "method": "CaMOPD",
+            "text": "thods, respectively. Benchmark Student Single OPD Vanilla MOPD ExOPD Open- MOPD CaMOPD Ours Math AIME24 21.46 58.13 60.21 63.33 56.77 61.04 60.73 AIME25 21.77 51.67 55.21 57.71 53.33 54.17 57.40 HMMT25 Feb. 10.00 31.56 31.98 33.85 30.52 31.87 33."
+          }
+        ]
+      },
+      {
+        "anchor": "A3.T10",
+        "caption": "Table 10: Full results for generalization to three domains. Per-benchmark Qwen3-4B scores underlying Table 3 . Scores are percentages (higher is better); Avg. weights benchmarks equally within each domain. Single OPD uses the matching in-domain checkpoint from Table 8 . The best and second-best results among the compared multi-domain methods are shown in bold and underlined, respectively.",
+        "methods": [
+          "MOPD",
+          "CaMOPD"
+        ],
+        "rows": [
+          "Benchmark Student Single OPD Vanilla MOPD ExOPD Open- MOPD CaMOPD Ours",
+          "Code",
+          "HumanEval+ 76.68 84.30 86.28 84.76 85.52 84.45 86.59",
+          "MBPP+ 65.08 70.44 70.63 71.23 70.44 70.90 72.95",
+          "LCB 17.14 28.00 26.86 28.57 25.71 27.57 29.29",
+          "Avg. 52.97 60.91 61.26 61.52 60.56 60.97 62.94",
+          "Math",
+          "AIME24 21.46 58.13 61.04 59.90 55.73 59.48 61.88",
+          "AIME25 21.77 51.67 57.50 55.31 54.17 54.90 54.48",
+          "HMMT25 Feb. 10.00 31.56 31.67 34.90 31.25 31.98 33.54",
+          "HMMT25 Nov. 8.23 35.73 37.71 38.23 35.10 37.50 39.27",
+          "Avg. 15.37 44.27 46.98 47.09 44.06 45.96 47.29",
+          "Medical",
+          "MedQA 64.73 77.06 64.49 73.29 60.17 76.75 77.61",
+          "MedXpertQA 13.80 15.31 12.78 14.57 12.78 16.69 15.96",
+          "MedMCQA 55.63 62.44 57.14 60.94 55.06 62.54 63.11"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "hown in bold and underlined, respectively. Benchmark Student Single OPD Vanilla MOPD ExOPD Open- MOPD CaMOPD Ours Code HumanEval+ 76.68 84.30 86.28 84.76 85.52 84.45 86.59 MBPP+ 65.08 70.44 70.63 71.23 70.44 70.90 72.95 LCB 17.14 28.00 26.86 28"
+          },
+          {
+            "method": "CaMOPD",
+            "text": "lined, respectively. Benchmark Student Single OPD Vanilla MOPD ExOPD Open- MOPD CaMOPD Ours Code HumanEval+ 76.68 84.30 86.28 84.76 85.52 84.45 86.59 MBPP+ 65.08 70.44 70.63 71.23 70.44 70.90 72.95 LCB 17.14 28.00 26.86 28.57 25.71 27.57 29.29 Av"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S1.I1.i3.p1.1",
+        "methods": [
+          "MOPD",
+          "Road MOPD"
+        ],
+        "text": "Across domain combinations and teacher–student configurations, Road MOPD improves adversely affected domains under high conflict, preserves low-conflict gains, and generalizes to three domains, outperforming standard MOPD and gradient-conflict correction baselines in overall performance."
+      },
+      {
+        "anchor": "S4.SS1.p2.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "CaMOPD"
+        ],
+        "text": "Baselines. We compare with four representative approaches: (1) Vanilla MOPD routes each on-policy rollout only to its corresponding domain teacher and applies token-level reverse-KL supervision ( Ma et al., 2026 ) ; (2) ExOPD constructs an extrapolated teacher target using the frozen student initialization as a reference ( Yang et al., 2026b ) ; (3) CaMOPD separates capability-recovery and domain-preservation updates and prioritizes samples with larger teacher–student gaps ( Chen et al., 2026 ) ; and (4) Open-MOPD mitigates cross-domain imbalance through token-share balancing, dynamic domain loss weighting, and reward refresh ( Gao et al., 2026 ) ."
+      },
+      {
+        "anchor": "S4.SS2.p1.1",
+        "methods": [
+          "MOPD",
+          "Road MOPD"
+        ],
+        "text": "Best overall performance across domain pairs and student sizes. Across Math × \\times Medical and Code × \\times Medical with both student sizes, Road MOPD achieves the highest two-domain average among the compared multi-domain methods in all four settings (Table 1 ), exceeding the strongest overall baseline in each by 0.72–2.89 points."
+      },
+      {
+        "anchor": "S4.SS2.p2.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "Road MOPD",
+          "CaMOPD"
+        ],
+        "text": "4B students: Medical recovery accompanies gains in the other domain. In both Math × \\times Medical and Code × \\times Medical, Vanilla MOPD lowers Medical accuracy below the initial student’s 41.01, while ExOPD, Open-MOPD, and CaMOPD mitigate this degradation to varying degrees. Road MOPD reaches Medical averages of 48.23 and 47.75, respectively, recovering to at or near the Single OPD reference of 47.90 and exceeding the strongest multi-domain Medical baseline in each setting by 0.48 and 0.41 points. It also achieves the highest Math and Code averages in the respective settings, indicating that Medical recovery accompanies gains in the other domain’s average performance."
+      },
+      {
+        "anchor": "S4.SS2.p3.1",
+        "methods": [
+          "MOPD",
+          "Road MOPD"
+        ],
+        "text": "1.7B students: Larger Medical gains improve the cross-domain trade-off. With the smaller student, all multi-domain baselines fall below the Single OPD Medical average of 35.67 in both pairs. Road MOPD instead reaches 36.89 and 36.51, respectively, exceeding this reference in both settings. Its margins over the strongest multi-domain Medical baseline in each setting increase to 3.88 and 5.17 points. Although its Math and Code averages trail ExOPD by 1.23 and 0.94 points, respectively, the Medical gains yield two-domain averages that exceed ExOPD by 1.33 and 2.89 points, demonstrating a better overall result when domains are weighted equally."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "wang2026_aclarena_agent_continual",
+    "source": "https://arxiv.org/html/2609.23989v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "wang2026_madopd_breaking_ceiling",
+    "source": "https://arxiv.org/html/2605.01347v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "wang2026_smopd_multireward_reinforcement",
+    "source": "https://arxiv.org/html/2608.03092v2",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "wu2026_consolidating_rlvr_capabilities",
+    "source": "https://arxiv.org/html/2608.27409v2",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "xie2026_rethinking_selfdistillation_multiteacher",
+    "source": "https://arxiv.org/html/2610.04272v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S2.SS0.SSS0.Px2.p1.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD"
+        ],
+        "text": "MOPD combines specialized capabilities by using each domain expert to supervise student-generated trajectories ( Ma et al., 2026 ; Lim et al., 2026 ) . This approach is also used in large-scale post-training ( Park et al., 2026 ; NVIDIA, 2026 ) . Alternatives include distilling expert trajectories through SFT ( The Microsoft AI Team, 2026 ) and directly combining expert weights without additional training ( Wortsman et al., 2022 ; Ilharco et al., 2023 ; Yadav et al., 2023 ; Yu et al., 2024 ) , which Wang et al. (2026a) weigh against joint multi-domain RL. Closest to our work, MOPD ( Ma et al., 2026 ) and Open-MOPD ( Gao et al., 2026 ) compare on-policy distillation with offline fine-tuning and weight merging for integrating experts trained from a shared initialization. However, these studies do not systematically compare computational costs across methods, and it is unclear to what extent each baseline is independently tuned. For example, using released data and evaluation protocols from Open-MOPD, we find that hyperparameter sweeps and rejection-sampled data can bring SFT to OPD-level accuracy ( Section 6.4 )."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "xu2026_mopdrouter_rethinking_teacher",
+    "source": "https://arxiv.org/html/2609.30837v2",
+    "table_count": 7,
+    "tables": [
+      {
+        "anchor": "S4.T1",
+        "caption": "Table 1: Results (%) on the unlabeled mixed training set. Bold denotes the best distilled result within each student block; shaded rows identify MOPD-Router methods. The final row reports the same-size ExpertAlign result minus Standard MOPD.",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "MOPD-Router"
+        ],
+        "rows": [
+          "Math Code IF Overall",
+          "Method AIME24 AIME25 HMMT Feb. HMMT Nov. Human Eval+ MBPP+ LCB-v6 IFEval IFBench Avg.",
+          "Baseline Models",
+          "Qwen3-1.7B 12.50 11.67 5.83 4.58 60.40 52.40 12.00 67.65 16.67 27.08",
+          "Qwen3-4B 23.33 10.00 10.00 7.08 82.30 67.20 18.29 81.88 24.14 36.02",
+          "RL Teacher 58.33 52.08 28.75 35.00 84.14 72.20 24.57 82.80 31.29 52.13",
+          "Student: Qwen3-1.7B-Non-Thinking",
+          "Standard MOPD 32.08 25.41 16.67 15.41 70.12 57.41 19.42 69.32 21.09 36.33",
+          "Open-MOPD 24.58 25.42 15.00 12.08 71.95 56.35 13.14 66.91 20.75 34.02",
+          "Mean Aggregation 27.92 26.25 15.42 11.67 70.73 53.17 16.57 70.98 17.68 34.49",
+          "MOPD Router",
+          "w/ Entropy 30.00 26.67 15.42 13.33 68.90 59.52 15.43 64.51 18.03 34.65",
+          "w/ Novelty 32.92 27.92 17.08 13.75 70.73 57.67 20.00 71.90 18.37 36.70",
+          "w/ ExpertAlign 38.33 32.08 16.67 17.08 72.56 58.99 19.43 70.61 21.43 38.58",
+          "Student: Qwen3-4B-Non-Thinking",
+          "Standard MOPD 50.00 45.83 25.41 33.75 84.15 69.58 28.00 77.26 24.83 48.76"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": " methods. The final row reports the same-size ExpertAlign result minus Standard MOPD. Math Code IF Overall Method AIME24 AIME25 HMMT Feb. HMMT Nov. Human Eval+ MBPP+ LCB-v6 IFEval IFBench Avg. Baseline Models Qwen3-1.7B 12.50 11.67 5.83 4.58 60"
+          },
+          {
+            "method": "Open-MOPD",
+            "text": "nking Standard MOPD 32.08 25.41 16.67 15.41 70.12 57.41 19.42 69.32 21.09 36.33 Open-MOPD 24.58 25.42 15.00 12.08 71.95 56.35 13.14 66.91 20.75 34.02 Mean Aggregation 27.92 26.25 15.42 11.67 70.73 53.17 16.57 70.98 17.68 34.49 MOPD Router w/ Entropy"
+          },
+          {
+            "method": "MOPD-Router",
+            "text": "notes the best distilled result within each student block; shaded rows identify MOPD-Router methods. The final row reports the same-size ExpertAlign result minus Standard MOPD. Math Code IF Overall Method AIME24 AIME25 HMMT Feb. HMMT Nov. Human Eval+ "
+          }
+        ]
+      },
+      {
+        "anchor": "S4.T2",
+        "caption": "Table 2: Results (%) on the domain-labeled MOPD training set. Formatting follows Table 1 .",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "MOPD-Router"
+        ],
+        "rows": [
+          "Math Code IF Overall",
+          "Method AIME24 AIME25 HMMT Feb. HMMT Nov. Human Eval+ MBPP+ LCB-v6 IFEval IFBench Avg.",
+          "Baseline Models",
+          "Qwen3-1.7B 12.50 11.67 5.83 4.58 60.40 52.40 12.00 67.65 16.67 27.08",
+          "Qwen3-4B 23.33 10.00 10.00 7.08 82.30 67.20 18.29 81.88 24.14 36.02",
+          "RL Teacher 58.33 52.08 28.75 35.00 84.14 72.20 24.57 82.80 31.29 52.13",
+          "Student: Qwen3-1.7B-Non-Thinking",
+          "Standard MOPD 33.33 34.17 15.83 16.67 69.51 61.11 19.43 68.21 19.39 37.52",
+          "Open-MOPD 35.42 35.00 17.91 17.50 75.00 58.73 21.71 70.43 20.06 39.08",
+          "Mean Aggregation 30.00 27.92 16.66 12.08 75.00 55.82 20.57 68.02 15.98 35.78",
+          "MOPD Router",
+          "w/ Entropy 34.17 29.58 17.08 17.92 73.78 57.14 21.71 68.39 18.03 37.53",
+          "w/ Novelty 34.58 28.33 17.50 15.83 72.56 57.41 20.57 70.24 20.41 37.49",
+          "w/ ExpertAlign 36.25 32.50 18.33 20.83 75.61 61.64 23.43 71.35 21.77 40.19",
+          "Student: Qwen3-4B-Non-Thinking",
+          "Standard MOPD 55.42 51.67 30.83 33.75 84.76 70.90 25.71 77.45 25.17 50.63"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "Table 2: Results (%) on the domain-labeled MOPD training set. Formatting follows Table 1 . Math Code IF Overall Method AIME24 AIME25 HMMT Feb. HMMT Nov. Human Eval+ MBPP+ LCB-v6 IFEval IFBench Avg. Baseline "
+          },
+          {
+            "method": "Open-MOPD",
+            "text": "nking Standard MOPD 33.33 34.17 15.83 16.67 69.51 61.11 19.43 68.21 19.39 37.52 Open-MOPD 35.42 35.00 17.91 17.50 75.00 58.73 21.71 70.43 20.06 39.08 Mean Aggregation 30.00 27.92 16.66 12.08 75.00 55.82 20.57 68.02 15.98 35.78 MOPD Router w/ Entropy"
+          },
+          {
+            "method": "MOPD-Router",
+            "text": "37.53 w/ Novelty 34.58 28.33 17.50 15.83 72.56 57.41 20.57 70.24 20.41 37.49 w/ ExpertAlign 36.25 32.50 18.33 20.83 75.61 61.64 23.43 71.35 21.77 40.19 Student: Qwen3-4B-Non-Thinking Standard MOPD 55.42 51.67 30.83 33.75 84.76 70.90 25.71 77.45 25.17 "
+          }
+        ]
+      },
+      {
+        "anchor": "S4.T4",
+        "caption": "Table 4: Cross-domain teacher ablation on the labeled training set (%). Domain scores average the corresponding benchmarks in Table 2 . w/o Token-Level Routing assigns fixed teacher weights per response; w/o Cross-Domain Teachers restricts routing to the teacher indicated by the domain label.",
+        "methods": [
+          "MOPD",
+          "MOPD-Router"
+        ],
+        "rows": [
+          "Student: Qwen3-1.7B Student: Qwen3-4B",
+          "Method Math Code IF Overall Math Code IF Overall",
+          "MOPD-Router w/ ExpertAlign 26.98 53.56 46.56 40.19 46.98 64.22 55.31 54.58",
+          "w/o Token-Level Routing 22.50 50.25 44.18 36.57 44.48 62.37 54.24 52.61",
+          "w/o Cross-Domain Teachers 26.04 51.84 40.20 37.79 45.83 60.50 50.80 51.83",
+          "Standard MOPD 25.00 50.02 43.80 37.52 42.92 60.46 51.31 50.63"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": " Cross-Domain Teachers 26.04 51.84 40.20 37.79 45.83 60.50 50.80 51.83 Standard MOPD 25.00 50.02 43.80 37.52 42.92 60.46 51.31 50.63"
+          },
+          {
+            "method": "MOPD-Router",
+            "text": ": Qwen3-1.7B Student: Qwen3-4B Method Math Code IF Overall Math Code IF Overall MOPD-Router w/ ExpertAlign 26.98 53.56 46.56 40.19 46.98 64.22 55.31 54.58 w/o Token-Level Routing 22.50 50.25 44.18 36.57 44.48 62.37 54.24 52.61 w/o Cross-Domain Teacher"
+          }
+        ]
+      },
+      {
+        "anchor": "S4.T5",
+        "caption": "Table 5: End-to-end training cost in the same-size, domain-labeled setting.",
+        "methods": [
+          "MOPD",
+          "MOPD-Router"
+        ],
+        "rows": [
+          "Method Avg. resp. length GPU-hours E2E ms/token Rel. E2E cost",
+          "Standard MOPD 4,893 692.9 0.32184 1.00 × 1.00\\times",
+          "MOPD-Router",
+          "w/ Entropy 3,278 524.2 0.36344 1.13 × 1.13\\times",
+          "w/ Novelty 3,496 539.6 0.35079 1.09 × 1.09\\times",
+          "w/ ExpertAlign 4,278 716.9 0.38086 1.18 × 1.18\\times"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "setting. Method Avg. resp. length GPU-hours E2E ms/token Rel. E2E cost Standard MOPD 4,893 692.9 0.32184 1.00 × 1.00\\times MOPD-Router w/ Entropy 3,278 524.2 0.36344 1.13 × 1.13\\times w/ Novelty 3,496 539.6 0.35079 1.09 × 1.09\\times w/ ExpertAl"
+          },
+          {
+            "method": "MOPD-Router",
+            "text": " E2E ms/token Rel. E2E cost Standard MOPD 4,893 692.9 0.32184 1.00 × 1.00\\times MOPD-Router w/ Entropy 3,278 524.2 0.36344 1.13 × 1.13\\times w/ Novelty 3,496 539.6 0.35079 1.09 × 1.09\\times w/ ExpertAlign 4,278 716.9 0.38086 1.18 × 1.18\\times"
+          }
+        ]
+      },
+      {
+        "anchor": "A2.T6",
+        "caption": "Table 6: Training hyperparameters for (a) MOPD experiments and (b) the IF teacher.",
+        "methods": [
+          "MOPD",
+          "MOPD-Router"
+        ],
+        "rows": [
+          "(a) MOPD experiments",
+          "Configuration Value",
+          "Training epochs 3",
+          "Train batch size 1,024",
+          "Mini-batch size 1,024",
+          "Learning rate 1 × 10 − 5 1\\times 10^{-5} , constant",
+          "Gradient clipping 1.0",
+          "Objective clip ϵ \\epsilon 0.2",
+          "KL penalty Disabled",
+          "Prompt length limit 2,048",
+          "Response length limit 16,384",
+          "Rollout n n 1",
+          "Rollout sampling temperature 1.0",
+          "Rollout sampling top- p p 1.0",
+          "Thinking mode Disabled",
+          "Entropy routing temperature τ R Ent \\tau_{R}^{\\mathrm{Ent}} 0.1"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "Table 6: Training hyperparameters for (a) MOPD experiments and (b) the IF teacher. (a) MOPD experiments Configuration Value Training epochs 3 Train batch size 1,024 Mini-batch size 1,024 Learning rate 1 × 1"
+          },
+          {
+            "method": "MOPD-Router",
+            "text": "}^{\\mathrm{Nov}} 0.1 Novelty top- k k 16 Novelty JS saturation τ N \\tau_{N} 0.1 ExpertAlign top- k k 16 ExpertAlign alignment margin δ \\delta 1 × 10 − 6 1\\times 10^{-6} (b) IF teacher training Configuration Value per_device_train_batch_size 4 gradient"
+          }
+        ]
+      },
+      {
+        "anchor": "A4.T9",
+        "caption": "Table 9: Overall scores and paired ExpertAlign differences with 95% bootstrap confidence intervals.",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "MOPD-Router"
+        ],
+        "rows": [
+          "Setting Standard MOPD Mean Aggregation Open-MOPD ExpertAlign",
+          "Unlabeled, 1.7B 36.33 % 36.33\\% [ 33.4 % , 39.3 % ] [33.4\\%,39.3\\%] 34.49 % 34.49\\% [ 31.7 % , 37.4 % ] [31.7\\%,37.4\\%] 34.02 % 34.02\\% [ 32.1 % , 36.0 % ] [32.1\\%,36.0\\%] 38.58 % \\mathbf{38.58\\%} [ 35.6 % , 41.7 % ] [35.6\\%,41.7\\%]",
+          "Unlabeled, 4B 48.76 % 48.76\\% [ 45.5 % , 52.2 % ] [45.5\\%,52.2\\%] 47.88 % 47.88\\% [ 44.6 % , 51.3 % ] [44.6\\%,51.3\\%] 49.41 % 49.41\\% [ 47.7 % , 51.2 % ] [47.7\\%,51.2\\%] 53.76 % \\mathbf{53.76\\%} [ 50.3 % , 57.2 % ] [50.3\\%,57.2\\%]",
+          "Labeled, 1.7B 37.52 % 37.52\\% [ 34.4 % , 40.8 % ] [34.4\\%,40.8\\%] 35.78 % 35.78\\% [ 32.9 % , 38.8 % ] [32.9\\%,38.8\\%] 39.08 % 39.08\\% [ 37.4 % , 40.8 % ] [37.4\\%,40.8\\%] 40.19 % \\mathbf{40.19\\%} [ 37.0 % , 43.5 % ] [37.0\\%,43.5\\%]",
+          "Labeled, 4B 50.63 % 50.63\\% [ 47.1 % , 54.2 % ] [47.1\\%,54.2\\%] 48.16 % 48.16\\% [ 44.8 % , 51.6 % ] [44.8\\%,51.6\\%] 52.37 % 52.37\\% [ 50.6 % , 54.2 % ] [50.6\\%,54.2\\%] 54.58 % \\mathbf{54.58\\%} [ 51.2 % , 58.0 % ] [51.2\\%,58.0\\%]",
+          "Paired ExpertAlign improvements",
+          "Setting vs. Standard MOPD vs. Mean Aggregation vs. Open-MOPD",
+          "Δ \\Delta with 95% CI p Holm p_{\\mathrm{Holm}} Δ \\Delta with 95% CI p Holm p_{\\mathrm{Holm}} Δ \\Delta with 95% CI p Holm p_{\\mathrm{Holm}}",
+          "Unlabeled, 1.7B + 2.25 +2.25 [ 0.4 , 4.1 ] [0.4,4.1] .045 .045 + 4.09 +4.09 [ 2.3 , 5.9 ] [2.3,5.9] < .001 <.001 + 4.56 +4.56 [ 2.6 , 6.5 ] [2.6,6.5] < .001 <.001",
+          "Unlabeled, 4B + 5.00 +5.00 [ 3.3 , 6.8 ] [3.3,6.8] < .001 <.001 + 5.88 +5.88 [ 4.2 , 7.6 ] [4.2,7.6] < .001 <.001 + 4.35 +4.35 [ 2.6 , 6.1 ] [2.6,6.1] < .001 <.001",
+          "Labeled, 1.7B + 2.67 +2.67 [ 1.0 , 4.5 ] [1.0,4.5] .007 .007 + 4.41 +4.41 [ 2.9 , 6.0 ] [2.9,6.0] < .001 <.001 + 1.11 +1.11 [ − 0.6 , 2.8 ] [-0.6,2.8] .208 .208",
+          "Labeled, 4B + 3.95 +3.95 [ 2.0 , 5.8 ] [2.0,5.8] < .001 <.001 + 6.42 +6.42 [ 4.4 , 8.4 ] [4.4,8.4] < .001 <.001 + 2.22 +2.22 [ 0.4 , 4.0 ] [0.4,4.0] .030 .030"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "pertAlign differences with 95% bootstrap confidence intervals. Setting Standard MOPD Mean Aggregation Open-MOPD ExpertAlign Unlabeled, 1.7B 36.33 % 36.33\\% [ 33.4 % , 39.3 % ] [33.4\\%,39.3\\%] 34.49 % 34.49\\% [ 31.7 % , 37.4 % ] [31.7\\%,37.4\\%] "
+          },
+          {
+            "method": "Open-MOPD",
+            "text": "with 95% bootstrap confidence intervals. Setting Standard MOPD Mean Aggregation Open-MOPD ExpertAlign Unlabeled, 1.7B 36.33 % 36.33\\% [ 33.4 % , 39.3 % ] [33.4\\%,39.3\\%] 34.49 % 34.49\\% [ 31.7 % , 37.4 % ] [31.7\\%,37.4\\%] 34.02 % 34.02\\% [ 32.1 % , "
+          },
+          {
+            "method": "MOPD-Router",
+            "text": "Table 9: Overall scores and paired ExpertAlign differences with 95% bootstrap confidence intervals. Setting Standard MOPD Mean Aggregation Open-MOPD ExpertAlign Unlabeled, 1.7B 36.33 % 36.33\\% [ 33.4 % , 39"
+          }
+        ]
+      },
+      {
+        "anchor": "A4.T10",
+        "caption": "Table 10: Training-seed robustness on the domain-labeled training set with the Qwen3-4B student. Entries are mean ± \\pm sample standard deviation (%) over three training seeds. Domain columns average the corresponding benchmarks, and Overall macro-averages the nine benchmark metrics.",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "MOPD-Router"
+        ],
+        "rows": [
+          "Method Math Code IF Overall",
+          "Standard MOPD 43.40 ± 0.59 43.40\\pm 0.59 60.46 ± 0.08 60.46\\pm 0.08 51.72 ± 0.36 51.72\\pm 0.36 50.94 ± 0.34 50.94\\pm 0.34",
+          "Open-MOPD 46.06 ± 0.71 46.06\\pm 0.71 60.84 ± 0.58 60.84\\pm 0.58 54.25 ± 0.51 54.25\\pm 0.51 52.81 ± 0.38 52.81\\pm 0.38",
+          "ExpertAlign 47.78 ± 0.71 \\mathbf{47.78\\pm 0.71} 63.58 ± 0.69 \\mathbf{63.58\\pm 0.69} 55.19 ± 0.63 \\mathbf{55.19\\pm 0.63} 54.69 ± 0.12 \\mathbf{54.69\\pm 0.12}"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "macro-averages the nine benchmark metrics. Method Math Code IF Overall Standard MOPD 43.40 ± 0.59 43.40\\pm 0.59 60.46 ± 0.08 60.46\\pm 0.08 51.72 ± 0.36 51.72\\pm 0.36 50.94 ± 0.34 50.94\\pm 0.34 Open-MOPD 46.06 ± 0.71 46.06\\pm 0.71 60.84 ± 0.58 6"
+          },
+          {
+            "method": "Open-MOPD",
+            "text": "0.46 ± 0.08 60.46\\pm 0.08 51.72 ± 0.36 51.72\\pm 0.36 50.94 ± 0.34 50.94\\pm 0.34 Open-MOPD 46.06 ± 0.71 46.06\\pm 0.71 60.84 ± 0.58 60.84\\pm 0.58 54.25 ± 0.51 54.25\\pm 0.51 52.81 ± 0.38 52.81\\pm 0.38 ExpertAlign 47.78 ± 0.71 \\mathbf{47.78\\pm 0.71} 63."
+          },
+          {
+            "method": "MOPD-Router",
+            "text": "0.84 ± 0.58 60.84\\pm 0.58 54.25 ± 0.51 54.25\\pm 0.51 52.81 ± 0.38 52.81\\pm 0.38 ExpertAlign 47.78 ± 0.71 \\mathbf{47.78\\pm 0.71} 63.58 ± 0.69 \\mathbf{63.58\\pm 0.69} 55.19 ± 0.63 \\mathbf{55.19\\pm 0.63} 54.69 ± 0.12 \\mathbf{54.69\\pm 0.12}"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S4.SS1.SSS0.Px3.p1.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "MOPD-Router"
+        ],
+        "text": "In both distillation scenarios, we compare against three baselines: Standard MOPD , Open-MOPD ( Gao et al., 2026 ) , and Mean Aggregation , which uniformly averages the three sampled-token teacher signals. On the unlabeled mixture, DeepSeek-V4-Flash ( Xu et al., 2026a ) labels every SFT example as math, code, or instruction following from its prompt and reference response. Standard MOPD uses these labels for teacher assignment, while Open-MOPD uses the same assignments and balances the optimization budget across domains. Appendix C reports the prompt and label distribution. On the domain-labeled dataset, Standard MOPD and Open-MOPD use the provided domain labels. We compare these baselines with Entropy, Novelty, and ExpertAlign with cosine weighting. We also report the initial student and a Teacher reference evaluating each teacher only on its respective domain."
+      },
+      {
+        "anchor": "S4.SS2.SSS0.Px1.p1.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "MOPD-Router"
+        ],
+        "text": "Table 1 reports results on the unlabeled mixture. Mean reaches overall scores of 34.49 and 47.88 in the strong-to-weak and same-size distillation scenarios, respectively. Entropy yields similar overall scores to Mean. With LLM-generated domain labels, Standard MOPD reaches 36.33 and 48.76, while Open-MOPD reaches 34.02 and 49.41. MOPD-Router operates directly on the original unlabeled dataset. Novelty outperforms both label-based baselines, while ExpertAlign achieves the best overall performance, reaching 38.58 for Qwen3-1.7B student and 53.76 for Qwen3-4B student."
+      },
+      {
+        "anchor": "A4.SS1.p1.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "MOPD-Router"
+        ],
+        "text": "We evaluate output-level uncertainty for Standard MOPD, Open-MOPD, Mean Aggregation, and ExpertAlign in all four settings using paired bootstrap resampling, as detailed in Table 9 . Within each benchmark, we draw 10,000 paired bootstrap samples over benchmark items, using the same resampled items for all methods; where a benchmark draws multiple generations per item, these are first collapsed into one item-level score. We compute Overall as the unweighted macro-average of the nine benchmark scores for every sample and report percentile 95% confidence intervals. Two-sided p p -values impose the null by centering the bootstrap difference distribution at zero and measuring the fraction of replicates at least as extreme as the observed difference, and are adjusted jointly using Holm’s method over the twelve Overall comparisons (four settings by three baselines)."
+      },
+      {
+        "anchor": "A4.SS1.p2.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "MOPD-Router"
+        ],
+        "text": "According to Table 9 , ExpertAlign exceeds Mean Aggregation by 4.09–6.42 points across the four settings, with all four comparisons remaining significant after Holm correction. Relative to Standard MOPD, ExpertAlign achieves gains of 2.25–5.00 points and is significant in every setting. Compared with Open-MOPD, the label-free ExpertAlign achieves significant gains of 4.56, 4.35, and 2.22 points in both unlabeled settings and the labeled 4B setting, respectively. In the labeled 1.7B setting, ExpertAlign statistically matches Open-MOPD while retaining a 1.11-point higher Overall estimate. Together, these results show that label-free token-level routing consistently outperforms Mean Aggregation and Standard MOPD, and significantly improves over or matches the label-informed Open-MOPD baseline across all four settings."
+      },
+      {
+        "anchor": "A4.SS2.p2.1",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "MOPD-Router"
+        ],
+        "text": "Table 10 reports the mean and sample standard deviation across the three runs. ExpertAlign achieves the highest mean score in each domain. Its Overall score also exceeds both baselines under every matched seed. The Overall improvements average 3.76 ± 0.32 3.76\\pm 0.32 points over Standard MOPD and 1.88 ± 0.31 1.88\\pm 0.31 points over Open-MOPD."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "xu2026_qwenimage20rl_technical_report",
+    "source": "https://arxiv.org/html/2606.27608v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "xu2026_who_teaches_which",
+    "source": "https://arxiv.org/html/2609.15404v2",
+    "table_count": 2,
+    "tables": [
+      {
+        "anchor": "S4.T1",
+        "caption": "Table 1: Main results (accuracy, %) on seven benchmarks in three groups for the 4B and 8B students; “distill. only” is VG-OPD without the task-reward stream; T.A. GRPO is the teacher-anchored GRPO proposed by Ramos et al. (2026) . Within each block, the best result per column is bold on dark green and the second-best is underlined on light green.",
+        "methods": [
+          "MOPD",
+          "VG-OPD"
+        ],
+        "rows": [],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "GRPO 43.9 60.6 54.5 61.2 50.7 62.5 85.1 OPSD 42.1 59.6 52.1 58.9 48.5 60.2 82.8 MOPD 43.8 59.0 54.0 63.1 49.4 61.6 82.4 T.A. GRPO 45.5 61.2 51.9 62.0 51.0 63.8 83.6 CriPO 45.7 59.1 54.5 65.5 50.9 62.5 84.2 VG-OPD (distill. only) 43.4 60.7 55.2 "
+          },
+          {
+            "method": "VG-OPD",
+            "text": "seven benchmarks in three groups for the 4B and 8B students; “distill. only” is VG-OPD without the task-reward stream; T.A. GRPO is the teacher-anchored GRPO proposed by Ramos et al. (2026) . Within each block, the best result per column is bold "
+          }
+        ]
+      },
+      {
+        "anchor": "S4.T2",
+        "caption": "Table 2: Training-paradigm comparison (group averages, %). The teacher pool is fixed; only the assignment granularity changes: a privileged self-teacher (OPSD), domain-routed experts (MOPD), or criterion-routed and gated experts (VG-OPD), used standalone or as auxiliary supervision inside GRPO. Best per column is bold on green.",
+        "methods": [
+          "MOPD",
+          "VG-OPD"
+        ],
+        "rows": [
+          "Regime Method Sci. reasoning ↑ \\uparrow Domain science ↑ \\uparrow General reasoning ↑ \\uparrow",
+          "Standalone OPSD 51.3 53.7 71.5",
+          "MOPD 52.3 56.3 72.0",
+          "VG-OPD 53.1 57.3 72.2",
+          "RL + distill. GRPO + OPSD 51.6 54.5 73.7",
+          "GRPO + MOPD 50.1 56.4 73.2",
+          "GRPO + VG-OPD 55.0 59.3 74.0",
+          "RL only GRPO 53.0 56.0 73.8"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "t granularity changes: a privileged self-teacher (OPSD), domain-routed experts (MOPD), or criterion-routed and gated experts (VG-OPD), used standalone or as auxiliary supervision inside GRPO. Best per column is bold on green. Regime Method Sci."
+          },
+          {
+            "method": "VG-OPD",
+            "text": "er (OPSD), domain-routed experts (MOPD), or criterion-routed and gated experts (VG-OPD), used standalone or as auxiliary supervision inside GRPO. Best per column is bold on green. Regime Method Sci. reasoning ↑ \\uparrow Domain science ↑ \\uparrow "
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "A2.SS7.SSS0.Px1.p1.1",
+        "methods": [
+          "MOPD",
+          "VG-OPD"
+        ],
+        "text": "All distillation-based baselines share the student, data mixture, rollout and step budgets, and optimizer settings with VG-OPD, and differ only in how the teacher signal is constructed (who teaches, where, with what weights). Each baseline row uses the recipe’s standard published form ; MOPD and OPSD are pure distillation stages, as in their sources. All table rows are decoded with the same budget, scored by one local harness with serial judging, and selected offline (Apps. B.8 and B.5 )."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "yin2026_hopd_confidence_aware",
+    "source": "https://arxiv.org/html/2607.02592v3",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "yin2026_slowfast_multiteacher_onpolicy",
+    "source": "https://arxiv.org/html/2610.02324v1",
+    "table_count": 2,
+    "tables": [
+      {
+        "anchor": "S2.T1",
+        "caption": "Table 1 : Comparison with state-of-the-art methods on General and Domain-Specific benchmarks. The best result is shown in bold, and the second-best result is underlined. All distillation methods are reproduced on our benchmarks under the same training data and budget. For each benchmark, we report the Expert result of the corresponding expert as an oracle reference.",
+        "methods": [
+          "MOPD",
+          "Open-MOPD",
+          "SF-MOPD"
+        ],
+        "rows": [
+          "General Capability Domain-Specific Capability All",
+          "Method MMMU_Pro MMStar MMBench-CN MMBench-EN HallusionBench Avg. MathVerse ZoomBench VSTAR Schematic DataChart RealWorld Avg. Avg.",
+          "Multi-Teacher Distillation: Qwen3-VL-2B-Instruct",
+          "Qwen3-VL-2B-Instruct [ 1 ] 42.7 57.2 82.5 84.8 69.0 67.2 41.2 38.8 62.8 31.5 21.2 35.1 38.4 51.5",
+          "MOPD [ 7 ] 42.7 52.2 82.1 83.7 66.3 65.4 43.0 45.7 66.0 43.0 27.9 34.2 43.3 53.3",
+          "SF-MOPD (Ours) 42.3 56.5 80.9 83.6 68.9 66.4 44.3 45.3 67.5 43.0 27.9 36.4 44.1 54.2",
+          "Multi-Teacher Distillation: Qwen3-VL-4B-Instruct",
+          "Qwen3-VL-4B-Instruct [ 1 ] 55.3 69.4 88.3 88.8 73.7 75.1 61.8 41.4 74.9 55.6 45.9 45.6 54.2 63.7",
+          "MOPD [ 7 ] 51.9 60.7 87.7 88.0 73.3 72.3 57.7 48.0 73.8 60.6 49.3 49.1 56.4 63.6",
+          "SF-MOPD (Ours) 54.6 66.6 87.6 88.9 73.5 74.2 59.3 48.8 73.3 59.7 49.5 50.9 56.9 64.8",
+          "Multi-Teacher Distillation: Qwen3-VL-8B-Instruct",
+          "Qwen3-VL-8B-Instruct [ 1 ] 60.1 72.7 89.3 90.1 74.0 77.2 62.9 39.1 75.9 63.1 49.8 52.6 57.2 66.3",
+          "MOPD [ 7 ] 56.9 63.5 87.1 88.3 70.9 73.3 62.5 46.6 75.9 64.0 56.5 48.7 59.0 65.5",
+          "MOPD (Ref) [ 7 ] 57.6 62.3 87.3 87.9 73.7 73.8 63.2 45.0 76.4 62.0 54.6 53.1 59.1 65.7",
+          "Open-MOPD [ 4 ] 53.7 57.7 86.1 87.2 71.6 71.3 59.8 46.7 75.9 64.3 54.3 48.7 58.3 64.2",
+          "VAD-MOPD [ 15 ] 52.2 62.9 86.6 87.9 65.9 71.1 57.5 44.9 78.0 63.4 53.1 46.9 57.3 63.6"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "uct [ 1 ] 42.7 57.2 82.5 84.8 69.0 67.2 41.2 38.8 62.8 31.5 21.2 35.1 38.4 51.5 MOPD [ 7 ] 42.7 52.2 82.1 83.7 66.3 65.4 43.0 45.7 66.0 43.0 27.9 34.2 43.3 53.3 SF-MOPD (Ours) 42.3 56.5 80.9 83.6 68.9 66.4 44.3 45.3 67.5 43.0 27.9 36.4 44.1 54."
+          },
+          {
+            "method": "Open-MOPD",
+            "text": "ef) [ 7 ] 57.6 62.3 87.3 87.9 73.7 73.8 63.2 45.0 76.4 62.0 54.6 53.1 59.1 65.7 Open-MOPD [ 4 ] 53.7 57.7 86.1 87.2 71.6 71.3 59.8 46.7 75.9 64.3 54.3 48.7 58.3 64.2 VAD-MOPD [ 15 ] 52.2 62.9 86.6 87.9 65.9 71.1 57.5 44.9 78.0 63.4 53.1 46.9 57.3 63"
+          },
+          {
+            "method": "SF-MOPD",
+            "text": "OPD [ 7 ] 42.7 52.2 82.1 83.7 66.3 65.4 43.0 45.7 66.0 43.0 27.9 34.2 43.3 53.3 SF-MOPD (Ours) 42.3 56.5 80.9 83.6 68.9 66.4 44.3 45.3 67.5 43.0 27.9 36.4 44.1 54.2 Multi-Teacher Distillation: Qwen3-VL-4B-Instruct Qwen3-VL-4B-Instruct [ 1 ] 55.3 6"
+          }
+        ]
+      },
+      {
+        "anchor": "S3.T2",
+        "caption": "Table 2 : Comparison on general and domain-specific capability averages. The best result is shown in bold, and the second-best result is underlined.",
+        "methods": [
+          "MOPD",
+          "SF-MOPD"
+        ],
+        "rows": [
+          "Method General Specific All",
+          "SF-MOPD (Ours) 76.4 60.4 67.7",
+          "SF-MOPD w/o. SFP 72.3 57.0 64.0",
+          "SF-MOPD w/o. ℒ MOPD \\mathcal{L}_{\\mathrm{MOPD}} 75.9 60.2 67.3",
+          "SF-MOPD w/o. CenterNorm 75.4 59.7 66.8",
+          "MOPD [ 7 ] 73.3 59.0 65.5"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "ll SF-MOPD (Ours) 76.4 60.4 67.7 SF-MOPD w/o. SFP 72.3 57.0 64.0 SF-MOPD w/o. ℒ MOPD \\mathcal{L}_{\\mathrm{MOPD}} 75.9 60.2 67.3 SF-MOPD w/o. CenterNorm 75.4 59.7 66.8 MOPD [ 7 ] 73.3 59.0 65.5"
+          },
+          {
+            "method": "SF-MOPD",
+            "text": " in bold, and the second-best result is underlined. Method General Specific All SF-MOPD (Ours) 76.4 60.4 67.7 SF-MOPD w/o. SFP 72.3 57.0 64.0 SF-MOPD w/o. ℒ MOPD \\mathcal{L}_{\\mathrm{MOPD}} 75.9 60.2 67.3 SF-MOPD w/o. CenterNorm 75.4 59.7 66.8 MOP"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [
+      {
+        "anchor": "S3.SS2.SSS1.p1.1",
+        "methods": [
+          "MOPD",
+          "SF-MOPD"
+        ],
+        "text": "Table 1 compares three model scales across 11 benchmarks. At the 2B scale, SF-MOPD improves the domain-specific average from 38.4% of the instruct baseline to 44.1%, while maintaining general capability at 66.4%. At the 4B scale, it improves the domain-specific average from 54.2% of the instruct baseline to 56.9%, outperforming MOPD by 0.5%, while preserving general capability at 74.2% and achieving the best overall average of 64.8%. At the 8B scale, SF-MOPD reaches 60.4% on the domain-specific average, an improvement of 3.2% over the instruct baseline and 1.4% over vanilla MOPD. General capability also improves to 76.4%, a gain of 3.1% over MOPD, narrowing the gap with the instruct baseline at 77.2%. Our SF-MOPD approaches the Expert oracle reference on most domain-specific benchmarks."
+      },
+      {
+        "anchor": "S3.SS3.p1.1",
+        "methods": [
+          "MOPD",
+          "SF-MOPD"
+        ],
+        "text": "As shown in Table 2 , we conduct ablation studies on the Qwen3-VL-8B model to evaluate our proposed components. The slow model, i.e. , the EMA-ensembled student, serves as a reference. Removing Slow-Fast Projection (SFP) reduces the full model to MOPD with an EMA-based reference constraint, where the training objective degenerates into directly pulling the student toward its EMA ensemble, i.e. , the classic Mean-Teacher design. This variant drops the overall average from 67.7% to 64.0%, a decrease of 3.7%. We then remove ℒ MOPD \\mathcal{L}_{\\mathrm{MOPD}} and CenterNorm individually: dropping ℒ MOPD \\mathcal{L}_{\\mathrm{MOPD}} slightly hurts both general and domain-specific capability, yielding 75.9% General, 60.2% Domain-Specific, and 67.3% overall, suggesting that it further preserves the original optimization landscape and prevents catastrophic forgetting; removing CenterNorm also degrades performance to 66.8% overall compared with 67.7% for the full model, indicating it stabilizes the projection by aligning distributional statistics. The full SF-MOPD achieves 76.4% General and 60.4% Domain-Specific, reaching 67.7% overall and outperforming MOPD at 65.5% by 2.2%. Among all components, SFP yields the largest individual gain with a 3.7% drop when removed, underscoring the importance of the slow-fast projection mechanism. We further conduct a sensitivity analysis on β \\beta : setting β \\beta to 0.1 0.1 , 0.3 0.3 , 0.5 0.5 , 0.9 0.9 , and 1.0 1.0 yields overall averages of 67.7 % 67.7\\% , 66.1 % 66.1\\% , 67.3 % 67.3\\% , 67.2 % 67.2\\% , and 67.0 % 67.0\\% , respectively."
+      }
+    ],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "zhang2026_verify_before_you",
+    "source": "https://arxiv.org/html/2609.02998v2",
+    "table_count": 2,
+    "tables": [
+      {
+        "anchor": "S4.T2",
+        "caption": "Table 2: TGOPD applied to multi-domain OPD (MOPD). Each run trains a single student on math, code, and IF simultaneously, routing prompts to domain-specialist teachers. Results are reported at 199 training steps with K T = 3 , τ = 2 / 3 K_{T}\\!=\\!3,\\;\\tau\\!=\\!2/3 . Bold : best per column at the displayed precision, including ties. Avg. is computed before display rounding.",
+        "methods": [
+          "MOPD",
+          "TGOPD"
+        ],
+        "rows": [
+          "Math Code IF",
+          "Method Avg. AIME 25 AIME 26 HMMT-Feb LCB OJBench IFBench IFEval",
+          "Qwen3.5-4B",
+          "MOPD 53.40 58.1 63.8 50.7 50.5 18.1 48.8 83.9",
+          "MOPD + TGOPD 54.54 58.1 67.6 51.3 50.0 19.0 51.7 84.1",
+          "Qwen3.6-35B-A3B",
+          "MOPD 60.99 73.1 77.3 60.7 57.4 23.3 44.4 90.7",
+          "MOPD + TGOPD 61.94 73.0 78.0 62.4 57.8 27.6 44.0 90.8"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "Table 2: TGOPD applied to multi-domain OPD (MOPD). Each run trains a single student on math, code, and IF simultaneously, routing prompts to domain-specialist teachers. Results are reported at 199 training st"
+          },
+          {
+            "method": "TGOPD",
+            "text": "Table 2: TGOPD applied to multi-domain OPD (MOPD). Each run trains a single student on math, code, and IF simultaneously, routing prompts to domain-specialist teachers. Resul"
+          }
+        ]
+      },
+      {
+        "anchor": "S4.T3",
+        "caption": "Table 3: GPU utilization under Vanilla OPD and TGOPD across four configurations: single-domain OPD (SOPD) and multi-domain OPD (MOPD) at both model scales. Each measurement covers a one-hour window; idle denotes the fraction of 15-second samples with utilization below 5 % 5\\% . Student-rollout utilization remains similar between the two methods, with differences of at most 2.1 2.1 percentage points. In MOPD, one teacher node hosts three frozen domain-specialist engines, allocated 4 GPUs for code, 2 for math, and 2 for IF. Reported rollout utilization is averaged over the two student-rollout no",
+        "methods": [
+          "MOPD",
+          "TGOPD"
+        ],
+        "rows": [
+          "Teacher utilization Teacher idle Rollout nodes Cluster average",
+          "Configuration OPD TGOPD OPD TGOPD OPD TGOPD OPD TGOPD",
+          "Qwen3.5-4B (5 nodes, teacher = 1 / 5 1/5 )",
+          "SOPD 9.8% 78.9% 59.0% 0.0% 69.6% 70.5% 51.5% 69.5%",
+          "MOPD 7.0% 66.6% 78.0% 0.0% 64.2% 66.3% 40.8% 53.5%",
+          "Qwen3.6-35B-A3B (7 nodes, teacher = 1 / 7 1/7 )",
+          "SOPD 8.8% 82.8% 57.0% 0.0% 73.6% 73.8% 44.5% 56.3%",
+          "MOPD 5.0% 57.7% 70.0% 2.0% 65.6% 63.8% 42.9% 51.5%"
+        ],
+        "snippets": [
+          {
+            "method": "MOPD",
+            "text": "GOPD across four configurations: single-domain OPD (SOPD) and multi-domain OPD (MOPD) at both model scales. Each measurement covers a one-hour window; idle denotes the fraction of 15-second samples with utilization below 5 % 5\\% . Student-rollo"
+          },
+          {
+            "method": "TGOPD",
+            "text": "Table 3: GPU utilization under Vanilla OPD and TGOPD across four configurations: single-domain OPD (SOPD) and multi-domain OPD (MOPD) at both model scales. Each measurement covers a one-hour window; idle denotes "
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "zhu2026_from_gradients_capabilities",
+    "source": "https://arxiv.org/html/2610.02179v1",
+    "table_count": 0,
+    "tables": [],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  },
+  {
+    "paper": "zhu2026_upmopd_update_projection",
+    "source": "https://arxiv.org/html/2610.08398v1",
+    "table_count": 1,
+    "tables": [
+      {
+        "anchor": "S3.T2",
+        "caption": "Table 2: Results on the public three-domain benchmark under the Open-MOPD evaluation protocol. Domain averages cover two tasks, and Total averages all six tasks. ∗ marks results reported by Gao et al. (2026) ; unmarked rows are our reproductions or proposed methods. RouteOPD uses three independently distilled students. Bold indicates the best result in each column.",
+        "methods": [
+          "Open-MOPD",
+          "UP-MOPD"
+        ],
+        "rows": [
+          "Math Code Instruction Following Overall",
+          "Method AIME24 AIME25 Avg. LCB5 LCB6 Avg. IFEval IFBench Avg. Total",
+          "MixSFT 13.33 17.78 15.56 15.57 17.71 16.64 69.44 16.00 42.72 24.97",
+          "RFT ∗ 22.97 23.91 23.44 18.98 19.43 19.21 55.08 18.67 36.87 26.51",
+          "MixRL ∗ 21.15 22.14 21.64 16.59 20.97 18.78 70.24 22.67 46.45 28.96",
+          "ParamMerge-Avg ∗ 18.91 20.99 19.95 18.38 21.20 19.79 70.06 17.67 43.86 27.87",
+          "ParamMerge-TA ∗ 21.93 22.76 22.34 21.74 23.14 22.44 71.53 21.67 46.60 30.46",
+          "RL-Math 28.89 25.56 27.23 17.96 20.57 19.27 69.81 17.00 43.41 29.97",
+          "RL-Code 15.56 17.78 16.67 19.76 24.00 21.88 65.93 18.33 42.13 26.89",
+          "RL-IF 11.11 20.00 15.56 14.97 17.14 16.06 76.28 26.00 51.14 27.58",
+          "Naive M-OPD ∗ 20.92 21.60 21.26 17.53 20.99 19.26 68.61 18.67 43.64 28.05",
+          "RouteOPD ∗ 22.34 23.96 23.15 22.28 21.14 21.71 75.60 24.00 49.80 31.55",
+          "Open-MOPD 21.11 23.33 22.22 22.16 20.00 21.08 74.49 24.00 49.25 30.85",
+          "GP-MOPD 22.22 26.67 24.45 22.16 21.71 21.94 75.35 21.67 48.51 31.63",
+          "UP-MOPD 26.67 24.44 25.56 25.15 21.14 23.15 76.28 22.33 49.31 32.67"
+        ],
+        "snippets": [
+          {
+            "method": "Open-MOPD",
+            "text": "Table 2: Results on the public three-domain benchmark under the Open-MOPD evaluation protocol. Domain averages cover two tasks, and Total averages all six tasks. ∗ marks results reported by Gao et al. (2026) ; unmarked rows are our r"
+          },
+          {
+            "method": "UP-MOPD",
+            "text": "49.25 30.85 GP-MOPD 22.22 26.67 24.45 22.16 21.71 21.94 75.35 21.67 48.51 31.63 UP-MOPD 26.67 24.44 25.56 25.15 21.14 23.15 76.28 22.33 49.31 32.67"
+          }
+        ]
+      }
+    ],
+    "baseline_paragraphs": [],
+    "audit_scope": "bounded table/paragraph candidate extraction; absence is not proof of no comparison"
+  }
+]

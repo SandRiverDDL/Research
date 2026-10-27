@@ -1,0 +1,25 @@
+{
+  "call_number": 1,
+  "purpose": "g15-lens-generation",
+  "timestamp": "2026-10-15T20:49:42+08:00",
+  "tool": "spawn_agent",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "files_referenced": [
+    "research-wiki/gap_map.md",
+    "synthesis/mopd-gap-analysis.md",
+    "synthesis/mopd-literature-review.md",
+    "research-wiki/papers/gao2026_openmopd_diagnosing_fixing.md",
+    "research-wiki/papers/li2026_beyond_teacher_assignment.md",
+    "research-wiki/papers/sun2026_d³mopd_dynamic_domain.md",
+    "research-wiki/papers/zhu2026_from_gradients_capabilities.md",
+    "research-wiki/papers/liu2026_pmopd_task_ordering.md",
+    "research-wiki/papers/tian2026_beyond_domainrouted_supervision.md",
+    "research-wiki/papers/zhu2026_upmopd_update_projection.md"
+  ],
+  "prompt": "你是 MOPD 研究协作者。当前只执行 idea-creator-from-gap 的 Phase 2 前半：围绕指定 gap 生成供用户选择的 analytic lenses，不生成具体方法候选、不选定最终 idea、不查新、不跑实验。上游 skill 明确要求使用 secondary Codex agent；本次是 generation，不是最终质量裁决。只读，不写任何文件，不再派子 agent。\n\n用户问题 G15：多个 teacher 的学习收益怎样在同一 student 中兼容？只关注不同 teacher 的监督尺度、训练比例、整合顺序对各自能力获得与保留的影响，以及 A/B 相对支配、预算竞争、抵消和吸收 B 时损害 A。联合/顺序整合可能有不同取舍。目标是有实质贡献且可规模化的顶会方法论文；诊断服务于方法。既有方法处理后是否还存在独立高价值瓶颈尚未证实。不要扩展为通用持续学习、同题互补能力组合(G17)、异源接口(G16)、新增 teacher 选择(G18)。不能把“平衡 teacher”“保护能力”“optimizer 后投影”称为新空白。\n\n已完成输入准备，跳过 Phase 0/1；不加载 query_pack、不扫描文献库、不广泛搜索。\n请定点读取：\n1. /home/chy/notes/Research/mopd/research-wiki/gap_map.md 的 G15。\n2. /home/chy/notes/Research/mopd/synthesis/mopd-gap-analysis.md 的 §1 和 G15 完整段落（约1–63行），不展开其它 gap。\n3. /home/chy/notes/Research/mopd/synthesis/mopd-literature-review.md 的跨论文综合与指标/成本边界（约7–48行）。\n4. 必要时只读下面直接相关七篇本地论文页，位于 /home/chy/notes/Research/mopd/research-wiki/papers/：gao2026_openmopd_diagnosing_fixing.md；li2026_beyond_teacher_assignment.md；sun2026_d³mopd_dynamic_domain.md；zhu2026_from_gradients_capabilities.md；liu2026_pmopd_task_ordering.md；tian2026_beyond_domainrouted_supervision.md；zhu2026_upmopd_update_projection.md。\n\n已有覆盖和直接证据摘要（主 agent 已定点打开相同版本原文 HTML）：\n- Open 2608.19098v1 §3.2：学生采样 token 上 teacher logprob 极差>1nat 占0.62%，mask高分歧token/平均target干预均无益；不排除参数梯度干扰。其 token-share/gap allocation/reward refresh 在该3B recipe有效；refresh不改变已采样prefix。\n- DN 2609.35347v1 Algorithm1：按各域有效token的logratio std，以clip(sigma_all/sigma_d,.25,4)缩放advantage；不改采样比例。response内token平均再response平均。IF初始梯度贡献大，和Open的token预算少不矛盾。固定权重可比，早期Qwen3-4B设置收益不明确，不能预设动态归一化总必要。\n- D³ 2608.24987v2：EMA相对KL与下降速度调prompt采样。App.I承认KL反弹使该域score降0且预算降floor，已给可选补丁。不要把“处理KL反弹”本身当新意。只能比较同一checkpoint，逐benchmark peaks不能作共享student。\n- Gradients→Capabilities 2610.02179v1 §3：同responses DT/DR gradient cosine .68，经同Adam state更新 .96；局部几何不能直接解释长期行为。BF16差分稀疏亦不能当稀疏学习。\n- PMOPD 2609.34605v1 §4：按task block累计actual displacement取rank16子空间，投影gradient和Adafactor update，cycles重建memory；已有顺序/cycling/probe。Table4同schedule证实投影有益。\n- Road 2610.13521v1 §3.3：其它teacher在当前主域student trajectories作critic，对同轨迹auxiliary loss梯度进行部分投影，保留主梯度norm floor，随后AdamW。这个auxiliary loss不是auxiliary自身域数据上的训练loss。\n- UP 2610.08398v1 §2.3：对AdamW实际candidate displacement做联合QP，约束各active-domain当前batch一阶loss不增；保留原optimizer state。已覆盖optimizer后实际更新保护，不保证有限步长或行为性能单调。medical–general的general监督为DAPO math prompts，因此IFEval残差不能直接归因投影失败。完整step约1.42倍，不能只算QP。\n\n任务：给出4–6个彼此可区分、能指导发散生成的 lenses。Lens应是解释/攻击问题的分析视角（例如不同因果变量、机制、理论框架），不是将G15复述成预算/比例/顺序三项，不是具体算法或模块组合，不是限定任务集。每个包括：短中文名；它让我们换个角度看什么；一句关键开放问题；如何仍然落在A/B teacher相互作用；已有覆盖与最危险的退化（变成哪种已有小改）；什么观察会使这个视角价值降低。允许有高风险的视角，但标注假设，禁止宣称其新颖或已成立。跨teacher数据分布反馈、时间尺度、可达能力集合、optimizer memory等可以考虑但不要被此列表限制。\n\n返回中文，约1500–2200字，可读表格或短段落；另外用不超过200字指出lens间实质重叠及能覆盖不同机制的一组建议。用户之后必须明确确认选哪些，再产生任何具体方法候选。所有建议都是待确认，不是用户任务约束。",
+  "landscape_summary": "G15；已有预算、尺度、调度、历史子空间和实际更新投影覆盖；剩余独立方法瓶颈未确证。",
+  "prompt_summary": "仅生成4–6个供用户确认的分析视角，基于既有G15综合与七篇直接证据；禁止生成具体方法候选。",
+  "agent_id": "/root/g15_lenses",
+  "raw_output_path": "/home/chy/notes/Research/mopd/.aris/traces/idea-creator/2026-10-15_run02/001-g15-lens-generation.response.md"
+}

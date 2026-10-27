@@ -1,0 +1,422 @@
+{
+  "run_id": "2026-10-14_run01",
+  "deduplication": "exact dedup_key; no duplicates; all 16 retained",
+  "candidates": [
+    {
+      "id": "A1",
+      "generator_model": "gpt-6-astra",
+      "dedup_key": "successor-equivalence-mass-distillation",
+      "lens": "supervision-object",
+      "title_zh": "把 teacher 的下一步效应蒸馏成等价行动集合",
+      "method_steps": [
+        "在 student 实际访问的 h，teacher 生成少量工具行动，student 再生成若干候选；在环境副本执行这些行动。",
+        "按可核验的任务可见效应分组，例如返回证据、文件变化和资源消耗；teacher 行动的经验频率定义效应分布 qT(z|h)。",
+        "训练 student 给达到同一目标效应的行动集合分配概率质量，随后继续自主 rollout。"
+      ],
+      "objective_or_update": "L = −Σz qT(z|h) log Σ[a∈Az] πθ(a|h)。a 是包含结束符的完整工具调用；未枚举行动的概率归入 other。Az 可以同时包含 teacher 与 student 提出的行动。",
+      "hypothesis": "多轮工具任务允许不同语法、路径或操作顺序产生相同有效状态；按效应聚合监督能保留 student 的可行策略，减少逐 token 模仿带来的无益替换。",
+      "nearest_work_and_delta": "GKD/MiniLLM 匹配序列分布；CAST 转移 solver action value；FutureBridge 执行并选择 teacher bridge。本方法转移经过执行验证的 successor 等价类概率质量，既不提供 value target，也不要求复制某条 bridge。新颖性待查。",
+      "core_claims": [
+        "待验：优于同预算的逐行动 CE/KL。",
+        "待验：增益集中在存在多种等价工具实现的任务。",
+        "待验：增加有效行动多样性同时维持任务成功率。"
+      ],
+      "minimum_experiment": "先做可重置文件操作与结构化检索两个环境；比较 OLIVE 式 CE、相同候选逐条 CE、集合概率质量目标；匹配 teacher tokens、候选数和环境调用，测成功率、等价行动覆盖和总成本。",
+      "falsifier": "在存在大量可验证等价行动的设置中，集合目标仍不优于相同数据的逐条 CE；或者收益只来自额外环境调用。",
+      "required_access": "Black-box 独立 teacher 文本输出；student 完整行动 logprob；环境 snapshot/branch；可审计效应签名。隐藏状态可用于验证，但不能输入部署 student。",
+      "risk": "效应签名可能把影响后续任务的不同状态误合并；严格签名又可能几乎没有可合并样本。",
+      "estimated_effort_and_compute": "条件估算：小模型 pilot 约 1–2 人周；每状态 2 个 teacher 加 4 个 student 候选，需要最多 6 次单步分叉。训练与评测 GPU 成本取决于未确认的硬件。",
+      "so_what": "如果成立，OPD 可以明确学习环境中可替代的行为，而不是把 teacher 的表达方式误当成唯一正确行为。"
+    },
+    {
+      "id": "A2",
+      "generator_model": "gpt-6-astra",
+      "dedup_key": "contingent-controller-distillation",
+      "lens": "supervision-object",
+      "title_zh": "蒸馏能够分支执行的短程条件控制器",
+      "method_steps": [
+        "在 student 访问的 h，请 teacher 生成最多两层的条件控制器：工具调用、对返回字段的条件判断、分支行动。",
+        "采用受限 DSL 和确定性解释器；在具有有限 outcome schema 的环境中核验分支是否合法。",
+        "student 学习生成控制器，并自主执行到控制器结束；后续 teacher 监督继续发生在 student 实际到达的状态。"
+      ],
+      "objective_or_update": "L = −log πθ(AST(CT)|h)，监督对象是规范化的控制器 AST。部署时 student 生成控制器，解释器根据实际工具返回执行分支。",
+      "hypothesis": "单条 continuation 只展示实际发生的一条路径；条件控制器同时传递面对工具失败、空结果或冲突返回时的响应策略。",
+      "nearest_work_and_delta": "OLIVE 转移 teacher continuation，AC-OPD 调整 continuation 长度，TCOD 改变交接前缀。本方法转移可执行的条件策略对象，包含尚未发生的分支。它与程序合成和层级模仿的关系需要进一步查新。",
+      "core_claims": [
+        "待验：在工具返回变化时减少策略失效。",
+        "待验：优于同样分支数据展开后的普通 action CE。",
+        "待验：保持 teacher 缺席时的自主多轮成功率。"
+      ],
+      "minimum_experiment": "选择有 success/empty/error 等有限返回类型的文本 API 环境；比较单轨迹 CE、所有分支展开 CE、控制器蒸馏。严格匹配 teacher 输出量和部署总推理预算，测试训练未见的返回分支组合。",
+      "falsifier": "展开全部分支后的普通 CE 达到同等表现；或者收益完全来自解释器提供的手写策略。",
+      "required_access": "Black-box teacher；工具 schema；受限 DSL 解释器；可控制并验证分支的文本环境。控制器只能读取部署可见的工具返回。",
+      "risk": "DSL 限制了开放任务表达；teacher 生成的条件可能遗漏关键情况，分支核验成本也可能迅速增长。",
+      "estimated_effort_and_compute": "条件估算：DSL 和环境适配约 2–3 人周；每状态一个 teacher 控制器，深度 2、最多 4 条验证路径，环境调用需完整计入。",
+      "so_what": "如果成立，一次 teacher 监督可以传递局部反馈策略，使 student 学会根据环境变化行动。"
+    },
+    {
+      "id": "A3",
+      "generator_model": "gpt-6-astra",
+      "dedup_key": "teacher-evidence-bottleneck",
+      "lens": "supervision-object",
+      "title_zh": "把 teacher 的证据选择蒸馏成行动前的上下文瓶颈",
+      "method_steps": [
+        "在 student 历史 h 上，teacher 标注支持下一行动的少量原始 observation span IDs，并给出行动 aT；不生成额外事实。",
+        "student 先预测证据指针集合 M，再仅使用任务说明与所选原始片段生成行动。",
+        "持续从部署形态的 student rollout 收集新历史，用 teacher 修正证据选择和行动。"
+      ],
+      "objective_or_update": "L = −log πθ(MT|h) − log πθ(aT|task, extract(h,MT))。训练对证据指针做 teacher forcing；部署使用预测的 M，因此必须单独测量指针误差造成的性能损失。",
+      "hypothesis": "长程 agent 的错误经常来自旧证据遗失、过时 observation 干扰或无依据状态推断；显式学习选择证据可能比直接匹配行动 logits 更容易跨任务迁移。",
+      "nearest_work_and_delta": "MemOPD 对 memory rewrite 后的实际可见接口做精确 KL 对齐；这里学习的是由独立 teacher 标注的证据选择器，并让选择结果实际限制行动上下文。不是仅增加证据解释文本。",
+      "core_claims": [
+        "待验：长历史和干扰 observation 下增益更明显。",
+        "待验：证据选择监督具有跨工具迁移能力。",
+        "待验：收益来自有效瓶颈，而非更多 teacher 输出。"
+      ],
+      "minimum_experiment": "在检索加文件编辑任务中插入可控的过时返回和无关工具输出；比较 full-history OPD、等长摘要 OPD、证据指针瓶颈；报告自主成功率、证据遗漏率和上下文成本。",
+      "falsifier": "使用 oracle 证据指针仍无收益；或者实际预测指针的误差抵消全部收益。",
+      "required_access": "Teacher 文本标注；带稳定 span IDs 的历史；可控制行动输入上下文的运行时。无需 teacher logits 或环境隐藏状态。",
+      "risk": "下一步所需证据可能不足以维持长期任务状态；硬瓶颈也可能删除 teacher 未注意到的信息。",
+      "estimated_effort_and_compute": "条件估算：约 1–2 人周实现；每状态一次 teacher 证据与行动标注，部署增加一次短指针预测。必须同时计入检索阶段和行动阶段推理量。",
+      "so_what": "如果成立，teacher 能教会 student 怎样维护决策所需的信息，而不仅是当前应该输出什么行动。"
+    },
+    {
+      "id": "A4",
+      "generator_model": "gpt-6-astra",
+      "dedup_key": "counterfactual-response-relation",
+      "lens": "supervision-object",
+      "title_zh": "蒸馏工具反馈改变时的决策响应关系",
+      "method_steps": [
+        "以 student 实际访问的 h 为锚点，通过环境合法分叉得到只改变一个工具反馈因素的 h′。",
+        "对两个完整候选行动 a、b，查询独立 teacher 在 h 与 h′ 下的相对偏好。",
+        "在普通 OPD 上加入成对响应关系监督，要求 student 对反馈变化产生相同方向和幅度的决策变化。"
+      ],
+      "objective_or_update": "定义 ℓM(h)=log πM(a|h)−log πM(b|h)。L = LOPD + λ[(ℓθ(h′)−ℓθ(h))−(ℓT(h′)−ℓT(h))]²。保留 OPD anchor，因为响应差本身不能确定绝对行动偏好。",
+      "hypothesis": "工具 agent 必须理解反馈如何改变决策，例如请求失败后重试还是换策略；显式传递这种响应关系有助于避免忽略工具返回或错误坚持原计划。",
+      "nearest_work_and_delta": "CROP 据当前摘要以 counterfactual prompt sensitivity 选择 token；这里将反馈导致的行为变化直接作为监督目标。GKD 的逐状态分布匹配是必要基线，关系目标是否提供额外归纳偏置尚待验证。",
+      "core_claims": [
+        "待验：减少对关键工具反馈不敏感的错误。",
+        "待验：优于相同 h/h′ 数据上的独立 KL。",
+        "待验：响应关系能迁移到未见的反馈组合。"
+      ],
+      "minimum_experiment": "在可控 success/failure、empty/nonempty、版本冲突环境上构造合法分叉；比较普通 OPD、两状态独立 OPD、成对关系目标，完全共享查询与训练数据。",
+      "falsifier": "两状态独立 KL 达到相同表现；或者收益仅存在于人为不一致的 observation 扰动。",
+      "required_access": "Teacher 与 student 对完整候选行动的 logprob；环境合法干预和分叉能力。不得直接伪造与历史矛盾的工具输出。",
+      "risk": "关系目标没有增加标签信息，可能只是低效重复逐状态 KL；长行动 log-odds 的尺度也可能不稳定。",
+      "estimated_effort_and_compute": "条件估算：环境可分叉时约 1–2 人周；每锚点至少两个 teacher scoring context 和两条对应分叉，训练成本约随成对状态数增长。",
+      "so_what": "如果成立，OPD 可以直接教会 agent 怎样响应环境变化，而不完全依赖模型从孤立行动标签中归纳。"
+    },
+    {
+      "id": "A5",
+      "generator_model": "gpt-6-astra",
+      "dedup_key": "teacher-choice-over-student-options",
+      "lens": "interaction-transfer",
+      "title_zh": "让 teacher 在 student 能执行的短程方案之间教学",
+      "method_steps": [
+        "从 student 自主访问的 h，采样 K 个固定长度短程 option，并在环境副本中实际执行。",
+        "teacher 观察这些 student 行动及其结果，给出方案选择或排序，不生成新的行动。",
+        "用 teacher 的选择监督 student 对自身方案的概率分配，下一轮仍由 student 自主产生候选和轨迹。"
+      ],
+      "objective_or_update": "对等长轨迹 τk，pθ(k|h)=softmaxk(log πθ(τk|h))，L=−Σk qT(k|h,{τ}) log pθ(k|h)。轨迹概率只包含 policy action likelihood，不包含环境转移概率。",
+      "hypothesis": "teacher 的最优演示可能依赖 student 暂时不具备的技能；在已实际执行的 student 方案之间传递偏好，可以把监督集中在当前可实现的行为改进。",
+      "nearest_work_and_delta": "MAD-OPD 组合 teacher 分布；FutureBridge 引入 teacher bridge；这里 teacher 只能选择 student 自己实现的多轮方案。与轨迹 preference distillation 的重合需要认真查证，不能仅凭 agent 场景声称新颖。",
+      "core_claims": [
+        "待验：减少 teacher 演示可用但 student 无法复现的落差。",
+        "待验：相同总成本下优于 teacher continuation CE。",
+        "待验：方案支持集足够时能持续改善自主策略。"
+      ],
+      "minimum_experiment": "K=3、H=2 的小规模 pilot；比较 teacher continuation CE、单步候选选择、短程 option 选择。记录成功率、teacher 偏好准确性、候选支持集覆盖和全部分叉成本。",
+      "falsifier": "teacher 选出的方案不能提高后续自主成功率；或者需要过大的 K 才出现可学习的优质方案。",
+      "required_access": "Black-box teacher 排序；student trajectory logprob；环境分叉。训练不依赖外部 task reward，但评测需要可验证成功指标。",
+      "risk": "student 候选支持集可能缺失关键策略；teacher 也可能偏好看起来合理但无法完成任务的短程方案。",
+      "estimated_effort_and_compute": "条件估算：约 1–2 人周；每锚点约 K×H=6 次工具执行，加一次 teacher 比较。长观察会显著增加 teacher 输入成本。",
+      "so_what": "如果成立，teacher 的帮助可以直接落在 student 已能实现的策略空间内，提升每次监督转化为自主能力的效率。"
+    },
+    {
+      "id": "A6",
+      "generator_model": "gpt-6-astra",
+      "dedup_key": "post-update-transfer-selected-demonstrations",
+      "lens": "interaction-transfer",
+      "title_zh": "按 student 更新后的自主收益选择 teacher 演示",
+      "method_steps": [
+        "在 student 访问的 h，请固定独立 teacher 提供 K 个短纠错 demonstration。",
+        "对每个 demonstration，用独立的影子 adapter 做一次相同规模的蒸馏更新。",
+        "在不带 teacher 帮助的独立 sibling episodes 上评估更新后策略，只把自主迁移收益最大的 demonstration 用于实际更新。"
+      ],
+      "objective_or_update": "θk=θ−α∇CE(dk;θ)；k*=argmaxk mean[R(πθk,E)−R(πθ,E)]；实际更新 θ←θ−α∇CE(dk*;θ)。最终 policy update 仍来自独立 teacher demonstration。",
+      "hypothesis": "能救好当前任务的演示不一定最容易被 student 学会；直接选择产生实际学习迁移的演示，可以改善 assistance 到 competence 的转化。",
+      "nearest_work_and_delta": "FutureBridge 依据 continuation proxy 选择执行的 bridge；SCOUT/Prep-OPD 适配 teacher。这里 teacher 固定，选择依据是 student 参数更新后的独立自主表现。CLOOPD 重用 teacher-scored batch，不等于比较候选更新的迁移效果。",
+      "core_claims": [
+        "待验：更新后迁移收益比当前演示成功率更能预测学习价值。",
+        "待验：减少高表现但低可学性的 teacher 监督。",
+        "待验：节省的正式训练样本足以补偿选择成本。"
+      ],
+      "minimum_experiment": "只训练小型 LoRA，K=2，每次使用 4 个独立 sibling episodes；比较随机选择、当前任务回报选择、更新后自主收益选择，并加入使用全部 demonstration 的同总预算基线。",
+      "falsifier": "选择排序在独立重复中不稳定；或者计入影子更新和评测后，固定使用全部 demonstration 更有效。",
+      "required_access": "Student 参数与可复制 adapter；独立 teacher；可重置任务族及可靠成功信号。选择集与最终测试集必须分开。",
+      "risk": "短期更新收益噪声大，可能过拟合很小的选择集；计算成本也可能高于所得收益。",
+      "estimated_effort_and_compute": "条件估算：约 2–4 人周；每锚点增加 K 次影子更新与 K×4 次自主评估。先限制 50–100 个锚点，不能预设完整训练的 GPU 时长。",
+      "so_what": "如果成立，teacher supervision 的价值可以按它真正改变了多少自主能力来优化，而非按演示本身有多漂亮来估计。"
+    },
+    {
+      "id": "A7",
+      "generator_model": "gpt-6-astra",
+      "dedup_key": "teacher-waypoint-student-realization",
+      "lens": "interaction-transfer",
+      "title_zh": "teacher 给出可见里程碑，student 自己实现到达路径",
+      "method_steps": [
+        "在 student 访问的 h，teacher 于副本短程推进，提取一个任务可见、可验证的 waypoint gT，例如获得指定证据或完成某项文件修改。",
+        "保持真实训练轨迹从原 h 出发，让 student 自己实现 gT；teacher 只在这些真实 student 状态上提供 goal-conditioned 行动监督。",
+        "同时训练 student 从 h 预测 waypoint，部署时由 student 预测并执行，不需要 teacher 在线给目标。"
+      ],
+      "objective_or_update": "L = −log πθ(gT|h) + Σt KL[πT(·|ht,gT) || πθ(·|ht,gT)]，其中 ht 来自 student 对 waypoint 的实际尝试；black-box teacher 时可改为 teacher action CE。",
+      "hypothesis": "长程任务中可迁移的是阶段性状态推进，而 teacher 的具体路径未必适合 student；保留 waypoint、让 student 生成实现路径可能缩小这种落差。",
+      "nearest_work_and_delta": "TCOD、FutureBridge 和 Relay-OPD 的帮助包含 teacher 实际执行再交接；这里不把真实轨迹搬到 teacher 到达的状态。OLIVE 提供 continuation；这里将终点转成可学习的 waypoint，并在 student 自己的实现路径上监督。LENS 的 hint internalization 使用 same-student target，本方法的目标与行动标签均来自独立 teacher。",
+      "core_claims": [
+        "待验：提高无 teacher 部署时的长程任务完成率。",
+        "待验：能学到不同于 teacher 路径的有效实现。",
+        "待验：预测 waypoint 的误差不会抵消低层策略收益。"
+      ],
+      "minimum_experiment": "选择存在多条实现路径的检索加编辑任务；比较普通 OPD、teacher bridge 交接、waypoint 加 student realization。分别报告 oracle waypoint 与预测 waypoint，匹配全部 teacher 和环境预算。",
+      "falsifier": "只有部署时提供 oracle waypoint 才有效；或者相同长度 teacher continuation CE 已达到同等结果。",
+      "required_access": "Teacher rollout 分叉；文本或工具可见的 waypoint 表示和完成检测；student 在线访问状态的 teacher 标注。不得把部署不可见的隐藏 state 当 waypoint。",
+      "risk": "teacher 选出的 waypoint 可能超出 student 能力；目标预测与目标执行的误差会相互放大。",
+      "estimated_effort_and_compute": "条件估算：约 2–3 人周；每 waypoint 增加 H 次 teacher 工具推进，以及 student 实现路径上的标注。需同时计算失败尝试成本。",
+      "so_what": "如果成立，可以把 teacher 的规划能力转成 student 自己能够实现的层级策略，而不是依赖训练时被 teacher 搬到好状态。"
+    },
+    {
+      "id": "A8",
+      "generator_model": "gpt-6-astra",
+      "dedup_key": "proposal-edit-operator-distillation",
+      "lens": "interaction-transfer",
+      "title_zh": "把 teacher 的纠错操作蒸馏为部署时的行动编辑器",
+      "method_steps": [
+        "student 在真实状态 h 生成尚未执行的结构化工具行动 a0；独立 teacher 对它给出最小 edit script eT，例如修改工具名或参数字段。",
+        "student 的 editor mode 学习从 h、a0 直接预测 eT；训练 rollout 使用 student 自己预测的编辑，再执行最终行动。",
+        "部署仍采用 proposal→student edit→execution，不调用 teacher。所有编辑标签来自独立 teacher。"
+      ],
+      "objective_or_update": "Ledit=−log πθ(eT|h,a0)，最终行动 a=Apply(a0,eθ)。pilot 固定 proposal policy，只训练 editor adapter，避免把 draft 改善与编辑器贡献混在一起；编辑格式限制为少量结构化操作。",
+      "hypothesis": "小 student 可能已经能够提出接近正确的行动，但难以稳定发现参数、前置条件或证据引用错误；模仿 teacher 的局部纠错操作可能比重新生成完整行动更容易学会。",
+      "nearest_work_and_delta": "SAGE-OPD 判断监督强弱；OLIVE 生成 continuation；这里蒸馏的是依赖 student proposal 的编辑算子，并把它保留为部署 policy 的一部分。与 LENS 不同，训练 target 不是 hint-conditioned 同一 student 的输出分布。与既有 critique/edit 方法的重合需进一步查新。",
+      "core_claims": [
+        "待验：局部编辑比完整行动模仿更高效地修复近正确方案。",
+        "待验：编辑器能修复训练未见的 proposal 错误组合。",
+        "待验：同部署推理预算下仍优于普通两次生成。"
+      ],
+      "minimum_experiment": "在参数约束明确的文本工具环境，固定同一 draft policy；比较独立 teacher final-action CE、teacher edit CE、相同两次推理预算的普通 OPD。报告端到端成功率、错误修复率和错误引入率。",
+      "falsifier": "收益被相同推理预算的完整重生成消除；或者编辑器经常把正确 proposal 改错。",
+      "required_access": "Black-box teacher；结构化行动及 edit interpreter；student adapter 训练。无需环境分叉，但需要保存执行前的 proposal 和完整可见状态。",
+      "risk": "最小编辑可能无法表达真正需要的策略变化；如果允许任意重写，又可能退化为普通 action CE。",
+      "estimated_effort_and_compute": "条件估算：约 1–2 人周；每训练状态一次 teacher 编辑标注，部署多一次短编辑推理。应完整计入额外延迟与 tokens。",
+      "so_what": "如果成立，teacher 的在线纠错帮助可以被直接编译进 student 自身的行动流程，形成无需外部 teacher 的可部署能力。"
+    },
+    {
+      "id": "S1",
+      "generator_model": "gpt-6.1-sol",
+      "lens": "supervision-object",
+      "dedup_key": "effect-quotient-distillation",
+      "title_zh": "按环境效果蒸馏行动等价类",
+      "method_steps": [
+        "在 student 自采样到达的状态 h，分别采样 teacher 和 student 的候选 tool actions，组成有限集合 A。",
+        "在可恢复环境中执行候选，按相同工具返回与相同状态变化分成效果等价类 E；状态校验信息只用于训练标签。",
+        "teacher 样本频率给出类分布 q_T(E)，student 将类内所有 action 的概率相加，匹配类分布。"
+      ],
+      "objective_or_update": "令 p_S^A(a|h)=exp(log p_S(a|h))/Σ_{b∈A}exp(log p_S(b|h))，最小化 L=-Σ_E q_T(E)logΣ_{a∈E}p_S^A(a|h)。监督对象是执行效果的概率质量，而非某条命令的逐 token 概率。",
+      "hypothesis": "工具调用存在大量实现相同效果的命令、参数表达与操作顺序。效果等价类允许保留 student 已会的表达，减少模仿 teacher 表面格式造成的有效行动损失。",
+      "nearest_work_and_delta": "GKD（2306.13649）匹配 student-generated sequence 上的 teacher distribution；MemOPD（2608.07068）解决 invocation 接口与 masks 对齐；CAST（2607.25308）转移 solver action value。这里转移环境效果类的分布，不依赖 solver value，也不只修正输入接口。新颖性待查。",
+      "core_claims": [
+        "待验证：相同 teacher 预算下，效果类目标比 action-token KL 更能保留 student 的有效替代动作。",
+        "待验证：收益随可执行同义动作比例增加，而非仅来自更多候选采样。",
+        "待验证：工具表面表达变化后，task success 的下降更小。"
+      ],
+      "minimum_experiment": "选择两个可恢复文本工具环境；比较 ordinary OPD、相同候选集但逐 action 蒸馏、效果类蒸馏。固定 rollout、teacher samples 和环境调用预算，报告 held-out success、有效替代动作保留率及全部成本。",
+      "falsifier": "等价类充分存在且标签可靠时，匹配成本后仍不优于逐 action 蒸馏；或增益全部来自候选数量。",
+      "required_access": "独立 teacher 的文本采样即可；student action likelihood；环境 snapshot/reset/branch；可审计的工具效果签名。隐藏状态若用于分组，不进入部署 student 输入。",
+      "risk": "即时效果相同未必意味着后续语义相同；候选归一化也可能带来长度偏差。",
+      "estimated_effort_and_compute": "规划假设为 0.6B–1.7B student、4B–8B teacher。先做 10^3 个状态、每状态 4–8 个候选的 pilot；主要新增成本是约 4–8 次环境分叉。接口实现预计约两周，未测量训练时长。",
+      "so_what": "让 agent 学会可达到的效果，可能比复制某个 teacher 的命令习惯更适合多实现路径的工具环境。"
+    },
+    {
+      "id": "S2",
+      "generator_model": "gpt-6.1-sol",
+      "lens": "supervision-object",
+      "dedup_key": "evidence-belief-ledger-transfer",
+      "title_zh": "蒸馏有证据出处的工作状态",
+      "method_steps": [
+        "student 正常 rollout；在选定状态，teacher 仅根据可见历史生成紧凑 ledger：已确认事实、已改变资源、未完成条件及对应 observation 引用。",
+        "student 在同一历史上通过辅助输出预测 ledger，主 actor 继续接受独立 teacher 的常规 action OPD。",
+        "部署时只运行 student actor；teacher ledger 不作为额外输入。"
+      ],
+      "objective_or_update": "L=L_OPD+λ[-log p_S(b_T|h)]，其中 b_T 是 teacher 标注的结构化工作状态；辅助输出与 actor 共享主体表示。核心改变是增加跨 turn 状态监督，而非调整 action-token 权重。",
+      "hypothesis": "长程失败常发生于行动所依据的工作状态已经过时。显式预测哪些事实仍成立、哪些要求尚未满足，可使 action policy 更稳定地使用工具反馈。",
+      "nearest_work_and_delta": "MemOPD（2608.07068）保证 memory rewrite 后 token distribution 的输入接口一致；此方法增加 teacher 的语义状态目标。GKD 提供 action OPD 基线。ledger 的价值与原创性均待验证，不以 memory 对齐本身为贡献。",
+      "core_claims": [
+        "待验证：辅助 ledger 提高长交互任务成功率，而不只是 ledger 预测准确率。",
+        "待验证：收益集中在资源变化、证据冲突与多条件完成任务。",
+        "待验证：部署不增加 teacher 调用，actor 单次推理开销可维持基线水平。"
+      ],
+      "minimum_experiment": "固定 action OPD 数据，比较无辅助任务、等长普通摘要辅助任务、证据 ledger 辅助任务；匹配训练 tokens，测长程 success、过时事实导致的行动错误及 observation 引用准确率。",
+      "falsifier": "ledger 预测显著改善但 task success 不变；或等长普通摘要获得相同收益。",
+      "required_access": "独立 text teacher；完整可见工具历史；支持共享主体辅助输出的 student 训练。无需环境分叉或隐藏状态。",
+      "risk": "teacher ledger 可能遗漏或误判状态；固定字段也可能只适用于特定工具域。",
+      "estimated_effort_and_compute": "上述模型规模假设下，先标注 10^3–10^4 个 student 状态；每状态新增一次短 teacher 输出与辅助 CE。预计一至两周完成最小实现，训练成本由 ledger 长度决定。",
+      "so_what": "将 teacher 的监督推进到行动依据本身，为多轮 agent 提供跨 turn 的状态学习信号。"
+    },
+    {
+      "id": "S3",
+      "generator_model": "gpt-6.1-sol",
+      "lens": "supervision-object",
+      "dedup_key": "temporal-contract-trajectory-supervision",
+      "title_zh": "用跨轮时序契约监督轨迹",
+      "method_steps": [
+        "teacher 在 student 当前状态输出少量可执行时序条件，例如先取得证据再引用、写入后验证、满足某前提后才能提交。",
+        "从该状态采样 student 的短期真实轨迹，依据工具日志自动判定每条轨迹是否满足契约。",
+        "用满足与违反契约的轨迹对更新 student；保留普通 OPD 作为基础监督。"
+      ],
+      "objective_or_update": "L=L_OPD+λΣ_{(y+,y-)}log(1+exp[-β(ℓ_S(y+|h)-ℓ_S(y-|h))])，其中 ℓ_S 只计算 action likelihood，y+ 与 y- 分别满足、违反 teacher 契约。没有可比较轨迹对时不产生该辅助项。",
+      "hypothesis": "逐 turn KL 无法直接表达两个动作之间的必要依赖；关系监督允许多条不同操作路径满足同一个跨轮正确性条件。",
+      "nearest_work_and_delta": "AC-OPD（2609.22254）调整 continuation 监督长度；FutureBridge（2608.01953）选择 teacher bridge。这里 teacher 传递可检验的时序关系，而非指定 continuation。与 trajectory preference、结构化 imitation 的关系需要进一步查证。",
+      "core_claims": [
+        "待验证：时序契约减少跨 turn 依赖违规。",
+        "待验证：相同动作样本下，关系目标优于独立 turn KL。",
+        "待验证：允许多种满足契约的方案，有助于保留 student 的有效路径。"
+      ],
+      "minimum_experiment": "在两个已有文本 agent 环境中选取自然存在的验证、引用与前置条件任务；比较 OPD、teacher continuation CE、契约偏好目标。匹配 rollout tokens，分别报告 success 与契约违规率。",
+      "falsifier": "违规率下降但 success 不变或恶化；或收益可由等量 teacher continuation 完全解释。",
+      "required_access": "独立 teacher 的结构化文本输出；短期环境分叉；可解析工具日志。契约只能依赖 student 可见信息。",
+      "risk": "teacher 将个人操作偏好误写成必要条件，会压制正确的替代路径；正负轨迹对也可能稀缺。",
+      "estimated_effort_and_compute": "先做约 10^3 个状态、每状态 2–4 条短分支。契约 parser 与日志接口预计两周左右；新增环境成本与短分支数线性相关。",
+      "so_what": "让监督直接表达长程 agent 必须遵守的行动关系，而不只是每一步像不像 teacher。"
+    },
+    {
+      "id": "S4",
+      "generator_model": "gpt-6.1-sol",
+      "lens": "supervision-object",
+      "dedup_key": "counterfactual-observation-action-contrast",
+      "title_zh": "蒸馏工具反馈改变行动的条件差异",
+      "method_steps": [
+        "在 student 发起工具调用的状态，取得两种可实际产生的返回，例如成功与可恢复失败。",
+        "teacher 为两种 observation 分别指定下一行动 a1、a2，并明确反馈变化是否应引起行动切换。",
+        "student 学习同一前缀下 observation 与 action 的匹配关系。"
+      ],
+      "objective_or_update": "对于应切换的反馈对，L_pair=-logσ(ℓ_S(a1|h,o1)-ℓ_S(a2|h,o1))-logσ(ℓ_S(a2|h,o2)-ℓ_S(a1|h,o2))，与普通 OPD 相加。监督对象是反馈引起的行动差异，不是某条完整 teacher 路径。",
+      "hypothesis": "agent 容易延续已计划的操作而忽略新工具反馈。成对条件差异监督可迫使 student 使用 observation 中真正改变决策的信息。",
+      "nearest_work_and_delta": "FutureBridge（2608.01953）比较 bridge continuations；AC-OPD 调整 teacher continuation 长度。这里比较共享前缀、不同真实反馈下的 action 对应关系，不以单条 bridge 的优劣为目标。新颖性待核。",
+      "core_claims": [
+        "待验证：提高对工具失败、空结果及资源变化的响应准确率。",
+        "待验证：比相同 observation-action 样本上的独立 CE 更有效。",
+        "待验证：收益可以迁移到未见过的返回措辞。"
+      ],
+      "minimum_experiment": "使用允许真实成功/失败分支的两个工具环境；比较独立 CE、成对反馈对比、普通 OPD。匹配 teacher 标注与分支数，测成功率和反馈被忽略的比例。",
+      "falsifier": "成对目标不优于相同样本的独立 CE，或仅适用于训练时的返回字符串。",
+      "required_access": "独立 text teacher；student action likelihood；可控制合法工具返回分支的 resettable 环境。不得伪造不可能的世界状态。",
+      "risk": "工具分支缺少现实可比性；有限候选 action 可能让 student 学会局部辨别而不改善完整执行。",
+      "estimated_effort_and_compute": "先做 10^3 个反馈对，每对两次短环境执行与两份 teacher action 标签；预计一至两周实现，训练成本接近等量 pairwise action supervision。",
+      "so_what": "把工具反馈真正改变策略这一能力作为蒸馏目标，支持 agent 在环境变化后及时改道。"
+    },
+    {
+      "id": "S5",
+      "generator_model": "gpt-6.1-sol",
+      "lens": "interaction-transfer",
+      "dedup_key": "student-draft-teacher-edit-policy",
+      "title_zh": "把 teacher 的局部修正学成 student 编辑策略",
+      "method_steps": [
+        "student 在当前状态先生成完整 action draft。",
+        "独立 teacher 以明确 edit 操作修复 draft 的工具名、参数或必要行动内容，而非重新写一套轨迹。",
+        "student 学习条件编辑策略；部署时由同一个 student 先 draft、再编辑并执行。"
+      ],
+      "objective_or_update": "L_edit=-log p_S(e_T|h,a_draft)，e_T 为 teacher 的编辑序列；修复后 action 由确定性 patch 应用得到。draft actor 可保留普通 OPD。全部编辑标签来自独立 teacher，不用 student 自身输出作 teacher target。",
+      "hypothesis": "teacher 的完整示范可能超出 student 当前执行能力；围绕 student 自己的 draft 学习可执行修正，更容易内化为部署时的纠错能力。",
+      "nearest_work_and_delta": "SAGE-OPD（2606.19659）决定监督强度；OLIVE（2609.36246）提供 teacher continuation。这里转移显式编辑策略，并在部署时由 student 执行第二遍编辑。与编辑式 imitation 的重叠尚待查证。",
+      "core_claims": [
+        "待验证：编辑策略降低可修复工具调用错误。",
+        "待验证：在同等部署推理预算下优于普通 student self-review。",
+        "待验证：局部修正比完整 action 重写更少破坏已有正确内容。"
+      ],
+      "minimum_experiment": "比较普通 OPD、相同两遍推理预算的 self-review、teacher 全量重写蒸馏、teacher edit 蒸馏；测端到端 success、修正率与误改率。",
+      "falsifier": "收益只来自第二遍推理；或编辑后的正确内容被破坏，使 success 不升。",
+      "required_access": "独立 text teacher；可解析 action 格式；student 两遍推理。无需 teacher 部署调用或环境分叉。",
+      "risk": "多一次 student 推理增加延迟；局部编辑不适合需要整体改换策略的错误。",
+      "estimated_effort_and_compute": "先收集 10^3–10^4 个 student drafts；每个新增一次 teacher edit 输出。预计一至两周实现，必须将部署第二遍 tokens 计入成本。",
+      "so_what": "teacher 不仅提供更好的动作，还留下 student 自己可调用的纠错操作。"
+    },
+    {
+      "id": "S6",
+      "generator_model": "gpt-6.1-sol",
+      "lens": "interaction-transfer",
+      "dedup_key": "teacher-optimized-student-learning-gain",
+      "title_zh": "让 teacher 为 student 学会多少而优化",
+      "method_steps": [
+        "在 student-visited states，teacher 采样两份候选监督 continuation。",
+        "从相同 student checkpoint 各做一次等量蒸馏更新，在未参与更新的相关任务上测无 teacher 的表现变化。",
+        "用学习增益偏好训练 teacher，再让该 teacher 继续提供常规 on-policy 蒸馏目标。"
+      ],
+      "objective_or_update": "对监督 d 定义 U(d)=R_probe(Update(S,d))-R_probe(S)。teacher 用 DPO 或采样策略梯度偏向较大 U 的监督；student 始终以独立 teacher 的 continuation CE/KL 更新。核心是将 teacher 目标改为 learner improvement。",
+      "hypothesis": "teacher 自己最容易成功的路径未必最容易被小 student 学会；直接优化更新后的独立表现可选择更有教学价值的监督。",
+      "nearest_work_and_delta": "SCOUT（2609.38360）按 student prefixes 上 teacher continuation 的可验证 reward 适配 teacher；这里 reward 来自 student 更新后的无辅助泛化表现。不同于 CLOOPD（2609.24141）对固定 teacher-scored batch 做多次 actor passes。新颖性待核。",
+      "core_claims": [
+        "待验证：teacher 自身 continuation success 与 student learning gain 并非完全一致。",
+        "待验证：学习增益目标改善每单位 teacher supervision 的训练收益。",
+        "待验证：改善可迁移到未用于 teacher reward 的任务。"
+      ],
+      "minimum_experiment": "先在小 student 上比较固定 teacher、teacher 自身 reward 适配、student learning-gain 适配；每个 outer round 保持相同两份监督、student update 数与 probe budget。",
+      "falsifier": "学习增益标签无法复现，或计入临时更新与 probe 成本后不优于固定 teacher。",
+      "required_access": "可训练独立 teacher；student checkpoint 临时复制或 LoRA；可验证 task reward；严格分开的 update、probe 与最终 test tasks。",
+      "risk": "outer-loop reward 方差高、成本大，teacher 可能只适配一个 student checkpoint。",
+      "estimated_effort_and_compute": "先做几十个 outer rounds，每 round 两次短 student 更新与固定小 probe set。预计三至四周实现；新增成本主要是临时 student 更新与评测，不给出未经测量的 GPU 小时。",
+      "so_what": "把教学效果落实为 teacher 的优化目标，使 teacher–student 协作直接服务 student 的独立能力。"
+    },
+    {
+      "id": "S7",
+      "generator_model": "gpt-6.1-sol",
+      "lens": "interaction-transfer",
+      "dedup_key": "teacher-selected-environment-counterexample",
+      "title_zh": "让 teacher 用真实反例训练 student 应变",
+      "method_steps": [
+        "student 在其访问状态提交下一步 action 及短期后续意图。",
+        "teacher 从环境允许的少量反馈分支中选择一个会暴露该意图缺陷的真实反例，例如合法空结果或暂时失败。",
+        "student 在该分支继续执行；teacher 对这些 student 实际访问的新状态提供正确 action 标签。"
+      ],
+      "objective_or_update": "teacher 选择 c*=argmax_{c∈C_legal} violation(a_student,c)，student 最小化真实反例分支上的 L=Σ_t -log p_S(a_T,t|h_S,t)。teacher 改变交互问题，独立 teacher action 仍是训练监督；不把 teacher 变成部署执行者。",
+      "hypothesis": "随机工具失败训练浪费大量无关分支；针对 student 当前意图构造合法反例，可集中教会何时放弃、重试或重新验证。",
+      "nearest_work_and_delta": "Guided-OPD、DASH-OPD 改变谁执行 action；FutureBridge 插入 teacher bridge；此方法由 teacher 选择环境挑战，student 始终执行。不同于仅判断 recoverability 后回滚。与 adversarial imitation 的关系需查证。",
+      "core_claims": [
+        "待验证：相同反例数量下优于随机合法反馈扰动。",
+        "待验证：提高自然发生工具异常时的成功率。",
+        "待验证：无需 teacher 接管也能扩展 student 的恢复状态覆盖。"
+      ],
+      "minimum_experiment": "在具有原生异常分支的两个文本环境中，比较普通 OPD、随机分支 OPD、teacher-selected 分支 OPD；保持分支集合与调用数一致，同时评测正常和自然异常任务。",
+      "falsifier": "只适用于 teacher 选择的训练扰动，不能改善自然异常；或随机分支效果相同。",
+      "required_access": "独立 teacher；合法环境分支选择接口；snapshot/reset；分支后 teacher action 标注。环境不可支持的假反馈不纳入训练。",
+      "risk": "teacher 可能偏爱不现实的罕见异常，牺牲正常任务性能。",
+      "estimated_effort_and_compute": "先做约 10^3 个状态、每状态最多 2–3 个合法短分支；约两周接口工作。新增 teacher 判断与环境分叉成本必须分别统计。",
+      "so_what": "teacher 的帮助可以体现为提出 student 必须学会应对的问题，而非替它把任务完成。"
+    },
+    {
+      "id": "S8",
+      "generator_model": "gpt-6.1-sol",
+      "lens": "interaction-transfer",
+      "dedup_key": "teach-back-independent-teacher-target",
+      "title_zh": "先让 student 复述执行，再蒸馏 teacher 修正",
+      "method_steps": [
+        "在 student 访问状态，teacher 给一个只依据现有可见信息的短提示。",
+        "student 据提示生成可执行 action，作为其理解方式的 teach-back。",
+        "teacher 依据原状态和 teach-back 输出最终正确 action 分布；student 在不含提示和 teach-back 的原历史上学习该独立 teacher target。"
+      ],
+      "objective_or_update": "a_b~π_S(·|h,hint_T)，随后 L=KL(q_T(·|h,hint_T,a_b)||π_S(·|h))；black-box teacher 可用其最终 action CE。训练目标始终来自独立 teacher，不使用 hinted student distribution 充当 teacher。",
+      "hypothesis": "teacher 看到 student 如何误解提示后，能给出针对执行缺口的监督；擦除提示训练可将这种纠正转化为无 teacher 的行动能力。",
+      "nearest_work_and_delta": "LENS-OPD（2609.33409）包含 hint、±hint student continuations 与 privileged same-student distribution 的内化；这里新增 teach-back 后的独立 teacher 修正 target，避免以 same-student distribution 蒸馏。OLIVE 直接 teacher continuation，不包含这段理解反馈。邻近性较强，新颖性未建立。",
+      "core_claims": [
+        "待验证：teach-back 让最终 teacher 标签比直接提示或直接 continuation 更适合当前 student。",
+        "待验证：无提示部署仍保留训练收益。",
+        "待验证：收益来自 teacher 针对理解缺口的修正，而非单纯增加 teacher tokens。"
+      ],
+      "minimum_experiment": "比较直接 teacher action、hint-conditioned teacher action、hint→student teach-back→teacher correction；所有标签都来自独立 teacher，匹配总 teacher tokens，评测 teacher-free success。",
+      "falsifier": "移除 teach-back 后效果不变，或匹配 teacher tokens 后优于基线的收益消失。",
+      "required_access": "独立 teacher 的两次短输出；student 一次额外训练期 action proposal；白盒分布或黑盒最终 action 均可。无需环境分叉。",
+      "risk": "交互只是在更贵地重现 teacher 本来就能给出的标签；最终 target 也可能过度依赖提示措辞。",
+      "estimated_effort_and_compute": "先做 10^3 个 student states；每状态约两次短 teacher 输出与一次 student teach-back。预计一至两周完成 pilot，部署维持单个无提示 student actor。",
+      "so_what": "让 teacher 在训练时确认 student 的实际理解，再把纠正直接压入 student 的独立决策。"
+    }
+  ]
+}

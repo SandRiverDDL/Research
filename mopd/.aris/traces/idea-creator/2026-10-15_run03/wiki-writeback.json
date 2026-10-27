@@ -1,0 +1,278 @@
+[
+  {
+    "candidate_id": "L1-A1",
+    "slug": "g17-certified-local-actions",
+    "title": "用可核验的局部结论构成联合教学目标",
+    "description": "L1-A1；优先2；未运行pilot，provisional。",
+    "stage": "proposed",
+    "outcome": "pending",
+    "thesis": "【候选方法；L1-A1；优先2】\n\n1. student 自采样完整轨迹，每条只选一个已访问前缀；两个 specialists 各提出一个短结论或纠正，并附可执行证书，不要求提供完整解。\n2. 证明检查器依据原始题设检验证书；它只检验给定证书，不搜索解答。将通过检查的局部动作合并为候选集，保留其来源。\n3. 在该 student 前缀处，对认证动作集合做块级蒸馏；下一轮仍由 student 独立生成。不同 teacher 的必要结论由同一 student 逐渐掌握。\n4. 部署只保留 student；若任务原本允许证明检查器，则所有对照同样可用。局部证书只在训练提供。\n\n最小形式：令 C(s) 为通过证书检查的局部动作，q(c|s)∝1[c∈C(s)]·Σ_i p_i(c|s)；在 student 访问的 s 上最小化 KL(q||πθ)，C(s) 为空则跳过。动作是一条短证明语句或纠正，不能把任意全文当一个免费动作。\n\n【待验证假设】【待验证】没有整题可靠 teacher 时，各 specialist 仍能提供互补且可认证的局部结论；其联合支持集足以产生可学习的完整策略。知识来自 specialists，可信性来自只检查局部证书的确定性工具。\n\n【原文覆盖与候选差异】\n- [Who Teaches Which Token? Verifier-Gated Multi-Expert On-Policy Distillation for Scientific Reasoning](https://arxiv.org/html/2609.15404v2)（§3.2 Eq.4–5；§3.3 Eq.6；§3.4 Eq.8–10）：已有覆盖：VG-OPD 已以 criterion 局部优势许可多专家，整题成功并非必要条件；因此取消整题门槛已被部分直接覆盖。 剩余差异：候选改为认证 student 当前前缀上的具体动作，并蒸馏认证块的有限支持集；VG-OPD 的原题 probe 和 disagreement mask 不提供这种动作证书。\n- [Process-Verified Reinforcement Learning for Theorem Proving via Lean](https://arxiv.org/html/2606.20068)（§3.2 Tactic-Level MDP；§4.1 Define Tactic-level Rewards；§4.2；§5.3 Reward Strategy）：已有覆盖：确定性验证局部 tactics 并用过程反馈训练已有明确方法。 剩余差异：候选从多个 specialists 取得有方向的认证动作目标，区别于对 student 自生成 tactics 赋过程奖励。\n- [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](https://arxiv.org/html/2609.02548v1)（§4.3 Eq.4–5；§4.4 Eq.6–7）：已有覆盖：已有多teacher纠错反馈压缩入单student。 剩余差异：MT-SDPO 的整题资格与词面 sanitizer 不等于具体局部结论的形式认证。\n\n最小证伪：未运行。只做32道已有形式证明题的信号审计：每题选择一个实际student前缀，两位teacher各交一个短动作及证书；已知证明仅用于离线评估动作对目标的贡献，不提供给teacher。比较联合认证集合相对最佳单teacher是否新增可连接的有用动作，并统计非法前缀与无关动作率。实际GPU预算未指定，token估算未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED；新颖性评分6/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。\n\n它是否只是多来源的经过验证 SFT 数据？VG-OPD 已放弃整题赢家假设，过程验证 RL 已训练局部 tactics；候选必须说明新增动作知识如何在相同检查与数据预算下超出这两类强基线。\n\n- R1-CERTIFIED-IS-NOT-PROGRESS：检查器证明结论成立不等于动作推进原始目标。重复题设、恒真命题、冗余 have 均可能认证通过；动作支持集不保证存在通往完整证明的可学路径。不能用通过率代替有用覆盖率。\n- R1-STATE-SOUNDNESS：任意 student 文本前缀未必对应合法 proof state。原方法虽要求根据原始题设核验证书，仍须定义错误前缀上的纠正如何成为下一动作；不能把不可信先前断言当公理，也不能假设检查器负责搜索修复。\n- R1-FINITE-ACTION-TARGET：若 C(s) 指本轮生成后通过检查的有限去重动作，q 可归一化且块级交叉熵可算；若指所有可认证动作则没有可计算枚举。动作是否含证书、块终止符及不同形式证明是否视为同一动作必须固定，否则概率权重可被表示长度和重复证书改变。\n- R1-ONPOLICY-BOUNDARY：监督起点来自 student，成立；teacher 生成块内较晚 token 的前缀则是 teacher-forced，不是全部 token 都来自 student 自采样。应如实记为 student-visited state 上的块级混合蒸馏，而非宣称完整轨迹严格 on-policy。\n- R1-INFORMATION-AND-COST：两个 specialists 必须确有互补信息，且制备样例不能隐含完整证明教师。Cross-scoring 每个认证候选的两个 teacher 概率、前缀读取、证书执行和无效提案均须计费。现有 token 数是估算，非实测。\n\n停止条件：若在该任务分布上联合集合没有稳定新增有用动作，或有效动作证书实际依赖完整解生成器，则核心监督充分性前提被推翻。局部有增量但等数据SFT/过程RL完全复现时，方法价值下调，而非据邻近文献直接ABANDON。",
+    "based_on": [
+      "paper:xu2026_who_teaches_which",
+      "paper:lu2026_beyond_best_teacher"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L1",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L1-A2",
+    "slug": "g17-counterexample-union",
+    "title": "联合排错：从多个不完整的反例专家获得监督",
+    "description": "L1-A2；降低本轮投入优先级；未运行pilot，provisional。",
+    "stage": "archived",
+    "outcome": "pending",
+    "thesis": "【候选方法；L1-A2；降低本轮投入优先级】\n\n1. student 对每题独立生成4个完整候选；每位 teacher 只负责指出自己擅长的一类错误，并给一个具体反例。\n2. 用可执行规格检查反例是否确实使候选违反要求；无效反例不参与监督。teacher 无须知道正确完整程序。\n3. 合并经过验证的否决，将 student 在候选集合中的概率质量重新分配给未被否决者；全被否决则该组不更新。未被否决不被标注为正确。\n4. 持续在新的 student 自采样候选上重复；部署移除 teachers，保留一个 student。\n\n最小形式：候选y₁…y₄由当前student采样，b_m=1表示不存在已验证反例；q_m∝stopgrad(πθ(y_m|x))·b_m，最小化−Σ_m q_m logπθ(y_m|x)，Σb_m=0时跳过。\n\n【待验证假设】【待验证】不同 teacher 虽不能生成正确整题解，却能发现互不重合的致命错误；经过联合排错得到的相对监督，比单 teacher 的正答案模仿更可靠。反例正确性由规格执行验证，错误发现仍来自teachers。\n\n【原文覆盖与候选差异】\n- [ExVerus: Verus Proof Repair via Counterexample Reasoning](https://arxiv.org/html/2603.25810)（§2.3 Definition 2.2；§3.1 Counterexample Generation with Validation；§3.2）：已有覆盖：生成、验证具体反例并据此改进程序证明已有直接机制。 剩余差异：ExVerus 做推理时修复；候选把多个专长否决集合用于训练一个无teacher部署模型。\n- [Learning to Disprove: Formal Counterexample Generation with Large Language Models](https://arxiv.org/html/2603.19514)（§2 Formal Counterexample Generation；§3.1；§3.2 Multi-reward Guided Training）：已有覆盖：不依赖完整正解、生成可形式验证反例并从验证信号训练已有工作。 剩余差异：它训练反例生成器及证明器，没有本候选的多critic生存集合目标。\n- [Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](https://arxiv.org/html/2506.03136)（§3.1 Eq.1；§3.2 Theorem 3.1；§3.3 Eq.3–4）：已有覆盖：可执行测试的错误识别能力用于训练coder和tester，且不要求ground-truth code。 剩余差异：候选强调多种已认证的具体否决，CURE的coder主奖励仍基于ground-truth tests；多teacher价值和具体重加权规则尚未被该文完整包含。\n\n最小证伪：未运行。对固定100题×4个已有student候选，只做认证反例过滤与独立隐藏规格审计；测联合否决相对最佳单critic是否提升真实正确候选比例、全否决率及共同盲区率，并比较uniform与原π加权的有效样本数。无需训练。实际GPU预算未指定，token估算未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分4/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。 archived仅表示本轮降低优先级，不代表被完整scoop或实验否定。\n\n与既有反例驱动改进、测试生成和拒绝采样训练相比，剩余方法差异很薄；目前唯一具体重加权还重复使用proposal，可能只是额外自锐化而非互补能力整合。\n\n- R2-PROPOSAL-DOUBLE-COUNTING：y_m 已按 π_old 采样，随后 q_m∝π_old(y_m)b_m 又乘一次 proposal。对保留样本重复计数的经验分布，大样本极限为 Q(y)∝π_old(y)^2 Pr(b=1|y)，而不是 π_old(y|b=1)。四样本自归一化有额外有限样本偏差。有限候选目标本身合法，但不能解释为单纯条件化或精确KL投影。\n- R2-UNSUPERVISED-SHARPENING：所有候选均未被否决时仍产生偏向当前高概率输出的自强化；没有新专家证据也可能压缩熵。该效应可能制造 apparent training gains，亦可能锁定高概率错误。\n- R2-SURVIVAL-NOT-SOUNDNESS：认证一个反例可以可靠否决，但没有反例不认证程序。联合critic可能留下共同盲区，或将全部组否决，导致训练停滞；原方法没有从全否决组取得方向性学习信号。\n- R2-SPECIFICATION-ORACLE：必须确有可执行规格判断反例输出是否错误。普通自然语言题只有候选程序和teacher声称的expected output时，仅运行程序不能证明反例有效。完整参考程序不是唯一方式，但若使用它需计入信息与数据条件。\n- R2-METHOD-VS-RL：当前增量主要是多来源测试/反例的并集。二值生存奖励、拒绝采样SFT或测试精度优化可能完全复现；不能仅凭反馈来自teacher就排除这些直接基线。\n\n停止条件：若正确候选占比没有增加，或有效训练组稀少，核心信号假设失败；若优势仅来自π自锐化，或等反例预算RFT/RL复现，则当前独立方法价值不足。没有找到完整直接覆盖的单篇论文，故不作ABANDON。",
+    "based_on": [
+      "paper:he2026_learn_from_whoever",
+      "paper:wang2026_madopd_breaking_ceiling"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L1",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L1-A3",
+    "slug": "g17-projected-answer-distillation",
+    "title": "投影答案蒸馏：让每位 teacher 只监督自己能解的部分",
+    "description": "L1-A3；储备；未运行pilot，provisional。",
+    "stage": "proposed",
+    "outcome": "pending",
+    "thesis": "【候选方法；L1-A3；储备】\n\n1. 限定有确定性输出投影的任务，例如同一结构化答案同时包含符号关系和单位或类型。投影器只解析共享实体与字段，不求解题目。\n2. 每位 specialist 只学习并评分自己负责的投影答案；完整题仍可能超出任一teacher的稳定能力。\n3. student 自采样4个完整答案；对每个答案提取所有投影，以各teacher对投影的概率乘积构成联合候选目标，再蒸馏回原student。\n4. 部署student直接生成完整答案；不调用投影teachers。最终正确性验证只用于评测和公平RL对照。\n\n最小形式：给定固定解析投影φ_i及student候选y_m，q_m∝exp(Σ_i λ_i log p_i(φ_i(y_m)|x))；固定投影长度口径后，最小化−Σ_m stopgrad(q_m)logπθ(y_m|x)。λ_i在独立局部校准集上固定，不依赖整题赢家。\n\n【待验证假设】【待验证】teacher在可解投影上的概率比其完整答案概率更有信息；多个投影共同约束同一组实体时，可从student候选中识别联合有效解。主要风险是各投影分别合理却联合矛盾。\n\n【原文覆盖与候选差异】\n- [Knowledge Amalgamation for Multi-Label Classification via Label Dependency Transfer](https://ojs.aaai.org/index.php/AAAI/article/view/26190/25962)（pp.9982–9984 Problem Formulation；Proposed Method: ANT；Prediction Integrator Eq.4 onward）：已有覆盖：ANT 已从掌握不同标签子集的teachers向覆盖全部标签的student迁移局部知识及共享依赖；部分teacher整合本身不新。 剩余差异：候选针对生成式完整答案的固定投影，用各自可解的分布评分student自采样答案，不采用ANT的teacher间条件修订与标签整合器。\n- [Symbolic Knowledge Distillation: from General Language Models to Commonsense Models](https://aclanthology.org/2022.naacl-main.341.pdf)（§2.1 Eq.1–3；§4 Critic Model；§5）：已有覆盖：用product-of-experts式质量因子构造目标并训练student已有方法。 剩余差异：候选的因子来自不同部分答案分布，且采样者为student；尚需证明投影信息而非一般reward weighting产生增量。\n\n最小证伪：未运行。只对32道已有完整答案及全局验证器的题做projection碰撞和排序审计：为每题取现成student候选，检查同一组φ_i是否包含正确/错误完整答案，并比较联合分数相对单投影和完整答案聚合的真实正确性排序。所有正确答案仅用于审计。实际GPU预算未指定，token估算未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分5/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。\n\n目前更像partial-label amalgamation加通用product评分及reward-weighted self-training。需要实证证明投影对象本身解决了完整答案监督的具体失败，而不是把任务拆成若干独立字段后再拼接。\n\n- R3-IMPLICIT-PROPOSAL：设 F(y)=∏_i p_i(φ_i(y)|x)^λ_i。对 y_m~π_old 后按 F(y_m) 加权，经验目标在大样本下趋于 Q(y)∝π_old(y)F(y)，而非 Q(y)∝F(y)。前者可解释为KL约束的指数倾斜更新，有限四候选目标也可定义；问题是当前claimed_delta尚未区分这个已知优化含义与纯teacher联合分布。\n- R3-PROJECTION-IDENTIFIABILITY：若不同完整答案有相同全部投影，却只有一个合法，则所有teacher因子完全相同，方法没有信息区分它们。共享实体不自动排除这种纤维内歧义；例如字段分别正确但关系、程序行为或证明连贯性错误。\n- R3-PRIOR-DOUBLE-COUNTING：各p_i(φ_i(y)|x)都是条件分布，直接乘积可能重复计算共享实体/先验，不能自动视为一致联合分布。固定λ校准尺度不等价于证明概率兼容；candidate-set score可以使用，但语义需保持为评分而非正确posterior。\n- R3-CANDIDATE-SUPPORT：四个完整student候选中如果没有联合有效解，目标只能相对偏好现有候选；投影teacher本身不生成缺失的完整解。可以跨轮渐进改进，但原方法没有对此提供保证，不能把局部可解直接等同监督充分。\n- R3-NO-HIDDEN-SOLVER：φ_i必须只是解析，不得通过求解题目、修正实体或判断正确答案提供免费额外知识。不同长度/表述的projection logprob、重复字段与语义等价变体都可能改变乘积。\n\n停止条件：若高频存在全部投影相同而全局正确性相反的候选，或联合投影分数不能改善真实正确性排序，则该任务上的监督充分性被推翻；若必须引入完整求解器消歧才能生效，已超出原候选。",
+    "based_on": [
+      "paper:wang2026_smopd_multireward_reinforcement",
+      "paper:nguyen2026_avsd_adaptiveview_selfdistillation"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L1",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L1-A4",
+    "slug": "g17-joint-teaching-gain",
+    "title": "直接训练 teacher 的联合教学收益",
+    "description": "L1-A4；高风险储备；未运行pilot，provisional。",
+    "stage": "proposed",
+    "outcome": "pending",
+    "thesis": "【候选方法；L1-A4；高风险储备】\n\n1. 从两个已有专长teacher出发；在同一student前缀，各输出≤128-token局部提示，不要求提供完整答案。\n2. 冻结的当前student副本读取两份提示，在原student前缀上给出下一token目标；实际student不看提示，只学习该条件目标。\n3. 抽取少量批次做一次临时student更新，再测未见组合题上的成功率变化；把这个真实教学增益作为两位teacher提示策略的共同奖励，更新teacher LoRA。\n4. 交替优化提示策略与常规OPD；最终冻结teachers完成蒸馏，部署只保留无提示student。\n\n最小形式：q=p_stopgrad(θ)(·|s,h₁,h₂)，θ′=θ−α∇θ KL(q||πθ)；teacher消息策略通过REINFORCE最大化R=Acc_V(θ′)−Acc_V(θ)，V与产生提示的训练题分离。\n\n【待验证假设】【待验证】最会独立解题的teacher不一定最会提供联合可学信号；直接奖励共同教学增益，可使各teacher输出互补且能被student吸收的局部知识。必要知识来自初始专长训练，验证信号是实际student答案的任务检查结果，不是假设的局部oracle。\n\n【原文覆盖与候选差异】\n- [Learning to Teach with Student Feedback](https://arxiv.org/html/2109.04641)（Method / Course Step Eq.2–5；Exam Step Eq.6–8；Eq.11）：已有覆盖：IKD 的course/exam双层优化已用student真实一步更新后的独立数据表现优化teacher，这是候选中心目标的直接先例。 剩余差异：候选优化两个LLM的离散局部消息策略，用联合验证回报和REINFORCE，而非单teacher连续soft-target的meta-gradient。\n- [Adaptive Multi-Teacher Knowledge Distillation with Meta-Learning](https://arxiv.org/html/2306.06634)（§III-A；§III-B Eq.6–9；§III-C）：已有覆盖：MMKD 已按更新后student表现优化多teacher监督的联合组织。 剩余差异：候选更新teacher消息生成策略本身；MMKD更新聚合权重网络。这是具体差异，但尚未证明该差异解决互补性问题。\n- [Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs](https://arxiv.org/html/2609.02548v1)（§4.3 Eq.4–5；§4.4 Eq.6–7）：已有覆盖：多teacher反馈→privileged self-teacher→无提示student的内循环已经存在。 剩余差异：候选允许不完整teacher并外层学习其消息，而MT-SDPO的teacher固定且先经整题资格验证。\n\n最小证伪：未运行。仅检查元奖励是否可辨认：冻结同一student起点，在8个训练小批次各比较4组已有teacher提示的一步临时更新，用独立32题进行配对前后评估，并重复相同提示估计随机噪声。若提示间教学增益差小于重复噪声，当前meta奖励不足以支持优化。实际GPU预算未指定，token估算未测速，不承诺所需GPU小时。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分4.5/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。\n\n中心双层教学目标已由IKD建立，多teacher的student感知元优化又有MMKD；privileged反馈蒸馏已由MT-SDPO覆盖。剩余组合是否提供独立方法贡献，不能靠昂贵的LLM化实现回答。\n\n- R4-KNOWN-META-TEACHING-CORE：不能把以student真实学习增益训练teacher写成首次贡献，IKD已直接包含该双层目标；与MMKD的多teacher元优化相比，新意主要落在局部生成消息及其互补性。\n- R4-SPARSE-META-REWARD：一个临时更新对16个验证题各采一次的accuracy差可能低于噪声。独立Bernoulli前后估计在最坏方差下标准误约0.177，且一次样本差以1/16为粒度。teacher提示策略将获得高方差、稀疏共同奖励；不能把这些调用估算当作足够统计功效。\n- R4-COMPLEMENTARITY-NOT-IDENTIFIED：两位teacher同收一个总奖励不保证互补，一位可能承担全部有用信息，另一位搭便车；也可能等价于一个teacher生成双倍长度消息。去掉任意teacher后掉分还须排除总token/信息量减少。\n- R4-LOCAL-HINT-BOUNDARY：128-token上限不保证消息仅有局部知识，短消息也可泄露完整答案。需如实审计消息的信息来源，不能把conditioned student副本称为天然不具完整求解能力；其获得两个消息后可能就是联合solver，这不违规但须计入方法定义和成本。\n- R4-OBJECTIVE-CADENCE：q在单个s上的next-token形式清楚，sampling prefix来自无提示student也清楚；但每条轨迹只提示一次还是所有位置重新提示未完全定义，必须在实施前固定，不能按一次消息预算却按全轨迹逐位置提示效果叙述。\n- R4-META-OVERFITTING-COST：验证集必须与teacher生成消息的题及最终测试隔离。持续依据相同验证集更新teacher会适应元训练集，不能把其收益当未见泛化。teacher制备、临时student更新、前后验证、消息生成和副本评分需全部计费，原token估算未测速。\n\n停止条件：如果真实post-update无提示增益不可区分于采样噪声，或固定单teacher同token提示已达到相同增益，原方法的核心可学互补性前提失败。未找到完整包含双生成teacher消息元训练的单篇论文，因此不ABANDON；当前优先级受成本和已有核心机制限制。",
+    "based_on": [
+      "paper:he2026_learn_from_whoever",
+      "paper:wang2026_madopd_breaking_ceiling"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L1",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L2-A1",
+    "slug": "g17-reverse-prefix-curriculum",
+    "title": "逐步撤去 teacher 前缀，让联合能力从后向前接通",
+    "description": "L2-A1；降低本轮投入优先级；未运行pilot，provisional。",
+    "stage": "archived",
+    "outcome": "pending",
+    "thesis": "【候选方法；L2-A1；降低本轮投入优先级】\n\n1. A 为每道组合题生成经过验证的中间前缀，B 续写一次，保留确有联合解的训练题。\n2. 先提供完整 A 前缀，让 student 自采样后续并接受强动态多 teacher 监督；随后逐轮缩短提供的前缀，让 student 自己补齐越来越多的 A 阶段。\n3. 每次缩短都依据当前交接点的联合成功率；最终必须退到零前缀，在原始问题上训练和评测。\n\n最小形式：d_k(y|x)=δ(y≤k=z≤k^A)πθ(y>k|x,z≤k^A)；最小化 E_dk Σt>k KL(πθ,t‖q_dynamic,t)，仅当验证联合成功率≥τ时令k减小；k>0属于teacher roll-in混合分布，k=0才恢复完整student on-policy。\n\n【待验证假设】【待验证】先让 B 所需状态稳定出现，再学习抵达它的前缀，可以跨过 A、B 必须同时成熟的学习障碍。风险是 student 依赖提供的前缀，撤去后收益消失。\n\n【原文覆盖与候选差异】\n- [TCOD: Exploring Temporal Curriculum in On-Policy Distillation for Multi-turn Autonomous Agents](https://arxiv.org/html/2604.24005v2)（§4.2 TCOD-B2F；Eq.5；Algorithm 2；train-test mismatch段）：已有覆盖：teacher执行成功前缀→student续写OPD→前缀逐步缩到零，已由TCOD-B2F明确实现。 剩余差异：候选用A前缀+B验证形成联合起点，并以联合成功率而非固定pacing撤除；需要证明该具体变化而非reverse OPD本身带来增益。\n- [Max Out GRPO Signal: Adaptive Trace Prefix Control for Hard Reasoning Problems](https://arxiv.org/html/2607.07674v1)（§4.2 Closed-loop adaptation / Annealing；Eq.2；§3 prefix masking）：已有覆盖：成功率反馈控制前缀长度并最终撤除，已在AdaPrefix-GRPO实现。 剩余差异：候选用动态MOPD目标及互补teacher，而非GRPO；更换目标并不自动构成足够方法增量。\n- [Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning](https://arxiv.org/html/2402.05808v2)（§3.1–3.3；Eq.3）：已有覆盖：后向起点课程及起点混合的基本机制已有。 剩余差异：缺少整题可靠单teacher而由互补池提供可学前缀，是可核验但尚未成立的适用条件差异。\n\n最小证伪：不训练的最便宜检查：64道可验证组合题，在零/半/完整A前缀上各采4次student后续，固定teachers及q_dynamic，检查正确前缀是否确实打开普通student极少到达、而B能提供有效监督的状态。约0.39M student后续tokens（每次≤512），另计A/B制备与验证。如果此条件不成立，停止本机制；条件成立也只说明值得后续与TCOD-B2F短训比较。未运行，实际GPU预算未指定、token估算未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分3/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。 archived仅表示本轮降低优先级，不代表被完整scoop或实验否定。\n\n这是否只是给TCOD-B2F接上Trust式动态teacher及已有成功率调度？必须找出组合设定中可重复、无法由原版课程解释的增益。\n\n- RISK_DIRECT_RECIPE_OVERLAP：TCOD-B2F直接覆盖主要OPD操作；剩余delta集中在联合teacher前缀和成功率课程，不能以三篇工作的组合被想象成某单篇已完整包含而ABANDON，但也不能继续宣称基础路径新颖。\n- RISK_CURRICULUM_STALL：k>0的混合分布标注正确；只在后缀算loss并不直接训练被提供的A tokens。当前k达到阈值不保证更短k可学，撤除阶段可能停滞或遗忘。\n- RISK_UNSPECIFIED_SURROGATE：q_dynamic未被固定，实践应与对照使用同一已有聚合；对采样state stop-gradient是常用local OPD surrogate，不能额外声称完整求导E_dθ的优化保证。\n- RISK_VERIFIED_DEMO_ADVANTAGE：A前缀+B一次成功已经提供联合成功数据；所有SFT/PrefixRL/TCOD等对照应获得相同数据。自然语言中间正确性检查不能由一句“验证”免费获得。\n- RISK_COST_UNDERSPECIFIED：2k×1024只描述一次遍历；多个课程阶段、成功率测量、重复prefill和失败teacher制备未包含在一个确定总数内。现成专家能否达到所需能力尚未核实。\n\n停止条件：预检没有稀有状态与条件增益，或后续等总预算下与TCOD-B2F＋同teacher聚合无差异；这否定当前方法价值主张，不等于发现论文完整scoop。",
+    "based_on": [
+      "paper:sun2026_distill_what_you",
+      "paper:yin2026_hopd_confidence_aware"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L2",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L2-A2",
+    "slug": "g17-checkpoint-branching",
+    "title": "在一个交接点分裂稀有成功状态",
+    "description": "L2-A2；降低本轮投入优先级；未运行pilot，provisional。",
+    "stage": "archived",
+    "outcome": "pending",
+    "thesis": "【候选方法；L2-A2；降低本轮投入优先级】\n\n1. student 批量生成 A 阶段，在预先定义的 A→B 交接点用确定性验证器检查中间结果。\n2. 把固定的后续采样预算分配给已到达有效状态的前缀，每个有效前缀最多生成4条独立student后续；不对所有位置分叉。\n3. A 前缀只计一次训练权重，新增后续照常接受动态多 teacher OPD；部署仍从原题独立生成。\n\n最小形式：L=E_z∼dπ L_prefix(z)+λE_z∼dπ(·|C(z)=1),u∼π(·|z) L_suffix(z,u)，每轮总生成token固定、每前缀副本数≤4；所有动作来自student，但后段占用分布经过条件化，不是原始无偏on-policy目标。\n\n【待验证假设】【待验证】稀有有效前缀一旦出现，应当承担多次 B 学习机会；普通完整rollout可能把大部分后段预算消耗在无效状态。若有效前缀几乎从不出现，本法无法启动。\n\n【原文覆盖与候选差异】\n- [Branching On-Policy Distillation](https://arxiv.org/html/2610.13481v1)（§4.1–4.3；Eqs.6–11；Proposition 1；2026-10-09 v1）：已有覆盖：共享student前缀分叉、条件student后续、teacher逐token监督及prefix loss去重全部已实现。 剩余差异：候选在一个确定性验证的A→B交接点分叉；BranchOPD按entropy/disagreement选点。只有验证正确性选点在互补结构中的特殊价值尚未被该文直接回答。\n- [Prefix-Guided On-Policy Distillation: Mining Golden Trajectories from Rollouts](https://arxiv.org/html/2606.21994v1)（Method: Prefix-Based Trajectory Scoring；Eqs.10–14；Algorithm 1）：已有覆盖：用短前缀质量分配固定长续写预算已存在。 剩余差异：候选从单个正确前缀生成多个后续，而PG-OPD主要继续高overlap候选；需控制正确性信息优势。\n- [Know When to Stop, Where to Restart: Accelerating Multi-Turn Agentic On-Policy Distillation](https://arxiv.org/html/2609.14636v1)（§4.2；Eq.6；§5.3 multi-teacher setting）：已有覆盖：缓存高质量student前缀并重启后续OPD，且已有多teacher实验。 剩余差异：候选是单轮边界内的有限分裂与确定性检查；不是缓存后跨轮重启，也不是teacher endorsement proxy。\n\n最小证伪：用现有student在64题各采4个prefix；只对可验证正确prefix各采4个≤512-token后续，同时给等额预算的随机/BranchOPD选点。审计单位总token中的unique有效状态、有效B监督及分支相关性，最多约0.52M后续tokens。不训练即可发现无可启动状态或无信息增量；未运行，GPU预算未指定，token未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分2/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。 archived仅表示本轮降低优先级，不代表被完整scoop或实验否定。\n\n为什么不是BranchOPD的一个选点消融？仅把entropy选点换成已知正确边界不足以支撑独立方法论文。\n\n- RISK_GATE_ONLY_DELTA：BranchOPD已经包含主要采样和loss操作，single boundary与最多4分支是预算选择；真正可承担贡献的是正确性选择与跨teacher监督机会的可验证关系。\n- RISK_OCCUPANCY_REWEIGHTING：候选承认dπ(z|C=1)改变训练分布，这是正确的。prefix去重只消除重复计数，不会恢复原始occupancy；λ、token归一化和分支长度会改变前后段有效权重。\n- RISK_LOW_EFFECTIVE_DIVERSITY：四个suffix共享同一稀有prefix，增加的是条件后续曝光而非四个独立状态；需要按unique prefix和题目聚类评估，不能把branch数当有效样本数。\n- RISK_NO_START_AND_NO_REACHABILITY_GRADIENT：若正确prefix极少，本法没有可分裂对象；对suffix做local OPD不直接奖励A抵达该状态，且后段预算可能挤占A学习。\n- RISK_VERIFIER_AND_COST：C(z)若依赖人工中间标签，其信息必须给各baseline。分支teacher评分会重复读取上下文；固定student输出token不等于固定训练FLOPs或teacher成本。\n\n停止条件：正确性选点不提高有效B监督密度或unique状态覆盖，或者短训中等预算BranchOPD已经复现全部收益。不能仅因邻近工作存在就ABANDON，但当前独立方法优先级低。",
+    "based_on": [
+      "paper:sun2026_distill_what_you",
+      "paper:xu2026_who_teaches_which"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L2",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L2-A3",
+    "slug": "g17-intermediate-task-relabeling",
+    "title": "把错误中间结果改配为正确的新题，提前训练 B",
+    "description": "L2-A3；储备；未运行pilot，provisional。",
+    "stage": "proposed",
+    "outcome": "pending",
+    "thesis": "【候选方法；L2-A3；储备】\n\n1. 选用能精确反向生成题目的任务族，例如把自然语言解析成DSL，再执行DSL。student 对原题生成中间程序 z。\n2. 若 z 语法有效但不符合原题，用确定性渲染器生成新题 x′，使 z 对 x′ 恰好正确；不修改 z。\n3. 以 x′、z 为上下文，让 student 自采样后续并接受 B 及动态多 teacher 监督；原题仍继续普通OPD，最终只评测原始分布的完整生成。\n\n最小形式：构造R使g(R(z))=z；z∼πθ(·|x)，u∼πθ(·|R(z),z)，仅对u加入L_OPD(R(z),z,u)。z并非从πθ(·|R(z))采样，故这是显式relabelled off-policy前缀加on-policy后续。\n\n【待验证假设】【待验证】部分失败A输出已经包含可供B学习的有效状态；通过改变题目一致性而非等待A完全正确，可以减少B监督饥饿。主要风险是逆向渲染分布过窄，收益不能回到原题。\n\n【原文覆盖与候选差异】\n- [The Wisdom of Hindsight Makes Language Models Better Instruction Followers](https://proceedings.mlr.press/v202/zhang23ab/zhang23ab.pdf)（ICML 2023 PDF pp.4–5；§4.2–4.3；Algorithm 1；Sub-output Relabeling）：已有覆盖：失败输出重标指令、中间sub-output重标及后缀监督均已存在。 剩余差异：候选要求确定性DSL逆映射，并在重标记后新采B后续，而不是对旧输出做监督。\n- [CodeIt: Self-Improving Language Models with Prioritized Hindsight Replay](https://arxiv.org/html/2402.04858v2)（§2.2 Sampling and hindsight relabeling / Learning；Eq.1）：已有覆盖：以错误程序的真实行为构造有效新任务，再学习这些程序已实现。 剩余差异：候选把程序当中间状态而非最终预测目标，后接另一个teacher擅长的续写任务。\n- [Spinning Straw into Gold: Relabeling LLM Agent Trajectories in Hindsight for Successful Demonstrations](https://arxiv.org/html/2607.04235v1)（§3.2–3.4；Goal identification；Action relevance labeling）：已有覆盖：利用轨迹中非原目标的中间成功、重标目标并持续训练已有。 剩余差异：候选不依赖LLM猜目标，也不复用旧后续，而是精确构题后新采student续写；这些具体差异尚未被已核论文完整包含。\n\n最小证伪：最便宜先做64个真实失败z的依赖审计：检验R与g的精确往返，并在相同z上比较B的目标分布/完成结果是否因提供R(z)而获得原题所需的新信息；与只给z的B子任务输入逐一配对，最多128个≤512-token续写约0.066M tokens。若B目标完全由z决定，则重标记特有机制没有成立，仍可把数据复用视为一般B训练。未运行；实际GPU预算未指定，估算未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分5/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。\n\n既然只训练B且z已足以执行，为什么要改题？相对“同一批z直接训练B”的因果增量是什么？\n\n- RISK_RELABEL_REDUNDANCY：在典型DSL→执行任务中，若z已是B的充分输入，则正确后续仅取决于z。此时R(z)没有新增下游信息，候选可能退化为直接B子任务训练；这是当前设定的关键内部反例。\n- RISK_INVERSE_SCOPE：g(R(z))=z只有在明确的形式语法/语义映射内才可保证；自然问题中别名、隐藏约束及歧义使等式不成立。不能把强LLM重写器当确定性inverse。\n- RISK_DISTRIBUTION_SHIFT：原z来自π(z|x)，不是π(z|R(z))；候选已正确标注显式off-policy前缀。这里有意改变任务分布，无需假装importance correction能自动变回原题目标。\n- RISK_NO_A_UPDATE：只对u计算额外loss，不直接训练student从新题生成z。B曝光增加不保证A→B联合可达性提高，且student易学到渲染模板shortcut。\n- RISK_SYNTHETIC_COVERAGE：需对原题、R(z)题和随机合成题的难度/操作关系配平；错z可能集中于简单或无效程序。teacher额外生成为零仍不等于没有prefill、B评分和数据验证成本。\n\n停止条件：在所选任务族中，R(z)相对同z的B子任务监督没有信息或迁移增量；或inverse需泄露最终答案/调用完整solver。若后续原题收益被普通合成数据完全解释，当前方法主张也失败。",
+    "based_on": [
+      "paper:yin2026_hopd_confidence_aware",
+      "paper:lu2026_beyond_best_teacher"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L2",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L2-A4",
+    "slug": "g17-downstream-expert-returns",
+    "title": "用 B 能否接着完成，训练 student 抵达有用状态",
+    "description": "L2-A4；储备；未运行pilot，provisional。",
+    "stage": "proposed",
+    "outcome": "pending",
+    "thesis": "【候选方法；L2-A4；储备】\n\n1. student 从原题生成 A 阶段并提交不可更改的中间结果 z。\n2. 只在该交接点让 B 续写一次，以执行验证得到成功回报；任务契约禁止 B 忽略或修复已提交的 z。\n3. 把该回报用于更新student的A前缀策略；student自身的完整轨迹继续做动态多teacher OPD，使B最终也进入同一个student。\n\n最小形式：r_B(x,z)=V(x,z,u_B)，u_B∼π_B(·|x,z)；J_A=E_z∼πθ E_uB[r_B]，用(r_B−b(x))Σt∈A ∇logπθ(z_t|x,z<t)更新前缀，并保留L_dynamic_OPD。辅助回报来自πθ^Aπ_B^B的expert rollout，属于OPD+RL混合方法。\n\n【待验证假设】【待验证】student尚不会B时，自己的终局失败会掩盖已接近成功的A状态；B的完成结果能提前训练这些状态的可达性。若A正确性标签已提供全部信号，额外B调用可能没有价值。\n\n【原文覆盖与候选差异】\n- [Learning to Generate Better Than Your LLM](https://arxiv.org/html/2306.11816v2)（§4；Algorithm 2 AggreVaTeD；Algorithm 3 D²LOLS）：已有覆盖：LLM learner roll-in、guide rollout、用guide完成回报构造advantage更新learner已由AggreVaTeD/RLGF实现。 剩余差异：候选固定在一个有不可修改契约的专长交接点，使用一次MC回报更新整个A前缀并并行MOPD，而不是一般状态采样与价值网络。\n- [Policy Improvement via Imitation of Multiple Oracles](https://arxiv.org/html/2007.00795v2)（§3.2；Algorithm 1 lines 2–7；§4；Eqs.12–14）：已有覆盖：多弱oracle完成价值帮助learner改进及超越单oracle已有完整框架。 剩余差异：候选不估计所有oracle的值，也不逐状态选择，只把已知下游specialist的一次完成作为阶段级信号；需要证明这种简化在MOPD中的实际优势。\n- [Active Policy Improvement from Multiple Black-box Oracles](https://arxiv.org/html/2306.10259v2)（§3.2 Eq.9；§4.1–4.2；Algorithm 1）：已有覆盖：多个black-box oracle的rollout价值、state exploration及其采样效率已有研究。 剩余差异：候选利用任务接口固定调用位置并最终把下游能力蒸馏到student；目前没有新的oracle选择算法或普遍改进保证。\n\n最小证伪：首选一个不训练的信号检查：64题各采4个student A前缀，固定不可更改接口；每个prefix让B与student各续写2次，并记录A正确性。总≤0.524M续写tokens（其中B≤0.262M），另计前缀生成。检验B回报是否在A标签条件下仍区分可学的有用状态，是否比student回报更少全零，并审计B不能修复z。若这些都不成立，无需进入训练。未运行；实际GPU预算未指定，token未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分4/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。\n\n这是AggreVaTeD式expert-rollout reward再加普通MOPD吗？若r_B不能提供A标签之外的信息，连额外调用的必要性都不存在。\n\n- RISK_KNOWN_GRADIENT：固定B时，(r_B−b(x))∇logπθ(z|x)是J_A的合法单样本REINFORCE估计，未重复乘proposal。该公式本身是既有expert cost-to-go思路，不是新policy-gradient结果。\n- RISK_TEACHER_STUDENT_UTILITY_MISMATCH：J_A优化的是πθ^Aπ_B^B的成功，不是πθ完整成功。它可能偏好B擅长但student最终难以掌握的表示；普通OPD是否弥合此差距没有保证。\n- RISK_REWARD_REDUNDANCY：若B对所有正确z几乎必成功、错误z必失败，r_B只是昂贵且有噪声的A正确性标签；若B过弱，一次rollout又可能全零。\n- RISK_UNENFORCED_COMMITMENT：自然语言要求B不要修复z不够。执行接口必须实际约束后续依赖已提交z；否则B忽略z或偷偷重解会奖励错误A。\n- RISK_MULTI_TEACHER_SPECIFICITY：新增辅助信号实际仅来自B，另一teacher只出现在既有OPD；必须证明互补池贡献超出单强guide或一般expert-rollout RL。\n- RISK_COST_AND_UPDATE_LAG：2k次B调用≤1.024M输出tokens是单轮上界，需加输入prefill、verification、普通OPD的所有teacher/reference forwards与teacher制备。若复用旧prefix多轮更新，需明确old-policy处理，不能把当前公式自动当无偏。\n\n停止条件：B回报在控制A正确性后无新增信息，或B通过绕过z取得成功，或B偏好的状态仅对B有效。即便信号成立，后续等预算AggreVaTeD＋MOPD或普通A奖励完全复现效果，也会使独立方法delta不成立。",
+    "based_on": [
+      "paper:yin2026_hopd_confidence_aware",
+      "paper:sun2026_distill_what_you"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L2",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L3-A1",
+    "slug": "g17-future-credit-distillation",
+    "title": "后缀分歧回传蒸馏",
+    "description": "L3-A1；降低本轮投入优先级；未运行pilot，provisional。",
+    "stage": "archived",
+    "outcome": "pending",
+    "thesis": "【候选方法；L3-A1；降低本轮投入优先级】\n\n1. Student 按常规自采样；所有 experts 对同一轨迹评分，保留可信权重及未归一化的 geometric teacher factors。\n2. 把实际采到的后续 teacher log-score 与 student entropy 合成 return-to-go，使后续专长难以接续的代价影响较早决定。\n3. 用同题多条完整轨迹的独立基线降低方差；不为每个状态生成额外 continuation，也不增加部署组件。\n\n最小形式：固定本轮可信权重 w_k(h)，f(h,a)=exp(Σ_k w_k(h)log q_k(a|h))，Q_seq(y|x)∝∏_t f(h_t,y_t)。最小化 KL(P_θ||Q_seq)。对 y~π_old，R_t=Σ_{u≥t}[log f(h_u,y_u)−logπ_old(y_u|h_u)]；一次 on-policy 更新最大化 Σ_t stopgrad(R_t−b_t)logπ_θ(y_t|h_t)。b_t 不依赖当前动作；多次复用须处理 importance correction。全部未来分数来自实际轨迹，不假设 oracle continuation。\n\n【待验证假设】【待验证】有限容量和有限更新预算下，只优化当前位置的条件分布，可能没有把后续跨专家不相容充分归因到上游选择；完整轨迹梯度能改善联合成功。不是断言 token 策略不能表达依赖。\n\n【原文覆盖与候选差异】\n- [Beyond Token-Local Imitation: Reward-Compatible Temporal Credit Assignment for On-Policy Distillation (γOPD)](https://arxiv.org/html/2609.16937v1)（§3.1 Proposition 3.2, Eq.8；§3.2 Eq.9–10, γ=1 endpoint；§4.1–4.2, Table 2；Appendix D Algorithm）：已有覆盖：Eq.8和Eq.10的γ=1端点已给出相同形式的return-to-go梯度；已有多teacher math/code实验及无逐状态分叉的实现。 剩余差异：候选使用状态依赖权重和未局部归一化的多teacher factors，不能直接当作该文归一化teacher实例；同题联合依赖收益也未由其跨域均分证明。\n- [Understanding Off- vs On-Policy Distillation: A Tale of Distinct Training Objectives](https://arxiv.org/html/2609.38666v1)（§5 Eq.5.1–5.2；Remark 5.2；§6.3 Long Horizons）：已有覆盖：sequence geometric目标及continuation correction已有明确理论。 剩余差异：候选权重随prefix变化，并提出用MC PG训练；这些选择能否带来可规模化的新增结果尚无证据。\n- [β-OPSD: Deriving with Policy Optimization, Training with Self-Distillation](https://arxiv.org/html/2607.28582v1)（§2.3 Eq.12–15；§2.4 Eq.16–19；局部归一化近似说明）：已有覆盖：实际轨迹未来log-ratio求和、stop-gradient及token log-prob更新已作为实用recipe出现。 剩余差异：其采用局部归一化reference/privileged-teacher混合，不是本候选的全局factor目标。\n\n最小证伪：不训练LLM：在可枚举二阶段、full-history双expert系统中，固定teacher知识、覆盖和student容量，精确计算候选Q、局部目标与γOPD目标的联合成功偏好及单步梯度；专门比较保留/除去log Z项。只要目标层面无新可用偏好，就无须上GPU。当前未运行；实际GPU预算未指定，原tokens估算未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分3/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。 archived仅表示本轮降低优先级，不代表被完整scoop或实验否定。\n\n核心更新已经是γOPD/β-OPSD公开的return-to-go；当前剩余的是动态factor目标的具体实例，尚未给出它为何优于普通同目标sequence PG的独立机制。不能用已知梯度换一个多teacher名字。\n\n- 【数学核查】固定本轮目标、完整支持集且有限EOS horizon时，给定return-to-go在θ=θ_old处是该sequence KL的无偏梯度方向；未知全局normalizer对θ为常数，不需估计。多轮旧轨迹更新则不再自动无偏。\n- 【命名风险：目标归一化】令q_dyn=f/Z(h)，候选log f=log q_dyn+log Z(h)。它相对归一化teacher的sequence PG多出未来log Z(h)项；不能在实现中把f重新softmax后仍声称优化原目标，也不能把此差别抹掉后直接宣布γOPD已完整包含。\n- 【命名风险：一致但错误】Z(h)的奖励可能偏好teacher一致的容易/错误路径；较强sequence credit不会自动纠正teacher pool缺知识。须先验证候选Q对正确联合解确有偏好。\n- 同题baseline必须来自其他独立rollout或只依赖当前history；把当前轨迹放进均值会改变估计。原提案4 rollouts相对1 rollout的总采样四倍必须配平。\n- 近one-hot权重使Z接近1，真正剩余增量可能消失；top-k或sampled-token近似与全分布目标差异应明确。\n\n停止条件：若未归一化项没有改善正确联合解的目标排序，且候选梯度与普通同目标sequence PG逐项相同，则放弃其独立新方法定位，保留为基线；不将此写成已完成实验。",
+    "based_on": [
+      "paper:di2026_understanding_off_onpolicy",
+      "paper:sun2026_distill_what_you"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L3",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L3-A2",
+    "slug": "g17-cross-step-odds-distillation",
+    "title": "跨步骤交叉比蒸馏",
+    "description": "L3-A2；优先1；未运行pilot，provisional。",
+    "stage": "proposed",
+    "outcome": "pending",
+    "thesis": "【候选方法；L3-A2；优先1】\n\n1. 从同题两条 student 轨迹找到两个均局部有效的早期选择 p₁、p₂，以及两个后续片段 v₁、v₂；用解析规则确定同一种依赖关系。\n2. 让后续专长 teacher 在两个完整前缀下分别评分两个片段，形成2×2矩阵；仅需 teacher-forced scoring，不生成反事实 rollout。\n3. 在普通 MOPD 外匹配该矩阵的交叉 log-odds，使 student 保留早期选择如何改变后续偏好；所有对照共享四种评分与样本。\n\n最小形式：s_M(i,j)=log P_M(v_j|p_i)，Δ_M=s_M(1,1)+s_M(2,2)−s_M(1,2)−s_M(2,1)。L=L_MOPD+λ E[(Δ_θ−stopgrad(clip(Δ_B,−c,c)))²]；B 为已验证局部可靠的后续 expert。优先使用等长、语法有效片段；Δ 消除可分离的行列加性偏置，但不自动证明因果性。\n\n【待验证假设】【待验证】局部可靠信号可能在有限训练中主要传递边际偏好；显式传递两个决定之间的条件偏好变化，比增加相同局部 loss 更有效。完整历史模型本可表示该关系，候选改变的是监督对象。\n\n【原文覆盖与候选差异】\n- [Distillation as Probability Transport: Routed On-Policy Distillation (RouteOPD)](https://arxiv.org/html/2609.08337v1)（§3.1–3.3, Eq.3–12；§3.3 shared bounded token potential；§2 action-space versus temporal selection）：已有覆盖：pairwise log-odds和可共同实现的teacher目标已有OPD方法，必须成为强对照。 剩余差异：RouteOPD的pair位于一个state的词表；本候选约束两个不同prefix间的条件偏好变化，且对象可为多token片段。此delta具体可检验。\n- [Relational Knowledge Distillation](https://arxiv.org/pdf/1904.05068)（§3.2 Eq.4；§3.2.1 Eq.5–8；§3.2.2 Eq.9）：已有覆盖：关系potential蒸馏、传递高阶结构并消去低阶属性已有一般框架。 剩余差异：候选的条件log-prob四项差分不是RKD的距离/角度实例结果；须证明这一特定potential的任务价值，不能宣称关系蒸馏本身新。\n- [Knowledge Amalgamation for Multi-Label Classification via Label Dependency Transfer (ANT)](https://ojs.aaai.org/index.php/AAAI/article/view/26190/25962)（Proposed Method: ANT, pp.3–4；Transfer Indicator；Knowledge Transfer Module；Figure 3）：已有覆盖：多个partial teachers的依赖知识能够进入同一student已有直接方法。 剩余差异：ANT通过共享label调整teacher条件预测；候选针对自回归prefix×suffix的关系，方法目标与数据对象不同。\n\n最小证伪：先离线构建约128个可执行的2×2配对，保留部分重叠三suffix组，检查B的Δ是否预测真实配合、是否存在clip循环冲突；再以小型参数化student固定同四格监督比较KD与关系loss的未见关系泛化。这是便宜且直接的证伪路线，不需要先跑2k题LLM训练。未运行；实际GPU预算未指定，tokens估算未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED；新颖性评分6/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。\n\n这是RKD的一种potential加反事实数据增广；如果在同一四格评分上的普通KD或sequence preference已经达到同样效果，专门交叉比损失没有方法必要性。\n\n- 【数学核查】Δ确实消除任意行偏置a_i及列偏置b_j，但仅是条件关联，不自动具有因果解释。不同prefix之外的任务信息、文风或token长度差异仍可产生大Δ。\n- 【命名风险：不可共同实现的截断】对重叠配对分别clip(Δ_B)可能破坏关系恒等式。例如固定p1/p2、三个suffix时，未截断D13=D12+D23；若D12=D23=0.8c，分别clip后D13=c而两者和=1.6c。候选没有定义如何处理冲突；不能把零loss可实现性当保证。\n- 【采样分布】p1、p2可来自student，但v2放到p1之后形成未按该条件采样的状态。因此整体是on-policy MOPD加反事实off-policy scoring辅助loss，不是完整无偏on-policy目标。\n- 仅匹配Δ允许四个候选suffix的绝对概率都很小；普通MOPD承担边际学习。关系误差下降不能替代部署成功。\n- B在自然配对上的局部可靠性不认证它在交叉组合上的可靠性；语法有效和等长也不能保证语义有意义。验证与配对成本须计入，禁止默认免费oracle。\n\n停止条件：若B的条件关系不对应执行依赖，或打乱配对/同数据普通KD完全复现联合收益，则该具体方法主张不成立；发现局部clip冲突则记录原方法数学缺陷，不在本审阅中替它新增修复模块。",
+    "based_on": [
+      "paper:sun2026_distill_what_you",
+      "paper:di2026_understanding_off_onpolicy"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L3",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L3-A3",
+    "slug": "g17-latent-teacher-paths",
+    "title": "潜在监督路径蒸馏",
+    "description": "L3-A3；储备；未运行pilot，provisional。",
+    "stage": "proposed",
+    "outcome": "pending",
+    "thesis": "【候选方法；L3-A3；储备】\n\n1. 把监督来源设为整条轨迹上的隐变量路径 z₁:T，使用小型 Markov 转移矩阵描述持续使用与跨专家接续；所有 experts 仍读取完整 student 历史。\n2. 每收到一个 student token，依据其在各 expert 下的似然更新路径后验，再计算下一位置的 teacher mixture。\n3. 把该精确可计算的条件目标蒸馏进一个 student；部署时移除路径变量。转移矩阵在小型校准集上固定，并与相同切换次数的普通平滑路由对照。\n\n最小形式：r₁=ν；Q_t(a|h_t)=Σ_k r_tk q_k(a|h_t)。观测 y_t 后，r̄_tk=r_tk q_k(y_t|h_t)/Q_t(y_t|h_t)，r_{t+1,j}=Σ_k r̄_tk A_kj。L=E_{y~πθ}Σ_t KL(Q_t||πθ(·|h_t))，监督 detached。该 Q 是对完整 Markov teacher 路径求和所得的合法自回归策略；不是把 teacher 当作无记忆模型。\n\n【待验证假设】【待验证】某些互补结构需要保留监督来源的跨步骤关联，单点 reliability 权重可能在有限样本下破坏这种关联；完整路径后验可作为较便宜的归纳偏置。来源一致性并不保证任务正确性。\n\n【原文覆盖与候选差异】\n- [Switching between Hidden Markov Models using Fixed Share](https://arxiv.org/pdf/1008.4532)（§3 Expert Hidden Markov Models, pp.4–5；Figure 3；Example 3.2 Bayesian mixture；§1.1 tracking the best expert）：已有覆盖：EHMM的latent transition、posterior mixture及下一步预测直接包含该过滤器结构；这一数学机制本身已知。 剩余差异：已核查论文不含把该完整teacher压缩到LLM student的MOPD训练及联合能力结果。应用增量尚未被一篇论文完整包含，故不能仅因HMM已知而ABANDON。\n- [Beyond Token-Local Imitation: Reward-Compatible Temporal Credit Assignment for On-Policy Distillation (γOPD)](https://arxiv.org/html/2609.16937v1)（§3.1 Proposition 3.2, Eq.8；§3.2 Eq.9–10, γ=1 endpoint；§4.1–4.2, Table 2；Appendix D Algorithm）：已有覆盖：已有MOPD设置下的时间信用方法，说明超越token-local训练不是空白。 剩余差异：γOPD干预梯度时间范围；本候选干预监督生成模型的latent来源关联，二者不同。\n\n最小证伪：只做可枚举的双expert两阶段问题：固定局部准确率与状态覆盖，直接计算Q的联合成功，对比独立mixture和同切换率平滑；再改变文风相似性但保持能力不变。Q本身无优势即可在任何LLM训练前证伪。未运行；实际GPU预算未指定，tokens估算未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分4/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。\n\n这是标准EHMM/Fixed Share预测器接现成KD；来源一致性与任务依赖没有必然联系。必须先证明Q自身优于同切换率平滑，才能谈student优化贡献。\n\n- 【数学核查】ν、A为概率分布/转移矩阵，各q_k为合法条件分布且Q_t(y_t)>0时，给定递推正确；full-history experts不违反EHMM定义，无需假设teacher自身无记忆。\n- 在student轨迹上做detached forward-KL是student-state加权的局部蒸馏，不等于sequence KL(Q‖π)；候选未声称后者，但报告不可混写。\n- 【命名风险：把生成来源当可靠性】后验解释的是哪个teacher更可能生成student已经写出的token；它不是哪个teacher更适合未来，也可能奖励复现student的错误、文风和通用高频token。\n- 固定齐次A只提供通用持续/切换先验，未显式知道任务中的承诺或A→B边界。若联合解需要在低B-likelihood前缀后立即交给B，过滤器可能恰好延迟这种转换。\n- A的校准目标、额外标签和hyperparameter选择预算未定义；若靠联合答案选A，需与平滑路由共享信息。完整mixture需要一致支持集，top-k截断及underflow会改变实际Q。\n\n停止条件：若Q在控制切换率后不能改善正确联合解概率，或只改变文风就翻转优势，则来源路径不是候选所需的依赖信号；无需把它升级成更复杂router来维持候选。",
+    "based_on": [
+      "paper:sun2026_distill_what_you",
+      "paper:yin2026_hopd_confidence_aware"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L3",
+      "provisional"
+    ]
+  },
+  {
+    "candidate_id": "L3-A4",
+    "slug": "g17-active-obligation-distillation",
+    "title": "未履行承诺蒸馏",
+    "description": "L3-A4；储备；未运行pilot，provisional。",
+    "stage": "proposed",
+    "outcome": "pending",
+    "thesis": "【候选方法；L3-A4；储备】\n\n1. 在 student 轨迹中识别早期已经作出、仍约束后续动作的承诺，如选定单位、变量绑定、算法不变量或尚未满足的输出要求；由程序规则或局部可靠 expert 标注其有效区间。\n2. 在每条轨迹一个较晚位置，仅用 student 此刻最后一个 hidden state 重建仍有效的承诺集合，加入一个小型辅助 decoder loss。\n3. 与普通局部 MOPD 联合更新；辅助 decoder 部署时丢弃，student 使用原有完整上下文直接作答。\n\n最小形式：C_t 为截止 t 仍活跃的承诺，h_t 为 student 最后位置表示；L=L_MOPD+λ E_{t~sample}[−log D_φ(C_t|h_t)]。D_φ 只能读取 h_t，不能重新读取完整 prefix；梯度回传 θ。承诺已履行即移出 C_t，避免仅训练复制所有历史。\n\n【待验证假设】【待验证】各局部 expert 的当前动作监督未必足够维持对未来仍有用的约束表示；辅助压缩活跃承诺可能使后续专长更稳定地服从前面的决定。历史原本可访问，问题不是上下文缺失，也不是 teacher 间格式转换。\n\n【原文覆盖与候选差异】\n- [Language Modeling with Latent Situations](https://aclanthology.org/2023.findings-acl.795.pdf)（§3.1 Eq.2–3, pp.3–4；Figure 2 caption）：已有覆盖：§3.1 Eq.2–3已有辅助state decoder、共享表示联合训练及推理移除decoder；这两个核心实现主张已明确覆盖。 剩余差异：候选强调未履行义务生命周期、单个最后位置瓶颈，以及MOPD跨专长交接；已读论文监督的是情境/实体状态，未证明精确包含这些结果。\n- [The Belief State Transformer](https://arxiv.org/html/2410.23506v3)（§2 Architecture and Objective（页面概览）；§3.3–3.6；§4 Definition 1）：已有覆盖：训练期辅助目标塑造对未来充分的表示、部署不必提供训练辅助信息已有规划研究。 剩余差异：BST用前后向编码与previous-token目标，不是active commitments标签；不能据此否定候选的特定监督对象。\n- [Relational Knowledge Distillation](https://arxiv.org/pdf/1904.05068)（§3.2 Eq.4；§3.2.1 Eq.5–8；§3.2.2 Eq.9）：已有覆盖：知识转移可使用隐藏表示和更高阶目标的一般思想已成熟。 剩余差异：它不提供活跃义务预测机制；这里只限制泛称representation distillation的新颖性。\n\n最小证伪：在约128–256个可执行单位/绑定任务中自动产生active、all-state及已履行三类等长度标签；先核验无未来答案泄漏，再以同预算小模型比较联合成功和读出准确率是否分离。优先测试义务寿命和未见组合，不先扩成自然语言标注工程。未运行；实际GPU预算未指定，tokens估算未测速。\n\n完整比较与成本见[本轮报告](../../synthesis/g17-idea-report.md)，原始版本见[候选集](../../synthesis/g17-idea-candidates.json)。",
+    "risks": "本轮有限查新：PROCEED WITH CAUTION；新颖性评分5/10仅供排队。同模型交叉审阅，结论provisional。未运行pilot，outcome保持pending。\n\n辅助decoder预测状态再在推理移除已在ACL 2023明确出现；当前新增主要是标签定义。必须证明active而非all-state/recent-state监督具有独立可迁移价值，才能成为方法贡献。\n\n- 【数学核查】辅助CE目标可定义；C_t必须只由截至t的可用信息确定。依据未来正确答案决定哪些义务活跃，会产生新增答案知识而不是纯记忆监督。\n- 【命名风险：可读不等于会用】decoder能从h_t解码义务，不证明生成head在未来步骤利用该表示。decoder也可能即时重算当前容易信息；一次较晚位置监督未保证长程保持。\n- 承诺集合需有规范化表示或明确集合损失，否则序列CE会惩罚等价顺序；候选未指定实现。单点采样如何覆盖义务生命周期亦未定义。\n- 从当前完整prefix生成标签可能需要额外teacher推理；规则覆盖只在可执行任务可得。自然任务的有效区间和已履行判断不是免费oracle。\n- 一般state监督可能已经提供相同改进；多teacher特异性必须来自跨专长共享义务的证据，而不能仅把相同辅助任务加在MOPD上。\n\n停止条件：active标签对真实联合成功不优于同预算普通state supervision，或仅decoder读出提升；若标签包含额外解题信息也不能作为原机制成功。",
+    "based_on": [
+      "paper:sun2026_distill_what_you",
+      "paper:he2026_learn_from_whoever"
+    ],
+    "target_gaps": [
+      "G17"
+    ],
+    "tags": [
+      "MOPD",
+      "G17",
+      "L3",
+      "provisional"
+    ]
+  }
+]

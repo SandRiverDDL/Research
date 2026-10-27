@@ -1,9 +1,9 @@
 ---
-title: "Scaling Reasoning Efficiently via Relaxed On-Policy Distillation"
+title: "Relaxed On-Policy Distillation: Selective Credit Allocation for Scaling Reasoning Efficiently"
 authors: [Jongwoo Ko, et al.]
-org: kaist-microsoft
+org: microsoft
 year: 2026
-venue: icml-2026
+venue: neurips-2026
 arxiv_id: 2603.11137
 url: https://arxiv.org/abs/2603.11137
 
@@ -57,3 +57,5 @@ $$\hat{R}_{i,t}=\max(\mathrm{sg}[\log\pi_T(o_{i,t})-\log\pi_\theta(o_{i,t})],\lo
 
 <!-- pdf: §3.1 Policy Optimization View / §4 REOPOLD / §5.1-5.2 Results -->
 <!-- song-2026: §4.3 RL-Augmented Objectives / §7 Operational Guidelines -->
+
+<!-- venue verified 2026-10-04: https://neurips.cc/Downloads/2026 ; official entry: https://neurips.cc/virtual/2026/poster/150064 -->

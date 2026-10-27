@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-16",
+  "result": "PASS",
+  "source_files": 10,
+  "index_records": 28278,
+  "unique_record_keys": 28278,
+  "local_papers": 36,
+  "exact_matched_papers": 3,
+  "identifier_matched_papers": 0,
+  "sources_sha256_verified": true,
+  "shared_cache_files_modified": false
+}

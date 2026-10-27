@@ -3,7 +3,7 @@ title: "SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distill
 authors: [Jie Sun, et al.]
 org: other
 year: 2026
-venue: arxiv
+venue: neurips-2026
 arxiv_id: 2605.07711
 url: https://arxiv.org/abs/2605.07711
 
@@ -55,3 +55,5 @@ $$\mathcal{U}(h)=\{\text{short continuations realizable by both tokenizers}\}$$
 
 <!-- pdf: arXiv abstract -->
 <!-- song-2026: §4.3 Cross-Tokenizer OPD / Table 8 -->
+
+<!-- venue verified 2026-10-04: https://neurips.cc/Downloads/2026 ; official entry: https://neurips.cc/virtual/2026/poster/153233 -->

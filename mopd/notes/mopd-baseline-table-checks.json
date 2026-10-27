@@ -1,0 +1,168 @@
+[
+  {
+    "paper": "DN-MOPD",
+    "source": "https://arxiv.org/html/2609.35347v1",
+    "tables": [
+      {
+        "anchor": "S3.T1",
+        "labels": [
+          "",
+          "Method",
+          "Initial student",
+          "RL experts",
+          "Math expert",
+          "Code expert",
+          "IF expert",
+          "Offline distillation",
+          "SeqKD-SFT",
+          "Parameter merging",
+          "ParamMerge-Avg",
+          "ParamMerge-TA",
+          "Single-teacher OPD",
+          "Math teacher",
+          "Code teacher",
+          "IF teacher",
+          "Multi-teacher OPD",
+          "Uniform pool",
+          "Dynamic router",
+          "Label-routed MOPD",
+          "DN-MOPD (Ours)"
+        ],
+        "caption": "Table 1: Capability integration at 9B. Qwen3.5-9B scores (%) on six public tasks. Total averages the six task scores."
+      },
+      {
+        "anchor": "S3.T2",
+        "labels": [
+          "",
+          "Method",
+          "Initial student",
+          "RL experts",
+          "Math expert",
+          "Code expert",
+          "IF expert",
+          "Offline distillation",
+          "SeqKD-SFT",
+          "Parameter merging",
+          "ParamMerge-Avg",
+          "ParamMerge-TA",
+          "Single-teacher OPD",
+          "Math teacher",
+          "Code teacher",
+          "IF teacher",
+          "Multi-teacher OPD",
+          "Uniform pool",
+          "Dynamic router",
+          "Label-routed MOPD",
+          "DN-MOPD (Ours)"
+        ],
+        "caption": "Table 2: Capability integration at smaller scales. Independently trained Qwen3.5-4B and 2B expert pools. Each domain averages its two tasks; Total weights the three domains equally."
+      }
+    ]
+  },
+  {
+    "paper": "UP-MOPD",
+    "source": "https://arxiv.org/html/2610.08398v1",
+    "tables": [
+      {
+        "anchor": "S3.T1",
+        "labels": [
+          "",
+          "Method",
+          "Qwen3-4B teacher",
+          "Medical Teacher",
+          "M-OPD",
+          "GP-MOPD",
+          "UP-MOPD"
+        ],
+        "caption": "Table 1: Medical and general capability integration. Student results are averaged over the final three checkpoints. Mean averages the eight metrics. Bold indicates the best student result in each column."
+      },
+      {
+        "anchor": "S3.T2",
+        "labels": [
+          "",
+          "Method",
+          "MixSFT",
+          "RFT ∗",
+          "MixRL ∗",
+          "ParamMerge-Avg ∗",
+          "ParamMerge-TA ∗",
+          "RL-Math",
+          "RL-Code",
+          "RL-IF",
+          "Naive M-OPD ∗",
+          "RouteOPD ∗",
+          "Open-MOPD",
+          "GP-MOPD",
+          "UP-MOPD"
+        ],
+        "caption": "Table 2: Results on the public three-domain benchmark under the Open-MOPD evaluation protocol. Domain averages cover two tasks, and Total averages all six tasks. ∗ marks results reported by Gao et al. (2026) ; unmarked rows are our reproductions or proposed methods. RouteOPD uses three independently distilled students. Bold indicates the best result in each column."
+      }
+    ]
+  },
+  {
+    "paper": "TrustMOPD",
+    "source": "https://arxiv.org/html/2609.23697v3",
+    "tables": [
+      {
+        "anchor": "S4.T1",
+        "labels": [
+          "Data",
+          "AIME 25/26",
+          "No-distillation references",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "SingleCap",
+          "Uniform 1 K ​ 𝟏 \\tfrac{1}{K}\\mathbf{1}",
+          "Random Dirichlet ⁡ ( 1 , … , 1 ) \\operatorname{Dirichlet}(1,\\ldots,1)",
+          "Single teacher 𝐞 math \\mathbf{e}_{\\mathrm{math}}",
+          "Single teacher 𝐞 code \\mathbf{e}_{\\mathrm{code}}",
+          "Single teacher 𝐞 IF \\mathbf{e}_{\\mathrm{IF}}",
+          "TrustMOPD ∝ 𝐫 t γ \\propto\\mathbf{r}_{t}^{\\gamma}",
+          "MultiCap",
+          "Random Dirichlet ⁡ ( 1 , … , 1 ) \\operatorname{Dirichlet}(1,\\ldots,1)",
+          "Single teacher 𝐞 math \\mathbf{e}_{\\mathrm{math}}",
+          "Single teacher 𝐞 code \\mathbf{e}_{\\mathrm{code}}",
+          "Single teacher 𝐞 IF \\mathbf{e}_{\\mathrm{IF}}",
+          "TrustMOPD ∝ 𝐫 t γ \\propto\\mathbf{r}_{t}^{\\gamma}"
+        ],
+        "caption": "Table 1: For trained methods, results are mean ± \\pm standard deviation over five seeds, using the final checkpoint from each run. Bold and underlined values mark the best and second-best label-free methods within each block; green rows use ground-truth domain labels and are excluded from ranking. Δ Init \\Delta_{\\mathrm{Init}} is the overall-score change from the initial student. The “teacher alone” rows evaluate each specialist directly; their domain-matched scores form the Routed Teachers row."
+      }
+    ]
+  },
+  {
+    "paper": "SF-MOPD",
+    "source": "https://arxiv.org/html/2610.02324v1",
+    "tables": [
+      {
+        "anchor": "S2.T1",
+        "labels": [
+          "",
+          "Method",
+          "Multi-Teacher Distillation: Qwen3-VL-2B-Instruct",
+          "Qwen3-VL-2B-Instruct [ 1 ]",
+          "MOPD [ 7 ]",
+          "SF-MOPD (Ours)",
+          "Multi-Teacher Distillation: Qwen3-VL-4B-Instruct",
+          "Qwen3-VL-4B-Instruct [ 1 ]",
+          "MOPD [ 7 ]",
+          "SF-MOPD (Ours)",
+          "Multi-Teacher Distillation: Qwen3-VL-8B-Instruct",
+          "Qwen3-VL-8B-Instruct [ 1 ]",
+          "MOPD [ 7 ]",
+          "MOPD (Ref) [ 7 ]",
+          "Open-MOPD [ 4 ]",
+          "VAD-MOPD [ 15 ]",
+          "MeanTeacher [ 10 ]",
+          "OPD-V [ 2 ]",
+          "SF-MOPD (Ours)",
+          "Expert (Oracle Reference)"
+        ],
+        "caption": "Table 1 : Comparison with state-of-the-art methods on General and Domain-Specific benchmarks. The best result is shown in bold, and the second-best result is underlined. All distillation methods are reproduced on our benchmarks under the same training data and budget. For each benchmark, we report the Expert result of the corresponding expert as an oracle reference."
+      }
+    ]
+  }
+]

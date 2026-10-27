@@ -1,0 +1,12 @@
+{
+  "call_number": 3,
+  "purpose": "jury",
+  "timestamp": "2026-10-18T17:03:50.632318+00:00",
+  "agent_id": "/root/atod_jury",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "ok"
+}

@@ -1,0 +1,44 @@
+{
+  "skill": "idea-creator",
+  "entry_skill": "idea-creator-from-gap",
+  "run_id": "2026-10-15_run02",
+  "started_at": "2026-10-15T20:49:42+08:00",
+  "executor": "codex",
+  "executor_model": "not-exposed",
+  "executor_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "project_dir": "/home/chy/notes/Research/mopd",
+  "gap": "G15",
+  "phase": "complete-phases-2-7-pilot-skipped",
+  "skipped_phases": [
+    0,
+    1
+  ],
+  "selected_lenses": [
+    "L1",
+    "L2",
+    "L5"
+  ],
+  "generated_count": 18,
+  "mechanical_cluster_count": 13,
+  "pilot_status": "not-run-project-boundary",
+  "completed_at": "2026-10-15T14:02:15.349254+00:00",
+  "recommended": [
+    "C07",
+    "C03",
+    "C04-S4"
+  ],
+  "main_recommended": [
+    "C07",
+    "C03"
+  ],
+  "conditional_recommended": [
+    "C04-S4"
+  ],
+  "novelty_status": "targeted-check-complete-with-documented-coverage-limits",
+  "report": "synthesis/g15-idea-report.md",
+  "evidence_report": "synthesis/g15-novelty-evidence.md",
+  "wiki_ideas_written": 13,
+  "validation": "PASS"
+}

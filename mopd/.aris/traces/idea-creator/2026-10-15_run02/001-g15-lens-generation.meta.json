@@ -1,0 +1,20 @@
+{
+  "call_number": 1,
+  "purpose": "g15-lens-generation",
+  "timestamp": "2026-10-15T12:54:53Z",
+  "agent_id": "/root/g15_lenses",
+  "model": "gpt-6-astra",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "ok",
+  "phase": "lens-generation",
+  "selected_lenses": [],
+  "rejected_lenses": [],
+  "recommendation_pending_confirmation": [
+    "L1",
+    "L2",
+    "L5"
+  ],
+  "method_candidates_generated": 0
+}

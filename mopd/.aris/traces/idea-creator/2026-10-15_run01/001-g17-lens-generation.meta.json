@@ -1,0 +1,18 @@
+{
+  "call_number": 1,
+  "purpose": "g17-lens-generation",
+  "timestamp": "2026-10-15 12:53:52 UTC",
+  "agent_id": "/root/g17_lenses",
+  "agent_id_type": "canonical_task_name",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "reviewer_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "status": "ok",
+  "lens_count": 6,
+  "concrete_method_candidate_count": 0,
+  "selected_ideas": [],
+  "rejected_ideas": [],
+  "selection_status": "awaiting_user_lenses"
+}
